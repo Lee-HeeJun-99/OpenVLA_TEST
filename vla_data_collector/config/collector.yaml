@@ -1,0 +1,22 @@
+/dsr01/dataset_recorder:
+  ros__parameters:
+    image_topic: /zed/zed_node/rgb/color/rect/image
+    waypoint_path: waypoints/cube_pick.json
+    dataset_root: raw_dataset
+    episode_id: episode_000001
+    record_frequency_hz: 10.0
+
+    robot_id: dsr01
+    robot_model: a0509
+
+    # 반드시 실제 배선 번호로 수정
+    gripper_output_index: 1
+
+    # DO value convention fixed by the current gripper:
+    #   0 = close
+    #   1 = open
+    gripper_settle_time_sec: 0.6
+
+    move_velocity_mm_s: 30.0
+    move_acceleration_mm_s2: 60.0
+    jpeg_quality: 95
