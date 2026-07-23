@@ -4,7 +4,7 @@
   <version>0.1.0</version>
   <description>OpenVLA data collection for Doosan A0509 and ZED 2i</description>
 
-  <maintainer email="juhun@example.com">juhun</maintainer>
+  <maintainer email="heejun@example.com">juhun</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
