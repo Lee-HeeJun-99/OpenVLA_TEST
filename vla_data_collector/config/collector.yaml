@@ -1,3 +1,17 @@
+/dsr01/waypoint_recorder:
+  ros__parameters:
+    output_path: waypoints/cube_pick.json
+    instruction: pick up the cube
+    task: cube_pick
+
+    robot_id: dsr01
+    robot_model: a0509
+
+    pose_decimals: 6
+
+    # true면 기존 output_path 파일을 불러와 수정합니다.
+    load_existing: false
+
 /dsr01/dataset_recorder:
   ros__parameters:
     image_topic: /zed/zed_node/rgb/color/rect/image
@@ -9,10 +23,7 @@
     robot_id: dsr01
     robot_model: a0509
 
-    # 실제 그리퍼 배선에 연결된 Controller Digital Output 번호
     gripper_output_index: 1
-
-    # 현재 배선 규칙: 0=닫기, 1=열기
     gripper_settle_time_sec: 0.6
 
     move_velocity_mm_s: 30.0
