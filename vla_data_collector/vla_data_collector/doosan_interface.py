@@ -9,7 +9,7 @@ from rclpy.node import Node
 
 @dataclass(frozen=True)
 class TcpPose:
-    """TCP pose in base frame. Position: m, orientation: rad."""
+    """TCP pose in the robot base frame: position [m], rotation [rad]."""
 
     x: float
     y: float
@@ -26,17 +26,7 @@ class TcpPose:
 
 
 class DoosanInterface:
-    """
-    Doosan A0509 interface using DSR_ROBOT2.
-
-    DSR_ROBOT2 raw units:
-      - position: mm
-      - orientation: degree
-
-    This class exposes:
-      - position: meter
-      - orientation: radian
-    """
+    """Minimal Doosan A0509 API wrapper for data collection."""
 
     def __init__(
         self,
@@ -44,27 +34,33 @@ class DoosanInterface:
         robot_id: str = "dsr01",
         robot_model: str = "a0509",
     ) -> None:
-        import DR_init
-
-        DR_init.__dsr__id = robot_id
-        DR_init.__dsr__model = robot_model
-        DR_init.__dsr__node = node
-
-        # DSR_ROBOT2 must be imported after DR_init.__dsr__node is assigned.
-        from DSR_ROBOT2 import (
-            DR_BASE,
-            DR_MV_MOD_ABS,
-            ROBOT_MODE_AUTONOMOUS,
-            get_current_posx,
-            movel,
-            posx,
-            set_digital_output,
-            set_robot_mode,
-        )
-
         self.node = node
         self.robot_id = robot_id
         self.robot_model = robot_model
+
+        try:
+            import DR_init
+
+            DR_init.__dsr__id = robot_id
+            DR_init.__dsr__model = robot_model
+            DR_init.__dsr__node = node
+
+            # Import only after DR_init has been configured.
+            from DSR_ROBOT2 import (
+                DR_BASE,
+                DR_MV_MOD_ABS,
+                ROBOT_MODE_AUTONOMOUS,
+                get_current_posx,
+                movel,
+                posx,
+                set_digital_output,
+                set_robot_mode,
+            )
+        except ImportError as exc:
+            raise RuntimeError(
+                "Doosan ROS2 Python API를 찾지 못했습니다. "
+                "Doosan workspace의 install/setup.bash를 source했는지 확인하십시오."
+            ) from exc
 
         self._DR_BASE = DR_BASE
         self._DR_MV_MOD_ABS = DR_MV_MOD_ABS
@@ -75,23 +71,27 @@ class DoosanInterface:
         self._set_digital_output = set_digital_output
         self._set_robot_mode = set_robot_mode
 
+    @staticmethod
+    def _check_result(operation: str, result: object) -> None:
+        # Doosan API versions commonly return 0, True, or None on success.
+        if result not in (0, True, None):
+            raise RuntimeError(f"{operation} failed: result={result}")
+
     def set_autonomous_mode(self) -> None:
         result = self._set_robot_mode(self._ROBOT_MODE_AUTONOMOUS)
-        if result not in (0, True, None):
-            raise RuntimeError(f"set_robot_mode failed: {result}")
+        self._check_result("set_robot_mode", result)
 
     def get_tcp_pose(self) -> TcpPose:
         result = self._get_current_posx(ref=self._DR_BASE)
-
-        # Depending on package version:
-        #   get_current_posx() -> pose
-        #   get_current_posx() -> (pose, solution_space)
         raw_pose = result[0] if isinstance(result, tuple) else result
 
         if raw_pose is None or len(raw_pose) < 6:
             raise RuntimeError(f"Invalid TCP pose returned: {raw_pose}")
 
         raw = np.asarray(raw_pose[:6], dtype=np.float64)
+        if not np.isfinite(raw).all():
+            raise RuntimeError(f"TCP pose contains NaN or infinity: {raw_pose}")
+
         position_m = raw[:3] / 1000.0
         rotation_rad = np.deg2rad(raw[3:6])
 
@@ -106,17 +106,20 @@ class DoosanInterface:
 
     def move_linear(
         self,
-        target_pose_m_rad: Sequence[float],
+        target_pose: Sequence[float],
         velocity_mm_s: float = 30.0,
         acceleration_mm_s2: float = 60.0,
     ) -> None:
-        target = np.asarray(target_pose_m_rad, dtype=np.float64)
+        target = np.asarray(target_pose, dtype=np.float64)
+
         if target.shape != (6,):
             raise ValueError(
-                f"target pose must have shape (6,), got {target.shape}"
+                f"target_pose must have shape (6,), got {target.shape}"
             )
         if not np.isfinite(target).all():
-            raise ValueError("target pose contains NaN or infinity")
+            raise ValueError("target_pose contains NaN or infinity")
+        if velocity_mm_s <= 0 or acceleration_mm_s2 <= 0:
+            raise ValueError("velocity and acceleration must be positive")
 
         target_raw = self._posx(
             float(target[0] * 1000.0),
@@ -134,26 +137,20 @@ class DoosanInterface:
             ref=self._DR_BASE,
             mod=self._DR_MV_MOD_ABS,
         )
-
-        # DSR functions generally return 0 on success.
-        if result not in (0, True, None):
-            raise RuntimeError(f"movel failed: {result}")
+        self._check_result("movel", result)
 
     def set_controller_digital_output(self, index: int, value: int) -> None:
-        """
-        Set one controller digital output.
+        """Set controller digital output. Current wiring: 0=close, 1=open."""
+        index = int(index)
+        value = int(value)
 
-        User's gripper convention:
-          value=0 -> gripper close
-          value=1 -> gripper open
-        """
-        if not 1 <= int(index) <= 16:
+        if not 1 <= index <= 16:
             raise ValueError("controller digital output index must be 1..16")
-        if int(value) not in (0, 1):
+        if value not in (0, 1):
             raise ValueError("digital output value must be 0 or 1")
 
-        result = self._set_digital_output(int(index), int(value))
-        if result not in (0, True, None):
-            raise RuntimeError(
-                f"set_digital_output(index={index}, value={value}) failed: {result}"
-            )
+        result = self._set_digital_output(index, value)
+        self._check_result(
+            f"set_digital_output(index={index}, value={value})",
+            result,
+        )
