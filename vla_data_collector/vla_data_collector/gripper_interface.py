@@ -8,13 +8,7 @@ from .doosan_interface import DoosanInterface
 
 
 class DigitalGripper:
-    """
-    Single controller digital-output gripper.
-
-    Hardware and dataset convention are identical:
-      0 = closed
-      1 = open
-    """
+    """Parallel gripper controlled by one Doosan controller digital output."""
 
     CLOSED = 0
     OPEN = 1
@@ -23,7 +17,7 @@ class DigitalGripper:
         self,
         node: Node,
         robot: DoosanInterface,
-        output_index: int,
+        output_index: int = 1,
         settle_time_sec: float = 0.6,
         initial_state: int = OPEN,
     ) -> None:
@@ -31,29 +25,32 @@ class DigitalGripper:
         self.robot = robot
         self.output_index = int(output_index)
         self.settle_time_sec = float(settle_time_sec)
+        self._state = self._validate_state(initial_state)
 
-        if initial_state not in (self.CLOSED, self.OPEN):
-            raise ValueError("initial_state must be 0 or 1")
+        if not 1 <= self.output_index <= 16:
+            raise ValueError("gripper output_index must be 1..16")
+        if self.settle_time_sec < 0:
+            raise ValueError("gripper settle_time_sec must be >= 0")
 
-        self._state = int(initial_state)
+    @staticmethod
+    def _validate_state(state: int) -> int:
+        state = int(state)
+        if state not in (DigitalGripper.CLOSED, DigitalGripper.OPEN):
+            raise ValueError("gripper state must be 0 (closed) or 1 (open)")
+        return state
 
     @property
     def state(self) -> int:
         return self._state
 
-    def command(self, value: int, wait: bool = True) -> None:
-        if int(value) not in (self.CLOSED, self.OPEN):
-            raise ValueError("gripper command must be 0(close) or 1(open)")
+    def command(self, state: int, wait: bool = True) -> None:
+        state = self._validate_state(state)
+        self.robot.set_controller_digital_output(self.output_index, state)
+        self._state = state
 
-        self.robot.set_controller_digital_output(
-            index=self.output_index,
-            value=int(value),
-        )
-        self._state = int(value)
-
-        state_name = "OPEN" if self._state == self.OPEN else "CLOSED"
+        state_name = "OPEN" if state == self.OPEN else "CLOSED"
         self.node.get_logger().info(
-            f"Gripper {state_name}: DO{self.output_index}={self._state}"
+            f"Gripper {state_name}: DO[{self.output_index}]={state}"
         )
 
         if wait and self.settle_time_sec > 0:
