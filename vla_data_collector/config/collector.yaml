@@ -9,14 +9,13 @@
     robot_id: dsr01
     robot_model: a0509
 
-    # 반드시 실제 배선 번호로 수정
+    # 실제 그리퍼 배선에 연결된 Controller Digital Output 번호
     gripper_output_index: 1
 
-    # DO value convention fixed by the current gripper:
-    #   0 = close
-    #   1 = open
+    # 현재 배선 규칙: 0=닫기, 1=열기
     gripper_settle_time_sec: 0.6
 
     move_velocity_mm_s: 30.0
     move_acceleration_mm_s2: 60.0
+    waypoint_pause_sec: 0.2
     jpeg_quality: 95
