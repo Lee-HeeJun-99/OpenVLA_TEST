@@ -1,0 +1,115 @@
+{
+  "instruction": "pick up the cube",
+  "task": "cube_pick",
+  "robot": "Doosan A0509",
+  "camera": "Stereolabs ZED 2i",
+  "camera_mount": "eye_in_hand_vertical",
+  "coordinate_frame": "base",
+  "position_unit": "millimeter",
+  "rotation_unit": "degree",
+  "unit_role": "robot_control_waypoint",
+  "gripper_convention": {
+    "0": "closed",
+    "1": "open"
+  },
+  "waypoint_gripper_semantics": "desired gripper state after arriving at the waypoint",
+  "created_at_utc": "2026-07-24T11:09:03.788409+00:00",
+  "waypoints": [
+    {
+      "name": "home",
+      "tcp_pose": [
+        27.603149,
+        453.561523,
+        519.414734,
+        81.402626,
+        -163.688263,
+        78.961525
+      ],
+      "gripper": 1
+    },
+    {
+      "name": "approach",
+      "tcp_pose": [
+        -3.529762,
+        285.844421,
+        466.432098,
+        167.555618,
+        175.432693,
+        167.488159
+      ],
+      "gripper": 1
+    },
+    {
+      "name": "pre_grasp",
+      "tcp_pose": [
+        -5.327258,
+        285.884399,
+        380.675934,
+        168.084457,
+        174.742981,
+        169.125839
+      ],
+      "gripper": 1
+    },
+    {
+      "name": "grasp",
+      "tcp_pose": [
+        1.668855,
+        276.936493,
+        302.395416,
+        162.414474,
+        173.927917,
+        161.435684
+      ],
+      "gripper": 0
+    },
+    {
+      "name": "lift",
+      "tcp_pose": [
+        -1.084825,
+        315.770813,
+        380.679077,
+        101.633583,
+        147.083206,
+        157.960297
+      ],
+      "gripper": 0
+    },
+    {
+      "name": "place",
+      "tcp_pose": [
+        -11.013142,
+        350.626251,
+        454.300354,
+        93.226593,
+        122.736504,
+        -177.085297
+      ],
+      "gripper": 0
+    },
+    {
+      "name": "release",
+      "tcp_pose": [
+        -0.698005,
+        364.322449,
+        520.145081,
+        81.753548,
+        158.715424,
+        -179.622131
+      ],
+      "gripper": 0
+    },
+    {
+      "name": "return_home",
+      "tcp_pose": [
+        -13.888936,
+        457.010803,
+        572.196289,
+        88.095337,
+        136.238953,
+        175.549698
+      ],
+      "gripper": 0
+    }
+  ]
+}
