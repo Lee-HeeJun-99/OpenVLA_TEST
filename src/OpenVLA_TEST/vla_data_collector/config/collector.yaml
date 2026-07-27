@@ -33,3 +33,36 @@
     move_angular_acceleration_deg_s2: 40.0
     waypoint_pause_sec: 0.2
     jpeg_quality: 95
+
+/dsr01/handguide_recorder:
+  ros__parameters:
+    image_topic: /zed/zed_node/rgb/color/rect/image
+    # service: read /dsr01/aux_control/get_current_posx directly.
+    # topic: use pose_topic, e.g. /doosan/current_pose from doosan_bridge.
+    pose_source: service
+    pose_topic: /doosan/current_pose
+
+    dataset_root: raw_dataset
+    episode_id: auto
+    instruction: pick up the cube
+    task: cube_pick
+
+    # OpenVLA works best with 5-10 Hz continuous demos.
+    record_frequency_hz: 10.0
+    max_image_age_sec: 0.25
+
+    # Avoid recording pause frames as near-zero actions.
+    record_only_when_changed: true
+    min_position_delta_m: 0.001
+    min_rotation_delta_rad: 0.005
+
+    jpeg_quality: 95
+    generate_actions_on_stop: true
+
+    robot_id: dsr01
+    robot_model: a0509
+
+    initial_gripper_state: 1
+    gripper_open_output_index: 1
+    gripper_close_output_index: 2
+    gripper_pulse_time_sec: 1.0

@@ -53,13 +53,29 @@ the collector package manually:
 export PYTHONPATH=~/robot_ws/src/OpenVLA_TEST/vla_data_collector:$PYTHONPATH
 ```
 
-## 3. Build TFDS/RLDS
+## 3. Optional: Resample Mixed-Hz Episodes
+
+If the raw set contains both 5 Hz and 10 Hz demonstrations, resample it to a
+fixed 10 Hz raw dataset first. Large pause gaps are not filled, so this does
+not reintroduce long stationary stretches.
+
+```bash
+python3 -m vla_data_collector.resample_dataset \
+  ~/robot_ws/raw_dataset \
+  ~/robot_ws/raw_dataset_resampled_10hz \
+  --target-hz 10 \
+  --max-gap-sec 0.5
+```
+
+Use the resampled directory in the build command below.
+
+## 4. Build TFDS/RLDS
 
 ```bash
 cd ~/robot_ws/src/OpenVLA_TEST/rlds/doosan_a0509
 
 python build_dataset.py \
-  --raw-dataset-dir ~/robot_ws/raw_dataset \
+  --raw-dataset-dir ~/robot_ws/raw_dataset_resampled_10hz \
   --data-dir ~/tensorflow_datasets \
   --overwrite
 ```

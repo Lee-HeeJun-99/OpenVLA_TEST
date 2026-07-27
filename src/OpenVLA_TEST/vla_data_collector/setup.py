@@ -25,7 +25,9 @@ setup(
         "console_scripts": [
             "waypoint_recorder = vla_data_collector.waypoint_recorder:main",
             "dataset_recorder = vla_data_collector.dataset_recorder:main",
+            "handguide_recorder = vla_data_collector.handguide_recorder:main",
             "make_actions = vla_data_collector.make_actions:main",
+            "resample_dataset = vla_data_collector.resample_dataset:main",
             "validate_episode = vla_data_collector.validate_episode:main",
         ],
     },
