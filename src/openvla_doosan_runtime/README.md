@@ -156,6 +156,32 @@ ros2 topic echo /doosan/status
 ros2 topic echo /vla/model_status
 ```
 
+To diagnose repeated actions without moving the robot, restart the runtime with
+the dry-run config:
+
+```bash
+ros2 launch openvla_doosan_runtime runtime.launch.py \
+  config:=/home/ubuntu/robot_ws/install/openvla_doosan_runtime/share/openvla_doosan_runtime/config/runtime_debug_bag.yaml \
+  inference_python:=$CONDA_PREFIX/bin/python3
+```
+
+Then record the model input/output topics while starting one episode:
+
+```bash
+ros2 bag record --compression-mode file --compression-format zstd \
+  -o ~/robot_ws/src/openvla_doosan_runtime/bags/vla_debug_dryrun \
+  /vla/image_rgb /vla/raw_action /vla/target_pose /doosan/current_pose \
+  /vla/model_status /vla/action_status /vla/action_valid /vla/robot_ready \
+  /vla/episode_status /vla/instruction /vla/enable /doosan/status /rosout
+```
+
+Summarize the bag:
+
+```bash
+python3 ~/robot_ws/src/openvla_doosan_runtime/scripts/analyze_vla_bag.py \
+  ~/robot_ws/src/openvla_doosan_runtime/bags/vla_debug_dryrun
+```
+
 For the first test, keep the controller in a safe condition and verify that the
 target changes by no more than the configured `max_translation_step_mm`.
 

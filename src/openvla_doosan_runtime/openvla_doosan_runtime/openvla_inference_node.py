@@ -34,8 +34,7 @@ class OpenVLAInferenceNode(Node):
 
         self.declare_parameter(
             "model_path",
-            "/home/ubuntu/robot_ws/src/openvla/runs/"
-            "openvla-7b+doosan_a0509+b16+lr-0.0005+lora-r32+dropout-0.0--image_aug",
+            "/home/ubuntu/robot_ws/src/openvla/runs/47a0ec7fc4ec123775a391911046cf33cf9ed83f+doosan_a0509+b8+lr-0.0005+lora-r32+dropout-0.0--handguide_10hz_resampled--image_aug",
         )
         self.declare_parameter("unnorm_key", "doosan_a0509")
         self.declare_parameter("device", "cuda:0")

@@ -30,6 +30,7 @@ class DoosanBridgeNode(Node):
         self.declare_parameter("motion_time_sec", 0.0)
         self.declare_parameter("reference", 0)  # DR_BASE
         self.declare_parameter("motion_timeout_sec", 10.0)
+        self.declare_parameter("dry_run", False)
 
         self.declare_parameter("gripper_open_output_index", 1)
         self.declare_parameter("gripper_close_output_index", 2)
@@ -161,6 +162,10 @@ class DoosanBridgeNode(Node):
     def _execute_step(self, target) -> None:
         done = Bool()
         try:
+            if bool(self.get_parameter("dry_run").value):
+                self._execute_dry_run_step(target, done)
+                return
+
             if not self.move_line_client.wait_for_service(timeout_sec=2.0):
                 raise RuntimeError("move_line service unavailable")
 
@@ -215,6 +220,23 @@ class DoosanBridgeNode(Node):
             self.get_logger().error(str(exc))
         finally:
             self.motion_busy = False
+
+    def _execute_dry_run_step(self, target, done: Bool) -> None:
+        with self.lock:
+            gripper_open = self.pending_gripper_open
+            self.pending_gripper_open = None
+            if gripper_open is not None:
+                self.last_gripper_open = gripper_open
+
+        self._publish_status(f"dry_run_step:target={target}")
+        if gripper_open is None:
+            self._publish_status("dry_run_gripper_unchanged")
+        else:
+            self._publish_status(f"dry_run_gripper:open={gripper_open}")
+
+        done.data = True
+        self.done_publisher.publish(done)
+        self._publish_status("dry_run_step_done")
 
     def _set_gripper(self, open_gripper: bool) -> None:
         output_index = int(
