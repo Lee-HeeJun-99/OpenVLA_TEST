@@ -29,6 +29,8 @@ openvla_inference:
     temperature: 1.0
     top_p: 1.0
 
+    require_robot_cycle: false
+
     log_image_hash: true
     log_image_statistics: true
 
