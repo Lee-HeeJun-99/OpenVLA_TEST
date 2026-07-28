@@ -11,9 +11,11 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     config = LaunchConfiguration("config")
     inference_python = LaunchConfiguration("inference_python")
-    default_inference_python = os.path.join(
-        os.environ.get("CONDA_PREFIX", ""), "bin", "python3"
-    )
+    default_inference_python = os.environ.get("OPENVLA_PYTHON", "")
+    if not default_inference_python:
+        default_inference_python = os.path.join(
+            os.environ.get("CONDA_PREFIX", ""), "bin", "python3"
+        )
     if not os.path.exists(default_inference_python):
         default_inference_python = sys.executable
 
