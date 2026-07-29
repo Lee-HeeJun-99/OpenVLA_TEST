@@ -23,8 +23,10 @@ class DoosanBridgeNode(Node):
     Service bridge for the Doosan A0509.
 
     Execution rules:
-      1. When /vla/enable becomes True, the gripper is opened first.
-      2. /vla/robot_ready remains False until initial gripper opening finishes.
+      1. When /vla/enable becomes True, the gripper is opened first only if
+         use_gripper is true.
+      2. /vla/robot_ready remains False until initial gripper opening finishes
+         or is skipped because use_gripper is false.
       3. Only one MoveLine operation is executed at a time.
       4. While moving, newly received targets overwrite the previous pending
          target. Only the latest target is executed next.
@@ -54,6 +56,7 @@ class DoosanBridgeNode(Node):
         self.declare_parameter("reference", 0)  # DR_BASE
         self.declare_parameter("motion_timeout_sec", 10.0)
         self.declare_parameter("dry_run", False)
+        self.declare_parameter("use_gripper", True)
 
         # ------------------------------------------------------------------
         # Gripper digital output parameters
@@ -175,6 +178,10 @@ class DoosanBridgeNode(Node):
         self.pose_request_pending = False
         self.emergency_stop_requested = False
 
+        # Last state actually published on /vla/robot_ready.
+        # This is used for transition logging and immediate state updates.
+        self.last_published_ready: Optional[bool] = None
+
         self.shutdown_event = threading.Event()
 
         # ------------------------------------------------------------------
@@ -243,9 +250,13 @@ class DoosanBridgeNode(Node):
                 self.pending_target = None
                 self.pending_gripper_open = None
 
-                # Every episode must physically start with the gripper open.
-                self.initial_gripper_ready = False
-                self.initial_gripper_required = True
+                if bool(self.get_parameter("use_gripper").value):
+                    # Every gripper-enabled episode physically starts open.
+                    self.initial_gripper_ready = False
+                    self.initial_gripper_required = True
+                else:
+                    self.initial_gripper_ready = True
+                    self.initial_gripper_required = False
 
                 self.command_condition.notify_all()
 
@@ -260,27 +271,65 @@ class DoosanBridgeNode(Node):
 
                 self.command_condition.notify_all()
 
+        # Publish the state transition immediately instead of waiting for
+        # the 100 ms ready timer.
+        self._publish_ready()
+
         if requested_enabled:
-            self._publish_status(
-                "enabled:initial_gripper_open_requested"
-            )
+            if bool(self.get_parameter("use_gripper").value):
+                self._publish_status(
+                    "enabled:initial_gripper_open_requested"
+                )
+            else:
+                self._publish_status("enabled:gripper_disabled")
         else:
             self._publish_status("disabled")
 
-    def _publish_ready(self) -> None:
-        with self.state_lock:
-            ready = bool(
-                self.enabled
-                and self.initial_gripper_ready
-                and not self.motion_busy
-                and not self.gripper_busy
-                and self.last_pose is not None
-                and not self.emergency_stop_requested
+    def _compute_ready_locked(self) -> bool:
+        """Return the current ready state while state_lock is held."""
+        return bool(
+            self.enabled
+            and self.initial_gripper_ready
+            and not self.motion_busy
+            and not self.gripper_busy
+            and self.pending_target is None
+            and self.last_pose is not None
+            and not self.emergency_stop_requested
+        )
+
+    def _publish_ready_value(
+        self,
+        ready: bool,
+        reason: str = "",
+    ) -> None:
+        """Publish a ready value immediately.
+
+        The periodic timer is retained as a heartbeat, but command-state
+        transitions call this method directly so a short movement cannot hide
+        the False state between two 100 ms timer ticks.
+        """
+        msg = Bool()
+        msg.data = bool(ready)
+        self.ready_publisher.publish(msg)
+
+        state_changed = (
+            self.last_published_ready is None
+            or self.last_published_ready != bool(ready)
+        )
+        self.last_published_ready = bool(ready)
+
+        if state_changed:
+            suffix = f":{reason}" if reason else ""
+            self.get_logger().info(
+                f"robot_ready={bool(ready)}{suffix}"
             )
 
-        msg = Bool()
-        msg.data = ready
-        self.ready_publisher.publish(msg)
+    def _publish_ready(self) -> None:
+        """Periodic ready-state heartbeat."""
+        with self.state_lock:
+            ready = self._compute_ready_locked()
+
+        self._publish_ready_value(ready)
 
     # ======================================================================
     # Pose polling
@@ -408,18 +457,34 @@ class DoosanBridgeNode(Node):
         if reject_reason is not None:
             self._publish_status(reject_reason)
         else:
+            # pending_target is part of the ready condition, so this emits
+            # False immediately on command acceptance.
+            self._publish_ready()
             self._publish_status(accepted_status)
 
     def _gripper_callback(self, msg: Bool) -> None:
         requested_open = bool(msg.data)
+        use_gripper = bool(
+            self.get_parameter("use_gripper").value
+        )
 
         with self.command_condition:
             if not self.enabled:
                 return
 
-            # Keep only the most recent requested gripper state.
-            self.pending_gripper_open = requested_open
+            if use_gripper:
+                # Keep only the most recent requested gripper state.
+                self.pending_gripper_open = requested_open
+            else:
+                self.pending_gripper_open = None
+
             self.command_condition.notify_all()
+
+        if not use_gripper:
+            self._publish_status(
+                f"gripper_ignored:disabled:open={requested_open}"
+            )
+            return
 
         self._publish_status(
             f"gripper_request:open={requested_open}"
@@ -480,9 +545,17 @@ class DoosanBridgeNode(Node):
                     operation = "move_step"
 
             if operation == "initial_gripper_open":
+                self._publish_ready_value(
+                    False,
+                    "initial_gripper_open_start",
+                )
                 self._execute_initial_gripper_open()
 
             elif operation == "move_step" and target is not None:
+                self._publish_ready_value(
+                    False,
+                    "motion_start",
+                )
                 self._execute_motion_step(target)
 
     # ======================================================================
@@ -495,7 +568,13 @@ class DoosanBridgeNode(Node):
                 "initial_gripper_open_start"
             )
 
-            if bool(
+            if not bool(
+                self.get_parameter("use_gripper").value
+            ):
+                self._publish_status(
+                    "initial_gripper_open_skipped:disabled"
+                )
+            elif bool(
                 self.get_parameter("dry_run").value
             ):
                 self._publish_status(
@@ -546,6 +625,8 @@ class DoosanBridgeNode(Node):
             with self.command_condition:
                 self.gripper_busy = False
                 self.command_condition.notify_all()
+
+            self._publish_ready()
 
     # ======================================================================
     # Motion execution
@@ -600,6 +681,11 @@ class DoosanBridgeNode(Node):
                 self.motion_busy = False
                 self.gripper_busy = False
                 self.command_condition.notify_all()
+
+            # Publish the completed state immediately. If a new target arrived
+            # during motion, pending_target keeps ready=False; otherwise this
+            # produces the required False -> True transition.
+            self._publish_ready()
 
             if step_success:
                 # If another target arrived during this motion, the worker
@@ -718,6 +804,17 @@ class DoosanBridgeNode(Node):
     # ======================================================================
 
     def _execute_pending_gripper(self) -> None:
+        if not bool(
+            self.get_parameter("use_gripper").value
+        ):
+            with self.command_condition:
+                self.pending_gripper_open = None
+                self.gripper_busy = False
+                self.command_condition.notify_all()
+
+            self._publish_status("gripper_skipped:disabled")
+            return
+
         with self.command_condition:
             requested_open = self.pending_gripper_open
             self.pending_gripper_open = None
@@ -930,6 +1027,10 @@ class DoosanBridgeNode(Node):
 
             self.command_condition.notify_all()
 
+        self._publish_ready_value(
+            False,
+            "emergency_stop",
+        )
         self._send_stop()
         self._publish_status("emergency_stopped")
 
@@ -1007,6 +1108,8 @@ class DoosanBridgeNode(Node):
             f"{self.get_parameter('motion_timeout_sec').value}, "
             f"dry_run="
             f"{self.get_parameter('dry_run').value}, "
+            f"use_gripper="
+            f"{self.get_parameter('use_gripper').value}, "
             f"gripper_open_output_index="
             f"{self.get_parameter('gripper_open_output_index').value}, "
             f"gripper_close_output_index="
