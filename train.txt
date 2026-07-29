@@ -1,0 +1,25 @@
+  env PYTHONNOUSERSITE=1 \
+  HF_HOME=/home/ubuntu/robot_ws/src/openvla/.cache/huggingface \
+  WANDB_MODE=offline \
+  /home/ubuntu/miniconda3/envs/openvla/bin/torchrun \
+    --standalone --nnodes 1 --nproc-per-node 1 \
+    vla-scripts/finetune.py \
+    --vla_path openvla/openvla-7b \
+    --data_root_dir /home/ubuntu/robot_ws/src/tensorflow_datasets \
+    --dataset_name doosan_a0509 \
+    --run_root_dir /home/ubuntu/robot_ws/src/openvla/runs \
+    --adapter_tmp_dir /home/ubuntu/robot_ws/src/openvla/adapter-tmp \
+    --lora_rank 32 \
+    --batch_size 1 \
+    --grad_accumulation_steps 16 \
+    --learning_rate 5e-4 \
+    --image_aug True \
+    --max_steps 2000 \
+    --save_steps 500 \
+    --shuffle_buffer_size 1000
+
+  24GB에서 OOM이 나면 다음 순서로 낮추긱
+
+  - --batch_size 1 유지
+  - --grad_accumulation_steps만 키우기
+  - 그래도 OOM이면 --use_quantization True 추가
