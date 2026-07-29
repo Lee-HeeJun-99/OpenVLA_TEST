@@ -8,3 +8,9 @@ action clipping이 너무 강함
 4. 학습과 추론 이미지 구도 또는 전처리가 다름
 5. 새로운 Doosan embodiment 자체의 차이
 6. 224×224 해상도 자체의 한계
+
+ros2 topic pub --once /vla/enable \
+  std_msgs/msg/Bool "{data: true}"
+
+ros2 topic pub --once /vla/instruction \
+  std_msgs/msg/String "{data: 'pick up the cube'}"
