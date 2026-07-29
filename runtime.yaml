@@ -3,14 +3,15 @@ camera_adapter:
     input_topic: /zed/zed_node/rgb/color/rect/image
     output_topic: /vla/image_rgb
 
-    output_width: <ZED 원본 가로 해상도>    # ← 640에서 원본 값으로
-    output_height: <ZED 원본 세로 해상도>   # ← 480에서 원본 값으로
+    # ZED 원본 해상도로 교체 필요 (ros2 topic echo ... --field height/width
+    # 또는 학습 데이터 jpg 파일의 실제 크기로 확인한 값을 넣을 것)
+    output_width: 640
+    output_height: 480
 
-    center_crop_square: false               # ← 그대로 false 유지
+    center_crop_square: false
     flip_horizontal: false
 
     log_every_n_frames: 100
-    
 
 openvla_inference:
   ros__parameters:
@@ -37,6 +38,9 @@ openvla_inference:
 
     repeat_action_epsilon: 1.0e-5
     repeated_action_warn_count: 3
+
+    # step_done 이벤트가 유실됐을 때를 대비한 watchdog 타임아웃(초)
+    command_outstanding_timeout_sec: 2.0
 
 action_adapter:
   ros__parameters:
