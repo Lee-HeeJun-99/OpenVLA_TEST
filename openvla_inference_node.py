@@ -127,11 +127,6 @@ class OpenVLAInferenceNode(Node):
         )
 
         self.declare_parameter(
-            "log_image_statistics",
-            True,
-        )
-
-        self.declare_parameter(
             "repeat_action_epsilon",
             1.0e-5,
         )
@@ -139,6 +134,16 @@ class OpenVLAInferenceNode(Node):
         self.declare_parameter(
             "repeated_action_warn_count",
             3,
+        )
+
+        self.declare_parameter(
+            "log_gpu_memory",
+            True,
+        )
+
+        self.declare_parameter(
+            "slow_inference_warn_sec",
+            0.5,
         )
 
         # ================================================================
@@ -208,12 +213,6 @@ class OpenVLAInferenceNode(Node):
             ).value
         )
 
-        self.log_image_statistics = bool(
-            self.get_parameter(
-                "log_image_statistics"
-            ).value
-        )
-
         self.repeat_action_epsilon = max(
             0.0,
             float(
@@ -228,6 +227,21 @@ class OpenVLAInferenceNode(Node):
             int(
                 self.get_parameter(
                     "repeated_action_warn_count"
+                ).value
+            ),
+        )
+
+        self.log_gpu_memory = bool(
+            self.get_parameter(
+                "log_gpu_memory"
+            ).value
+        )
+
+        self.slow_inference_warn_sec = max(
+            0.0,
+            float(
+                self.get_parameter(
+                    "slow_inference_warn_sec"
                 ).value
             ),
         )
@@ -272,6 +286,7 @@ class OpenVLAInferenceNode(Node):
 
         self.last_action: Optional[np.ndarray] = None
         self.action_repeat_count = 0
+        self.last_image_hash = ""
 
         self.model = None
         self.processor = None
@@ -393,7 +408,7 @@ class OpenVLAInferenceNode(Node):
 
         required_files = (
             "config.json",
-            "model.safetensors",
+            "model.safetensors.index.json",
             "processor_config.json",
             "dataset_statistics.json",
         )
@@ -522,6 +537,14 @@ class OpenVLAInferenceNode(Node):
             else:
                 raise
 
+        self.model.norm_stats = statistics
+
+        if hasattr(
+            self.model,
+            "config",
+        ):
+            self.model.config.norm_stats = statistics
+
         self.model = self.model.to(
             self.device_name
         )
@@ -537,9 +560,25 @@ class OpenVLAInferenceNode(Node):
                 "Check that this is an OpenVLA checkpoint."
             )
 
+        if hasattr(
+            self.model,
+            "get_action_dim",
+        ):
+            action_dim = self.model.get_action_dim(
+                self.unnorm_key
+            )
+
+            if action_dim != ACTION_DIM:
+                raise ValueError(
+                    f"Expected {ACTION_DIM}-D action statistics "
+                    f"for unnorm_key '{self.unnorm_key}', "
+                    f"got {action_dim}"
+                )
+
         self.get_logger().info(
             f"Model loaded on {self.device_name} "
-            f"with dtype={torch_dtype}"
+            f"with dtype={torch_dtype} | "
+            f"norm_stats_keys={list(statistics.keys())}"
         )
 
     # ================================================================
@@ -637,6 +676,7 @@ class OpenVLAInferenceNode(Node):
 
             self.last_action = None
             self.action_repeat_count = 0
+            self.last_image_hash = ""
 
             if enabled:
                 # 현재 이미지도 한 번 사용할 수 있도록 초기화
@@ -761,6 +801,8 @@ class OpenVLAInferenceNode(Node):
         instruction: str,
         generation: int,
     ) -> None:
+        started_at = time.perf_counter()
+
         try:
             action = self._predict_action(
                 image=image,
@@ -798,11 +840,17 @@ class OpenVLAInferenceNode(Node):
                     )
                     return
 
-                repeat_count = (
-                    self._update_action_repeat_count_locked(
+                repeat_count, action_delta = (
+                    self._update_action_metrics_locked(
                         action
                     )
                 )
+
+                image_changed = (
+                    not self.last_image_hash
+                    or image_hash != self.last_image_hash
+                )
+                self.last_image_hash = image_hash
 
                 if self.require_robot_cycle:
                     # 실제 로봇 모드에서는 다음 ready cycle을 기다림
@@ -822,14 +870,18 @@ class OpenVLAInferenceNode(Node):
                 True
             )
 
+            inference_sec = time.perf_counter() - started_at
+
             self._log_inference(
                 action=action,
-                image=image_array,
                 image_id=image_id,
                 image_stamp=image_stamp,
                 image_hash=image_hash,
+                image_changed=image_changed,
                 instruction=instruction,
                 repeat_count=repeat_count,
+                action_delta=action_delta,
+                inference_sec=inference_sec,
             )
 
         except Exception as exc:
@@ -950,27 +1002,33 @@ class OpenVLAInferenceNode(Node):
 
         return action
 
-    def _update_action_repeat_count_locked(
+    def _update_action_metrics_locked(
         self,
         action: np.ndarray,
-    ) -> int:
+    ) -> tuple[int, float]:
         if self.last_action is None:
             self.action_repeat_count = 0
-
-        elif np.allclose(
-            action,
-            self.last_action,
-            rtol=0.0,
-            atol=self.repeat_action_epsilon,
-        ):
-            self.action_repeat_count += 1
+            action_delta = float("nan")
 
         else:
-            self.action_repeat_count = 0
+            action_delta = float(
+                np.linalg.norm(action - self.last_action)
+            )
+
+            if np.allclose(
+                action,
+                self.last_action,
+                rtol=0.0,
+                atol=self.repeat_action_epsilon,
+            ):
+                self.action_repeat_count += 1
+
+            else:
+                self.action_repeat_count = 0
 
         self.last_action = action.copy()
 
-        return self.action_repeat_count
+        return self.action_repeat_count, action_delta
 
     @staticmethod
     def _calculate_image_hash(
@@ -987,63 +1045,74 @@ class OpenVLAInferenceNode(Node):
     def _log_inference(
         self,
         action: np.ndarray,
-        image: np.ndarray,
         image_id: int,
         image_stamp: str,
         image_hash: str,
+        image_changed: bool,
         instruction: str,
         repeat_count: int,
+        action_delta: float,
+        inference_sec: float,
     ) -> None:
+        delta_text = (
+            "first"
+            if not np.isfinite(action_delta)
+            else f"{action_delta:.6e}"
+        )
+
         fields = [
             f"image_id={image_id}",
             f"stamp={image_stamp}",
+            f"image_changed={image_changed}",
             f"instruction='{instruction}'",
-            (
-                "action="
-                + np.array2string(
-                    action,
-                    precision=6,
-                )
+            "action=" + np.array2string(
+                action,
+                precision=6,
+                suppress_small=False,
             ),
+            f"action_delta_l2={delta_text}",
             f"repeat_count={repeat_count}",
+            f"inference_ms={inference_sec * 1000.0:.1f}",
         ]
 
         if self.log_image_hash:
-            fields.append(
-                f"image_hash={image_hash}"
-            )
+            fields.append(f"image_hash={image_hash}")
 
-        if self.log_image_statistics:
+        if (
+            self.log_gpu_memory
+            and self.device_name.startswith("cuda")
+            and torch.cuda.is_available()
+        ):
+            device = torch.device(self.device_name)
+            allocated_mb = (
+                torch.cuda.memory_allocated(device)
+                / (1024.0 ** 2)
+            )
+            reserved_mb = (
+                torch.cuda.memory_reserved(device)
+                / (1024.0 ** 2)
+            )
             fields.extend(
                 [
-                    f"shape={tuple(image.shape)}",
-                    f"min={int(image.min())}",
-                    f"max={int(image.max())}",
-                    (
-                        f"mean="
-                        f"{float(image.mean()):.3f}"
-                    ),
-                    (
-                        f"std="
-                        f"{float(image.std()):.3f}"
-                    ),
+                    f"gpu_allocated_mb={allocated_mb:.1f}",
+                    f"gpu_reserved_mb={reserved_mb:.1f}",
                 ]
             )
 
         log_text = " | ".join(fields)
 
-        if (
-            repeat_count
-            >= self.repeated_action_warn_count
-        ):
-            self.get_logger().warning(
-                log_text
+        should_warn = (
+            repeat_count >= self.repeated_action_warn_count
+            or (
+                self.slow_inference_warn_sec > 0.0
+                and inference_sec >= self.slow_inference_warn_sec
             )
+        )
 
+        if should_warn:
+            self.get_logger().warning(log_text)
         else:
-            self.get_logger().info(
-                log_text
-            )
+            self.get_logger().info(log_text)
 
     # ================================================================
     # Image preprocessing
@@ -1053,44 +1122,31 @@ class OpenVLAInferenceNode(Node):
         self,
         image: Image.Image,
     ) -> Image.Image:
-        if math.isclose(
-            self.center_crop_scale,
-            1.0,
-        ):
-            return image
-
         width, height = image.size
 
-        crop_width = max(
-            1,
-            int(
-                width
-                * self.center_crop_scale
-            ),
-        )
+        # Match the training pipeline more closely:
+        # first remove aspect-ratio distortion with a centered square crop,
+        # then apply the configured scale (e.g. 0.9) inside that square.
+        crop_size = min(width, height)
 
-        crop_height = max(
-            1,
-            int(
-                height
-                * self.center_crop_scale
-            ),
-        )
+        if not math.isclose(self.center_crop_scale, 1.0):
+            crop_size = max(
+                1,
+                int(
+                    crop_size
+                    * self.center_crop_scale
+                ),
+            )
 
-        left = (
-            width - crop_width
-        ) // 2
-
-        top = (
-            height - crop_height
-        ) // 2
+        left = (width - crop_size) // 2
+        top = (height - crop_size) // 2
 
         return image.crop(
             (
                 left,
                 top,
-                left + crop_width,
-                top + crop_height,
+                left + crop_size,
+                top + crop_size,
             )
         )
 
