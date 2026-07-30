@@ -13,7 +13,7 @@ camera_adapter:
 
 openvla_inference:
   ros__parameters:
-    model_path: "/home/ubuntu/robot_ws/src/openvla/runs/47a0ec7fc4ec123775a391911046cf33cf9ed83f+doosan_a0509+b8+lr-0.0005+lora-r32+dropout-0.0--handguide_10hz_resampled--image_aug"
+    model_path: "/home/ubuntu/robot_ws/src/openvla/runs/openvla-7b+doosan_a0509+b16+lr-0.0005+lora-r32+dropout-0.0--image_aug--500_chkpt"
 
     unnorm_key: "doosan_a0509"
 
@@ -29,7 +29,7 @@ openvla_inference:
     temperature: 1.0
     top_p: 1.0
 
-    require_robot_cycle: false
+    require_robot_cycle: true
 
     log_image_hash: true
     log_image_statistics: true
@@ -58,8 +58,8 @@ action_adapter:
 
     axis_sign: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 
-    workspace_min: [-100.0, -400.0, 20.0, -360.0, -360.0, -360.0]
-    workspace_max: [750.0, 400.0, 700.0, 360.0, 360.0, 360.0]
+    workspace_min: [-2000.0, -2000.0, -1000.0, -360.0, -360.0, -360.0]
+    workspace_max: [2000.0, 2000.0, 2000.0, 360.0, 360.0, 360.0]
 
 doosan_bridge:
   ros__parameters:
@@ -86,7 +86,9 @@ doosan_bridge:
 
     gripper_open_pulse_count: 2
     gripper_close_pulse_count: 1
-    gripper_pulse_time_sec: 1.0
+    gripper_pulse_time_sec: 4.0
+    gripper_open_pulse_time_sec: 1.0
+    gripper_close_pulse_time_sec: 4.0
 
 episode_manager:
   ros__parameters:

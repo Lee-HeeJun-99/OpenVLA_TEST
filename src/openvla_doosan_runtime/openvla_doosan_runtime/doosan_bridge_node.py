@@ -70,6 +70,8 @@ class DoosanBridgeNode(Node):
         self.declare_parameter("gripper_open_pulse_count", 2)
         self.declare_parameter("gripper_close_pulse_count", 1)
         self.declare_parameter("gripper_pulse_time_sec", 1.0)
+        self.declare_parameter("gripper_open_pulse_time_sec", -1.0)
+        self.declare_parameter("gripper_close_pulse_time_sec", -1.0)
 
         # ------------------------------------------------------------------
         # ROS service clients
@@ -820,10 +822,20 @@ class DoosanBridgeNode(Node):
             if open_gripper
             else "gripper_close"
         )
+        opposite_prefix = (
+            "gripper_close"
+            if open_gripper
+            else "gripper_open"
+        )
 
         output_index = int(
             self.get_parameter(
                 f"{parameter_prefix}_output_index"
+            ).value
+        )
+        opposite_output_index = int(
+            self.get_parameter(
+                f"{opposite_prefix}_output_index"
             ).value
         )
 
@@ -836,6 +848,18 @@ class DoosanBridgeNode(Node):
         if not 1 <= output_index <= 6:
             raise ValueError(
                 "gripper tool output index must be 1..6:"
+                f"index={output_index}"
+            )
+
+        if not 1 <= opposite_output_index <= 6:
+            raise ValueError(
+                "gripper opposite tool output index must be 1..6:"
+                f"index={opposite_output_index}"
+            )
+
+        if output_index == opposite_output_index:
+            raise ValueError(
+                "gripper open/close output indices must be different:"
                 f"index={output_index}"
             )
 
@@ -866,20 +890,34 @@ class DoosanBridgeNode(Node):
 
         pulse_time = float(
             self.get_parameter(
-                "gripper_pulse_time_sec"
+                f"{parameter_prefix}_pulse_time_sec"
             ).value
         )
 
         if pulse_time < 0.0:
+            pulse_time = float(
+                self.get_parameter(
+                    "gripper_pulse_time_sec"
+                ).value
+            )
+
+        if pulse_time < 0.0:
             raise ValueError(
-                "gripper_pulse_time_sec must not be negative"
+                "gripper pulse time must not be negative"
             )
 
         self._publish_status(
             "gripper_start:"
             f"open={open_gripper}, "
             f"output_index={output_index}, "
-            f"pulse_count={pulse_count}"
+            f"opposite_output_index={opposite_output_index}, "
+            f"pulse_count={pulse_count}, "
+            f"pulse_time_sec={pulse_time}"
+        )
+
+        self._set_tool_output(
+            opposite_output_index,
+            inactive_value,
         )
 
         for pulse_index in range(pulse_count):
@@ -1058,7 +1096,11 @@ class DoosanBridgeNode(Node):
             f"gripper_close_pulse_count="
             f"{self.get_parameter('gripper_close_pulse_count').value}, "
             f"gripper_pulse_time_sec="
-            f"{self.get_parameter('gripper_pulse_time_sec').value}"
+            f"{self.get_parameter('gripper_pulse_time_sec').value}, "
+            f"gripper_open_pulse_time_sec="
+            f"{self.get_parameter('gripper_open_pulse_time_sec').value}, "
+            f"gripper_close_pulse_time_sec="
+            f"{self.get_parameter('gripper_close_pulse_time_sec').value}"
         )
 
     # ======================================================================

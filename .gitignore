@@ -35,3 +35,12 @@ src/openvla/adapter-tmp/
 *.pth
 *.ckpt
 *.safetensors
+
+analysis/
+bags/
+*.log
+
+raw_dataset_10hz/
+raw_dataset_resampled_10hz/
+src/tensorflow_datasets_10hz_full/
+
