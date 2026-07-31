@@ -1,0 +1,75 @@
+/dsr01/waypoint_recorder:
+  ros__parameters:
+    output_path: waypoints/cube_pick.json
+    instruction: pick up the cube
+    task: cube_pick
+
+    robot_id: dsr01
+    robot_model: a0509
+
+    pose_decimals: 6
+    load_existing: false
+
+
+/dsr01/dataset_recorder:
+  ros__parameters:
+    image_topic: /zed/zed_node/rgb/color/rect/image
+    waypoint_path: waypoints/cube_pick.json
+    dataset_root: raw_dataset
+    episode_id: auto
+    record_frequency_hz: 10.0
+
+    robot_id: dsr01
+    robot_model: a0509
+
+    gripper_open_output_index: 1
+    gripper_close_output_index: 2
+    gripper_pulse_time_sec: 1.0
+
+    move_velocity_mm_s: 30.0
+    move_angular_velocity_deg_s: 20.0
+    move_acceleration_mm_s2: 60.0
+    move_angular_acceleration_deg_s2: 40.0
+
+    waypoint_pause_sec: 0.05
+    jpeg_quality: 95
+
+
+/dsr01/handguide_recorder:
+  ros__parameters:
+    image_topic: /zed/zed_node/rgb/color/rect/image
+
+    # /doosan/current_pose가
+    # [x_mm, y_mm, z_mm, rx_deg, ry_deg, rz_deg]를 안정적으로 발행할 때만
+    # topic으로 변경하십시오.
+    pose_source: service
+    pose_topic: /doosan/current_pose
+
+    dataset_root: raw_dataset
+    episode_id: auto
+    instruction: pick up the cube
+    task: cube_pick
+
+    record_frequency_hz: 10.0
+    max_image_age_sec: 0.08
+    max_pose_age_sec: 0.05
+
+    # OpenVLA용 고정 주기 데이터 수집
+    record_only_when_changed: false
+
+    # record_only_when_changed=true일 때만 사용
+    min_position_delta_m: 0.001
+    min_rotation_delta_rad: 0.005
+
+    jpeg_quality: 95
+    generate_actions_on_stop: true
+    final_hold_samples: 3
+
+    robot_id: dsr01
+    robot_model: a0509
+
+    # 0=closed, 1=open
+    initial_gripper_state: 1
+    gripper_open_output_index: 1
+    gripper_close_output_index: 2
+    gripper_pulse_time_sec: 1.0
