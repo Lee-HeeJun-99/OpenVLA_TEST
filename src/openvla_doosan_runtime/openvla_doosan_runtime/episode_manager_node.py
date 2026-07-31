@@ -91,13 +91,20 @@ class EpisodeManagerNode(Node):
             history=HistoryPolicy.KEEP_LAST,
         )
 
+        enable_qos = QoSProfile(
+            depth=1,
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+        )
+
         # ------------------------------------------------------------------
         # Publishers
         # ------------------------------------------------------------------
         self.enable_publisher = self.create_publisher(
             Bool,
             "/vla/enable",
-            default_qos,
+            enable_qos,
         )
 
         self.instruction_publisher = self.create_publisher(
@@ -436,10 +443,15 @@ class EpisodeManagerNode(Node):
         now = time.monotonic()
 
         if self.state == EpisodeState.STARTING:
+            # Re-publish while starting so nodes that finish initialization
+            # late, especially the model-loading inference node, do not miss
+            # the one-shot enable command.
+            self._set_enabled(True)
             self._check_startup_timeout(now)
             return
 
         if self.state == EpisodeState.RUNNING:
+            self._set_enabled(True)
             self._check_episode_timeout(now)
 
     def _check_startup_timeout(

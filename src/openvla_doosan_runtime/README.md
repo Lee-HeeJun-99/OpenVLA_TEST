@@ -74,7 +74,10 @@ It currently points to the latest local HF-format checkpoint:
 Runtime defaults:
 
 - `unnorm_key`: `doosan_a0509`
-- `center_crop_scale`: `0.9` because this checkpoint used image augmentation
+- `resize_enabled`: `false`; camera images are passed through at source size
+  and the OpenVLA processor performs the final `224x224` resize
+- `center_crop_enabled`: `false`; `center_crop_scale` is only used when
+  center crop is explicitly enabled
 - inference log includes model-input image stamp/hash and consecutive action
   repeat count
 - action unit: translation `m -> mm`, rotation `rad -> deg`
@@ -248,5 +251,6 @@ A non-image-augmentation checkpoint also exists:
 If you switch `model_path` to that directory, set:
 
 ```yaml
+center_crop_enabled: false
 center_crop_scale: 1.0
 ```

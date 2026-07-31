@@ -96,8 +96,23 @@ class OpenVLAInferenceNode(Node):
         )
 
         self.declare_parameter(
+            "use_training_image_preprocess",
+            False,
+        )
+
+        self.declare_parameter(
+            "image_resize_size",
+            224,
+        )
+
+        self.declare_parameter(
+            "center_crop_enabled",
+            False,
+        )
+
+        self.declare_parameter(
             "center_crop_scale",
-            1.0,
+            0.9,
         )
 
         self.declare_parameter(
@@ -127,11 +142,6 @@ class OpenVLAInferenceNode(Node):
         )
 
         self.declare_parameter(
-            "log_image_statistics",
-            True,
-        )
-
-        self.declare_parameter(
             "repeat_action_epsilon",
             1.0e-5,
         )
@@ -139,6 +149,16 @@ class OpenVLAInferenceNode(Node):
         self.declare_parameter(
             "repeated_action_warn_count",
             3,
+        )
+
+        self.declare_parameter(
+            "log_gpu_memory",
+            True,
+        )
+
+        self.declare_parameter(
+            "slow_inference_warn_sec",
+            0.5,
         )
 
         # ================================================================
@@ -170,6 +190,27 @@ class OpenVLAInferenceNode(Node):
                     "minimum_period_sec"
                 ).value
             ),
+        )
+
+        self.use_training_image_preprocess = bool(
+            self.get_parameter(
+                "use_training_image_preprocess"
+            ).value
+        )
+
+        self.image_resize_size = max(
+            1,
+            int(
+                self.get_parameter(
+                    "image_resize_size"
+                ).value
+            ),
+        )
+
+        self.center_crop_enabled = bool(
+            self.get_parameter(
+                "center_crop_enabled"
+            ).value
         )
 
         self.center_crop_scale = float(
@@ -208,12 +249,6 @@ class OpenVLAInferenceNode(Node):
             ).value
         )
 
-        self.log_image_statistics = bool(
-            self.get_parameter(
-                "log_image_statistics"
-            ).value
-        )
-
         self.repeat_action_epsilon = max(
             0.0,
             float(
@@ -228,6 +263,21 @@ class OpenVLAInferenceNode(Node):
             int(
                 self.get_parameter(
                     "repeated_action_warn_count"
+                ).value
+            ),
+        )
+
+        self.log_gpu_memory = bool(
+            self.get_parameter(
+                "log_gpu_memory"
+            ).value
+        )
+
+        self.slow_inference_warn_sec = max(
+            0.0,
+            float(
+                self.get_parameter(
+                    "slow_inference_warn_sec"
                 ).value
             ),
         )
@@ -259,6 +309,7 @@ class OpenVLAInferenceNode(Node):
 
         self.latest_image_id = 0
         self.last_used_image_id = -1
+        self.first_image_logged = False
 
         self.inference_busy = False
         self.last_inference_attempt_time = 0.0
@@ -272,6 +323,7 @@ class OpenVLAInferenceNode(Node):
 
         self.last_action: Optional[np.ndarray] = None
         self.action_repeat_count = 0
+        self.last_image_hash = ""
 
         self.model = None
         self.processor = None
@@ -369,6 +421,11 @@ class OpenVLAInferenceNode(Node):
             "OpenVLA inference node ready | "
             f"require_robot_cycle={self.require_robot_cycle} | "
             f"minimum_period_sec={self.minimum_period_sec:.3f} | "
+            f"use_training_image_preprocess="
+            f"{self.use_training_image_preprocess} | "
+            f"image_resize_size={self.image_resize_size} | "
+            f"center_crop_enabled={self.center_crop_enabled} | "
+            f"center_crop_scale={self.center_crop_scale:.3f} | "
             f"unnorm_key='{self.unnorm_key}'"
         )
 
@@ -488,6 +545,25 @@ class OpenVLAInferenceNode(Node):
             trust_remote_code=True,
         )
 
+        image_processor = getattr(
+            self.processor,
+            "image_processor",
+            None,
+        )
+
+        if image_processor is not None:
+            self.get_logger().info(
+                "Processor configuration | "
+                f"class={type(image_processor).__name__} | "
+                f"image_resize_strategy="
+                f"{getattr(image_processor, 'image_resize_strategy', None)} | "
+                f"size={getattr(image_processor, 'size', None)} | "
+                f"crop_size={getattr(image_processor, 'crop_size', None)} | "
+                f"do_resize={getattr(image_processor, 'do_resize', None)} | "
+                f"do_center_crop="
+                f"{getattr(image_processor, 'do_center_crop', None)}"
+            )
+
         self.get_logger().info(
             f"Loading model: {model_dir}"
         )
@@ -599,10 +675,6 @@ class OpenVLAInferenceNode(Node):
                 mode="RGB",
             )
 
-            pil_image = self._center_crop(
-                pil_image
-            )
-
             stamp = msg.header.stamp
 
             stamp_text = (
@@ -614,6 +686,16 @@ class OpenVLAInferenceNode(Node):
                 self.latest_image = pil_image
                 self.latest_image_stamp = stamp_text
                 self.latest_image_id += 1
+                image_id = self.latest_image_id
+
+            if not self.first_image_logged:
+                self.first_image_logged = True
+                self.get_logger().info(
+                    "First inference image received | "
+                    f"image_id={image_id} | "
+                    f"shape={tuple(np_image.shape)} | "
+                    f"stamp={stamp_text}"
+                )
 
         except Exception as exc:
             self.get_logger().error(
@@ -661,6 +743,7 @@ class OpenVLAInferenceNode(Node):
 
             self.last_action = None
             self.action_repeat_count = 0
+            self.last_image_hash = ""
 
             if enabled:
                 # 현재 이미지도 한 번 사용할 수 있도록 초기화
@@ -785,9 +868,15 @@ class OpenVLAInferenceNode(Node):
         instruction: str,
         generation: int,
     ) -> None:
+        started_at = time.perf_counter()
+
         try:
+            model_image = self._preprocess_image_for_model(
+                image
+            )
+
             action = self._predict_action(
-                image=image,
+                image=model_image,
                 instruction=instruction,
             )
 
@@ -796,7 +885,7 @@ class OpenVLAInferenceNode(Node):
             )
 
             image_array = np.asarray(
-                image,
+                model_image,
                 dtype=np.uint8,
             )
 
@@ -822,11 +911,17 @@ class OpenVLAInferenceNode(Node):
                     )
                     return
 
-                repeat_count = (
-                    self._update_action_repeat_count_locked(
+                repeat_count, action_delta = (
+                    self._update_action_metrics_locked(
                         action
                     )
                 )
+
+                image_changed = (
+                    not self.last_image_hash
+                    or image_hash != self.last_image_hash
+                )
+                self.last_image_hash = image_hash
 
                 if self.require_robot_cycle:
                     # 실제 로봇 모드에서는 다음 ready cycle을 기다림
@@ -846,14 +941,18 @@ class OpenVLAInferenceNode(Node):
                 True
             )
 
+            inference_sec = time.perf_counter() - started_at
+
             self._log_inference(
                 action=action,
-                image=image_array,
                 image_id=image_id,
                 image_stamp=image_stamp,
                 image_hash=image_hash,
+                image_changed=image_changed,
                 instruction=instruction,
                 repeat_count=repeat_count,
+                action_delta=action_delta,
+                inference_sec=inference_sec,
             )
 
         except Exception as exc:
@@ -974,27 +1073,159 @@ class OpenVLAInferenceNode(Node):
 
         return action
 
-    def _update_action_repeat_count_locked(
+    # ================================================================
+    # Image preprocessing
+    # ================================================================
+
+    def _preprocess_image_for_model(
+        self,
+        image: Image.Image,
+    ) -> Image.Image:
+        image = image.convert("RGB")
+
+        if not (
+            self.use_training_image_preprocess
+            or self.center_crop_enabled
+        ):
+            return image
+
+        try:
+            import tensorflow as tf
+
+            image_array = np.asarray(
+                image,
+                dtype=np.uint8,
+            )
+
+            if self.use_training_image_preprocess:
+                image_tensor = tf.image.encode_jpeg(
+                    image_array
+                )
+                image_tensor = tf.io.decode_image(
+                    image_tensor,
+                    expand_animations=False,
+                    dtype=tf.uint8,
+                )
+                image_tensor = tf.image.resize(
+                    image_tensor,
+                    (
+                        self.image_resize_size,
+                        self.image_resize_size,
+                    ),
+                    method="lanczos3",
+                    antialias=True,
+                )
+                image_tensor = tf.cast(
+                    tf.clip_by_value(
+                        tf.round(image_tensor),
+                        0,
+                        255,
+                    ),
+                    tf.uint8,
+                )
+            else:
+                image_tensor = tf.convert_to_tensor(
+                    image_array,
+                    dtype=tf.uint8,
+                )
+
+            if self.center_crop_enabled:
+                image_tensor = self._center_crop_and_resize(
+                    tf,
+                    image_tensor,
+                )
+
+            return Image.fromarray(
+                image_tensor.numpy(),
+                mode="RGB",
+            )
+
+        except Exception as exc:
+            raise RuntimeError(
+                "training-style image preprocessing failed: "
+                f"{type(exc).__name__}: {exc}"
+            ) from exc
+
+    def _center_crop_and_resize(
+        self,
+        tf,
+        image_tensor,
+    ):
+        crop_side = math.sqrt(
+            self.center_crop_scale
+        )
+        offset = (1.0 - crop_side) / 2.0
+
+        image_float = tf.image.convert_image_dtype(
+            image_tensor,
+            tf.float32,
+        )
+        image_float = tf.expand_dims(
+            image_float,
+            axis=0,
+        )
+
+        boxes = tf.constant(
+            [
+                [
+                    offset,
+                    offset,
+                    offset + crop_side,
+                    offset + crop_side,
+                ]
+            ],
+            dtype=tf.float32,
+        )
+
+        cropped = tf.image.crop_and_resize(
+            image_float,
+            boxes,
+            box_indices=tf.constant([0], dtype=tf.int32),
+            crop_size=(
+                self.image_resize_size,
+                self.image_resize_size,
+            ),
+        )[0]
+
+        cropped = tf.clip_by_value(
+            cropped,
+            0.0,
+            1.0,
+        )
+
+        return tf.image.convert_image_dtype(
+            cropped,
+            tf.uint8,
+            saturate=True,
+        )
+
+    def _update_action_metrics_locked(
         self,
         action: np.ndarray,
-    ) -> int:
+    ) -> tuple[int, float]:
         if self.last_action is None:
             self.action_repeat_count = 0
-
-        elif np.allclose(
-            action,
-            self.last_action,
-            rtol=0.0,
-            atol=self.repeat_action_epsilon,
-        ):
-            self.action_repeat_count += 1
+            action_delta = float("nan")
 
         else:
-            self.action_repeat_count = 0
+            action_delta = float(
+                np.linalg.norm(action - self.last_action)
+            )
+
+            if np.allclose(
+                action,
+                self.last_action,
+                rtol=0.0,
+                atol=self.repeat_action_epsilon,
+            ):
+                self.action_repeat_count += 1
+
+            else:
+                self.action_repeat_count = 0
 
         self.last_action = action.copy()
 
-        return self.action_repeat_count
+        return self.action_repeat_count, action_delta
 
     @staticmethod
     def _calculate_image_hash(
@@ -1011,99 +1242,74 @@ class OpenVLAInferenceNode(Node):
     def _log_inference(
         self,
         action: np.ndarray,
-        image: np.ndarray,
         image_id: int,
         image_stamp: str,
         image_hash: str,
+        image_changed: bool,
         instruction: str,
         repeat_count: int,
+        action_delta: float,
+        inference_sec: float,
     ) -> None:
+        delta_text = (
+            "first"
+            if not np.isfinite(action_delta)
+            else f"{action_delta:.6e}"
+        )
+
         fields = [
             f"image_id={image_id}",
             f"stamp={image_stamp}",
+            f"image_changed={image_changed}",
             f"instruction='{instruction}'",
-            (
-                "action="
-                + np.array2string(
-                    action,
-                    precision=6,
-                )
+            "action=" + np.array2string(
+                action,
+                precision=6,
+                suppress_small=False,
             ),
+            f"action_delta_l2={delta_text}",
             f"repeat_count={repeat_count}",
+            f"inference_ms={inference_sec * 1000.0:.1f}",
         ]
 
         if self.log_image_hash:
-            fields.append(
-                f"image_hash={image_hash}"
-            )
+            fields.append(f"image_hash={image_hash}")
 
-        if self.log_image_statistics:
+        if (
+            self.log_gpu_memory
+            and self.device_name.startswith("cuda")
+            and torch.cuda.is_available()
+        ):
+            device = torch.device(self.device_name)
+            allocated_mb = (
+                torch.cuda.memory_allocated(device)
+                / (1024.0 ** 2)
+            )
+            reserved_mb = (
+                torch.cuda.memory_reserved(device)
+                / (1024.0 ** 2)
+            )
             fields.extend(
                 [
-                    f"shape={tuple(image.shape)}",
-                    f"min={int(image.min())}",
-                    f"max={int(image.max())}",
-                    (
-                        f"mean="
-                        f"{float(image.mean()):.3f}"
-                    ),
-                    (
-                        f"std="
-                        f"{float(image.std()):.3f}"
-                    ),
+                    f"gpu_allocated_mb={allocated_mb:.1f}",
+                    f"gpu_reserved_mb={reserved_mb:.1f}",
                 ]
             )
 
         log_text = " | ".join(fields)
 
-        if (
-            repeat_count
-            >= self.repeated_action_warn_count
-        ):
-            self.get_logger().warning(
-                log_text
-            )
-
-        else:
-            self.get_logger().info(
-                log_text
-            )
-
-    # ================================================================
-    # Image preprocessing
-    # ================================================================
-
-    def _center_crop(
-        self,
-        image: Image.Image,
-    ) -> Image.Image:
-        width, height = image.size
-
-        # Match the training pipeline more closely:
-        # first remove aspect-ratio distortion with a centered square crop,
-        # then apply the configured scale (e.g. 0.9) inside that square.
-        crop_size = min(width, height)
-
-        if not math.isclose(self.center_crop_scale, 1.0):
-            crop_size = max(
-                1,
-                int(
-                    crop_size
-                    * self.center_crop_scale
-                ),
-            )
-
-        left = (width - crop_size) // 2
-        top = (height - crop_size) // 2
-
-        return image.crop(
-            (
-                left,
-                top,
-                left + crop_size,
-                top + crop_size,
+        should_warn = (
+            repeat_count >= self.repeated_action_warn_count
+            or (
+                self.slow_inference_warn_sec > 0.0
+                and inference_sec >= self.slow_inference_warn_sec
             )
         )
+
+        if should_warn:
+            self.get_logger().warning(log_text)
+        else:
+            self.get_logger().info(log_text)
 
     # ================================================================
     # Publishers

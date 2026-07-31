@@ -69,9 +69,8 @@ class DoosanBridgeNode(Node):
 
         self.declare_parameter("gripper_open_pulse_count", 2)
         self.declare_parameter("gripper_close_pulse_count", 1)
-        self.declare_parameter("gripper_pulse_time_sec", 1.0)
-        self.declare_parameter("gripper_open_pulse_time_sec", -1.0)
-        self.declare_parameter("gripper_close_pulse_time_sec", -1.0)
+        self.declare_parameter("gripper_open_pulse_time_sec", 1.0)
+        self.declare_parameter("gripper_close_pulse_time_sec", 4.0)
 
         # ------------------------------------------------------------------
         # ROS service clients
@@ -180,6 +179,10 @@ class DoosanBridgeNode(Node):
         self.pose_request_pending = False
         self.emergency_stop_requested = False
 
+        # Last state actually published on /vla/robot_ready.
+        # This is used for transition logging and immediate state updates.
+        self.last_published_ready: Optional[bool] = None
+
         self.shutdown_event = threading.Event()
 
         # ------------------------------------------------------------------
@@ -269,6 +272,10 @@ class DoosanBridgeNode(Node):
 
                 self.command_condition.notify_all()
 
+        # Publish the state transition immediately instead of waiting for
+        # the 100 ms ready timer.
+        self._publish_ready()
+
         if requested_enabled:
             if bool(self.get_parameter("use_gripper").value):
                 self._publish_status(
@@ -279,20 +286,51 @@ class DoosanBridgeNode(Node):
         else:
             self._publish_status("disabled")
 
-    def _publish_ready(self) -> None:
-        with self.state_lock:
-            ready = bool(
-                self.enabled
-                and self.initial_gripper_ready
-                and not self.motion_busy
-                and not self.gripper_busy
-                and self.last_pose is not None
-                and not self.emergency_stop_requested
+    def _compute_ready_locked(self) -> bool:
+        """Return the current ready state while state_lock is held."""
+        return bool(
+            self.enabled
+            and self.initial_gripper_ready
+            and not self.motion_busy
+            and not self.gripper_busy
+            and self.pending_target is None
+            and self.last_pose is not None
+            and not self.emergency_stop_requested
+        )
+
+    def _publish_ready_value(
+        self,
+        ready: bool,
+        reason: str = "",
+    ) -> None:
+        """Publish a ready value immediately.
+
+        The periodic timer is retained as a heartbeat, but command-state
+        transitions call this method directly so a short movement cannot hide
+        the False state between two 100 ms timer ticks.
+        """
+        msg = Bool()
+        msg.data = bool(ready)
+        self.ready_publisher.publish(msg)
+
+        state_changed = (
+            self.last_published_ready is None
+            or self.last_published_ready != bool(ready)
+        )
+        self.last_published_ready = bool(ready)
+
+        if state_changed:
+            suffix = f":{reason}" if reason else ""
+            self.get_logger().info(
+                f"robot_ready={bool(ready)}{suffix}"
             )
 
-        msg = Bool()
-        msg.data = ready
-        self.ready_publisher.publish(msg)
+    def _publish_ready(self) -> None:
+        """Periodic ready-state heartbeat."""
+        with self.state_lock:
+            ready = self._compute_ready_locked()
+
+        self._publish_ready_value(ready)
 
     # ======================================================================
     # Pose polling
@@ -420,6 +458,9 @@ class DoosanBridgeNode(Node):
         if reject_reason is not None:
             self._publish_status(reject_reason)
         else:
+            # pending_target is part of the ready condition, so this emits
+            # False immediately on command acceptance.
+            self._publish_ready()
             self._publish_status(accepted_status)
 
     def _gripper_callback(self, msg: Bool) -> None:
@@ -505,9 +546,17 @@ class DoosanBridgeNode(Node):
                     operation = "move_step"
 
             if operation == "initial_gripper_open":
+                self._publish_ready_value(
+                    False,
+                    "initial_gripper_open_start",
+                )
                 self._execute_initial_gripper_open()
 
             elif operation == "move_step" and target is not None:
+                self._publish_ready_value(
+                    False,
+                    "motion_start",
+                )
                 self._execute_motion_step(target)
 
     # ======================================================================
@@ -578,6 +627,8 @@ class DoosanBridgeNode(Node):
                 self.gripper_busy = False
                 self.command_condition.notify_all()
 
+            self._publish_ready()
+
     # ======================================================================
     # Motion execution
     # ======================================================================
@@ -631,6 +682,11 @@ class DoosanBridgeNode(Node):
                 self.motion_busy = False
                 self.gripper_busy = False
                 self.command_condition.notify_all()
+
+            # Publish the completed state immediately. If a new target arrived
+            # during motion, pending_target keeps ready=False; otherwise this
+            # produces the required False -> True transition.
+            self._publish_ready()
 
             if step_success:
                 # If another target arrived during this motion, the worker
@@ -822,20 +878,10 @@ class DoosanBridgeNode(Node):
             if open_gripper
             else "gripper_close"
         )
-        opposite_prefix = (
-            "gripper_close"
-            if open_gripper
-            else "gripper_open"
-        )
 
         output_index = int(
             self.get_parameter(
                 f"{parameter_prefix}_output_index"
-            ).value
-        )
-        opposite_output_index = int(
-            self.get_parameter(
-                f"{opposite_prefix}_output_index"
             ).value
         )
 
@@ -848,18 +894,6 @@ class DoosanBridgeNode(Node):
         if not 1 <= output_index <= 6:
             raise ValueError(
                 "gripper tool output index must be 1..6:"
-                f"index={output_index}"
-            )
-
-        if not 1 <= opposite_output_index <= 6:
-            raise ValueError(
-                "gripper opposite tool output index must be 1..6:"
-                f"index={opposite_output_index}"
-            )
-
-        if output_index == opposite_output_index:
-            raise ValueError(
-                "gripper open/close output indices must be different:"
                 f"index={output_index}"
             )
 
@@ -895,29 +929,15 @@ class DoosanBridgeNode(Node):
         )
 
         if pulse_time < 0.0:
-            pulse_time = float(
-                self.get_parameter(
-                    "gripper_pulse_time_sec"
-                ).value
-            )
-
-        if pulse_time < 0.0:
             raise ValueError(
-                "gripper pulse time must not be negative"
+                f"{parameter_prefix}_pulse_time_sec must not be negative"
             )
 
         self._publish_status(
             "gripper_start:"
             f"open={open_gripper}, "
             f"output_index={output_index}, "
-            f"opposite_output_index={opposite_output_index}, "
-            f"pulse_count={pulse_count}, "
-            f"pulse_time_sec={pulse_time}"
-        )
-
-        self._set_tool_output(
-            opposite_output_index,
-            inactive_value,
+            f"pulse_count={pulse_count}"
         )
 
         for pulse_index in range(pulse_count):
@@ -1008,6 +1028,10 @@ class DoosanBridgeNode(Node):
 
             self.command_condition.notify_all()
 
+        self._publish_ready_value(
+            False,
+            "emergency_stop",
+        )
         self._send_stop()
         self._publish_status("emergency_stopped")
 
@@ -1095,8 +1119,6 @@ class DoosanBridgeNode(Node):
             f"{self.get_parameter('gripper_open_pulse_count').value}, "
             f"gripper_close_pulse_count="
             f"{self.get_parameter('gripper_close_pulse_count').value}, "
-            f"gripper_pulse_time_sec="
-            f"{self.get_parameter('gripper_pulse_time_sec').value}, "
             f"gripper_open_pulse_time_sec="
             f"{self.get_parameter('gripper_open_pulse_time_sec').value}, "
             f"gripper_close_pulse_time_sec="
