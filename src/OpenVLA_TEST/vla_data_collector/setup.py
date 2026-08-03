@@ -18,7 +18,7 @@ setup(
     install_requires=["setuptools", "numpy"],
     zip_safe=True,
     maintainer="juhun",
-    maintainer_email="juhun@example.com",
+    maintainer_email="heejun@example.com",
     description="OpenVLA data collection for Doosan A0509 and ZED 2i",
     license="Apache-2.0",
     entry_points={
@@ -29,6 +29,7 @@ setup(
             "make_actions = vla_data_collector.make_actions:main",
             "resample_dataset = vla_data_collector.resample_dataset:main",
             "validate_episode = vla_data_collector.validate_episode:main",
+            "automatic_cube_dataset_recorder = vla_data_collector.automatic_cube_dataset_recorder:main",
         ],
     },
 )
