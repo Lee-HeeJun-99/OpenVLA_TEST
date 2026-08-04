@@ -14,3 +14,10 @@ ros2 topic pub --once /vla/enable \
 
 ros2 topic pub --once /vla/instruction \
   std_msgs/msg/String "{data: 'pick up the cube'}"
+
+
+MoveLine 실시간 반복 중단
+로컬 dsr_msgs2에서 ServoJ, ServoL, SpeedL 존재 확인
+Cartesian 서비스가 있으면 ServoL 또는 SpeedL 우선
+없다면 IK를 거쳐 ServoJ Override
+처음에는 20 Hz, 낮은 속도와 작은 목표 변화로 시험
