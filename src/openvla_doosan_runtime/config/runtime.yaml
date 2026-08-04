@@ -5,7 +5,7 @@ camera_adapter:
 
 openvla_inference:
   ros__parameters:
-    model_path: "/home/ubuntu/robot_ws/src/openvla/runs/openvla-7b+doosan_a0509+b16+lr-0.0005+lora-r32+dropout-0.0--full_109ep_10hz--image_aug--1000_chkpt"
+    model_path: "/home/ubuntu/robot_ws/src/openvla/runs/test_0803"
     unnorm_key: "doosan_a0509"
     device: "cuda:0"
     use_flash_attention: true
@@ -24,7 +24,7 @@ openvla_inference:
 
     log_image_hash: true
     repeat_action_epsilon: 1.0e-5
-    repeated_action_warn_count: 50
+    repeated_action_warn_count: 10000
     log_gpu_memory: true
     slow_inference_warn_sec: 0.5
 
@@ -38,18 +38,18 @@ action_adapter:
     command_valid_topic: "/vla/command_valid"
     status_topic: "/vla/action_status"
 
-    translation_scale_to_mm: 30000.0
+    translation_scale_to_mm: 1000.0
     rotation_scale_to_deg: 57.29577951308232
 
-    max_translation_step_mm: 3.0
+    max_translation_step_mm: 10.0
     max_rotation_step_deg: 1.0
-    apply_rotation: false
+    apply_rotation: true
 
     gripper_open_threshold: 0.7
     gripper_close_threshold: 0.3
 
     reject_repeated_actions: true
-    repeated_action_limit: 20
+    repeated_action_limit: 50
     repeat_action_epsilon: 1.0e-5
     repeated_action_warn_count: 3
 
@@ -91,8 +91,8 @@ episode_manager:
   ros__parameters:
     instruction: "pick up the cube"
 
-    max_steps: 30
-    max_duration_sec: 60.0
+    max_steps: 1000
+    max_duration_sec: 500.0
     robot_ready_timeout_sec: 15.0
 
     invalid_action_limit: 3

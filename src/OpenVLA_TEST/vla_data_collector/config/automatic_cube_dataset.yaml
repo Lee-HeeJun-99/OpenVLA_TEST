@@ -1,0 +1,62 @@
+/dsr01/automatic_cube_dataset_recorder:
+  ros__parameters:
+    # ------------------------------------------------------------
+    # Dataset
+    # ------------------------------------------------------------
+    image_topic: /zed/zed_node/rgb/color/rect/image
+    dataset_root: /home/ubuntu/robot_ws/dataset
+    episode_id: auto
+    instruction: pick up the cube
+    task: cube_pick
+
+    record_frequency_hz: 10.0
+    jpeg_quality: 95
+
+    # Filter repeated stationary poses.
+    min_translation_delta_m: 0.0005
+    min_rotation_delta_rad: 0.001
+
+    # ------------------------------------------------------------
+    # Robot
+    # ------------------------------------------------------------
+    robot_id: dsr01
+    robot_model: a0509
+
+    # Existing DatasetRecorder-compatible motion parameters.
+    move_velocity_mm_s: 80.0
+    move_angular_velocity_deg_s: 20.0
+    move_acceleration_mm_s2: 160.0
+    move_angular_acceleration_deg_s2: 40.0
+
+    preparation_velocity_mm_s: 80.0
+    descent_velocity_mm_s: 70.0
+    lift_velocity_mm_s: 100.0
+
+    # ------------------------------------------------------------
+    # Random initial position: Doosan base coordinates, millimeter
+    # ------------------------------------------------------------
+    x_min_mm: 428.25
+    x_max_mm: 627.16
+    y_min_mm: -218.94
+    y_max_mm: 305.11
+    start_z_mm: 400.0
+
+    min_start_xy_distance_mm: 120.0
+    max_sampling_attempts: 100
+    random_seed: 2026
+
+    # ------------------------------------------------------------
+    # Fixed cube grasp pose: [mm, mm, mm, deg, deg, deg]
+    # ------------------------------------------------------------
+    grasp_pose_mm_deg:
+      [539.72, 31.99, 224.85, 46.59, 178.82, -131.11]
+
+    alignment_z_mm: 320.0
+    lift_z_mm: 350.0
+
+    # ------------------------------------------------------------
+    # Gripper: 0=closed, 1=open
+    # ------------------------------------------------------------
+    gripper_open_output_index: 1
+    gripper_close_output_index: 2
+    gripper_pulse_time_sec: 1.0

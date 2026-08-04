@@ -44,3 +44,12 @@ raw_dataset_10hz/
 raw_dataset_resampled_10hz/
 src/tensorflow_datasets_10hz_full/
 
+
+# Local datasets and generated files
+dataset/
+raw_dataset*/
+*.db3
+*.db3.zstd
+*.tfrecord
+*.bag
+*.png
