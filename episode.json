@@ -1,0 +1,262 @@
+{
+  "dataset_format": "a0509_openvla_transition_v1",
+  "scene_usd": "C:\\isaac-sim-5.1\\custom\\a0509_project\\USD\\version_1\\a0509_version_1_scaled_85x60.usda",
+  "robot_prim": "/World/a0509/base",
+  "cube_prim": "/World/Cube_7cm",
+  "target_cube_prims": {
+    "red": "/World/Cube_7cm",
+    "yellow": "/World/Environment/Objects/YellowCube",
+    "blue": "/World/Environment/Objects/BlueCube"
+  },
+  "target_cube_authored_layers": {
+    "red": [
+      "C:\\isaac-sim-5.1\\custom\\a0509_project\\USD\\version_1\\a0509_version_1_scaled_85x60.usda"
+    ],
+    "yellow": [
+      "C:\\isaac-sim-5.1\\custom\\a0509_project\\USD\\version_1\\a0509_version_1_scaled_85x60.usda"
+    ],
+    "blue": [
+      "C:\\isaac-sim-5.1\\custom\\a0509_project\\USD\\version_1\\a0509_version_1_scaled_85x60.usda"
+    ]
+  },
+  "target_cubes_same_authored_layer": true,
+  "end_effector_frame": "tool0",
+  "urdf": "C:\\isaac-sim-5.1\\custom\\a0509_project\\urdf\\a0509.urdf",
+  "robot_descriptor": "C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\a0509_vla_control\\a0509_robot_descriptor.yaml",
+  "rrt_config": "C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\a0509_vla_control\\a0509_rrt_config.yaml",
+  "home_config": "C:\\Users\\kut61\\OneDrive\\문서\\Sim2real VLA\\isaac_sim\\config\\a0509_home_pose.json",
+  "default_motion_speed_scale": 4.0,
+  "image_collection_enabled": true,
+  "image_status": "configured",
+  "camera_resolutions": {
+    "primary": [
+      1280,
+      720
+    ]
+  },
+  "camera_calibration": {
+    "primary": {
+      "prim_path": "/World/a0509/link_6/tool0/left_Camera",
+      "resolution": [
+        1280,
+        720
+      ],
+      "focal_length": 2.119999885559082,
+      "horizontal_aperture": 5.375999927520752,
+      "vertical_aperture": 3.0239999294281006,
+      "clipping_range": [
+        0.05000000074505806,
+        100.0
+      ],
+      "stereo_role": "left",
+      "cad_lens_center_mm": [
+        -68.97221,
+        -51.75593,
+        -2.617175
+      ],
+      "mount_reference": "gripper_body_with_camera.dae/ZED2i_002"
+    }
+  },
+  "camera_prims": {
+    "primary": "/World/a0509/link_6/tool0/left_Camera",
+    "secondary": ""
+  },
+  "stereo_camera": {
+    "model": "ZED 2i",
+    "nominal_baseline_m": 0.12,
+    "lens_model": "2.1mm pinhole approximation",
+    "hardware_aligned": true,
+    "mount_reference": "gripper_body_with_camera.dae/ZED2i_002",
+    "factory_calibration_required": true
+  },
+  "joint_order": [
+    "joint_1",
+    "joint_2",
+    "joint_3",
+    "joint_4",
+    "joint_5",
+    "joint_6",
+    "gripper_joint_1",
+    "gripper_joint_2"
+  ],
+  "arm_action_order": [
+    "joint_1",
+    "joint_2",
+    "joint_3",
+    "joint_4",
+    "joint_5",
+    "joint_6"
+  ],
+  "gripper_action_order": [
+    "gripper_joint_1",
+    "gripper_joint_2"
+  ],
+  "target_cube_color": "red",
+  "target_cube_prim": "/World/Cube_7cm",
+  "grasp_position_offset_m": [
+    0.0,
+    0.03,
+    0.2644
+  ],
+  "automated_collection_run_id": "collection_20260727_140059_564700_seed2028",
+  "automated_collection_config": {
+    "episode_count": 300,
+    "seed": 2028,
+    "x_min_m": 0.45,
+    "x_max_m": 0.7,
+    "y_min_m": -0.22,
+    "y_max_m": 0.22,
+    "min_spacing_m": 0.1,
+    "settle_steps": 60,
+    "max_layout_attempts": 200,
+    "corrective_fraction": 0.5,
+    "corrective_xy_min_m": 0.06,
+    "corrective_xy_max_m": 0.1,
+    "corrective_height_m": 0.04,
+    "corrective_settle_steps": 15
+  },
+  "language_instruction": "Pick up the red cube.",
+  "automated_collection_episode": {
+    "run_id": "collection_20260727_140059_564700_seed2028",
+    "seed": 2028,
+    "episode_index": 0,
+    "episode_number": 1,
+    "target_color": "red",
+    "layout_attempt": 1,
+    "sampled_layout_m": {
+      "red": [
+        0.4785503714398279,
+        0.1263419076875997,
+        0.8460308313369751
+      ],
+      "yellow": [
+        0.45442121013458164,
+        -0.10815504131336126,
+        0.8460308313369751
+      ],
+      "blue": [
+        0.46684805906413207,
+        0.00630527776750292,
+        0.8460308313369751
+      ]
+    },
+    "settled_layout_m": {
+      "red": [
+        0.47907131910324097,
+        0.12765653431415558,
+        0.8460308313369751
+      ],
+      "yellow": [
+        0.4552050232887268,
+        -0.10938159376382828,
+        0.8460307717323303
+      ],
+      "blue": [
+        0.4682866632938385,
+        0.006250675301998854,
+        0.8460307717323303
+      ]
+    },
+    "demonstration_type": "corrective_recovery",
+    "unrecorded_perturbation": true,
+    "corrective_start_pose": {
+      "position_m": [
+        0.4167694127083003,
+        0.12769824953690537,
+        1.150430831336975
+      ],
+      "quaternion_wxyz": [
+        1.605759375950947e-06,
+        0.9999999999971286,
+        -1.2781387874929968e-06,
+        -1.2372834872464446e-06
+      ],
+      "xy_offset_m": [
+        -0.06230190639494066,
+        -0.029958284777250203
+      ]
+    },
+    "training_semantics": "The off-target move is not recorded. Samples begin at the near-miss state and contain only expert replanning and recovery."
+  },
+  "mode": "automatic_red_cube_pick",
+  "demonstration_type": "corrective_recovery",
+  "motion_speed_scale": 4.0,
+  "recording_output_root": "C:\\Users\\kut61\\OneDrive\\문서\\Sim2real VLA\\data\\openvla_a0509_corrective_v3",
+  "target_poses": {
+    "pregrasp": {
+      "position_m": [
+        0.47907131910324097,
+        0.15765653431415558,
+        1.260430831336975
+      ],
+      "quaternion_wxyz": [
+        1.7400997093123931e-06,
+        0.9999999999965392,
+        -1.1610081411012397e-06,
+        -1.5955734893954582e-06
+      ],
+      "rpy_deg": [
+        179.99980059904917,
+        0.00018283902218443985,
+        -0.00013304205108972912
+      ]
+    },
+    "grasp": {
+      "position_m": [
+        0.47907131910324097,
+        0.15765653431415558,
+        1.110430831336975
+      ],
+      "quaternion_wxyz": [
+        1.7400997093123931e-06,
+        0.9999999999965392,
+        -1.1610081411012397e-06,
+        -1.5955734893954582e-06
+      ],
+      "rpy_deg": [
+        179.99980059904917,
+        0.00018283902218443985,
+        -0.00013304205108972912
+      ]
+    },
+    "lift": {
+      "position_m": [
+        0.47907131910324097,
+        0.15765653431415558,
+        1.310430831336975
+      ],
+      "quaternion_wxyz": [
+        1.7400997093123931e-06,
+        0.9999999999965392,
+        -1.1610081411012397e-06,
+        -1.5955734893954582e-06
+      ],
+      "rpy_deg": [
+        179.99980059904917,
+        0.00018283902218443985,
+        -0.00013304205108972912
+      ]
+    }
+  },
+  "record_frequency_hz": 10.0,
+  "success": true,
+  "reason": "auto_pick_completed_cube_lifted",
+  "num_steps": 49,
+  "num_submitted": 49,
+  "num_dropped": 0,
+  "action_convention": {
+    "shape": [
+      7
+    ],
+    "values": [
+      "delta_x_world_m",
+      "delta_y_world_m",
+      "delta_z_world_m",
+      "delta_rotation_vector_x_rad",
+      "delta_rotation_vector_y_rad",
+      "delta_rotation_vector_z_rad",
+      "gripper_command_0_open_1_closed"
+    ],
+    "alignment": "observation_t_to_observation_t_plus_1"
+  }
+}
