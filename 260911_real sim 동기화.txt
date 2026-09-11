@@ -1,0 +1,4 @@
+로봇 초기 상태(joint position, EEF pose, Gripper initial valuestate)
+카메라 조건(Camera pose, FoV, 해상도, distortion, cropresize, left)
+Task 조건(cube size, cube position, instruction, target color)
+제어 조건(5hz, simreal 이동 속도, action scale, oft k=5, gripper 후처리) 
