@@ -1,0 +1,103 @@
+• 실험에서 실제로 물려 쓰는 패키지들은 이렇게 나뉩니다.
+
+  1. 메인 번들
+  /home/ubuntu/a0509_vla_linux_field_bundle_20260903
+
+  목적: 실험 전체의 기준 패키지입니다. 모델, Isaac 검증 코드, sim2real 분석 스크립트, 실행 스크립트, 로그, 결과물이 여기 모입니다.
+
+  들어있는 것:
+
+  - models/base_openvla_7b: OpenVLA base 모델
+  - models/oft_mixed480_step28560: 현재 쓰는 OFT 모델 체크포인트
+  - models/vanilla_s1_balanced_step8130: vanilla 모델 체크포인트
+  - runtime/openvla-oft: OFT 런타임 코드
+  - runtime/vanilla-support: vanilla 런타임 보조 코드
+  - isaac_sim/: 번들 안의 Isaac validation/replay 관련 코드
+  - validation/: 검증용 scene, layout, evidence
+  - sim2real_analysis/: real/sim 이미지, feature, trajectory 비교 분석 코드
+  - scripts/: 실행 스크립트들
+  - outputs/: 분석 결과 저장 위치
+  - logs/: 실행 로그
+  - 작업기록.md: 지금까지 수정/확인 기록
+
+  2. Isaac Sim BASE 패키지
+  /home/ubuntu/A0509_IsaacSim_Ubuntu_20260806
+
+  목적: 실제 시뮬레이션을 돌리는 기준 Isaac Sim 프로젝트입니다. real trajectory replay, camera capture, cube/table/robot scene 조건을 맞추
+  는 쪽입니다.
+
+  들어있는 것:
+
+  - app/a0509_control_app.py: Isaac 앱 진입점
+  - app/a0509_control/: replay, runtime, planner, validation 코드
+  - app/config/: HOME pose, robot descriptor, planner 설정
+  - assets/a0509_urdf/: A0509 robot, table, cube, camera 포함 USD/URDF asset
+  - run_gui.sh, run_vla_validation.sh, run_phase2_gt_replay.sh: 실행 스크립트
+  - collect_data.sh, verify_package.sh: 수집/검증 보조 스크립트
+
+  현재 실험에서는 여기의 HOME pose, 조명, cube/camera 조건을 real dataset 기준으로 맞춰가는 중입니다.
+
+  3. Real 데이터셋 패키지
+  /home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft_200
+
+  목적: 실제 로봇에서 수집한 기준 데이터입니다. sim-to-real 비교의 real 기준입니다.
+
+  들어있는 것:
+
+  - dataset_manifest.json: 전체 dataset 메타정보
+  - episodes/episode_000001/metadata.json: task, cube, robot, camera, control 조건
+  - episodes/episode_000001/steps.jsonl: timestep별 observation/state
+  - episodes/episode_000001/steps_with_actions.jsonl: action 포함 trajectory
+  - episodes/episode_000001/images/primary: real camera 이미지
+
+  중요 조건:
+
+  - task: Pick up the orange cube.
+  - control: 약 5Hz
+  - 초기 joint: real 첫 row 기준
+  - 초기 EEF pose, gripper state도 여기서 기준값을 뽑음
+  - sim replay도 이 trajectory를 기준으로 맞추는 중
+
+  4. Real 로봇 실행 패키지
+  /home/ubuntu/robot_ws/src/openvla_doosan_runtime
+
+  목적: 실제 Doosan 로봇에서 OpenVLA/OFT inference 결과를 받아 로봇 command로 바꾸는 ROS2 runtime입니다.
+
+  들어있는 것:
+
+  - config/runtime_oft.yaml: OFT real 실행 조건
+  - launch/runtime.launch.py: real 실행 launch
+  - openvla_oft_inference_node.py: OFT inference node
+  - action_adapter_node.py: 모델 action을 Doosan TCP target으로 변환
+  - doosan_bridge_node.py: 실제 robot command bridge
+  - camera_adapter_node.py: ZED camera image relay
+  - episode_manager_node.py: episode 관리
+  - dataset_episode_replay_node.py: dataset replay용 node
+
+  여기서 중요한 조건:
+
+  - 5Hz 실행 주기
+  - action scale
+  - gripper 후처리 threshold
+  - image resize/crop 조건
+  - servo streaming 속도 제한
+
+  5. Isaac Sim 설치본
+  /home/ubuntu/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64
+
+  목적: NVIDIA Isaac Sim 실행 엔진입니다. 위의 BASE 패키지가 이 설치본을 사용해서 실제 시뮬레이션을 실행합니다.
+
+  사용 방식:
+
+  ISAAC_SIM_ROOT=/home/ubuntu/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64
+
+  정리하면
+
+  - 메인 관리/분석: a0509_vla_linux_field_bundle_20260903
+  - 시뮬레이션 실제 실행: A0509_IsaacSim_Ubuntu_20260806
+  - real 기준 데이터: raw_dataset_oft_200
+  - real 로봇 runtime: openvla_doosan_runtime
+  - Isaac 실행 엔진: isaac-sim-standalone-5.1.0-linux-x86_64
+
+  즉 지금 실험은 real dataset 조건을 기준으로 Isaac Sim BASE와 real runtime 조건을 맞추고, 그 결과를 main bundle의 sim2real_analysis로 비교
+  하는 구조
