@@ -1,0 +1,1466 @@
+# A0509 VLA Sim-to-Real 연구 최종 인수인계 프롬프트
+
+당신은 기존에 진행 중인 **A0509 VLA Sim-to-Real 연구를 이어서 수행하는 연구자/에이전트**이다.
+
+이 연구는 이미 상당한 환경 분석, trajectory replay, image gap 분석, representation extraction 및 pilot correction 실험까지 진행되어 있다.
+
+따라서 처음부터 다시 시작하지 말고, 아래의 **완료된 작업 / 확보된 결과 / 미해결 문제 / 향후 실험 순서**를 기준으로 이어서 수행한다.
+
+---
+
+# 0. 최종 연구 목적
+
+본 연구의 목적은 단순히 Sim에서 개발한 VLA를 Real robot에서 실행하여 성공률을 비교하는 것이 아니다.
+
+핵심 연구 질문은 다음과 같다.
+
+> **Simulation과 Reality 사이의 observation gap이 VLA 내부 representation과 action prediction에 어떻게 전달되며, 어떤 environment alignment가 실제 Sim-to-Real deployment 성능에 중요한가?**
+
+전체 연구 흐름:
+
+**Environment Alignment**
+→ **Paired Sim–Real Observation**
+→ **Observation Gap**
+→ **Representation Gap**
+→ **Action Gap**
+→ **Shadow Evaluation**
+→ **Real Closed-loop Performance**
+
+현재 pilot 결과에서 representation discrepancy가 단순한 global constant가 아니라 task phase/progress에 따라 변화하는 현상이 관찰되었다.
+
+따라서 추가 연구 질문:
+
+> **Sim–Real representation shift에는 task phase 또는 trajectory progress에 따라 예측 가능한 구조가 존재하는가?**
+
+도 함께 검증한다.
+
+단,
+
+* Sim/Real latent가 반드시 동일해야 한다고 가정하지 않는다.
+* representation gap이 크다고 failure라고 가정하지 않는다.
+* feature alignment 자체를 최종 목표로 삼지 않는다.
+
+궁극적으로는
+
+> **Observation Gap → Representation Gap → Action Gap → Real Performance**
+
+사이의 관계를 확인한다.
+
+---
+
+# 1. 주요 경로
+
+## Main Bundle
+
+`/home/ubuntu/a0509_vla_linux_field_bundle_20260903`
+
+주요 구성:
+
+* `models/base_openvla_7b`
+* `models/oft_mixed480_step28560`
+* `models/vanilla_s1_balanced_step8130`
+* `runtime/openvla-oft`
+* `runtime/vanilla-support`
+* `isaac_sim/`
+* `validation/`
+* `sim2real_analysis/`
+* `scripts/`
+* `outputs/`
+* `logs/`
+* `작업기록.md`
+
+## Isaac Sim BASE
+
+`/home/ubuntu/A0509_IsaacSim_Ubuntu_20260806`
+
+주요 파일:
+
+* `app/a0509_control_app.py`
+* `app/a0509_control/`
+* `app/config/`
+* `assets/a0509_urdf/`
+* `run_gui.sh`
+* `run_vla_validation.sh`
+* `run_phase2_gt_replay.sh`
+* `collect_data.sh`
+* `verify_package.sh`
+
+## Real Dataset
+
+`/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft_200`
+
+주요 구성:
+
+* `dataset_manifest.json`
+* `episodes/episode_000001/metadata.json`
+* `steps.jsonl`
+* `steps_with_actions.jsonl`
+* `images/primary`
+
+Task:
+
+`Pick up the orange cube.`
+
+Control:
+
+약 5 Hz
+
+이 Real trajectory를 Sim replay의 기준으로 사용한다.
+
+## Real Runtime
+
+`/home/ubuntu/robot_ws/src/openvla_doosan_runtime`
+
+주요 파일:
+
+* `config/runtime_oft.yaml`
+* `launch/runtime.launch.py`
+* `openvla_oft_inference_node.py`
+* `action_adapter_node.py`
+* `doosan_bridge_node.py`
+* `camera_adapter_node.py`
+* `episode_manager_node.py`
+* `dataset_episode_replay_node.py`
+
+## Isaac Sim
+
+`/home/ubuntu/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64`
+
+---
+
+# 2. 반드시 지켜야 할 작업 원칙
+
+새 작업을 시작하기 전에 반드시:
+
+1. `작업기록.md` 확인
+2. 기존 scripts 확인
+3. 기존 outputs 확인
+4. 기존 logs 확인
+5. 이미 수행된 실험인지 확인
+
+한다.
+
+**이미 완료된 실험을 이유 없이 반복하지 않는다.**
+
+기존 결과가 이상해 보인다면 바로 재실험하지 말고:
+
+* 기존 코드
+* 실험 조건
+* input
+* output
+* exclusion criterion
+
+부터 확인한다.
+
+---
+
+# 3. 전체 연구의 세 단계
+
+## Stage A — Offline Sim-to-Real Analysis
+
+새로운 Real robot motion 없이 최대한 수행한다.
+
+기존 Real dataset + Sim replay를 이용한다.
+
+수행:
+
+* Coordinate alignment
+* Camera alignment
+* Control/temporal analysis
+* Paired Sim–Real dataset
+* Observation gap
+* Representation gap
+* Representation shift
+* Action gap
+* Alignment ablation
+
+---
+
+## Stage B — Online Real Shadow Evaluation
+
+이 단계부터 Real robot이 실제로 움직인다.
+
+하지만 **VLA가 robot을 제어하지 않는다.**
+
+구조:
+
+**Dataset / Reference Trajectory**
+→ **Replay Controller**
+→ **Real Robot**
+
+동시에:
+
+**Real Camera + Real State**
+→ **VLA**
+→ **Predicted Action**
+→ **Logging Only**
+
+VLA output은 robot command로 전달하지 않는다.
+
+---
+
+## Stage C — Real Closed-loop Evaluation
+
+이 단계부터:
+
+**Real Observation**
+→ **VLA**
+→ **Action**
+→ **Real Robot**
+
+으로 실제 제어한다.
+
+Prototype 이후 Full Real Evaluation으로 진행한다.
+
+---
+
+# 4. 이미 완료된 Initial Alignment
+
+Real dataset episode_000001 첫 상태를 기준으로 초기조건 정렬을 수행했다.
+
+Real initial joint:
+
+`[-3.185847520828247, -0.018473811447620392, -0.7153055667877197, 0.021886058151721954, -1.9810477495193481, 0.00008167627674993128]`
+
+EEF position:
+
+`[0.3048892517089844, -0.011732998847961426, 0.7238569946289063]`
+
+EEF quaternion wxyz:
+
+`[-0.01560979817806259, 0.21189081573062477, 0.0027251434677358615, 0.9771648735003376]`
+
+Gripper closedness:
+
+`0.0`
+
+완료된 변경:
+
+* HOME JSON → Real first joint/gripper 기준
+* `runtime_oft.yaml`
+
+  * `minimum_period_sec: 0.2`
+* OFT preprocessing
+
+  * `center_crop_enabled: false`
+  * resize-naive 224×224
+* instruction 통일
+
+  * `Pick up the orange cube.`
+
+이 부분은 특별한 문제가 발견되지 않는 한 다시 수정하지 않는다.
+
+---
+
+# 5. 현재 Camera 조건
+
+Sim left camera:
+
+Prim:
+
+`/World/a0509/link_6/tool0/left_Camera`
+
+Resolution:
+
+`1280 × 720`
+
+Focal length:
+
+`2.12`
+
+Aperture:
+
+`5.376 × 3.024`
+
+Approximate FoV:
+
+* Horizontal ≈ 103.475°
+* Vertical ≈ 70.994°
+
+Original local translation:
+
+`[-0.060222793661, -0.10842505344, 0.064837748142]`
+
+Original rotateXYZ:
+
+`[155.0000187483, 0, 0]`
+
+USD에는 explicit distortion model이 확인되지 않았다.
+
+---
+
+# 6. 완료된 Sim Trajectory Replay
+
+Real episode_000001 commanded-reference trajectory를 Sim에서 replay하였다.
+
+결과:
+
+* Action: 46
+* IK success: 46
+* IK failure: 0
+* Final position error ≈ 0.000782 m
+* Final rotation error ≈ 0.0852°
+* Cube final XY error ≈ 0.00360 m
+* Cube final Z offset ≈ 0.2739 m
+
+따라서:
+
+> **Trajectory replay 자체의 kinematic failure가 현재 주요 문제는 아니다.**
+
+이를 반복해서 확인하는 데 시간을 쓰지 않는다.
+
+---
+
+# 7. 기존 Observation Gap Pilot
+
+기존 image comparison에서 Sim–Real visual difference가 확인되었다.
+
+## HOME Sim vs Real all
+
+Raw/processed L2:
+
+약 `50.94 / 52.05`
+
+Brightness:
+
+* Sim raw ≈ 136.84
+* Real raw ≈ 119.77
+* Sim processed ≈ 138.80
+* Real processed ≈ 122.69
+
+## Replay Sim vs Real all
+
+Raw/processed L2:
+
+약 `71.05 / 69.55`
+
+Brightness:
+
+* Sim raw ≈ 154.57
+* Real raw ≈ 119.77
+* Sim processed ≈ 154.13
+* Real processed ≈ 122.69
+
+Warm-color mask에서도 gap이 남았다.
+
+따라서 cube color만으로 전체 visual gap을 설명하지 않는다.
+
+---
+
+# 8. Lighting Pilot 변경
+
+Replay processed brightness:
+
+* Sim ≈ 154.13
+* Real ≈ 122.69
+
+ratio ≈ 0.796
+
+이에 따라:
+
+* FillLight: `700 → 555`
+* KeyLight: `2500 → 1985`
+
+로 변경했다.
+
+단, 당시 NVIDIA driver 문제로 완전한 rerun/validation이 막힌 이력이 있으므로 현재 output과 실제 적용 상태를 먼저 확인한다.
+
+---
+
+# 9. 현재 가장 중요한 미해결 문제 — Camera / Tool Frame
+
+Trajectory/IK는 정상인데 Real과 Sim camera observation의 구조가 충분히 일치하지 않는 문제가 발견되었다.
+
+Real에서는 접근/하강 중 cube가 지속적으로 관찰되지만 기존 Sim replay에서는:
+
+* cube visibility 감소
+* gripper/body occlusion 증가
+* table/cube composition 차이
+
+가 관찰되었다.
+
+따라서 현재 주요 confound는 camera/tool-frame convention 또는 camera extrinsic일 가능성이 높다.
+
+---
+
+# 10. 이미 수행한 Camera Sweep
+
+다음 blind sweep은 이미 수행했다.
+
+## X Rotation
+
+* 145°
+* 155°
+* 165°
+* 175°
+* 185°
+* 195°
+
+모두 trajectory replay는 정상.
+
+하지만 Real observation과 충분히 일치하지 않았다.
+
+145°가 상대적으로 덜 나빴다.
+
+## RY/RZ
+
+예:
+
+* `rx145_ry0_rz30`
+* `rx145_rym30_rz0`
+* `rx155_ry0_rz30`
+
+충분한 개선 없음.
+
+## Translation
+
+`rx145 ry0 rz30` 조건에서:
+
+`ty +0.10 m`
+
+가 상대적으로 가장 나았지만 body/gripper occlusion이 컸다.
+
+XY translation도 추가했으나 최종 acceptable candidate는 얻지 못했다.
+
+**따라서 blind camera sweep을 처음부터 반복하지 않는다.**
+
+---
+
+# 11. Tool-frame 관련 중요 발견
+
+Real raw tool0 orientation과 Sim tool0 사이에 거의 일정한 orientation offset이 발견되었다.
+
+약:
+
+`145.393°`
+
+trajectory 전체 residual drift:
+
+* mean ≈ 0.062°
+* max ≈ 0.141°
+
+Sim position과 Real raw position에는 거의 일정한 Z offset:
+
+약 `0.8146 m`
+
+가 존재했다.
+
+이는 Real/Sim frame origin 또는 tool convention이 다를 가능성을 강하게 시사한다.
+
+따라서 absolute pose가 다르다고 trajectory mismatch로 바로 판단하지 않는다.
+
+---
+
+# 12. 계산된 Camera Corrected Transform
+
+기존 tool-frame offset을 역으로 반영하여 계산한 camera local transform:
+
+Translation:
+
+`(0.113519, 0.081842, 0.001427)`
+
+Rotation XYZ:
+
+`(-26.092683, 48.912399, -94.232534)`
+
+관련 script:
+
+`scripts/run_episode001_camera_frame_corrected_replay.sh`
+
+`scripts/estimate_episode001_camera_extrinsic_from_cube_pixels.py`
+
+**다음 camera 작업은 이 corrected replay의 실제 결과를 먼저 검증하는 것부터 시작한다.**
+
+---
+
+# 13. Camera Alignment 최종 방법
+
+blind sweep보다 pixel correspondence 기반 estimation을 우선한다.
+
+Real target/cube pixel:
+
+$$
+p_r(t)=(u_r(t),v_r(t))
+$$
+
+Sim projection:
+
+$$
+p_s(t;T_{cam})
+$$
+
+에 대해:
+
+$$
+T^*_{cam}
+=
+\arg\min_T
+\sum_t
+\|p_r(t)-p_s(t;T)\|^2
+$$
+
+를 이용한다.
+
+우선 stable pre-grasp/approach frame으로 추정하고 전체 trajectory에서 검증한다.
+
+Camera alignment 완료 기준:
+
+* cube screen position 유사
+* pixel trajectory 방향 유사
+* 접근 시 object scale 증가 패턴 유사
+* gripper/body occlusion 유사
+* FoV/crop 유사
+* processed input composition 유사
+
+Pixel-perfect rendering을 요구하지 않는다.
+
+---
+
+# 14. Representation Analysis — 이미 완료된 Pilot
+
+Real episode_000001과 Sim episode_000001에서 feature extraction을 완료하였다.
+
+원본 paired frame:
+
+**120 frames**
+
+문제 구간 87–96 제외 후 주요 분석:
+
+**110 paired frames**
+
+분석 feature:
+
+* `vision_backbone.output`
+* `projector.output`
+
+Phase:
+
+* Home/Hold: 0–13
+* Approach: 14–77
+* Grasp/Contact: 78–95
+* Lift: 96–119
+
+현재 phase definition은 pilot 기준이며 최종 실험에서는 state/event 기반 정의로 개선한다.
+
+---
+
+# 15. 확보된 Phase별 Representation Gap
+
+87–96 제외 기준 주요 결과:
+
+## Vision Backbone Output
+
+Cosine distance:
+
+| Phase         |       Mean |
+| ------------- | ---------: |
+| Home/Hold     |     0.0866 |
+| Approach      |     0.1520 |
+| Grasp/Contact | **0.1965** |
+| Lift          |     0.1666 |
+
+Token mean L2/token:
+
+| Phase         |       Mean |
+| ------------- | ---------: |
+| Home/Hold     |     11.303 |
+| Approach      |     13.421 |
+| Grasp/Contact | **14.068** |
+| Lift          |     13.456 |
+
+## Projector Output
+
+Cosine distance:
+
+| Phase         |       Mean |
+| ------------- | ---------: |
+| Home/Hold     |     0.0396 |
+| Approach      |     0.0954 |
+| Grasp/Contact | **0.1502** |
+| Lift          |     0.1291 |
+
+Token mean L2/token:
+
+| Phase         |      Mean |
+| ------------- | --------: |
+| Home/Hold     |     1.601 |
+| Approach      | **1.904** |
+| Grasp/Contact |     1.809 |
+| Lift          |     1.741 |
+
+현재 관찰:
+
+> **Home보다 Approach에서 gap이 커지고, 특히 Grasp/Contact 부근에서 cosine representation discrepancy가 크게 나타난다.**
+
+이를 최종 결론으로 단정하지 말고 후속 trajectory에서 재검증한다.
+
+---
+
+# 16. Representation Shift Pilot — 이미 완료
+
+다음 세 종류의 correction을 시험했다.
+
+## Global Shift
+
+$$
+\Delta z_{global}
+=
+\mu_{real}-\mu_{sim}
+$$
+
+전체 trajectory에 하나의 shift 적용.
+
+## Phase-conditioned Shift
+
+$$
+\Delta z_{phase}
+=
+\mu_{real,phase}-\mu_{sim,phase}
+$$
+
+task phase별 다른 shift 적용.
+
+## Progress-conditioned Shift
+
+trajectory progress에 따라 local/smooth shift를 적용.
+
+---
+
+# 17. Shift Correction 주요 결과
+
+110 paired frame 기준 correction 이전:
+
+### Vision Backbone
+
+Mean frame cosine:
+
+`0.15038`
+
+### Projector
+
+Mean frame cosine:
+
+`0.09983`
+
+대략적인 correction 결과:
+
+| Method   | Vision cosine | Projector cosine |
+| -------- | ------------: | ---------------: |
+| Before   |        0.1504 |           0.0998 |
+| Global   |       ≈ 0.050 |          ≈ 0.040 |
+| Phase    |    **0.0282** |       **0.0214** |
+| Progress |   **≈ 0.005** |      **≈ 0.004** |
+
+Phase correction 기준:
+
+Vision frame L2:
+
+`86.14 → 33.58`
+
+Projector frame L2:
+
+`9.93 → 3.60`
+
+Vision MMD²:
+
+`0.40335 → 0.00981`
+
+Projector MMD²:
+
+`0.40460 → 0.01529`
+
+즉 correction granularity가 증가하면서 같은 paired trajectory에서는 representation discrepancy가 크게 감소하였다.
+
+---
+
+# 18. Phase Shift Magnitude 결과
+
+Vision Backbone:
+
+* Home: ≈ 63.24
+* Approach: ≈ 76.22
+* Grasp: ≈ 96.96
+* Lift: ≈ 88.34
+
+Projector:
+
+* Home: ≈ 7.22
+* Approach: ≈ 9.46
+* Grasp: ≈ 10.14
+* Lift: ≈ 9.43
+
+따라서 pilot에서는 필요한 Real–Sim representation correction 자체도 phase에 따라 달라지는 현상이 관찰되었다.
+
+현재 가설:
+
+$$
+\Delta z(t)
+=
+\Delta z_{global}
++
+\Delta z_{task/progress}(t)
++
+\epsilon(t)
+$$
+
+---
+
+# 19. Pilot 결과를 해석할 때 반드시 주의할 점
+
+Progress-conditioned correction에서 매우 작은 gap이 나온 것을:
+
+> “Sim-to-Real representation 문제가 해결되었다.”
+
+라고 해석하지 않는다.
+
+현재 correction은 동일 paired episode의 Real feature를 이용하여 shift를 계산하고 같은 episode에서 평가한 결과이다.
+
+따라서 현재 결과는 **in-sample correction**이다.
+
+특히 progress-conditioned correction은:
+
+$$
+\Delta z(t)
+\approx
+z_{real}(t)-z_{sim}(t)
+$$
+
+에 가까워질 수 있으므로 낮은 residual은 어느 정도 예상된다.
+
+현재 결과에서 주장 가능한 수준은:
+
+> **Sim–Real representation discrepancy가 단순한 하나의 global offset만으로 설명되지 않으며, task phase/progress에 따라 구조적으로 변화할 가능성이 관찰되었다.**
+
+까지이다.
+
+---
+
+# 20. 87–96 Frame Exclusion 주의
+
+원본 분석:
+
+120 paired frames
+
+주요 분석:
+
+87–96 제외 후 110 paired frames
+
+따라서 향후 최종 실험에서는 결과를 본 뒤 임의로 frame을 제거하지 않는다.
+
+명시적인 exclusion criterion을 사전에 정의한다.
+
+예:
+
+* missing image
+* Sim rendering failure
+* correspondence error
+* timestamp mismatch > threshold
+* invalid robot state
+* physical event mismatch
+
+가능하면 최종 결과에는:
+
+* All-frame result
+* Valid-pair result
+
+를 함께 보고한다.
+
+---
+
+# 21. 지금부터 수행해야 할 첫 번째 작업
+
+**새로운 latent correction 실험을 바로 추가하지 않는다.**
+
+현재 최우선:
+
+### Step 1
+
+Camera/tool-frame convention 검증
+
+### Step 2
+
+Corrected camera transform replay 확인
+
+### Step 3
+
+Pixel correspondence 기반 camera extrinsic 추정/검증
+
+### Step 4
+
+신뢰 가능한 Sim–Real paired observation 생성
+
+이다.
+
+현재 representation 결과는 **A0 / Pilot Baseline**으로 보존한다.
+
+---
+
+# 22. Alignment Ablation
+
+기존 Pilot을 baseline으로 활용한다.
+
+## A0 — Current / Basic Alignment
+
+현재 확보된 pilot.
+
+Representation baseline:
+
+* Vision cosine ≈ 0.150
+* Projector cosine ≈ 0.100
+
+## A1 — Geometry Aligned
+
+추가:
+
+* camera intrinsic
+* camera extrinsic
+* FoV
+* crop/viewpoint
+* occlusion alignment
+
+다시 측정:
+
+* Image Gap
+* Vision Gap
+* Projector Gap
+* Action Gap
+
+## A2 — Geometry + Photometric
+
+추가:
+
+* lighting
+* brightness
+* color
+* contrast
+
+다시 측정.
+
+## A3 — Geometry + Photometric + Temporal/Control
+
+필요한 control/temporal alignment까지 적용 후 재측정.
+
+최종 표:
+
+| Condition | Image Gap | Vision Gap | Projector Gap | Action Gap |
+| --------- | --------: | ---------: | ------------: | ---------: |
+| A0        |           |      0.150 |         0.100 |            |
+| A1        |           |            |               |            |
+| A2        |           |            |               |            |
+| A3        |           |            |               |            |
+
+---
+
+# 23. Alignment가 Representation Shift에 미치는 영향
+
+각 alignment level에서:
+
+* Global shift
+* Phase shift
+* Progress-dependent shift
+
+를 다시 계산한다.
+
+목적:
+
+> **어떤 environment mismatch가 representation shift를 만들어내는가?**
+
+예:
+
+Camera alignment 이후 raw representation gap과 progress-dependent component가 크게 감소한다면:
+
+> 기존 state-dependent representation gap의 일부가 viewpoint/geometry mismatch에서 발생했을 가능성
+
+을 검토한다.
+
+반대로 geometry/photometric alignment 이후에도 task-dependent shift가 남는다면:
+
+> environment alignment 이후에도 VLA 내부에 task/state-dependent Sim–Real representation discrepancy가 남는다.
+
+는 후속 가설이 된다.
+
+---
+
+# 24. 반드시 수행할 Representation Shift Generalization Test
+
+현재 correction 결과의 가장 큰 한계는 동일 episode에서 shift estimation과 evaluation을 했다는 점이다.
+
+따라서 여러 episode/layout을 이용하여:
+
+**Train / Validation / Test**
+
+를 분리한다.
+
+예:
+
+* Train: shift estimator 생성
+* Validation: progress smoothing/window 등 결정
+* Test: unseen trajectory/layout
+
+Test Real feature는 shift estimator 계산에 절대 사용하지 않는다.
+
+비교:
+
+1. No Correction
+2. Global Shift
+3. Phase-conditioned Shift
+4. Progress-conditioned Shift
+
+평가:
+
+* paired cosine
+* normalized L2
+* MMD
+* Action Gap
+
+핵심 질문:
+
+> **한 trajectory에서 학습된 Sim–Real representation shift가 unseen object position 및 unseen trajectory에서도 재현되는가?**
+
+이 결과가 나와야 progress-dependent shift를 일반적인 domain structure라고 주장할 수 있다.
+
+---
+
+# 25. Layout 설계
+
+Random 30회만 수행하지 않는다.
+
+Cube workspace를 stratified layout으로 구성한다.
+
+예:
+
+3 × 3:
+
+* Left / Center / Right
+* Near / Middle / Far
+
+9 layouts.
+
+권장:
+
+`9 layouts × 3 repetitions = 27`
+
+* center / edge / extreme cases
+
+≈ 30 trials
+
+Sim과 Real에서 동일한 layout distribution을 사용한다.
+
+Train/Test를 layout 단위로 분리하여 같은 위치가 train과 test에 섞이지 않도록 하는 방법을 우선 검토한다.
+
+---
+
+# 26. Control / Temporal Alignment
+
+새 Real robot motion을 먼저 수행하지 않는다.
+
+기존 Real dataset에서:
+
+* timestep interval
+* effective Hz
+* joint Δq
+* EEF Δposition
+* EEF Δrotation
+* trajectory duration
+* gripper timing
+
+을 계산한다.
+
+Sim replay와 비교한다.
+
+단순히 speed ×3 등의 방식으로 보정하지 않는다.
+
+기존 log만으로 확인할 수 없는:
+
+* command-to-motion latency
+* servo response
+* exact command→motion mapping
+
+이 필요한 경우에만 짧은 Real calibration motion을 수행한다.
+
+---
+
+# 27. Observation Gap Final Analysis
+
+신뢰 가능한 paired dataset을 확보한 뒤:
+
+## Distribution
+
+* RGB mean/std
+* HSV mean/std
+* luminance
+* contrast
+* saturation
+* histogram
+
+## Paired
+
+* SSIM
+* PSNR
+* LPIPS
+
+단, geometry가 맞지 않은 상태에서 SSIM/PSNR을 주요 결과로 사용하지 않는다.
+
+Observation gap을:
+
+* Geometry
+* Photometric
+
+으로 가능한 한 분리한다.
+
+---
+
+# 28. Representation Gap Final Analysis
+
+주요 hook:
+
+* `vision_backbone.input`
+* `vision_backbone.output`
+* `projector.output`
+* `action_hidden_states.input`
+* `action_head.output`
+
+Metrics:
+
+* paired cosine distance
+* normalized L2
+* MMD
+* 충분한 sample 확보 시 distribution metric
+
+PCA/UMAP은 qualitative visualization으로만 사용한다.
+
+서로 다른 layer의 raw L2 magnitude를 직접 비교하지 않는다.
+
+---
+
+# 29. Offline Action Gap
+
+같은 task state에 대응하는 paired observation을 각각 VLA에 입력한다.
+
+$$
+a_{sim}(t)=\pi(I_{sim}(t),s_{sim}(t))
+$$
+
+$$
+a_{real}(t)=\pi(I_{real}(t),s_{real}(t))
+$$
+
+비교:
+
+* translation direction
+* translation magnitude
+* rotation distance
+* gripper prediction
+* action cosine
+* phase-conditioned action error
+
+또한 reference:
+
+$$
+a_{GT}(t)
+$$
+
+와 비교한다.
+
+핵심 분석:
+
+**Representation Gap → Action Gap**
+
+Representation gap이 커도 action이 유지된다면 VLA가 해당 variation에 task-level robustness를 가지고 있을 가능성이 있다.
+
+따라서 feature distance만으로 성능을 판단하지 않는다.
+
+---
+
+# 30. Shadow Mode
+
+Offline 분석 이후 수행한다.
+
+Real robot은 기존 dataset/reference trajectory를 실제로 replay한다.
+
+VLA는 live Real image/state를 입력받는다.
+
+하지만:
+
+**VLA action → LOG ONLY**
+
+이다.
+
+Robot command:
+
+**Reference / Replay Controller**
+
+에서만 발생한다.
+
+구조:
+
+Real Dataset Trajectory
+↓
+Replay Controller
+↓
+Real Robot
+↓
+Live Camera + State
+↓
+VLA
+↓
+Predicted Action
+↓
+Logging Only
+
+Sim에서는 동일 trajectory에 대해:
+
+Sim Replay Observation
+↓
+VLA
+↓
+\(a_{sim}\)
+
+Real Shadow에서는:
+
+Real Live Observation
+↓
+VLA
+↓
+\(a_{real}\)
+
+Reference:
+
+\(a_{GT}\)
+
+비교:
+
+$$
+a_{sim},\quad a_{real},\quad a_{GT}
+$$
+
+---
+
+# 31. Shadow Mode Safety
+
+반드시 구현/확인:
+
+* inference timeout → hold
+* communication disconnect → hold
+* invalid action → hold
+* e-stop
+* safe reset procedure
+* runtime restart/reset
+* event logging
+
+Shadow에서는 AI action을 실제 robot command에 연결하지 않는다.
+
+---
+
+# 32. Real Closed-loop Prototype
+
+Shadow 결과에서 치명적인 action 문제가 없을 때만 진행한다.
+
+Initial condition:
+
+### Easy
+
+Cube 근처
+
+### Medium
+
+Cube–Home 중간
+
+### Hard
+
+Home 근처
+
+각 약 5 rollout.
+
+기록:
+
+* wrong approach
+* oscillation
+* premature close
+* missed grasp
+* unstable lift
+* timeout
+* target acquisition failure
+* excessive steps
+* safety event
+
+Prototype의 목적은 통계적 성능 주장이 아니라 **closed-loop safety 및 failure mode 확인**이다.
+
+---
+
+# 33. Full Real Evaluation
+
+Prototype 통과 후:
+
+모델:
+
+* Vanilla OpenVLA
+* OFT
+
+각 약 30 rollout.
+
+동일 layout 사용.
+
+실행 순서 counterbalance:
+
+* odd layouts: Vanilla → OFT
+* even layouts: OFT → Vanilla
+
+Primary:
+
+**Task Success Rate**
+
+Secondary:
+
+* grasp success
+* lift success
+* completion time
+* inference steps
+* trajectory duration
+* timeout count
+* e-stop count
+* gripper failure
+* target acquisition failure
+* collision/safety event
+
+Success criterion은 실험 전에 고정한다.
+
+---
+
+# 34. Gap–Performance Analysis
+
+최종적으로 각 layout/episode마다:
+
+* Image Gap
+* Vision Gap
+* Projector Gap
+* Action Gap
+* Global shift magnitude
+* Phase/progress-dependent shift
+* Real Success/Failure
+
+를 연결한다.
+
+분석:
+
+$$
+Observation\ Gap
+\rightarrow
+Representation\ Gap
+$$
+
+$$
+Representation\ Gap
+\rightarrow
+Action\ Gap
+$$
+
+$$
+Action\ Gap
+\rightarrow
+Real\ Performance
+$$
+
+필요 시:
+
+* Spearman correlation
+* point-biserial correlation
+* 충분한 sample이면 logistic regression
+
+을 사용한다.
+
+최종적으로:
+
+> **어떤 종류의 Sim–Real gap이 실제 VLA failure와 가장 관련되는가?**
+
+를 분석한다.
+
+---
+
+# 35. 최종 Research Questions
+
+### RQ1
+
+Sim과 Real 사이에 어떤 observation gap이 존재하는가?
+
+### RQ2
+
+Camera geometry / photometric / control alignment가 각 gap을 얼마나 감소시키는가?
+
+### RQ3
+
+Observation gap은 VLA representation으로 어떻게 전달되는가?
+
+### RQ4
+
+Sim–Real representation discrepancy는 global constant인가, task phase/progress에 따라 변화하는가?
+
+### RQ5
+
+관찰된 progress-dependent representation shift는 unseen trajectory/layout에서도 재현되는가?
+
+### RQ6
+
+Representation gap은 VLA action prediction 차이로 이어지는가?
+
+### RQ7
+
+어떤 environment/representation/action gap이 실제 Real task success와 가장 관련되는가?
+
+---
+
+# 36. 현재 Pilot에서 주장 가능한 것
+
+현재까지는 다음 정도로 표현한다.
+
+> Real–Sim paired trajectory에 대한 pilot 분석에서 VLA의 representation discrepancy가 task phase에 따라 변화하는 패턴이 관찰되었으며, Home보다 Approach 및 Grasp/Contact 구간에서 더 큰 discrepancy가 나타났다.
+
+또한:
+
+> Global correction보다 phase/progress-conditioned correction에서 동일 paired trajectory의 representation discrepancy가 더 크게 감소하였다.
+
+따라서:
+
+> Sim–Real representation discrepancy가 단순한 global domain offset 이상의 구조를 가질 가능성을 제시한다.
+
+---
+
+# 37. 현재 Pilot에서 주장하면 안 되는 것
+
+다음은 아직 주장하지 않는다.
+
+* progress-conditioned correction이 Sim-to-Real 문제를 해결했다.
+* latent correction만으로 Real robot 성능이 향상된다.
+* representation gap이 Real failure의 직접 원인이다.
+* grasp phase의 큰 gap이 grasp failure를 유발한다.
+* brightness가 representation gap의 원인이다.
+* camera mismatch가 모든 representation gap의 원인이다.
+* Sim/Real latent는 같아야 한다.
+* 같은 physical state면 모든 layer feature가 같아야 한다.
+* 동일 episode correction 결과를 unseen-domain generalization으로 해석한다.
+
+---
+
+# 38. 현재 정확한 연구 상태
+
+현재 상태를 한 문장으로 정리하면:
+
+> **Real trajectory의 Sim replay와 초기 Sim–Real representation-gap pilot까지 완료되었고, task-dependent representation shift 가능성이 관찰된 상태이며, 현재 가장 중요한 다음 단계는 camera/tool-frame confound를 제거한 신뢰 가능한 paired dataset을 구축한 뒤 해당 현상이 alignment 이후 및 unseen trajectory에서도 유지되는지 검증하는 것이다.**
+
+---
+
+# 39. 지금부터 실제 작업 순서
+
+반드시 다음 순서로 진행한다.
+
+### 1
+
+기존 작업기록 / scripts / outputs 확인
+
+### 2
+
+Corrected camera transform replay 검증
+
+### 3
+
+Tool0/TCP/Camera frame convention 확정
+
+### 4
+
+Pixel correspondence 기반 camera extrinsic 검증
+
+### 5
+
+Camera/FoV/occlusion alignment 완료
+
+### 6
+
+기존 Real dataset 기반 control/temporal alignment 확인
+
+### 7
+
+A1 Geometry-aligned paired Sim–Real dataset 생성
+
+### 8
+
+Observation Gap 재측정
+
+### 9
+
+Vision / Projector Representation Gap 재측정
+
+### 10
+
+A0 vs A1 비교
+
+### 11
+
+Photometric alignment → A2 생성
+
+### 12
+
+A0/A1/A2 representation shift 비교
+
+### 13
+
+여러 layout/episode 확보
+
+### 14
+
+Train/Validation/Test 분리
+
+### 15
+
+Global / Phase / Progress shift generalization 검증
+
+### 16
+
+Offline Action Gap 분석
+
+### 17
+
+Shadow Mode
+
+### 18
+
+Real Closed-loop Prototype
+
+### 19
+
+Full Real Evaluation
+
+### 20
+
+Gap–Performance correlation 분석
+
+---
+
+# 40. 최종 연구 방향
+
+이 연구의 핵심은 단순히:
+
+> “Sim과 Real image가 다르다.”
+
+또는:
+
+> “Sim과 Real latent가 다르다.”
+
+를 보여주는 것이 아니다.
+
+최종적으로 밝혀야 할 것은:
+
+**어떤 Environment Gap이 발생하고**
+↓
+**그 Gap이 VLA Representation에 어떻게 전달되고**
+↓
+**그 차이가 Action Prediction까지 전달되는지 확인하고**
+↓
+**실제 Real Robot Performance와 연결되는지를 검증하는 것**
+
+이다.
+
+현재 발견된 task-progress-dependent representation shift는 이 전체 연구 안에서 중요한 분석 축으로 사용하되, 그 자체를 연구 전체의 결론으로 먼저 확정하지 않는다.
+
+최종적으로 다음 질문에 답할 수 있도록 실험을 진행한다.
+
+> **Which Sim-to-Real discrepancies actually matter for VLA deployment, and how do they propagate from observation to representation, action, and real-world task performance?**
