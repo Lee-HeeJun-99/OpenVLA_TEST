@@ -1,0 +1,1260 @@
+# A0509 VLA Sim-to-Real 최종 실험 진행 프롬프트
+
+## 0. 연구 목적
+
+A0509 로봇에서 Sim-trained VLA의 Sim-to-Real deployment를 분석한다.
+
+이번 연구의 목적은 단순히 Simulation과 Reality의 이미지를 비슷하게 만드는 것이 아니다.
+
+핵심 연구 질문은 다음과 같다.
+
+> **Simulation과 Reality 사이의 visual observation gap이 VLA 내부 representation과 action prediction에 어떻게 전달되며, 이러한 gap이 실제 로봇의 task performance와 어떤 관계를 가지는가?**
+
+전체 연구 흐름은 다음과 같이 정의한다.
+
+**Environment / Control Alignment**
+
+↓
+
+**Observation Gap**
+
+↓
+
+**Representation Gap**
+
+↓
+
+**Action Gap**
+
+↓
+
+**Real-world Performance**
+
+최종적으로는
+
+> **어떤 Sim-to-Real gap이 실제 VLA deployment에 중요한지, 그리고 어느 수준의 environment alignment가 필요한지**
+
+분석하는 것을 목표로 한다.
+
+---
+
+# 1. 사용 패키지
+
+## Main Bundle
+
+`/home/ubuntu/a0509_vla_linux_field_bundle_20260903`
+
+실험 관리, 모델, 분석, 결과 저장의 기준 패키지.
+
+주요 구성:
+
+* `models/base_openvla_7b`
+* `models/oft_mixed480_step28560`
+* `models/vanilla_s1_balanced_step8130`
+* `runtime/openvla-oft`
+* `runtime/vanilla-support`
+* `isaac_sim/`
+* `validation/`
+* `sim2real_analysis/`
+* `scripts/`
+* `outputs/`
+* `logs/`
+* `작업기록.md`
+
+---
+
+## Isaac Sim BASE
+
+`/home/ubuntu/A0509_IsaacSim_Ubuntu_20260806`
+
+실제 Simulation 및 trajectory replay 기준.
+
+주요 구성:
+
+* `app/a0509_control_app.py`
+* `app/a0509_control/`
+* `app/config/`
+* `assets/a0509_urdf/`
+* `run_gui.sh`
+* `run_vla_validation.sh`
+* `run_phase2_gt_replay.sh`
+* `collect_data.sh`
+* `verify_package.sh`
+
+---
+
+## Real Dataset
+
+`/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft_200`
+
+현재 확보된 실제 로봇 reference dataset.
+
+주요 데이터:
+
+* `dataset_manifest.json`
+* `episodes/episode_xxxxxx/metadata.json`
+* `steps.jsonl`
+* `steps_with_actions.jsonl`
+* `images/primary/`
+
+현재 주요 조건:
+
+* instruction: `Pick up the orange cube.`
+* control frequency: 약 5 Hz
+* Real robot trajectory/state/action/image 포함
+* Real trajectory를 Sim replay 및 Shadow Mode의 reference로 활용
+
+---
+
+## Real Robot Runtime
+
+`/home/ubuntu/robot_ws/src/openvla_doosan_runtime`
+
+주요 구성:
+
+* `config/runtime_oft.yaml`
+* `launch/runtime.launch.py`
+* `openvla_oft_inference_node.py`
+* `action_adapter_node.py`
+* `doosan_bridge_node.py`
+* `camera_adapter_node.py`
+* `episode_manager_node.py`
+* `dataset_episode_replay_node.py`
+
+---
+
+# 2. 작업 시작 원칙
+
+새로운 작업을 시작하기 전에 반드시
+
+`/home/ubuntu/a0509_vla_linux_field_bundle_20260903/작업기록.md`
+
+를 확인한다.
+
+이미 구현하거나 실패한 방법을 이유 없이 반복하지 않는다.
+
+특히 현재까지 다음은 확인되어 있다.
+
+* Real first row 기준 HOME joint/gripper 정합
+* Real 약 5 Hz control
+* Sim replay 5 Hz
+* OFT action chunk K=5
+* OFT 추가 center crop 제거
+* instruction 통일
+* commanded-reference trajectory replay 구현
+* `episode_000001` 46 action IK 성공
+* trajectory replay의 kinematic tracking은 정상
+* Sim replay image capture 가능
+* image distribution 분석 가능
+* warm-color masking 분석 가능
+* layer-wise VLA feature extraction 가능
+* offline action 분석 가능
+
+기존 코드를 최대한 재사용한다.
+
+---
+
+# 3. 전체 실험 단계 구분
+
+전체 실험은 크게 세 구간으로 나눈다.
+
+## A. Offline / Simulation Analysis
+
+Real robot을 새로 움직이지 않고 기존 Real dataset과 Simulation을 이용한다.
+
+주요 목적:
+
+* 환경 정합
+* camera 정합
+* control 조건 확인
+* paired Sim-Real dataset 구축
+* observation gap 분석
+* representation gap 분석
+* offline action gap 분석
+
+---
+
+## B. Real Robot Shadow Evaluation
+
+Real robot을 움직이지만 VLA가 제어하지 않는다.
+
+**기존 Real dataset trajectory를 실제 로봇에 replay한다.**
+
+VLA는 Real observation을 입력받아 inference만 수행한다.
+
+VLA prediction은 저장만 하고 robot command로 사용하지 않는다.
+
+---
+
+## C. Real Robot Closed-loop Evaluation
+
+VLA가 Real robot을 직접 제어한다.
+
+두 단계로 나눈다.
+
+1. Prototype
+2. Full Real Verification
+
+---
+
+# 4. Phase 1 — Initial Condition / Coordinate Alignment
+
+기존 Real dataset을 기준으로 Sim과 Real의 초기 조건을 맞춘다.
+
+확인 대상:
+
+* initial joint
+* gripper
+* robot home
+* cube position range
+* instruction
+* camera preprocessing
+
+현재 Real200 first row 기반 HOME 정합 결과를 우선 사용한다.
+
+---
+
+# 5. Phase 2 — Tool / Camera Coordinate Alignment
+
+현재 가장 중요한 미해결 문제다.
+
+trajectory replay 자체는 정상적으로 수행되고 있으나 Real과 Sim camera view가 크게 다르다.
+
+따라서 먼저 coordinate-frame 차이를 해결한다.
+
+다음을 구분한다.
+
+* Base
+* Flange
+* Tool0
+* TCP
+* Camera parent
+* Dataset EEF frame
+
+Real dataset의 `end_effector_pose`가 어떤 frame을 의미하는지 확인한다.
+
+Sim의 tool0/TCP와 직접 비교 가능한지도 검증한다.
+
+각 환경의 transform chain을 다음 형태로 정리한다.
+
+`Base → Flange → Tool/TCP → Camera`
+
+기존 분석에서 Real raw tool orientation과 Sim tool orientation 사이에 거의 일정한 큰 frame offset이 관찰되었으므로 이를 우선 검증한다.
+
+무작정 camera rotation/translation sweep을 추가하지 않는다.
+
+---
+
+# 6. Phase 3 — Camera Intrinsic / Extrinsic Alignment
+
+## Intrinsic
+
+Sim과 Real에 대해 다음을 비교한다.
+
+* resolution
+* fx/fy
+* cx/cy
+* horizontal FoV
+* vertical FoV
+* aspect ratio
+* distortion
+* crop
+* resize
+* model preprocessing
+
+Raw image와 model-input image를 구분한다.
+
+---
+
+## Extrinsic
+
+Real trajectory에서 cube 또는 known target의 image coordinate를 이용해 camera extrinsic을 추정한다.
+
+각 timestep의 Real pixel:
+
+`p_real(t) = [u_real, v_real]`
+
+Sim projection:
+
+`p_sim(t; T_camera)`
+
+를 비교하여
+
+`Σ ||p_real(t) - p_sim(t)||²`
+
+를 최소화하는 camera transform을 찾는다.
+
+가능하면 grasp 전 안정적인 구간을 우선 사용한다.
+
+기존에 계산한 frame-corrected camera transform과 extrinsic estimation script를 먼저 검증한다.
+
+---
+
+# 7. Camera Alignment 완료 기준
+
+다음 조건을 만족한 후 본격적인 observation-gap 분석으로 넘어간다.
+
+* cube가 Real/Sim에서 유사한 image region에 위치
+* cube pixel trajectory 방향이 유사
+* 접근 과정에서 object scale 변화가 유사
+* gripper/body occlusion이 크게 다르지 않음
+* FoV가 유사
+* crop/resize 이후 model input layout이 유사
+
+Pixel-identical할 필요는 없다.
+
+목적은 camera geometry mismatch라는 큰 confounding factor를 제거하는 것이다.
+
+---
+
+# 8. Phase 4 — Control / Temporal Alignment
+
+이 단계에서는 **새로운 Real robot 동작을 우선 요구하지 않는다.**
+
+먼저 기존
+
+`raw_dataset_oft_200`
+
+을 분석한다.
+
+확인 항목:
+
+* timestep interval
+* effective control frequency
+* EEF translation per timestep
+* EEF rotation per timestep
+* gripper transition
+* trajectory duration
+
+그리고 동일 Real trajectory를 Sim에서 replay하여 비교한다.
+
+즉:
+
+`Real Dataset Δpose`
+
+vs
+
+`Sim Replay Δpose`
+
+를 비교한다.
+
+현재 기준:
+
+* Real ≈ 5 Hz
+* Sim replay ≈ 5 Hz
+* OFT K=5
+* OFT input ≈ 1 Hz / control 5 Hz
+
+를 검증한다.
+
+단순히 "Real이 3배 느리므로 Sim을 3배 느리게 한다"는 식으로 결정하지 않는다.
+
+---
+
+## 추가 Real Calibration이 필요한 경우
+
+기존 dataset으로 확인할 수 없는 다음 항목이 연구에 반드시 필요할 경우에만 짧은 Real calibration 동작을 수행한다.
+
+* command-to-motion latency
+* servo response
+* 동일 command에 대한 실제 displacement
+* settling time
+
+즉 Phase 4까지는 가능한 한 기존 dataset을 활용한다.
+
+---
+
+# 9. Phase 5 — Logging Structure
+
+이 단계 역시 Real robot을 움직이는 단계가 아니다.
+
+이후 Shadow/Prototype/Full Real에서 사용할 logging schema를 미리 통일한다.
+
+각 timestep에서 가능하면 다음을 저장한다.
+
+* timestamp
+* episode
+* layout ID
+* instruction
+* raw image
+* processed image
+* joint position
+* joint velocity
+* EEF/TCP pose
+* gripper
+* dataset/reference action
+* raw VLA action
+* postprocessed VLA action
+* commanded action
+* inference latency
+* communication state
+* safety state
+
+OFT는 가능하면 K=5 action chunk 전체를 저장한다.
+
+---
+
+# 10. Phase 6 — Paired Sim-Real Dataset
+
+기존 Real dataset trajectory를 Simulation에서 replay한다.
+
+이를 통해 timestep 기준으로 대응되는:
+
+`Real Image(t) ↔ Sim Image(t)`
+
+pair를 구축한다.
+
+함께 저장:
+
+* Real state
+* Sim state
+* reference action
+* cube/layout position
+* timestep
+* trajectory phase
+
+즉:
+
+`Real Dataset`
+
+↓
+
+`Same Trajectory Replay in Sim`
+
+↓
+
+`Paired Sim-Real Observation`
+
+구조를 만든다.
+
+---
+
+# 11. Phase 7 — Layout Design
+
+단순 random rollout만 사용하지 않는다.
+
+기존 Simulation cube placement 범위를 확인하고 Real에서도 동일 범위를 사용한다.
+
+가능하면 3×3 grid를 사용한다.
+
+예:
+
+X:
+
+* Left
+* Center
+* Right
+
+Y:
+
+* Near
+* Middle
+* Far
+
+총 9 layout.
+
+권장:
+
+`9 layouts × 3 repetitions = 27`
+
+필요하면 center/extreme condition을 추가하여 약 30회로 구성한다.
+
+Sim과 Real의 target-position distribution을 최대한 동일하게 한다.
+
+---
+
+# 12. Phase 8 — Observation Gap Analysis
+
+paired Sim-Real dataset을 이용한다.
+
+## Image-level statistics
+
+* RGB mean/std
+* HSV
+* brightness
+* luminance
+* contrast
+* histogram
+* saturation
+
+Raw image와 processed image를 각각 분석한다.
+
+---
+
+## Paired image metrics
+
+geometry alignment가 완료된 이후에:
+
+* LPIPS
+* SSIM
+* PSNR
+
+등을 사용한다.
+
+SSIM/PSNR은 camera geometry가 정합되지 않은 상태에서는 주요 결과로 사용하지 않는다.
+
+---
+
+# 13. Phase 9 — Photometric Alignment
+
+Camera geometry 정합 후 lighting/exposure/color 차이를 분석한다.
+
+기존 결과에서 Sim brightness가 Real보다 높은 경향이 있었으므로 lighting adjustment 결과를 재검증한다.
+
+다음 조건을 비교한다.
+
+### A0
+
+Raw Sim
+
+### A1
+
+Camera geometry aligned
+
+### A2
+
+Camera + lighting/photometric aligned
+
+필요하면 이후 control alignment까지 포함하여 A3를 구성한다.
+
+각 단계마다 image gap을 측정한다.
+
+---
+
+# 14. Phase 10 — Representation Gap
+
+동일 paired Sim/Real observation을 VLA에 넣는다.
+
+현재 가능한 주요 layer:
+
+* `vision_backbone.input`
+* `vision_backbone.output`
+* `projector.output`
+* `action_hidden_states.input`
+* `action_head.output`
+
+목적은:
+
+> **Sim/Real visual gap이 VLA 내부에서 어느 정도 유지되고 action 쪽으로 전달되는지**
+
+확인하는 것이다.
+
+Sim과 Real의 latent가 반드시 같아야 한다고 가정하지 않는다.
+
+---
+
+# 15. Representation Metrics
+
+최소 다음을 사용한다.
+
+### Paired cosine distance
+
+`1 - cosine(z_sim, z_real)`
+
+### Normalized L2
+
+`||z_sim-z_real|| / sqrt(d)`
+
+### Distribution metric
+
+가능하면 MMD.
+
+필요하면 충분한 sample에서 Fréchet-style feature distance를 검토한다.
+
+서로 다른 layer는 dimension과 scale이 다르므로 raw L2 magnitude를 직접 비교하지 않는다.
+
+---
+
+# 16. Representation Visualization
+
+PCA 또는 UMAP 등을 사용할 수 있다.
+
+단 visualization은 qualitative evidence로 사용한다.
+
+Quantitative evidence는:
+
+* cosine
+* normalized L2
+* MMD
+
+등을 사용한다.
+
+---
+
+# 17. Phase 11 — Offline Action Gap
+
+아직 Real robot을 VLA가 제어하지 않는다.
+
+동일/대응 observation에 대해:
+
+`Sim Image → VLA → a_sim`
+
+`Real Dataset Image → VLA → a_real`
+
+을 얻는다.
+
+그리고 dataset reference action:
+
+`a_GT`
+
+와 비교한다.
+
+즉:
+
+* `a_sim vs a_real`
+* `a_sim vs a_GT`
+* `a_real vs a_GT`
+
+를 분석한다.
+
+---
+
+# 18. Action 분석
+
+7D action 전체 L2만 사용하지 않는다.
+
+분리해서 분석한다.
+
+### Translation
+
+translation error
+
+### Rotation
+
+rotation distance/error
+
+### Gripper
+
+gripper prediction 및 timing error
+
+또한 trajectory phase별로 분석한다.
+
+예:
+
+* approach/alignment
+* descent
+* grasp
+* lift
+* hold
+
+---
+
+# 19. 여기까지는 Offline 중심
+
+Phase 1~11은 기본적으로 기존 Real dataset과 Simulation을 활용한다.
+
+즉 가능하면 Real robot을 새로 움직이지 않는다.
+
+현재까지의 핵심 결과는 다음 구조로 정리할 수 있어야 한다.
+
+`Sim Observation`
+
+vs
+
+`Existing Real Observation`
+
+↓
+
+`Image Gap`
+
+↓
+
+`Feature Gap`
+
+↓
+
+`Offline Action Gap`
+
+이 결과를 확보한 뒤 실제 Real robot evaluation으로 넘어간다.
+
+---
+
+# 20. Phase 12 — Shadow Mode
+
+여기서부터 **Real robot을 실제로 움직인다.**
+
+하지만 VLA가 Real robot을 제어하지 않는다.
+
+기존 Real dataset의 trajectory를 실제 로봇에 replay한다.
+
+구조:
+
+`Real Dataset Trajectory`
+
+↓
+
+`Dataset Replay Controller`
+
+↓
+
+`Real Robot`
+
+↓
+
+`Real Camera + Real State`
+
+↓
+
+`VLA`
+
+↓
+
+`Predicted Action`
+
+↓
+
+**Logging Only**
+
+VLA prediction을 실제 robot command로 절대 사용하지 않는다.
+
+---
+
+# 21. Shadow Mode의 목적
+
+Shadow Mode의 핵심은:
+
+> **동일한 reference trajectory를 실제 로봇이 다시 수행할 때 현재 Real observation에 대해 VLA가 어떤 action을 예측하는지 확인하는 것**
+
+이다.
+
+Simulation에서도 동일 dataset trajectory를 replay했으므로 다음 비교가 가능하다.
+
+`Sim Replay Observation → VLA → a_sim`
+
+`Real Replay Observation → VLA → a_real`
+
+`Dataset Reference Action → a_GT`
+
+따라서 Shadow에서는:
+
+1. Sim vs Real observation gap
+2. Sim vs Real representation gap
+3. `a_sim vs a_real`
+4. `a_sim vs a_GT`
+5. `a_real vs a_GT`
+
+를 비교한다.
+
+---
+
+# 22. Shadow Mode Safety
+
+Dataset trajectory replay이므로 AI 제어보다 위험은 낮지만 safety system은 유지한다.
+
+* communication disconnect → hold
+* replay timeout → hold
+* trajectory tracking abnormality → hold
+* emergency stop 가능
+* episode reset/relaunch
+
+모든 safety event를 기록한다.
+
+---
+
+# 23. Shadow Mode Rollout
+
+약 30 rollout을 목표로 한다.
+
+가능하면 앞에서 정의한 동일 layout distribution을 사용한다.
+
+예:
+
+`9 layouts × 3 repetitions ≈ 27`
+
+* 추가 조건.
+
+instruction:
+
+`Pick up the orange cube.`
+
+모델별 prompt formatting은 해당 runtime convention을 유지한다.
+
+---
+
+# 24. Phase 13 — Real Verification Prototype
+
+여기서부터 **VLA가 Real robot을 직접 제어한다.**
+
+구조:
+
+`Real Camera + State`
+
+↓
+
+`VLA`
+
+↓
+
+`Predicted Action`
+
+↓
+
+`Postprocessing`
+
+↓
+
+`Real Robot`
+
+즉 Shadow와 Prototype의 가장 큰 차이는:
+
+**Shadow = VLA prediction logging only**
+
+**Prototype = VLA prediction이 실제 robot command**
+
+이다.
+
+---
+
+# 25. Prototype 초기 조건
+
+초기 pose difficulty를 세 단계로 나눈다.
+
+### Easy
+
+cube 근처에서 시작.
+
+### Medium
+
+cube와 original home 사이.
+
+### Hard
+
+original home 근처.
+
+각 조건:
+
+5 rollout.
+
+목적은 정확한 success-rate 통계가 아니라 failure mode와 safety 문제 파악이다.
+
+---
+
+# 26. Prototype에서 확인할 것
+
+* target acquisition failure
+* wrong approach direction
+* oscillation
+* excessive movement
+* premature gripper close
+* missed grasp
+* unstable lift
+* inference timeout
+* communication failure
+* emergency stop
+* excessive inference steps
+
+Prototype 결과를 바탕으로 Full Real 실행 가능 여부를 판단한다.
+
+---
+
+# 27. Phase 14 — Full Real Verification
+
+Prototype에서 안전성이 확인되면 본 실험을 수행한다.
+
+Real live observation을 VLA에 넣고 실제 robot을 closed-loop 제어한다.
+
+각 model:
+
+약 30 rollout.
+
+주요 비교 모델:
+
+* OpenVLA Vanilla
+* OFT
+
+단, 연구의 main question은 Vanilla vs OFT 성능 경쟁이 아니다.
+
+두 모델은 Sim-to-Real gap의 영향이 서로 다른 VLA에서 어떻게 나타나는지를 확인하기 위한 비교 대상으로 사용한다.
+
+---
+
+# 28. Full Real Layout
+
+가능하면 Shadow/Sim 분석과 동일한 layout distribution을 사용한다.
+
+동일 layout에서 Vanilla와 OFT를 비교한다.
+
+항상 같은 실행 순서를 사용하지 않는다.
+
+예:
+
+Odd layout:
+
+`Vanilla → OFT`
+
+Even layout:
+
+`OFT → Vanilla`
+
+각 rollout 전 cube/robot 초기조건을 reset한다.
+
+---
+
+# 29. Full Real Metrics
+
+## Primary Metric
+
+Task Success Rate
+
+## Secondary Metrics
+
+* grasp success
+* lift success
+* completion time
+* inference step count
+* trajectory duration
+* timeout
+* emergency stop
+* gripper failure
+* target acquisition failure
+* collision/safety event
+
+성공/실패 정의는 실험 전에 고정한다.
+
+---
+
+# 30. Phase 15 — Gap vs Real Performance
+
+최종 분석 단계다.
+
+각 layout/episode에 대해 다음을 연결한다.
+
+* observation gap
+* vision feature gap
+* projector/hidden gap
+* action gap
+* real success/failure
+
+최종적으로 다음 관계를 분석한다.
+
+`Observation Gap → Representation Gap`
+
+`Representation Gap → Action Gap`
+
+`Action Gap → Real Success`
+
+필요하면 Spearman correlation을 사용한다.
+
+예:
+
+`ρ(Image Gap, Performance)`
+
+`ρ(Vision Gap, Performance)`
+
+`ρ(Action Gap, Performance)`
+
+Success가 binary라면 단순 상관계수만 사용하지 말고 성공/실패 group 비교 또는 logistic regression도 검토한다.
+
+---
+
+# 31. Alignment Ablation
+
+가능하면 다음 condition을 유지한다.
+
+| Condition | 설명                                     |
+| --------- | -------------------------------------- |
+| A0        | Raw Sim                                |
+| A1        | Camera geometry aligned                |
+| A2        | Camera + photometric aligned           |
+| A3        | Camera + photometric + control aligned |
+
+각 condition에서:
+
+* Image Gap
+* Feature Gap
+* Action Gap
+* 가능하면 Real Performance와의 관계
+
+를 비교한다.
+
+이를 통해:
+
+> 어떤 alignment가 VLA Sim-to-Real deployment에 실제로 중요한가?
+
+를 분석한다.
+
+---
+
+# 32. 최종 Research Questions
+
+## RQ1
+
+Sim과 Real 사이에는 어떤 visual observation gap이 존재하는가?
+
+## RQ2
+
+Camera/lighting/control alignment를 적용하면 observation gap이 어떻게 변하는가?
+
+## RQ3
+
+Observation gap은 VLA internal representation에 어떻게 전달되는가?
+
+## RQ4
+
+Representation gap은 VLA action prediction 차이와 연결되는가?
+
+## RQ5
+
+Offline/Shadow에서 측정한 gap은 실제 closed-loop Real success/failure와 관계가 있는가?
+
+## RQ6
+
+어떤 alignment 요소가 Sim-trained VLA의 Real deployment에 가장 중요한가?
+
+---
+
+# 33. 실험 전체 구조
+
+최종 실험 구조는 다음으로 고정한다.
+
+### Stage A — Offline
+
+`Existing Real Dataset`
+
+↕
+
+`Same Trajectory in Simulation`
+
+↓
+
+**Observation Gap**
+
+↓
+
+**Representation Gap**
+
+↓
+
+**Offline Action Gap**
+
+---
+
+### Stage B — Shadow
+
+`Dataset Trajectory`
+
+↓
+
+`Real Robot Replay`
+
+↓
+
+`Current Real Observation`
+
+↓
+
+`VLA Inference`
+
+↓
+
+**Prediction Logging Only**
+
+↓
+
+**Sim / Real / GT Action Comparison**
+
+---
+
+### Stage C — Closed-loop Prototype
+
+`Real Observation`
+
+↓
+
+`VLA`
+
+↓
+
+`Real Robot`
+
+↓
+
+**Safety / Failure-mode Evaluation**
+
+---
+
+### Stage D — Full Real
+
+`Real Observation`
+
+↓
+
+`VLA`
+
+↓
+
+`Real Robot`
+
+↓
+
+**Task Success Evaluation**
+
+---
+
+### Stage E — Final Analysis
+
+**Observation Gap**
+
+↓
+
+**Representation Gap**
+
+↓
+
+**Action Gap**
+
+↓
+
+**Real-world Performance**
+
+---
+
+# 34. 현재부터 실제 작업 순서
+
+현재는 다음 순서대로 진행한다.
+
+1. `작업기록.md` 재확인
+2. Real/Sim tool/TCP frame convention 확정
+3. 기존 frame-corrected camera replay 검증
+4. camera intrinsic/FoV/crop 확인
+5. camera extrinsic 정합
+6. lighting/exposure 정합
+7. `episode_000001` Sim replay 재생성
+8. Real/Sim paired contact sheet 확인
+9. paired observation gap 계산
+10. paired feature gap 계산
+11. offline action gap 계산
+12. 여러 episode/layout으로 확장
+13. **Dataset trajectory 기반 Real Shadow Mode**
+14. Shadow action/feature 결과 분석
+15. **VLA Real-control Prototype**
+16. Prototype failure/safety 분석
+17. **Full Real closed-loop rollout**
+18. Gap ↔ Real performance 분석
+19. Alignment ablation 결과 정리
+20. 최종 논문 figure/table 작성
+
+---
+
+# 35. 결과 해석 시 주의사항
+
+다음과 같이 단정하지 않는다.
+
+* Sim/Real latent는 같아야 한다.
+* feature gap이 크면 VLA가 반드시 실패한다.
+* brightness 차이가 failure의 원인이다.
+* image similarity가 높으면 Real success도 높다.
+* action gap이 하나의 원인만으로 발생한다.
+
+대신 단계별 실험을 통해 관계를 확인한다.
+
+특히 최종적으로 중요한 것은 단순히:
+
+`Sim image ≈ Real image`
+
+가 아니다.
+
+더 중요한 것은:
+
+`Same/Comparable Physical State`
+
+↓
+
+`Sim/Real Observation`
+
+↓
+
+`VLA Representation`
+
+↓
+
+`Appropriate Action`
+
+이다.
+
+따라서 raw pixel gap이 남아 있더라도 VLA representation/action이 안정적이고 Real task가 성공한다면 그 차이는 deployment에 덜 중요한 gap일 수 있다.
+
+반대로 작은 visual 차이가 representation/action을 크게 변화시키고 Real failure와 연결된다면 중요한 Sim-to-Real factor로 볼 수 있다.
+
+---
+
+# 36. 작업 기록 원칙
+
+모든 실험 이후 `작업기록.md`에 다음을 append한다.
+
+## 작업 내용
+
+무엇을 수정/실행했는가.
+
+## 목적
+
+왜 수행했는가.
+
+## 실행 명령
+
+재현 가능한 command.
+
+## 사용 조건
+
+dataset / episode / layout / model / alignment condition.
+
+## 결과
+
+수치와 output path.
+
+## 해석
+
+현재 결과가 의미하는 것.
+
+## 한계
+
+아직 결론낼 수 없는 것.
+
+## 다음 작업
+
+다음으로 수행할 가장 우선순위 높은 작업 하나.
+
+---
+
+# 최종 원칙
+
+이번 연구에서 Real robot 사용 시점을 명확하게 구분한다.
+
+**Offline 단계**
+
+기존 Real dataset + Simulation 사용.
+가능한 한 Real robot을 새로 움직이지 않는다.
+
+**Shadow 단계**
+
+기존 dataset trajectory를 Real robot에 replay한다.
+VLA는 inference만 수행한다.
+VLA output은 robot control에 사용하지 않는다.
+
+**Prototype / Full Real 단계**
+
+VLA output을 실제 Real robot control에 사용한다.
+
+따라서 실험 전체의 핵심 연결은:
+
+**Existing Real Dataset ↔ Simulation**
+
+↓
+
+**Offline Sim-to-Real Gap**
+
+↓
+
+**Dataset-Trajectory Real Shadow**
+
+↓
+
+**VLA Closed-loop Real Verification**
+
+↓
+
+**Gap ↔ Real Performance**
+
+이다.
+
+현재 가장 먼저 해결해야 할 것은 추가 Real rollout이 아니라 **Real/Sim camera/tool-frame alignment를 완료하고 신뢰할 수 있는 paired Sim-Real observation을 구축하는 것**이다.
