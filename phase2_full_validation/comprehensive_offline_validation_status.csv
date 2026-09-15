@@ -1,0 +1,11 @@
+item,status
+real_manifest_integrity,PASS
+sim_manifest_integrity,PASS
+paired_manifest_integrity,PASS
+rerun_observation_token_gap,PASS
+rerun_loo_representation_shift,PASS
+rerun_policy_action_shift,PASS
+rerun_repr_action_gap,PASS
+deployment_equivalence,INVALID / RE-RUN REQUIRED
+real_robot_performance,UNVERIFIED / REQUIRES REAL ROBOT APPROVAL
+causal_gap_attribution,UNVERIFIED / REQUIRES CONTROLLED ABLATION

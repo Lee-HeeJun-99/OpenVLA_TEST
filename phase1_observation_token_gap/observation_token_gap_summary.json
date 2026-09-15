@@ -1,0 +1,339 @@
+{
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_observation_token_gap",
+  "paired_frame_count": 225,
+  "observation_gap": {
+    "brightness_abs_diff": {
+      "count": 225,
+      "mean": 61.01925462510851,
+      "std": 7.204263277814697,
+      "min": 41.73736572265625,
+      "p50": 60.90392303466797,
+      "p90": 70.15404357910157,
+      "max": 71.07599639892578
+    },
+    "contrast_abs_diff": {
+      "count": 225,
+      "mean": 3.790089781019423,
+      "std": 2.217216566613576,
+      "min": 0.0027008056640625,
+      "p50": 3.5392417907714844,
+      "p90": 6.575168609619141,
+      "max": 8.678874969482422
+    },
+    "rgb_mean_l2": {
+      "count": 225,
+      "mean": 106.19348311980798,
+      "std": 13.971495483390157,
+      "min": 71.78984505836999,
+      "p50": 108.2635993685351,
+      "p90": 122.6330202084109,
+      "max": 127.84521780956997
+    },
+    "rgb_std_l2": {
+      "count": 225,
+      "mean": 15.177119394144082,
+      "std": 3.7064459283300812,
+      "min": 7.5139829288749596,
+      "p50": 14.356384406060286,
+      "p90": 19.31091676395532,
+      "max": 25.428474722736095
+    },
+    "resized_mse": {
+      "count": 225,
+      "mean": 5687.354164496528,
+      "std": 660.0799507911341,
+      "min": 4178.88134765625,
+      "p50": 5736.146484375,
+      "p90": 6470.25234375,
+      "max": 6766.46240234375
+    },
+    "resized_psnr": {
+      "count": 225,
+      "mean": 10.61238084397155,
+      "std": 0.5228867010780277,
+      "min": 9.827186878527742,
+      "p50": 10.544601274579154,
+      "p90": 11.336767836494602,
+      "max": 11.920203206143785
+    },
+    "resized_luma_ssim_global": {
+      "count": 225,
+      "mean": 0.5888062646131355,
+      "std": 0.06438067924834923,
+      "min": 0.4671589955646839,
+      "p50": 0.5900860246118725,
+      "p90": 0.6631811238385403,
+      "max": 0.7147003037892894
+    }
+  },
+  "token_gap": {
+    "vision_backbone.output": {
+      "shape": [
+        225,
+        256,
+        2176
+      ],
+      "token_count": 256,
+      "feature_dim": 2176,
+      "token_l2_overall": {
+        "count": 57600,
+        "mean": 201.2393116006305,
+        "std": 40.05804334071549,
+        "min": 99.21043644715557,
+        "p50": 199.25170781825483,
+        "p90": 254.71019244691658,
+        "max": 344.20251046876155
+      },
+      "token_cosine_overall": {
+        "count": 57600,
+        "mean": 0.34048354149870586,
+        "std": 0.13957685398726247,
+        "min": 0.064694989776371,
+        "p50": 0.3201679394249651,
+        "p90": 0.538700411365075,
+        "max": 0.8028469790451075
+      },
+      "real_token_variance_mean": 26.62726015661639,
+      "sim_token_variance_mean": 30.61504289093243,
+      "top_l2_tokens": [
+        {
+          "token_index": 188,
+          "token_l2_mean": 265.27474799339535,
+          "token_cosine_mean": 0.6176940018853406
+        },
+        {
+          "token_index": 172,
+          "token_l2_mean": 257.2265518771623,
+          "token_cosine_mean": 0.5816081583446808
+        },
+        {
+          "token_index": 185,
+          "token_l2_mean": 254.44949321432318,
+          "token_cosine_mean": 0.5287753528695035
+        },
+        {
+          "token_index": 202,
+          "token_l2_mean": 254.07457592141682,
+          "token_cosine_mean": 0.5187207882258785
+        },
+        {
+          "token_index": 237,
+          "token_l2_mean": 254.0161674217464,
+          "token_cosine_mean": 0.5096789429152939
+        },
+        {
+          "token_index": 231,
+          "token_l2_mean": 251.84157327359125,
+          "token_cosine_mean": 0.5136276608210896
+        },
+        {
+          "token_index": 204,
+          "token_l2_mean": 251.4604642033268,
+          "token_cosine_mean": 0.548306799588116
+        },
+        {
+          "token_index": 217,
+          "token_l2_mean": 247.56040310078657,
+          "token_cosine_mean": 0.5217364065428577
+        },
+        {
+          "token_index": 201,
+          "token_l2_mean": 247.51977549994314,
+          "token_cosine_mean": 0.47715977951595945
+        },
+        {
+          "token_index": 221,
+          "token_l2_mean": 246.89376242948262,
+          "token_cosine_mean": 0.4909358712382042
+        },
+        {
+          "token_index": 170,
+          "token_l2_mean": 246.53055093915034,
+          "token_cosine_mean": 0.5265934445974192
+        },
+        {
+          "token_index": 168,
+          "token_l2_mean": 245.25231100326798,
+          "token_cosine_mean": 0.4753975832684566
+        },
+        {
+          "token_index": 232,
+          "token_l2_mean": 244.78407465783556,
+          "token_cosine_mean": 0.47476414717108034
+        },
+        {
+          "token_index": 247,
+          "token_l2_mean": 244.059491738514,
+          "token_cosine_mean": 0.5149256282008564
+        },
+        {
+          "token_index": 222,
+          "token_l2_mean": 243.57137829458085,
+          "token_cosine_mean": 0.547034187238691
+        },
+        {
+          "token_index": 171,
+          "token_l2_mean": 243.3659992489139,
+          "token_cosine_mean": 0.5280589133963451
+        },
+        {
+          "token_index": 200,
+          "token_l2_mean": 243.35187782664997,
+          "token_cosine_mean": 0.5022434154947351
+        },
+        {
+          "token_index": 187,
+          "token_l2_mean": 242.93681242121423,
+          "token_cosine_mean": 0.48574977359274374
+        },
+        {
+          "token_index": 218,
+          "token_l2_mean": 242.07451012499186,
+          "token_cosine_mean": 0.5018841835395373
+        },
+        {
+          "token_index": 155,
+          "token_l2_mean": 241.6405256954569,
+          "token_cosine_mean": 0.5156188941204394
+        }
+      ]
+    },
+    "projector.output": {
+      "shape": [
+        225,
+        256,
+        4096
+      ],
+      "token_count": 256,
+      "feature_dim": 4096,
+      "token_l2_overall": {
+        "count": 57600,
+        "mean": 27.40381930810664,
+        "std": 6.072166703061799,
+        "min": 14.230203350167528,
+        "p50": 26.444954174078134,
+        "p90": 35.50365211667036,
+        "max": 61.34723848734331
+      },
+      "token_cosine_overall": {
+        "count": 57600,
+        "mean": 0.3544662358335471,
+        "std": 0.1779118454440853,
+        "min": 0.039776989182958244,
+        "p50": 0.3235996524973217,
+        "p90": 0.6035602159205814,
+        "max": 1.0814463968826156
+      },
+      "real_token_variance_mean": 0.2406626862782465,
+      "sim_token_variance_mean": 0.33933891663032684,
+      "top_l2_tokens": [
+        {
+          "token_index": 173,
+          "token_l2_mean": 36.11357821768222,
+          "token_cosine_mean": 0.5838086738155961
+        },
+        {
+          "token_index": 71,
+          "token_l2_mean": 35.7469938777889,
+          "token_cosine_mean": 0.32629819081177985
+        },
+        {
+          "token_index": 70,
+          "token_l2_mean": 35.711106749307795,
+          "token_cosine_mean": 0.2973990934149949
+        },
+        {
+          "token_index": 152,
+          "token_l2_mean": 35.70898392369917,
+          "token_cosine_mean": 0.487664923548845
+        },
+        {
+          "token_index": 237,
+          "token_l2_mean": 35.639304372186466,
+          "token_cosine_mean": 0.6307822533881856
+        },
+        {
+          "token_index": 72,
+          "token_l2_mean": 34.92087006912021,
+          "token_cosine_mean": 0.31132701973806104
+        },
+        {
+          "token_index": 201,
+          "token_l2_mean": 34.626641997569074,
+          "token_cosine_mean": 0.4981822975436369
+        },
+        {
+          "token_index": 253,
+          "token_l2_mean": 34.60816098968158,
+          "token_cosine_mean": 0.46201599522760667
+        },
+        {
+          "token_index": 206,
+          "token_l2_mean": 34.454964143105606,
+          "token_cosine_mean": 0.537500056296321
+        },
+        {
+          "token_index": 188,
+          "token_l2_mean": 33.823810130410266,
+          "token_cosine_mean": 0.6983908309029937
+        },
+        {
+          "token_index": 185,
+          "token_l2_mean": 32.876773730585164,
+          "token_cosine_mean": 0.6288025450585493
+        },
+        {
+          "token_index": 86,
+          "token_l2_mean": 32.58152591770596,
+          "token_cosine_mean": 0.3014057342184146
+        },
+        {
+          "token_index": 168,
+          "token_l2_mean": 32.49494904891367,
+          "token_cosine_mean": 0.5367449920161408
+        },
+        {
+          "token_index": 69,
+          "token_l2_mean": 32.35965553814389,
+          "token_cosine_mean": 0.23300213939164527
+        },
+        {
+          "token_index": 187,
+          "token_l2_mean": 32.3506493703724,
+          "token_cosine_mean": 0.524272825812196
+        },
+        {
+          "token_index": 171,
+          "token_l2_mean": 32.28454567530309,
+          "token_cosine_mean": 0.6186713193501476
+        },
+        {
+          "token_index": 172,
+          "token_l2_mean": 32.26270771745374,
+          "token_cosine_mean": 0.6861811492678274
+        },
+        {
+          "token_index": 75,
+          "token_l2_mean": 32.087979139022686,
+          "token_cosine_mean": 0.31911259655600643
+        },
+        {
+          "token_index": 204,
+          "token_l2_mean": 32.051730570402796,
+          "token_cosine_mean": 0.6406405391077957
+        },
+        {
+          "token_index": 189,
+          "token_l2_mean": 32.03029370797164,
+          "token_cosine_mean": 0.5648570270039136
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Image PSNR/SSIM are computed after resizing to 224x224 and include geometry/state mismatch.",
+    "Do not interpret low image similarity as purely photometric gap.",
+    "Token index is not assumed to map directly to a physical object."
+  ]
+}

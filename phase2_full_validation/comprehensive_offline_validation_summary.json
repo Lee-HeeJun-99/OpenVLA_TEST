@@ -1,0 +1,250 @@
+{
+  "method": "comprehensive_offline_validation",
+  "scope": "existing 5-episode offline bundle dataset only",
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "manifest_integrity": {
+    "real": {
+      "domain": "real",
+      "manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/features/real/feature_manifest.json",
+      "record_count": 225,
+      "unique_frame_count": 225,
+      "duplicate_frames": [],
+      "missing_feature_count": 0,
+      "missing_image_count": 0,
+      "checked_npz_count": 225,
+      "shape_error_count": 0,
+      "shape_errors_first_20": [],
+      "image_sizes": {
+        "1280x720": 225
+      },
+      "image_modes": {
+        "RGB": 225
+      },
+      "instructions": [
+        "Pick up the orange cube."
+      ],
+      "variants": [
+        "oftplus_h5_vision"
+      ],
+      "chunk_sizes": [
+        5
+      ],
+      "action_shape_error_count": 0,
+      "action_shape_errors_first_20": [],
+      "status": "PASS"
+    },
+    "sim": {
+      "domain": "sim",
+      "manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/features/sim/feature_manifest.json",
+      "record_count": 225,
+      "unique_frame_count": 225,
+      "duplicate_frames": [],
+      "missing_feature_count": 0,
+      "missing_image_count": 0,
+      "checked_npz_count": 225,
+      "shape_error_count": 0,
+      "shape_errors_first_20": [],
+      "image_sizes": {
+        "1280x720": 225
+      },
+      "image_modes": {
+        "RGB": 225
+      },
+      "instructions": [
+        "Pick up the orange cube."
+      ],
+      "variants": [
+        "oftplus_h5_vision"
+      ],
+      "chunk_sizes": [
+        5
+      ],
+      "action_shape_error_count": 0,
+      "action_shape_errors_first_20": [],
+      "status": "PASS"
+    }
+  },
+  "paired_integrity": {
+    "manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/paired_inputs/paired_manifest.json",
+    "record_count": 225,
+    "episode_counts": {
+      "episode_000001": 46,
+      "episode_000002": 47,
+      "episode_000003": 44,
+      "episode_000004": 45,
+      "episode_000005": 43
+    },
+    "missing_image_count": 0,
+    "missing_images_first_20": [],
+    "status": "PASS"
+  },
+  "rerun_comparisons": [
+    {
+      "left": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_observation_token_gap/observation_token_gap_summary.json",
+      "right": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase2_full_validation/rerun_observation_token_gap/observation_token_gap_summary.json",
+      "left_numeric_count": 86,
+      "right_numeric_count": 86,
+      "max_abs_diff": 0.0,
+      "mismatch_count": 0,
+      "mismatches_first_20": [],
+      "status": "PASS"
+    },
+    {
+      "left": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_audit/loo_real_to_sim_progress_shift/loo_summary.json",
+      "right": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase2_full_validation/rerun_loo_real_to_sim_progress_shift/loo_summary.json",
+      "left_numeric_count": 90,
+      "right_numeric_count": 90,
+      "max_abs_diff": 0.0,
+      "mismatch_count": 0,
+      "mismatches_first_20": [],
+      "status": "PASS"
+    },
+    {
+      "left": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/policy_relevant_progress_shift/policy_relevant_progress_shift_summary.json",
+      "right": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase2_full_validation/rerun_policy_relevant_progress_shift/policy_relevant_progress_shift_summary.json",
+      "left_numeric_count": 183,
+      "right_numeric_count": 183,
+      "max_abs_diff": 0.0,
+      "mismatch_count": 0,
+      "mismatches_first_20": [],
+      "status": "PASS"
+    },
+    {
+      "left": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/repr_action_gap_summary.json",
+      "right": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase2_full_validation/rerun_repr_action_gap/repr_action_gap_summary.json",
+      "left_numeric_count": 43,
+      "right_numeric_count": 43,
+      "max_abs_diff": 0.0,
+      "mismatch_count": 0,
+      "mismatches_first_20": [],
+      "status": "PASS"
+    }
+  ],
+  "runtime_config_audit": {
+    "ros_runtime_config": "/home/ubuntu/robot_ws/src/openvla_doosan_runtime/config/runtime_oft.yaml",
+    "checks": {
+      "ros_runtime_exists": true,
+      "bundle_checkpoint_exists": true,
+      "ros_uses_proprio_variant": true,
+      "ros_model_path": "/home/ubuntu/robot_ws/src/openvla/runs/oftplus_h5_proprio_bounded_oft200_9000--6000_chkpt",
+      "bundle_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+      "ros_center_crop_false": true,
+      "ros_use_training_preprocess_false": true,
+      "ros_default_instruction_pick_up_cube": true,
+      "bundle_analysis_instruction": "Pick up the orange cube.",
+      "bundle_analysis_variant": "oftplus_h5_vision"
+    },
+    "mismatch_items": [
+      "policy variant/checkpoint differs from bundle offline analysis",
+      "ROS runtime uses proprio while bundle analysis used vision-only feature manifests",
+      "ROS default instruction differs from bundle analysis instruction",
+      "ROS preprocessing flags differ from bundle offline OFT feature extraction path"
+    ],
+    "deployment_equivalence_status": "INVALID / RE-RUN REQUIRED"
+  },
+  "key_results": {
+    "observation": {
+      "brightness_abs_diff_mean": 61.01925462510851,
+      "rgb_mean_l2_mean": 106.19348311980798,
+      "resized_psnr_mean": 10.61238084397155,
+      "resized_luma_ssim_global_mean": 0.5888062646131355
+    },
+    "loo_representation_shift": {
+      "vision_cosine": [
+        0.14174910938751817,
+        0.04010180249747287
+      ],
+      "projector_cosine": [
+        0.09231172980319773,
+        0.01891996297751203
+      ],
+      "vision_mmd": [
+        0.27360845395852795,
+        0.002791479734992608
+      ],
+      "projector_mmd": [
+        0.33987394608444954,
+        0.0020522379167138283
+      ]
+    },
+    "policy_relevant_shift": {
+      "hidden_shift_chunk_mean_l2": [
+        0.37026206275047585,
+        0.07232507117762976
+      ],
+      "hidden_shift_first_l2": [
+        0.3163873439053929,
+        0.051590728713082463
+      ]
+    },
+    "no_collapse": {
+      "variance_mean": {
+        "real": 0.34640856573890166,
+        "sim": 0.3606308693241052,
+        "corrected": 0.4155324546447709
+      },
+      "action_worse_frames": 35,
+      "hidden_l2_worse_frames": 8
+    },
+    "top_policy_relevance": [
+      {
+        "phase": "ALL",
+        "count": 225,
+        "repr_metric": "action_head_output_pooled_l2",
+        "action_metric": "action_chunk_mean_l2",
+        "spearman": 0.9602939317319849,
+        "pearson": 0.9600579772847163
+      },
+      {
+        "phase": "ALL",
+        "count": 225,
+        "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+        "action_metric": "action_chunk_mean_l2",
+        "spearman": 0.9580446691951117,
+        "pearson": 0.9505585836260187
+      },
+      {
+        "phase": "ALL",
+        "count": 225,
+        "repr_metric": "action_head_output_pooled_l2",
+        "action_metric": "action_chunk_max_l2",
+        "spearman": 0.9540012642225032,
+        "pearson": 0.9344588206064166
+      },
+      {
+        "phase": "ALL",
+        "count": 225,
+        "repr_metric": "action_head_output_pooled_cosine_distance",
+        "action_metric": "action_chunk_mean_l2",
+        "spearman": 0.9485535187526338,
+        "pearson": 0.6557165525198952
+      },
+      {
+        "phase": "ALL",
+        "count": 225,
+        "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+        "action_metric": "action_chunk_max_l2",
+        "spearman": 0.9463316477033291,
+        "pearson": 0.9424043771334326
+      }
+    ]
+  },
+  "limitations": [
+    "No real robot motion was executed.",
+    "Current ROS deployment policy/preprocessing is not equivalent to the bundle offline analysis.",
+    "Camera/geometry/lighting causal attribution is not isolated by current paired data alone.",
+    "Real-world performance remains unverified."
+  ],
+  "status_table": {
+    "real_manifest_integrity": "PASS",
+    "sim_manifest_integrity": "PASS",
+    "paired_manifest_integrity": "PASS",
+    "rerun_observation_token_gap": "PASS",
+    "rerun_loo_representation_shift": "PASS",
+    "rerun_policy_action_shift": "PASS",
+    "rerun_repr_action_gap": "PASS",
+    "deployment_equivalence": "INVALID / RE-RUN REQUIRED",
+    "real_robot_performance": "UNVERIFIED / REQUIRES REAL ROBOT APPROVAL",
+    "causal_gap_attribution": "UNVERIFIED / REQUIRES CONTROLLED ABLATION"
+  }
+}

@@ -1,0 +1,187 @@
+[
+  {
+    "episode_id": "episode_000001",
+    "real_steps": 46,
+    "real_images": 46,
+    "sim_frames": 46,
+    "sim_images": 46,
+    "real_timestamp_start_s": 0.010989831003826112,
+    "real_timestamp_end_s": 9.010453659982886,
+    "real_dt_mean_s": 0.19998808508842356,
+    "real_dt_std_s": 0.003500468122958662,
+    "real_effective_hz": 5.000297890536108,
+    "phase_counts": {
+      "hold": 2,
+      "alignment": 18,
+      "descent_to_grasp": 8,
+      "grasp_close": 10,
+      "lift": 8
+    },
+    "block_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json",
+    "block_layout_exists": true,
+    "first_tcp_pose": [
+      0.30509017944335937,
+      -0.01182829189300537,
+      0.7236777954101563,
+      3.1400299106621348,
+      -2.715055713396631,
+      0.058479405625911654
+    ],
+    "last_tcp_pose": [
+      0.4205,
+      -0.3224166666666667,
+      0.38985618556785084,
+      0.8555603993276204,
+      3.141592653589793,
+      -2.2273891913951633
+    ]
+  },
+  {
+    "episode_id": "episode_000002",
+    "real_steps": 47,
+    "real_images": 47,
+    "sim_frames": 47,
+    "sim_images": 47,
+    "real_timestamp_start_s": 0.009639145981054753,
+    "real_timestamp_end_s": 9.208129990962334,
+    "real_dt_mean_s": 0.19996719228220172,
+    "real_dt_std_s": 0.0015089374241405204,
+    "real_effective_hz": 5.000820327510325,
+    "phase_counts": {
+      "hold": 2,
+      "alignment": 19,
+      "descent_to_grasp": 8,
+      "grasp_close": 10,
+      "lift": 8
+    },
+    "block_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json",
+    "block_layout_exists": true,
+    "first_tcp_pose": [
+      0.30509017944335937,
+      -0.01182829189300537,
+      0.7236777954101563,
+      3.1400299106621348,
+      -2.715055713396631,
+      0.058479405625911654
+    ],
+    "last_tcp_pose": [
+      0.5005000000000001,
+      -0.3224166666666667,
+      0.39286386530877654,
+      0.8555603993276204,
+      3.141592653589793,
+      -2.2273891913951633
+    ]
+  },
+  {
+    "episode_id": "episode_000003",
+    "real_steps": 44,
+    "real_images": 44,
+    "sim_frames": 44,
+    "sim_images": 44,
+    "real_timestamp_start_s": 0.0106322739738971,
+    "real_timestamp_end_s": 8.605454373988323,
+    "real_dt_mean_s": 0.1998795837212657,
+    "real_dt_std_s": 0.0021673763391472493,
+    "real_effective_hz": 5.003012220570316,
+    "phase_counts": {
+      "hold": 2,
+      "alignment": 16,
+      "descent_to_grasp": 8,
+      "grasp_close": 10,
+      "lift": 8
+    },
+    "block_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json",
+    "block_layout_exists": true,
+    "first_tcp_pose": [
+      0.30509017944335937,
+      -0.01182829189300537,
+      0.7236777954101563,
+      3.1400299106621348,
+      -2.715055713396631,
+      0.058479405625911654
+    ],
+    "last_tcp_pose": [
+      0.4205,
+      -0.19325,
+      0.3887906241278628,
+      0.8555603993276204,
+      3.141592653589793,
+      -2.2273891913951633
+    ]
+  },
+  {
+    "episode_id": "episode_000004",
+    "real_steps": 45,
+    "real_images": 45,
+    "sim_frames": 45,
+    "sim_images": 45,
+    "real_timestamp_start_s": 0.010449350986164063,
+    "real_timestamp_end_s": 8.811973093019333,
+    "real_dt_mean_s": 0.20003463050075385,
+    "real_dt_std_s": 0.0019416185620638965,
+    "real_effective_hz": 4.999134387364149,
+    "phase_counts": {
+      "hold": 2,
+      "alignment": 17,
+      "descent_to_grasp": 8,
+      "grasp_close": 10,
+      "lift": 8
+    },
+    "block_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json",
+    "block_layout_exists": true,
+    "first_tcp_pose": [
+      0.30509017944335937,
+      -0.01182829189300537,
+      0.7236777954101563,
+      3.1400299106621348,
+      -2.715055713396631,
+      0.058479405625911654
+    ],
+    "last_tcp_pose": [
+      0.5005000000000001,
+      -0.19325,
+      0.3939484585242133,
+      0.8555603993276204,
+      3.141592653589793,
+      -2.2273891913951633
+    ]
+  },
+  {
+    "episode_id": "episode_000005",
+    "real_steps": 43,
+    "real_images": 43,
+    "sim_frames": 43,
+    "sim_images": 43,
+    "real_timestamp_start_s": 0.009465240000281483,
+    "real_timestamp_end_s": 8.407650117995217,
+    "real_dt_mean_s": 0.19995678280940324,
+    "real_dt_std_s": 0.001979447729959499,
+    "real_effective_hz": 5.001080663281074,
+    "phase_counts": {
+      "hold": 2,
+      "alignment": 15,
+      "descent_to_grasp": 8,
+      "grasp_close": 10,
+      "lift": 8
+    },
+    "block_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json",
+    "block_layout_exists": true,
+    "first_tcp_pose": [
+      0.30509017944335937,
+      -0.01182829189300537,
+      0.7236777954101563,
+      3.1400299106621348,
+      -2.715055713396631,
+      0.058479405625911654
+    ],
+    "last_tcp_pose": [
+      0.4205,
+      -0.06408333333333334,
+      0.38985942972265797,
+      0.8555603993276204,
+      3.141592653589793,
+      -2.2273891913951633
+    ]
+  }
+]

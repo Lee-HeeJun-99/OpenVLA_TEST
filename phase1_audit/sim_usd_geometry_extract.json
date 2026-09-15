@@ -1,0 +1,101 @@
+{
+  "table_top": {
+    "found": true,
+    "xformOp:translate": [
+      0.744757527499,
+      0.000488163954463,
+      0.818029
+    ],
+    "xformOp:scale": [
+      0.6,
+      1.2,
+      0.05
+    ],
+    "block_excerpt": "\n                rel material:binding = </World/Environment/Looks/TableLightOak>\n                color3f[] primvars:displayColor = [(0.8308, 0.5395, 0.3467)]\n                double size = 1\n                double3 xformOp:scale = (0.6, 1.2, 0.05)\n                double3 xformOp:translate = (0.744757527499, 0.000488163954463, 0.818029)\n                uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]"
+  },
+  "left_camera_block": {
+    "found": true,
+    "xformOp:translate": [
+      -0.060222793661,
+      -0.10842505344,
+      0.064837748142
+    ],
+    "xformOp:rotateXYZ": [
+      155.0000187483,
+      0.0,
+      0.0
+    ],
+    "focalLength": [
+      2.12
+    ],
+    "horizontalAperture": [
+      5.376
+    ],
+    "verticalAperture": [
+      3.024
+    ],
+    "clippingRange": [
+      0.05,
+      100.0
+    ],
+    "block_excerpt": "\n                    float2 clippingRange = (0.05, 100)\n                    float focalLength = 2.12\n                    float focusDistance = 1\n                    float fStop = 0\n                    float horizontalAperture = 5.376\n                    float horizontalApertureOffset = 0\n                    token projection = \"perspective\"\n                    uniform token stereoRole = \"left\"\n                    float verticalAperture = 3.024\n                    float verticalApertureOffset = 0\n                    token visibility = \"inherited\"\n                    double3 xformOp:rotateXYZ = (155.0000187483, 0, 0)\n                    double3 xformOp:translate = (-0.060222793661, -0.10842505344, 0.064837748142)\n                    uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:rotateXYZ\"]\n                    custom double3 zed2i:cadLensCenterMm = (51.02779, -51.75593, -2.617175)\n                    custom token zed2i:eye = \"left\"\n                    custom string zed2i:lens = \"2.1mm\"\n                    custom string zed2i:model = \"ZED 2i\"\n                    custom string zed2i:mountReference = \"gripper_body_with_camera.dae/ZED2i_002\"\n                    custom double zed2i:nominalBaselineM = 0.12"
+  },
+  "right_camera_block": {
+    "found": true,
+    "xformOp:translate": [
+      0.059777206339,
+      -0.108425035321,
+      0.064837748142
+    ],
+    "xformOp:rotateXYZ": [
+      155.0000187483,
+      0.0,
+      0.0
+    ],
+    "focalLength": [
+      2.12
+    ],
+    "horizontalAperture": [
+      5.376
+    ],
+    "verticalAperture": [
+      3.024
+    ],
+    "clippingRange": [
+      0.05,
+      100.0
+    ],
+    "block_excerpt": "\n                    float2 clippingRange = (0.05, 100)\n                    float focalLength = 2.12\n                    float focusDistance = 1\n                    float fStop = 0\n                    float horizontalAperture = 5.376\n                    float horizontalApertureOffset = 0\n                    token projection = \"perspective\"\n                    uniform token stereoRole = \"right\"\n                    float verticalAperture = 3.024\n                    float verticalApertureOffset = 0\n                    token visibility = \"inherited\"\n                    double3 xformOp:rotateXYZ = (155.0000187483, 0, 0)\n                    double3 xformOp:translate = (0.059777206339, -0.108425035321, 0.064837748142)\n                    uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:rotateXYZ\"]\n                    custom double3 zed2i:cadLensCenterMm = (-68.97221, -51.75593, -2.617175)\n                    custom token zed2i:eye = \"right\"\n                    custom string zed2i:lens = \"2.1mm\"\n                    custom string zed2i:model = \"ZED 2i\"\n                    custom string zed2i:mountReference = \"gripper_body_with_camera.dae/ZED2i_002\"\n                    custom double zed2i:nominalBaselineM = 0.12"
+  },
+  "blue_cube": {
+    "found": true,
+    "xformOp:translate": [
+      0.62,
+      0.000488163954463,
+      0.861529
+    ],
+    "block_excerpt": "\n                float physics:mass = 0.15\n                color3f[] primvars:displayColor = [(0.04, 0.18, 0.9)]\n                double size = 0.035\n                double3 xformOp:translate = (0.62, 0.000488163954463, 0.861529)\n                uniform token[] xformOpOrder = [\"xformOp:translate\"]"
+  },
+  "yellow_cube": {
+    "found": true,
+    "xformOp:translate": [
+      0.5,
+      -0.179511836046,
+      0.861529
+    ],
+    "block_excerpt": "\n                float physics:mass = 0.15\n                color3f[] primvars:displayColor = [(0.95, 0.72, 0.03)]\n                double size = 0.035\n                double3 xformOp:translate = (0.5, -0.179511836046, 0.861529)\n                uniform token[] xformOpOrder = [\"xformOp:translate\"]"
+  },
+  "orange_cube": {
+    "found": true,
+    "xformOp:translate": [
+      0.5,
+      0.180488163954,
+      0.861529
+    ],
+    "block_excerpt": "\n        float physics:mass = 0.15\n        color3f[] primvars:displayColor = [(0.85, 0.08, 0.04)]\n        double size = 0.035\n        double3 xformOp:translate = (0.5, 0.180488163954, 0.861529)\n        uniform token[] xformOpOrder = [\"xformOp:translate\"]"
+  },
+  "scene": {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "sha256": "7a63e0428be4a3d9124710bdaa8ef775e279292235266102d4d3b3f0122becc1"
+  }
+}

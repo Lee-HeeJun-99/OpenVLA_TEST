@@ -1,0 +1,281 @@
+{
+  "replay_file_count": 5,
+  "episodes": [
+    {
+      "file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000001_home_relative_joint_replay.json",
+      "status": "complete",
+      "source_steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001/steps.jsonl",
+      "home_relative": true,
+      "snap_before_capture": true,
+      "attach_cube_on_close": true,
+      "attach_distance_m": 0.3,
+      "replay_rate_hz": 5.0,
+      "physics_hz": 60.0,
+      "hold_steps_per_source_step": 12,
+      "source_step_count": 46,
+      "executed_step_count": 46,
+      "image_output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000001_home_relative_joint_replay_images",
+      "image_frame_count": 46,
+      "frames_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000001_home_relative_joint_replay_images/frames.jsonl",
+      "home_converged": true,
+      "home_max_abs_error_rad": 0.0005634389817714691,
+      "attach_event_count": 1,
+      "attach_source_step_index": 28,
+      "first_sim_ee_pos_m": [
+        0.30836527449642975,
+        -0.011480791064606703,
+        1.5390194178785521
+      ],
+      "first_sim_ee_quat_wxyz": [
+        0.1548254755677064,
+        -0.670849787387036,
+        0.710672918025197,
+        -0.14468461723194262
+      ],
+      "first_cube_pos_m": [
+        0.40077823400497437,
+        -0.31602588295936584,
+        0.8605288863182068
+      ],
+      "first_target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "first_actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ]
+    },
+    {
+      "file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000002_home_relative_joint_replay.json",
+      "status": "complete",
+      "source_steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002/steps.jsonl",
+      "home_relative": true,
+      "snap_before_capture": true,
+      "attach_cube_on_close": true,
+      "attach_distance_m": 0.3,
+      "replay_rate_hz": 5.0,
+      "physics_hz": 60.0,
+      "hold_steps_per_source_step": 12,
+      "source_step_count": 47,
+      "executed_step_count": 47,
+      "image_output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000002_home_relative_joint_replay_images",
+      "image_frame_count": 47,
+      "frames_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000002_home_relative_joint_replay_images/frames.jsonl",
+      "home_converged": true,
+      "home_max_abs_error_rad": 0.0005634389817714691,
+      "attach_event_count": 1,
+      "attach_source_step_index": 29,
+      "first_sim_ee_pos_m": [
+        0.30836527449642975,
+        -0.011480791064606703,
+        1.5390194178785521
+      ],
+      "first_sim_ee_quat_wxyz": [
+        0.1548254755677064,
+        -0.670849787387036,
+        0.710672918025197,
+        -0.14468461723194262
+      ],
+      "first_cube_pos_m": [
+        0.48055601119995117,
+        -0.3159945011138916,
+        0.8605288863182068
+      ],
+      "first_target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "first_actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ]
+    },
+    {
+      "file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000003_home_relative_joint_replay.json",
+      "status": "complete",
+      "source_steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003/steps.jsonl",
+      "home_relative": true,
+      "snap_before_capture": true,
+      "attach_cube_on_close": true,
+      "attach_distance_m": 0.3,
+      "replay_rate_hz": 5.0,
+      "physics_hz": 60.0,
+      "hold_steps_per_source_step": 12,
+      "source_step_count": 44,
+      "executed_step_count": 44,
+      "image_output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000003_home_relative_joint_replay_images",
+      "image_frame_count": 44,
+      "frames_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000003_home_relative_joint_replay_images/frames.jsonl",
+      "home_converged": true,
+      "home_max_abs_error_rad": 0.0005634389817714691,
+      "attach_event_count": 1,
+      "attach_source_step_index": 26,
+      "first_sim_ee_pos_m": [
+        0.30836527449642975,
+        -0.011480791064606703,
+        1.5390194178785521
+      ],
+      "first_sim_ee_quat_wxyz": [
+        0.1548254755677064,
+        -0.670849787387036,
+        0.710672918025197,
+        -0.14468461723194262
+      ],
+      "first_cube_pos_m": [
+        0.4008692800998688,
+        -0.18688257038593292,
+        0.8605288863182068
+      ],
+      "first_target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "first_actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ]
+    },
+    {
+      "file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay.json",
+      "status": "complete",
+      "source_steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004/steps.jsonl",
+      "home_relative": true,
+      "snap_before_capture": true,
+      "attach_cube_on_close": true,
+      "attach_distance_m": 0.3,
+      "replay_rate_hz": 5.0,
+      "physics_hz": 60.0,
+      "hold_steps_per_source_step": 12,
+      "source_step_count": 45,
+      "executed_step_count": 45,
+      "image_output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images",
+      "image_frame_count": 45,
+      "frames_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/frames.jsonl",
+      "home_converged": true,
+      "home_max_abs_error_rad": 0.0005634389817714691,
+      "attach_event_count": 1,
+      "attach_source_step_index": 27,
+      "first_sim_ee_pos_m": [
+        0.30836527449642975,
+        -0.011480791064606703,
+        1.5390194178785521
+      ],
+      "first_sim_ee_quat_wxyz": [
+        0.1548254755677064,
+        -0.670849787387036,
+        0.710672918025197,
+        -0.14468461723194262
+      ],
+      "first_cube_pos_m": [
+        0.48057544231414795,
+        -0.18682913482189178,
+        0.8605288863182068
+      ],
+      "first_target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "first_actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ]
+    },
+    {
+      "file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000005_home_relative_joint_replay.json",
+      "status": "complete",
+      "source_steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005/steps.jsonl",
+      "home_relative": true,
+      "snap_before_capture": true,
+      "attach_cube_on_close": true,
+      "attach_distance_m": 0.3,
+      "replay_rate_hz": 5.0,
+      "physics_hz": 60.0,
+      "hold_steps_per_source_step": 12,
+      "source_step_count": 43,
+      "executed_step_count": 43,
+      "image_output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000005_home_relative_joint_replay_images",
+      "image_frame_count": 43,
+      "frames_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000005_home_relative_joint_replay_images/frames.jsonl",
+      "home_converged": true,
+      "home_max_abs_error_rad": 0.0005634389817714691,
+      "attach_event_count": 1,
+      "attach_source_step_index": 25,
+      "first_sim_ee_pos_m": [
+        0.30836527449642975,
+        -0.011480791064606703,
+        1.5390194178785521
+      ],
+      "first_sim_ee_quat_wxyz": [
+        0.1548254755677064,
+        -0.670849787387036,
+        0.710672918025197,
+        -0.14468461723194262
+      ],
+      "first_cube_pos_m": [
+        0.40104255080223083,
+        -0.05777778476476669,
+        0.8605288863182068
+      ],
+      "first_target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "first_actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ]
+    }
+  ],
+  "consistency": {
+    "status": true,
+    "home_relative": true,
+    "snap_before_capture": true,
+    "attach_cube_on_close": true,
+    "attach_distance_m": true,
+    "replay_rate_hz": true,
+    "physics_hz": true,
+    "hold_steps_per_source_step": true,
+    "home_converged": true
+  }
+}

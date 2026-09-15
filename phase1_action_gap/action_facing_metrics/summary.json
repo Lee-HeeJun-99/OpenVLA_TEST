@@ -1,0 +1,216 @@
+{
+  "real_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/features/real/feature_manifest.json",
+  "sim_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/features/sim/feature_manifest.json",
+  "paired_frame_count": 225,
+  "excluded_frames": [],
+  "features": {
+    "vision_backbone.output": {
+      "pooled_distribution": {
+        "real_count": 225,
+        "sim_count": 225,
+        "dim": 2176,
+        "real_mean_norm": 138.06806549275203,
+        "sim_mean_norm": 152.99659298958886,
+        "mean_shift_l2": 63.262275644805214,
+        "mean_shift_cosine_distance": 0.08945428595938576,
+        "std_shift_l2": 23.337907909475952,
+        "real_feature_std_mean": 0.907734853407113,
+        "sim_feature_std_mean": 1.0027079866857869,
+        "mmd_rbf": {
+          "mmd2_biased": 0.27360845395852795,
+          "sigma2_median": 9706.427178108861,
+          "left_count": 225,
+          "right_count": 225
+        }
+      },
+      "frame_pair_pooled_cosine_distance": {
+        "mean": 0.14174910938751817,
+        "std": 0.041664297930514974,
+        "min": 0.07042181743121789,
+        "p50": 0.15059426926709807,
+        "p90": 0.19112199601166244,
+        "max": 0.2345385779471567
+      },
+      "frame_pair_pooled_l2": {
+        "mean": 85.15801310040148,
+        "std": 15.404256343994959,
+        "min": 59.61625191234459,
+        "p50": 85.41712576655024,
+        "p90": 104.75357187881578,
+        "max": 110.09035664601056
+      },
+      "frame_pair_token_mean_cosine_distance": {
+        "mean": 0.14174910938751817,
+        "std": 0.041664297930514974,
+        "min": 0.07042181743121789,
+        "p50": 0.15059426926709807,
+        "p90": 0.19112199601166244,
+        "max": 0.2345385779471567
+      },
+      "frame_pair_token_mean_l2_per_token": {
+        "mean": 12.799231870800512,
+        "std": 0.8001494739713182,
+        "min": 11.01813564634546,
+        "p50": 12.960458344766606,
+        "p90": 13.592149585810281,
+        "max": 14.518646379058412
+      }
+    },
+    "projector.output": {
+      "pooled_distribution": {
+        "real_count": 225,
+        "sim_count": 225,
+        "dim": 4096,
+        "real_mean_norm": 17.030886265212324,
+        "sim_mean_norm": 22.455751172304147,
+        "mean_shift_l2": 8.368360991917605,
+        "mean_shift_cosine_distance": 0.05308043579093635,
+        "std_shift_l2": 2.9605981920341513,
+        "real_feature_std_mean": 0.09100541368545968,
+        "sim_feature_std_mean": 0.1093106316566172,
+        "mmd_rbf": {
+          "mmd2_biased": 0.33987394608444954,
+          "sigma2_median": 136.15414929894905,
+          "left_count": 225,
+          "right_count": 225
+        }
+      },
+      "frame_pair_pooled_cosine_distance": {
+        "mean": 0.09231172980319773,
+        "std": 0.04266286463842089,
+        "min": 0.02855904493768613,
+        "p50": 0.09965761777158932,
+        "p90": 0.14544947427431987,
+        "max": 0.1733091742880305
+      },
+      "frame_pair_pooled_l2": {
+        "mean": 10.250236174825574,
+        "std": 2.2709176229805372,
+        "min": 6.1751056524978125,
+        "p50": 10.853507175742072,
+        "p90": 12.949290855030787,
+        "max": 15.001494037092636
+      },
+      "frame_pair_token_mean_cosine_distance": {
+        "mean": 0.09231172980319773,
+        "std": 0.04266286463842089,
+        "min": 0.02855904493768613,
+        "p50": 0.09965761777158932,
+        "p90": 0.14544947427431987,
+        "max": 0.1733091742880305
+      },
+      "frame_pair_token_mean_l2_per_token": {
+        "mean": 1.752312327237946,
+        "std": 0.08308756536014593,
+        "min": 1.5515861025499478,
+        "p50": 1.7688271077776647,
+        "p90": 1.8424841387741957,
+        "max": 2.0009624623886277
+      }
+    },
+    "action_hidden_states.input": {
+      "pooled_distribution": {
+        "real_count": 225,
+        "sim_count": 225,
+        "dim": 4096,
+        "real_mean_norm": 38.34586126762709,
+        "sim_mean_norm": 31.653927024304053,
+        "mean_shift_l2": 14.553641054835575,
+        "mean_shift_cosine_distance": 0.06880329703676791,
+        "std_shift_l2": 7.718783545771259,
+        "real_feature_std_mean": 0.35548716649430445,
+        "sim_feature_std_mean": 0.3666633404758489,
+        "mmd_rbf": {
+          "mmd2_biased": 0.1179941535172555,
+          "sigma2_median": 1123.4236057590356,
+          "left_count": 225,
+          "right_count": 225
+        }
+      },
+      "frame_pair_pooled_cosine_distance": {
+        "mean": 0.2338693410383961,
+        "std": 0.10009349381256388,
+        "min": 0.08440672384203951,
+        "p50": 0.23345965281519243,
+        "p90": 0.36935365605628045,
+        "max": 0.4578195869664736
+      },
+      "frame_pair_pooled_l2": {
+        "mean": 27.053170066056715,
+        "std": 3.9466849671939124,
+        "min": 18.395756359866745,
+        "p50": 27.277345878589276,
+        "p90": 32.22986033393132,
+        "max": 36.85398830331081
+      },
+      "frame_pair_token_mean_cosine_distance": {
+        "mean": 0.2338693410383961,
+        "std": 0.10009349381256388,
+        "min": 0.08440672384203951,
+        "p50": 0.23345965281519243,
+        "p90": 0.36935365605628045,
+        "max": 0.4578195869664736
+      },
+      "frame_pair_token_mean_l2_per_token": {
+        "mean": 7.92637396330562,
+        "std": 0.8279303395326699,
+        "min": 5.972218392662638,
+        "p50": 7.963880913391722,
+        "p90": 9.039170319197677,
+        "max": 9.818523784717625
+      }
+    },
+    "action_head.output": {
+      "pooled_distribution": {
+        "real_count": 225,
+        "sim_count": 225,
+        "dim": 7,
+        "real_mean_norm": 1.7218945881777468,
+        "sim_mean_norm": 1.374385926697702,
+        "mean_shift_l2": 0.4381422806791207,
+        "mean_shift_cosine_distance": 0.015044359477425662,
+        "std_shift_l2": 0.4258629201493831,
+        "real_feature_std_mean": 0.07885619096057538,
+        "sim_feature_std_mean": 0.22771154183504308,
+        "mmd_rbf": {
+          "mmd2_biased": 0.28582615781544307,
+          "sigma2_median": 0.23368490353226667,
+          "left_count": 225,
+          "right_count": 225
+        }
+      },
+      "frame_pair_pooled_cosine_distance": {
+        "mean": 0.09220899688929239,
+        "std": 0.15016726905416836,
+        "min": 4.681288444774445e-06,
+        "p50": 0.03040862986910997,
+        "p90": 0.19364380274595883,
+        "max": 0.8887762904565608
+      },
+      "frame_pair_pooled_l2": {
+        "mean": 0.5181215130641655,
+        "std": 0.42957728891549746,
+        "min": 0.005810341711188917,
+        "p50": 0.39346664485136473,
+        "p90": 1.0939384423516814,
+        "max": 1.5927797776411206
+      },
+      "frame_pair_token_mean_cosine_distance": {
+        "mean": 0.09220899688929239,
+        "std": 0.15016726905416836,
+        "min": 4.681288444774445e-06,
+        "p50": 0.03040862986910997,
+        "p90": 0.19364380274595883,
+        "max": 0.8887762904565608
+      },
+      "frame_pair_token_mean_l2_per_token": {
+        "mean": 0.24768759552396813,
+        "std": 0.189333885045188,
+        "min": 0.008655671799281383,
+        "p50": 0.19130935863519166,
+        "p90": 0.49761377528497974,
+        "max": 0.7266116356193734
+      }
+    }
+  }
+}

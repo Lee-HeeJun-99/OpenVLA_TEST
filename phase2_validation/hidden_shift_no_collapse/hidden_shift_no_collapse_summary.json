@@ -1,0 +1,201 @@
+{
+  "method": "hidden_shift_no_collapse_check",
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "feature": "action_hidden_states.input",
+  "window": 11,
+  "frame_count": 225,
+  "episodes": [
+    "episode_000001",
+    "episode_000002",
+    "episode_000003",
+    "episode_000004",
+    "episode_000005"
+  ],
+  "paired_gap": {
+    "before_l2": {
+      "count": 225,
+      "mean": 277.4230887156967,
+      "std": 28.977561883643446,
+      "min": 209.0276437431923,
+      "p50": 278.7358319687103,
+      "p90": 316.3709611719187,
+      "max": 343.6483324651169
+    },
+    "after_l2": {
+      "count": 225,
+      "mean": 225.5168800732939,
+      "std": 26.73291748126599,
+      "min": 154.57370768277192,
+      "p50": 227.14450262037124,
+      "p90": 259.02500257263796,
+      "max": 282.51678469319904
+    },
+    "before_cosine_distance": {
+      "count": 225,
+      "mean": 0.3932207104291031,
+      "std": 0.12949268816024123,
+      "min": 0.17346356896877402,
+      "p50": 0.42602434601281103,
+      "p90": 0.5532705590511874,
+      "max": 0.6648265107367701
+    },
+    "after_cosine_distance": {
+      "count": 225,
+      "mean": 0.2718074388940981,
+      "std": 0.0937093610219851,
+      "min": 0.13441879684868352,
+      "p50": 0.26212211921677997,
+      "p90": 0.3974670011018536,
+      "max": 0.4799600072297149
+    },
+    "shift_norm": {
+      "count": 225,
+      "mean": 183.62457451714408,
+      "std": 16.343668887940172,
+      "min": 158.0572052001953,
+      "p50": 180.85067749023438,
+      "p90": 207.94574890136718,
+      "max": 223.39735412597656
+    },
+    "worse_l2_frame_count": 8
+  },
+  "variance": {
+    "real": {
+      "feature_variance_mean": 0.34640856573890166,
+      "feature_variance_sum": 49661.131984328946,
+      "feature_variance_min": 1.1275211970011396e-08,
+      "feature_variance_max": 6.264542553748612,
+      "centered_frame_norm": {
+        "count": 225,
+        "mean": 221.92803194121282,
+        "std": 20.225741594042322,
+        "min": 183.85940311982205,
+        "p50": 221.58375756514732,
+        "p90": 245.92028802577607,
+        "max": 278.5830092861217
+      }
+    },
+    "sim": {
+      "feature_variance_mean": 0.3606308693241052,
+      "feature_variance_sum": 51700.041426303724,
+      "feature_variance_min": 9.892963700824312e-09,
+      "feature_variance_max": 8.235005364036558,
+      "centered_frame_norm": {
+        "count": 225,
+        "mean": 226.2622140322793,
+        "std": 22.482258060852494,
+        "min": 186.53289903255376,
+        "p50": 224.47865277782418,
+        "p90": 245.09683903694483,
+        "max": 331.77871967622826
+      }
+    },
+    "corrected": {
+      "feature_variance_mean": 0.4155324546447709,
+      "feature_variance_sum": 59570.73269787436,
+      "feature_variance_min": 9.814408566566968e-09,
+      "feature_variance_max": 8.597554933317047,
+      "centered_frame_norm": {
+        "count": 225,
+        "mean": 242.30154189279068,
+        "std": 29.33761227930042,
+        "min": 184.30507384984713,
+        "p50": 242.65614077681388,
+        "p90": 287.2271417667139,
+        "max": 319.7906583640622
+      }
+    }
+  },
+  "pairwise_structure": {
+    "distance_summary": {
+      "real": {
+        "count": 25200,
+        "mean": 306.7589690579975,
+        "std": 75.26354918071713,
+        "min": 11.084377181000136,
+        "p50": 312.5955745455908,
+        "p90": 397.0392989221633,
+        "max": 444.2318104767271
+      },
+      "sim": {
+        "count": 25200,
+        "mean": 308.5545797059154,
+        "std": 93.03634616561524,
+        "min": 15.410030026911,
+        "p50": 312.1929455330721,
+        "p90": 404.7459342311729,
+        "max": 490.69093546021725
+      },
+      "corrected": {
+        "count": 25200,
+        "mean": 335.70124762918107,
+        "std": 83.5345394307365,
+        "min": 18.3928480156846,
+        "p50": 333.78545443238283,
+        "p90": 440.71795665444574,
+        "max": 535.8281651081395
+      }
+    },
+    "structure_correlation": {
+      "corrected_vs_real": 0.9571733580559524,
+      "corrected_vs_sim": 0.829088177095782,
+      "real_vs_sim": 0.8387648332168353
+    }
+  },
+  "action_gap": {
+    "by_episode": [
+      {
+        "episode_id": "episode_000001",
+        "count": 46,
+        "raw_chunk_mean_l2": 0.31577964794150504,
+        "hidden_shift_chunk_mean_l2": 0.06755863246127061,
+        "absolute_reduction": 0.24822101548023442,
+        "relative_reduction": 0.7860576737555134,
+        "worse_frame_count": 2
+      },
+      {
+        "episode_id": "episode_000002",
+        "count": 47,
+        "raw_chunk_mean_l2": 0.3440038015480376,
+        "hidden_shift_chunk_mean_l2": 0.0536798156818925,
+        "absolute_reduction": 0.2903239858661451,
+        "relative_reduction": 0.8439557486273985,
+        "worse_frame_count": 1
+      },
+      {
+        "episode_id": "episode_000003",
+        "count": 44,
+        "raw_chunk_mean_l2": 0.42491987924278835,
+        "hidden_shift_chunk_mean_l2": 0.0943398693779428,
+        "absolute_reduction": 0.33058000986484554,
+        "relative_reduction": 0.7779819820478688,
+        "worse_frame_count": 7
+      },
+      {
+        "episode_id": "episode_000004",
+        "count": 45,
+        "raw_chunk_mean_l2": 0.33429659611051415,
+        "hidden_shift_chunk_mean_l2": 0.03508897552207672,
+        "absolute_reduction": 0.2992076205884374,
+        "relative_reduction": 0.8950363960317539,
+        "worse_frame_count": 7
+      },
+      {
+        "episode_id": "episode_000005",
+        "count": 43,
+        "raw_chunk_mean_l2": 0.4389558169566099,
+        "hidden_shift_chunk_mean_l2": 0.11424498682735737,
+        "absolute_reduction": 0.3247108301292525,
+        "relative_reduction": 0.7397346557121708,
+        "worse_frame_count": 18
+      }
+    ],
+    "worse_frame_count": 35,
+    "total_frames": 225
+  },
+  "interpretation_rules": [
+    "No collapse if corrected feature variance remains nonzero and comparable to Real/Sim.",
+    "Pairwise structure correlation checks whether frame-to-frame geometry of the representation is preserved.",
+    "This remains offline evidence only."
+  ]
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "episode_id": "episode_000001",
+    "rows": 46,
+    "source_joint_match_max_rad": 0.0,
+    "target_actual_joint_err_max_rad": 9.312786763970848e-08,
+    "naive_real_sim_ee_pos_l2_mean_m": 0.8131700296266393,
+    "naive_real_sim_ee_pos_l2_max_m": 0.8517966626765189,
+    "cube_attach_events": [
+      {
+        "replay_index": 28,
+        "source_step_index": 28,
+        "distance_m": 0.2525290722492634,
+        "xy_distance_m": 0.020668440096258872,
+        "gripper_closedness": 1.0
+      }
+    ],
+    "home_check": {
+      "converged": true,
+      "reason": "home_set_and_verified",
+      "steps": 1,
+      "max_abs_error_rad": 0.0005634389817714691,
+      "actual_joint_position_rad": [
+        -3.186311960220337,
+        -0.01903725042939186,
+        -0.7153490781784058,
+        0.021879833191633224,
+        -1.9810473918914795,
+        -3.1154162883758545
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ]
+    },
+    "method": "Command recorded joint_position_rad[:6] from real steps.jsonl after confirmed Sim HOME convergence. If home_relative is true, commands are Sim HOME plus each real joint delta from the first real step."
+  },
+  {
+    "episode_id": "episode_000002",
+    "rows": 47,
+    "source_joint_match_max_rad": 0.0,
+    "target_actual_joint_err_max_rad": 1.0058722788031105e-07,
+    "naive_real_sim_ee_pos_l2_mean_m": 0.8126810076497163,
+    "naive_real_sim_ee_pos_l2_max_m": 0.8504592793948658,
+    "cube_attach_events": [
+      {
+        "replay_index": 29,
+        "source_step_index": 29,
+        "distance_m": 0.2523296555301426,
+        "xy_distance_m": 0.020864696621599513,
+        "gripper_closedness": 1.0
+      }
+    ],
+    "home_check": {
+      "converged": true,
+      "reason": "home_set_and_verified",
+      "steps": 1,
+      "max_abs_error_rad": 0.0005634389817714691,
+      "actual_joint_position_rad": [
+        -3.186311960220337,
+        -0.01903725042939186,
+        -0.7153490781784058,
+        0.021879833191633224,
+        -1.9810473918914795,
+        -3.1154162883758545
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ]
+    },
+    "method": "Command recorded joint_position_rad[:6] from real steps.jsonl after confirmed Sim HOME convergence. If home_relative is true, commands are Sim HOME plus each real joint delta from the first real step."
+  },
+  {
+    "episode_id": "episode_000003",
+    "rows": 44,
+    "source_joint_match_max_rad": 0.0,
+    "target_actual_joint_err_max_rad": 1.154883890741587e-07,
+    "naive_real_sim_ee_pos_l2_mean_m": 0.813002734272278,
+    "naive_real_sim_ee_pos_l2_max_m": 0.8542200744435072,
+    "cube_attach_events": [
+      {
+        "replay_index": 26,
+        "source_step_index": 26,
+        "distance_m": 0.25262138731168204,
+        "xy_distance_m": 0.019903329767445754,
+        "gripper_closedness": 1.0
+      }
+    ],
+    "home_check": {
+      "converged": true,
+      "reason": "home_set_and_verified",
+      "steps": 1,
+      "max_abs_error_rad": 0.0005634389817714691,
+      "actual_joint_position_rad": [
+        -3.186311960220337,
+        -0.01903725042939186,
+        -0.7153490781784058,
+        0.021879833191633224,
+        -1.9810473918914795,
+        -3.1154162883758545
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ]
+    },
+    "method": "Command recorded joint_position_rad[:6] from real steps.jsonl after confirmed Sim HOME convergence. If home_relative is true, commands are Sim HOME plus each real joint delta from the first real step."
+  },
+  {
+    "episode_id": "episode_000004",
+    "rows": 45,
+    "source_joint_match_max_rad": 0.0,
+    "target_actual_joint_err_max_rad": 1.154883890741587e-07,
+    "naive_real_sim_ee_pos_l2_mean_m": 0.8136441657444574,
+    "naive_real_sim_ee_pos_l2_max_m": 0.8538703085731543,
+    "cube_attach_events": [
+      {
+        "replay_index": 27,
+        "source_step_index": 27,
+        "distance_m": 0.2525974097464802,
+        "xy_distance_m": 0.020218484264513926,
+        "gripper_closedness": 1.0
+      }
+    ],
+    "home_check": {
+      "converged": true,
+      "reason": "home_set_and_verified",
+      "steps": 1,
+      "max_abs_error_rad": 0.0005634389817714691,
+      "actual_joint_position_rad": [
+        -3.186311960220337,
+        -0.01903725042939186,
+        -0.7153490781784058,
+        0.021879833191633224,
+        -1.9810473918914795,
+        -3.1154162883758545
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ]
+    },
+    "method": "Command recorded joint_position_rad[:6] from real steps.jsonl after confirmed Sim HOME convergence. If home_relative is true, commands are Sim HOME plus each real joint delta from the first real step."
+  },
+  {
+    "episode_id": "episode_000005",
+    "rows": 43,
+    "source_joint_match_max_rad": 0.0,
+    "target_actual_joint_err_max_rad": 1.154883890741587e-07,
+    "naive_real_sim_ee_pos_l2_mean_m": 0.8131687803619269,
+    "naive_real_sim_ee_pos_l2_max_m": 0.8563240933326698,
+    "cube_attach_events": [
+      {
+        "replay_index": 25,
+        "source_step_index": 25,
+        "distance_m": 0.25261510924952413,
+        "xy_distance_m": 0.0194097394842773,
+        "gripper_closedness": 1.0
+      }
+    ],
+    "home_check": {
+      "converged": true,
+      "reason": "home_set_and_verified",
+      "steps": 1,
+      "max_abs_error_rad": 0.0005634389817714691,
+      "actual_joint_position_rad": [
+        -3.186311960220337,
+        -0.01903725042939186,
+        -0.7153490781784058,
+        0.021879833191633224,
+        -1.9810473918914795,
+        -3.1154162883758545
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ]
+    },
+    "method": "Command recorded joint_position_rad[:6] from real steps.jsonl after confirmed Sim HOME convergence. If home_relative is true, commands are Sim HOME plus each real joint delta from the first real step."
+  }
+]

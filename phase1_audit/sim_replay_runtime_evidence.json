@@ -1,0 +1,192 @@
+[
+  {
+    "episode_id": "episode_000001",
+    "log": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000001_home_relative_joint_replay_isaac.log",
+    "scene": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "home_config": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json",
+    "robot_prim": "/World/a0509/base",
+    "primary_camera": "/World/a0509/link_6/tool0/left_Camera",
+    "secondary_camera": "",
+    "camera_width": "1280",
+    "camera_height": "720",
+    "physics_hz": "60.0",
+    "render_hz": "30.0",
+    "motion_speed_scale": "0.42817409318054506",
+    "joint_replay_rate_hz": "5.0",
+    "joint_replay_home_relative": "True",
+    "joint_replay_snap_before_capture": "True",
+    "joint_replay_attach_cube_on_close": "True",
+    "manual_layout_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json",
+    "source_file_unchanged": "True",
+    "scene_sha256": "7a63e0428be4a3d9124710bdaa8ef775e279292235266102d4d3b3f0122becc1",
+    "scene_check_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "applied_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json",
+    "blue_position_m": [
+      0.5805,
+      0.06508333333333331,
+      0.8605289459228516
+    ],
+    "red_position_m": [
+      0.40049999999999997,
+      -0.3174166666666667,
+      0.8605289459228516
+    ],
+    "yellow_position_m": [
+      0.7405,
+      0.19425,
+      0.8605289459228516
+    ]
+  },
+  {
+    "episode_id": "episode_000002",
+    "log": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000002_home_relative_joint_replay_isaac.log",
+    "scene": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "home_config": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json",
+    "robot_prim": "/World/a0509/base",
+    "primary_camera": "/World/a0509/link_6/tool0/left_Camera",
+    "secondary_camera": "",
+    "camera_width": "1280",
+    "camera_height": "720",
+    "physics_hz": "60.0",
+    "render_hz": "30.0",
+    "motion_speed_scale": "0.42817409318054506",
+    "joint_replay_rate_hz": "5.0",
+    "joint_replay_home_relative": "True",
+    "joint_replay_snap_before_capture": "True",
+    "joint_replay_attach_cube_on_close": "True",
+    "manual_layout_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json",
+    "source_file_unchanged": "True",
+    "scene_sha256": "7a63e0428be4a3d9124710bdaa8ef775e279292235266102d4d3b3f0122becc1",
+    "scene_check_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "applied_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json",
+    "blue_position_m": [
+      0.6605,
+      0.32341666666666663,
+      0.8605289459228516
+    ],
+    "red_position_m": [
+      0.4804999999999999,
+      -0.3174166666666667,
+      0.8605289459228516
+    ],
+    "yellow_position_m": [
+      0.8205,
+      -0.06408333333333334,
+      0.8605289459228516
+    ]
+  },
+  {
+    "episode_id": "episode_000003",
+    "log": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000003_home_relative_joint_replay_isaac.log",
+    "scene": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "home_config": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json",
+    "robot_prim": "/World/a0509/base",
+    "primary_camera": "/World/a0509/link_6/tool0/left_Camera",
+    "secondary_camera": "",
+    "camera_width": "1280",
+    "camera_height": "720",
+    "physics_hz": "60.0",
+    "render_hz": "30.0",
+    "motion_speed_scale": "0.42817409318054506",
+    "joint_replay_rate_hz": "5.0",
+    "joint_replay_home_relative": "True",
+    "joint_replay_snap_before_capture": "True",
+    "joint_replay_attach_cube_on_close": "True",
+    "manual_layout_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json",
+    "source_file_unchanged": "True",
+    "scene_sha256": "7a63e0428be4a3d9124710bdaa8ef775e279292235266102d4d3b3f0122becc1",
+    "scene_check_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "applied_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json",
+    "blue_position_m": [
+      0.8205,
+      0.06508333333333331,
+      0.8605289459228516
+    ],
+    "red_position_m": [
+      0.40049999999999997,
+      -0.18825,
+      0.8605289459228516
+    ],
+    "yellow_position_m": [
+      0.5805,
+      0.32341666666666663,
+      0.8605289459228516
+    ]
+  },
+  {
+    "episode_id": "episode_000004",
+    "log": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_isaac.log",
+    "scene": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "home_config": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json",
+    "robot_prim": "/World/a0509/base",
+    "primary_camera": "/World/a0509/link_6/tool0/left_Camera",
+    "secondary_camera": "",
+    "camera_width": "1280",
+    "camera_height": "720",
+    "physics_hz": "60.0",
+    "render_hz": "30.0",
+    "motion_speed_scale": "0.42817409318054506",
+    "joint_replay_rate_hz": "5.0",
+    "joint_replay_home_relative": "True",
+    "joint_replay_snap_before_capture": "True",
+    "joint_replay_attach_cube_on_close": "True",
+    "manual_layout_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json",
+    "source_file_unchanged": "True",
+    "scene_sha256": "7a63e0428be4a3d9124710bdaa8ef775e279292235266102d4d3b3f0122becc1",
+    "scene_check_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "applied_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json",
+    "blue_position_m": [
+      0.6605,
+      0.19425,
+      0.8605289459228516
+    ],
+    "red_position_m": [
+      0.4804999999999999,
+      -0.18825,
+      0.8605289459228516
+    ],
+    "yellow_position_m": [
+      0.7405,
+      -0.19325,
+      0.8605289459228516
+    ]
+  },
+  {
+    "episode_id": "episode_000005",
+    "log": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000005_home_relative_joint_replay_isaac.log",
+    "scene": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "home_config": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json",
+    "robot_prim": "/World/a0509/base",
+    "primary_camera": "/World/a0509/link_6/tool0/left_Camera",
+    "secondary_camera": "",
+    "camera_width": "1280",
+    "camera_height": "720",
+    "physics_hz": "60.0",
+    "render_hz": "30.0",
+    "motion_speed_scale": "0.42817409318054506",
+    "joint_replay_rate_hz": "5.0",
+    "joint_replay_home_relative": "True",
+    "joint_replay_snap_before_capture": "True",
+    "joint_replay_attach_cube_on_close": "True",
+    "manual_layout_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json",
+    "source_file_unchanged": "True",
+    "scene_sha256": "7a63e0428be4a3d9124710bdaa8ef775e279292235266102d4d3b3f0122becc1",
+    "scene_check_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+    "applied_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json",
+    "blue_position_m": [
+      0.5805,
+      -0.3224166666666667,
+      0.8605289459228516
+    ],
+    "red_position_m": [
+      0.40049999999999997,
+      -0.05908333333333334,
+      0.8605289459228516
+    ],
+    "yellow_position_m": [
+      0.8205,
+      0.32341666666666663,
+      0.8605289459228516
+    ]
+  }
+]

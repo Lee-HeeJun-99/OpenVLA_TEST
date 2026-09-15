@@ -1,0 +1,295 @@
+{
+  "action_facing_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/action_facing_metrics/summary.json",
+  "correlations_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/layerwise_phase_conditioned_correlations.csv",
+  "plots": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/action_hidden_cos_vs_chunk_action_l2.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/action_hidden_cos_vs_first_action_l2.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/projector_cos_vs_first_action_l2.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_action_gap/projector_cos_vs_gripper_gap.png"
+  ],
+  "top_overall": [
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.9602939317319849,
+      "pearson": 0.9600579772847163
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.9580446691951117,
+      "pearson": 0.9505585836260187
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9540012642225032,
+      "pearson": 0.9344588206064166
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.9485535187526338,
+      "pearson": 0.6557165525198952
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9463316477033291,
+      "pearson": 0.9424043771334326
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9439664981036663,
+      "pearson": 0.6289789299981599
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_first_rotation_l2",
+      "spearman": 0.9318968625880435,
+      "pearson": 0.7182487634532732
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_rotation_l2",
+      "spearman": 0.9248254808221336,
+      "pearson": 0.9097956428319046
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_first_l2",
+      "spearman": 0.8920016856300043,
+      "pearson": 0.8899383659026998
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_first_gripper_abs",
+      "spearman": 0.8872056190295862,
+      "pearson": 0.8901360425889456
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_first_rotation_l2",
+      "spearman": 0.857830143786213,
+      "pearson": 0.8232247635563505
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_l2",
+      "spearman": 0.8559913611462284,
+      "pearson": 0.8058652402465268
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_gripper_abs",
+      "spearman": 0.8480582267149718,
+      "pearson": 0.8059607556530058
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_first_l2",
+      "spearman": 0.828035187526338,
+      "pearson": 0.4561087321099281
+    },
+    {
+      "phase": "ALL",
+      "count": 225,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_first_gripper_abs",
+      "spearman": 0.8201945411626747,
+      "pearson": 0.45619208104030834
+    }
+  ],
+  "top_phase_conditioned": [
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.9853658536585366,
+      "pearson": 0.9734806006452543
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9838649155722327,
+      "pearson": 0.9652089131272591
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9782363977485928,
+      "pearson": 0.8917122271838436
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.976172607879925,
+      "pearson": 0.9883753200902055
+    },
+    {
+      "phase": "hold",
+      "count": 10,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9636363636363636,
+      "pearson": 0.5300702068848432
+    },
+    {
+      "phase": "hold",
+      "count": 10,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9636363636363636,
+      "pearson": 0.8064351251685373
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_translation_l2",
+      "spearman": 0.9600375234521576,
+      "pearson": 0.9617576426837298
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.9549718574108818,
+      "pearson": 0.8726114141674001
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_first_translation_l2",
+      "spearman": 0.951594746716698,
+      "pearson": 0.930173013922767
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_first_translation_l2",
+      "spearman": 0.9264540337711069,
+      "pearson": 0.8873269644492313
+    },
+    {
+      "phase": "grasp_close",
+      "count": 50,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_translation_l2",
+      "spearman": 0.9244177671068428,
+      "pearson": 0.8777507144567457
+    },
+    {
+      "phase": "grasp_close",
+      "count": 50,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_first_translation_l2",
+      "spearman": 0.9204801920768307,
+      "pearson": 0.9186943283582358
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.9039399624765478,
+      "pearson": 0.8968187625818533
+    },
+    {
+      "phase": "hold",
+      "count": 10,
+      "repr_metric": "action_head_output_pooled_cosine_distance",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.8909090909090909,
+      "pearson": 0.4528107503243706
+    },
+    {
+      "phase": "hold",
+      "count": 10,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.8909090909090909,
+      "pearson": 0.7562044544297618
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_gripper_abs",
+      "spearman": 0.8810808362337756,
+      "pearson": 0.8959697587694389
+    },
+    {
+      "phase": "descent_to_grasp",
+      "count": 40,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_first_l2",
+      "spearman": 0.8810506566604127,
+      "pearson": 0.896006484261696
+    },
+    {
+      "phase": "lift",
+      "count": 40,
+      "repr_metric": "vision_backbone_output_pooled_cosine_distance",
+      "action_metric": "action_first_translation_l2",
+      "spearman": -0.8718574108818011,
+      "pearson": -0.8418597435431601
+    },
+    {
+      "phase": "alignment",
+      "count": 85,
+      "repr_metric": "action_hidden_states_input_pooled_cosine_distance",
+      "action_metric": "action_chunk_mean_l2",
+      "spearman": 0.8691225327340238,
+      "pearson": 0.8175556809434114
+    },
+    {
+      "phase": "alignment",
+      "count": 85,
+      "repr_metric": "action_head_output_pooled_l2",
+      "action_metric": "action_chunk_max_l2",
+      "spearman": 0.8594293531366035,
+      "pearson": 0.8410963497370989
+    }
+  ],
+  "note": "Phase-conditioned correlations are exploratory; small phase sample counts can be unstable."
+}
