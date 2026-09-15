@@ -1,0 +1,197 @@
+{
+  "method": "smooth progress-conditioned pooled latent shift",
+  "window": 11,
+  "excluded_frames": [
+    "000087",
+    "000088",
+    "000089",
+    "000090",
+    "000091",
+    "000092",
+    "000093",
+    "000094",
+    "000095",
+    "000096"
+  ],
+  "paired_frame_count": 110,
+  "features": {
+    "vision_backbone.output": {
+      "dim": 2176,
+      "before_distribution": {
+        "mean_shift_l2": 72.54286908190348,
+        "mean_shift_cosine_distance": 0.11814337517939566,
+        "std_shift_l2": 22.201438992797765,
+        "mmd_rbf": {
+          "mmd2_biased": 0.4033500393916243,
+          "sigma2_median": 8025.922633741822
+        }
+      },
+      "after_distribution": {
+        "mean_shift_l2": 0.3132204768801866,
+        "mean_shift_cosine_distance": 2.4969969126820146e-06,
+        "std_shift_l2": 1.2831339863974733,
+        "mmd_rbf": {
+          "mmd2_biased": 0.00012412438605857723,
+          "sigma2_median": 4186.251924086137
+        }
+      },
+      "before_frame_cosine": {
+        "count": 110,
+        "mean": 0.15037852519804842,
+        "std": 0.03849927993524646,
+        "min": 0.07935520975986399,
+        "p50": 0.16007805820570103,
+        "p90": 0.19936004331915205,
+        "max": 0.21485390699658324
+      },
+      "after_frame_cosine": {
+        "count": 110,
+        "mean": 0.005152975793408567,
+        "std": 0.002162130290647379,
+        "min": 0.0008556767165066592,
+        "p50": 0.004886002260871658,
+        "p90": 0.008222679855213466,
+        "max": 0.009723778649213144
+      },
+      "frame_cosine_improvement": {
+        "count": 110,
+        "mean": 0.14522554940463986,
+        "std": 0.037532536752958805,
+        "min": 0.07501670855420739,
+        "p50": 0.15237417357517363,
+        "p90": 0.19487297138768456,
+        "max": 0.2074540231735743
+      },
+      "before_frame_l2": {
+        "count": 110,
+        "mean": 86.13954427717668,
+        "std": 10.37884354514425,
+        "min": 62.5805281453777,
+        "p50": 87.37864701556047,
+        "p90": 98.01661478678534,
+        "max": 101.48052903456335
+      },
+      "after_frame_l2": {
+        "count": 110,
+        "mean": 14.802525117030251,
+        "std": 3.2978591338124663,
+        "min": 6.463429995925722,
+        "p50": 14.624434355130903,
+        "p90": 18.820848121502383,
+        "max": 21.428207013916417
+      },
+      "frame_l2_improvement": {
+        "count": 110,
+        "mean": 71.33701916014643,
+        "std": 9.238414612621618,
+        "min": 47.73046837094381,
+        "p50": 71.66617477503402,
+        "p90": 83.17945639396541,
+        "max": 87.8971745165393
+      },
+      "progress_shift_norm": {
+        "count": 110,
+        "mean": 83.87042352526723,
+        "std": 10.086968725375977,
+        "min": 61.70343625887249,
+        "p50": 84.60197173518179,
+        "p90": 95.63742486977486,
+        "max": 98.93534157076567
+      },
+      "global_after_frame_cosine_mean": 0.05005352902268605,
+      "phase_after_frame_cosine_mean": 0.028237693564101017
+    },
+    "projector.output": {
+      "dim": 4096,
+      "before_distribution": {
+        "mean_shift_l2": 8.529868184950178,
+        "mean_shift_cosine_distance": 0.06878423783593246,
+        "std_shift_l2": 2.618820785173051,
+        "mmd_rbf": {
+          "mmd2_biased": 0.4046020317516277,
+          "sigma2_median": 102.10824244939647
+        }
+      },
+      "after_distribution": {
+        "mean_shift_l2": 0.032484718050342684,
+        "mean_shift_cosine_distance": 1.5718686803278814e-06,
+        "std_shift_l2": 0.11297298352022284,
+        "mmd_rbf": {
+          "mmd2_biased": 9.042897228339619e-05,
+          "sigma2_median": 49.10754845029663
+        }
+      },
+      "before_frame_cosine": {
+        "count": 110,
+        "mean": 0.09983034266592977,
+        "std": 0.03823617775180061,
+        "min": 0.03567224842598615,
+        "p50": 0.1099124392983134,
+        "p90": 0.14483156327254154,
+        "max": 0.16038070435889062
+      },
+      "after_frame_cosine": {
+        "count": 110,
+        "mean": 0.0035532061155397685,
+        "std": 0.0017605992706092822,
+        "min": 0.0005835654119488165,
+        "p50": 0.0030915487236133354,
+        "p90": 0.006127424106526025,
+        "max": 0.0077093184628942435
+      },
+      "frame_cosine_improvement": {
+        "count": 110,
+        "mean": 0.09627713655039001,
+        "std": 0.037059674252311735,
+        "min": 0.03372672416370104,
+        "p50": 0.10516505127573983,
+        "p90": 0.13940881963292814,
+        "max": 0.15267138589599638
+      },
+      "before_frame_l2": {
+        "count": 110,
+        "mean": 9.932910547030142,
+        "std": 1.1327762743117407,
+        "min": 6.611371738553447,
+        "p50": 10.178582356520312,
+        "p90": 11.127226305059365,
+        "max": 11.476230148137711
+      },
+      "after_frame_l2": {
+        "count": 110,
+        "mean": 1.4810841779550679,
+        "std": 0.30948757956278466,
+        "min": 0.6245138655415919,
+        "p50": 1.4669004613796823,
+        "p90": 1.894305560142022,
+        "max": 2.042531603981523
+      },
+      "frame_l2_improvement": {
+        "count": 110,
+        "mean": 8.451826369075075,
+        "std": 1.1342204870006862,
+        "min": 5.208598799747863,
+        "p50": 8.5834622146907,
+        "p90": 9.806629238867876,
+        "max": 10.3688564073984
+      },
+      "progress_shift_norm": {
+        "count": 110,
+        "mean": 9.736290901295765,
+        "std": 1.0641785374841342,
+        "min": 6.650635747128883,
+        "p50": 10.027723683126544,
+        "p90": 10.872375625872255,
+        "max": 11.083971021278465
+      },
+      "global_after_frame_cosine_mean": 0.04026742566687782,
+      "phase_after_frame_cosine_mean": 0.021368143165925273
+    }
+  },
+  "plots": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/progress_shift_correction_exclude_087_096/pca_before_after_progress_shift_vision_backbone_output.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/progress_shift_correction_exclude_087_096/pca_before_after_progress_shift_projector_output.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/progress_shift_correction_exclude_087_096/frame_pair_before_global_phase_progress.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/progress_shift_correction_exclude_087_096/shift_norm_by_frame.png"
+  ]
+}

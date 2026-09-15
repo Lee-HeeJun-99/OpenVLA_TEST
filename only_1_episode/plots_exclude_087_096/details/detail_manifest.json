@@ -1,0 +1,365 @@
+{
+  "metrics_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/metrics_exclude_087_096/frame_pair_metrics.csv",
+  "phases": {
+    "home_hold": [
+      0,
+      13
+    ],
+    "approach": [
+      14,
+      77
+    ],
+    "grasp_contact": [
+      78,
+      95
+    ],
+    "lift": [
+      96,
+      119
+    ]
+  },
+  "heatmap_frames": [
+    "000000",
+    "000075",
+    "000081",
+    "000112"
+  ],
+  "features": [
+    "vision_backbone.output",
+    "projector.output"
+  ],
+  "outputs": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/phase_cosine_boxplot.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/smoothed_frame_gap_with_phases.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_vision_backbone_output_000000.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_vision_backbone_output_000075.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_vision_backbone_output_000081.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_vision_backbone_output_000112.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_projector_output_000000.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_projector_output_000075.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_projector_output_000081.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots_exclude_087_096/details/token_l2_heatmap_projector_output_000112.png"
+  ],
+  "phase_summary": {
+    "home_hold": {
+      "frame_range": [
+        0,
+        13
+      ],
+      "metrics": {
+        "vision_backbone_output_pooled_cosine_distance": {
+          "count": 14,
+          "mean": 0.08656127061643026,
+          "std": 0.007181446520960657,
+          "min": 0.07935520975986399,
+          "p50": 0.08262051583523738,
+          "p90": 0.09719180068664597,
+          "max": 0.10198857640302039
+        },
+        "vision_backbone_output_pooled_l2": {
+          "count": 14,
+          "mean": 66.13087042187234,
+          "std": 3.9219989020746584,
+          "min": 62.5805281453777,
+          "p50": 63.53802288567721,
+          "p90": 72.1927554241147,
+          "max": 73.93732827337936
+        },
+        "vision_backbone_output_token_mean_cosine_distance": {
+          "count": 14,
+          "mean": 0.08656127061643026,
+          "std": 0.007181446520960657,
+          "min": 0.07935520975986399,
+          "p50": 0.08262051583523738,
+          "p90": 0.09719180068664597,
+          "max": 0.10198857640302039
+        },
+        "vision_backbone_output_token_mean_l2_per_token": {
+          "count": 14,
+          "mean": 11.303271057175623,
+          "std": 0.35289887462322467,
+          "min": 10.896182001352996,
+          "p50": 11.167104523189542,
+          "p90": 11.802550383033276,
+          "max": 11.95987159598755
+        },
+        "projector_output_pooled_cosine_distance": {
+          "count": 14,
+          "mean": 0.039586276274894784,
+          "std": 0.0037841926712588003,
+          "min": 0.03567224842598615,
+          "p50": 0.03710275368270821,
+          "p90": 0.04449939193020904,
+          "max": 0.04715270817188566
+        },
+        "projector_output_pooled_l2": {
+          "count": 14,
+          "mean": 7.513084118351891,
+          "std": 0.7847739615275453,
+          "min": 6.611371738553447,
+          "p50": 7.4187975338231205,
+          "p90": 8.555523927961548,
+          "max": 8.969032690442036
+        },
+        "projector_output_token_mean_cosine_distance": {
+          "count": 14,
+          "mean": 0.039586276274894784,
+          "std": 0.0037841926712588003,
+          "min": 0.03567224842598615,
+          "p50": 0.03710275368270821,
+          "p90": 0.04449939193020904,
+          "max": 0.04715270817188566
+        },
+        "projector_output_token_mean_l2_per_token": {
+          "count": 14,
+          "mean": 1.6012033984840033,
+          "std": 0.05841384881996123,
+          "min": 1.5298084950413262,
+          "p50": 1.5905774307751723,
+          "p90": 1.680219389969822,
+          "max": 1.7166484935171342
+        }
+      }
+    },
+    "approach": {
+      "frame_range": [
+        14,
+        77
+      ],
+      "metrics": {
+        "vision_backbone_output_pooled_cosine_distance": {
+          "count": 64,
+          "mean": 0.15201522851171867,
+          "std": 0.03499867330566143,
+          "min": 0.09657526283527695,
+          "p50": 0.15167711876528422,
+          "p90": 0.20140233428860443,
+          "max": 0.21485390699658324
+        },
+        "vision_backbone_output_pooled_l2": {
+          "count": 64,
+          "mean": 86.3820540946804,
+          "std": 7.34311563281358,
+          "min": 72.50371508071086,
+          "p50": 86.17951476885007,
+          "p90": 97.32389283183937,
+          "max": 101.35468959668977
+        },
+        "vision_backbone_output_token_mean_cosine_distance": {
+          "count": 64,
+          "mean": 0.15201522851171867,
+          "std": 0.03499867330566143,
+          "min": 0.09657526283527695,
+          "p50": 0.15167711876528422,
+          "p90": 0.20140233428860443,
+          "max": 0.21485390699658324
+        },
+        "vision_backbone_output_token_mean_l2_per_token": {
+          "count": 64,
+          "mean": 13.420657917405624,
+          "std": 0.6530774555412066,
+          "min": 11.932475653384307,
+          "p50": 13.598770537963443,
+          "p90": 14.077066252452745,
+          "max": 14.220716607208956
+        },
+        "projector_output_pooled_cosine_distance": {
+          "count": 64,
+          "mean": 0.09539719357225962,
+          "std": 0.03182704226018065,
+          "min": 0.045296190241791656,
+          "p50": 0.09923958711489356,
+          "p90": 0.1354293929741264,
+          "max": 0.15094644892377407
+        },
+        "projector_output_pooled_l2": {
+          "count": 64,
+          "mean": 10.423257136772348,
+          "std": 0.6896135274555906,
+          "min": 8.910196934027638,
+          "p50": 10.553140037513216,
+          "p90": 11.201725149006416,
+          "max": 11.476230148137711
+        },
+        "projector_output_token_mean_cosine_distance": {
+          "count": 64,
+          "mean": 0.09539719357225962,
+          "std": 0.03182704226018065,
+          "min": 0.045296190241791656,
+          "p50": 0.09923958711489356,
+          "p90": 0.1354293929741264,
+          "max": 0.15094644892377407
+        },
+        "projector_output_token_mean_l2_per_token": {
+          "count": 64,
+          "mean": 1.9036937407456103,
+          "std": 0.06832736814888445,
+          "min": 1.7241978240850977,
+          "p50": 1.9006603318459416,
+          "p90": 1.9762631957022039,
+          "max": 1.9913143121374648
+        }
+      }
+    },
+    "grasp_contact": {
+      "frame_range": [
+        78,
+        95
+      ],
+      "metrics": {
+        "vision_backbone_output_pooled_cosine_distance": {
+          "count": 9,
+          "mean": 0.1964745930698692,
+          "std": 0.005242029615662278,
+          "min": 0.19006739444149878,
+          "p50": 0.1945411419171248,
+          "p90": 0.20225695437858654,
+          "max": 0.2086465786643915
+        },
+        "vision_backbone_output_pooled_l2": {
+          "count": 9,
+          "mean": 99.33856977687503,
+          "std": 1.3412936468760643,
+          "min": 97.49900176835698,
+          "p50": 99.49203838223326,
+          "p90": 101.11451970114257,
+          "max": 101.48052903456335
+        },
+        "vision_backbone_output_token_mean_cosine_distance": {
+          "count": 9,
+          "mean": 0.1964745930698692,
+          "std": 0.005242029615662278,
+          "min": 0.19006739444149878,
+          "p50": 0.1945411419171248,
+          "p90": 0.20225695437858654,
+          "max": 0.2086465786643915
+        },
+        "vision_backbone_output_token_mean_l2_per_token": {
+          "count": 9,
+          "mean": 14.06760771737794,
+          "std": 0.12378499293636817,
+          "min": 13.88152663167198,
+          "p50": 14.115232391336644,
+          "p90": 14.192649839266144,
+          "max": 14.241649315880759
+        },
+        "projector_output_pooled_cosine_distance": {
+          "count": 9,
+          "mean": 0.15016680915663752,
+          "std": 0.005022844813489548,
+          "min": 0.14480490874267404,
+          "p50": 0.14763638640489285,
+          "p90": 0.15531049745808223,
+          "max": 0.16038070435889062
+        },
+        "projector_output_pooled_l2": {
+          "count": 9,
+          "mean": 10.373511094593477,
+          "std": 0.19644979022892325,
+          "min": 10.15584446518063,
+          "p50": 10.389541070941608,
+          "p90": 10.677609929094382,
+          "max": 10.703776661688002
+        },
+        "projector_output_token_mean_cosine_distance": {
+          "count": 9,
+          "mean": 0.15016680915663752,
+          "std": 0.005022844813489548,
+          "min": 0.14480490874267404,
+          "p50": 0.14763638640489285,
+          "p90": 0.15531049745808223,
+          "max": 0.16038070435889062
+        },
+        "projector_output_token_mean_l2_per_token": {
+          "count": 9,
+          "mean": 1.809245866902126,
+          "std": 0.009897757322546497,
+          "min": 1.7984864825417837,
+          "p50": 1.8046169751653371,
+          "p90": 1.8213875505243495,
+          "max": 1.8249076541609424
+        }
+      }
+    },
+    "lift": {
+      "frame_range": [
+        96,
+        119
+      ],
+      "metrics": {
+        "vision_backbone_output_pooled_cosine_distance": {
+          "count": 23,
+          "mean": 0.16663191394680368,
+          "std": 0.007489068431657178,
+          "min": 0.1582266573048572,
+          "p50": 0.16337202893568348,
+          "p90": 0.1802662096696796,
+          "max": 0.18333645289719702
+        },
+        "vision_backbone_output_pooled_l2": {
+          "count": 23,
+          "mean": 92.47909106660002,
+          "std": 1.69165417205706,
+          "min": 89.78922758536815,
+          "p50": 92.50358364139166,
+          "p90": 94.38794719210375,
+          "max": 95.07193839754399
+        },
+        "vision_backbone_output_token_mean_cosine_distance": {
+          "count": 23,
+          "mean": 0.16663191394680368,
+          "std": 0.007489068431657178,
+          "min": 0.1582266573048572,
+          "p50": 0.16337202893568348,
+          "p90": 0.1802662096696796,
+          "max": 0.18333645289719702
+        },
+        "vision_backbone_output_token_mean_l2_per_token": {
+          "count": 23,
+          "mean": 13.455776282829307,
+          "std": 0.08901561693315298,
+          "min": 13.295233847720759,
+          "p50": 13.464790739266753,
+          "p90": 13.563547372216886,
+          "max": 13.599062026486829
+        },
+        "projector_output_pooled_cosine_distance": {
+          "count": 23,
+          "mean": 0.1291394849725824,
+          "std": 0.006370727237297359,
+          "min": 0.11762442416285446,
+          "p50": 0.12714344659246657,
+          "p90": 0.13924142193753938,
+          "max": 0.14052588527699605
+        },
+        "projector_output_pooled_l2": {
+          "count": 23,
+          "mean": 9.86899677876598,
+          "std": 0.3321301050317598,
+          "min": 9.45256091330338,
+          "p50": 9.840652303817825,
+          "p90": 10.365019160988313,
+          "max": 10.470902797440138
+        },
+        "projector_output_token_mean_cosine_distance": {
+          "count": 23,
+          "mean": 0.1291394849725824,
+          "std": 0.006370727237297359,
+          "min": 0.11762442416285446,
+          "p50": 0.12714344659246657,
+          "p90": 0.13924142193753938,
+          "max": 0.14052588527699605
+        },
+        "projector_output_token_mean_l2_per_token": {
+          "count": 23,
+          "mean": 1.7407997842052976,
+          "std": 0.02843670506169669,
+          "min": 1.7042103073728512,
+          "p50": 1.7353253636945327,
+          "p90": 1.7832362019030306,
+          "max": 1.784688641424646
+        }
+      }
+    }
+  }
+}

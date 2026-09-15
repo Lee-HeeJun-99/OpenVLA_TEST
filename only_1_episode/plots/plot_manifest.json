@@ -1,0 +1,12 @@
+{
+  "real_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/features/real_episode_000001/feature_manifest.json",
+  "sim_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/features/sim_episode_000001/feature_manifest.json",
+  "metrics_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/metrics/frame_pair_metrics.csv",
+  "paired_frame_count": 120,
+  "outputs": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots/frame_pair_distance_curves.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots/pca_pooled_vision_backbone_output.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots/pca_pooled_projector_output.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/plots/top_projector_gap_frames_contact_sheet.png"
+  ]
+}
