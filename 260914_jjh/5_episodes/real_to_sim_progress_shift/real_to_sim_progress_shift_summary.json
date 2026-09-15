@@ -1,0 +1,196 @@
+{
+  "method": "policy-facing smooth progress-conditioned pooled latent shift",
+  "direction": "real_to_sim",
+  "window": 11,
+  "excluded_frames": [
+    "000087",
+    "000088",
+    "000089",
+    "000090",
+    "000091",
+    "000092",
+    "000093",
+    "000094",
+    "000095",
+    "000096",
+    "999999"
+  ],
+  "paired_frame_count": 225,
+  "features": {
+    "vision_backbone.output": {
+      "dim": 2176,
+      "before_distribution_to_sim": {
+        "sim_target_mean_l2": 63.262275644805214,
+        "sim_target_mean_cosine_distance": 0.08945428595938576,
+        "std_shift_l2": 23.337907909475952,
+        "mmd_rbf": {
+          "mmd2_biased": 0.27360845395852795,
+          "sigma2_median": 9706.427178108861
+        }
+      },
+      "after_distribution_to_sim": {
+        "sim_target_mean_l2": 0.6394431249128969,
+        "sim_target_mean_cosine_distance": 8.297593632300426e-06,
+        "std_shift_l2": 6.033374731824147,
+        "mmd_rbf": {
+          "mmd2_biased": 0.001731522522868012,
+          "sigma2_median": 7246.109545158812
+        }
+      },
+      "before_frame_cosine": {
+        "count": 225,
+        "mean": 0.14174910938751817,
+        "std": 0.041664297930514974,
+        "min": 0.07042181743121789,
+        "p50": 0.15059426926709807,
+        "p90": 0.19112199601166244,
+        "max": 0.2345385779471567
+      },
+      "after_frame_cosine": {
+        "count": 225,
+        "mean": 0.031198504959756186,
+        "std": 0.013561700296408047,
+        "min": 0.006206705905396959,
+        "p50": 0.03085109923430085,
+        "p90": 0.04863366822145072,
+        "max": 0.07299277410850102
+      },
+      "frame_cosine_improvement": {
+        "count": 225,
+        "mean": 0.11055060442776199,
+        "std": 0.03686706468328146,
+        "min": 0.0481911224372622,
+        "p50": 0.10829310673938985,
+        "p90": 0.15806266084204634,
+        "max": 0.17905964596191726
+      },
+      "before_frame_l2": {
+        "count": 225,
+        "mean": 85.15801310040148,
+        "std": 15.404256343994959,
+        "min": 59.61625191234459,
+        "p50": 85.41712576655024,
+        "p90": 104.75357187881578,
+        "max": 110.09035664601056
+      },
+      "after_frame_l2": {
+        "count": 225,
+        "mean": 40.71914997043468,
+        "std": 9.784246144074503,
+        "min": 17.995882004327246,
+        "p50": 41.34286876979715,
+        "p90": 53.02600178202463,
+        "max": 64.12993700367353
+      },
+      "frame_l2_improvement": {
+        "count": 225,
+        "mean": 44.43886312996678,
+        "std": 12.529072647401879,
+        "min": 13.831585976451095,
+        "p50": 42.313975986121335,
+        "p90": 61.164416385118265,
+        "max": 72.57608856276532
+      },
+      "real_to_sim_shift_norm": {
+        "count": 225,
+        "mean": 73.34336662030164,
+        "std": 12.680045311662607,
+        "min": 57.86472871847866,
+        "p50": 75.25134187986731,
+        "p90": 91.05215586012716,
+        "max": 91.98533782540765
+      }
+    },
+    "projector.output": {
+      "dim": 4096,
+      "before_distribution_to_sim": {
+        "sim_target_mean_l2": 8.368360991917605,
+        "sim_target_mean_cosine_distance": 0.05308043579093635,
+        "std_shift_l2": 2.9605981920341513,
+        "mmd_rbf": {
+          "mmd2_biased": 0.33987394608444954,
+          "sigma2_median": 136.15414929894905
+        }
+      },
+      "after_distribution_to_sim": {
+        "sim_target_mean_l2": 0.07023873567017343,
+        "sim_target_mean_cosine_distance": 3.847921917765618e-06,
+        "std_shift_l2": 0.6041246682536642,
+        "mmd_rbf": {
+          "mmd2_biased": 0.0014931013767525148,
+          "sigma2_median": 92.73460518652928
+        }
+      },
+      "before_frame_cosine": {
+        "count": 225,
+        "mean": 0.09231172980319773,
+        "std": 0.04266286463842089,
+        "min": 0.02855904493768613,
+        "p50": 0.09965761777158932,
+        "p90": 0.14544947427431987,
+        "max": 0.1733091742880305
+      },
+      "after_frame_cosine": {
+        "count": 225,
+        "mean": 0.014644827932171674,
+        "std": 0.0064757148234433235,
+        "min": 0.0022685417833376853,
+        "p50": 0.014151789693120365,
+        "p90": 0.023409930818104448,
+        "max": 0.03303776200085895
+      },
+      "frame_cosine_improvement": {
+        "count": 225,
+        "mean": 0.07766690187102604,
+        "std": 0.039984245021405636,
+        "min": 0.025889767905454608,
+        "p50": 0.0778482958864739,
+        "p90": 0.12986941383794195,
+        "max": 0.15990039403296818
+      },
+      "before_frame_l2": {
+        "count": 225,
+        "mean": 10.250236174825574,
+        "std": 2.2709176229805372,
+        "min": 6.1751056524978125,
+        "p50": 10.853507175742072,
+        "p90": 12.949290855030787,
+        "max": 15.001494037092636
+      },
+      "after_frame_l2": {
+        "count": 225,
+        "mean": 4.092755593850915,
+        "std": 1.0747143047251564,
+        "min": 1.6572792069731175,
+        "p50": 4.116286393476339,
+        "p90": 5.355668322344932,
+        "max": 7.114729997205467
+      },
+      "frame_l2_improvement": {
+        "count": 225,
+        "mean": 6.157480580974659,
+        "std": 1.9674936383375017,
+        "min": 0.6864170313250559,
+        "p50": 6.255803136292588,
+        "p90": 8.573539024522272,
+        "max": 9.747590488422892
+      },
+      "real_to_sim_shift_norm": {
+        "count": 225,
+        "mean": 9.323677368415202,
+        "std": 1.8208786129307706,
+        "min": 6.381329675046923,
+        "p50": 9.888307022767254,
+        "p90": 11.424413183321414,
+        "max": 11.576852890097964
+      }
+    }
+  },
+  "plots": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/real_to_sim_progress_shift/pca_real_to_sim_progress_shift_vision_backbone_output.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/real_to_sim_progress_shift/pca_real_to_sim_progress_shift_projector_output.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/real_to_sim_progress_shift/frame_pair_real_to_sim_before_after.png",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/real_to_sim_progress_shift/real_to_sim_shift_norm_by_frame.png"
+  ],
+  "shift_vectors": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/real_to_sim_progress_shift/real_to_sim_progress_shift_vectors.npz"
+}
