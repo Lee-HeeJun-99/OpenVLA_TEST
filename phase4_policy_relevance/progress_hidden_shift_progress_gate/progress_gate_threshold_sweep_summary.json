@@ -1,0 +1,87 @@
+{
+  "experiment": "progress hidden shift progress-threshold gate sweep",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "best_by_gap": {
+    "threshold_progress_le": 46,
+    "gap_to_sim_chunk_mean_l2_mean": 0.07232507117762976,
+    "aggregate_reduction_ratio": 0.80466518594866,
+    "improved_count": 190,
+    "worsened_count": 35
+  },
+  "lowest_worsening_candidates": [
+    {
+      "threshold_progress_le": 21,
+      "gap_to_sim_chunk_mean_l2_mean": 0.08316500436642482,
+      "aggregate_reduction_ratio": 0.7753888050300449,
+      "improved_count": 110,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 20,
+      "gap_to_sim_chunk_mean_l2_mean": 0.08906725485467307,
+      "aggregate_reduction_ratio": 0.7594480671526518,
+      "improved_count": 105,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 19,
+      "gap_to_sim_chunk_mean_l2_mean": 0.09451113916464761,
+      "aggregate_reduction_ratio": 0.7447452799712299,
+      "improved_count": 100,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 18,
+      "gap_to_sim_chunk_mean_l2_mean": 0.10043305085193009,
+      "aggregate_reduction_ratio": 0.7287514413281567,
+      "improved_count": 95,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 17,
+      "gap_to_sim_chunk_mean_l2_mean": 0.10603674794605208,
+      "aggregate_reduction_ratio": 0.7136170334104371,
+      "improved_count": 90,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 16,
+      "gap_to_sim_chunk_mean_l2_mean": 0.11360844070001809,
+      "aggregate_reduction_ratio": 0.6931674829009413,
+      "improved_count": 85,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 15,
+      "gap_to_sim_chunk_mean_l2_mean": 0.12435276839154821,
+      "aggregate_reduction_ratio": 0.6641493123335427,
+      "improved_count": 80,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 14,
+      "gap_to_sim_chunk_mean_l2_mean": 0.13638251268611087,
+      "aggregate_reduction_ratio": 0.6316595017242672,
+      "improved_count": 75,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 13,
+      "gap_to_sim_chunk_mean_l2_mean": 0.1520269274643913,
+      "aggregate_reduction_ratio": 0.5894072259656691,
+      "improved_count": 70,
+      "worsened_count": 0
+    },
+    {
+      "threshold_progress_le": 12,
+      "gap_to_sim_chunk_mean_l2_mean": 0.16825183307090988,
+      "aggregate_reduction_ratio": 0.54558716650294,
+      "improved_count": 65,
+      "worsened_count": 0
+    }
+  ],
+  "outputs": {
+    "sweep": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_progress_gate/progress_gate_threshold_sweep.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_progress_gate/progress_gate_threshold_sweep_report.md"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "pair_count": 225,
+  "conditions": [
+    {
+      "name": "P0_current_paired_image",
+      "family": "preprocessing",
+      "description": "Existing paired 1280x720 image.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    },
+    {
+      "name": "P1_resize_224_direct",
+      "family": "preprocessing",
+      "description": "Direct resize to 224x224.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    },
+    {
+      "name": "P2_center_crop_square_resize_224",
+      "family": "preprocessing",
+      "description": "Center square crop then resize to 224x224.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    },
+    {
+      "name": "P3_center_crop_0p875_resize_224",
+      "family": "preprocessing",
+      "description": "Center crop 87.5% of min side then resize to 224x224.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    },
+    {
+      "name": "P4_letterbox_224",
+      "family": "preprocessing",
+      "description": "Aspect-preserving resize with black letterbox to 224x224.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    },
+    {
+      "name": "P5_brightness_match_sim_to_real",
+      "family": "photometric",
+      "description": "Shift Sim brightness mean toward Real mean.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    },
+    {
+      "name": "P6_contrast_match_sim_to_real",
+      "family": "photometric",
+      "description": "Scale Sim contrast toward Real luminance std.",
+      "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED"
+    }
+  ],
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/preprocessing_ablation.csv",
+    "summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/environment_factor_table.csv"
+  },
+  "status": "OBSERVATION_ONLY_FULL_FORWARD_REQUIRED",
+  "reason": "Current runtime has no CUDA-capable device; OFTRuntime raises `CUDA GPU is required` before model load."
+}

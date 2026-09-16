@@ -1,0 +1,5 @@
+component,vision_exists,proprio_exists,common_count,left_only_count,right_only_count,shape_mismatch_count,same_shape_for_common
+action_head,True,True,16,0,0,0,True
+noisy_action_projector,False,False,0,0,0,0,True
+proprio_projector,False,True,0,0,4,0,True
+vision_backbone,True,True,1311,0,0,0,True

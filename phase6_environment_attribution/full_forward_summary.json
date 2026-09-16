@@ -1,0 +1,12 @@
+{
+  "feature_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features",
+  "condition_count": 7,
+  "pair_count_expected": 225,
+  "summary_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/environment_factor_table.csv",
+  "frame_metrics_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/policy_sensitive_attribution_frame_metrics.csv",
+  "status": "VERIFIED_FULL_FORWARD",
+  "notes": [
+    "Sensitive/null energy is not filled here because Phase5 sensitive basis was not serialized.",
+    "Action metrics are valid only when condition features were extracted with the fixed oftplus_h5_vision checkpoint."
+  ]
+}

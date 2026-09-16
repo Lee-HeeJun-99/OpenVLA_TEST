@@ -1,0 +1,2 @@
+environment_condition,hidden_correction,action_gap,sensitive_gap,status,reason
+not_selected,not_applied,,,PLANNED,Requires best environment condition from full-forward results.

@@ -1,0 +1,144 @@
+{
+  "experiment": "Phase5 STEP 2 LOO gate generalization",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "frames": 225,
+  "lambda": 0.1,
+  "overall_key_results": {
+    "oracle_min_raw_progress": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.07148795875759406,
+      "aggregate_reduction_ratio": 0.8069171224601959,
+      "improved_count": 192,
+      "worsened_count": 0
+    },
+    "phase_gate_train": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.07208564625498708,
+      "aggregate_reduction_ratio": 0.8053028195220252,
+      "improved_count": 161,
+      "worsened_count": 14
+    },
+    "progress_all": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.0723250733993341,
+      "aggregate_reduction_ratio": 0.8046561472321027,
+      "improved_count": 192,
+      "worsened_count": 33
+    },
+    "progress_gate_lambda": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.0730591449365323,
+      "aggregate_reduction_ratio": 0.8026734826381546,
+      "improved_count": 124,
+      "worsened_count": 2
+    },
+    "progress_gate_min_gap": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.07257671879727724,
+      "aggregate_reduction_ratio": 0.8039764744816291,
+      "improved_count": 155,
+      "worsened_count": 31
+    },
+    "progress_gate_worse_le_1": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.07295660162067748,
+      "aggregate_reduction_ratio": 0.8029504433856962,
+      "improved_count": 125,
+      "worsened_count": 2
+    },
+    "progress_gate_zero_worse": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.08169844265068048,
+      "aggregate_reduction_ratio": 0.7793394765822944,
+      "improved_count": 112,
+      "worsened_count": 1
+    },
+    "raw_no_correction": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.3702449418015162,
+      "aggregate_reduction_ratio": 0.0,
+      "improved_count": 0,
+      "worsened_count": 0
+    }
+  },
+  "fold_config": [
+    {
+      "heldout_episode": "episode_000001",
+      "thresholds": {
+        "progress_gate_min_gap": 26,
+        "progress_gate_zero_worse": 21,
+        "progress_gate_worse_le_1": 24,
+        "progress_gate_lambda": 24
+      },
+      "phases_on": [
+        "alignment",
+        "descent_to_grasp",
+        "hold",
+        "lift"
+      ]
+    },
+    {
+      "heldout_episode": "episode_000002",
+      "thresholds": {
+        "progress_gate_min_gap": 26,
+        "progress_gate_zero_worse": 24,
+        "progress_gate_worse_le_1": 25,
+        "progress_gate_lambda": 24
+      },
+      "phases_on": [
+        "alignment",
+        "descent_to_grasp",
+        "hold",
+        "lift"
+      ]
+    },
+    {
+      "heldout_episode": "episode_000003",
+      "thresholds": {
+        "progress_gate_min_gap": 46,
+        "progress_gate_zero_worse": 21,
+        "progress_gate_worse_le_1": 24,
+        "progress_gate_lambda": 24
+      },
+      "phases_on": [
+        "alignment",
+        "descent_to_grasp",
+        "hold",
+        "lift"
+      ]
+    },
+    {
+      "heldout_episode": "episode_000004",
+      "thresholds": {
+        "progress_gate_min_gap": 46,
+        "progress_gate_zero_worse": 21,
+        "progress_gate_worse_le_1": 24,
+        "progress_gate_lambda": 24
+      },
+      "phases_on": [
+        "alignment",
+        "descent_to_grasp",
+        "hold",
+        "lift"
+      ]
+    },
+    {
+      "heldout_episode": "episode_000005",
+      "thresholds": {
+        "progress_gate_min_gap": 46,
+        "progress_gate_zero_worse": 21,
+        "progress_gate_worse_le_1": 25,
+        "progress_gate_lambda": 25
+      },
+      "phases_on": [
+        "alignment",
+        "descent_to_grasp",
+        "hold",
+        "lift"
+      ]
+    }
+  ],
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/02_gate_generalization/loo_gate_generalization_frame_metrics.csv",
+    "overall": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/02_gate_generalization/loo_gate_generalization_summary_overall.csv",
+    "by_fold": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/02_gate_generalization/loo_gate_generalization_summary_by_fold.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/02_gate_generalization/loo_gate_generalization_report.md"
+  },
+  "interpretation_limits": [
+    "Uses progress/phase metadata.",
+    "Five episode LOO only.",
+    "Offline action evidence only."
+  ]
+}

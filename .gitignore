@@ -1,0 +1,10 @@
+
+# Phase 6 generated full-forward features
+phase6_environment_attribution/01_preprocessing/full_forward_features/
+
+# Generated feature tensors
+*.npz
+
+# Python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,22 @@
+{
+  "experiment": "progress hidden shift failure analysis",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "frames": 225,
+  "raw_chunk_mean_l2_mean": 0.37026206275047585,
+  "hidden_shift_chunk_mean_l2_mean": 0.07232507117762976,
+  "chunk_gap_reduction_mean": 0.29793699157284603,
+  "aggregate_reduction_ratio": 0.8046651859486601,
+  "improved_count": 190,
+  "worsened_count": 35,
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_failure_analysis/progress_hidden_shift_failure_frame_metrics.csv",
+    "by_phase": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_failure_analysis/progress_hidden_shift_failure_summary_by_phase.csv",
+    "by_episode": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_failure_analysis/progress_hidden_shift_failure_summary_by_episode.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_failure_analysis/progress_hidden_shift_failure_report.md"
+  },
+  "interpretation_limits": [
+    "Offline action-head failure analysis only.",
+    "No Real robot performance claim.",
+    "No environment causality claim."
+  ]
+}

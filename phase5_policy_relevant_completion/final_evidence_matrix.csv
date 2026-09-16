@@ -1,0 +1,14 @@
+stage,item,status,metric,value,interpretation
+Policy-relevant representation/action,raw_no_correction,VERIFIED,gap_to_sim_chunk_mean_l2,0.3702449418015162,action_output / none
+Policy-relevant representation/action,loo_progress_correction,VERIFIED,gap_to_sim_chunk_mean_l2,0.0723250733993341,action_hidden_states.input / progress
+Policy-relevant representation/action,loo_phase_correction,VERIFIED,gap_to_sim_chunk_mean_l2,0.06668196044347599,action_hidden_states.input / phase
+Policy-relevant representation/action,loo_progress_phase_correction,VERIFIED,gap_to_sim_chunk_mean_l2,0.06182869719121783,action_hidden_states.input / progress_phase
+Policy-relevant representation/action,gate_progress_lambda,VERIFIED,gap_to_sim_chunk_mean_l2,0.0730591449365323,action_hidden_states.input / train_selected_gate
+Policy-relevant representation/action,low_rank_sensitive_basis,VERIFIED,gap_to_sim_chunk_mean_l2,0.006675657136292842,action_hidden_states.input / k=128
+Policy-relevant representation/action,low_rank_delta_basis,VERIFIED,gap_to_sim_chunk_mean_l2,0.0883647667371458,action_hidden_states.input / k=128
+Policy-relevant representation/action,projector_to_hidden_surrogate,VERIFIED surrogate,gap_to_sim_chunk_mean_l2,0.14553346181585172,projector.output pooled / ridge=10.0
+Policy-relevant representation/action,vision_to_hidden_surrogate,VERIFIED surrogate,gap_to_sim_chunk_mean_l2,0.13826787592466513,vision_backbone.output pooled / ridge=10.0
+Correction robustness,LOO correction ablation,VERIFIED,table,correction_robustness_table.csv,progress/phase/progress_phase outperform random/wrong-direction controls
+Gate generalization,train-selected gates,VERIFIED,table,gating_generalization_table.csv,lambda gate keeps mean gap near progress_all while reducing worsened frames
+Environment attribution,preprocessing/environment ablation,PLANNED / RE-RUN REQUIRED,n/a,n/a,full VLM feature re-extraction required; not yet run
+Real performance,real robot success,UNVERIFIED,n/a,n/a,no real robot motion in this phase

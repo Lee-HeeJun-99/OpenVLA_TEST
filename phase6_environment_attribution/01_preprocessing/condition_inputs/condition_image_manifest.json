@@ -1,0 +1,56 @@
+{
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs",
+  "pair_count": 225,
+  "conditions": {
+    "P0_current_paired_image": {
+      "family": "preprocessing",
+      "description": "Existing paired 1280x720 image.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P0_current_paired_image/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P0_current_paired_image/sim_images.txt",
+      "count": 225
+    },
+    "P1_resize_224_direct": {
+      "family": "preprocessing",
+      "description": "Direct resize to 224x224.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P1_resize_224_direct/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P1_resize_224_direct/sim_images.txt",
+      "count": 225
+    },
+    "P2_center_crop_square_resize_224": {
+      "family": "preprocessing",
+      "description": "Center square crop then resize to 224x224.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P2_center_crop_square_resize_224/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P2_center_crop_square_resize_224/sim_images.txt",
+      "count": 225
+    },
+    "P3_center_crop_0p875_resize_224": {
+      "family": "preprocessing",
+      "description": "Center crop 87.5% of min side then resize to 224x224.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P3_center_crop_0p875_resize_224/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P3_center_crop_0p875_resize_224/sim_images.txt",
+      "count": 225
+    },
+    "P4_letterbox_224": {
+      "family": "preprocessing",
+      "description": "Aspect-preserving resize with black letterbox to 224x224.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P4_letterbox_224/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P4_letterbox_224/sim_images.txt",
+      "count": 225
+    },
+    "P5_brightness_match_sim_to_real": {
+      "family": "photometric",
+      "description": "Shift Sim brightness mean toward Real mean.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P5_brightness_match_sim_to_real/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P5_brightness_match_sim_to_real/sim_images.txt",
+      "count": 225
+    },
+    "P6_contrast_match_sim_to_real": {
+      "family": "photometric",
+      "description": "Scale Sim contrast toward Real luminance std.",
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P6_contrast_match_sim_to_real/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P6_contrast_match_sim_to_real/sim_images.txt",
+      "count": 225
+    }
+  }
+}

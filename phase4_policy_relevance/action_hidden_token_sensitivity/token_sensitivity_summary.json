@@ -1,0 +1,93 @@
+{
+  "experiment": "action_hidden_states.input token-level sensitivity",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "frames": 225,
+  "feature": "action_hidden_states.input",
+  "tokens": 35,
+  "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "action_head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "device": "cpu",
+  "top_tokens_by_action_reduction": [
+    {
+      "token_index": 4,
+      "action_gap_reduction_mean": 0.01875624717060723,
+      "gap_to_sim_chunk_mean_l2_mean": 0.35150581557986854,
+      "repr_gap_reduction_ratio_mean": 0.03075870296523435,
+      "token_norm_fraction_mean": 0.2367459133260538
+    },
+    {
+      "token_index": 3,
+      "action_gap_reduction_mean": 0.016226888612642196,
+      "gap_to_sim_chunk_mean_l2_mean": 0.3540351741378336,
+      "repr_gap_reduction_ratio_mean": 0.02773204734563108,
+      "token_norm_fraction_mean": 0.2278741512659218
+    },
+    {
+      "token_index": 1,
+      "action_gap_reduction_mean": 0.015362428910782702,
+      "gap_to_sim_chunk_mean_l2_mean": 0.35489963383969314,
+      "repr_gap_reduction_ratio_mean": 0.04158359039204434,
+      "token_norm_fraction_mean": 0.2832661027476822
+    },
+    {
+      "token_index": 9,
+      "action_gap_reduction_mean": 0.013345224129647002,
+      "gap_to_sim_chunk_mean_l2_mean": 0.3569168386208288,
+      "repr_gap_reduction_ratio_mean": 0.01913219141924829,
+      "token_norm_fraction_mean": 0.1937097858160172
+    },
+    {
+      "token_index": 10,
+      "action_gap_reduction_mean": 0.012712033913744949,
+      "gap_to_sim_chunk_mean_l2_mean": 0.35755002883673087,
+      "repr_gap_reduction_ratio_mean": 0.03041378704357391,
+      "token_norm_fraction_mean": 0.24285979730169008
+    },
+    {
+      "token_index": 5,
+      "action_gap_reduction_mean": 0.011473081777114634,
+      "gap_to_sim_chunk_mean_l2_mean": 0.35878898097336115,
+      "repr_gap_reduction_ratio_mean": 0.015045814594620855,
+      "token_norm_fraction_mean": 0.17162798171679539
+    },
+    {
+      "token_index": 0,
+      "action_gap_reduction_mean": 0.011362974101395662,
+      "gap_to_sim_chunk_mean_l2_mean": 0.35889908864908016,
+      "repr_gap_reduction_ratio_mean": 0.05960880671428426,
+      "token_norm_fraction_mean": 0.33285186022646346
+    },
+    {
+      "token_index": 11,
+      "action_gap_reduction_mean": 0.0110911833720692,
+      "gap_to_sim_chunk_mean_l2_mean": 0.3591708793784066,
+      "repr_gap_reduction_ratio_mean": 0.026336023202975168,
+      "token_norm_fraction_mean": 0.22543722991980605
+    },
+    {
+      "token_index": 12,
+      "action_gap_reduction_mean": 0.010859267946757583,
+      "gap_to_sim_chunk_mean_l2_mean": 0.3594027948037182,
+      "repr_gap_reduction_ratio_mean": 0.018920594317029776,
+      "token_norm_fraction_mean": 0.19016982847212052
+    },
+    {
+      "token_index": 2,
+      "action_gap_reduction_mean": 0.010855143823485148,
+      "gap_to_sim_chunk_mean_l2_mean": 0.35940691892699067,
+      "repr_gap_reduction_ratio_mean": 0.022947788707327048,
+      "token_norm_fraction_mean": 0.21012600100345644
+    }
+  ],
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_token_sensitivity/token_sensitivity_frame_metrics.csv",
+    "by_token": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_token_sensitivity/token_sensitivity_summary_by_token.csv",
+    "by_phase_token": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_token_sensitivity/token_sensitivity_summary_by_phase_token.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_token_sensitivity/action_hidden_token_sensitivity_report.md"
+  },
+  "interpretation_limits": [
+    "Token index is not mapped to physical image regions.",
+    "This is action-hidden token relevance, not direct visual patch attribution.",
+    "This is offline Level-2 action evidence only."
+  ]
+}

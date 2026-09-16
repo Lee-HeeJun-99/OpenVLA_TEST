@@ -1,0 +1,5 @@
+method,gap_to_sim_chunk_mean_l2_mean,aggregate_reduction_ratio,improved_count,worsened_count
+raw_no_correction,0.3702620627504757,0.0,0,0
+progress_hidden_all,0.07232507117762976,0.80466518594866,190,35
+phase_gated_alignment_descent_hold,0.07208627841009692,0.8053101150179764,134,1
+oracle_min_raw_hidden,0.07147033587833587,0.8069736463211447,190,0

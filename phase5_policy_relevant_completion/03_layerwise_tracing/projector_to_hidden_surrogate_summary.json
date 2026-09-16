@@ -1,0 +1,35 @@
+{
+  "experiment": "Phase5 STEP 4 projector-to-hidden surrogate tracing",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "frames": 225,
+  "projector_feature": "projector.output",
+  "hidden_feature": "action_hidden_states.input",
+  "ridges": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "action_head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "device": "cpu",
+  "best": {
+    "ridge": 10.0,
+    "gap_to_sim_chunk_mean_l2_mean": 0.14553346181585172,
+    "hidden_cosine_to_sensitive_mean": 0.7428002629852111,
+    "improved_count": 178,
+    "worsened_count": 47
+  },
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/03_layerwise_tracing/projector_to_hidden_surrogate_frame_metrics.csv",
+    "overall": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/03_layerwise_tracing/projector_to_hidden_surrogate_summary_overall.csv",
+    "by_phase": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/03_layerwise_tracing/projector_to_hidden_surrogate_summary_by_phase.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/03_layerwise_tracing/projector_to_hidden_surrogate_report.md"
+  },
+  "interpretation_limits": [
+    "Surrogate tensor-level tracing, not exact full-forward projector injection.",
+    "Pooled projector deltas only.",
+    "Offline action-head evidence only."
+  ]
+}

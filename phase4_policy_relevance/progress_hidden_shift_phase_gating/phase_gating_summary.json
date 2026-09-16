@@ -1,0 +1,44 @@
+{
+  "experiment": "progress hidden shift phase gating",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "summary": [
+    {
+      "method": "raw_no_correction",
+      "gap_to_sim_chunk_mean_l2_mean": 0.3702620627504757,
+      "aggregate_reduction_ratio": 0.0,
+      "improved_count": 0,
+      "worsened_count": 0
+    },
+    {
+      "method": "progress_hidden_all",
+      "gap_to_sim_chunk_mean_l2_mean": 0.07232507117762976,
+      "aggregate_reduction_ratio": 0.80466518594866,
+      "improved_count": 190,
+      "worsened_count": 35
+    },
+    {
+      "method": "phase_gated_alignment_descent_hold",
+      "gap_to_sim_chunk_mean_l2_mean": 0.07208627841009692,
+      "aggregate_reduction_ratio": 0.8053101150179764,
+      "improved_count": 134,
+      "worsened_count": 1
+    },
+    {
+      "method": "oracle_min_raw_hidden",
+      "gap_to_sim_chunk_mean_l2_mean": 0.07147033587833587,
+      "aggregate_reduction_ratio": 0.8069736463211447,
+      "improved_count": 190,
+      "worsened_count": 0
+    }
+  ],
+  "outputs": {
+    "summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_phase_gating/phase_gating_summary.csv",
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_phase_gating/phase_gating_frame_metrics.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/progress_hidden_shift_phase_gating/phase_gating_report.md"
+  },
+  "interpretation_limits": [
+    "Uses planner phase labels.",
+    "Offline action-head evidence only.",
+    "No Real robot performance claim."
+  ]
+}

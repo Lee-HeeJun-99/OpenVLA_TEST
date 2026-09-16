@@ -1,0 +1,82 @@
+{
+  "experiment": "action_hidden_states.input sensitive/null-like decomposition",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "frames": 225,
+  "feature": "action_hidden_states.input",
+  "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "action_head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "device": "cpu",
+  "seed": 20260916,
+  "methods": [
+    "no_correction",
+    "full_delta",
+    "sensitive_projection",
+    "null_residual",
+    "neg_gradient_same_norm",
+    "random_same_norm",
+    "orthogonal_to_gradient_same_norm"
+  ],
+  "overall_key_results": {
+    "full_delta": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.0006641193673966537,
+      "action_gap_reduction_ratio_mean": 0.8706513670588548,
+      "repr_gap_reduction_ratio_mean": 1.0,
+      "improved_count": 225,
+      "worsened_count": 0
+    },
+    "neg_gradient_same_norm": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.09907954486261095,
+      "action_gap_reduction_ratio_mean": -15.11579706052085,
+      "repr_gap_reduction_ratio_mean": -0.3290979832710069,
+      "improved_count": 132,
+      "worsened_count": 93
+    },
+    "no_correction": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.3702449438211437,
+      "action_gap_reduction_ratio_mean": -0.015243660022631982,
+      "repr_gap_reduction_ratio_mean": 0.0,
+      "improved_count": 101,
+      "worsened_count": 124
+    },
+    "null_residual": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.2740027135846252,
+      "action_gap_reduction_ratio_mean": -0.03562831280240391,
+      "repr_gap_reduction_ratio_mean": 0.8847000152293774,
+      "improved_count": 149,
+      "worsened_count": 76
+    },
+    "orthogonal_to_gradient_same_norm": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.36494188117885995,
+      "action_gap_reduction_ratio_mean": -0.034299936119597224,
+      "repr_gap_reduction_ratio_mean": -0.41429662630668507,
+      "improved_count": 143,
+      "worsened_count": 82
+    },
+    "random_same_norm": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.3653493405790843,
+      "action_gap_reduction_ratio_mean": -0.03730784914551819,
+      "repr_gap_reduction_ratio_mean": -0.4141963085816825,
+      "improved_count": 139,
+      "worsened_count": 86
+    },
+    "sensitive_projection": {
+      "gap_to_sim_chunk_mean_l2_mean": 0.1360149800025111,
+      "action_gap_reduction_ratio_mean": 0.4728604967548448,
+      "repr_gap_reduction_ratio_mean": 0.009250206556837217,
+      "improved_count": 218,
+      "worsened_count": 7
+    }
+  },
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_sensitive_null_decomposition/sensitive_null_decomposition_frame_metrics.csv",
+    "overall": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_sensitive_null_decomposition/sensitive_null_decomposition_summary_overall.csv",
+    "by_phase": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_sensitive_null_decomposition/sensitive_null_decomposition_summary_by_phase.csv",
+    "by_episode": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_sensitive_null_decomposition/sensitive_null_decomposition_summary_by_episode.csv",
+    "report": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_sensitive_null_decomposition/sensitive_null_decomposition_report.md"
+  },
+  "interpretation_limits": [
+    "Gradient-sensitive/null-like split is local to action_head at h_real.",
+    "This is offline Level-2 action evidence only.",
+    "This does not prove real robot performance or environment causality."
+  ]
+}

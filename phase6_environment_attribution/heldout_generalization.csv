@@ -1,0 +1,2 @@
+fold,selection_rule,condition,action_gap,status,reason
+not_run,not_selected,not_selected,,PLANNED,Requires parameter selection after full-forward single-factor results.

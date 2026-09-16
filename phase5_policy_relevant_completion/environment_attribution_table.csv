@@ -1,0 +1,4 @@
+factor,status,observation_gap,representation_gap,policy_sensitive_effect,action_gap,notes
+preprocessing_center_crop_resize,PLANNED / RE-RUN REQUIRED,UNVERIFIED in Phase5,requires full feature re-extraction,UNVERIFIED,UNVERIFIED,Must keep oftplus_h5_vision; exact VLM forward required.
+brightness_gamma_contrast,PLANNED,can be computed,requires full feature re-extraction,UNVERIFIED,UNVERIFIED,Sensitivity experiment only unless real calibration is known.
+camera_pose_fov_crop,PLANNED,requires regenerated sim images,requires feature extraction,UNVERIFIED,UNVERIFIED,Do after policy-sensitive layer tracing; no real-ground-truth claim.

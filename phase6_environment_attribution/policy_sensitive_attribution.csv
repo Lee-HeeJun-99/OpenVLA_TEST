@@ -1,0 +1,2 @@
+factor,condition,sensitive_energy,null_energy,sensitive_ratio,action_gap,status,reason
+preprocessing/photometric,P0-P6,,,,,FULL_FORWARD_REQUIRED,Need action_hidden_states.input from modified images.

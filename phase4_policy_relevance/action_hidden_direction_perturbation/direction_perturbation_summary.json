@@ -1,0 +1,65 @@
+{
+  "experiment": "action_hidden_states.input Real-to-Sim direction perturbation",
+  "policy_scope": "oftplus_h5_vision offline 225-pair dataset only",
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "action_head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "feature": "action_hidden_states.input",
+  "frames": 225,
+  "alphas": [
+    -0.5,
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5
+  ],
+  "directions": [
+    "real_to_sim",
+    "random",
+    "orthogonal"
+  ],
+  "seed": 20260916,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "phase_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/episode_phase_summary/frame_metrics_enriched.csv",
+  "alpha_1_direction_effect": {
+    "orthogonal": {
+      "gap_to_sim_chunk_mean_l2": 0.36450475529718035,
+      "gap_reduction_ratio_chunk_mean_l2": -0.03660351301567665,
+      "change_from_real_chunk_mean_l2": 0.00847994875936215,
+      "improved_count": 136,
+      "worsened_count": 89
+    },
+    "random": {
+      "gap_to_sim_chunk_mean_l2": 0.36534934011789566,
+      "gap_reduction_ratio_chunk_mean_l2": -0.037307837911462985,
+      "change_from_real_chunk_mean_l2": 0.008559395231876437,
+      "improved_count": 139,
+      "worsened_count": 86
+    },
+    "real_to_sim": {
+      "gap_to_sim_chunk_mean_l2": 0.0006641185285923925,
+      "gap_reduction_ratio_chunk_mean_l2": 0.8706515018825236,
+      "change_from_real_chunk_mean_l2": 0.37030170201388884,
+      "improved_count": 225,
+      "worsened_count": 0
+    }
+  },
+  "real_to_sim_correlations": {
+    "alpha_vs_gap_to_sim_chunk_mean_l2_spearman": -0.5206972571157054,
+    "alpha_vs_change_from_real_chunk_mean_l2_spearman": 0.510990439204803
+  },
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_direction_perturbation/direction_perturbation_frame_metrics.csv",
+    "overall_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_direction_perturbation/direction_perturbation_summary_overall.csv",
+    "by_episode": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_direction_perturbation/direction_perturbation_summary_by_episode.csv",
+    "by_phase": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase4_policy_relevance/action_hidden_direction_perturbation/direction_perturbation_summary_by_phase.csv"
+  },
+  "interpretation_limits": [
+    "This is offline Level-2 policy/action evidence only.",
+    "It uses oftplus_h5_vision and must not be mixed with current ROS proprio deployment.",
+    "Random and orthogonal controls are sampled controls, not exhaustive policy-null decompositions."
+  ]
+}

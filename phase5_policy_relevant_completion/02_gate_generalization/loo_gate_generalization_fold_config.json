@@ -1,0 +1,77 @@
+[
+  {
+    "heldout_episode": "episode_000001",
+    "thresholds": {
+      "progress_gate_min_gap": 26,
+      "progress_gate_zero_worse": 21,
+      "progress_gate_worse_le_1": 24,
+      "progress_gate_lambda": 24
+    },
+    "phases_on": [
+      "alignment",
+      "descent_to_grasp",
+      "hold",
+      "lift"
+    ]
+  },
+  {
+    "heldout_episode": "episode_000002",
+    "thresholds": {
+      "progress_gate_min_gap": 26,
+      "progress_gate_zero_worse": 24,
+      "progress_gate_worse_le_1": 25,
+      "progress_gate_lambda": 24
+    },
+    "phases_on": [
+      "alignment",
+      "descent_to_grasp",
+      "hold",
+      "lift"
+    ]
+  },
+  {
+    "heldout_episode": "episode_000003",
+    "thresholds": {
+      "progress_gate_min_gap": 46,
+      "progress_gate_zero_worse": 21,
+      "progress_gate_worse_le_1": 24,
+      "progress_gate_lambda": 24
+    },
+    "phases_on": [
+      "alignment",
+      "descent_to_grasp",
+      "hold",
+      "lift"
+    ]
+  },
+  {
+    "heldout_episode": "episode_000004",
+    "thresholds": {
+      "progress_gate_min_gap": 46,
+      "progress_gate_zero_worse": 21,
+      "progress_gate_worse_le_1": 24,
+      "progress_gate_lambda": 24
+    },
+    "phases_on": [
+      "alignment",
+      "descent_to_grasp",
+      "hold",
+      "lift"
+    ]
+  },
+  {
+    "heldout_episode": "episode_000005",
+    "thresholds": {
+      "progress_gate_min_gap": 46,
+      "progress_gate_zero_worse": 21,
+      "progress_gate_worse_le_1": 25,
+      "progress_gate_lambda": 25
+    },
+    "phases_on": [
+      "alignment",
+      "descent_to_grasp",
+      "hold",
+      "lift"
+    ]
+  }
+]

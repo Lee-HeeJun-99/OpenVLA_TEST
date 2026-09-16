@@ -1,0 +1,10 @@
+analysis,layer,method,gap,repr_reduction,status
+raw_no_correction,action_output,none,0.3702449418015162,0,VERIFIED
+loo_progress_correction,action_hidden_states.input,progress,0.0723250733993341,0.18483065646637373,VERIFIED
+loo_phase_correction,action_hidden_states.input,phase,0.06668196044347599,0.16853962897697547,VERIFIED
+loo_progress_phase_correction,action_hidden_states.input,progress_phase,0.06182869719121783,0.17103607260110607,VERIFIED
+gate_progress_lambda,action_hidden_states.input,train_selected_gate,0.0730591449365323,n/a,VERIFIED
+low_rank_sensitive_basis,action_hidden_states.input,k=128,0.006675657136292842,0.03066946673061298,VERIFIED
+low_rank_delta_basis,action_hidden_states.input,k=128,0.0883647667371458,0.2449757551926587,VERIFIED
+projector_to_hidden_surrogate,projector.output pooled,ridge=10.0,0.14553346181585172,n/a,VERIFIED surrogate
+vision_to_hidden_surrogate,vision_backbone.output pooled,ridge=10.0,0.13826787592466513,n/a,VERIFIED surrogate

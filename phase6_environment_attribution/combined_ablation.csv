@@ -1,0 +1,2 @@
+factor,condition,status,reason
+combined,not_executed,PLANNED,Requires single-factor full-forward ranking first.
