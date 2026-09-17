@@ -1,0 +1,12 @@
+{
+  "basis_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/06_policy_relevance/sensitive_energy/phase6_p0_sensitive_basis_k128.npz",
+  "basis_rank": 128,
+  "action_head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "variant_count": 5,
+  "frame_rows": 1125,
+  "status": "VERIFIED_OFFLINE_SENSITIVE_SUBSPACE_PROJECTION",
+  "notes": [
+    "Basis is reconstructed from P0 local action-sensitive components.",
+    "Sensitive energy is a projection onto this P0-derived subspace, not a proof of causal neuron identity."
+  ]
+}

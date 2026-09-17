@@ -101,16 +101,72 @@ Not executed. The next valid combined test is `P4` plus the best future camera/a
 
 ## 13. Environment Alignment x Hidden Correction
 
-Not executed. Candidate next 2x2 test:
+Executed offline 2x2 using action-head hidden injection.
 
 ```text
-Original vs P4 letterbox
-No hidden correction vs progress/phase hidden correction
+Original P0 raw Action Gap: 0.370203
+Original P0 + condition-specific progress/phase hidden correction: 0.061464
+
+P4 letterbox raw Action Gap: 0.101993
+P4 letterbox + condition-specific progress/phase hidden correction: 0.072575
+P4 letterbox + P0-trained correction transfer: 0.090531
 ```
+
+Interpretation:
+
+- Hidden correction is strongly effective on Original P0.
+- P4 letterbox already removes much of the Action Gap; condition-specific hidden correction further improves it from `0.101993` to `0.072575`.
+- P0-trained correction transfers weakly to P4: Action Gap improves to `0.090531`, but representation gap increases (`repr_gap_reduction_ratio = -0.387`).
+- This supports complementarity, but also shows correction calibration is environment-condition dependent.
+
+## 13b. Policy-Sensitive Energy Analysis
+
+A P0-derived k=128 action-sensitive subspace was reconstructed and saved:
+
+```text
+06_policy_relevance/sensitive_energy/phase6_p0_sensitive_basis_k128.npz
+```
+
+Mean sensitive energy:
+
+```text
+P0 raw: 67.585359
+P0 + correction: 36.784414
+
+P4 raw: 29.082477
+P4 + P4 correction: 21.531851
+P4 + P0 correction transfer: 56.653547
+```
+
+Interpretation:
+
+- P4 raw reduces P0-derived sensitive energy substantially: `67.585 -> 29.082`.
+- P4-specific hidden correction further reduces sensitive energy: `29.082 -> 21.532`.
+- P0-trained correction transferred to P4 increases sensitive energy to `56.654`, matching the weaker action improvement and the negative representation-reduction result.
+
+This strengthens the Phase6 interpretation: the useful environment/correction changes are those that reduce action-sensitive residual structure, not merely global observation or representation distance.
 
 ## 14. Held-Out Evaluation
 
-Not executed. Current Phase6 conditions are deterministic factor interventions evaluated on all 225 pairs. No parameter was selected by held-out folds in this run.
+Executed leave-one-episode-out condition selection. Each fold selects a condition using train episodes only and evaluates on the held-out episode.
+
+```text
+Train action-min selection:
+  selected P4 in 5/5 folds
+  held-out action gap: 0.102457
+  held-out action reduction: 72.65%
+
+Train hidden-min selection:
+  selected P4 in 5/5 folds
+  held-out action gap: 0.102457
+
+Train observation-MSE-min selection:
+  selected P5 brightness in 5/5 folds
+  held-out action gap: 0.378114
+  held-out action change: -1.85%
+```
+
+This strengthens the conclusion: selecting by observation MSE chooses the photometric condition that worsens held-out policy action, while selecting by policy/hidden metrics consistently chooses P4.
 
 ## 15. Failure Analysis
 
@@ -139,11 +195,11 @@ The central Phase6 finding is that observation-level photometric improvement alo
 
 ## 18. Next Deployment Experiment
 
-Run the 2x2 comparison:
+Next valid experiment:
 
 ```text
-Original Sim vs P4 letterbox Sim
-No hidden correction vs progress/phase hidden correction
+1. Reconstruct/serialize the Phase5 policy-sensitive basis.
+2. Fill sensitive/null energy for P0/P4 and corrected variants.
+3. Run held-out selection if choosing preprocessing parameters beyond fixed P4.
+4. Design camera/appearance sensitivity ablation only after the preprocessing/correction track is locked.
 ```
-
-and then evaluate whether P4 and hidden correction are complementary.

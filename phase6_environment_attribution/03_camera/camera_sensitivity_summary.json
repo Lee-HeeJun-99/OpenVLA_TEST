@@ -1,0 +1,7 @@
+{
+  "condition_count": 9,
+  "full_forward_conditions": 9,
+  "status": "VERIFIED_FULL_FORWARD",
+  "camera_ablation_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/camera_ablation.csv",
+  "interpretation": "Image-space camera sensitivity, not calibrated camera alignment."
+}

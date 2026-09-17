@@ -1,0 +1,81 @@
+{
+  "analysis_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes",
+  "output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs",
+  "pair_count": 225,
+  "conditions": {
+    "C0_original": {
+      "description": "No image-space camera perturbation.",
+      "transform": "identity",
+      "value": 0.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C0_original/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C0_original/sim_images.txt",
+      "count": 225
+    },
+    "C1_sim_shift_left_24px": {
+      "description": "Shift Sim image left by 24 px.",
+      "transform": "shift_x",
+      "value": -24.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C1_sim_shift_left_24px/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C1_sim_shift_left_24px/sim_images.txt",
+      "count": 225
+    },
+    "C2_sim_shift_right_24px": {
+      "description": "Shift Sim image right by 24 px.",
+      "transform": "shift_x",
+      "value": 24.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C2_sim_shift_right_24px/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C2_sim_shift_right_24px/sim_images.txt",
+      "count": 225
+    },
+    "C3_sim_shift_up_24px": {
+      "description": "Shift Sim image up by 24 px.",
+      "transform": "shift_y",
+      "value": -24.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C3_sim_shift_up_24px/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C3_sim_shift_up_24px/sim_images.txt",
+      "count": 225
+    },
+    "C4_sim_shift_down_24px": {
+      "description": "Shift Sim image down by 24 px.",
+      "transform": "shift_y",
+      "value": 24.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C4_sim_shift_down_24px/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C4_sim_shift_down_24px/sim_images.txt",
+      "count": 225
+    },
+    "C5_sim_zoom_in_1p05": {
+      "description": "Zoom Sim image in around center by 1.05x.",
+      "transform": "scale",
+      "value": 1.05,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C5_sim_zoom_in_1p05/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C5_sim_zoom_in_1p05/sim_images.txt",
+      "count": 225
+    },
+    "C6_sim_zoom_out_0p95": {
+      "description": "Zoom Sim image out around center by 0.95x.",
+      "transform": "scale",
+      "value": 0.95,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C6_sim_zoom_out_0p95/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C6_sim_zoom_out_0p95/sim_images.txt",
+      "count": 225
+    },
+    "C7_sim_rotate_ccw_2deg": {
+      "description": "Rotate Sim image counter-clockwise by 2 degrees.",
+      "transform": "rotate",
+      "value": 2.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C7_sim_rotate_ccw_2deg/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C7_sim_rotate_ccw_2deg/sim_images.txt",
+      "count": 225
+    },
+    "C8_sim_rotate_cw_2deg": {
+      "description": "Rotate Sim image clockwise by 2 degrees.",
+      "transform": "rotate",
+      "value": -2.0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C8_sim_rotate_cw_2deg/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/03_camera/condition_inputs/C8_sim_rotate_cw_2deg/sim_images.txt",
+      "count": 225
+    }
+  },
+  "status": "IMAGE_SPACE_CAMERA_SENSITIVITY_INPUTS_READY",
+  "interpretation": "These are image-space camera-like perturbations, not calibrated Real camera alignment."
+}

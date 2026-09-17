@@ -1,0 +1,119 @@
+{
+  "objectives": [
+    [
+      "action_min",
+      "action_chunk_mean_l2",
+      "min"
+    ],
+    [
+      "hidden_min",
+      "hidden_l2",
+      "min"
+    ],
+    [
+      "vision_min",
+      "vision_pooled_l2",
+      "min"
+    ],
+    [
+      "observation_mse_min",
+      "observation_mse",
+      "min"
+    ],
+    [
+      "observation_ssim_max",
+      "observation_ssim_global",
+      "max"
+    ]
+  ],
+  "conditions": [
+    "P0_current_paired_image",
+    "P1_resize_224_direct",
+    "P2_center_crop_square_resize_224",
+    "P3_center_crop_0p875_resize_224",
+    "P4_letterbox_224",
+    "P5_brightness_match_sim_to_real",
+    "P6_contrast_match_sim_to_real"
+  ],
+  "episodes": [
+    "episode_000001",
+    "episode_000002",
+    "episode_000003",
+    "episode_000004",
+    "episode_000005"
+  ],
+  "summary": [
+    {
+      "selection_objective": "action_min",
+      "fold_count": 5,
+      "mean_test_action_gap": 0.10245737034660814,
+      "mean_test_baseline_gap": 0.37152503595464503,
+      "mean_test_action_reduction": 0.26906766560803685,
+      "mean_test_action_reduction_pct": 72.6519015812521,
+      "oracle_match_count": 5,
+      "selected_counts_json": "{\"P0_current_paired_image\": 0, \"P1_resize_224_direct\": 0, \"P2_center_crop_square_resize_224\": 0, \"P3_center_crop_0p875_resize_224\": 0, \"P4_letterbox_224\": 5, \"P5_brightness_match_sim_to_real\": 0, \"P6_contrast_match_sim_to_real\": 0}",
+      "status": "VERIFIED_LOO_HELDOUT_SELECTION"
+    },
+    {
+      "selection_objective": "hidden_min",
+      "fold_count": 5,
+      "mean_test_action_gap": 0.10245737034660814,
+      "mean_test_baseline_gap": 0.37152503595464503,
+      "mean_test_action_reduction": 0.26906766560803685,
+      "mean_test_action_reduction_pct": 72.6519015812521,
+      "oracle_match_count": 5,
+      "selected_counts_json": "{\"P0_current_paired_image\": 0, \"P1_resize_224_direct\": 0, \"P2_center_crop_square_resize_224\": 0, \"P3_center_crop_0p875_resize_224\": 0, \"P4_letterbox_224\": 5, \"P5_brightness_match_sim_to_real\": 0, \"P6_contrast_match_sim_to_real\": 0}",
+      "status": "VERIFIED_LOO_HELDOUT_SELECTION"
+    },
+    {
+      "selection_objective": "vision_min",
+      "fold_count": 5,
+      "mean_test_action_gap": 0.10245737034660814,
+      "mean_test_baseline_gap": 0.37152503595464503,
+      "mean_test_action_reduction": 0.26906766560803685,
+      "mean_test_action_reduction_pct": 72.6519015812521,
+      "oracle_match_count": 5,
+      "selected_counts_json": "{\"P0_current_paired_image\": 0, \"P1_resize_224_direct\": 0, \"P2_center_crop_square_resize_224\": 0, \"P3_center_crop_0p875_resize_224\": 0, \"P4_letterbox_224\": 5, \"P5_brightness_match_sim_to_real\": 0, \"P6_contrast_match_sim_to_real\": 0}",
+      "status": "VERIFIED_LOO_HELDOUT_SELECTION"
+    },
+    {
+      "selection_objective": "observation_mse_min",
+      "fold_count": 5,
+      "mean_test_action_gap": 0.3781135462571551,
+      "mean_test_baseline_gap": 0.37152503595464503,
+      "mean_test_action_reduction": -0.006588510302510109,
+      "mean_test_action_reduction_pct": -1.8530087792447076,
+      "oracle_match_count": 0,
+      "selected_counts_json": "{\"P0_current_paired_image\": 0, \"P1_resize_224_direct\": 0, \"P2_center_crop_square_resize_224\": 0, \"P3_center_crop_0p875_resize_224\": 0, \"P4_letterbox_224\": 0, \"P5_brightness_match_sim_to_real\": 5, \"P6_contrast_match_sim_to_real\": 0}",
+      "status": "VERIFIED_LOO_HELDOUT_SELECTION"
+    },
+    {
+      "selection_objective": "observation_ssim_max",
+      "fold_count": 5,
+      "mean_test_action_gap": 0.10245737034660814,
+      "mean_test_baseline_gap": 0.37152503595464503,
+      "mean_test_action_reduction": 0.26906766560803685,
+      "mean_test_action_reduction_pct": 72.6519015812521,
+      "oracle_match_count": 5,
+      "selected_counts_json": "{\"P0_current_paired_image\": 0, \"P1_resize_224_direct\": 0, \"P2_center_crop_square_resize_224\": 0, \"P3_center_crop_0p875_resize_224\": 0, \"P4_letterbox_224\": 5, \"P5_brightness_match_sim_to_real\": 0, \"P6_contrast_match_sim_to_real\": 0}",
+      "status": "VERIFIED_LOO_HELDOUT_SELECTION"
+    },
+    {
+      "selection_objective": "oracle_test_action_min",
+      "fold_count": 5,
+      "mean_test_action_gap": 0.10245737034660814,
+      "mean_test_baseline_gap": 0.37152503595464503,
+      "mean_test_action_reduction": 0.26906766560803685,
+      "mean_test_action_reduction_pct": 72.6519015812521,
+      "oracle_match_count": 5,
+      "selected_counts_json": "{}",
+      "status": "ORACLE_UPPER_BOUND_NOT_DEPLOYABLE"
+    }
+  ],
+  "status": "VERIFIED_LOO_HELDOUT_SELECTION",
+  "notes": [
+    "Parameter/condition selection is performed on train episodes only.",
+    "Oracle uses held-out action gap and is upper bound only.",
+    "This is episode held-out, not unseen-layout or real-world generalization."
+  ]
+}
