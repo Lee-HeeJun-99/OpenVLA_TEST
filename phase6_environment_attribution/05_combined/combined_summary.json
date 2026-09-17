@@ -1,0 +1,7 @@
+{
+  "condition_count": 2,
+  "full_forward_conditions": 2,
+  "status": "VERIFIED_FULL_FORWARD",
+  "combined_ablation_csv": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/combined_ablation.csv",
+  "interpretation": "Combined P4+C2 is still an image-space sensitivity condition, not calibrated camera alignment."
+}

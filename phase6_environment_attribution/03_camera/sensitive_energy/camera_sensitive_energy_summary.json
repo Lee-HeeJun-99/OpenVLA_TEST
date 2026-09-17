@@ -1,0 +1,13 @@
+{
+  "basis_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/06_policy_relevance/sensitive_energy/phase6_p0_sensitive_basis_k128.npz",
+  "basis_rank": 128,
+  "best_sensitive_energy_condition": "C2_sim_shift_right_24px",
+  "best_sensitive_energy_reduction_pct": 7.777932730928658,
+  "condition_count": 9,
+  "frame_rows": 2025,
+  "notes": [
+    "Projection uses the P0-derived Phase6 sensitive basis.",
+    "This is a policy-relevance proxy, not calibrated camera geometry evidence."
+  ],
+  "status": "VERIFIED_OFFLINE_CAMERA_SENSITIVE_SUBSPACE_PROJECTION"
+}

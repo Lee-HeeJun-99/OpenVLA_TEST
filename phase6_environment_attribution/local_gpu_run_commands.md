@@ -51,3 +51,20 @@ Key outputs:
 Until step 3 and 4 complete, Phase 6 is observation-side only.
 
 Do not interpret preprocessing/photometric improvements as policy improvements before `action_gap` is filled in `environment_factor_table.csv`.
+
+## Combined P4 + C2 Full-Forward Extraction
+
+```bash
+cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903
+bash /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/run_combined_full_forward_feature_extraction.sh
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/environment/a6000_ubuntu22_py310/bin/python \
+  /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/phase6_summarize_combined.py
+```
+
+Expected outputs:
+
+```text
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/combined_ablation.csv
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/05_combined/combined_summary.json
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/05_combined/combined_frame_metrics.csv
+```

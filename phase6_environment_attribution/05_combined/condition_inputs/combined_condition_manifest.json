@@ -1,0 +1,22 @@
+{
+  "conditions": {
+    "K0_P4_letterbox": {
+      "description": "P4 letterbox condition copied as combined baseline.",
+      "base": "P4_letterbox_224",
+      "sim_shift_x_px": 0,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/05_combined/condition_inputs/K0_P4_letterbox/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/05_combined/condition_inputs/K0_P4_letterbox/sim_images.txt",
+      "count": 225
+    },
+    "K1_P4_letterbox_C2_shift_right_24px": {
+      "description": "P4 letterbox plus C2-like Sim right shift by 24 pixels.",
+      "base": "P4_letterbox_224",
+      "sim_shift_x_px": 24,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/05_combined/condition_inputs/K1_P4_letterbox_C2_shift_right_24px/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/05_combined/condition_inputs/K1_P4_letterbox_C2_shift_right_24px/sim_images.txt",
+      "count": 225
+    }
+  },
+  "status": "COMBINED_P4_C2_INPUTS_READY",
+  "interpretation": "K1 is a controlled image-space combined sensitivity condition, not calibrated camera alignment."
+}

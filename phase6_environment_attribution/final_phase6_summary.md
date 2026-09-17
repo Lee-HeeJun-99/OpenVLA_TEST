@@ -12,7 +12,7 @@ Phase 5 showed that reducing the whole representation gap is not sufficient; act
 
 Status: `VERIFIED_FULL_FORWARD` after local GPU execution.
 
-Feature/action extraction was completed for 7 conditions x 2 domains x 225 paired frames using fixed policy:
+Feature/action extraction was completed for preprocessing/photometric conditions and image-space camera sensitivity conditions using fixed policy:
 
 ```text
 oftplus_h5_vision
@@ -52,7 +52,44 @@ This is direct evidence that reducing observation-level photometric distance doe
 
 ## 6. Camera Attribution
 
-Not executed in this Phase6 run. Camera attribution remains `PLANNED` and requires controlled render/camera perturbation.
+Executed image-space camera sensitivity ablation. This is not calibrated Real camera alignment; it is controlled camera-like perturbation of Sim images.
+
+Best camera condition by Action Gap:
+
+```text
+C2_sim_shift_right_24px
+Action Gap: 0.335682
+Action Gap reduction: 9.33%
+Hidden Gap reduction: 2.81%
+Vision Gap reduction: -1.06%
+```
+
+Important directional contrast:
+
+```text
+C1 shift left:
+  Observation MSE: 0.085792
+  Action Gap: 0.382553
+  Action reduction: -3.34%
+
+C2 shift right:
+  Observation MSE: 0.095760
+  Action Gap: 0.335682
+  Action reduction: 9.33%
+```
+
+The left shift slightly improves observation MSE but worsens Action Gap. The right shift worsens observation MSE but improves Action Gap. This again supports the Phase6 claim that pixel/statistical alignment is not sufficient to predict policy impact.
+
+Policy-sensitive projection using the Phase6 P0 sensitive basis adds a stronger policy-relevance proxy:
+
+```text
+C0 sensitive energy: 67.585359
+C2 sensitive energy: 62.328616
+C2 sensitive energy reduction: 7.78%
+C2 action reduction: 9.33%
+```
+
+The best camera condition by Action Gap is also the best by policy-sensitive energy reduction. Conditions that worsen Action Gap generally increase the sensitive-energy proxy. This is still an image-space camera sensitivity result, not calibrated Real camera alignment.
 
 ## 7. Appearance / Geometry Sensitivity
 
@@ -62,7 +99,7 @@ Not executed. No Real physical geometry alignment claim is made.
 
 The best policy-impact condition `P4_letterbox_224` also reduced hidden gap by `32.08%`, but the strongest evidence remains final Action Gap.
 
-Sensitive/null energy is not populated because the Phase5 sensitive basis was not serialized into this Phase6 output. Therefore this Phase uses hidden gap plus final action gap as the verified policy-relevance evidence.
+Sensitive/null energy is populated for P0/P4 correction variants and camera sensitivity variants using the Phase6 P0-derived sensitive basis. It is a policy-relevance proxy, not a causal neuron identity claim.
 
 ## 9. Representation Alignment vs Policy Alignment
 
@@ -97,7 +134,23 @@ figures/phase_conditioned_action_gap.png
 
 ## 12. Combined Environment Alignment
 
-Not executed. The next valid combined test is `P4` plus the best future camera/appearance factor, if such a factor is verified.
+Executed controlled combined image-space condition `P4_letterbox_224 + C2_sim_shift_right_24px`.
+
+```text
+K0_P4_letterbox:
+  Action Gap: 0.101274
+  Hidden Gap: 187.747536
+  Sensitive Energy: 29.077619
+
+K1_P4_letterbox_C2_shift_right_24px:
+  Action Gap: 0.130148
+  Hidden Gap: 200.902644
+  Sensitive Energy: 37.908585
+```
+
+Adding the C2 right-shift on top of P4 worsened Action Gap by `28.51%` relative to K0, increased hidden gap by `7.01%`, and increased sensitive energy by `30.37%`. Therefore the single-factor C2 improvement on the original images is not additive with P4. This supports condition-dependent environment effects: a factor can improve policy consistency in one preprocessing context and hurt it in another.
+
+This remains a controlled image-space sensitivity combination, not calibrated physical camera alignment.
 
 ## 13. Environment Alignment x Hidden Correction
 
@@ -170,11 +223,11 @@ This strengthens the conclusion: selecting by observation MSE chooses the photom
 
 ## 15. Failure Analysis
 
-Frame-level metrics are saved in `policy_sensitive_attribution_frame_metrics.csv`; worsened/improved frame analysis can be performed from this file.
+Frame-level metrics are saved in `policy_sensitive_attribution_frame_metrics.csv`, `camera_frame_metrics.csv`, and `03_camera/sensitive_energy/camera_sensitive_energy_frame_metrics.csv`. Current key failure pattern: observation-MSE-selected `P5_brightness_match_sim_to_real` worsens Action Gap despite improving image statistics, and several camera perturbations increase policy-sensitive energy while worsening Action Gap.
 
 ## 16. Final Evidence Chain
 
-Verified chain for evaluated preprocessing/photometric factors:
+Verified chain for evaluated preprocessing, photometric, and image-space camera sensitivity factors:
 
 ```text
 Preprocessing / photometric intervention
@@ -183,14 +236,16 @@ Preprocessing / photometric intervention
     -> Final action gap change
 ```
 
-The central Phase6 finding is that observation-level photometric improvement alone did not improve policy action consistency, while image geometry/preprocessing changes, especially letterbox/crop, strongly affected hidden/action gap.
+The central Phase6 finding is that observation-level photometric or pixel-statistical improvement alone did not improve policy action consistency. Image geometry/preprocessing changes, especially letterbox/crop, strongly affected hidden/action gap. For camera-like perturbations, the best action condition also reduced P0-derived policy-sensitive energy, while an observation-MSE-improving left shift worsened Action Gap.
 
 ## 17. Limitations
 
 - No real robot performance claim.
 - No ROS proprio policy claim.
-- Camera, appearance, geometry, combined, and hidden-correction 2x2 experiments remain planned.
-- Sensitive/null energy requires serializing or reconstructing the Phase5 sensitive basis.
+- Camera analysis is image-space sensitivity, not calibrated camera extrinsic/intrinsic alignment.
+- Appearance/geometry physical attribution was not executed because verified Real physical geometry/calibration is not available in this offline phase.
+- Combined `P4 + C2` was executed and worsened Action Gap relative to P4 alone; this indicates non-additive, condition-dependent effects.
+- Sensitive/null energy uses a P0-derived k=128 basis and should be interpreted as a policy-relevance proxy, not a causal neuron identity.
 - P4 is a controlled preprocessing sensitivity result, not automatically a deployment recommendation.
 
 ## 18. Next Deployment Experiment
@@ -198,8 +253,8 @@ The central Phase6 finding is that observation-level photometric improvement alo
 Next valid experiment:
 
 ```text
-1. Reconstruct/serialize the Phase5 policy-sensitive basis.
-2. Fill sensitive/null energy for P0/P4 and corrected variants.
-3. Run held-out selection if choosing preprocessing parameters beyond fixed P4.
-4. Design camera/appearance sensitivity ablation only after the preprocessing/correction track is locked.
+1. Do not combine P4 and C2 by default; combined full-forward worsened Action Gap relative to P4 alone.
+2. If deployment relevance is needed, audit actual ROS preprocessing and run a separate proprio-policy track with synchronized proprio.
+3. For physical environment attribution, first obtain calibrated Real camera/geometry measurements; otherwise report camera/geometry only as sensitivity experiments.
+4. Before real robot use, validate whether the chosen preprocessing/correction can be integrated into the runtime path without changing policy semantics unexpectedly.
 ```
