@@ -1,0 +1,64 @@
+{
+  "status": "INPUTS_READY_FULL_FORWARD_GPU_REQUIRED",
+  "conditions": [
+    {
+      "condition": "A0_original_p0_copy",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A0_original_p0_copy/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A0_original_p0_copy/sim_images.txt"
+    },
+    {
+      "condition": "A1_direct_resize_224",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A1_direct_resize_224/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A1_direct_resize_224/sim_images.txt"
+    },
+    {
+      "condition": "A2_letterbox_black",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A2_letterbox_black/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A2_letterbox_black/sim_images.txt"
+    },
+    {
+      "condition": "A3_letterbox_gray",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A3_letterbox_gray/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A3_letterbox_gray/sim_images.txt"
+    },
+    {
+      "condition": "A4_letterbox_mean_color",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A4_letterbox_mean_color/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A4_letterbox_mean_color/sim_images.txt"
+    },
+    {
+      "condition": "A5_letterbox_replicated_resize_bg",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A5_letterbox_replicated_resize_bg/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A5_letterbox_replicated_resize_bg/sim_images.txt"
+    },
+    {
+      "condition": "A6_center_crop_resize",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A6_center_crop_resize/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A6_center_crop_resize/sim_images.txt"
+    },
+    {
+      "condition": "A7_top_aligned_letterbox",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A7_top_aligned_letterbox/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A7_top_aligned_letterbox/sim_images.txt"
+    },
+    {
+      "condition": "A8_bottom_aligned_letterbox",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A8_bottom_aligned_letterbox/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/03_letterbox_ablation/condition_inputs/A8_bottom_aligned_letterbox/sim_images.txt"
+    }
+  ],
+  "mean_padding_color_from_first_real_frame": [
+    89,
+    107,
+    106
+  ]
+}

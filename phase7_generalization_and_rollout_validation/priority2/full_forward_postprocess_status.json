@@ -1,0 +1,27 @@
+{
+  "status": "VERIFIED_FULL_FORWARD_POSTPROCESS",
+  "camera_conditions": [
+    "M0_raw_original",
+    "M1_raw_shift_right_24px",
+    "M2_p4_shift_right_4px_matched",
+    "M3_p4_shift_right_24px_control"
+  ],
+  "letterbox_conditions": [
+    "A0_original_p0_copy",
+    "A1_direct_resize_224",
+    "A2_letterbox_black",
+    "A3_letterbox_gray",
+    "A4_letterbox_mean_color",
+    "A5_letterbox_replicated_resize_bg",
+    "A6_center_crop_resize",
+    "A7_top_aligned_letterbox",
+    "A8_bottom_aligned_letterbox"
+  ],
+  "camera_frame_rows": 900,
+  "letterbox_frame_rows": 2025,
+  "total_frame_rows": 2925,
+  "policy_variant": "oftplus_h5_vision",
+  "checkpoint_step": 28560,
+  "priority3_started": false,
+  "priority4_started": false
+}

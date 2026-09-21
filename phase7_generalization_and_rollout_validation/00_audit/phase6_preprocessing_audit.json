@@ -1,0 +1,10 @@
+{
+  "C2_original_shift": "24 px on 1280x720 image-space camera condition",
+  "P0_to_P6_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/phase6_prepare_condition_images.py",
+  "P4_plus_C2_shift": "24 px on P4 letterbox 224x224 condition image",
+  "camera_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/phase6_prepare_camera_sensitivity_images.py",
+  "combined_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/phase6_prepare_combined_images.py",
+  "priority2_recommendation": "Run camera shift sweep with matched relative shifts, e.g. +24 px at 1280 corresponds to about +4 px at 224.",
+  "relative_shift_caveat": "24/1280 != 24/224. Existing non-additive result is valid for implemented image-space conditions but should not be interpreted as physically matched camera shift additivity.",
+  "status": "PARTIALLY_VERIFIED_WITH_IMPORTANT_CAVEAT"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "INPUTS_READY_FULL_FORWARD_GPU_REQUIRED",
+  "interpretation": "M2 compares the 224px letterbox shift roughly matching 24px/1280px. M3 is the old 224px 24px control.",
+  "conditions": [
+    {
+      "condition": "M0_raw_original",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M0_raw_original/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M0_raw_original/sim_images.txt"
+    },
+    {
+      "condition": "M1_raw_shift_right_24px",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M1_raw_shift_right_24px/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M1_raw_shift_right_24px/sim_images.txt"
+    },
+    {
+      "condition": "M2_p4_shift_right_4px_matched",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M2_p4_shift_right_4px_matched/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M2_p4_shift_right_4px_matched/sim_images.txt"
+    },
+    {
+      "condition": "M3_p4_shift_right_24px_control",
+      "count": 225,
+      "real_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M3_p4_shift_right_24px_control/real_images.txt",
+      "sim_images_txt": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority2/02_matched_camera_shift/condition_inputs/M3_p4_shift_right_24px_control/sim_images.txt"
+    }
+  ]
+}

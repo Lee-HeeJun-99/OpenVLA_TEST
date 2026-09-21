@@ -1,0 +1,6 @@
+metric,definition,aggregation,status
+action_l2_chunk_mean,mean over chunk timesteps of sqrt(sum_dim((real_action - sim_action)^2)),dimension L2 -> chunk mean -> frame/episode mean,VERIFIED_IMPLEMENTED_PHASE7
+action_rmse_chunk_mean,mean over chunk timesteps of sqrt(mean_dim((real_action - sim_action)^2)),dimension RMSE -> chunk mean -> frame/episode mean,VERIFIED_IMPLEMENTED_PHASE7
+action_l1_chunk_mean,mean over chunk timesteps of sum_dim(abs(real_action - sim_action)),dimension L1 -> chunk mean -> frame/episode mean,VERIFIED_IMPLEMENTED_PHASE7
+action_huber_delta_chunk_mean,"mean over chunk timesteps of sum_dim Huber(error, delta)",dimension Huber sum -> chunk mean -> frame/episode mean,VERIFIED_IMPLEMENTED_PHASE7
+gripper_binary_disagreement_rate,mean over chunk timesteps of Real/Sim binary closedness disagreement using threshold 0.5,binary disagreement -> chunk mean -> frame/episode mean,PARTIALLY_VERIFIED_ASSUMED_THRESHOLD

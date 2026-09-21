@@ -1,0 +1,34 @@
+{
+  "action_chunk_length": 5,
+  "action_dimension": 7,
+  "checkpoint_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "checkpoint_step": 28560,
+  "dataset_key": "a0509_sim_cube_pick",
+  "dataset_statistics_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/dataset_statistics.json",
+  "gripper": {
+    "binary_threshold": 0.5,
+    "bounded_gripper": true,
+    "closed_direction": "1.0 means closedness high / closed, inferred from bounded closedness convention",
+    "index": 6,
+    "range": [
+      0.0,
+      1.0
+    ],
+    "threshold_status": "ASSUMED_THRESHOLD_FOR_DISAGREEMENT_ONLY"
+  },
+  "gt_action_status": "NO_GT_ACTION_VERIFIED",
+  "mask": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false
+  ],
+  "normalization_type_from_modeling_prismatic": "BOUNDS_Q99 uses q01/q99 for masked dims",
+  "policy_variant": "oftplus_h5_vision",
+  "response_actions_interpretation": "policy_decoded_action returned by OFTRuntime response['actions']; action_head.output npz stores normalized action-head output before _unnormalize_actions.",
+  "status": "PARTIALLY_VERIFIED",
+  "use_proprio": false
+}

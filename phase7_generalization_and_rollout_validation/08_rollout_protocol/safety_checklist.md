@@ -1,0 +1,7 @@
+- inference timeout -> HOLD
+- communication loss -> HOLD
+- workspace limit
+- joint/velocity/acceleration limits
+- emergency stop
+- watchdog
+- timestamp synchronization

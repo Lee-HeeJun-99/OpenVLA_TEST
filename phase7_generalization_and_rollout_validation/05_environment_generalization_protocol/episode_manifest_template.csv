@@ -1,0 +1,2 @@
+episode_id,domain,task,instruction,object_id,object_pose,lighting_level,lux,camera_intrinsic,camera_extrinsic,camera_offset,robot_joint_state,end_effector_pose,gripper_state,planner_phase,progress,image_timestamp,policy_timestamp,action_timestamp,policy_raw_action,policy_decoded_action,planner_action,commanded_action,executed_action,measured_motion,success,failure_phase,failure_reason
+,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,6 @@
+{
+  "raw_1280_reference_shift_px": 24,
+  "letterbox_224_matched_shift_px": 4,
+  "letterbox_224_control_shift_px": 24,
+  "status": "GPU_REQUIRED_FOR_FULL_FORWARD"
+}

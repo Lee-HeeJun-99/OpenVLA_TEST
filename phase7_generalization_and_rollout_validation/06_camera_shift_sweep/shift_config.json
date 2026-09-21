@@ -1,0 +1,28 @@
+{
+  "letterbox_224_px_shifts": [
+    -8,
+    -6,
+    -4,
+    -2,
+    0,
+    2,
+    4,
+    6,
+    8
+  ],
+  "note": "24 px at 1280 corresponds to about 4.2 px at 224.",
+  "original_1280_px_shifts": [
+    -32,
+    -24,
+    -16,
+    -8,
+    -4,
+    0,
+    4,
+    8,
+    16,
+    24,
+    32
+  ],
+  "status": "GPU_REQUIRED"
+}

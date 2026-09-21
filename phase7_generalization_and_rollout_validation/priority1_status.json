@@ -1,0 +1,42 @@
+{
+  "action_chunk_length": 5,
+  "action_dimension": 7,
+  "audit": {
+    "pair_count": 225,
+    "unresolved_count": 6
+  },
+  "best_action_l1_condition": "P4_letterbox_224",
+  "best_action_l2_condition": "P4_letterbox_224",
+  "checkpoint_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "checkpoint_step": 28560,
+  "date": "2026-09-18 KST",
+  "gripper": {
+    "frame_rows": 1575
+  },
+  "instruction": "Pick up the orange cube.",
+  "multimetric": {
+    "condition_rows": 7,
+    "conditions": [
+      "P0_current_paired_image",
+      "P1_resize_224_direct",
+      "P2_center_crop_square_resize_224",
+      "P3_center_crop_0p875_resize_224",
+      "P4_letterbox_224",
+      "P5_brightness_match_sim_to_real",
+      "P6_contrast_match_sim_to_real"
+    ],
+    "episode_rows": 35,
+    "frame_rows": 1575,
+    "missing_conditions": []
+  },
+  "phase": "Phase7 Priority1",
+  "policy_variant": "oftplus_h5_vision",
+  "priority2_started": false,
+  "seed": 20260918,
+  "statistics": {
+    "ci_rows": 49,
+    "comparison_rows": 42
+  },
+  "status": "COMPLETED_PRIORITY1",
+  "use_proprio": false
+}

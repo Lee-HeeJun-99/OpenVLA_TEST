@@ -1,0 +1,9 @@
+{
+  "condition_selection": "Phase6 heldout selection selects condition on train episodes and evaluates heldout episode.",
+  "loo_episode_split": "Existing Phase5 LOO correction scripts report train episodes exclude heldout episode.",
+  "remaining_risks": [
+    "Low-rank sensitive basis and oracle/sensitive projection methods may use paired Sim hidden and are analysis-only unless explicitly LOO train-only.",
+    "Hyperparameter choices such as k=128 were not proven as fully held-out deployment selections in this Priority1 audit."
+  ],
+  "status": "PARTIALLY_VERIFIED_FROM_EXISTING_REPORTS"
+}

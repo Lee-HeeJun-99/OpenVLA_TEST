@@ -1,0 +1,27 @@
+{
+  "checkpoint_step": 28560,
+  "condition_count": 7,
+  "episode_count": 5,
+  "frame_rows": 1575,
+  "gripper_threshold": 0.5,
+  "gripper_threshold_status": "ASSUMED_THRESHOLD",
+  "instruction": "Pick up the orange cube.",
+  "metrics": [
+    "action_l1_chunk_mean",
+    "action_mae_chunk_mean",
+    "action_l2_chunk_mean",
+    "action_rmse_chunk_mean",
+    "action_huber0.01_chunk_mean",
+    "action_huber0.05_chunk_mean",
+    "action_huber0.1_chunk_mean",
+    "action_cosine_chunk_mean",
+    "translation_l2_chunk_mean",
+    "rotation_l2_chunk_mean",
+    "gripper_abs_chunk_mean",
+    "gripper_binary_disagreement_rate"
+  ],
+  "missing_conditions": [],
+  "note": "Metrics compare Real vs Sim policy_decoded_action disagreement. No GT action accuracy is claimed.",
+  "policy_variant": "oftplus_h5_vision",
+  "status": "VERIFIED_FOR_FULL_FORWARD_PREPROCESSING_CONDITIONS"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETED_PRIORITY2",
+  "PRIORITY3_STARTED": false,
+  "PRIORITY4_STARTED": false,
+  "policy_variant": "oftplus_h5_vision",
+  "checkpoint_step": 28560,
+  "priority1_status_used": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase7_generalization_and_rollout_validation/priority1_status.json",
+  "correction_audit": {
+    "audited_files": 5,
+    "action_chunk_files": 0
+  },
+  "prepared_inputs": {
+    "camera_conditions": 4,
+    "letterbox_conditions": 9
+  },
+  "alignment": {
+    "frame_rows": 2250,
+    "episode_rows": 50,
+    "method_rows": 10,
+    "best_method": "progress_phase_shift"
+  }
+}

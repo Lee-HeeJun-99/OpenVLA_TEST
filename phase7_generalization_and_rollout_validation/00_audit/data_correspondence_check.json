@@ -1,0 +1,18 @@
+{
+  "correspondence_basis": "Real step_index and Sim source_step_index / paired manifest index. Same physical state is PARTIALLY VERIFIED; measured Real TCP feedback is unavailable.",
+  "episode_counts": {
+    "episode_000001": 46,
+    "episode_000002": 47,
+    "episode_000003": 44,
+    "episode_000004": 45,
+    "episode_000005": 43
+  },
+  "frame_rate_status": "record_hz 5.0 from training config, exact timestamp alignment not fully verified",
+  "missing_image_count": 0,
+  "pair_count": 225,
+  "real_feature_status": "PASS",
+  "real_pose_status": "planned_commanded_pose_not_measured_feedback",
+  "sim_feature_status": "PASS",
+  "status": "PARTIALLY_VERIFIED",
+  "tcp_eef_convention_status": "UNVERIFIED_FOR_DIRECT_NUMERIC_DISTANCE"
+}

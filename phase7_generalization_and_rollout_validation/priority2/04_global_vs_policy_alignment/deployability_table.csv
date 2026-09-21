@@ -1,0 +1,11 @@
+method,deployability
+raw_baseline,DEPLOYABLE_CANDIDATE
+global_mean_shift,DEPLOYABLE_CANDIDATE
+mean_variance_diag,DEPLOYABLE_CANDIDATE
+progress_shift,DEPLOYABLE_CANDIDATE
+phase_shift,DEPLOYABLE_CANDIDATE
+progress_phase_shift,DEPLOYABLE_CANDIDATE
+pca_mean_shift_k16,DEPLOYABLE_CANDIDATE
+pca_oracle_delta_projection_k16,ANALYSIS_ONLY_ORACLE
+wrong_direction_global,NOT_DEPLOYABLE
+random_matched_norm,NOT_DEPLOYABLE

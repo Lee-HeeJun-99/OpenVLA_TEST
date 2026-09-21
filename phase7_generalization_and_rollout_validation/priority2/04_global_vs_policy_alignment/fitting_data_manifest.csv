@@ -1,0 +1,6 @@
+split_method,train_episode,heldout_episode,alignment_fitting_data,evaluation_data
+leave_one_episode_out,"episode_000002,episode_000003,episode_000004,episode_000005",episode_000001,train episodes only,episode_000001
+leave_one_episode_out,"episode_000001,episode_000003,episode_000004,episode_000005",episode_000002,train episodes only,episode_000002
+leave_one_episode_out,"episode_000001,episode_000002,episode_000004,episode_000005",episode_000003,train episodes only,episode_000003
+leave_one_episode_out,"episode_000001,episode_000002,episode_000003,episode_000005",episode_000004,train episodes only,episode_000004
+leave_one_episode_out,"episode_000001,episode_000002,episode_000003,episode_000004",episode_000005,train episodes only,episode_000005

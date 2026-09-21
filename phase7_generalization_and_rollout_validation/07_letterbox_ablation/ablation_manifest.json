@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    "A0_original",
+    "A1_direct_resize",
+    "A2_black_letterbox",
+    "A3_gray_letterbox",
+    "A4_mean_color_letterbox",
+    "A5_replicated_border",
+    "A6_center_crop",
+    "A7_top_aligned_letterbox",
+    "A8_bottom_aligned_letterbox"
+  ],
+  "status": "GPU_REQUIRED"
+}

@@ -1,0 +1,10 @@
+{
+  "splits": [
+    "in_condition_loo",
+    "leave_one_position_out",
+    "leave_one_lighting_out",
+    "leave_one_camera_condition_out",
+    "leave_one_composite_condition_out"
+  ],
+  "status": "DATA_REQUIRED"
+}

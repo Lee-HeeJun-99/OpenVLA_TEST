@@ -1,0 +1,6 @@
+rq,experiment,result,status,limitation
+Correction chunks reusable?,correction_action_chunk_audit,"mostly metric-only, no corrected chunks",PARTIALLY_VERIFIED,older corrections need action-head rerun for full metrics
+Global alignment vs policy alignment,action_head_hidden_alignment,progress_phase_shift,VERIFIED_ACTION_HEAD_ONLY,not full image-to-action
+Matched camera shift,matched_camera_input_generation,inputs prepared,GPU_REQUIRED,NVIDIA driver unavailable
+Letterbox decomposition,letterbox_ablation_input_generation,inputs prepared,GPU_REQUIRED,NVIDIA driver unavailable
+Priority3 rollout/data,none,not started,DATA_REQUIRED,new environment data required
