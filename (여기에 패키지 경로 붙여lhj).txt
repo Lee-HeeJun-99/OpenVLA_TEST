@@ -1,0 +1,718 @@
+(여기에 패키지 경로 붙여/lhj)
+
+이번 작업의 목적은 새로 수집한 sim/real 이미지와 로그를 이용하여 기존 sim-to-real 분석을 확장하고, 이후 Shadow Mode 및 실제 rollout 평가로 연결할 수 있는 분석 파이프라인을 완성하는 것이다.
+
+중요한 전제는 다음과 같다.
+
+- 출력 주기와 그리퍼 홈 위치 등 기본적인 초기 조건은 이미 맞춰져 있다.
+- OFT는 1 Hz로 입력을 받고, action chunk의 K=5를 5 Hz로 실행한다.
+- 현재까지 수행된 실험은 주로 sim/real 이미지, feature, action gap을 비교한 오프라인 분석이다.
+- 실제 Shadow Mode 및 closed-loop rollout 결과가 없는 경우, 이를 수행한 것처럼 작성하면 안 된다.
+- 기존 `phase1~phase7`의 코드, 데이터 구조, metric, figure 생성 코드, 보고서를 최대한 재사용한다.
+- 새 스크립트를 만들기 전에 기존에 같은 기능을 수행하는 코드가 있는지 반드시 확인한다.
+- 기존 결과와 파일을 덮어쓰거나 삭제하지 말고, 새로운 출력 디렉터리를 사용한다.
+- 경로나 데이터 형식을 임의로 가정하지 말고 실제 저장소와 수집 데이터 구조를 먼저 확인한다.
+
+# 1. 저장소 및 기존 자산 감사
+
+가장 먼저 저장소 전체를 확인하고 다음 내용을 정리해줘.
+
+1. phase1~phase7의 목적
+2. 각 phase의 입력 데이터
+3. 각 phase에서 생성한 중간 산출물
+4. 사용된 metric
+5. 재사용 가능한 Python 스크립트와 함수
+6. 기존 sim/real pair 생성 방식
+7. feature 추출 방식과 추출 layer
+8. OpenVLA/OFT action 추출 및 비교 방식
+9. phase 분할 방식
+10. correction, oracle, low-rank direction, train-selected phase gate, lambda gate 구현 위치
+11. 기존 figure와 report 생성 방식
+12. 현재 문서만 있고 실제 결과가 없는 실험
+
+감사 결과를 다음 파일로 작성해줘.
+
+```text
+phase8_shadow_mode_distribution_analysis/
+00_audit/reuse_audit.md
+00_audit/reuse_manifest.json
+```
+
+`reuse_manifest.json`에는 각 기존 파일을 다음 중 하나로 분류해줘.
+
+- reuse_as_is
+- reuse_with_extension
+- reference_only
+- obsolete
+- protocol_only
+- result_available
+- result_not_available
+
+실제 파일을 확인하기 전에는 기존 기능을 새로 구현하지 마라.
+
+# 2. 새로운 작업 디렉터리 구성
+
+기존 결과와 분리하여 다음 구조를 기본으로 사용해줘.
+
+```text
+phase8_shadow_mode_distribution_analysis/
+├── 00_audit/
+├── 01_data_validation/
+├── 02_preprocessing_validation/
+├── 03_pair_alignment/
+├── 04_phase_segmentation/
+├── 05_observation_gap/
+├── 06_representation_gap/
+├── 07_shadow_action_analysis/
+├── 08_distribution_analysis/
+├── 09_environment_ablation/
+├── 10_correction_diagnosis/
+├── 11_rollout_protocol/
+├── configs/
+├── scripts/
+└── final_report/
+```
+
+기존 저장소의 naming convention이 더 일관적이라면 그 구조에 맞게 조정해도 된다. 단, 기존 결과와 새 결과가 섞이지 않도록 해야 한다.
+
+# 3. 데이터 구조 파악 및 manifest 생성
+
+새로 수집된 데이터를 자동으로 탐색하고 다음 정보를 파악해줘.
+
+- sim/real 구분
+- layout ID
+- episode ID
+- frame ID
+- raw image
+- 모델 입력 이미지
+- timestamp
+- instruction
+- joint state
+- end-effector pose
+- gripper state
+- planner action
+- OpenVLA output
+- OFT output
+- raw action
+- post-processed action
+- inference latency
+- timeout/통신 오류 정보
+- success/failure label
+- phase label 존재 여부
+
+데이터 형식이 HDF5, NPZ, CSV, JSON, JSONL, 이미지 폴더 등으로 혼합되어 있어도 읽을 수 있도록 기존 loader를 우선 재사용하고 부족한 부분만 확장해줘.
+
+통합 manifest에는 최소한 다음 필드를 포함해줘.
+
+```text
+domain
+layout_id
+episode_id
+frame_id
+timestamp
+image_path
+model_input_image_path
+instruction
+joint_state
+ee_position
+ee_rotation
+gripper_state
+planner_action
+openvla_action
+oft_action_chunk
+raw_action
+executed_action
+phase
+valid
+exclusion_reason
+```
+
+입력에 존재하지 않는 값은 만들어내지 말고 `null` 또는 `not_available`로 명시해줘.
+
+# 4. 데이터 무결성 검사
+
+이미지 분석 전에 다음을 검사해줘.
+
+- 손상된 이미지
+- 누락 프레임
+- 중복 프레임
+- timestamp 역전
+- 비정상적인 시간 간격
+- image/state/action 개수 불일치
+- sim/real episode 길이 차이
+- instruction 불일치
+- RGB/BGR 오류 가능성
+- 해상도 불일치
+- inference timeout
+- 통신 누락
+- control command 누락
+- OFT chunk 길이가 K=5인지
+- 1 Hz inference 및 5 Hz action 실행 여부
+
+주기 검증은 설정값만 읽지 말고 timestamp를 이용해 실제 기록 주기를 계산해줘.
+
+결과물:
+
+```text
+01_data_validation/data_integrity_report.md
+01_data_validation/data_integrity_summary.json
+01_data_validation/invalid_samples.csv
+01_data_validation/timing_statistics.csv
+```
+
+유효하지 않은 샘플을 삭제하지 말고 manifest의 `valid`와 `exclusion_reason`으로 관리해줘.
+
+# 5. 이미지 전처리 검증
+
+원본 이미지와 모델 입력 직전 이미지를 분리하여 확인해줘.
+
+다음 과정을 실제 코드 기준으로 추적해줘.
+
+```text
+raw image
+→ color conversion
+→ distortion correction
+→ crop
+→ resize
+→ letterbox/padding
+→ normalization
+→ model input tensor
+```
+
+sim과 real에 동일한 전처리가 적용되는지 확인하고 다음을 분석해줘.
+
+- RGB/BGR
+- 원본 해상도
+- 최종 입력 해상도
+- aspect ratio
+- crop 좌표
+- resize 방식
+- interpolation 방식
+- letterbox/padding 위치 및 색상
+- normalization 범위
+- FoV 차이
+- 렌즈 왜곡
+- 카메라 중심 이동
+- 좌우 카메라 또는 camera ID 혼동 가능성
+
+기존 Phase 7의 camera shift, crop, letterbox 관련 코드가 있으면 우선 재사용해줘.
+
+각 대표 layout에 대해 다음 이미지를 생성해줘.
+
+- sim raw
+- real raw
+- sim model input
+- real model input
+- overlay
+- absolute difference
+- edge overlay
+- estimated spatial shift
+
+기존에 관찰된 약 24픽셀 차이가 새 데이터에서도 나타나는지 확인하되, 결론을 미리 정하지 마라. 차이가 있다면 다음 후보를 분리하여 검증해줘.
+
+- 카메라 pose 차이
+- FoV 차이
+- crop offset
+- resize/letterbox 차이
+- trajectory 또는 pose misalignment
+- 실제 scene object 위치 차이
+
+결과물:
+
+```text
+02_preprocessing_validation/preprocessing_audit.md
+02_preprocessing_validation/preprocessing_config_comparison.json
+02_preprocessing_validation/figures/
+```
+
+# 6. Sim–Real trajectory 및 frame 정렬
+
+같은 frame index나 timestamp만으로 sim과 real을 대응시키지 마라.
+
+가능한 데이터에 따라 다음 우선순위로 정렬해줘.
+
+1. trajectory progress
+2. end-effector position
+3. end-effector rotation
+4. joint position
+5. gripper state
+6. timestamp
+7. frame index
+
+기존 pair 생성 코드가 있으면 재사용하되, frame index만 사용했다면 pose 기반 정렬 기능을 추가해줘.
+
+필요하면 다음 정렬 방식을 비교해줘.
+
+- timestamp nearest neighbor
+- normalized trajectory progress
+- pose nearest neighbor
+- Dynamic Time Warping
+- phase-constrained alignment
+
+각 pair에 대해 다음 품질 값을 저장해줘.
+
+```text
+sim_frame
+real_frame
+time_difference
+trajectory_progress_difference
+ee_translation_error
+ee_rotation_error
+joint_error
+gripper_match
+alignment_score
+pair_valid
+```
+
+정렬 품질이 나쁜 pair는 삭제하지 말고 별도 표시하고, 전체 분석과 high-quality pair 분석을 분리해줘.
+
+결과물:
+
+```text
+03_pair_alignment/aligned_pairs.csv
+03_pair_alignment/alignment_quality_report.md
+03_pair_alignment/alignment_statistics.json
+03_pair_alignment/figures/
+```
+
+# 7. 작업 Phase 분할
+
+trajectory를 최소한 다음 phase로 분할해줘.
+
+- approach
+- pre_grasp
+- grasp
+- lift
+- post_lift
+
+기존 phase 분할 코드와 label이 있으면 재사용한다.
+
+grasp phase를 gripper command가 변한 단일 frame으로 정의하지 말고 다음 구간을 포함하도록 검토해줘.
+
+- gripper close 직전
+- close command 발생 시점
+- 실제 gripper state 변화
+- 접촉 또는 grasp 직후
+- lift 시작 직전
+
+phase 경계는 가능한 경우 다음 신호를 함께 사용해줘.
+
+- EE–cube distance
+- EE height
+- gripper command
+- gripper state
+- cube motion
+- planner waypoint
+- trajectory progress
+
+자동 분할의 신뢰도가 낮으면 수동 검토 대상 frame을 표시해줘.
+
+결과물:
+
+```text
+04_phase_segmentation/phase_labels.csv
+04_phase_segmentation/phase_definition.md
+04_phase_segmentation/phase_validation_figures/
+```
+
+# 8. Observation Gap 분석
+
+정렬된 sim/real pair를 대상으로 이미지 차이를 분석해줘.
+
+기존 metric과 figure 코드를 최대한 재사용하고 최소한 다음 지표를 포함해줘.
+
+- pixel L1
+- pixel L2
+- Huber
+- SSIM
+- PSNR
+- color histogram distance
+- brightness difference
+- contrast difference
+- saturation difference
+- edge difference
+- estimated spatial shift
+
+분석 단위:
+
+- 전체
+- episode별
+- layout별
+- phase별
+- cube 위치별
+- instruction별
+- high-quality alignment pair만 사용한 결과
+- 전체 pair를 사용한 결과
+
+이 결과를 policy 영향으로 바로 해석하지 말고 `Observation Gap`으로만 표현해줘.
+
+# 9. Representation Gap 분석
+
+동일하게 정렬된 sim/real 이미지를 OpenVLA와 OFT에 입력하고 기존 feature hook 및 extraction 코드를 재사용해줘.
+
+다음 표현을 구분해줘.
+
+- Vision Encoder intermediate feature
+- Vision Encoder output
+- VLM 입력 직전 visual representation
+- multimodal/policy hidden representation
+- action head 입력 feature
+
+모든 representation을 하나의 “hidden feature”로 합쳐 부르지 말고 정확한 추출 위치와 tensor shape을 기록해줘.
+
+가능한 layer에 대해 다음을 계산해줘.
+
+- paired L1/L2
+- cosine distance
+- MMD
+- Wasserstein distance
+- Energy distance
+- CKA
+- PCA
+- UMAP 또는 t-SNE
+- sim distribution 범위를 벗어난 real sample 비율
+
+시각화는 전체뿐 아니라 phase별, layout별, 모델별로 생성해줘.
+
+다음 관계도 분석해줘.
+
+- pixel gap ↔ representation gap
+- alignment error ↔ representation gap
+- phase ↔ representation gap
+- camera shift ↔ representation gap
+
+# 10. Shadow Mode action 분석
+
+Shadow Mode 로그가 존재한다면 동일한 실제 입력에 대한 다음 값을 비교해줘.
+
+```text
+Planner GT
+OpenVLA prediction
+OFT prediction
+```
+
+Shadow Mode 로그가 아직 없다면 분석 코드를 준비하되, 결과를 생성하거나 수행한 것처럼 작성하지 마라. 해당 단계는 `NOT_EXECUTED`로 명시해줘.
+
+모델 출력은 다음 차원으로 분리해 분석해줘.
+
+- translation x, y, z
+- rotation rx, ry, rz 또는 실제 사용 representation
+- gripper
+- total action
+
+OpenVLA와 OFT의 action normalization 및 de-normalization 방식이 같은지 먼저 확인해줘.
+
+OFT는 K=5 action chunk 전체를 planner의 다음 5개 action과 비교해줘.
+
+```text
+OFT chunk position 0 vs planner t
+OFT chunk position 1 vs planner t+1
+...
+OFT chunk position 4 vs planner t+4
+```
+
+첫 action만 비교한 결과와 chunk 전체 비교 결과를 모두 제공해줘.
+
+사용할 metric:
+
+- MAE/L1
+- RMSE/L2
+- Huber
+- cosine distance
+- direction agreement
+- magnitude error
+- gripper accuracy
+- gripper precision/recall/F1
+- grasp event timing error
+- false close
+- missed close
+- early close
+- late close
+
+분석 단위:
+
+- 모델별
+- domain별
+- phase별
+- layout별
+- action dimension별
+- OFT chunk index별
+
+# 11. 통합 분포 분석
+
+이번 연구의 핵심이 분포 분석이라는 점을 반영하여 다음 분포를 구분해줘.
+
+- sim input distribution
+- real input distribution
+- sim representation distribution
+- real representation distribution
+- planner action distribution
+- OpenVLA action distribution
+- OFT action distribution
+
+다음 비교를 수행해줘.
+
+1. sim input vs real input
+2. sim feature vs real feature
+3. 동일 모델의 sim action vs real action
+4. OpenVLA vs planner
+5. OFT vs planner
+6. OpenVLA vs OFT
+7. representation gap vs action gap
+8. observation gap vs action gap
+9. alignment error vs action gap
+10. phase별 OOD 비율
+
+OOD 비율을 단순 min/max 범위로만 정의하지 말고, 가능하면 다음 방법을 함께 비교해줘.
+
+- standardized distance
+- Mahalanobis distance
+- k-NN distance
+- density 또는 percentile 기반 threshold
+- MMD
+- Wasserstein distance
+- Energy distance
+
+threshold는 sim validation distribution 또는 training distribution을 이용하여 결정하고, test real 데이터로 threshold를 선택하지 마라.
+
+통계 검증에는 가능한 경우 다음을 포함해줘.
+
+- bootstrap confidence interval
+- permutation test
+- paired statistical test
+- effect size
+- multiple-comparison correction
+
+episode/frame이 독립 표본이 아닐 수 있으므로 frame 전체를 독립 표본으로 취급하지 말고 episode 또는 layout 단위 bootstrap도 제공해줘.
+
+# 12. 환경 변화 분석
+
+기본 조건 분석이 완료된 다음에만 수행해줘.
+
+환경 조건 예시:
+
+- baseline
+- brightness increase
+- brightness decrease
+- illumination direction change
+- shadow
+- irrelevant object addition
+- non-target cube order change
+- background change
+
+환경 변화 실험에서는 다음을 고정해야 한다.
+
+- target cube 위치
+- target cube 색상
+- instruction
+- robot initial state
+- camera pose
+- planner trajectory
+- model checkpoint
+- preprocessing
+
+실제 환경 변화 데이터가 없다면 기존 Phase 7의 합성 brightness/shift/letterbox 실험은 `synthetic sensitivity analysis`로만 보고하고, 실제 환경 변화 실험으로 표현하지 마라.
+
+실제 데이터가 존재하면 다음을 비교해줘.
+
+- baseline real vs changed real
+- sim vs baseline real
+- sim vs changed real
+- feature OOD ratio 변화
+- planner 대비 action error 변화
+- gripper event timing 변화
+
+# 13. Correction 진단
+
+기존 correction, oracle, low-rank direction, phase gate, lambda gate 코드를 최대한 재사용해줘.
+
+단, correction은 다음 조건을 지켜야 한다.
+
+- oracle correction은 실제 적용 가능한 방법이 아니라 성능 상한선 분석으로 표시
+- correction direction을 test 데이터에서 선택하지 말 것
+- train/validation/test 또는 leave-one-episode-out 구조 유지
+- correction 전후 representation collapse 검사
+- action gap 감소와 planner GT error 감소를 구분
+- sim-real action 일치도가 높아졌더라도 두 action이 동시에 planner에서 멀어질 수 있음을 확인
+- 실제 rollout 성능 향상을 증명하지 않았다면 그렇게 주장하지 말 것
+
+low-rank direction은 1, 2, 4, 8, 16, 32, 64, 128개 방향을 사용하고 이것이 원 hidden dimension 자체를 바꾸는 것이 아니라 correction에 사용하는 부분공간의 rank라는 점을 문서에 명시해줘.
+
+다음 조건별로 correction 필요성을 판단해줘.
+
+1. observation gap은 크지만 action gap은 작음
+2. observation/representation/action gap이 모두 큼
+3. representation gap은 작지만 planner action error가 큼
+4. grasp phase와 gripper에서만 gap이 큼
+5. camera alignment error와 action gap의 상관이 큼
+6. correction 후 sim-real gap은 감소하지만 planner error는 증가함
+
+# 14. Rollout 프로토콜 정리
+
+실제 rollout은 분석 코드 실행과 분리해줘.
+
+## Prototype
+
+시작 위치:
+
+- cube 근처
+- cube와 home pose의 중간
+- home pose 근처
+
+각 위치에서:
+
+- OpenVLA 5회
+- OFT 5회
+
+총 30회다.
+
+## Final closed-loop rollout
+
+- OpenVLA 30회
+- OFT 30회
+- 총 60회
+- 같은 layout에서 두 모델을 paired comparison
+- 홀수 layout: OpenVLA → OFT
+- 짝수 layout: OFT → OpenVLA
+- 각 실행 전 cube와 robot state reset
+- instruction은 학습 시 사용한 `pick up the {color} cube`
+- cube 위치는 시뮬레이터에 정의된 범위 안에서 배치
+
+기록 항목:
+
+- 성공 여부
+- reach failure
+- alignment failure
+- grasp failure
+- lift failure
+- timeout
+- communication failure
+- emergency stop
+- completion time
+- inference latency
+- 전체 image/state/action 로그
+
+rollout 데이터가 없다면 프로토콜과 실행 준비 상태만 작성하고 성공률 표에 임의의 값을 넣지 마라.
+
+# 15. 최종 보고서 구성
+
+최종 보고서는 다음 구조로 작성해줘.
+
+1. 연구 목적
+2. 기존 Phase 1~7 재사용 내역
+3. 데이터셋 구성
+4. 데이터 무결성
+5. preprocessing 및 camera alignment
+6. trajectory/frame alignment
+7. phase 정의
+8. Observation Gap
+9. Representation Gap
+10. Policy-Relevant Gap
+11. Planner 기준 Action Gap
+12. OpenVLA와 OFT 비교
+13. 환경 변화 결과
+14. Correction 분석
+15. Shadow Mode 결과 또는 미실행 상태
+16. Prototype/rollout 결과 또는 미실행 상태
+17. 한계
+18. 후속 실험
+19. 결론
+
+결론에서는 다음을 명확히 구분해줘.
+
+- 데이터로 직접 확인된 사실
+- 통계적으로 유의한 결과
+- 관찰된 경향
+- 가능한 해석
+- 아직 검증되지 않은 가설
+- 실제 rollout이 필요한 주장
+
+연구 흐름은 다음 관계를 중심으로 정리해줘.
+
+```text
+Observation Gap
+→ Representation Gap
+→ Policy-Relevant Gap
+→ Planner-relative Action Error
+→ Real Rollout Success
+```
+
+앞 단계의 gap이 크다는 이유만으로 다음 단계의 성능 저하를 단정하지 마라.
+
+# 16. 필수 산출물
+
+최소한 다음 파일을 만들어줘.
+
+```text
+phase8_shadow_mode_distribution_analysis/
+├── 00_audit/reuse_audit.md
+├── 00_audit/reuse_manifest.json
+├── 01_data_validation/data_integrity_report.md
+├── 01_data_validation/data_integrity_summary.json
+├── 02_preprocessing_validation/preprocessing_audit.md
+├── 03_pair_alignment/aligned_pairs.csv
+├── 03_pair_alignment/alignment_quality_report.md
+├── 04_phase_segmentation/phase_labels.csv
+├── 05_observation_gap/summary.json
+├── 06_representation_gap/summary.json
+├── 07_shadow_action_analysis/summary.json
+├── 08_distribution_analysis/summary.json
+├── 10_correction_diagnosis/correction_summary.json
+├── 11_rollout_protocol/shadow_mode_protocol.md
+├── 11_rollout_protocol/prototype_protocol.md
+├── 11_rollout_protocol/closed_loop_protocol.md
+├── final_report/final_report.md
+├── final_report/execution_status.json
+└── README.md
+```
+
+`execution_status.json`에는 각 단계의 상태를 다음 중 하나로 표시해줘.
+
+- COMPLETED
+- PARTIALLY_COMPLETED
+- NOT_EXECUTED
+- BLOCKED_MISSING_DATA
+- BLOCKED_MISSING_MODEL
+- BLOCKED_MISSING_LOG
+
+# 17. 구현 및 검증 원칙
+
+- 기존 코드와 결과를 먼저 확인한 후 구현한다.
+- 중복 코드를 최소화한다.
+- 공통 metric, plotting, loader는 모듈화한다.
+- 모든 실행 명령을 README에 기록한다.
+- random seed와 config를 저장한다.
+- 작은 subset으로 smoke test 후 전체 데이터를 실행한다.
+- 결과 파일이 존재한다는 이유만으로 성공으로 판단하지 말고 내용과 sample count를 확인한다.
+- figure의 축, 단위, 범례, sample 수를 명확히 표시한다.
+- frame 수와 episode 수를 혼동하지 않는다.
+- 데이터가 부족하면 분석을 중단하지 말고 가능한 부분까지 수행한 후 정확한 부족 항목을 보고한다.
+- 테스트 데이터 누수를 검사한다.
+- correction direction이나 threshold를 전체 데이터에서 선택하지 않는다.
+- 기존 파일을 삭제하거나 덮어쓰지 않는다.
+- 실제 로봇 명령을 자동으로 실행하지 않는다.
+- closed-loop 제어는 코드 준비와 안전 검증까지만 수행하고, 실제 로봇 실행은 사용자의 명시적인 지시가 있을 때만 진행한다.
+
+# 18. 작업 순서
+
+다음 순서를 반드시 지켜줘.
+
+1. 저장소 및 기존 결과 감사
+2. 재사용 계획 작성
+3. 새 데이터 구조와 로그 확인
+4. 데이터 무결성 검사
+5. preprocessing 검증
+6. trajectory/frame 정렬
+7. phase 분할
+8. observation gap 분석
+9. representation gap 분석
+10. Shadow Mode 로그 존재 여부 확인
+11. planner 기준 action 분석
+12. 통합 분포 분석
+13. 환경 변화 분석
+14. correction 진단
+15. rollout 프로토콜 및 준비 상태 정리
+16. 최종 보고서 작성
+17. 전체 결과 재검증
+
+우선 1~4단계를 완료하고, 발견된 데이터 구조, 재사용 가능한 기존 코드, 누락 데이터, 이후 실행 계획을 먼저 보고해줘. 그다음 분석을 계속 진행해줘. 중간에 데이터가 없다는 이유로 임의 데이터를 생성하거나 실제 실험이 완료된 것처럼 결과를 만들지 마라.
