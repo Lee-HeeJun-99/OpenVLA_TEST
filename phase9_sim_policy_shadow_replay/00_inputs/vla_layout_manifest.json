@@ -1,0 +1,29 @@
+{
+  "description": "Fixed layout manifest for Isaac Sim closed-loop VLA policy rollout. The manifest uses target_color=orange. Isaac Sim internally maps orange to the red prim in the current A0509 scene.",
+  "source_manual_layout_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory010_from_episode004_layout.json",
+  "instruction": "Pick up the orange cube.",
+  "episodes": [
+    {
+      "episode_index": 0,
+      "target_color": "orange",
+      "instruction": "Pick up the orange cube.",
+      "layout_m": {
+        "red": [
+          0.4804999999999999,
+          -0.18825,
+          0.8605289459228516
+        ],
+        "yellow": [
+          0.7405,
+          -0.19325,
+          0.8605289459228516
+        ],
+        "blue": [
+          0.6605,
+          0.19425,
+          0.8605289459228516
+        ]
+      }
+    }
+  ]
+}

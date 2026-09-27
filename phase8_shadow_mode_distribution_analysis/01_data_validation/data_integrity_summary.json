@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED",
+  "real_episodes": [
+    "episode_000004",
+    "episode_000008",
+    "episode_000009",
+    "episode_000010"
+  ],
+  "sim_episodes": [
+    "episode_000004",
+    "episode_000008",
+    "episode_000009",
+    "episode_000010"
+  ],
+  "real_total_frames": 180,
+  "sim_total_frames": 180,
+  "manifest_rows": 360,
+  "invalid_episode_count": 0,
+  "invalid_rows_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/01_data_validation/invalid_samples.csv",
+  "condition_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/configs/condition_manifest.json",
+  "notes": [
+    "File-level integrity only; feature extraction and observation metrics are not run here.",
+    "Real pose source is planned_commanded_pose, not measured feedback.",
+    "Sim replay is home-relative joint replay."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-09-22T21:38:48",
+  "policy": "oftplus_h5_vision, checkpoint step 28560",
+  "dataset": {
+    "real_episodes": [
+      "episode_000004",
+      "episode_000008",
+      "episode_000009",
+      "episode_000010"
+    ],
+    "sim_reference": "episode_000004",
+    "pairs_per_comparison": 45
+  },
+  "real_chain_rankings": {
+    "observation_l1": [
+      "real4_vs_real8",
+      "real9_vs_real10",
+      "real8_vs_real9"
+    ],
+    "hidden_cosine": [
+      "real4_vs_real8",
+      "real9_vs_real10",
+      "real8_vs_real9"
+    ],
+    "phase6_sensitive_energy": [
+      "real4_vs_real8",
+      "real9_vs_real10",
+      "real8_vs_real9"
+    ],
+    "gripper_sensitive_energy": [
+      "real4_vs_real8",
+      "real9_vs_real10",
+      "real8_vs_real9"
+    ],
+    "action_l2": [
+      "real4_vs_real8",
+      "real9_vs_real10",
+      "real8_vs_real9"
+    ],
+    "gripper_gap": [
+      "real4_vs_real8",
+      "real8_vs_real9",
+      "real9_vs_real10"
+    ]
+  },
+  "status": "COMPLETED_PHASE8_OFFLINE_SYNTHESIS",
+  "rollout_status": "NOT_EXECUTED"
+}

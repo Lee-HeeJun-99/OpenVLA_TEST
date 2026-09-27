@@ -1,0 +1,13 @@
+{
+  "frame_rows": 315,
+  "missing_feature_pairs": 0,
+  "action_head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "device": "cpu",
+  "gripper_index": 6,
+  "status": "VERIFIED_OFFLINE_GRIPPER_LOCAL_GRADIENT",
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/11_gripper_sensitive_direction/gripper_sensitive_frame_metrics.csv",
+    "summary_overall": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/11_gripper_sensitive_direction/gripper_sensitive_summary_overall.csv",
+    "summary_by_phase": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/11_gripper_sensitive_direction/gripper_sensitive_summary_by_phase.csv"
+  }
+}

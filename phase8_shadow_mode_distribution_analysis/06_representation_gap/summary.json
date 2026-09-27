@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETED",
+  "frame_metric_rows": 315,
+  "comparison_count": 7,
+  "features": [
+    "vision_backbone.output",
+    "projector.output",
+    "action_hidden_states.input",
+    "action_head.output"
+  ],
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/frame_representation_metrics.csv",
+    "comparison_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/comparison_summary.csv",
+    "phase_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/phase_summary.csv",
+    "distribution_mmd": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/distribution_mmd.csv"
+  },
+  "interpretation": "Representation metrics only. Policy impact requires action-specific analysis."
+}

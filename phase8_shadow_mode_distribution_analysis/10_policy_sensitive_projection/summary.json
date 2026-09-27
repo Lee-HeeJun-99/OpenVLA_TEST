@@ -1,0 +1,15 @@
+{
+  "basis_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/06_policy_relevance/sensitive_energy/phase6_p0_sensitive_basis_k128.npz",
+  "basis_shape": [
+    128,
+    143360
+  ],
+  "frame_rows": 315,
+  "missing_feature_pairs": 0,
+  "status": "VERIFIED_OFFLINE_PROJECTION",
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/10_policy_sensitive_projection/sensitive_projection_frame_metrics.csv",
+    "summary_overall": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/10_policy_sensitive_projection/sensitive_projection_summary_overall.csv",
+    "summary_by_phase": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/10_policy_sensitive_projection/sensitive_projection_summary_by_phase.csv"
+  }
+}

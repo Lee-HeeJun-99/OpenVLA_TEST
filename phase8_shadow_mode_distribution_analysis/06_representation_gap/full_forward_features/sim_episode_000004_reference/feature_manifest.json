@@ -1,0 +1,5862 @@
+{
+  "model": "oft",
+  "domain": "sim",
+  "image_inputs": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000000.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000001.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000002.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000003.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000004.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000005.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000006.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000007.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000008.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000009.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000010.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000011.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000012.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000013.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000014.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000015.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000016.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000017.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000018.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000019.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000020.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000021.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000022.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000023.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000024.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000025.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000026.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000027.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000028.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000029.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000030.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000031.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000032.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000033.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000034.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000035.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000036.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000037.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000038.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000039.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000040.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000041.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000042.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000043.jpg",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000044.jpg"
+  ],
+  "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "full_features": true,
+  "sample_count": 45,
+  "first_per_episode": false,
+  "records": [
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000000:000000",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000000.jpg",
+      "response": {
+        "action": [
+          0.004230296502772754,
+          -0.0030265183605124287,
+          -0.003653614333920044,
+          -0.006406270048495158,
+          0.007936426379733252,
+          0.018090915214726326,
+          0.01068115234375
+        ],
+        "actions": [
+          [
+            0.004230296502772754,
+            -0.0030265183605124287,
+            -0.003653614333920044,
+            -0.006406270048495158,
+            0.007936426379733252,
+            0.018090915214726326,
+            0.01068115234375
+          ],
+          [
+            0.0036029221325232837,
+            -0.002486336460334795,
+            -0.002649179016626778,
+            -0.006097239692484029,
+            0.006090962457256038,
+            0.014270229219932542,
+            0.01495361328125
+          ],
+          [
+            0.0025759284529389623,
+            -0.0017918168743921228,
+            -0.0016748767588523096,
+            -0.005254429630635486,
+            0.00446951438664022,
+            0.010241142170877281,
+            0.0244140625
+          ],
+          [
+            0.002022609409244553,
+            -0.0015410181350239355,
+            -0.0013434131041455306,
+            -0.004243057556417237,
+            0.0035521161361602178,
+            0.00829606566443681,
+            0.051025390625
+          ],
+          [
+            0.0025200376404445786,
+            -0.002139076667363459,
+            -0.001976207354040291,
+            -0.004636368918613222,
+            0.004640193130915569,
+            0.01065794427940024,
+            0.051025390625
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.6388590399874374,
+        "request_index": 1,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.6405389829305932,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000000_000000.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000001:000001",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000001.jpg",
+      "response": {
+        "action": [
+          0.004364434452759277,
+          -0.0030651027819536885,
+          -0.0037138804529576394,
+          -0.006687206735778006,
+          0.008171109653111859,
+          0.018785585395597923,
+          0.00860595703125
+        ],
+        "actions": [
+          [
+            0.004364434452759277,
+            -0.0030651027819536885,
+            -0.0037138804529576394,
+            -0.006687206735778006,
+            0.008171109653111859,
+            0.018785585395597923,
+            0.00860595703125
+          ],
+          [
+            0.003741251893446887,
+            -0.002563505303217314,
+            -0.0028098886673936993,
+            -0.006209614367397167,
+            0.006368315416703481,
+            0.014964899400804138,
+            0.01202392578125
+          ],
+          [
+            0.0026653537529299793,
+            -0.0018496935065540118,
+            -0.0018456307627921636,
+            -0.005310616968092055,
+            0.00461885828788115,
+            0.01065794427940024,
+            0.018310546875
+          ],
+          [
+            0.002050554815491745,
+            -0.0015410181350239355,
+            -0.0014137235763560622,
+            -0.004243057556417237,
+            0.0035947858222290545,
+            0.00857393373678545,
+            0.03955078125
+          ],
+          [
+            0.002559161209190648,
+            -0.002081200035201569,
+            -0.002096739592115482,
+            -0.004692556256069791,
+            0.004682862816984407,
+            0.010935812351748878,
+            0.0390625
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.31829431804362684,
+        "request_index": 2,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.319680348969996,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000001_000001.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000002:000002",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000002.jpg",
+      "response": {
+        "action": [
+          0.004442681590251416,
+          -0.0030843949926743185,
+          -0.003774146571995235,
+          -0.006743394073234574,
+          0.008309786132835579,
+          0.01920238750412088,
+          0.0078125
+        ],
+        "actions": [
+          [
+            0.004442681590251416,
+            -0.0030843949926743185,
+            -0.003774146571995235,
+            -0.006743394073234574,
+            0.008309786132835579,
+            0.01920238750412088,
+            0.0078125
+          ],
+          [
+            0.003746840974696325,
+            -0.002563505303217314,
+            -0.0028299773737395645,
+            -0.0061815206986688825,
+            0.006389650259737899,
+            0.01510383343697846,
+            0.010986328125
+          ],
+          [
+            0.0025759284529389623,
+            -0.0017918168743921228,
+            -0.0018556751159650962,
+            -0.005029680280809207,
+            0.00446951438664022,
+            0.010241142170877281,
+            0.018310546875
+          ],
+          [
+            0.0019834858404984834,
+            -0.0014831415028620457,
+            -0.0014739896953936578,
+            -0.004130682881504099,
+            0.0035094464500913802,
+            0.00829606566443681,
+            0.03857421875
+          ],
+          [
+            0.0024082560154558078,
+            -0.0019654467708777905,
+            -0.0020766508857696167,
+            -0.004411619568786943,
+            0.00446951438664022,
+            0.010519010243225919,
+            0.03955078125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2965870969928801,
+        "request_index": 3,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2979238150874153,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000002_000002.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000003:000003",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000003.jpg",
+      "response": {
+        "action": [
+          0.004342078127761523,
+          -0.0030072261497917988,
+          -0.003774146571995235,
+          -0.006574832060864868,
+          0.008181777074629068,
+          0.018785585395597923,
+          0.0078125
+        ],
+        "actions": [
+          [
+            0.004342078127761523,
+            -0.0030072261497917988,
+            -0.003774146571995235,
+            -0.006574832060864868,
+            0.008181777074629068,
+            0.018785585395597923,
+            0.0078125
+          ],
+          [
+            0.0036364566200199153,
+            -0.002524920881776054,
+            -0.0028299773737395645,
+            -0.006041052355027457,
+            0.006282976044565806,
+            0.014825965364629821,
+            0.01165771484375
+          ],
+          [
+            0.0024473795842018774,
+            -0.0017146480315096031,
+            -0.0018456307627921636,
+            -0.004804930930982932,
+            0.004277500799330452,
+            0.009824340062354322,
+            0.0191650390625
+          ],
+          [
+            0.0018828823780085904,
+            -0.0014059726599795269,
+            -0.0014338122827019274,
+            -0.003962120869134389,
+            0.0033814373918848685,
+            0.00815713162826249,
+            0.03955078125
+          ],
+          [
+            0.002229405415473777,
+            -0.0017918168743921228,
+            -0.001976207354040291,
+            -0.004186870218960668,
+            0.0041921614271927775,
+            0.009963274098528643,
+            0.042724609375
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3056161099812016,
+        "request_index": 4,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3069654300343245,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000003_000003.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000004:000004",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000004.jpg",
+      "response": {
+        "action": [
+          0.0042582419090199455,
+          -0.002833596253306131,
+          -0.003653614333920044,
+          -0.00646245738595173,
+          0.00781908474304395,
+          0.017882514160464845,
+          0.0078125
+        ],
+        "actions": [
+          [
+            0.0042582419090199455,
+            -0.002833596253306131,
+            -0.003653614333920044,
+            -0.00646245738595173,
+            0.00781908474304395,
+            0.017882514160464845,
+            0.0078125
+          ],
+          [
+            0.003381804105592374,
+            -0.0023127065638491266,
+            -0.002568824191243317,
+            -0.005647740992831472,
+            0.0057069352826365025,
+            0.013436625002886627,
+            0.01165771484375
+          ],
+          [
+            0.002274118065469285,
+            -0.0015603103457445654,
+            -0.0016748767588523096,
+            -0.0044678069062435155,
+            0.0038721387816764976,
+            0.008990735845308408,
+            0.0203857421875
+          ],
+          [
+            0.0018269915655142067,
+            -0.0013095116063763781,
+            -0.0015141671080853882,
+            -0.0037935588567646825,
+            0.003253428333678356,
+            0.007879263555913852,
+            0.036865234375
+          ],
+          [
+            0.002262939902970407,
+            -0.001772524663671493,
+            -0.0020264291199049538,
+            -0.004130682881504099,
+            0.004106822055055102,
+            0.009824340062354322,
+            0.0361328125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3030679689254612,
+        "request_index": 5,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3047199610155076,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000004_000004.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000005:000005",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000005.jpg",
+      "response": {
+        "action": [
+          0.004342078127761523,
+          -0.0026599663568204627,
+          -0.0035129933894989876,
+          -0.006518644723408299,
+          0.007616403734216972,
+          0.01725731099768041,
+          0.0078125
+        ],
+        "actions": [
+          [
+            0.004342078127761523,
+            -0.0026599663568204627,
+            -0.0035129933894989876,
+            -0.006518644723408299,
+            0.007616403734216972,
+            0.01725731099768041,
+            0.0078125
+          ],
+          [
+            0.0034708800880053,
+            -0.0022741221424078667,
+            -0.0025889128975891823,
+            -0.0057039283302880404,
+            0.005856279183877433,
+            0.013853427111409583,
+            0.010986328125
+          ],
+          [
+            0.002508859477945701,
+            -0.0016374791886270843,
+            -0.001976207354040291,
+            -0.004692556256069791,
+            0.004213496270227196,
+            0.009963274098528643,
+            0.018310546875
+          ],
+          [
+            0.002128801952983884,
+            -0.0013577421331779525,
+            -0.0017552315842357703,
+            -0.004130682881504099,
+            0.0036801251943667295,
+            0.009129669881482725,
+            0.032470703125
+          ],
+          [
+            0.0032784061024777617,
+            -0.002467044249614165,
+            -0.002950509611814759,
+            -0.005647740992831472,
+            0.005834944340843014,
+            0.013992361147583903,
+            0.0169677734375
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2986282960046083,
+        "request_index": 6,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.29987416905350983,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000005_000005.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000006:000006",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000006.jpg",
+      "response": {
+        "action": [
+          0.004196762015276124,
+          -0.002563505303217314,
+          -0.0033321950323861975,
+          -0.0057039283302880404,
+          0.007093700079873716,
+          0.015729036599762894,
+          0.0091552734375
+        ],
+        "actions": [
+          [
+            0.004196762015276124,
+            -0.002563505303217314,
+            -0.0033321950323861975,
+            -0.0057039283302880404,
+            0.007093700079873716,
+            0.015729036599762894,
+            0.0091552734375
+          ],
+          [
+            0.00321448098568731,
+            -0.0020426156137603093,
+            -0.0022273161833636056,
+            -0.0049734929433526386,
+            0.005322908108016966,
+            0.012325152713492072,
+            0.0169677734375
+          ],
+          [
+            0.0025703393716895243,
+            -0.0016374791886270843,
+            -0.0017250985247169726,
+            -0.004355432231330374,
+            0.004234831113261614,
+            0.009824340062354322,
+            0.0247802734375
+          ],
+          [
+            0.002039376652992869,
+            -0.0013191577117366926,
+            -0.0015342558144312533,
+            -0.0036249968443949725,
+            0.0035521161361602178,
+            0.00857393373678545,
+            0.053466796875
+          ],
+          [
+            0.0031334393075704518,
+            -0.0022548299316872376,
+            -0.002448291953168126,
+            -0.004692556256069791,
+            0.005088224834638361,
+            0.012186218677317751,
+            0.0289306640625
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2860684000188485,
+        "request_index": 7,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.28791752201505005,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000006_000006.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000007:000007",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000007.jpg",
+      "response": {
+        "action": [
+          0.004515339646494117,
+          -0.002582797513937944,
+          -0.0033924611514237965,
+          -0.0065467383921365835,
+          0.007915091536698834,
+          0.018646651359423602,
+          0.00830078125
+        ],
+        "actions": [
+          [
+            0.004515339646494117,
+            -0.002582797513937944,
+            -0.0033924611514237965,
+            -0.0065467383921365835,
+            0.007915091536698834,
+            0.018646651359423602,
+            0.00830078125
+          ],
+          [
+            0.003738457352822168,
+            -0.002100492245922199,
+            -0.0026290903102809127,
+            -0.0057039283302880404,
+            0.006453654788841156,
+            0.015729036599762894,
+            0.0128173828125
+          ],
+          [
+            0.003878184384058129,
+            -0.0023705831960110163,
+            -0.002789799961047834,
+            -0.006097239692484029,
+            0.006848349384977901,
+            0.016771041871070293,
+            0.0128173828125
+          ],
+          [
+            0.0035051132106581114,
+            -0.002100492245922199,
+            -0.002950509611814759,
+            -0.005085867618265776,
+            0.006176301829393713,
+            0.015729036599762894,
+            0.025146484375
+          ],
+          [
+            0.005404003565154835,
+            -0.003277317099880616,
+            -0.004356719056025329,
+            -0.007136705435430563,
+            0.00947653536128035,
+            0.024499247633266802,
+            0.0145263671875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2942236989038065,
+        "request_index": 8,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.29549727006815374,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000007_000007.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000008:000008",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000008.jpg",
+      "response": {
+        "action": [
+          0.0045824086214873785,
+          -0.0026406741460998327,
+          -0.003673703040265909,
+          -0.006350082711038589,
+          0.008267116446766743,
+          0.01961918961264384,
+          0.00555419921875
+        ],
+        "actions": [
+          [
+            0.0045824086214873785,
+            -0.0026406741460998327,
+            -0.003673703040265909,
+            -0.006350082711038589,
+            0.008267116446766743,
+            0.01961918961264384,
+            0.00555419921875
+          ],
+          [
+            0.0033577011927041715,
+            -0.001811109085112752,
+            -0.002689356429318508,
+            -0.0049734929433526386,
+            0.005770939811739758,
+            0.013992361147583903,
+            0.0091552734375
+          ],
+          [
+            0.0026290247248086287,
+            -0.0016374791886270843,
+            -0.002287582302401201,
+            -0.004411619568786943,
+            0.004448179543605801,
+            0.010380076207051602,
+            0.0093994140625
+          ],
+          [
+            0.0023355979592131083,
+            -0.0014542031867811013,
+            -0.0025286467785515868,
+            -0.0036249968443949725,
+            0.004064152368986265,
+            0.010241142170877281,
+            0.0169677734375
+          ],
+          [
+            0.003329843115851501,
+            -0.002100492245922199,
+            -0.0035330820958448528,
+            -0.004018308206590958,
+            0.0059202837129806885,
+            0.015659569581675734,
+            0.0128173828125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.302463267929852,
+        "request_index": 9,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3038758540060371,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000008_000008.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000009:000009",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000009.jpg",
+      "response": {
+        "action": [
+          0.005191618477676173,
+          -0.002544213092496684,
+          -0.004416985175062928,
+          -0.006687206735778006,
+          0.009403196838349535,
+          0.022606271390391702,
+          0.00421142578125
+        ],
+        "actions": [
+          [
+            0.005191618477676173,
+            -0.002544213092496684,
+            -0.004416985175062928,
+            -0.006687206735778006,
+            0.009403196838349535,
+            0.022606271390391702,
+            0.00421142578125
+          ],
+          [
+            0.003498825494252492,
+            -0.001733940242230233,
+            -0.0032518402070027368,
+            -0.00491730560589607,
+            0.005941618556015107,
+            0.014409163256106862,
+            0.006103515625
+          ],
+          [
+            0.002724039106049082,
+            -0.001184112236692284,
+            -0.002468380659513991,
+            -0.0044678069062435155,
+            0.004234831113261614,
+            0.01010220813470296,
+            0.00970458984375
+          ],
+          [
+            0.0024306123404535616,
+            -0.001126235604530395,
+            -0.0023277597150929315,
+            -0.004186870218960668,
+            0.0038721387816764976,
+            0.009546471990005684,
+            0.015869140625
+          ],
+          [
+            0.0026262301841839097,
+            -0.0013963265546192115,
+            -0.002669267722972643,
+            -0.003962120869134389,
+            0.004512184072709057,
+            0.011491548496446154,
+            0.015869140625
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30976622400339693,
+        "request_index": 10,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.31104152800980955,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000009_000009.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000010:000010",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000010.jpg",
+      "response": {
+        "action": [
+          0.00509101501518628,
+          -0.0024091676174522753,
+          -0.004758493182942636,
+          -0.006940049754332569,
+          0.009952569046485817,
+          0.024030345261178476,
+          0.00433349609375
+        ],
+        "actions": [
+          [
+            0.00509101501518628,
+            -0.0024091676174522753,
+            -0.004758493182942636,
+            -0.006940049754332569,
+            0.009952569046485817,
+            0.024030345261178476,
+            0.00433349609375
+          ],
+          [
+            0.00269609369980189,
+            -0.00103942065628756,
+            -0.0028299773737395645,
+            -0.0042992448938738055,
+            0.004768202189122081,
+            0.011769416568794796,
+            0.00830078125
+          ],
+          [
+            0.002380310609208616,
+            -0.0007693297061987445,
+            -0.0022273161833636056,
+            -0.0044678069062435155,
+            0.0037654645665044038,
+            0.009268603917657046,
+            0.00970458984375
+          ],
+          [
+            0.00217910368422883,
+            -0.0008079141276400026,
+            -0.0020766508857696167,
+            -0.004130682881504099,
+            0.0036801251943667295,
+            0.008990735845308408,
+            0.0140380859375
+          ],
+          [
+            0.002151158277981638,
+            -0.0008657907598018932,
+            -0.0023076710087470663,
+            -0.0034002474945686936,
+            0.003637455508297892,
+            0.009546471990005684,
+            0.016357421875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3087475399952382,
+        "request_index": 11,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3101314759114757,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000010_000010.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000011:000011",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000011.jpg",
+      "response": {
+        "action": [
+          0.0037608136778199217,
+          -0.0015217259243033056,
+          -0.0036937917466117742,
+          -0.00474874359352636,
+          0.00670967290525418,
+          0.01649317379872165,
+          0.004913330078125
+        ],
+        "actions": [
+          [
+            0.0037608136778199217,
+            -0.0015217259243033056,
+            -0.0036937917466117742,
+            -0.00474874359352636,
+            0.00670967290525418,
+            0.01649317379872165,
+            0.004913330078125
+          ],
+          [
+            0.0020729111404894987,
+            -0.0003738393864258331,
+            -0.001996296060386156,
+            -0.0036249968443949725,
+            0.0031680889615406816,
+            0.00815713162826249,
+            0.010009765625
+          ],
+          [
+            0.0018717042155097143,
+            -0.00033525496498457326,
+            -0.0015543445207771185,
+            -0.0036249968443949725,
+            0.002613383042645796,
+            0.006767791266519297,
+            0.01324462890625
+          ],
+          [
+            0.001681675453028806,
+            -0.0004220699132274075,
+            -0.001393634870010197,
+            -0.003287872819655556,
+            0.002528043670508122,
+            0.0063509891579963396,
+            0.0179443359375
+          ],
+          [
+            0.0015922501530377907,
+            -0.0004895926507496127,
+            -0.0015744332271229837,
+            -0.0028945614574595706,
+            0.002528043670508122,
+            0.0062120551218220205,
+            0.0216064453125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30749410891439766,
+        "request_index": 12,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.30888259201310575,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000011_000011.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000012:000012",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000012.jpg",
+      "response": {
+        "action": [
+          0.0034673869122244013,
+          -0.0011744661313319695,
+          -0.0037942352783411,
+          -0.004692556256069791,
+          0.0064109851027723186,
+          0.016006904672111535,
+          0.0047607421875
+        ],
+        "actions": [
+          [
+            0.0034673869122244013,
+            -0.0011744661313319695,
+            -0.0037942352783411,
+            -0.004692556256069791,
+            0.0064109851027723186,
+            0.016006904672111535,
+            0.0047607421875
+          ],
+          [
+            0.0019443622717524138,
+            -0.0003449010703448878,
+            -0.002146961357980145,
+            -0.0035688095069384036,
+            0.003210758647609519,
+            0.00815713162826249,
+            0.0078125
+          ],
+          [
+            0.001681675453028806,
+            -0.00032560885962425873,
+            -0.0018054533501004333,
+            -0.0034002474945686936,
+            0.002741392100852308,
+            0.0070456593388679364,
+            0.00970458984375
+          ],
+          [
+            0.00144693404055239,
+            -0.00040277770250677844,
+            -0.0015543445207771185,
+            -0.0031193108072858494,
+            0.0024853739844392844,
+            0.0062120551218220205,
+            0.0145263671875
+          ],
+          [
+            0.0014022213905568806,
+            -0.0004413621239480383,
+            -0.0020866952389425493,
+            -0.002782186782546433,
+            0.0025707133565769586,
+            0.0060731210856477,
+            0.0145263671875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.31070093100424856,
+        "request_index": 13,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.31229418399743736,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000012_000012.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000013:000013",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000013.jpg",
+      "response": {
+        "action": [
+          0.0034834555208165374,
+          -0.0010683589723685053,
+          -0.0036937917466117742,
+          -0.004580181581156653,
+          0.005664265596567665,
+          0.013853427111409583,
+          0.007110595703125
+        ],
+        "actions": [
+          [
+            0.0034834555208165374,
+            -0.0010683589723685053,
+            -0.0036937917466117742,
+            -0.004580181581156653,
+            0.005664265596567665,
+            0.013853427111409583,
+            0.007110595703125
+          ],
+          [
+            0.0019052387030063442,
+            -0.0003449010703448878,
+            -0.0025889128975891823,
+            -0.0026698121076332917,
+            0.002698722414783471,
+            0.006628857230344978,
+            0.00830078125
+          ],
+          [
+            0.0016257846405344206,
+            -0.00040277770250677844,
+            -0.002568824191243317,
+            -0.002388875420350444,
+            0.0021866861819574233,
+            0.004961648796253146,
+            0.006683349609375
+          ],
+          [
+            0.0017152099405254358,
+            -0.0006053459150733905,
+            -0.004075477167183216,
+            -0.0022765007454373064,
+            0.00240003461230161,
+            0.005239516868601784,
+            0.00347900390625
+          ],
+          [
+            0.0019890749217479214,
+            -0.0007500374954781137,
+            -0.004497340000446388,
+            -0.002782186782546433,
+            0.002912070845127657,
+            0.0062120551218220205,
+            0.00970458984375
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3070155610330403,
+        "request_index": 14,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3089619060046971,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000013_000013.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000014:000014",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000014.jpg",
+      "response": {
+        "action": [
+          0.0027799299185434674,
+          -0.0009429596026844112,
+          -0.003573259508536583,
+          -0.0034002474945686936,
+          0.004512184072709057,
+          0.010796878315574557,
+          0.0113525390625
+        ],
+        "actions": [
+          [
+            0.0027799299185434674,
+            -0.0009429596026844112,
+            -0.003573259508536583,
+            -0.0034002474945686936,
+            0.004512184072709057,
+            0.010796878315574557,
+            0.0113525390625
+          ],
+          [
+            0.001793457078017575,
+            -0.0004510082293083528,
+            -0.002930420905468894,
+            -0.0017708147083281833,
+            0.0024853739844392844,
+            0.005795253013299062,
+            0.01202392578125
+          ],
+          [
+            0.001122767328084957,
+            -0.0004510082293083528,
+            -0.002287582302401201,
+            -0.0011527539963059191,
+            0.0017173196352002124,
+            0.003572308434509952,
+            0.0140380859375
+          ],
+          [
+            0.0010333420280939417,
+            -0.0006439303365146504,
+            -0.003271928913348602,
+            -0.001040379321392778,
+            0.0015466408909248631,
+            0.003294440362161314,
+            0.0113525390625
+          ],
+          [
+            0.0010668765155905716,
+            -0.0006439303365146504,
+            -0.002930420905468894,
+            -0.0009841919839362091,
+            0.0016746499491313753,
+            0.003711242470684271,
+            0.027587890625
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30460706795565784,
+        "request_index": 15,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.30613766494207084,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000014_000014.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000015:000015",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000015.jpg",
+      "response": {
+        "action": [
+          0.0025200376404445786,
+          -0.0011551739206113396,
+          -0.004758493182942636,
+          -0.002782186782546433,
+          0.004426844700571382,
+          0.010796878315574557,
+          0.008056640625
+        ],
+        "actions": [
+          [
+            0.0025200376404445786,
+            -0.0011551739206113396,
+            -0.004758493182942636,
+            -0.002782186782546433,
+            0.004426844700571382,
+            0.010796878315574557,
+            0.008056640625
+          ],
+          [
+            0.001323974253064743,
+            -0.0006632225472352794,
+            -0.003553170802190718,
+            -0.0014336906835887668,
+            0.002314695240163935,
+            0.005656318977124743,
+            0.0091552734375
+          ],
+          [
+            0.0007874224531186479,
+            -0.0004703004400289819,
+            -0.0027094451356643734,
+            -0.0009280046464796403,
+            0.0015893105769937007,
+            0.003155506325986995,
+            0.0093994140625
+          ],
+          [
+            0.0005973936906377396,
+            -0.0005764075989924452,
+            -0.002769711254701969,
+            -0.0008718173090230714,
+            0.0014613015187871885,
+            0.002877638253638355,
+            0.01031494140625
+          ],
+          [
+            0.00046325574065121666,
+            -0.0004510082293083528,
+            -0.002046517826250819,
+            -0.0008156299715665026,
+            0.0013332924605806767,
+            0.002599770181289717,
+            0.036865234375
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3114329589297995,
+        "request_index": 16,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.31279061699751765,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000015_000015.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000016:000016",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000016.jpg",
+      "response": {
+        "action": [
+          0.001558715665541159,
+          -0.0008754368651622078,
+          -0.00624505745253667,
+          -0.0016584400334150422,
+          0.00304007990333417,
+          0.006767791266519297,
+          0.007568359375
+        ],
+        "actions": [
+          [
+            0.001558715665541159,
+            -0.0008754368651622078,
+            -0.00624505745253667,
+            -0.0016584400334150422,
+            0.00304007990333417,
+            0.006767791266519297,
+            0.007568359375
+          ],
+          [
+            0.0008656695906107872,
+            -0.0004992387561099272,
+            -0.004256275524296003,
+            -0.0007594426341099338,
+            0.0013332924605806767,
+            0.002599770181289717,
+            0.0093994140625
+          ],
+          [
+            0.00046325574065121666,
+            -0.00027737833282268434,
+            -0.0033924611514237965,
+            -0.0007032552966533615,
+            0.000949265285961141,
+            0.0013493638557208424,
+            0.018310546875
+          ],
+          [
+            0.00026204881567143054,
+            -0.0002677322274623698,
+            -0.002548735484897452,
+            -0.0005346932842836549,
+            0.0007359168556169541,
+            0.0010714957833722043,
+            0.0255126953125
+          ],
+          [
+            0.00019497984067816908,
+            -0.0002146786479806373,
+            -0.0012429695724162047,
+            -0.00036613127191394493,
+            0.000693247169548117,
+            0.0010714957833722043,
+            0.08154296875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2988631370244548,
+        "request_index": 17,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.30011169402860105,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000016_000016.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000017:000017",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000017.jpg",
+      "response": {
+        "action": [
+          0.0011898363030782184,
+          -0.0009526057080447275,
+          -0.0067673638175291696,
+          -0.0013213160086756257,
+          0.0027840617869211454,
+          0.005656318977124743,
+          0.007568359375
+        ],
+        "actions": [
+          [
+            0.0011898363030782184,
+            -0.0009526057080447275,
+            -0.0067673638175291696,
+            -0.0013213160086756257,
+            0.0027840617869211454,
+            0.005656318977124743,
+            0.007568359375
+          ],
+          [
+            0.0005303247156444781,
+            -0.00046065433466866736,
+            -0.003874590103724561,
+            -0.00042231860937051724,
+            0.0010346046580988156,
+            0.0017661659642438012,
+            0.0128173828125
+          ],
+          [
+            0.0002173361656759229,
+            -0.0002966705435433134,
+            -0.0031313079689275457,
+            -0.00042231860937051724,
+            0.0007359168556169541,
+            0.0007936277110235654,
+            0.0233154296875
+          ],
+          [
+            8.319821568939997e-05,
+            -0.00027737833282268434,
+            -0.001976207354040291,
+            -0.00036613127191394493,
+            0.0006079077974104423,
+            0.0007936277110235654,
+            0.042724609375
+          ],
+          [
+            0.0001055545406871538,
+            -0.0001664481211790629,
+            -0.0006151974991079126,
+            -0.00025375659700080724,
+            0.00047989873920393014,
+            0.0005157596386749265,
+            0.1533203125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.32188604201655835,
+        "request_index": 18,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3236700730631128,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000017_000017.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000018:000018",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000018.jpg",
+      "response": {
+        "action": [
+          0.0012457271155726039,
+          -0.000962251813405042,
+          -0.0067673638175291696,
+          -0.0013775033461321945,
+          0.0028694011590588205,
+          0.005934187049473381,
+          0.006683349609375
+        ],
+        "actions": [
+          [
+            0.0012457271155726039,
+            -0.000962251813405042,
+            -0.0067673638175291696,
+            -0.0013775033461321945,
+            0.0028694011590588205,
+            0.005934187049473381,
+            0.006683349609375
+          ],
+          [
+            0.0005079683906467243,
+            -0.0004799465453892964,
+            -0.004055388460837351,
+            -0.00042231860937051724,
+            0.0010772743441676527,
+            0.0019051000004181202,
+            0.01202392578125
+          ],
+          [
+            0.00023969249067367672,
+            -0.0003159627542639442,
+            -0.003372372445077928,
+            -0.00042231860937051724,
+            0.0007359168556169541,
+            0.0007936277110235654,
+            0.0206298828125
+          ],
+          [
+            0.0001055545406871538,
+            -0.00027737833282268434,
+            -0.0021268726516342797,
+            -0.00036613127191394493,
+            0.0006079077974104423,
+            0.0007936277110235654,
+            0.03857421875
+          ],
+          [
+            0.0001055545406871538,
+            -0.00017127117385922104,
+            -0.0007608406201154369,
+            -0.0001975692595442384,
+            0.00047989873920393014,
+            0.0005157596386749265,
+            0.1396484375
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.28844137699343264,
+        "request_index": 19,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.28977676399517804,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000018_000018.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000019:000019",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000019.jpg",
+      "response": {
+        "action": [
+          0.0012792616030692355,
+          -0.001020128445566931,
+          -0.006968250880987821,
+          -0.0013775033461321945,
+          0.0028694011590588205,
+          0.005934187049473381,
+          0.006103515625
+        ],
+        "actions": [
+          [
+            0.0012792616030692355,
+            -0.001020128445566931,
+            -0.006968250880987821,
+            -0.0013775033461321945,
+            0.0028694011590588205,
+            0.005934187049473381,
+            0.006103515625
+          ],
+          [
+            0.0005079683906467243,
+            -0.0005378231775511871,
+            -0.004437073881408793,
+            -0.00042231860937051724,
+            0.0010346046580988156,
+            0.0017661659642438012,
+            0.01068115234375
+          ],
+          [
+            0.00023969249067367672,
+            -0.0003449010703448878,
+            -0.003774146571995235,
+            -0.00036613127191394493,
+            0.000693247169548117,
+            0.0007936277110235654,
+            0.0179443359375
+          ],
+          [
+            0.0001055545406871538,
+            -0.00028702443818299887,
+            -0.0022273161833636056,
+            -0.0003099439344573761,
+            0.0005652381113416048,
+            0.0007936277110235654,
+            0.036865234375
+          ],
+          [
+            0.0001055545406871538,
+            -0.00017609422653937744,
+            -0.0007859515030477701,
+            -0.0001975692595442384,
+            0.00043722905313509303,
+            0.0005157596386749265,
+            0.1376953125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.29552233510185033,
+        "request_index": 20,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.29679287294857204,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000019_000019.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000020:000020",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000020.jpg",
+      "response": {
+        "action": [
+          0.0009439167281029264,
+          -0.0004220699132274075,
+          -0.007209315357138205,
+          -0.0010965666588493503,
+          0.002016007437682074,
+          0.003433374398335633,
+          0.007354736328125
+        ],
+        "actions": [
+          [
+            0.0009439167281029264,
+            -0.0004220699132274075,
+            -0.007209315357138205,
+            -0.0010965666588493503,
+            0.002016007437682074,
+            0.003433374398335633,
+            0.007354736328125
+          ],
+          [
+            0.00037383044066019964,
+            -0.00033525496498457326,
+            -0.004356719056025329,
+            -0.00025375659700080724,
+            0.0007359168556169541,
+            0.0012104298195465234,
+            0.01324462890625
+          ],
+          [
+            0.0001055545406871538,
+            -0.00011821759437748852,
+            -0.0034728159768072572,
+            -0.0003099439344573761,
+            0.0005225684252727677,
+            0.0005157596386749265,
+            0.0306396484375
+          ],
+          [
+            1.6129240696136776e-05,
+            -8.44562256163868e-05,
+            -0.0013635018104913958,
+            -0.00025375659700080724,
+            0.0003518896809974184,
+            0.00037682560250060747,
+            0.07568359375
+          ],
+          [
+            1.6129240696136776e-05,
+            -9.892538365685946e-05,
+            -0.000158179429739478,
+            -0.00014138192208766956,
+            0.0002665503088597437,
+            9.895753015196854e-05,
+            0.2412109375
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30127064092084765,
+        "request_index": 21,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.30281701299827546,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000020_000020.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000021:000021",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000021.jpg",
+      "response": {
+        "action": [
+          -2.8583409299370865e-05,
+          -0.0007018069686765393,
+          -0.00684771864291263,
+          -0.0007032552966533615,
+          0.001503971204856026,
+          0.0020440340365924393,
+          0.02001953125
+        ],
+        "actions": [
+          [
+            -2.8583409299370865e-05,
+            -0.0007018069686765393,
+            -0.00684771864291263,
+            -0.0007032552966533615,
+            0.001503971204856026,
+            0.0020440340365924393,
+            0.02001953125
+          ],
+          [
+            -7.329605929487851e-05,
+            -0.0005667614936321307,
+            -0.004055388460837351,
+            -0.00014138192208766956,
+            0.0005652381113416048,
+            0.0005157596386749265,
+            0.0341796875
+          ],
+          [
+            -0.00011800870929038615,
+            -0.0001905633845798501,
+            -0.00307104184988995,
+            -8.519458463110072e-05,
+            0.00030921999492858083,
+            0.00037682560250060747,
+            0.07568359375
+          ],
+          [
+            -2.8583409299370865e-05,
+            -0.00012786369973780305,
+            -0.0009818163899199574,
+            -2.9007247174528406e-05,
+            0.0002665503088597437,
+            0.00037682560250060747,
+            0.1728515625
+          ],
+          [
+            3.848556569389233e-05,
+            -6.998706757591414e-05,
+            0.0007357680026515295,
+            -2.9007247174528406e-05,
+            0.00018121093672206906,
+            9.895753015196854e-05,
+            0.470703125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2874510519905016,
+        "request_index": 22,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.289329000050202,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000021_000021.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000022:000022",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000022.jpg",
+      "response": {
+        "action": [
+          -0.0009451927342072819,
+          0.0003062110414763664,
+          -0.006687008992145707,
+          -0.0006470679591967926,
+          0.0007785865416857917,
+          0.0013493638557208424,
+          0.048828125
+        ],
+        "actions": [
+          [
+            -0.0009451927342072819,
+            0.0003062110414763664,
+            -0.006687008992145707,
+            -0.0006470679591967926,
+            0.0007785865416857917,
+            0.0013493638557208424,
+            0.048828125
+          ],
+          [
+            -0.0001850776842836476,
+            -6.0340962215599606e-05,
+            -0.002689356429318508,
+            -8.519458463110072e-05,
+            0.00030921999492858083,
+            -3.997650602235135e-05,
+            0.11572265625
+          ],
+          [
+            -5.0939734297124686e-05,
+            -1.211043541402522e-05,
+            -0.0005499092034838525,
+            -8.519458463110072e-05,
+            0.00018121093672206906,
+            9.895753015196854e-05,
+            0.26953125
+          ],
+          [
+            1.6129240696136776e-05,
+            -1.211043541402522e-05,
+            0.0010873203637041702,
+            -2.9007247174528406e-05,
+            9.58715645843944e-05,
+            9.895753015196854e-05,
+            0.5859375
+          ],
+          [
+            6.084189069164615e-05,
+            1.6827880666920106e-05,
+            0.002523662867433541,
+            2.7180090282040437e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.88671875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2989239681046456,
+        "request_index": 23,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3002791740000248,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000022_000022.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000023:000023",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000023.jpg",
+      "response": {
+        "action": [
+          -0.0007886984592230042,
+          -0.00025326306942189715,
+          -0.004316541643333598,
+          -0.0001975692595442384,
+          0.00013854125065323173,
+          -0.0004567786145453093,
+          0.150390625
+        ],
+        "actions": [
+          [
+            -0.0007886984592230042,
+            -0.00025326306942189715,
+            -0.004316541643333598,
+            -0.0001975692595442384,
+            0.00013854125065323173,
+            -0.0004567786145453093,
+            0.150390625
+          ],
+          [
+            -0.00011800870929038615,
+            -4.587180417512694e-05,
+            -0.0006704414415590436,
+            -2.9007247174528406e-05,
+            5.3201878515557076e-05,
+            -0.0003178445783709894,
+            0.32421875
+          ],
+          [
+            -7.329605929487851e-05,
+            -2.4643300537106894e-06,
+            0.0004871702616214453,
+            2.7180090282040437e-05,
+            -3.213749362211758e-05,
+            -0.0003178445783709894,
+            0.55859375
+          ],
+          [
+            -6.227084301617045e-06,
+            2.358722626447443e-06,
+            0.0017402033199447955,
+            2.7180090282040437e-05,
+            1.0532192446719747e-05,
+            -0.00017891054219667038,
+            0.85546875
+          ],
+          [
+            3.848556569389233e-05,
+            2.6473986027234636e-05,
+            0.0037992957203959905,
+            8.336742773860928e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.97265625
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30064817902166396,
+        "request_index": 24,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3023258929606527,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000023_000023.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000024:000024",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000024.jpg",
+      "response": {
+        "action": [
+          -0.00036392828426567905,
+          -7.287382733867087e-06,
+          -0.002428203246822261,
+          -0.00014138192208766956,
+          9.58715645843944e-05,
+          -0.0005957126507196283,
+          0.400390625
+        ],
+        "actions": [
+          [
+            -0.00036392828426567905,
+            -7.287382733867087e-06,
+            -0.002428203246822261,
+            -0.00014138192208766956,
+            9.58715645843944e-05,
+            -0.0005957126507196283,
+            0.400390625
+          ],
+          [
+            -7.329605929487851e-05,
+            1.2004827986761973e-05,
+            0.00031108019505847115,
+            2.7180090282040437e-05,
+            5.3201878515557076e-05,
+            -0.0003178445783709894,
+            0.59765625
+          ],
+          [
+            -2.8583409299370865e-05,
+            -2.4643300537106894e-06,
+            0.0017602920262906607,
+            2.7180090282040437e-05,
+            1.0532192446719747e-05,
+            -0.00017891054219667038,
+            0.77734375
+          ],
+          [
+            1.6129240696136776e-05,
+            2.358722626447443e-06,
+            0.005105061632877234,
+            8.336742773860928e-05,
+            1.0532192446719747e-05,
+            -3.997650602235135e-05,
+            0.953125
+          ],
+          [
+            3.848556569389233e-05,
+            1.2004827986761973e-05,
+            0.00697331132304271,
+            2.7180090282040437e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.98828125
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.297867113025859,
+        "request_index": 25,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2997047349344939,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000024_000024.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000025:000025",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000025.jpg",
+      "response": {
+        "action": [
+          -0.00020743400928140143,
+          -2.4643300537106894e-06,
+          -0.0018456307627921636,
+          -8.519458463110072e-05,
+          0.00018121093672206906,
+          -0.0004567786145453093,
+          0.515625
+        ],
+        "actions": [
+          [
+            -0.00020743400928140143,
+            -2.4643300537106894e-06,
+            -0.0018456307627921636,
+            -8.519458463110072e-05,
+            0.00018121093672206906,
+            -0.0004567786145453093,
+            0.515625
+          ],
+          [
+            -5.0939734297124686e-05,
+            2.165093334707824e-05,
+            0.0007633899738770933,
+            2.7180090282040437e-05,
+            9.58715645843944e-05,
+            -0.0003178445783709894,
+            0.7421875
+          ],
+          [
+            -6.227084301617045e-06,
+            -2.4643300537106894e-06,
+            0.0023629532166666196,
+            2.7180090282040437e-05,
+            5.3201878515557076e-05,
+            -3.997650602235135e-05,
+            0.85546875
+          ],
+          [
+            1.6129240696136776e-05,
+            -2.4643300537106894e-06,
+            0.007334908037268287,
+            2.7180090282040437e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.9765625
+          ],
+          [
+            1.6129240696136776e-05,
+            -2.4643300537106894e-06,
+            0.00950448832262174,
+            8.336742773860928e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3052614340558648,
+        "request_index": 26,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.30648050794843584,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000025_000025.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000026:000026",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000026.jpg",
+      "response": {
+        "action": [
+          -0.00020743400928140143,
+          -2.6579593454497882e-05,
+          -0.0019561186476944256,
+          -2.9007247174528406e-05,
+          0.00013854125065323173,
+          -0.0005957126507196283,
+          0.5078125
+        ],
+        "actions": [
+          [
+            -0.00020743400928140143,
+            -2.6579593454497882e-05,
+            -0.0019561186476944256,
+            -2.9007247174528406e-05,
+            0.00013854125065323173,
+            -0.0005957126507196283,
+            0.5078125
+          ],
+          [
+            -5.0939734297124686e-05,
+            2.6473986027234636e-05,
+            0.0007633899738770933,
+            2.7180090282040437e-05,
+            9.58715645843944e-05,
+            -0.0003178445783709894,
+            0.7421875
+          ],
+          [
+            -6.227084301617045e-06,
+            -2.4643300537106894e-06,
+            0.0025337072206064737,
+            2.7180090282040437e-05,
+            5.3201878515557076e-05,
+            -0.00017891054219667038,
+            0.859375
+          ],
+          [
+            3.848556569389233e-05,
+            2.358722626447443e-06,
+            0.007214375799193096,
+            2.7180090282040437e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.97265625
+          ],
+          [
+            1.6129240696136776e-05,
+            -2.4643300537106894e-06,
+            0.009102714195704433,
+            8.336742773860928e-05,
+            9.58715645843944e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.28600158100016415,
+        "request_index": 27,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2880407690536231,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000026_000026.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000027:000027",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000027.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -7.287382733867087e-06,
+          0.004221158553659163,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -0.00017891054219667038,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -7.287382733867087e-06,
+            0.004221158553659163,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -0.00017891054219667038,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            1.2004827986761973e-05,
+            0.010589278465298467,
+            -8.519458463110072e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012357084623734613,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012678503925268463,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.011794600846050388,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3083013959694654,
+        "request_index": 28,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.30967704800423235,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000027_000027.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000028:000028",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000028.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -1.211043541402522e-05,
+          0.0041809811409674325,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -1.211043541402522e-05,
+            0.0041809811409674325,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            7.181775306605576e-06,
+            0.010629455877990197,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012517794274501542,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012758858750651924,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.01195531049681731,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3076485249912366,
+        "request_index": 29,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3088451729854569,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000028_000028.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000029:000029",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000029.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -2.4643300537106894e-06,
+          0.0041207150219298334,
+          -2.9007247174528406e-05,
+          0.00043722905313509303,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -2.4643300537106894e-06,
+            0.0041207150219298334,
+            -2.9007247174528406e-05,
+            0.00043722905313509303,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            7.181775306605576e-06,
+            0.010749988116065392,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012517794274501542,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012758858750651924,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.01203566532220077,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30751709803007543,
+        "request_index": 30,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3087361759971827,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000029_000029.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000030:000030",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000030.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -7.287382733867087e-06,
+          0.004100626315583968,
+          -2.9007247174528406e-05,
+          0.00043722905313509303,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -7.287382733867087e-06,
+            0.004100626315583968,
+            -2.9007247174528406e-05,
+            0.00043722905313509303,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            1.2004827986761973e-05,
+            0.010830342941448853,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012598149099885003,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012919568401418845,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.01203566532220077,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.29306896100752056,
+        "request_index": 31,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2944839029805735,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000030_000030.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000031:000031",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000031.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -7.287382733867087e-06,
+          0.004261335966350893,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -7.287382733867087e-06,
+            0.004261335966350893,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            2.358722626447443e-06,
+            0.010830342941448853,
+            -8.519458463110072e-05,
+            9.58715645843944e-05,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012517794274501542,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012839213576035385,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.01203566532220077,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3785972830373794,
+        "request_index": 32,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3801657969597727,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000031_000031.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000032:000032",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000032.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -1.211043541402522e-05,
+          0.004261335966350893,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -0.00017891054219667038,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -1.211043541402522e-05,
+            0.004261335966350893,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -0.00017891054219667038,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            1.2004827986761973e-05,
+            0.010669633290681931,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.012357084623734613,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012678503925268463,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.011874955671433849,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30850427597761154,
+        "request_index": 33,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3099856870248914,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000032_000032.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000033:000033",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000033.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -1.211043541402522e-05,
+          0.0040202714902005075,
+          -8.519458463110072e-05,
+          0.0003945593670662555,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -1.211043541402522e-05,
+            0.0040202714902005075,
+            -8.519458463110072e-05,
+            0.0003945593670662555,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            7.181775306605576e-06,
+            0.010589278465298467,
+            -8.519458463110072e-05,
+            0.00018121093672206906,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012437439449118081,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012839213576035385,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012116020147584231,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.28452072595246136,
+        "request_index": 34,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2858950749505311,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000033_000033.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000034:000034",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000034.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -2.4643300537106894e-06,
+          0.004100626315583968,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -2.4643300537106894e-06,
+            0.004100626315583968,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            1.2004827986761973e-05,
+            0.010629455877990197,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012437439449118081,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012839213576035385,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.01203566532220077,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.30109598697163165,
+        "request_index": 35,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3027105190558359,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000034_000034.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000035:000035",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000035.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -2.4643300537106894e-06,
+          0.004241247260005028,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -2.4643300537106894e-06,
+            0.004241247260005028,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            7.181775306605576e-06,
+            0.010749988116065392,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012437439449118081,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012758858750651924,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.01195531049681731,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.31103946710936725,
+        "request_index": 36,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.31256374600343406,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000035_000035.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000036:000036",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000036.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -7.287382733867087e-06,
+          0.0044019569107719494,
+          -2.9007247174528406e-05,
+          0.0003945593670662555,
+          -0.00017891054219667038,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -7.287382733867087e-06,
+            0.0044019569107719494,
+            -2.9007247174528406e-05,
+            0.0003945593670662555,
+            -0.00017891054219667038,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            7.181775306605576e-06,
+            0.010629455877990197,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012437439449118081,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012678503925268463,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.011794600846050388,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3091188300168142,
+        "request_index": 37,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3104721719864756,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000036_000036.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000037:000037",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000037.jpg",
+      "response": {
+        "action": [
+          6.084189069164615e-05,
+          -1.211043541402522e-05,
+          0.004602843974230601,
+          -8.519458463110072e-05,
+          0.0003945593670662555,
+          -0.00017891054219667038,
+          0.98828125
+        ],
+        "actions": [
+          [
+            6.084189069164615e-05,
+            -1.211043541402522e-05,
+            0.004602843974230601,
+            -8.519458463110072e-05,
+            0.0003945593670662555,
+            -0.00017891054219667038,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            7.181775306605576e-06,
+            0.010830342941448853,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012517794274501542,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012839213576035385,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.01203566532220077,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3143549030646682,
+        "request_index": 38,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.31577409303281456,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000037_000037.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000038:000038",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000038.jpg",
+      "response": {
+        "action": [
+          8.319821568939997e-05,
+          -1.211043541402522e-05,
+          0.004422045617117815,
+          -2.9007247174528406e-05,
+          0.00047989873920393014,
+          -3.997650602235135e-05,
+          0.98828125
+        ],
+        "actions": [
+          [
+            8.319821568939997e-05,
+            -1.211043541402522e-05,
+            0.004422045617117815,
+            -2.9007247174528406e-05,
+            0.00047989873920393014,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            2.358722626447443e-06,
+            0.010749988116065392,
+            -8.519458463110072e-05,
+            0.00018121093672206906,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.012276729798351153,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012758858750651924,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.011874955671433849,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -0.00017891054219667038,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3167444000719115,
+        "request_index": 39,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3185291540576145,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000038_000038.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000039:000039",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000039.jpg",
+      "response": {
+        "action": [
+          0.00012791086568490762,
+          1.2004827986761973e-05,
+          0.004924263275764448,
+          -2.9007247174528406e-05,
+          0.0006505774834792795,
+          -0.00017891054219667038,
+          0.98828125
+        ],
+        "actions": [
+          [
+            0.00012791086568490762,
+            1.2004827986761973e-05,
+            0.004924263275764448,
+            -2.9007247174528406e-05,
+            0.0006505774834792795,
+            -0.00017891054219667038,
+            0.98828125
+          ],
+          [
+            3.848556569389233e-05,
+            -2.4643300537106894e-06,
+            0.010508923639915006,
+            -8.519458463110072e-05,
+            0.00013854125065323173,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.011794600846050388,
+            -8.519458463110072e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.98828125
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.012196374972967692,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.011714246020666928,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3178282050648704,
+        "request_index": 40,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.31917027197778225,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000039_000039.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000040:000040",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000040.jpg",
+      "response": {
+        "action": [
+          0.00012791086568490762,
+          2.165093334707824e-05,
+          0.004341690791734354,
+          -2.9007247174528406e-05,
+          0.0008212562277546288,
+          -0.00017891054219667038,
+          0.9921875
+        ],
+        "actions": [
+          [
+            0.00012791086568490762,
+            2.165093334707824e-05,
+            0.004341690791734354,
+            -2.9007247174528406e-05,
+            0.0008212562277546288,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            6.084189069164615e-05,
+            -7.287382733867087e-06,
+            0.010549101052606737,
+            -8.519458463110072e-05,
+            0.0002665503088597437,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012276729798351153,
+            -8.519458463110072e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.012839213576035385,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            2.358722626447443e-06,
+            0.012276729798351153,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.28434697608463466,
+        "request_index": 41,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2856009480310604,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000040_000040.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000041:000041",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000041.jpg",
+      "response": {
+        "action": [
+          0.00015026719068266144,
+          2.165093334707824e-05,
+          0.005808166354982523,
+          -2.9007247174528406e-05,
+          0.0009065955998923034,
+          -3.997650602235135e-05,
+          0.9921875
+        ],
+        "actions": [
+          [
+            0.00015026719068266144,
+            2.165093334707824e-05,
+            0.005808166354982523,
+            -2.9007247174528406e-05,
+            0.0009065955998923034,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.011312471893749617,
+            -2.9007247174528406e-05,
+            1.0532192446719747e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            -6.227084301617045e-06,
+            7.181775306605576e-06,
+            0.011714246020666928,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.011553536369900006,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            2.358722626447443e-06,
+            0.011553536369900006,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3056189059279859,
+        "request_index": 42,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3079351839842275,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000041_000041.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000042:000042",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000042.jpg",
+      "response": {
+        "action": [
+          0.00015026719068266144,
+          2.6473986027234636e-05,
+          0.006732246846892328,
+          -2.9007247174528406e-05,
+          0.0008212562277546288,
+          -0.00017891054219667038,
+          0.9921875
+        ],
+        "actions": [
+          [
+            0.00015026719068266144,
+            2.6473986027234636e-05,
+            0.006732246846892328,
+            -2.9007247174528406e-05,
+            0.0008212562277546288,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.011633891195283467,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.011714246020666928,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            -6.227084301617045e-06,
+            1.2004827986761973e-05,
+            0.011232117068366156,
+            -2.9007247174528406e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            7.181775306605576e-06,
+            0.010669633290681931,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.3094729669392109,
+        "request_index": 43,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.3113217439968139,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000042_000042.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000043:000043",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000043.jpg",
+      "response": {
+        "action": [
+          0.00012791086568490762,
+          2.165093334707824e-05,
+          0.007053666148426171,
+          2.7180090282040437e-05,
+          0.0006505774834792795,
+          -0.00017891054219667038,
+          0.9921875
+        ],
+        "actions": [
+          [
+            0.00012791086568490762,
+            2.165093334707824e-05,
+            0.007053666148426171,
+            2.7180090282040437e-05,
+            0.0006505774834792795,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.011874955671433849,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.011714246020666928,
+            2.7180090282040437e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            -6.227084301617045e-06,
+            1.2004827986761973e-05,
+            0.011232117068366156,
+            2.7180090282040437e-05,
+            -0.00011747686575979224,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            2.358722626447443e-06,
+            0.010428568814531546,
+            -2.9007247174528406e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2920439450535923,
+        "request_index": 44,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.2932419270509854,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000043_000043.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    },
+    {
+      "sample_id": "sim:phase8_sim_episode_000004_reference:000044:000044",
+      "domain": "sim",
+      "model": "oft",
+      "instruction": "Pick up the orange cube.",
+      "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/images/primary/000044.jpg",
+      "response": {
+        "action": [
+          0.00012791086568490762,
+          2.165093334707824e-05,
+          0.007053666148426171,
+          -2.9007247174528406e-05,
+          0.0006079077974104423,
+          -0.00017891054219667038,
+          0.9921875
+        ],
+        "actions": [
+          [
+            0.00012791086568490762,
+            2.165093334707824e-05,
+            0.007053666148426171,
+            -2.9007247174528406e-05,
+            0.0006079077974104423,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            2.165093334707824e-05,
+            0.011714246020666928,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.6827880666920106e-05,
+            0.011473181544516545,
+            2.7180090282040437e-05,
+            -0.00011747686575979224,
+            -0.00017891054219667038,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.011071407417599235,
+            2.7180090282040437e-05,
+            -7.480717969095491e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ],
+          [
+            1.6129240696136776e-05,
+            1.2004827986761973e-05,
+            0.010308036576456354,
+            2.7180090282040437e-05,
+            -3.213749362211758e-05,
+            -3.997650602235135e-05,
+            0.9921875
+          ]
+        ],
+        "chunk_size": 5,
+        "inference_seconds": 0.2973688659258187,
+        "request_index": 45,
+        "variant": "oftplus_h5_vision",
+        "normalized_instruction": "pick up the orange cube"
+      },
+      "latency_seconds": 0.29890144104138017,
+      "feature_file": "features/sim_phase8_sim_episode_000004_reference_000044_000044.npz",
+      "features": {
+        "vision_backbone.output": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "vision_backbone.input": {
+          "shape": [
+            1,
+            6,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.output": {
+          "shape": [
+            1,
+            256,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "projector.input": {
+          "shape": [
+            1,
+            256,
+            2176
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_hidden_states.input": {
+          "shape": [
+            1,
+            35,
+            4096
+          ],
+          "dtype": "float32",
+          "pooled": false
+        },
+        "action_head.output": {
+          "shape": [
+            1,
+            5,
+            7
+          ],
+          "dtype": "float32",
+          "pooled": false
+        }
+      }
+    }
+  ]
+}

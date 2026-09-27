@@ -1,0 +1,31 @@
+{
+  "generated_at_kst": "2026-09-22T21:23:57",
+  "policy": "oftplus_h5_vision, checkpoint step 28560",
+  "num_comparisons": 7,
+  "real_chain_action_gap_ranking": [
+    "real4_vs_real8",
+    "real9_vs_real10",
+    "real8_vs_real9"
+  ],
+  "real_chain_observation_gap_ranking": [
+    "real4_vs_real8",
+    "real9_vs_real10",
+    "real8_vs_real9"
+  ],
+  "real_chain_hidden_gap_ranking": [
+    "real4_vs_real8",
+    "real9_vs_real10",
+    "real8_vs_real9"
+  ],
+  "primary_interpretation": [
+    "Lighting change is the dominant source of action disagreement in the real-only chain.",
+    "The response action gap is dominated by gripper output rather than translation/rotation.",
+    "Blue/yellow cube relocation and extra object insertion produce smaller but measurable representation/action changes.",
+    "All conclusions are offline policy-output disagreement, not rollout success or physical correctness."
+  ],
+  "outputs": {
+    "evidence_matrix": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/09_interim_report/phase8_evidence_matrix.csv",
+    "phase_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/09_interim_report/phase8_real_chain_phase_action_summary.csv",
+    "figures": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/09_interim_report/figures"
+  }
+}

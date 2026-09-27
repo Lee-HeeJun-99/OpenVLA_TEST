@@ -1,0 +1,33 @@
+{
+  "status": "READY_FOR_FEATURE_EXTRACTION",
+  "policy": {
+    "model": "oft",
+    "variant": "oftplus_h5_vision",
+    "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+    "instruction": "Pick up the orange cube.",
+    "use_proprio": false
+  },
+  "inputs": {
+    "real": {
+      "episode_ids": [
+        "episode_000004",
+        "episode_000008",
+        "episode_000009",
+        "episode_000010"
+      ],
+      "image_count": 180,
+      "list_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/feature_inputs/real_episode_000004_000008_000009_000010_images.txt"
+    },
+    "sim_reference": {
+      "episode_ids": [
+        "episode_000004"
+      ],
+      "image_count": 45,
+      "list_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/feature_inputs/sim_episode_000004_reference_images.txt"
+    }
+  },
+  "outputs_expected": {
+    "real_feature_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/full_forward_features/real/feature_manifest.json",
+    "sim_feature_manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/06_representation_gap/full_forward_features/sim_episode_000004_reference/feature_manifest.json"
+  }
+}

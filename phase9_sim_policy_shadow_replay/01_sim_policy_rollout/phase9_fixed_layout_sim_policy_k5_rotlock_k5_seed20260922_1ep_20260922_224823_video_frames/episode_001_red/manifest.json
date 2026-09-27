@@ -1,0 +1,12 @@
+{
+  "episode_number": 1,
+  "target_color": "red",
+  "instruction": "Pick up the orange cube.",
+  "max_policy_steps": 500,
+  "fps": 5.0,
+  "frame_stride": 12,
+  "success": false,
+  "reason": "consecutive_ik_failures",
+  "frame_count": 141,
+  "frames_jsonl": "frames.jsonl"
+}

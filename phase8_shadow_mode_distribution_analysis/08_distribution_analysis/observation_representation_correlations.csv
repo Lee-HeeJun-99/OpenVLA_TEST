@@ -1,0 +1,16 @@
+subset,x,y,count,pearson,note
+real_sequential,obs_pixel_l1,vision_cosine,3,0.9195882180762538,Small N; descriptive only.
+real_sequential,obs_pixel_l1,projector_cosine,3,0.9332300161307765,Small N; descriptive only.
+real_sequential,obs_pixel_l1,hidden_cosine,3,0.9624801615669669,Small N; descriptive only.
+real_sequential,obs_pixel_l1,action_output_l2,3,0.999968070200732,Small N; descriptive only.
+real_sequential,obs_pixel_l1,action_output_cosine,3,0.6725551828297478,Small N; descriptive only.
+fixed_sim_reference,obs_pixel_l1,vision_cosine,4,0.034696089971799716,Small N; descriptive only.
+fixed_sim_reference,obs_pixel_l1,projector_cosine,4,0.010279575176797104,Small N; descriptive only.
+fixed_sim_reference,obs_pixel_l1,hidden_cosine,4,0.25070981281362215,Small N; descriptive only.
+fixed_sim_reference,obs_pixel_l1,action_output_l2,4,0.8215545195305757,Small N; descriptive only.
+fixed_sim_reference,obs_pixel_l1,action_output_cosine,4,0.7746234142619398,Small N; descriptive only.
+all,obs_pixel_l1,vision_cosine,7,0.9354000100118085,Small N; descriptive only.
+all,obs_pixel_l1,projector_cosine,7,0.9122157252559422,Small N; descriptive only.
+all,obs_pixel_l1,hidden_cosine,7,0.8884239173557295,Small N; descriptive only.
+all,obs_pixel_l1,action_output_l2,7,0.5036491768109698,Small N; descriptive only.
+all,obs_pixel_l1,action_output_cosine,7,0.30304593120795736,Small N; descriptive only.

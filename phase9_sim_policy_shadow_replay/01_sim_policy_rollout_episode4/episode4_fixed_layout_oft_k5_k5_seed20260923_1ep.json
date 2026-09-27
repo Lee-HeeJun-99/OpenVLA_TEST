@@ -1,0 +1,5484 @@
+{
+  "status": "complete",
+  "phase": "complete",
+  "terminal_reason": "requested_episodes_completed",
+  "config": {
+    "episode_count": 1,
+    "seed": 20260923,
+    "x_min_m": 0.380488163954,
+    "x_max_m": 0.8604881639539999,
+    "y_min_m": -0.387011836046,
+    "y_max_m": 0.38798816395399993,
+    "min_spacing_m": 0.1,
+    "settle_steps": 60,
+    "max_layout_attempts": 200,
+    "policy_hold_steps": 12,
+    "actions_per_inference": 5,
+    "apply_policy_motion_limits": false,
+    "continuous_gripper": true,
+    "gripper_full_travel_duration_s": 0.6,
+    "lock_end_effector_orientation": false,
+    "max_policy_steps": 500,
+    "max_consecutive_ik_failures": 5,
+    "stagnation_policy_steps": 25,
+    "minimum_wrist_progress_m": 0.01,
+    "success_lift_m": 0.1,
+    "success_hold_physics_steps": 12,
+    "maximum_target_wrist_xy_m": 0.12,
+    "minimum_target_wrist_z_m": 0.12,
+    "maximum_target_wrist_z_m": 0.4,
+    "wrong_cube_lift_failure_m": 0.05,
+    "target_fall_failure_m": 0.05,
+    "workspace_margin_m": 0.15,
+    "layout_manifest_path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/00_inputs_episode4/vla_layout_manifest.json"
+  },
+  "criteria": {
+    "success": "target lift threshold, wrist-relative grasp geometry, and sustained hold must all pass",
+    "reachable_layout_filter": "pregrasp/grasp/lift IK must all pass",
+    "denominator": "accepted reachable held-out layouts only",
+    "stagnation_failure": "after the configured policy calls, wrist displacement from reset must reach the minimum progress threshold"
+  },
+  "gripper_control": {
+    "mode": "continuous_slew_limited",
+    "full_travel_duration_s": 0.6,
+    "physics_hz": 60.0,
+    "max_delta_per_physics_step": 0.027777777777777776
+  },
+  "arm_control": {
+    "mode": "dataset_timed_direct_joint_target",
+    "motion_speed_scale": 1.7126963727221802,
+    "motion_limits_applied_to_policy_actions": false,
+    "velocity_limits_rad_s": null,
+    "acceleration_limits_rad_s2": null,
+    "jerk_limits_rad_s3": null
+  },
+  "timing": {
+    "physics_hz": 60.0,
+    "physics_steps_per_policy_action": 12,
+    "actions_per_inference": 5,
+    "policy_period_seconds": 0.2,
+    "policy_hz": 5.0,
+    "policy_image_hz": 1.0,
+    "policy_image_refresh": "replicator_step_before_each_inference"
+  },
+  "layout_source": "fixed_manifest",
+  "target_schedule": [
+    "red"
+  ],
+  "server": {
+    "status": "ready",
+    "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+    "variant": "oftplus_h5_vision",
+    "chunk_size": 5,
+    "action_dim": 7,
+    "action_head_type": "l1",
+    "use_film": true,
+    "requires_proprio": false,
+    "proprio_dim": 0,
+    "continuous_gripper": true,
+    "bounded_gripper": true,
+    "gripper_loss_weight": 3.0,
+    "instruction_normalization": "lower_whitespace_strip_terminal_punctuation",
+    "center_crop": true,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "model_load_seconds": 29.547206102055497,
+    "peak_vram_gb": 15.752367973327637,
+    "request_count": 5
+  },
+  "counters": {
+    "requested": 1,
+    "completed": 1,
+    "successes": 0,
+    "failures": 1,
+    "layout_rejections": 0,
+    "home_reset_fallbacks": 0
+  },
+  "success_rate": 0.0,
+  "results": [
+    {
+      "episode_index": 0,
+      "episode_number": 1,
+      "target_color": "red",
+      "instruction": "Pick up the orange cube.",
+      "success": false,
+      "reason": "consecutive_ik_failures",
+      "policy_steps": 87,
+      "wall_seconds": 26.2831927430816,
+      "sampled_layout_m": {
+        "blue": [
+          0.6605,
+          0.19425,
+          0.8605289459228516
+        ],
+        "red": [
+          0.4804999999999999,
+          -0.18825,
+          0.8605289459228516
+        ],
+        "yellow": [
+          0.7405,
+          -0.19325,
+          0.8605289459228516
+        ]
+      },
+      "initial_cube_positions_m": {
+        "red": [
+          0.4805750250816345,
+          -0.18682917952537537,
+          0.8605289459228516
+        ],
+        "yellow": [
+          0.739058792591095,
+          -0.1931675523519516,
+          0.8605289459228516
+        ],
+        "blue": [
+          0.660206139087677,
+          0.19284309446811676,
+          0.8605288863182068
+        ]
+      },
+      "final_cube_positions_m": {
+        "red": [
+          0.4805750250816345,
+          -0.18682917952537537,
+          0.8605289459228516
+        ],
+        "yellow": [
+          0.7390589714050293,
+          -0.19316764175891876,
+          0.8605288863182068
+        ],
+        "blue": [
+          0.660206139087677,
+          0.19284310936927795,
+          0.8605288863182068
+        ]
+      },
+      "final_scene_state": {
+        "success_condition": false,
+        "failure_reason": null,
+        "target_lift_m": 0.0,
+        "target_wrist_xy_m": 0.32349236949849003,
+        "target_wrist_z_m": 0.2650379105938234,
+        "wrong_cube_lifts_m": {
+          "yellow": -5.960464477539063e-08,
+          "blue": 0.0
+        },
+        "target_position_m": [
+          0.4805750250816345,
+          -0.18682917952537537,
+          0.8605289459228516
+        ],
+        "end_effector_position_m": [
+          0.7371614655916686,
+          0.010175164767176581,
+          1.125566856516675
+        ],
+        "wrist_progress_from_reset_m": 0.5945581784067037
+      },
+      "initial_frame": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4/episode4_fixed_layout_oft_k5_k5_seed20260923_1ep_frames/episode_001_red_initial.jpg",
+      "actions": [
+        {
+          "policy_step": 0,
+          "raw_action": [
+            0.0048115609527143565,
+            0.0017965343196450177,
+            -0.004095565873529081,
+            -0.009384198933693338,
+            0.008677812175179302,
+            0.024829215969180814,
+            0.00150299072265625
+          ],
+          "clipped_action": [
+            0.0048115609527143565,
+            0.0017965343196450177,
+            -0.004095565873529081,
+            -0.009384198933693338,
+            0.008677812175179302,
+            0.024829215969180814,
+            0.00150299072265625
+          ],
+          "rotation_delta_before_lock": [
+            -0.009384198933693338,
+            0.008677812175179302,
+            0.024829215969180814
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3097347953882841,
+            -0.011927719362175123,
+            1.5382633202972245
+          ],
+          "current_quaternion_wxyz": [
+            0.14401941270426505,
+            0.7115740813973535,
+            0.6702727555417903,
+            0.1538023687276839
+          ],
+          "target_position_m": [
+            0.3145463563409984,
+            -0.010131185042530105,
+            1.5341677544236954
+          ],
+          "target_quaternion_wxyz": [
+            0.1425265513713034,
+            0.7031753945005389,
+            0.6803875421324547,
+            0.14934302539513505
+          ],
+          "inference_seconds": 0.18797550001181662,
+          "server_request_index": 6,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00150299072265625,
+          "gripper_command_at_policy_step": 0.0,
+          "gripper_measured_at_policy_step": 0.00012424793736698359
+        },
+        {
+          "policy_step": 1,
+          "raw_action": [
+            0.0032752622442749537,
+            0.0015674393173375385,
+            -0.002870154786431295,
+            -0.006687206735778006,
+            0.006026957928152782,
+            0.01836878328707496,
+            0.0021820068359375
+          ],
+          "clipped_action": [
+            0.0032752622442749537,
+            0.0015674393173375385,
+            -0.002870154786431295,
+            -0.006687206735778006,
+            0.006026957928152782,
+            0.01836878328707496,
+            0.0021820068359375
+          ],
+          "rotation_delta_before_lock": [
+            -0.006687206735778006,
+            0.006026957928152782,
+            0.01836878328707496
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3152654576548718,
+            -0.010472041311700455,
+            1.5337369718542384
+          ],
+          "current_quaternion_wxyz": [
+            0.1411810943022341,
+            0.7039401304318609,
+            0.679996373441456,
+            0.14879893643997025
+          ],
+          "target_position_m": [
+            0.31854071989914673,
+            -0.008904601994362916,
+            1.530866817067807
+          ],
+          "target_quaternion_wxyz": [
+            0.14011164225554587,
+            0.6976344150068376,
+            0.6873489091695167,
+            0.14569292284114851
+          ],
+          "inference_seconds": null,
+          "server_request_index": 6,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0021820068359375,
+          "gripper_command_at_policy_step": 0.00150299072265625,
+          "gripper_measured_at_policy_step": 0.001492071768333214
+        },
+        {
+          "policy_step": 2,
+          "raw_action": [
+            0.002492092234197385,
+            0.0015553816856371458,
+            -0.0025286467785515868,
+            -0.005760115667744609,
+            0.004896211247328593,
+            0.01475649834654266,
+            0.00164794921875
+          ],
+          "clipped_action": [
+            0.002492092234197385,
+            0.0015553816856371458,
+            -0.0025286467785515868,
+            -0.005760115667744609,
+            0.004896211247328593,
+            0.01475649834654266,
+            0.00164794921875
+          ],
+          "rotation_delta_before_lock": [
+            -0.005760115667744609,
+            0.004896211247328593,
+            0.01475649834654266
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3192668415040892,
+            -0.009243585186391253,
+            1.530421571758286
+          ],
+          "current_quaternion_wxyz": [
+            0.13949304657308084,
+            0.6983232347631115,
+            0.6868970814441472,
+            0.14511633006404656
+          ],
+          "target_position_m": [
+            0.32175893373828657,
+            -0.007688203500754108,
+            1.5278929249797344
+          ],
+          "target_quaternion_wxyz": [
+            0.13874717190633837,
+            0.693184711062646,
+            0.6927852498061083,
+            0.14245271597297518
+          ],
+          "inference_seconds": null,
+          "server_request_index": 6,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00164794921875,
+          "gripper_command_at_policy_step": 0.0021820068359375,
+          "gripper_measured_at_policy_step": 0.0021747633300979174
+        },
+        {
+          "policy_step": 3,
+          "raw_action": [
+            0.003413941322776646,
+            0.002148617165296511,
+            -0.0035129933894989876,
+            -0.007361454785256839,
+            0.006763010012840226,
+            0.02034859330255901,
+            0.00136566162109375
+          ],
+          "clipped_action": [
+            0.003413941322776646,
+            0.002148617165296511,
+            -0.0035129933894989876,
+            -0.007361454785256839,
+            0.006763010012840226,
+            0.02034859330255901,
+            0.00136566162109375
+          ],
+          "rotation_delta_before_lock": [
+            -0.007361454785256839,
+            0.006763010012840226,
+            0.02034859330255901
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.32249262937694917,
+            -0.008024966579214494,
+            1.5274374968176132
+          ],
+          "current_quaternion_wxyz": [
+            0.1381639356552369,
+            0.6935351124807485,
+            0.6926723743668117,
+            0.1418617511157058
+          ],
+          "target_position_m": [
+            0.32590657069972584,
+            -0.005876349413917983,
+            1.5239245034281141
+          ],
+          "target_quaternion_wxyz": [
+            0.136922180260671,
+            0.686414413565654,
+            0.7006732872525524,
+            0.13836370164420217
+          ],
+          "inference_seconds": null,
+          "server_request_index": 6,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00136566162109375,
+          "gripper_command_at_policy_step": 0.00164794921875,
+          "gripper_measured_at_policy_step": 0.0016456757640016528
+        },
+        {
+          "policy_step": 4,
+          "raw_action": [
+            0.005247509290170559,
+            0.0029347747521621757,
+            -0.005200444722551673,
+            -0.010662460860830295,
+            0.010240589427450469,
+            0.030959680315372655,
+            0.0006866455078125
+          ],
+          "clipped_action": [
+            0.005247509290170559,
+            0.0029347747521621757,
+            -0.005200444722551673,
+            -0.010662460860830295,
+            0.010240589427450469,
+            0.030959680315372655,
+            0.0006866455078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.010662460860830295,
+            0.010240589427450469,
+            0.030959680315372655
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3266417224680936,
+            -0.006212743030023078,
+            1.5234592155588096
+          ],
+          "current_quaternion_wxyz": [
+            0.13638715381962532,
+            0.6871532930139139,
+            0.7001699593986537,
+            0.13777127468671982
+          ],
+          "target_position_m": [
+            0.3318892317582641,
+            -0.0032779682778609027,
+            1.5182587708362578
+          ],
+          "target_quaternion_wxyz": [
+            0.13431280678417418,
+            0.6761925247014932,
+            0.7121362082351488,
+            0.13261131321287192
+          ],
+          "inference_seconds": null,
+          "server_request_index": 6,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0006866455078125,
+          "gripper_command_at_policy_step": 0.00136566162109375,
+          "gripper_measured_at_policy_step": 0.0013614296913146973
+        },
+        {
+          "policy_step": 5,
+          "raw_action": [
+            0.003590346699712048,
+            0.0012081218926658088,
+            -0.0017753202905816355,
+            -0.005479178980461765,
+            0.004554853758777894,
+            0.01267248780392787,
+            0.004913330078125
+          ],
+          "clipped_action": [
+            0.003590346699712048,
+            0.0012081218926658088,
+            -0.0017753202905816355,
+            -0.005479178980461765,
+            0.004554853758777894,
+            0.01267248780392787,
+            0.004913330078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.005479178980461765,
+            0.004554853758777894,
+            0.01267248780392787
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3326316315507682,
+            -0.0036196069646667467,
+            1.5177807493410667
+          ],
+          "current_quaternion_wxyz": [
+            0.13383748823472716,
+            0.6769973478686867,
+            0.7115792256239013,
+            0.13197394963504167
+          ],
+          "target_position_m": [
+            0.3362219782504802,
+            -0.002411485072000938,
+            1.516005429050485
+          ],
+          "target_quaternion_wxyz": [
+            0.13323186359587147,
+            0.6724046636779086,
+            0.7165163619898914,
+            0.12932726621923404
+          ],
+          "inference_seconds": 0.18267610401380807,
+          "server_request_index": 7,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.004913330078125,
+          "gripper_command_at_policy_step": 0.0006866455078125,
+          "gripper_measured_at_policy_step": 0.0006828487947070361
+        },
+        {
+          "policy_step": 6,
+          "raw_action": [
+            0.002746395431046836,
+            0.0012406774982568723,
+            -0.0014840340485665904,
+            -0.004355432231330374,
+            0.0035094464500913802,
+            0.010796878315574557,
+            0.006103515625
+          ],
+          "clipped_action": [
+            0.002746395431046836,
+            0.0012406774982568723,
+            -0.0014840340485665904,
+            -0.004355432231330374,
+            0.0035094464500913802,
+            0.010796878315574557,
+            0.006103515625
+          ],
+          "rotation_delta_before_lock": [
+            -0.004355432231330374,
+            0.0035094464500913802,
+            0.010796878315574557
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.336975707320841,
+            -0.002747595553573789,
+            1.515503876460874
+          ],
+          "current_quaternion_wxyz": [
+            0.13281307646307802,
+            0.673058281978722,
+            0.7159393954410499,
+            0.12955314676135002
+          ],
+          "target_position_m": [
+            0.3397221027518878,
+            -0.0015069180553169167,
+            1.5140198424123072
+          ],
+          "target_quaternion_wxyz": [
+            0.13232069439682936,
+            0.669119012000319,
+            0.720074782049995,
+            0.1275276043439622
+          ],
+          "inference_seconds": null,
+          "server_request_index": 7,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.006103515625,
+          "gripper_command_at_policy_step": 0.004913330078125,
+          "gripper_measured_at_policy_step": 0.004904566140010447
+        },
+        {
+          "policy_step": 7,
+          "raw_action": [
+            0.0025479830466917704,
+            0.0012925253145685649,
+            -0.0015141671080853882,
+            -0.004074495544047527,
+            0.0031680889615406816,
+            0.009824340062354322,
+            0.00421142578125
+          ],
+          "clipped_action": [
+            0.0025479830466917704,
+            0.0012925253145685649,
+            -0.0015141671080853882,
+            -0.004074495544047527,
+            0.0031680889615406816,
+            0.009824340062354322,
+            0.00421142578125
+          ],
+          "rotation_delta_before_lock": [
+            -0.004074495544047527,
+            0.0031680889615406816,
+            0.009824340062354322
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.34048860953737853,
+            -0.0018510584445390532,
+            1.5135059091018224
+          ],
+          "current_quaternion_wxyz": [
+            0.131759586473514,
+            0.6696036321000612,
+            0.7196924977839425,
+            0.1277227304916564
+          ],
+          "target_position_m": [
+            0.3430365925840703,
+            -0.0005585331299704883,
+            1.511991741993737
+          ],
+          "target_quaternion_wxyz": [
+            0.13135428798546972,
+            0.6659919820401916,
+            0.7234395220133476,
+            0.12584112553178567
+          ],
+          "inference_seconds": null,
+          "server_request_index": 7,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00421142578125,
+          "gripper_command_at_policy_step": 0.006103515625,
+          "gripper_measured_at_policy_step": 0.006101829481536036
+        },
+        {
+          "policy_step": 8,
+          "raw_action": [
+            0.0026290247248086287,
+            0.0012973483672487213,
+            -0.0016246549929876467,
+            -0.0038497461942212513,
+            0.0032960980197471934,
+            0.009963274098528643,
+            0.004913330078125
+          ],
+          "clipped_action": [
+            0.0026290247248086287,
+            0.0012973483672487213,
+            -0.0016246549929876467,
+            -0.0038497461942212513,
+            0.0032960980197471934,
+            0.009963274098528643,
+            0.004913330078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0038497461942212513,
+            0.0032960980197471934,
+            0.009963274098528643
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3438050162642071,
+            -0.0008995767861052235,
+            1.5114718571210248
+          ],
+          "current_quaternion_wxyz": [
+            0.13065418873977755,
+            0.6664742556149384,
+            0.7231065987494932,
+            0.1259301251178752
+          ],
+          "target_position_m": [
+            0.34643404098901576,
+            0.0003977715811434978,
+            1.5098472021280371
+          ],
+          "target_quaternion_wxyz": [
+            0.13011597592825197,
+            0.6628176566562166,
+            0.7268731418013885,
+            0.12408876887445924
+          ],
+          "inference_seconds": null,
+          "server_request_index": 7,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.004913330078125,
+          "gripper_command_at_policy_step": 0.00421142578125,
+          "gripper_measured_at_policy_step": 0.004217539111088131
+        },
+        {
+          "policy_step": 9,
+          "raw_action": [
+            0.0032651320345103464,
+            0.0016856041080013963,
+            -0.002428203246822261,
+            -0.004636368918613222,
+            0.004170826584158359,
+            0.012394619731579232,
+            0.0023956298828125
+          ],
+          "clipped_action": [
+            0.0032651320345103464,
+            0.0016856041080013963,
+            -0.002428203246822261,
+            -0.004636368918613222,
+            0.004170826584158359,
+            0.012394619731579232,
+            0.0023956298828125
+          ],
+          "rotation_delta_before_lock": [
+            -0.004636368918613222,
+            0.004170826584158359,
+            0.012394619731579232
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3472126746441169,
+            5.049890526334981e-05,
+            1.5093144132015672
+          ],
+          "current_quaternion_wxyz": [
+            0.12941941282390873,
+            0.6634656801272417,
+            0.726406563754152,
+            0.12408630469353371
+          ],
+          "target_position_m": [
+            0.35047780667862727,
+            0.0017361030132647462,
+            1.5068862099547449
+          ],
+          "target_quaternion_wxyz": [
+            0.12867048101342013,
+            0.6589067370655259,
+            0.7310582958610361,
+            0.12181784441614049
+          ],
+          "inference_seconds": null,
+          "server_request_index": 7,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0023956298828125,
+          "gripper_command_at_policy_step": 0.004913330078125,
+          "gripper_measured_at_policy_step": 0.004914136282328951
+        },
+        {
+          "policy_step": 10,
+          "raw_action": [
+            0.003626675727833397,
+            0.0010742821807914402,
+            -0.001664832405679377,
+            -0.005591553655374903,
+            0.004661527973949988,
+            0.01267248780392787,
+            0.006500244140625
+          ],
+          "clipped_action": [
+            0.003626675727833397,
+            0.0010742821807914402,
+            -0.001664832405679377,
+            -0.005591553655374903,
+            0.004661527973949988,
+            0.01267248780392787,
+            0.006500244140625
+          ],
+          "rotation_delta_before_lock": [
+            -0.005591553655374903,
+            0.004661527973949988,
+            0.01267248780392787
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3512641578726123,
+            0.001383981262424144,
+            1.5063406711786673
+          ],
+          "current_quaternion_wxyz": [
+            0.12760944387985615,
+            0.6596105703041142,
+            0.73064431685108,
+            0.12160841923556828
+          ],
+          "target_position_m": [
+            0.35489083360044565,
+            0.0024582634432155845,
+            1.504675838772988
+          ],
+          "target_quaternion_wxyz": [
+            0.12697666640908237,
+            0.6548901340841106,
+            0.7354416379809698,
+            0.118833646711698
+          ],
+          "inference_seconds": 0.1955027939984575,
+          "server_request_index": 8,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.006500244140625,
+          "gripper_command_at_policy_step": 0.0023956298828125,
+          "gripper_measured_at_policy_step": 0.002404543089455591
+        },
+        {
+          "policy_step": 11,
+          "raw_action": [
+            0.0028665606779097637,
+            0.0009963597359276457,
+            -0.0012731026319350025,
+            -0.00474874359352636,
+            0.003722794880435567,
+            0.011144213406010356,
+            0.0078125
+          ],
+          "clipped_action": [
+            0.0028665606779097637,
+            0.0009963597359276457,
+            -0.0012731026319350025,
+            -0.00474874359352636,
+            0.003722794880435567,
+            0.011144213406010356,
+            0.0078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.00474874359352636,
+            0.003722794880435567,
+            0.011144213406010356
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3556847585825668,
+            0.0021015486444575576,
+            1.5041138223062507
+          ],
+          "current_quaternion_wxyz": [
+            0.12656369907788095,
+            0.6556108433748875,
+            0.7348776963571139,
+            0.11878898737616193
+          ],
+          "target_position_m": [
+            0.35855131926047656,
+            0.0030979083803852033,
+            1.5028407196743157
+          ],
+          "target_quaternion_wxyz": [
+            0.12608802095519406,
+            0.6514234969987268,
+            0.7390336836691814,
+            0.11652661898430124
+          ],
+          "inference_seconds": null,
+          "server_request_index": 8,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0078125,
+          "gripper_command_at_policy_step": 0.006500244140625,
+          "gripper_measured_at_policy_step": 0.006493627254305245
+        },
+        {
+          "policy_step": 12,
+          "raw_action": [
+            0.002615052021685032,
+            0.001133364576123369,
+            -0.001283146985107935,
+            -0.004580181581156653,
+            0.003424107077953705,
+            0.01010220813470296,
+            0.005218505859375
+          ],
+          "clipped_action": [
+            0.002615052021685032,
+            0.001133364576123369,
+            -0.001283146985107935,
+            -0.004580181581156653,
+            0.003424107077953705,
+            0.01010220813470296,
+            0.005218505859375
+          ],
+          "rotation_delta_before_lock": [
+            -0.004580181581156653,
+            0.003424107077953705,
+            0.01010220813470296
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3593485529830589,
+            0.002741210268540387,
+            1.5022685505132354
+          ],
+          "current_quaternion_wxyz": [
+            0.12563641760997618,
+            0.6522177828399198,
+            0.7384355414968603,
+            0.11636324751290456
+          ],
+          "target_position_m": [
+            0.36196360500474395,
+            0.003874574844663756,
+            1.5009854035281274
+          ],
+          "target_quaternion_wxyz": [
+            0.12527593720990637,
+            0.6483884044715288,
+            0.742199080214051,
+            0.11418818604593682
+          ],
+          "inference_seconds": null,
+          "server_request_index": 8,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.005218505859375,
+          "gripper_command_at_policy_step": 0.0078125,
+          "gripper_measured_at_policy_step": 0.007813118655106144
+        },
+        {
+          "policy_step": 13,
+          "raw_action": [
+            0.0028665606779097637,
+            0.0012225910507062815,
+            -0.001664832405679377,
+            -0.005029680280809207,
+            0.0038721387816764976,
+            0.011352614460271837,
+            0.006683349609375
+          ],
+          "clipped_action": [
+            0.0028665606779097637,
+            0.0012225910507062815,
+            -0.001664832405679377,
+            -0.005029680280809207,
+            0.0038721387816764976,
+            0.011352614460271837,
+            0.006683349609375
+          ],
+          "rotation_delta_before_lock": [
+            -0.005029680280809207,
+            0.0038721387816764976,
+            0.011352614460271837
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.36276785760563496,
+            0.0035142176870425327,
+            1.5004035453058802
+          ],
+          "current_quaternion_wxyz": [
+            0.12487006961939641,
+            0.6490566929066591,
+            0.7416742526242266,
+            0.11424612947760224
+          ],
+          "target_position_m": [
+            0.3656344182835447,
+            0.004736808737748814,
+            1.4987387129002008
+          ],
+          "target_quaternion_wxyz": [
+            0.12441527711085588,
+            0.6447401871749663,
+            0.745871852144016,
+            0.11183072047641336
+          ],
+          "inference_seconds": null,
+          "server_request_index": 8,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.006683349609375,
+          "gripper_command_at_policy_step": 0.005218505859375,
+          "gripper_measured_at_policy_step": 0.0052285700522620715
+        },
+        {
+          "policy_step": 14,
+          "raw_action": [
+            0.004453859752750294,
+            0.0019219336893291118,
+            -0.0028098886673936993,
+            -0.006855768748147716,
+            0.005877614026911851,
+            0.017048909943418927,
+            0.002471923828125
+          ],
+          "clipped_action": [
+            0.004453859752750294,
+            0.0019219336893291118,
+            -0.0028098886673936993,
+            -0.006855768748147716,
+            0.005877614026911851,
+            0.017048909943418927,
+            0.002471923828125
+          ],
+          "rotation_delta_before_lock": [
+            -0.006855768748147716,
+            0.005877614026911851,
+            0.017048909943418927
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3664477008310224,
+            0.004370386292139518,
+            1.498141887233116
+          ],
+          "current_quaternion_wxyz": [
+            0.1239468528983228,
+            0.645408711395112,
+            0.7453626049597232,
+            0.11188994610579742
+          ],
+          "target_position_m": [
+            0.3709015605837727,
+            0.00629231998146863,
+            1.4953319985657223
+          ],
+          "target_quaternion_wxyz": [
+            0.12300920934136635,
+            0.6389289204635744,
+            0.7515773882535378,
+            0.10848962382852244
+          ],
+          "inference_seconds": null,
+          "server_request_index": 8,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002471923828125,
+          "gripper_command_at_policy_step": 0.006683349609375,
+          "gripper_measured_at_policy_step": 0.006685319131818357
+        },
+        {
+          "policy_step": 15,
+          "raw_action": [
+            0.005035124202691895,
+            0.0012479120772771087,
+            -0.002187138770671875,
+            -0.009440386271149907,
+            0.007349718196286739,
+            0.02048752733873333,
+            0.0057373046875
+          ],
+          "clipped_action": [
+            0.005035124202691895,
+            0.0012479120772771087,
+            -0.002187138770671875,
+            -0.009440386271149907,
+            0.007349718196286739,
+            0.02048752733873333,
+            0.0057373046875
+          ],
+          "rotation_delta_before_lock": [
+            -0.009440386271149907,
+            0.007349718196286739,
+            0.02048752733873333
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3717181594557553,
+            0.0059201915024176596,
+            1.4947205360729647
+          ],
+          "current_quaternion_wxyz": [
+            0.12253802023742003,
+            0.6396620122849792,
+            0.750984902372505,
+            0.10880542286294194
+          ],
+          "target_position_m": [
+            0.37675328365844724,
+            0.007168103579694768,
+            1.492533397302293
+          ],
+          "target_quaternion_wxyz": [
+            0.12167440614699304,
+            0.6317457205785956,
+            0.7584483266466859,
+            0.1041576652304086
+          ],
+          "inference_seconds": 0.1813296969048679,
+          "server_request_index": 9,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0057373046875,
+          "gripper_command_at_policy_step": 0.002471923828125,
+          "gripper_measured_at_policy_step": 0.00248553603887558
+        },
+        {
+          "policy_step": 16,
+          "raw_action": [
+            0.005649923140130129,
+            0.0010996032073622673,
+            -0.0018556751159650962,
+            -0.010606273523373722,
+            0.007573734048148134,
+            0.022120002263781587,
+            0.00555419921875
+          ],
+          "clipped_action": [
+            0.005649923140130129,
+            0.0010996032073622673,
+            -0.0018556751159650962,
+            -0.010606273523373722,
+            0.007573734048148134,
+            0.022120002263781587,
+            0.00555419921875
+          ],
+          "rotation_delta_before_lock": [
+            -0.010606273523373722,
+            0.007573734048148134,
+            0.022120002263781587
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3775835824957699,
+            0.006787453055959699,
+            1.4918989713819137
+          ],
+          "current_quaternion_wxyz": [
+            0.1213116202914487,
+            0.6325913479120047,
+            0.757855187268827,
+            0.10376508304274472
+          ],
+          "target_position_m": [
+            0.38323350563590003,
+            0.007887056263321967,
+            1.4900432962659487
+          ],
+          "target_quaternion_wxyz": [
+            0.1206388230073214,
+            0.6239071974429119,
+            0.7657986582335276,
+            0.09868383054010668
+          ],
+          "inference_seconds": null,
+          "server_request_index": 9,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00555419921875,
+          "gripper_command_at_policy_step": 0.0057373046875,
+          "gripper_measured_at_policy_step": 0.005735659136854365
+        },
+        {
+          "policy_step": 17,
+          "raw_action": [
+            0.006298256565064993,
+            0.001275644630188014,
+            -0.0020264291199049538,
+            -0.01231296389861702,
+            0.008229780471456508,
+            0.024516614387788592,
+            0.00421142578125
+          ],
+          "clipped_action": [
+            0.006298256565064993,
+            0.001275644630188014,
+            -0.0020264291199049538,
+            -0.01231296389861702,
+            0.008229780471456508,
+            0.024516614387788592,
+            0.00421142578125
+          ],
+          "rotation_delta_before_lock": [
+            -0.01231296389861702,
+            0.008229780471456508,
+            0.024516614387788592
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3840729693992045,
+            0.0074983117846485065,
+            1.4893886071929996
+          ],
+          "current_quaternion_wxyz": [
+            0.12058049664329436,
+            0.6247200516443379,
+            0.7652130968255446,
+            0.09815353966827618
+          ],
+          "target_position_m": [
+            0.3903712259642695,
+            0.00877395641483652,
+            1.4873621780730946
+          ],
+          "target_quaternion_wxyz": [
+            0.12006226215558097,
+            0.6149376418792492,
+            0.7738927922160997,
+            0.09234011025573499
+          ],
+          "inference_seconds": null,
+          "server_request_index": 9,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00421142578125,
+          "gripper_command_at_policy_step": 0.00555419921875,
+          "gripper_measured_at_policy_step": 0.0055614375862582666
+        },
+        {
+          "policy_step": 18,
+          "raw_action": [
+            0.0074384291399504435,
+            0.0017483037928434433,
+            -0.0028098886673936993,
+            -0.014876511170073,
+            0.010085911815450932,
+            0.030438677679718952,
+            0.00360107421875
+          ],
+          "clipped_action": [
+            0.0074384291399504435,
+            0.0017483037928434433,
+            -0.0028098886673936993,
+            -0.014876511170073,
+            0.010085911815450932,
+            0.030438677679718952,
+            0.00360107421875
+          ],
+          "rotation_delta_before_lock": [
+            -0.014876511170073,
+            0.010085911815450932,
+            0.030438677679718952
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.39122009786022466,
+            0.008372460993150971,
+            1.4866832557429102
+          ],
+          "current_quaternion_wxyz": [
+            0.1195921404160143,
+            0.6153847424478845,
+            0.7736887305198445,
+            0.09167926144804239
+          ],
+          "target_position_m": [
+            0.3986585270001751,
+            0.010120764785994414,
+            1.4838733670755164
+          ],
+          "target_quaternion_wxyz": [
+            0.11885391193081661,
+            0.6030870076685986,
+            0.7842181144514125,
+            0.08462716919730337
+          ],
+          "inference_seconds": null,
+          "server_request_index": 9,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00360107421875,
+          "gripper_command_at_policy_step": 0.00421142578125,
+          "gripper_measured_at_policy_step": 0.004220718453670447
+        },
+        {
+          "policy_step": 19,
+          "raw_action": [
+            0.009897624889703376,
+            0.0025585766431098934,
+            -0.003774146571995235,
+            -0.019020327307494995,
+            0.013195465187717453,
+            0.0405287620568789,
+            0.002716064453125
+          ],
+          "clipped_action": [
+            0.009897624889703376,
+            0.0025585766431098934,
+            -0.003774146571995235,
+            -0.019020327307494995,
+            0.013195465187717453,
+            0.0405287620568789,
+            0.002716064453125
+          ],
+          "rotation_delta_before_lock": [
+            -0.019020327307494995,
+            0.013195465187717453,
+            0.0405287620568789
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.3995177915295259,
+            0.009704045219396338,
+            1.4831695381113474
+          ],
+          "current_quaternion_wxyz": [
+            0.11849279752220593,
+            0.6036134184420323,
+            0.7839471572940075,
+            0.08388773797599934
+          ],
+          "target_position_m": [
+            0.40941541641922924,
+            0.012262621862506231,
+            1.4793953915393523
+          ],
+          "target_quaternion_wxyz": [
+            0.11732889062695143,
+            0.5869909294667492,
+            0.7975438595379527,
+            0.07482895336243216
+          ],
+          "inference_seconds": null,
+          "server_request_index": 9,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002716064453125,
+          "gripper_command_at_policy_step": 0.00360107421875,
+          "gripper_measured_at_policy_step": 0.0036073943664288732
+        },
+        {
+          "policy_step": 20,
+          "raw_action": [
+            0.009405785739752788,
+            0.001782065161604545,
+            -0.0038143239846869653,
+            -0.018739390620212147,
+            0.013920849850887686,
+            0.039903558894094464,
+            0.0033721923828125
+          ],
+          "clipped_action": [
+            0.009405785739752788,
+            0.001782065161604545,
+            -0.0038143239846869653,
+            -0.018739390620212147,
+            0.013920849850887686,
+            0.039903558894094464,
+            0.0033721923828125
+          ],
+          "rotation_delta_before_lock": [
+            -0.018739390620212147,
+            0.013920849850887686,
+            0.039903558894094464
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.41028625176005834,
+            0.011828602959883442,
+            1.4786566175772031
+          ],
+          "current_quaternion_wxyz": [
+            0.11662837074239717,
+            0.5874364530102117,
+            0.7974191490600082,
+            0.07374915270813345
+          ],
+          "target_position_m": [
+            0.41969203749981115,
+            0.013610668121487987,
+            1.474842293592516
+          ],
+          "target_quaternion_wxyz": [
+            0.11507964692778958,
+            0.5707916132905034,
+            0.8104281382900045,
+            0.06449683502310168
+          ],
+          "inference_seconds": 0.18288226600270718,
+          "server_request_index": 10,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0033721923828125,
+          "gripper_command_at_policy_step": 0.002716064453125,
+          "gripper_measured_at_policy_step": 0.002722381003971819
+        },
+        {
+          "policy_step": 21,
+          "raw_action": [
+            0.010568314639635994,
+            0.0018929953732481665,
+            -0.0038143239846869653,
+            -0.02132400814321434,
+            0.014902252630470944,
+            0.0434463768165396,
+            0.003936767578125
+          ],
+          "clipped_action": [
+            0.010568314639635994,
+            0.0018929953732481665,
+            -0.0038143239846869653,
+            -0.02132400814321434,
+            0.014902252630470944,
+            0.0434463768165396,
+            0.003936767578125
+          ],
+          "rotation_delta_before_lock": [
+            -0.02132400814321434,
+            0.014902252630470944,
+            0.0434463768165396
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.4205759739591336,
+            0.013164739425213422,
+            1.474069939160473
+          ],
+          "current_quaternion_wxyz": [
+            0.1144032695367491,
+            0.5713390155592993,
+            0.8102082670978328,
+            0.06360963091670398
+          ],
+          "target_position_m": [
+            0.4311442885987696,
+            0.015057734798461588,
+            1.470255615175786
+          ],
+          "target_quaternion_wxyz": [
+            0.1130395924143072,
+            0.5528117328204107,
+            0.8238890257285232,
+            0.053179995176825264
+          ],
+          "inference_seconds": null,
+          "server_request_index": 10,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.003936767578125,
+          "gripper_command_at_policy_step": 0.0033721923828125,
+          "gripper_measured_at_policy_step": 0.003377132888498058
+        },
+        {
+          "policy_step": 22,
+          "raw_action": [
+            0.010478889339644979,
+            0.0017868882142847032,
+            -0.004035299754491486,
+            -0.02138019548067091,
+            0.01494492231653978,
+            0.04372424488888824,
+            0.003936767578125
+          ],
+          "clipped_action": [
+            0.010478889339644979,
+            0.0017868882142847032,
+            -0.004035299754491486,
+            -0.02138019548067091,
+            0.01494492231653978,
+            0.04372424488888824,
+            0.003936767578125
+          ],
+          "rotation_delta_before_lock": [
+            -0.02138019548067091,
+            0.01494492231653978,
+            0.04372424488888824
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.43203556531820386,
+            0.014596076629114592,
+            1.4694470336231773
+          ],
+          "current_quaternion_wxyz": [
+            0.1125667101746827,
+            0.5534657864572693,
+            0.8235852765351955,
+            0.05207351780061542
+          ],
+          "target_position_m": [
+            0.44251445465784883,
+            0.016382964843399295,
+            1.4654117338686858
+          ],
+          "target_quaternion_wxyz": [
+            0.1111543420533108,
+            0.534468933043128,
+            0.8368147215000713,
+            0.04157876543614458
+          ],
+          "inference_seconds": null,
+          "server_request_index": 10,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.003936767578125,
+          "gripper_command_at_policy_step": 0.003936767578125,
+          "gripper_measured_at_policy_step": 0.003943377013864269
+        },
+        {
+          "policy_step": 23,
+          "raw_action": [
+            0.010478889339644979,
+            0.0021582632706568256,
+            -0.004457162587754658,
+            -0.02132400814321434,
+            0.014859582944402108,
+            0.04462731612402132,
+            0.00360107421875
+          ],
+          "clipped_action": [
+            0.010478889339644979,
+            0.0021582632706568256,
+            -0.004457162587754658,
+            -0.02132400814321434,
+            0.014859582944402108,
+            0.04462731612402132,
+            0.00360107421875
+          ],
+          "rotation_delta_before_lock": [
+            -0.02132400814321434,
+            0.014859582944402108,
+            0.04462731612402132
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.44341146326510567,
+            0.015907979603517534,
+            1.4645719691549146
+          ],
+          "current_quaternion_wxyz": [
+            0.11074195950022361,
+            0.5347999955992241,
+            0.836687197853185,
+            0.04098433922495138
+          ],
+          "target_position_m": [
+            0.45389035260475064,
+            0.01806624287417436,
+            1.4601148065671599
+          ],
+          "target_quaternion_wxyz": [
+            0.10927631789717607,
+            0.5150781025591167,
+            0.849599913421052,
+            0.03054867797264531
+          ],
+          "inference_seconds": null,
+          "server_request_index": 10,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00360107421875,
+          "gripper_command_at_policy_step": 0.003936767578125,
+          "gripper_measured_at_policy_step": 0.003947102304162731
+        },
+        {
+          "policy_step": 24,
+          "raw_action": [
+            0.01021061343967193,
+            0.002148617165296511,
+            -0.004356719056025329,
+            -0.020481198081365802,
+            0.014304877025507222,
+            0.04309904172610381,
+            0.0028839111328125
+          ],
+          "clipped_action": [
+            0.01021061343967193,
+            0.002148617165296511,
+            -0.004356719056025329,
+            -0.020481198081365802,
+            0.014304877025507222,
+            0.04309904172610381,
+            0.0028839111328125
+          ],
+          "rotation_delta_before_lock": [
+            -0.020481198081365802,
+            0.014304877025507222,
+            0.04309904172610381
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.4547883337092631,
+            0.017579113568273446,
+            1.4592442904802352
+          ],
+          "current_quaternion_wxyz": [
+            0.10899668345169035,
+            0.5153700546636814,
+            0.8494747415378385,
+            0.0301013827208773
+          ],
+          "target_position_m": [
+            0.464998947148935,
+            0.019727730733569957,
+            1.4548875714242098
+          ],
+          "target_quaternion_wxyz": [
+            0.1075162353837584,
+            0.49600551202286974,
+            0.8614038094252202,
+            0.020056626823924856
+          ],
+          "inference_seconds": null,
+          "server_request_index": 10,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0028839111328125,
+          "gripper_command_at_policy_step": 0.00360107421875,
+          "gripper_measured_at_policy_step": 0.0036144274575957702
+        },
+        {
+          "policy_step": 25,
+          "raw_action": [
+            0.009316360439761773,
+            0.0015650277909974603,
+            -0.004838848008326098,
+            -0.016463803453221085,
+            0.014368881554610479,
+            0.041084498201576176,
+            0.0032806396484375
+          ],
+          "clipped_action": [
+            0.009316360439761773,
+            0.0015650277909974603,
+            -0.004838848008326098,
+            -0.016463803453221085,
+            0.014368881554610479,
+            0.041084498201576176,
+            0.0032806396484375
+          ],
+          "rotation_delta_before_lock": [
+            -0.016463803453221085,
+            0.014368881554610479,
+            0.041084498201576176
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.4658942310705177,
+            0.019230843992547684,
+            1.4539920993720736
+          ],
+          "current_quaternion_wxyz": [
+            0.10725490981883733,
+            0.49652770477837027,
+            0.8611544803756986,
+            0.019224558151933396
+          ],
+          "target_position_m": [
+            0.47521059151027945,
+            0.020795871783545146,
+            1.4491532513637475
+          ],
+          "target_quaternion_wxyz": [
+            0.10473164244015468,
+            0.47796012888678846,
+            0.8720490046441378,
+            0.010767161440261082
+          ],
+          "inference_seconds": 0.1962427159305662,
+          "server_request_index": 11,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0032806396484375,
+          "gripper_command_at_policy_step": 0.0028839111328125,
+          "gripper_measured_at_policy_step": 0.0029005526468671716
+        },
+        {
+          "policy_step": 26,
+          "raw_action": [
+            0.009942337539698884,
+            0.0021003866384949367,
+            -0.0043366303496794635,
+            -0.01725042617761306,
+            0.013920849850887686,
+            0.041015031183489016,
+            0.003082275390625
+          ],
+          "clipped_action": [
+            0.009942337539698884,
+            0.0021003866384949367,
+            -0.0043366303496794635,
+            -0.01725042617761306,
+            0.013920849850887686,
+            0.041015031183489016,
+            0.003082275390625
+          ],
+          "rotation_delta_before_lock": [
+            -0.01725042617761306,
+            0.013920849850887686,
+            0.041015031183489016
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.47609652553024207,
+            0.020291916727855488,
+            1.448239169041153
+          ],
+          "current_quaternion_wxyz": [
+            0.10411645284695659,
+            0.4783659790933018,
+            0.8719093442846912,
+            0.009992479257606419
+          ],
+          "target_position_m": [
+            0.48603886306994093,
+            0.022392303366350425,
+            1.4439025386914734
+          ],
+          "target_quaternion_wxyz": [
+            0.10194058824559887,
+            0.4595285381578573,
+            0.8822924751486891,
+            0.0012756890858566289
+          ],
+          "inference_seconds": null,
+          "server_request_index": 11,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.003082275390625,
+          "gripper_command_at_policy_step": 0.0032806396484375,
+          "gripper_measured_at_policy_step": 0.0032959793662202808
+        },
+        {
+          "policy_step": 27,
+          "raw_action": [
+            0.011328429689559627,
+            0.0025682227484702096,
+            -0.005160267309859943,
+            -0.019497919675875837,
+            0.015798316037916527,
+            0.04747546386559487,
+            0.002716064453125
+          ],
+          "clipped_action": [
+            0.011328429689559627,
+            0.0025682227484702096,
+            -0.005160267309859943,
+            -0.019497919675875837,
+            0.015798316037916527,
+            0.04747546386559487,
+            0.002716064453125
+          ],
+          "rotation_delta_before_lock": [
+            -0.019497919675875837,
+            0.015798316037916527,
+            0.04747546386559487
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.48690888355334727,
+            0.021875460538448393,
+            1.4429762490369225
+          ],
+          "current_quaternion_wxyz": [
+            0.10160953124764961,
+            0.4602665323585461,
+            0.8819467713917057,
+            0.00033879495084584505
+          ],
+          "target_position_m": [
+            0.4982373132429069,
+            0.0244436832869186,
+            1.4378159817270626
+          ],
+          "target_quaternion_wxyz": [
+            0.09908564701636742,
+            0.43817994189873555,
+            0.8933590911364984,
+            -0.009481948994718924
+          ],
+          "inference_seconds": null,
+          "server_request_index": 11,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002716064453125,
+          "gripper_command_at_policy_step": 0.003082275390625,
+          "gripper_measured_at_policy_step": 0.0030999841361211145
+        },
+        {
+          "policy_step": 28,
+          "raw_action": [
+            0.01065773993962701,
+            0.002693622118154302,
+            -0.005682573674852441,
+            -0.018879858963853573,
+            0.015542297921503506,
+            0.04719759579324623,
+            0.0023956298828125
+          ],
+          "clipped_action": [
+            0.01065773993962701,
+            0.002693622118154302,
+            -0.005682573674852441,
+            -0.018879858963853573,
+            0.015542297921503506,
+            0.04719759579324623,
+            0.0023956298828125
+          ],
+          "rotation_delta_before_lock": [
+            -0.018879858963853573,
+            0.015542297921503506,
+            0.04719759579324623
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.4990783866308911,
+            0.023909877524987664,
+            1.4368836039303337
+          ],
+          "current_quaternion_wxyz": [
+            0.09828292706280829,
+            0.439095733066377,
+            0.8929854740845229,
+            -0.010599364363370684
+          ],
+          "target_position_m": [
+            0.5097361265705181,
+            0.026603499643141966,
+            1.4312010302554812
+          ],
+          "target_quaternion_wxyz": [
+            0.09570415668983345,
+            0.4168597152347345,
+            0.9036946347755985,
+            -0.020117139073475617
+          ],
+          "inference_seconds": null,
+          "server_request_index": 11,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0023956298828125,
+          "gripper_command_at_policy_step": 0.002716064453125,
+          "gripper_measured_at_policy_step": 0.0027334605311525317
+        },
+        {
+          "policy_step": 29,
+          "raw_action": [
+            0.010076475489685406,
+            0.0030698202272065843,
+            -0.006003992976386286,
+            -0.01750326919616762,
+            0.01494492231653978,
+            0.045947189467677355,
+            0.002044677734375
+          ],
+          "clipped_action": [
+            0.010076475489685406,
+            0.0030698202272065843,
+            -0.006003992976386286,
+            -0.01750326919616762,
+            0.01494492231653978,
+            0.045947189467677355,
+            0.002044677734375
+          ],
+          "rotation_delta_before_lock": [
+            -0.01750326919616762,
+            0.01494492231653978,
+            0.045947189467677355
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5105474548238853,
+            0.026059837412237143,
+            1.430273522437504
+          ],
+          "current_quaternion_wxyz": [
+            0.09487392745323547,
+            0.41723873300451286,
+            0.9036021097139441,
+            -0.020347110136246883
+          ],
+          "target_position_m": [
+            0.5206239303135707,
+            0.029129657639443727,
+            1.4242695294611178
+          ],
+          "target_quaternion_wxyz": [
+            0.09220973584805782,
+            0.3953620656215788,
+            0.9134190720646729,
+            -0.029185620959336807
+          ],
+          "inference_seconds": null,
+          "server_request_index": 11,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002044677734375,
+          "gripper_command_at_policy_step": 0.0023956298828125,
+          "gripper_measured_at_policy_step": 0.0024134388257718298
+        },
+        {
+          "policy_step": 30,
+          "raw_action": [
+            0.009405785739752788,
+            0.004381690556209409,
+            -0.007329847595213398,
+            -0.016505943956313513,
+            0.016139673526467228,
+            0.04942054037203534,
+            0.002471923828125
+          ],
+          "clipped_action": [
+            0.009405785739752788,
+            0.004381690556209409,
+            -0.007329847595213398,
+            -0.016505943956313513,
+            0.016139673526467228,
+            0.04942054037203534,
+            0.002471923828125
+          ],
+          "rotation_delta_before_lock": [
+            -0.016505943956313513,
+            0.016139673526467228,
+            0.04942054037203534
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5214008478989305,
+            0.02857489451770966,
+            1.4233544412346575
+          ],
+          "current_quaternion_wxyz": [
+            0.09129266084375687,
+            0.39626297324412035,
+            0.9131162194391337,
+            -0.029327050806043017
+          ],
+          "target_position_m": [
+            0.5308066336386833,
+            0.03295658507391907,
+            1.416024593639444
+          ],
+          "target_quaternion_wxyz": [
+            0.08788545573218227,
+            0.37256507706350783,
+            0.923061809786175,
+            -0.03779292708537095
+          ],
+          "inference_seconds": 0.18293557094875723,
+          "server_request_index": 12,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002471923828125,
+          "gripper_command_at_policy_step": 0.002044677734375,
+          "gripper_measured_at_policy_step": 0.0020630688502871752
+        },
+        {
+          "policy_step": 31,
+          "raw_action": [
+            0.008846877614808941,
+            0.005018333509990192,
+            -0.00684771864291263,
+            -0.01576146173501397,
+            0.01515827074688397,
+            0.04733652982942055,
+            0.0012054443359375
+          ],
+          "clipped_action": [
+            0.008846877614808941,
+            0.005018333509990192,
+            -0.00684771864291263,
+            -0.01576146173501397,
+            0.01515827074688397,
+            0.04733652982942055,
+            0.0012054443359375
+          ],
+          "rotation_delta_before_lock": [
+            -0.01576146173501397,
+            0.01515827074688397,
+            0.04733652982942055
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5315538324748771,
+            0.03239562170165996,
+            1.4151197272491614
+          ],
+          "current_quaternion_wxyz": [
+            0.08704633030609234,
+            0.37354318594971636,
+            0.9227284187978645,
+            -0.03821897112130401
+          ],
+          "target_position_m": [
+            0.540400710089686,
+            0.037413955211650154,
+            1.4082720086062488
+          ],
+          "target_quaternion_wxyz": [
+            0.08387199046652882,
+            0.35060378626359023,
+            0.9316134501001374,
+            -0.04624774443512047
+          ],
+          "inference_seconds": null,
+          "server_request_index": 12,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0012054443359375,
+          "gripper_command_at_policy_step": 0.002471923828125,
+          "gripper_measured_at_policy_step": 0.002487462913167926
+        },
+        {
+          "policy_step": 32,
+          "raw_action": [
+            0.009852912239707868,
+            0.005462054356564676,
+            -0.007570912071363782,
+            -0.016997583159058496,
+            0.016609040073224435,
+            0.05108774880612717,
+            0.00116729736328125
+          ],
+          "clipped_action": [
+            0.009852912239707868,
+            0.005462054356564676,
+            -0.007570912071363782,
+            -0.016997583159058496,
+            0.016609040073224435,
+            0.05108774880612717,
+            0.00116729736328125
+          ],
+          "rotation_delta_before_lock": [
+            -0.016997583159058496,
+            0.016609040073224435,
+            0.05108774880612717
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.541112364105076,
+            0.03684642641581669,
+            1.407385800746168
+          ],
+          "current_quaternion_wxyz": [
+            0.08337070661181961,
+            0.35143804958117864,
+            0.9313192257228703,
+            -0.04674529264617474
+          ],
+          "target_position_m": [
+            0.5509652763447839,
+            0.04230848077238136,
+            1.399814888674804
+          ],
+          "target_quaternion_wxyz": [
+            0.07978478926593231,
+            0.32641563645064736,
+            0.9402206016917256,
+            -0.05542959351067747
+          ],
+          "inference_seconds": null,
+          "server_request_index": 12,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00116729736328125,
+          "gripper_command_at_policy_step": 0.0012054443359375,
+          "gripper_measured_at_policy_step": 0.001180945799268529
+        },
+        {
+          "policy_step": 33,
+          "raw_action": [
+            0.008690383339824663,
+            0.005519930988726567,
+            -0.007611089484055512,
+            -0.01578955540374225,
+            0.015712976665778852,
+            0.04900373826351238,
+            0.00124359130859375
+          ],
+          "clipped_action": [
+            0.008690383339824663,
+            0.005519930988726567,
+            -0.007611089484055512,
+            -0.01578955540374225,
+            0.015712976665778852,
+            0.04900373826351238,
+            0.00124359130859375
+          ],
+          "rotation_delta_before_lock": [
+            -0.01578955540374225,
+            0.015712976665778852,
+            0.04900373826351238
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5516232284669421,
+            0.041722809538785426,
+            1.3989725467600975
+          ],
+          "current_quaternion_wxyz": [
+            0.07883896261662512,
+            0.3270350175640146,
+            0.940095514680224,
+            -0.055253402959128325
+          ],
+          "target_position_m": [
+            0.5603136118067668,
+            0.04724274052751199,
+            1.391361457276042
+          ],
+          "target_quaternion_wxyz": [
+            0.07536065662522215,
+            0.30282887102789097,
+            0.947950199441277,
+            -0.06329190852100852
+          ],
+          "inference_seconds": null,
+          "server_request_index": 12,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00124359130859375,
+          "gripper_command_at_policy_step": 0.00116729736328125,
+          "gripper_measured_at_policy_step": 0.0011306864948108508
+        },
+        {
+          "policy_step": 34,
+          "raw_action": [
+            0.007393716489954936,
+            0.005481346567285307,
+            -0.007209315357138205,
+            -0.013310618361151537,
+            0.013942184693922104,
+            0.04358531085271392,
+            0.00102996826171875
+          ],
+          "clipped_action": [
+            0.007393716489954936,
+            0.005481346567285307,
+            -0.007209315357138205,
+            -0.013310618361151537,
+            0.013942184693922104,
+            0.04358531085271392,
+            0.00102996826171875
+          ],
+          "rotation_delta_before_lock": [
+            -0.013310618361151537,
+            0.013942184693922104,
+            0.04358531085271392
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5609214095947925,
+            0.04664495704163202,
+            1.3905663513629063
+          ],
+          "current_quaternion_wxyz": [
+            0.07476960821476168,
+            0.30324260522314905,
+            0.9478444818700694,
+            -0.06359454578301639
+          ],
+          "target_position_m": [
+            0.5683151260847474,
+            0.052126303608917325,
+            1.383357036005768
+          ],
+          "target_quaternion_wxyz": [
+            0.0715452408401203,
+            0.2815615746084332,
+            0.9542812086819898,
+            -0.07036855102664565
+          ],
+          "inference_seconds": null,
+          "server_request_index": 12,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00102996826171875,
+          "gripper_command_at_policy_step": 0.00124359130859375,
+          "gripper_measured_at_policy_step": 0.0012258419702793066
+        },
+        {
+          "policy_step": 35,
+          "raw_action": [
+            0.008332682139860602,
+            -0.0031036872033949475,
+            -0.007289670182521668,
+            -0.011512294339860906,
+            0.016907727875706297,
+            0.044835717178282795,
+            0.005218505859375
+          ],
+          "clipped_action": [
+            0.008332682139860602,
+            -0.0031036872033949475,
+            -0.007289670182521668,
+            -0.011512294339860906,
+            0.016907727875706297,
+            0.044835717178282795,
+            0.005218505859375
+          ],
+          "rotation_delta_before_lock": [
+            -0.011512294339860906,
+            0.016907727875706297,
+            0.044835717178282795
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5679061260306429,
+            0.049947274551901136,
+            1.3852087170658927
+          ],
+          "current_quaternion_wxyz": [
+            0.07396479062982217,
+            0.28244241933539044,
+            0.9540755728259017,
+            -0.0670469301607873
+          ],
+          "target_position_m": [
+            0.5762388081705035,
+            0.04684358734850619,
+            1.377919046883371
+          ],
+          "target_quaternion_wxyz": [
+            0.06900604069160557,
+            0.25997805521524486,
+            0.960356394097268,
+            -0.07324734446422143
+          ],
+          "inference_seconds": 0.18606793705839664,
+          "server_request_index": 13,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.005218505859375,
+          "gripper_command_at_policy_step": 0.00102996826171875,
+          "gripper_measured_at_policy_step": 0.002202863580194059
+        },
+        {
+          "policy_step": 36,
+          "raw_action": [
+            0.008332682139860602,
+            -0.00289147288546802,
+            -0.007892331372897627,
+            -0.00987583813643832,
+            0.017163745992119322,
+            0.04622505754002599,
+            0.005218505859375
+          ],
+          "clipped_action": [
+            0.008332682139860602,
+            -0.00289147288546802,
+            -0.007892331372897627,
+            -0.00987583813643832,
+            0.017163745992119322,
+            0.04622505754002599,
+            0.005218505859375
+          ],
+          "rotation_delta_before_lock": [
+            -0.00987583813643832,
+            0.017163745992119322,
+            0.04622505754002599
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5628636572348087,
+            0.03229539500063754,
+            1.4033631690832449
+          ],
+          "current_quaternion_wxyz": [
+            0.10098323726486874,
+            0.2607203272902039,
+            0.9592882590160975,
+            -0.03991657353857867
+          ],
+          "target_position_m": [
+            0.5711963393746693,
+            0.029403922115169522,
+            1.3954708377103473
+          ],
+          "target_quaternion_wxyz": [
+            0.09492945050236128,
+            0.23762755653450782,
+            0.9656797552019811,
+            -0.044543845767970394
+          ],
+          "inference_seconds": null,
+          "server_request_index": 13,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.005218505859375,
+          "gripper_command_at_policy_step": 0.005218505859375,
+          "gripper_measured_at_policy_step": 0.0058855057276528955
+        },
+        {
+          "policy_step": 37,
+          "raw_action": [
+            0.008399751114853861,
+            -0.0030072261497917988,
+            -0.007972686198281087,
+            -0.009833697633345895,
+            0.017462433794601183,
+            0.04650292561237463,
+            0.004608154296875
+          ],
+          "clipped_action": [
+            0.008399751114853861,
+            -0.0030072261497917988,
+            -0.007972686198281087,
+            -0.009833697633345895,
+            0.017462433794601183,
+            0.04650292561237463,
+            0.004608154296875
+          ],
+          "rotation_delta_before_lock": [
+            -0.009833697633345895,
+            0.017462433794601183,
+            0.04650292561237463
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5714819601127983,
+            0.028706852592379064,
+            1.3947676830753384
+          ],
+          "current_quaternion_wxyz": [
+            0.09747078098433826,
+            0.23798530673458015,
+            0.9653769710555244,
+            -0.043700622288613156
+          ],
+          "target_position_m": [
+            0.5798817112276522,
+            0.025699626442587265,
+            1.3867949968770572
+          ],
+          "target_quaternion_wxyz": [
+            0.09119753370657378,
+            0.2146042863732375,
+            0.9712365814601253,
+            -0.048244304842347756
+          ],
+          "inference_seconds": null,
+          "server_request_index": 13,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.004608154296875,
+          "gripper_command_at_policy_step": 0.005218505859375,
+          "gripper_measured_at_policy_step": 0.0052498298986205505
+        },
+        {
+          "policy_step": 38,
+          "raw_action": [
+            0.008086762564885308,
+            -0.0035281158392488033,
+            -0.007771799134822436,
+            -0.009735369792796898,
+            0.017505103480670022,
+            0.045947189467677355,
+            0.00445556640625
+          ],
+          "clipped_action": [
+            0.008086762564885308,
+            -0.0035281158392488033,
+            -0.007771799134822436,
+            -0.009735369792796898,
+            0.017505103480670022,
+            0.045947189467677355,
+            0.00445556640625
+          ],
+          "rotation_delta_before_lock": [
+            -0.009735369792796898,
+            0.017505103480670022,
+            0.045947189467677355
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5799831678345733,
+            0.024978832802419887,
+            1.3858073423573052
+          ],
+          "current_quaternion_wxyz": [
+            0.09474169772229535,
+            0.21488605224252047,
+            0.9708906566364078,
+            -0.047109745493333806
+          ],
+          "target_position_m": [
+            0.5880699303994585,
+            0.021450716963171083,
+            1.3780355432224827
+          ],
+          "target_quaternion_wxyz": [
+            0.08834312006918006,
+            0.1916426467155598,
+            0.9761218121471961,
+            -0.05152472170494357
+          ],
+          "inference_seconds": null,
+          "server_request_index": 13,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00445556640625,
+          "gripper_command_at_policy_step": 0.004608154296875,
+          "gripper_measured_at_policy_step": 0.004630532501072815
+        },
+        {
+          "policy_step": 39,
+          "raw_action": [
+            0.007304291189963919,
+            -0.0035859924714106923,
+            -0.007771799134822436,
+            -0.008176171178377097,
+            0.017078406619981647,
+            0.04469678314210848,
+            0.0037078857421875
+          ],
+          "clipped_action": [
+            0.007304291189963919,
+            -0.0035859924714106923,
+            -0.007771799134822436,
+            -0.008176171178377097,
+            0.017078406619981647,
+            0.04469678314210848,
+            0.0037078857421875
+          ],
+          "rotation_delta_before_lock": [
+            -0.008176171178377097,
+            0.017078406619981647,
+            0.04469678314210848
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5881085764473007,
+            0.020737914652127917,
+            1.3770004575116763
+          ],
+          "current_quaternion_wxyz": [
+            0.09203831579244615,
+            0.19188197164349807,
+            0.9757905129173551,
+            -0.05042947833141786
+          ],
+          "target_position_m": [
+            0.5954128676372646,
+            0.017151922180717226,
+            1.3692286583768538
+          ],
+          "target_quaternion_wxyz": [
+            0.08559081258237025,
+            0.16921344105144703,
+            0.9803706665548656,
+            -0.05398500095199203
+          ],
+          "inference_seconds": null,
+          "server_request_index": 13,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0037078857421875,
+          "gripper_command_at_policy_step": 0.00445556640625,
+          "gripper_measured_at_policy_step": 0.00447612564111588
+        },
+        {
+          "policy_step": 40,
+          "raw_action": [
+            0.007751417689918999,
+            -0.0019461545601571605,
+            -0.008535169975965318,
+            -0.006125333361212314,
+            0.015414288863296991,
+            0.04226543750905789,
+            0.00347900390625
+          ],
+          "clipped_action": [
+            0.007751417689918999,
+            -0.0019461545601571605,
+            -0.008535169975965318,
+            -0.006125333361212314,
+            0.015414288863296991,
+            0.04226543750905789,
+            0.00347900390625
+          ],
+          "rotation_delta_before_lock": [
+            -0.006125333361212314,
+            0.015414288863296991,
+            0.04226543750905789
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.5956094089096479,
+            0.01644713942533037,
+            1.3683475413927013
+          ],
+          "current_quaternion_wxyz": [
+            0.08855969047480071,
+            0.16952003472099167,
+            0.9800978504269336,
+            -0.053182164676755565
+          ],
+          "target_position_m": [
+            0.6033608265995669,
+            0.01450098486517321,
+            1.359812371416736
+          ],
+          "target_quaternion_wxyz": [
+            0.08262668995894355,
+            0.1480849475430893,
+            0.9839470338326973,
+            -0.05560497306379951
+          ],
+          "inference_seconds": 0.18585381796583533,
+          "server_request_index": 14,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00347900390625,
+          "gripper_command_at_policy_step": 0.0037078857421875,
+          "gripper_measured_at_policy_step": 0.003725993479120393
+        },
+        {
+          "policy_step": 41,
+          "raw_action": [
+            0.006901877340004348,
+            -0.0016181869779064544,
+            -0.0074905572459803196,
+            -0.00474874359352636,
+            0.012683428954891406,
+            0.03455459850138316,
+            0.0028076171875
+          ],
+          "clipped_action": [
+            0.006901877340004348,
+            -0.0016181869779064544,
+            -0.0074905572459803196,
+            -0.00474874359352636,
+            0.012683428954891406,
+            0.03455459850138316,
+            0.0028076171875
+          ],
+          "rotation_delta_before_lock": [
+            -0.00474874359352636,
+            0.012683428954891406,
+            0.03455459850138316
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6035306671901358,
+            0.01384783506221635,
+            1.3589866348198811
+          ],
+          "current_quaternion_wxyz": [
+            0.08552528342945108,
+            0.14835817108096,
+            0.9836982044036773,
+            -0.05489190851852032
+          ],
+          "target_position_m": [
+            0.6104325445301402,
+            0.012229648084309895,
+            1.351496077573901
+          ],
+          "target_quaternion_wxyz": [
+            0.0805731497350436,
+            0.13078680867209613,
+            0.986503936969861,
+            -0.056681218777539066
+          ],
+          "inference_seconds": null,
+          "server_request_index": 14,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0028076171875,
+          "gripper_command_at_policy_step": 0.00347900390625,
+          "gripper_measured_at_policy_step": 0.0034998747809180664
+        },
+        {
+          "policy_step": 42,
+          "raw_action": [
+            0.0041520493652806145,
+            -0.00040277770250677844,
+            -0.004256275524296003,
+            -0.0037935588567646825,
+            0.007669740841803018,
+            0.021008529974387034,
+            0.0057373046875
+          ],
+          "clipped_action": [
+            0.0041520493652806145,
+            -0.00040277770250677844,
+            -0.004256275524296003,
+            -0.0037935588567646825,
+            0.007669740841803018,
+            0.021008529974387034,
+            0.0057373046875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0037935588567646825,
+            0.007669740841803018,
+            0.021008529974387034
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6105998710720085,
+            0.011528514925612684,
+            1.3505944371421015
+          ],
+          "current_quaternion_wxyz": [
+            0.0835452855052472,
+            0.13109114121201068,
+            0.9862538151714408,
+            -0.05602419142974508
+          ],
+          "target_position_m": [
+            0.6147519204372891,
+            0.011125737223105905,
+            1.3463381616178054
+          ],
+          "target_quaternion_wxyz": [
+            0.08059496327175111,
+            0.12034975549689071,
+            0.9877814800181056,
+            -0.05751639749067065
+          ],
+          "inference_seconds": null,
+          "server_request_index": 14,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0057373046875,
+          "gripper_command_at_policy_step": 0.0028076171875,
+          "gripper_measured_at_policy_step": 0.0028212617697387365
+        },
+        {
+          "policy_step": 43,
+          "raw_action": [
+            0.002603873859186156,
+            -1.211043541402522e-05,
+            -0.0027496225483561038,
+            -0.0023326880828938752,
+            0.004746867346087662,
+            0.01274195482201503,
+            0.007354736328125
+          ],
+          "clipped_action": [
+            0.002603873859186156,
+            -1.211043541402522e-05,
+            -0.0027496225483561038,
+            -0.0023326880828938752,
+            0.004746867346087662,
+            0.01274195482201503,
+            0.007354736328125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0023326880828938752,
+            0.004746867346087662,
+            0.01274195482201503
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6149738053238154,
+            0.01047265401016139,
+            1.3455314259758862
+          ],
+          "current_quaternion_wxyz": [
+            0.08315057102089686,
+            0.12063535464384882,
+            0.9875646852098983,
+            -0.05700075679432822
+          ],
+          "target_position_m": [
+            0.6175776791830015,
+            0.010460543574747365,
+            1.34278180342753
+          ],
+          "target_quaternion_wxyz": [
+            0.08130854093154867,
+            0.11410851431380646,
+            0.9884406175663467,
+            -0.057907803254290374
+          ],
+          "inference_seconds": null,
+          "server_request_index": 14,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.007354736328125,
+          "gripper_command_at_policy_step": 0.0057373046875,
+          "gripper_measured_at_policy_step": 0.005751780651766736
+        },
+        {
+          "policy_step": 44,
+          "raw_action": [
+            0.002279707146718723,
+            9.399672354943982e-05,
+            -0.0022273161833636056,
+            -0.0019393767206978899,
+            0.0041921614271927775,
+            0.011005279369836038,
+            0.01361083984375
+          ],
+          "clipped_action": [
+            0.002279707146718723,
+            9.399672354943982e-05,
+            -0.0022273161833636056,
+            -0.0019393767206978899,
+            0.0041921614271927775,
+            0.011005279369836038,
+            0.01361083984375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0019393767206978899,
+            0.0041921614271927775,
+            0.011005279369836038
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6179271235801976,
+            0.009808318057436288,
+            1.3420312562505043
+          ],
+          "current_quaternion_wxyz": [
+            0.08287942633343291,
+            0.11451920995113832,
+            0.9882736927562787,
+            -0.0577187963204063
+          ],
+          "target_position_m": [
+            0.6202068307269164,
+            0.009902314780985728,
+            1.3398039400671407
+          ],
+          "target_quaternion_wxyz": [
+            0.08123511255778557,
+            0.1088777397377368,
+            0.989004001397967,
+            -0.05846006753448029
+          ],
+          "inference_seconds": null,
+          "server_request_index": 14,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.01361083984375,
+          "gripper_command_at_policy_step": 0.007354736328125,
+          "gripper_measured_at_policy_step": 0.007372249817026111
+        },
+        {
+          "policy_step": 45,
+          "raw_action": [
+            0.0025535721279412085,
+            7.181775306605576e-06,
+            -0.003271928913348602,
+            -0.0012651286712190568,
+            0.004320170485399289,
+            0.010519010243225919,
+            0.004913330078125
+          ],
+          "clipped_action": [
+            0.0025535721279412085,
+            7.181775306605576e-06,
+            -0.003271928913348602,
+            -0.0012651286712190568,
+            0.004320170485399289,
+            0.010519010243225919,
+            0.004913330078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0012651286712190568,
+            0.004320170485399289,
+            0.010519010243225919
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6205443478792196,
+            0.009238419033617265,
+            1.3390214336802302
+          ],
+          "current_quaternion_wxyz": [
+            0.0829973213127104,
+            0.10926320687578704,
+            0.9888260590505122,
+            -0.05827539121075408
+          ],
+          "target_position_m": [
+            0.6230979200071608,
+            0.00924560080892387,
+            1.3357495047668815
+          ],
+          "target_quaternion_wxyz": [
+            0.08123563987830759,
+            0.10388233153197722,
+            0.9895269625372601,
+            -0.05869942436537306
+          ],
+          "inference_seconds": 0.18617725803051144,
+          "server_request_index": 15,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.004913330078125,
+          "gripper_command_at_policy_step": 0.01361083984375,
+          "gripper_measured_at_policy_step": 0.013615226180389017
+        },
+        {
+          "policy_step": 46,
+          "raw_action": [
+            0.0023635433654603,
+            0.0001422272503510142,
+            -0.0023880258341305305,
+            -0.0016022526959584733,
+            0.0035521161361602178,
+            0.008990735845308408,
+            0.006103515625
+          ],
+          "clipped_action": [
+            0.0023635433654603,
+            0.0001422272503510142,
+            -0.0023880258341305305,
+            -0.0016022526959584733,
+            0.0035521161361602178,
+            0.008990735845308408,
+            0.006103515625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0016022526959584733,
+            0.0035521161361602178,
+            0.008990735845308408
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6234897173179563,
+            0.008602593213535422,
+            1.335029771278586
+          ],
+          "current_quaternion_wxyz": [
+            0.08165210858171063,
+            0.10376509315565036,
+            0.9894903856616362,
+            -0.05894501921067253
+          ],
+          "target_position_m": [
+            0.6258532606834166,
+            0.008744820463886437,
+            1.3326417454444555
+          ],
+          "target_quaternion_wxyz": [
+            0.08024185032803312,
+            0.09914563944698487,
+            0.9900427660573415,
+            -0.059554252678631875
+          ],
+          "inference_seconds": null,
+          "server_request_index": 15,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.006103515625,
+          "gripper_command_at_policy_step": 0.004913330078125,
+          "gripper_measured_at_policy_step": 0.004955242933898152
+        },
+        {
+          "policy_step": 47,
+          "raw_action": [
+            0.0020952674654872525,
+            0.0003062110414763664,
+            -0.002066606532596684,
+            -0.0017708147083281833,
+            0.0033814373918848685,
+            0.008990735845308408,
+            0.007110595703125
+          ],
+          "clipped_action": [
+            0.0020952674654872525,
+            0.0003062110414763664,
+            -0.002066606532596684,
+            -0.0017708147083281833,
+            0.0033814373918848685,
+            0.008990735845308408,
+            0.007110595703125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0017708147083281833,
+            0.0033814373918848685,
+            0.008990735845308408
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6261950820415896,
+            0.008084543428967372,
+            1.3318523326820517
+          ],
+          "current_quaternion_wxyz": [
+            0.08189504299231133,
+            0.09950885854760393,
+            0.989877351656234,
+            -0.05944760450918867
+          ],
+          "target_position_m": [
+            0.6282903495070769,
+            0.008390754470443738,
+            1.329785726149455
+          ],
+          "target_quaternion_wxyz": [
+            0.08057581218742169,
+            0.09488480769944461,
+            0.9903986999374915,
+            -0.060123430709695135
+          ],
+          "inference_seconds": null,
+          "server_request_index": 15,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.007110595703125,
+          "gripper_command_at_policy_step": 0.006103515625,
+          "gripper_measured_at_policy_step": 0.006118978662737584
+        },
+        {
+          "policy_step": 48,
+          "raw_action": [
+            0.0018940605405074681,
+            0.0003206801995168391,
+            -0.0018556751159650962,
+            -0.0016022526959584733,
+            0.003253428333678356,
+            0.00857393373678545,
+            0.0091552734375
+          ],
+          "clipped_action": [
+            0.0018940605405074681,
+            0.0003206801995168391,
+            -0.0018556751159650962,
+            -0.0016022526959584733,
+            0.003253428333678356,
+            0.00857393373678545,
+            0.0091552734375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0016022526959584733,
+            0.003253428333678356,
+            0.00857393373678545
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6286407033282636,
+            0.00772428981914946,
+            1.3289783663091248
+          ],
+          "current_quaternion_wxyz": [
+            0.0821819078632604,
+            0.09522141228468411,
+            0.9902405543531152,
+            -0.06002217237738051
+          ],
+          "target_position_m": [
+            0.630534763868771,
+            0.0080449700186663,
+            1.3271226911931597
+          ],
+          "target_quaternion_wxyz": [
+            0.08090378130508058,
+            0.0908117912102525,
+            0.9907236374398056,
+            -0.06061741470704661
+          ],
+          "inference_seconds": null,
+          "server_request_index": 15,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0091552734375,
+          "gripper_command_at_policy_step": 0.007110595703125,
+          "gripper_measured_at_policy_step": 0.007123972064462247
+        },
+        {
+          "policy_step": 49,
+          "raw_action": [
+            0.001692853615527682,
+            0.0001711655664319578,
+            -0.0017250985247169726,
+            -0.0014336906835887668,
+            0.003125419275471844,
+            0.008018197592088171,
+            0.0113525390625
+          ],
+          "clipped_action": [
+            0.001692853615527682,
+            0.0001711655664319578,
+            -0.0017250985247169726,
+            -0.0014336906835887668,
+            0.003125419275471844,
+            0.008018197592088171,
+            0.0113525390625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0014336906835887668,
+            0.003125419275471844,
+            0.008018197592088171
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6308478476688831,
+            0.007433885628715462,
+            1.3263876041942473
+          ],
+          "current_quaternion_wxyz": [
+            0.08250197068151616,
+            0.09114938823708602,
+            0.9905661664157579,
+            -0.060530024038161476
+          ],
+          "target_position_m": [
+            0.6325407012844109,
+            0.00760505119514742,
+            1.3246625056695303
+          ],
+          "target_quaternion_wxyz": [
+            0.08126123322420144,
+            0.08702352445847036,
+            0.9910077032184461,
+            -0.06105121069567828
+          ],
+          "inference_seconds": null,
+          "server_request_index": 15,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0113525390625,
+          "gripper_command_at_policy_step": 0.0091552734375,
+          "gripper_measured_at_policy_step": 0.0091742626551925
+        },
+        {
+          "policy_step": 50,
+          "raw_action": [
+            0.0023076525529659164,
+            -0.0004895926507496127,
+            -0.003452727270461392,
+            -0.0009280046464796403,
+            0.0035947858222290545,
+            0.0071845933750422555,
+            0.004913330078125
+          ],
+          "clipped_action": [
+            0.0023076525529659164,
+            -0.0004895926507496127,
+            -0.003452727270461392,
+            -0.0009280046464796403,
+            0.0035947858222290545,
+            0.0071845933750422555,
+            0.004913330078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0009280046464796403,
+            0.0035947858222290545,
+            0.0071845933750422555
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6328858496381483,
+            0.006983127077504974,
+            1.323904530536382
+          ],
+          "current_quaternion_wxyz": [
+            0.08258758473025307,
+            0.08737276731387464,
+            0.9908706859148996,
+            -0.06099650953026163
+          ],
+          "target_position_m": [
+            0.6351935021911143,
+            0.0064935344267553615,
+            1.3204518032659205
+          ],
+          "target_quaternion_wxyz": [
+            0.08106558848160589,
+            0.0836646061153183,
+            0.9912965928400679,
+            -0.06131614038222163
+          ],
+          "inference_seconds": 0.21141698502469808,
+          "server_request_index": 16,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.004913330078125,
+          "gripper_command_at_policy_step": 0.0113525390625,
+          "gripper_measured_at_policy_step": 0.01137054608813648
+        },
+        {
+          "policy_step": 51,
+          "raw_action": [
+            0.0024138450967052475,
+            -0.0003931315971464622,
+            -0.0027295338420102386,
+            -0.0012651286712190568,
+            0.002826731472989983,
+            0.0062120551218220205,
+            0.0047607421875
+          ],
+          "clipped_action": [
+            0.0024138450967052475,
+            -0.0003931315971464622,
+            -0.0027295338420102386,
+            -0.0012651286712190568,
+            0.002826731472989983,
+            0.0062120551218220205,
+            0.0047607421875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0012651286712190568,
+            0.002826731472989983,
+            0.0062120551218220205
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6355733947975255,
+            0.005870334896891558,
+            1.319726764009151
+          ],
+          "current_quaternion_wxyz": [
+            0.08055778822054714,
+            0.08398725264015496,
+            0.9912816386490519,
+            -0.061784278163807445
+          ],
+          "target_position_m": [
+            0.6379872398942308,
+            0.005477203299745096,
+            1.3169972301671409
+          ],
+          "target_quaternion_wxyz": [
+            0.07940129288472401,
+            0.08076952342403786,
+            0.9916113097227102,
+            -0.06227944447487938
+          ],
+          "inference_seconds": null,
+          "server_request_index": 16,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0047607421875,
+          "gripper_command_at_policy_step": 0.004913330078125,
+          "gripper_measured_at_policy_step": 0.004949687113022017
+        },
+        {
+          "policy_step": 52,
+          "raw_action": [
+            0.0018269915655142067,
+            8.917367086928168e-05,
+            -0.0019360299413485604,
+            -0.0014898780210453356,
+            0.002528043670508122,
+            0.0060731210856477,
+            0.00885009765625
+          ],
+          "clipped_action": [
+            0.0018269915655142067,
+            8.917367086928168e-05,
+            -0.0019360299413485604,
+            -0.0014898780210453356,
+            0.002528043670508122,
+            0.0060731210856477,
+            0.00885009765625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0014898780210453356,
+            0.002528043670508122,
+            0.0060731210856477
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6383384725063422,
+            0.00485272159003567,
+            1.316211808113231
+          ],
+          "current_quaternion_wxyz": [
+            0.08061554672289166,
+            0.08102691072222443,
+            0.9915045614360811,
+            -0.0620844426311972
+          ],
+          "target_position_m": [
+            0.6401654640718565,
+            0.004941895260904951,
+            1.3142757781718823
+          ],
+          "target_quaternion_wxyz": [
+            0.07961069005150165,
+            0.07787716253119897,
+            0.9918006162959256,
+            -0.06268032466919016
+          ],
+          "inference_seconds": null,
+          "server_request_index": 16,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00885009765625,
+          "gripper_command_at_policy_step": 0.0047607421875,
+          "gripper_measured_at_policy_step": 0.0047822096224489075
+        },
+        {
+          "policy_step": 53,
+          "raw_action": [
+            0.0014357558780535122,
+            2.6473986027234636e-05,
+            -0.001614610639814714,
+            -0.0013213160086756257,
+            0.002058677123750911,
+            0.004683780723904508,
+            0.016357421875
+          ],
+          "clipped_action": [
+            0.0014357558780535122,
+            2.6473986027234636e-05,
+            -0.001614610639814714,
+            -0.0013213160086756257,
+            0.002058677123750911,
+            0.004683780723904508,
+            0.016357421875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0013213160086756257,
+            0.002058677123750911,
+            0.004683780723904508
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6405248528403316,
+            0.004302886229580087,
+            1.3134661554152929
+          ],
+          "current_quaternion_wxyz": [
+            0.0808298998368678,
+            0.07827141754491136,
+            0.9916732947023007,
+            -0.06264334810780706
+          ],
+          "target_position_m": [
+            0.6419606087183851,
+            0.004329360215607322,
+            1.3118515447754782
+          ],
+          "target_quaternion_wxyz": [
+            0.08000726560759801,
+            0.0758308749337216,
+            0.9918949518577176,
+            -0.06318955875742234
+          ],
+          "inference_seconds": null,
+          "server_request_index": 16,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.016357421875,
+          "gripper_command_at_policy_step": 0.00885009765625,
+          "gripper_measured_at_policy_step": 0.00885918659382856
+        },
+        {
+          "policy_step": 54,
+          "raw_action": [
+            0.0010109857030961879,
+            -0.00010374843633701586,
+            -0.002287582302401201,
+            -0.0009841919839362091,
+            0.0014613015187871885,
+            0.002599770181289717,
+            0.0191650390625
+          ],
+          "clipped_action": [
+            0.0010109857030961879,
+            -0.00010374843633701586,
+            -0.002287582302401201,
+            -0.0009841919839362091,
+            0.0014613015187871885,
+            0.002599770181289717,
+            0.0191650390625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0009841919839362091,
+            0.0014613015187871885,
+            0.002599770181289717
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6423406243022479,
+            0.0036888229726098395,
+            1.3110521483103685
+          ],
+          "current_quaternion_wxyz": [
+            0.08071187515918994,
+            0.075956745724265,
+            0.9918304063006673,
+            -0.06315545205855044
+          ],
+          "target_position_m": [
+            0.6433516100053441,
+            0.0035850745362728236,
+            1.3087645660079674
+          ],
+          "target_quaternion_wxyz": [
+            0.0801065671029776,
+            0.07458152451885736,
+            0.9919558121550316,
+            -0.06359403147521654
+          ],
+          "inference_seconds": null,
+          "server_request_index": 16,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0191650390625,
+          "gripper_command_at_policy_step": 0.016357421875,
+          "gripper_measured_at_policy_step": 0.01635726464205778
+        },
+        {
+          "policy_step": 55,
+          "raw_action": [
+            0.001815813403015329,
+            -0.0008175602330003189,
+            -0.0030911305562358153,
+            -0.0006470679591967926,
+            0.0027840617869211454,
+            0.004822714760078827,
+            0.0091552734375
+          ],
+          "clipped_action": [
+            0.001815813403015329,
+            -0.0008175602330003189,
+            -0.0030911305562358153,
+            -0.0006470679591967926,
+            0.0027840617869211454,
+            0.004822714760078827,
+            0.0091552734375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0006470679591967926,
+            0.0027840617869211454,
+            0.004822714760078827
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6437720548406327,
+            0.00294403809210371,
+            1.3079769282388056
+          ],
+          "current_quaternion_wxyz": [
+            0.07783174555724741,
+            0.07490784805873348,
+            0.9921005498711607,
+            -0.06377721088337197
+          ],
+          "target_position_m": [
+            0.645587868243648,
+            0.002126477859103391,
+            1.3048857976825698
+          ],
+          "target_quaternion_wxyz": [
+            0.07662843163560536,
+            0.07240128701796093,
+            0.9923649917129528,
+            -0.06401453214514154
+          ],
+          "inference_seconds": 0.20908106595743448,
+          "server_request_index": 17,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0091552734375,
+          "gripper_command_at_policy_step": 0.0191650390625,
+          "gripper_measured_at_policy_step": 0.019172973930835724
+        },
+        {
+          "policy_step": 56,
+          "raw_action": [
+            0.0024362014217030013,
+            -0.0010876511830891361,
+            -0.0032116627943110064,
+            -0.0010965666588493503,
+            0.002314695240163935,
+            0.005100582832427465,
+            0.00689697265625
+          ],
+          "clipped_action": [
+            0.0024362014217030013,
+            -0.0010876511830891361,
+            -0.0032116627943110064,
+            -0.0010965666588493503,
+            0.002314695240163935,
+            0.005100582832427465,
+            0.00689697265625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0010965666588493503,
+            0.002314695240163935,
+            0.005100582832427465
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6459575845052465,
+            0.0015242920874418478,
+            1.3041252947459028
+          ],
+          "current_quaternion_wxyz": [
+            0.07556908702664919,
+            0.07305695273507874,
+            0.992361040919013,
+            -0.06458760878958424
+          ],
+          "target_position_m": [
+            0.6483937859269495,
+            0.0004366409043527117,
+            1.3009136319515917
+          ],
+          "target_quaternion_wxyz": [
+            0.07462504703305142,
+            0.07040966540785915,
+            0.9925953635903383,
+            -0.06502326930747354
+          ],
+          "inference_seconds": null,
+          "server_request_index": 17,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00689697265625,
+          "gripper_command_at_policy_step": 0.0091552734375,
+          "gripper_measured_at_policy_step": 0.009199183562706326
+        },
+        {
+          "policy_step": 57,
+          "raw_action": [
+            0.0017040317780265598,
+            -0.00030631664890362967,
+            -0.0026090016039350475,
+            -0.0011527539963059191,
+            0.0016746499491313753,
+            0.003294440362161314,
+            0.0091552734375
+          ],
+          "clipped_action": [
+            0.0017040317780265598,
+            -0.00030631664890362967,
+            -0.0026090016039350475,
+            -0.0011527539963059191,
+            0.0016746499491313753,
+            0.003294440362161314,
+            0.0091552734375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0011527539963059191,
+            0.0016746499491313753,
+            0.003294440362161314
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6487543085184264,
+            -0.00016073291560856015,
+            1.3001270578188673
+          ],
+          "current_quaternion_wxyz": [
+            0.07507503895934063,
+            0.07064259107301499,
+            0.9925378389461507,
+            -0.06513064648726599
+          ],
+          "target_position_m": [
+            0.650458340296453,
+            -0.0004670495645121898,
+            1.2975180562149322
+          ],
+          "target_quaternion_wxyz": [
+            0.0743918233048169,
+            0.06890972441693698,
+            0.9926776658086339,
+            -0.06563808582590507
+          ],
+          "inference_seconds": null,
+          "server_request_index": 17,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0091552734375,
+          "gripper_command_at_policy_step": 0.00689697265625,
+          "gripper_measured_at_policy_step": 0.006921810836627573
+        },
+        {
+          "policy_step": 58,
+          "raw_action": [
+            0.0012904397655681115,
+            -0.0002629091747822117,
+            -0.0038545013973786957,
+            -0.0007032552966533615,
+            0.0009065955998923034,
+            0.0012104298195465234,
+            0.01361083984375
+          ],
+          "clipped_action": [
+            0.0012904397655681115,
+            -0.0002629091747822117,
+            -0.0038545013973786957,
+            -0.0007032552966533615,
+            0.0009065955998923034,
+            0.0012104298195465234,
+            0.01361083984375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0007032552966533615,
+            0.0009065955998923034,
+            0.0012104298195465234
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6508252503512189,
+            -0.0010654984950743877,
+            1.296731104360168
+          ],
+          "current_quaternion_wxyz": [
+            0.07384351393499781,
+            0.06920618181916278,
+            0.9926867074967024,
+            -0.0658083627444178
+          ],
+          "target_position_m": [
+            0.6521156901167869,
+            -0.0013284076698565994,
+            1.2928766029627892
+          ],
+          "target_quaternion_wxyz": [
+            0.0734576686128448,
+            0.06854957282875655,
+            0.9927385800061919,
+            -0.06614407573056237
+          ],
+          "inference_seconds": null,
+          "server_request_index": 17,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.01361083984375,
+          "gripper_command_at_policy_step": 0.0091552734375,
+          "gripper_measured_at_policy_step": 0.00916938124031863
+        },
+        {
+          "policy_step": 59,
+          "raw_action": [
+            0.0008097787781164018,
+            -0.0003159627542639442,
+            -0.005803105912927634,
+            -0.0006470679591967926,
+            0.00047989873920393014,
+            0.0005157596386749265,
+            0.0174560546875
+          ],
+          "clipped_action": [
+            0.0008097787781164018,
+            -0.0003159627542639442,
+            -0.005803105912927634,
+            -0.0006470679591967926,
+            0.00047989873920393014,
+            0.0005157596386749265,
+            0.0174560546875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0006470679591967926,
+            0.00047989873920393014,
+            0.0005157596386749265
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6525391210367614,
+            -0.0019185895650568059,
+            1.2919644199724574
+          ],
+          "current_quaternion_wxyz": [
+            0.07285714970638069,
+            0.06917514355207742,
+            0.9927564649853314,
+            -0.06588806023127415
+          ],
+          "target_position_m": [
+            0.6533488998148778,
+            -0.0022345523193207503,
+            1.2861613140595298
+          ],
+          "target_quaternion_wxyz": [
+            0.07265830180346475,
+            0.06887974223142548,
+            0.9927703553116478,
+            -0.06620705327647405
+          ],
+          "inference_seconds": null,
+          "server_request_index": 17,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0174560546875,
+          "gripper_command_at_policy_step": 0.01361083984375,
+          "gripper_measured_at_policy_step": 0.01361532252410369
+        },
+        {
+          "policy_step": 60,
+          "raw_action": [
+            0.001234548953073726,
+            -9.892538365685946e-05,
+            -0.0026290903102809127,
+            -0.0005908806217402238,
+            0.0022293558680262604,
+            0.003155506325986995,
+            0.00885009765625
+          ],
+          "clipped_action": [
+            0.001234548953073726,
+            -9.892538365685946e-05,
+            -0.0026290903102809127,
+            -0.0005908806217402238,
+            0.0022293558680262604,
+            0.003155506325986995,
+            0.00885009765625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005908806217402238,
+            0.0022293558680262604,
+            0.003155506325986995
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6538085448281383,
+            -0.0027836404431369815,
+            1.2851483032544802
+          ],
+          "current_quaternion_wxyz": [
+            0.07155789162161247,
+            0.06932161648710589,
+            0.9928047796237822,
+            -0.06642778929377073
+          ],
+          "target_position_m": [
+            0.6550430937812121,
+            -0.002882565826793841,
+            1.2825192129441993
+          ],
+          "target_quaternion_wxyz": [
+            0.07057638507701687,
+            0.0676598976138258,
+            0.9929723946634046,
+            -0.06668534742183825
+          ],
+          "inference_seconds": 0.18458903103601187,
+          "server_request_index": 18,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00885009765625,
+          "gripper_command_at_policy_step": 0.0174560546875,
+          "gripper_measured_at_policy_step": 0.01746213436126709
+        },
+        {
+          "policy_step": 61,
+          "raw_action": [
+            0.0023076525529659164,
+            3.6120091387549166e-05,
+            -0.0035933482148824483,
+            -0.0007032552966533615,
+            0.0014613015187871885,
+            0.0014882978918951614,
+            0.007110595703125
+          ],
+          "clipped_action": [
+            0.0023076525529659164,
+            3.6120091387549166e-05,
+            -0.0035933482148824483,
+            -0.0007032552966533615,
+            0.0014613015187871885,
+            0.0014882978918951614,
+            0.007110595703125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0007032552966533615,
+            0.0014613015187871885,
+            0.0014882978918951614
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6554979963438293,
+            -0.0034321163103182063,
+            1.2814881072074937
+          ],
+          "current_quaternion_wxyz": [
+            0.06914736588447379,
+            0.06776269327358203,
+            0.9930565040725833,
+            -0.06682543610548745
+          ],
+          "target_position_m": [
+            0.6578056488967953,
+            -0.003395996218930657,
+            1.2778947589926113
+          ],
+          "target_quaternion_wxyz": [
+            0.06849530196422408,
+            0.06695053026668261,
+            0.9931333530782911,
+            -0.06717263661127466
+          ],
+          "inference_seconds": null,
+          "server_request_index": 18,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.007110595703125,
+          "gripper_command_at_policy_step": 0.00885009765625,
+          "gripper_measured_at_policy_step": 0.008883657897340913
+        },
+        {
+          "policy_step": 62,
+          "raw_action": [
+            0.0012121926280759723,
+            0.0001470503030311706,
+            -0.0034728159768072572,
+            -0.0007594426341099338,
+            0.0010346046580988156,
+            0.0009325617471978844,
+            0.0093994140625
+          ],
+          "clipped_action": [
+            0.0012121926280759723,
+            0.0001470503030311706,
+            -0.0034728159768072572,
+            -0.0007594426341099338,
+            0.0010346046580988156,
+            0.0009325617471978844,
+            0.0093994140625
+          ],
+          "rotation_delta_before_lock": [
+            -0.0007594426341099338,
+            0.0010346046580988156,
+            0.0009325617471978844
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6582510714562241,
+            -0.003944577237422668,
+            1.2768519105497007
+          ],
+          "current_quaternion_wxyz": [
+            0.0683289971426085,
+            0.06675577151596973,
+            0.9931599115853357,
+            -0.06714316896454202
+          ],
+          "target_position_m": [
+            0.6594632640843,
+            -0.003797526934391497,
+            1.2733790945728936
+          ],
+          "target_quaternion_wxyz": [
+            0.067871867923556,
+            0.0662319798035999,
+            0.9932005771253312,
+            -0.06752294420248708
+          ],
+          "inference_seconds": null,
+          "server_request_index": 18,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0093994140625,
+          "gripper_command_at_policy_step": 0.007110595703125,
+          "gripper_measured_at_policy_step": 0.007125642022182244
+        },
+        {
+          "policy_step": 63,
+          "raw_action": [
+            0.0012457271155726039,
+            0.0001663425137518014,
+            -0.0067271864048374375,
+            -0.0005908806217402238,
+            0.0006505774834792795,
+            0.0005157596386749265,
+            0.007568359375
+          ],
+          "clipped_action": [
+            0.0012457271155726039,
+            0.0001663425137518014,
+            -0.0067271864048374375,
+            -0.0005908806217402238,
+            0.0006505774834792795,
+            0.0005157596386749265,
+            0.007568359375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005908806217402238,
+            0.0006505774834792795,
+            0.0005157596386749265
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.659915796179973,
+            -0.004337001719059849,
+            1.2723114493424035
+          ],
+          "current_quaternion_wxyz": [
+            0.06703424085381988,
+            0.06635618669497781,
+            0.9932462802936672,
+            -0.06756547730348132
+          ],
+          "target_position_m": [
+            0.6611615232955456,
+            -0.004170659205308048,
+            1.265584262937566
+          ],
+          "target_quaternion_wxyz": [
+            0.06674816839791267,
+            0.06605825701746985,
+            0.9932651072092887,
+            -0.06786321165298523
+          ],
+          "inference_seconds": null,
+          "server_request_index": 18,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.007568359375,
+          "gripper_command_at_policy_step": 0.0093994140625,
+          "gripper_measured_at_policy_step": 0.009404106643693289
+        },
+        {
+          "policy_step": 64,
+          "raw_action": [
+            0.0005415028781433542,
+            0.0001422272503510142,
+            -0.006405767103303593,
+            -0.0005346932842836549,
+            0.0003945593670662555,
+            0.00037682560250060747,
+            0.01361083984375
+          ],
+          "clipped_action": [
+            0.0005415028781433542,
+            0.0001422272503510142,
+            -0.006405767103303593,
+            -0.0005346932842836549,
+            0.0003945593670662555,
+            0.00037682560250060747,
+            0.01361083984375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005346932842836549,
+            0.0003945593670662555,
+            0.00037682560250060747
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6616246092244473,
+            -0.004680725799625154,
+            1.2644671253674389
+          ],
+          "current_quaternion_wxyz": [
+            0.06563234976780954,
+            0.06647985500442027,
+            0.9932937101489668,
+            -0.06812069377984449
+          ],
+          "target_position_m": [
+            0.6621661121025907,
+            -0.004538498549274139,
+            1.2580613582641353
+          ],
+          "target_quaternion_wxyz": [
+            0.06546699629213379,
+            0.06626171549262477,
+            0.9933008994377066,
+            -0.06838699169216018
+          ],
+          "inference_seconds": null,
+          "server_request_index": 18,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.01361083984375,
+          "gripper_command_at_policy_step": 0.007568359375,
+          "gripper_measured_at_policy_step": 0.007585522686613055
+        },
+        {
+          "policy_step": 65,
+          "raw_action": [
+            0.0017152099405254358,
+            -0.0002580861221020553,
+            -0.0034125498577696617,
+            -0.0005908806217402238,
+            0.0015893105769937007,
+            0.0013493638557208424,
+            0.00830078125
+          ],
+          "clipped_action": [
+            0.0017152099405254358,
+            -0.0002580861221020553,
+            -0.0034125498577696617,
+            -0.0005908806217402238,
+            0.0015893105769937007,
+            0.0013493638557208424,
+            0.00830078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005908806217402238,
+            0.0015893105769937007,
+            0.0013493638557208424
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6626441841651936,
+            -0.00503621975600998,
+            1.256876726527887
+          ],
+          "current_quaternion_wxyz": [
+            0.06491748199179641,
+            0.0666641632242338,
+            0.9932961772900742,
+            -0.0685880022626637
+          ],
+          "target_position_m": [
+            0.664359394105719,
+            -0.005294305878112035,
+            1.2534641766701173
+          ],
+          "target_quaternion_wxyz": [
+            0.06419408633451708,
+            0.06592028219970683,
+            0.9933718946971838,
+            -0.06889059805310896
+          ],
+          "inference_seconds": 0.18476423691026866,
+          "server_request_index": 19,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00830078125,
+          "gripper_command_at_policy_step": 0.01361083984375,
+          "gripper_measured_at_policy_step": 0.013607036964646713
+        },
+        {
+          "policy_step": 66,
+          "raw_action": [
+            0.00509101501518628,
+            1.6827880666920106e-05,
+            -0.008776234452115702,
+            -0.00036613127191394493,
+            9.58715645843944e-05,
+            -0.0018461189762885022,
+            0.0032806396484375
+          ],
+          "clipped_action": [
+            0.00509101501518628,
+            1.6827880666920106e-05,
+            -0.008776234452115702,
+            -0.00036613127191394493,
+            9.58715645843944e-05,
+            -0.0018461189762885022,
+            0.0032806396484375
+          ],
+          "rotation_delta_before_lock": [
+            -0.00036613127191394493,
+            9.58715645843944e-05,
+            -0.0018461189762885022
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6648243301024229,
+            -0.005786331391603064,
+            1.2522679377913968
+          ],
+          "current_quaternion_wxyz": [
+            0.06313191089739711,
+            0.06598311581043503,
+            0.9934266992501781,
+            -0.0690216159712721
+          ],
+          "target_position_m": [
+            0.6699153451176092,
+            -0.005769503510936144,
+            1.2434917033392812
+          ],
+          "target_quaternion_wxyz": [
+            0.06303263038383292,
+            0.06688521243734533,
+            0.9933557427042622,
+            -0.06926488504696997
+          ],
+          "inference_seconds": null,
+          "server_request_index": 19,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0032806396484375,
+          "gripper_command_at_policy_step": 0.00830078125,
+          "gripper_measured_at_policy_step": 0.008324832238000068
+        },
+        {
+          "policy_step": 67,
+          "raw_action": [
+            0.003443633316914288,
+            -0.0004220699132274075,
+            -0.007008428293679552,
+            -0.001040379321392778,
+            0.0003518896809974184,
+            -0.0010125147592425863,
+            0.0033721923828125
+          ],
+          "clipped_action": [
+            0.003443633316914288,
+            -0.0004220699132274075,
+            -0.007008428293679552,
+            -0.001040379321392778,
+            0.0003518896809974184,
+            -0.0010125147592425863,
+            0.0033721923828125
+          ],
+          "rotation_delta_before_lock": [
+            -0.001040379321392778,
+            0.0003518896809974184,
+            -0.0010125147592425863
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6703548023649828,
+            -0.0062556996333498595,
+            1.2422858238035546
+          ],
+          "current_quaternion_wxyz": [
+            0.0629460755583175,
+            0.06734191550180035,
+            0.9933279007786503,
+            -0.06930035730813228
+          ],
+          "target_position_m": [
+            0.6737984356818971,
+            -0.006677769546577267,
+            1.235277395509875
+          ],
+          "target_quaternion_wxyz": [
+            0.06277123384913823,
+            0.06779983931801958,
+            0.9932685570861587,
+            -0.06986077220792833
+          ],
+          "inference_seconds": null,
+          "server_request_index": 19,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0033721923828125,
+          "gripper_command_at_policy_step": 0.0032806396484375,
+          "gripper_measured_at_policy_step": 0.0033029482282441736
+        },
+        {
+          "policy_step": 68,
+          "raw_action": [
+            0.004196762015276124,
+            6.505840746849449e-05,
+            -0.00998155683286762,
+            -0.0011527539963059191,
+            0.00018121093672206906,
+            -0.0005957126507196283,
+            0.0021820068359375
+          ],
+          "clipped_action": [
+            0.004196762015276124,
+            6.505840746849449e-05,
+            -0.00998155683286762,
+            -0.0011527539963059191,
+            0.00018121093672206906,
+            -0.0005957126507196283,
+            0.0021820068359375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0011527539963059191,
+            0.00018121093672206906,
+            -0.0005957126507196283
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.674230235988189,
+            -0.007160519007299783,
+            1.2340613508612965
+          ],
+          "current_quaternion_wxyz": [
+            0.06120544338123142,
+            0.06759036903457592,
+            0.9933728315833797,
+            -0.0699703736326668
+          ],
+          "target_position_m": [
+            0.6784269980034651,
+            -0.007095460599831288,
+            1.224079794028429
+          ],
+          "target_quaternion_wxyz": [
+            0.06113354165854831,
+            0.06784461978671309,
+            0.9933177024552073,
+            -0.07056727031271018
+          ],
+          "inference_seconds": null,
+          "server_request_index": 19,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0021820068359375,
+          "gripper_command_at_policy_step": 0.0033721923828125,
+          "gripper_measured_at_policy_step": 0.003381404126512666
+        },
+        {
+          "policy_step": 69,
+          "raw_action": [
+            0.0026681482935546983,
+            0.00026280356735495017,
+            -0.009780669769408968,
+            -0.0012651286712190568,
+            5.3201878515557076e-05,
+            -3.997650602235135e-05,
+            0.0028839111328125
+          ],
+          "clipped_action": [
+            0.0026681482935546983,
+            0.00026280356735495017,
+            -0.009780669769408968,
+            -0.0012651286712190568,
+            5.3201878515557076e-05,
+            -3.997650602235135e-05,
+            0.0028839111328125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0012651286712190568,
+            5.3201878515557076e-05,
+            -3.997650602235135e-05
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6788427447296538,
+            -0.0075692958463342685,
+            1.2228443512490466
+          ],
+          "current_quaternion_wxyz": [
+            0.059895360198037505,
+            0.06804654629591533,
+            0.9933554671374614,
+            -0.07090225153026551
+          ],
+          "target_position_m": [
+            0.6815108930232084,
+            -0.007306492278979318,
+            1.2130636814796376
+          ],
+          "target_quaternion_wxyz": [
+            0.05991055059843383,
+            0.06802661435077835,
+            0.9933106507567265,
+            -0.07153360581021712
+          ],
+          "inference_seconds": null,
+          "server_request_index": 19,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0028839111328125,
+          "gripper_command_at_policy_step": 0.0021820068359375,
+          "gripper_measured_at_policy_step": 0.0021943532187364
+        },
+        {
+          "policy_step": 70,
+          "raw_action": [
+            0.0036853610809525015,
+            0.00012775809231054154,
+            -0.004919202833709559,
+            -0.00036613127191394493,
+            0.000991934972029978,
+            -0.0007346466868939482,
+            0.00592041015625
+          ],
+          "clipped_action": [
+            0.0036853610809525015,
+            0.00012775809231054154,
+            -0.004919202833709559,
+            -0.00036613127191394493,
+            0.000991934972029978,
+            -0.0007346466868939482,
+            0.00592041015625
+          ],
+          "rotation_delta_before_lock": [
+            -0.00036613127191394493,
+            0.000991934972029978,
+            -0.0007346466868939482
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6819179366852366,
+            -0.0077682655620516464,
+            1.2117952888935544
+          ],
+          "current_quaternion_wxyz": [
+            0.05872060782413882,
+            0.06834787001308396,
+            0.9933397664180756,
+            -0.07180924267753462
+          ],
+          "target_position_m": [
+            0.6856032977661891,
+            -0.007640507469741105,
+            1.2068760860598449
+          ],
+          "target_quaternion_wxyz": [
+            0.058214066400004476,
+            0.06866636793781371,
+            0.9933304325266153,
+            -0.07204654192875594
+          ],
+          "inference_seconds": 0.18400950089562684,
+          "server_request_index": 20,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00592041015625,
+          "gripper_command_at_policy_step": 0.0028839111328125,
+          "gripper_measured_at_policy_step": 0.002891399993978694
+        },
+        {
+          "policy_step": 71,
+          "raw_action": [
+            0.007617279739932476,
+            0.0010682533649412438,
+            -0.010383330959784927,
+            -8.519458463110072e-05,
+            -0.0005441737264481655,
+            -0.002679723193334419,
+            0.0028076171875
+          ],
+          "clipped_action": [
+            0.007617279739932476,
+            0.0010682533649412438,
+            -0.010383330959784927,
+            -8.519458463110072e-05,
+            -0.0005441737264481655,
+            -0.002679723193334419,
+            0.0028076171875
+          ],
+          "rotation_delta_before_lock": [
+            -8.519458463110072e-05,
+            -0.0005441737264481655,
+            -0.002679723193334419
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6859818674358898,
+            -0.008090771588115197,
+            1.2056289070401738
+          ],
+          "current_quaternion_wxyz": [
+            0.05761096850575819,
+            0.06885345771865287,
+            0.9933440804461559,
+            -0.072164503120268
+          ],
+          "target_position_m": [
+            0.6935991471758223,
+            -0.0070225182231739534,
+            1.1952455760803888
+          ],
+          "target_quaternion_wxyz": [
+            0.057787432952944605,
+            0.0702015174109587,
+            0.9932321478663972,
+            -0.07226520594733844
+          ],
+          "inference_seconds": null,
+          "server_request_index": 20,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0028076171875,
+          "gripper_command_at_policy_step": 0.00592041015625,
+          "gripper_measured_at_policy_step": 0.005923144005495984
+        },
+        {
+          "policy_step": 72,
+          "raw_action": [
+            0.0074384291399504435,
+            0.0003447954629176263,
+            -0.008776234452115702,
+            -0.0005346932842836549,
+            -0.0002028162378974669,
+            -0.0015682509039398641,
+            0.00262451171875
+          ],
+          "clipped_action": [
+            0.0074384291399504435,
+            0.0003447954629176263,
+            -0.008776234452115702,
+            -0.0005346932842836549,
+            -0.0002028162378974669,
+            -0.0015682509039398641,
+            0.00262451171875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005346932842836549,
+            -0.0002028162378974669,
+            -0.0015682509039398641
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.6939396684348816,
+            -0.00748030781489734,
+            1.1940215392474776
+          ],
+          "current_quaternion_wxyz": [
+            0.057165888503040725,
+            0.06997042310752015,
+            0.9932284739975891,
+            -0.07303012749703326
+          ],
+          "target_position_m": [
+            0.701378097574832,
+            -0.007135512351979714,
+            1.185245304795362
+          ],
+          "target_quaternion_wxyz": [
+            0.057228031591814325,
+            0.070741337112549,
+            0.9931479410259719,
+            -0.07333336798161934
+          ],
+          "inference_seconds": null,
+          "server_request_index": 20,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00262451171875,
+          "gripper_command_at_policy_step": 0.0028076171875,
+          "gripper_measured_at_policy_step": 0.0028255651223249023
+        },
+        {
+          "policy_step": 73,
+          "raw_action": [
+            0.006991302639995365,
+            0.00031585714683668095,
+            -0.01054404061055185,
+            -0.0012651286712190568,
+            -0.0003734949821728162,
+            -0.0008735807230682673,
+            0.0013275146484375
+          ],
+          "clipped_action": [
+            0.006991302639995365,
+            0.00031585714683668095,
+            -0.01054404061055185,
+            -0.0012651286712190568,
+            -0.0003734949821728162,
+            -0.0008735807230682673,
+            0.0013275146484375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0012651286712190568,
+            -0.0003734949821728162,
+            -0.0008735807230682673
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7016937416559202,
+            -0.007603905517796662,
+            1.184035067395658
+          ],
+          "current_quaternion_wxyz": [
+            0.056188749644760116,
+            0.0711863375115074,
+            0.9931505675930932,
+            -0.07367007434890535
+          ],
+          "target_position_m": [
+            0.7086850442959156,
+            -0.007288048370959981,
+            1.173491026785106
+          ],
+          "target_quaternion_wxyz": [
+            0.056387051979322776,
+            0.07159832849234075,
+            0.99306206917069,
+            -0.0743095316942046
+          ],
+          "inference_seconds": null,
+          "server_request_index": 20,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0013275146484375,
+          "gripper_command_at_policy_step": 0.00262451171875,
+          "gripper_measured_at_policy_step": 0.0026348045673864062
+        },
+        {
+          "policy_step": 74,
+          "raw_action": [
+            0.005716992115123391,
+            0.000564244359864791,
+            -0.010142266483634543,
+            -0.0012651286712190568,
+            -3.213749362211758e-05,
+            -0.0004567786145453093,
+            0.0021209716796875
+          ],
+          "clipped_action": [
+            0.005716992115123391,
+            0.000564244359864791,
+            -0.010142266483634543,
+            -0.0012651286712190568,
+            -3.213749362211758e-05,
+            -0.0004567786145453093,
+            0.0021209716796875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0012651286712190568,
+            -3.213749362211758e-05,
+            -0.0004567786145453093
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7089743728796531,
+            -0.007763707807104612,
+            1.1722994522780572
+          ],
+          "current_quaternion_wxyz": [
+            0.05557179947158478,
+            0.07177158184410971,
+            0.99305422580339,
+            -0.07485933313297612
+          ],
+          "target_position_m": [
+            0.7146913649947766,
+            -0.007199463447239821,
+            1.1621571857944226
+          ],
+          "target_quaternion_wxyz": [
+            0.05561604710220086,
+            0.07196441871315423,
+            0.9929893629258334,
+            -0.07549902555762672
+          ],
+          "inference_seconds": null,
+          "server_request_index": 20,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0021209716796875,
+          "gripper_command_at_policy_step": 0.0013275146484375,
+          "gripper_measured_at_policy_step": 0.001342128833820122
+        },
+        {
+          "policy_step": 75,
+          "raw_action": [
+            0.0009215604031051726,
+            0.0013094059989491157,
+            -0.0028500660800854297,
+            -8.519458463110072e-05,
+            0.0007359168556169541,
+            -0.0012903828315912252,
+            0.008056640625
+          ],
+          "clipped_action": [
+            0.0009215604031051726,
+            0.0013094059989491157,
+            -0.0028500660800854297,
+            -8.519458463110072e-05,
+            0.0007359168556169541,
+            -0.0012903828315912252,
+            0.008056640625
+          ],
+          "rotation_delta_before_lock": [
+            -8.519458463110072e-05,
+            0.0007359168556169541,
+            -0.0012903828315912252
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7149559388854129,
+            -0.007671641087417886,
+            1.160987351079623
+          ],
+          "current_quaternion_wxyz": [
+            0.05494003023568185,
+            0.07213098317932898,
+            0.9929643663258912,
+            -0.07616089252567228
+          ],
+          "target_position_m": [
+            0.7158774992885181,
+            -0.0063622350884687704,
+            1.1581372849995375
+          ],
+          "target_quaternion_wxyz": [
+            0.05452857969293043,
+            0.0727412509080507,
+            0.992934524643911,
+            -0.07626515707172164
+          ],
+          "inference_seconds": 0.18441535392776132,
+          "server_request_index": 21,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.008056640625,
+          "gripper_command_at_policy_step": 0.0021209716796875,
+          "gripper_measured_at_policy_step": 0.0021296423570863476
+        },
+        {
+          "policy_step": 76,
+          "raw_action": [
+            0.004230296502772754,
+            0.0034749566523398084,
+            -0.007008428293679552,
+            0.00019574210265174696,
+            -0.0014829068199625865,
+            -0.001985053012462822,
+            0.002471923828125
+          ],
+          "clipped_action": [
+            0.004230296502772754,
+            0.0034749566523398084,
+            -0.007008428293679552,
+            0.00019574210265174696,
+            -0.0014829068199625865,
+            -0.001985053012462822,
+            0.002471923828125
+          ],
+          "rotation_delta_before_lock": [
+            0.00019574210265174696,
+            -0.0014829068199625865,
+            -0.001985053012462822
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7161472285323711,
+            -0.006829904650981356,
+            1.1569532804880127
+          ],
+          "current_quaternion_wxyz": [
+            0.05343885040559588,
+            0.07302078742200904,
+            0.9929822333219117,
+            -0.07614813312633995
+          ],
+          "target_position_m": [
+            0.7203775250351439,
+            -0.0033549479986415475,
+            1.1499448521943332
+          ],
+          "target_quaternion_wxyz": [
+            0.05409233337199582,
+            0.07406798236053609,
+            0.9928768217607901,
+            -0.07604978809703987
+          ],
+          "inference_seconds": null,
+          "server_request_index": 21,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002471923828125,
+          "gripper_command_at_policy_step": 0.008056640625,
+          "gripper_measured_at_policy_step": 0.008052821817069233
+        },
+        {
+          "policy_step": 77,
+          "raw_action": [
+            0.003649032052831151,
+            0.0028672520146399705,
+            -0.007209315357138205,
+            0.00013955476519517812,
+            -0.0015255765060314239,
+            -0.0018461189762885022,
+            0.002044677734375
+          ],
+          "clipped_action": [
+            0.003649032052831151,
+            0.0028672520146399705,
+            -0.007209315357138205,
+            0.00013955476519517812,
+            -0.0015255765060314239,
+            -0.0018461189762885022,
+            0.002044677734375
+          ],
+          "rotation_delta_before_lock": [
+            0.00013955476519517812,
+            -0.0015255765060314239,
+            -0.0018461189762885022
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7206086942145223,
+            -0.0038115862123039115,
+            1.1488381981941775
+          ],
+          "current_quaternion_wxyz": [
+            0.05332780244888175,
+            0.07480273818514903,
+            0.9929093315990941,
+            -0.07544372120605637
+          ],
+          "target_position_m": [
+            0.7242577262673535,
+            -0.000944334197663941,
+            1.1416288828370393
+          ],
+          "target_quaternion_wxyz": [
+            0.0540102849149303,
+            0.07578046717750932,
+            0.9928041564151918,
+            -0.07536655042182688
+          ],
+          "inference_seconds": null,
+          "server_request_index": 21,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.002044677734375,
+          "gripper_command_at_policy_step": 0.002471923828125,
+          "gripper_measured_at_policy_step": 0.0024989920443502234
+        },
+        {
+          "policy_step": 78,
+          "raw_action": [
+            0.0024138450967052475,
+            0.0025971610645511532,
+            -0.0054816866113937875,
+            -0.00014138192208766956,
+            -0.0010135402732053761,
+            -0.0012903828315912252,
+            0.00592041015625
+          ],
+          "clipped_action": [
+            0.0024138450967052475,
+            0.0025971610645511532,
+            -0.0054816866113937875,
+            -0.00014138192208766956,
+            -0.0010135402732053761,
+            -0.0012903828315912252,
+            0.00592041015625
+          ],
+          "rotation_delta_before_lock": [
+            -0.00014138192208766956,
+            -0.0010135402732053761,
+            -0.0012903828315912252
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7244833863891242,
+            -0.0014090178451157376,
+            1.140499823351628
+          ],
+          "current_quaternion_wxyz": [
+            0.05341091054440766,
+            0.07643812055039141,
+            0.9928113762652068,
+            -0.07503372255144529
+          ],
+          "target_position_m": [
+            0.7268972314858295,
+            0.0011881432194354156,
+            1.135018136740234
+          ],
+          "target_quaternion_wxyz": [
+            0.05387101191112341,
+            0.07711289711705464,
+            0.9927293511895248,
+            -0.07509960359889552
+          ],
+          "inference_seconds": null,
+          "server_request_index": 21,
+          "chunk_index": 3,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.00592041015625,
+          "gripper_command_at_policy_step": 0.002044677734375,
+          "gripper_measured_at_policy_step": 0.002059118757987921
+        },
+        {
+          "policy_step": 79,
+          "raw_action": [
+            0.00026204881567143054,
+            0.00016151946107164326,
+            -0.0009014615645364966,
+            -0.0001975692595442384,
+            9.58715645843944e-05,
+            9.895753015196854e-05,
+            0.1474609375
+          ],
+          "clipped_action": [
+            0.00026204881567143054,
+            0.00016151946107164326,
+            -0.0009014615645364966,
+            -0.0001975692595442384,
+            9.58715645843944e-05,
+            9.895753015196854e-05,
+            0.1474609375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0001975692595442384,
+            9.58715645843944e-05,
+            9.895753015196854e-05
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7271143763593906,
+            0.0007198776893776462,
+            1.1338634285115703
+          ],
+          "current_quaternion_wxyz": [
+            0.054081716327683896,
+            0.07738211154161086,
+            0.9927039755512135,
+            -0.07500662435564782
+          ],
+          "target_position_m": [
+            0.727376425175062,
+            0.0008813971504492894,
+            1.1329619669470339
+          ],
+          "target_quaternion_wxyz": [
+            0.05404548529229296,
+            0.07732405527022428,
+            0.9927029800710134,
+            -0.07510572118165881
+          ],
+          "inference_seconds": null,
+          "server_request_index": 21,
+          "chunk_index": 4,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.1474609375,
+          "gripper_command_at_policy_step": 0.00592041015625,
+          "gripper_measured_at_policy_step": 0.0059239789843559265
+        },
+        {
+          "policy_step": 80,
+          "raw_action": [
+            0.004219118340273878,
+            0.005191963406475861,
+            -0.002367937127784662,
+            -0.0001975692595442384,
+            0.0003518896809974184,
+            -0.0004567786145453093,
+            0.0057373046875
+          ],
+          "clipped_action": [
+            0.004219118340273878,
+            0.005191963406475861,
+            -0.002367937127784662,
+            -0.0001975692595442384,
+            0.0003518896809974184,
+            -0.0004567786145453093,
+            0.0057373046875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0001975692595442384,
+            0.0003518896809974184,
+            -0.0004567786145453093
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7273384673107213,
+            0.0002671452554977651,
+            1.1327091955287958
+          ],
+          "current_quaternion_wxyz": [
+            0.053227835830341935,
+            0.07763378216526369,
+            0.9927221408401418,
+            -0.07511687190838286
+          ],
+          "target_position_m": [
+            0.7315575856509952,
+            0.005459108661973626,
+            1.130341258401011
+          ],
+          "target_quaternion_wxyz": [
+            0.053043682156740254,
+            0.07784203116081462,
+            0.9927063087849998,
+            -0.07524075003928574
+          ],
+          "inference_seconds": 0.1911774999462068,
+          "server_request_index": 22,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.0057373046875,
+          "gripper_command_at_policy_step": 0.1474609375,
+          "gripper_measured_at_policy_step": 0.14623421199362863
+        },
+        {
+          "policy_step": 81,
+          "raw_action": [
+            0.005918199040103175,
+            0.005770729728094753,
+            -0.0026090016039350475,
+            -0.0006470679591967926,
+            -0.0003308252961039789,
+            0.0005157596386749265,
+            0.010986328125
+          ],
+          "clipped_action": [
+            0.005918199040103175,
+            0.005770729728094753,
+            -0.0026090016039350475,
+            -0.0006470679591967926,
+            -0.0003308252961039789,
+            0.0005157596386749265,
+            0.010986328125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0006470679591967926,
+            -0.0003308252961039789,
+            0.0005157596386749265
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": true,
+          "current_position_m": [
+            0.7317528639755627,
+            0.004966070114359999,
+            1.1292783833556206
+          ],
+          "current_quaternion_wxyz": [
+            0.05204070616206453,
+            0.07865998925161839,
+            0.9927242133671748,
+            -0.0748532376561821
+          ],
+          "target_position_m": [
+            0.7376710630156659,
+            0.010736799842454754,
+            1.1266693817516855
+          ],
+          "target_quaternion_wxyz": [
+            0.05224966244881195,
+            0.0783995226464502,
+            0.9927115738879991,
+            -0.075147978626212
+          ],
+          "inference_seconds": null,
+          "server_request_index": 22,
+          "chunk_index": 1,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null,
+          "gripper_target_closedness": 0.010986328125,
+          "gripper_command_at_policy_step": 0.0057373046875,
+          "gripper_measured_at_policy_step": 0.0069953532054507495
+        },
+        {
+          "policy_step": 82,
+          "raw_action": [
+            0.002936424193527746,
+            0.0032338040183319365,
+            -0.0009315946240552944,
+            -0.0009841919839362091,
+            0.0005225684252727677,
+            0.0014882978918951614,
+            0.02294921875
+          ],
+          "clipped_action": [
+            0.002936424193527746,
+            0.0032338040183319365,
+            -0.0009315946240552944,
+            -0.0009841919839362091,
+            0.0005225684252727677,
+            0.0014882978918951614,
+            0.02294921875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0009841919839362091,
+            0.0005225684252727677,
+            0.0014882978918951614
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": false,
+          "current_position_m": [
+            0.7371501077817896,
+            0.010172408304099993,
+            1.1255795421120445
+          ],
+          "current_quaternion_wxyz": [
+            0.05645325959432026,
+            0.07826768777260704,
+            0.9925528834372269,
+            -0.07433688258430331
+          ],
+          "target_position_m": [
+            0.7400865319753174,
+            0.013406212322431929,
+            1.1246479474879891
+          ],
+          "target_quaternion_wxyz": [
+            0.05628772975473886,
+            0.07748184340826496,
+            0.9925888668379459,
+            -0.07480372216993943
+          ],
+          "inference_seconds": null,
+          "server_request_index": 22,
+          "chunk_index": 2,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null
+        },
+        {
+          "policy_step": 83,
+          "raw_action": [
+            0.002841409812287291,
+            0.004593904874136337,
+            -0.0015342558144312533,
+            -0.0005908806217402238,
+            0.000693247169548117,
+            0.002877638253638355,
+            0.004608154296875
+          ],
+          "clipped_action": [
+            0.002841409812287291,
+            0.004593904874136337,
+            -0.0015342558144312533,
+            -0.0005908806217402238,
+            0.000693247169548117,
+            0.002877638253638355,
+            0.004608154296875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005908806217402238,
+            0.000693247169548117,
+            0.002877638253638355
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": false,
+          "current_position_m": [
+            0.7371527379469676,
+            0.010198160547330429,
+            1.125610713483954
+          ],
+          "current_quaternion_wxyz": [
+            0.05650914976773275,
+            0.0782627581086029,
+            0.9925506352346969,
+            -0.07432962519051235
+          ],
+          "target_position_m": [
+            0.7399941477592549,
+            0.014792065421466766,
+            1.1240764576695226
+          ],
+          "target_quaternion_wxyz": [
+            0.05629511289615138,
+            0.07679210921969298,
+            0.99265973824962,
+            -0.0745686011924343
+          ],
+          "inference_seconds": 0.18686449609231204,
+          "server_request_index": 23,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null
+        },
+        {
+          "policy_step": 84,
+          "raw_action": [
+            0.0028777388404086415,
+            0.004497443820533187,
+            -0.0014539009890477926,
+            -0.0005908806217402238,
+            0.0007785865416857917,
+            0.002738704217464036,
+            0.0047607421875
+          ],
+          "clipped_action": [
+            0.0028777388404086415,
+            0.004497443820533187,
+            -0.0014539009890477926,
+            -0.0005908806217402238,
+            0.0007785865416857917,
+            0.002738704217464036,
+            0.0047607421875
+          ],
+          "rotation_delta_before_lock": [
+            -0.0005908806217402238,
+            0.0007785865416857917,
+            0.002738704217464036
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": false,
+          "current_position_m": [
+            0.7371536510181865,
+            0.010196998804141584,
+            1.125604879070675
+          ],
+          "current_quaternion_wxyz": [
+            0.05650424188590631,
+            0.07826329607647861,
+            0.9925508327879211,
+            -0.0743301518103434
+          ],
+          "target_position_m": [
+            0.7400313898585952,
+            0.01469444262467477,
+            1.1241509780816272
+          ],
+          "target_quaternion_wxyz": [
+            0.05624269517668088,
+            0.07685843241410814,
+            0.992656990251741,
+            -0.07457640585643624
+          ],
+          "inference_seconds": 0.1848434410057962,
+          "server_request_index": 24,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null
+        },
+        {
+          "policy_step": 85,
+          "raw_action": [
+            0.0029140678685299903,
+            0.004593904874136337,
+            -0.0015543445207771185,
+            -0.0007032552966533615,
+            0.0008212562277546288,
+            0.002877638253638355,
+            0.004913330078125
+          ],
+          "clipped_action": [
+            0.0029140678685299903,
+            0.004593904874136337,
+            -0.0015543445207771185,
+            -0.0007032552966533615,
+            0.0008212562277546288,
+            0.002877638253638355,
+            0.004913330078125
+          ],
+          "rotation_delta_before_lock": [
+            -0.0007032552966533615,
+            0.0008212562277546288,
+            0.002877638253638355
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": false,
+          "current_position_m": [
+            0.7371564927187064,
+            0.010189479987807795,
+            1.1255908471386291
+          ],
+          "current_quaternion_wxyz": [
+            0.0564942593710176,
+            0.07826748162235261,
+            0.9925509869888689,
+            -0.07433127340518972
+          ],
+          "target_position_m": [
+            0.7400705605872364,
+            0.014783384861944132,
+            1.124036502617852
+          ],
+          "target_quaternion_wxyz": [
+            0.056221093674591244,
+            0.07678890095410912,
+            0.992659488465813,
+            -0.07463104766170243
+          ],
+          "inference_seconds": 0.18569776392541826,
+          "server_request_index": 25,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null
+        },
+        {
+          "policy_step": 86,
+          "raw_action": [
+            0.002721244565424363,
+            0.0045746126634157065,
+            -0.0015041227549124556,
+            -0.0006470679591967926,
+            0.000693247169548117,
+            0.002599770181289717,
+            0.00433349609375
+          ],
+          "clipped_action": [
+            0.002721244565424363,
+            0.0045746126634157065,
+            -0.0015041227549124556,
+            -0.0006470679591967926,
+            0.000693247169548117,
+            0.002599770181289717,
+            0.00433349609375
+          ],
+          "rotation_delta_before_lock": [
+            -0.0006470679591967926,
+            0.000693247169548117,
+            0.002599770181289717
+          ],
+          "end_effector_orientation_locked": false,
+          "action_was_clipped": false,
+          "ik_success": false,
+          "current_position_m": [
+            0.7371614655916686,
+            0.010175164767176581,
+            1.125566856516675
+          ],
+          "current_quaternion_wxyz": [
+            0.05647748638279224,
+            0.07827565299601141,
+            0.9925511254503739,
+            -0.07433356608643077
+          ],
+          "target_position_m": [
+            0.739882710157093,
+            0.014749777430592288,
+            1.1240627337617626
+          ],
+          "target_quaternion_wxyz": [
+            0.056255340688567565,
+            0.07694133792872924,
+            0.9926474516369364,
+            -0.07460833680257568
+          ],
+          "inference_seconds": 0.1860832030652091,
+          "server_request_index": 26,
+          "chunk_index": 0,
+          "chunk_size": 5,
+          "executed_from_chunk": 5,
+          "variant": "oftplus_h5_vision",
+          "proprio_state": null
+        }
+      ],
+      "video_capture": {
+        "frames_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4/episode4_fixed_layout_oft_k5_k5_seed20260923_1ep_20260923_110831_video_frames/episode_001_red",
+        "manifest": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4/episode4_fixed_layout_oft_k5_k5_seed20260923_1ep_20260923_110831_video_frames/episode_001_red/manifest.json",
+        "frame_count": 88,
+        "fps": 5.0
+      },
+      "video_capture_error": null
+    }
+  ]
+}

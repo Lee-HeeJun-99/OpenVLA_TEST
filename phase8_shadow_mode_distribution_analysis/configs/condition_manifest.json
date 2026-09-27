@@ -1,0 +1,98 @@
+{
+  "project": "a0509_vla_sim_to_real_phase8_shadow_mode_distribution_analysis",
+  "policy_scope": {
+    "primary_offline_policy": "oftplus_h5_vision",
+    "checkpoint_step": 28560,
+    "use_proprio": false,
+    "note": "Do not mix with current ROS oftplus_h5_proprio deployment results."
+  },
+  "baseline": {
+    "real_episode": "episode_000004",
+    "sim_episode": "episode_000004",
+    "condition_id": "baseline_real_episode4",
+    "description": "Baseline real collection. Original cube layout, original lighting, no extra object. Sim replay for episode4 is the fixed sim reference."
+  },
+  "new_real_conditions": [
+    {
+      "real_episode": "episode_000008",
+      "sim_reference_episode": "episode_000004",
+      "condition_id": "lighting_changed",
+      "controlled_target_cube": "orange",
+      "orange_target_pose": "same_as_episode_000004",
+      "trajectory": "same_as_episode_000004_by_planned_route",
+      "changed_factor": "lighting",
+      "description": "Same cube layout as episode4, but real lighting condition changed. Sim image/reference remains episode4."
+    },
+    {
+      "real_episode": "episode_000009",
+      "sim_reference_episode": "episode_000004",
+      "condition_id": "non_target_cube_layout_changed",
+      "controlled_target_cube": "orange",
+      "orange_target_pose": "same_as_episode_000004",
+      "trajectory": "same_as_episode_000004_by_planned_route",
+      "changed_factor": "blue_yellow_cube_positions",
+      "description": "Orange target and trajectory are kept as episode4, while blue and yellow cube positions are changed in real. Sim image/reference remains episode4."
+    },
+    {
+      "real_episode": "episode_000010",
+      "sim_reference_episode": "episode_000004",
+      "condition_id": "extra_object_added_on_episode9_condition",
+      "controlled_target_cube": "orange",
+      "orange_target_pose": "same_as_episode_000004",
+      "trajectory": "same_as_episode_000004_by_planned_route",
+      "changed_factor": "extra_non_cube_object",
+      "description": "Based on episode9 real condition, with an additional non-cube object added. Sim image/reference remains episode4."
+    }
+  ],
+  "primary_comparisons": [
+    {
+      "comparison_id": "sim4_vs_real4",
+      "left": "sim_episode_000004",
+      "right": "real_episode_000004",
+      "purpose": "Baseline sim-real gap."
+    },
+    {
+      "comparison_id": "sim4_vs_real8",
+      "left": "sim_episode_000004",
+      "right": "real_episode_000008",
+      "purpose": "Sim-real gap under real lighting change."
+    },
+    {
+      "comparison_id": "sim4_vs_real9",
+      "left": "sim_episode_000004",
+      "right": "real_episode_000009",
+      "purpose": "Sim-real gap under non-target cube layout change."
+    },
+    {
+      "comparison_id": "sim4_vs_real10",
+      "left": "sim_episode_000004",
+      "right": "real_episode_000010",
+      "purpose": "Sim-real gap under non-target cube layout change plus extra object."
+    },
+    {
+      "comparison_id": "real4_vs_real8",
+      "left": "real_episode_000004",
+      "right": "real_episode_000008",
+      "purpose": "Real-only lighting distribution shift."
+    },
+    {
+      "comparison_id": "real8_vs_real9",
+      "left": "real_episode_000008",
+      "right": "real_episode_000009",
+      "purpose": "Real-only shift from lighting-changed condition to non-target cube layout change condition."
+    },
+    {
+      "comparison_id": "real9_vs_real10",
+      "left": "real_episode_000009",
+      "right": "real_episode_000010",
+      "purpose": "Real-only extra object distribution shift."
+    }
+  ],
+  "interpretation_rules": [
+    "Sim image/reference is intentionally fixed to episode4 for the new conditions.",
+    "Sim4-vs-changed-real comparisons measure how far changed real observations move away from the fixed sim reference.",
+    "Real-vs-real comparisons are required to attribute changes to lighting, non-target cube layout, or extra object.",
+    "Observation or representation distribution shift must not be interpreted as policy impact unless action-facing/action metrics support it.",
+    "No Shadow Mode or closed-loop rollout result should be claimed unless corresponding logs exist."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETED",
+  "action_source": "response.actions from oftplus_h5_vision full-forward feature_manifest",
+  "raw_action_head_output": "also summarized as raw_action_head_* but not used as primary decoded action metric",
+  "gripper_threshold": 0.5,
+  "frame_rows": 315,
+  "chunk_rows": 1575,
+  "comparison_count": 7,
+  "outputs": {
+    "frame_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/07_shadow_action_analysis/action_frame_metrics.csv",
+    "chunk_metrics": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/07_shadow_action_analysis/action_chunk_metrics.csv",
+    "comparison_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/07_shadow_action_analysis/action_comparison_summary.csv",
+    "phase_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/07_shadow_action_analysis/action_phase_summary.csv",
+    "chunk_index_summary": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis/07_shadow_action_analysis/action_chunk_index_summary.csv"
+  },
+  "interpretation_guardrail": "This is offline policy output disagreement, not planner-relative correctness or rollout success."
+}

@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETED",
+  "joined_rows": 7,
+  "real_sequential_rank_by_observation_l1": [
+    "real4_vs_real8",
+    "real9_vs_real10",
+    "real8_vs_real9"
+  ],
+  "real_sequential_rank_by_hidden_cosine": [
+    "real4_vs_real8",
+    "real9_vs_real10",
+    "real8_vs_real9"
+  ],
+  "real_sequential_rank_by_action_output_l2": [
+    "real4_vs_real8",
+    "real9_vs_real10",
+    "real8_vs_real9"
+  ],
+  "fixed_sim_rank_by_hidden_cosine": [
+    "sim4_vs_real10",
+    "sim4_vs_real9",
+    "sim4_vs_real8",
+    "sim4_vs_real4"
+  ],
+  "fixed_sim_rank_by_action_output_cosine": [
+    "sim4_vs_real10",
+    "sim4_vs_real4",
+    "sim4_vs_real9",
+    "sim4_vs_real8"
+  ],
+  "important_guardrail": "This joins observation and representation/action-output gaps, but it is still offline model output, not real rollout performance."
+}

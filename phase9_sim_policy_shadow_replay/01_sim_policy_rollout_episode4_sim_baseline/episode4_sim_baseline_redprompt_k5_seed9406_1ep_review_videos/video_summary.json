@@ -1,0 +1,17 @@
+{
+  "frames_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4_sim_baseline/episode4_sim_baseline_redprompt_k5_seed9406_1ep_20260923_112314_video_frames",
+  "output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4_sim_baseline/episode4_sim_baseline_redprompt_k5_seed9406_1ep_review_videos",
+  "model_name": "OpenVLA-OFT+",
+  "model_details": "episode4 layout | original red prompt | original home | k=5",
+  "videos": [
+    {
+      "episode_number": 1,
+      "target_color": "red",
+      "success": false,
+      "reason": "consecutive_ik_failures",
+      "frames": 126,
+      "fps": 5.0,
+      "video": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4_sim_baseline/episode4_sim_baseline_redprompt_k5_seed9406_1ep_review_videos/episode_001_red_failure.mp4"
+    }
+  ]
+}

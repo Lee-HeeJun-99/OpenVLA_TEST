@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase9 K5 Sim Policy Rollout Review</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111418;
+      color: #f3f6f8;
+      font: 14px/1.5 Arial, sans-serif;
+    }
+    main {
+      width: min(1280px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0 36px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+    .meta {
+      color: #aab4bf;
+      margin-bottom: 18px;
+    }
+    .panel {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 1px;
+      background: #303842;
+      border: 1px solid #303842;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .metric {
+      background: #191e24;
+      padding: 12px 14px;
+    }
+    .metric span {
+      display: block;
+      color: #9da8b4;
+      font-size: 12px;
+    }
+    .metric strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 18px;
+    }
+    .viewer {
+      background: #191e24;
+      border: 1px solid #303842;
+      border-radius: 6px;
+      padding: 12px;
+    }
+    img {
+      width: 100%;
+      display: block;
+      background: #000;
+      border-radius: 4px;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    button {
+      background: #2c7be5;
+      color: white;
+      border: 0;
+      border-radius: 4px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    input[type="range"] {
+      flex: 1;
+    }
+    code {
+      color: #d5e3ff;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Phase9 K5 Sim Policy Rollout Review</h1>
+    <div class="meta">
+      Policy: <code>oftplus_h5_vision</code>, instruction:
+      <code>Pick up the orange cube.</code>
+    </div>
+    <section class="panel">
+      <div class="metric"><span>Status</span><strong>Failed</strong></div>
+      <div class="metric"><span>Reason</span><strong>consecutive_ik_failures</strong></div>
+      <div class="metric"><span>Frames</span><strong>116</strong></div>
+      <div class="metric"><span>Real Replay</span><strong>Do not use</strong></div>
+    </section>
+    <section class="viewer">
+      <img id="frame" src="../phase9_fixed_layout_sim_policy_k5_video_k5_seed20260922_1ep_20260922_224038_video_frames/episode_001_red/000000.jpg" alt="rollout frame">
+      <div class="controls">
+        <button id="prev">Prev</button>
+        <button id="play">Play</button>
+        <button id="next">Next</button>
+        <input id="slider" type="range" min="0" max="115" value="0">
+        <span id="label">000000.jpg</span>
+      </div>
+    </section>
+  </main>
+  <script>
+    const frame = document.getElementById("frame");
+    const slider = document.getElementById("slider");
+    const label = document.getElementById("label");
+    const play = document.getElementById("play");
+    const maxFrame = 115;
+    let current = 0;
+    let timer = null;
+    function pathFor(index) {
+      return "../phase9_fixed_layout_sim_policy_k5_video_k5_seed20260922_1ep_20260922_224038_video_frames/episode_001_red/" +
+        String(index).padStart(6, "0") + ".jpg";
+    }
+    function setFrame(index) {
+      current = Math.max(0, Math.min(maxFrame, index));
+      frame.src = pathFor(current);
+      slider.value = current;
+      label.textContent = String(current).padStart(6, "0") + ".jpg";
+    }
+    document.getElementById("prev").onclick = () => setFrame(current - 1);
+    document.getElementById("next").onclick = () => setFrame(current + 1);
+    slider.oninput = () => setFrame(Number(slider.value));
+    play.onclick = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+        play.textContent = "Play";
+        return;
+      }
+      play.textContent = "Pause";
+      timer = setInterval(() => {
+        if (current >= maxFrame) setFrame(0);
+        else setFrame(current + 1);
+      }, 200);
+    };
+  </script>
+</body>
+</html>
