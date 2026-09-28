@@ -1,0 +1,24 @@
+schema_version: 1
+pilot_trials_per_condition: 5
+common_baseline_required: true
+one_factor_at_a_time: true
+conditions:
+  - id: baseline
+    changes: []
+  - id: brightness_change
+    changes: [illumination_brightness]
+  - id: distractor_order_position_change
+    changes: [non_target_cube_order_position]
+  - id: additional_object
+    changes: [additional_object]
+fixed:
+  - target_cube_position
+  - target_color
+  - instruction
+  - camera_pose
+  - robot_initial_state
+  - planner_trajectory
+  - preprocessing
+  - model_checkpoint
+expansion_rule: "Expand an influential pilot condition to 20-30 trials only after integrity review."
+

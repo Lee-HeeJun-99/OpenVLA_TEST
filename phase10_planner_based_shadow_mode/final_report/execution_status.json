@@ -1,0 +1,19 @@
+{
+  "audit": "COMPLETED_OFFLINE_ONLY",
+  "reuse_plan": "COMPLETED_OFFLINE_ONLY",
+  "protocol_gap": "COMPLETED_OFFLINE_ONLY",
+  "action_space_alignment": "COMPLETED_OFFLINE_ONLY",
+  "logger": "COMPLETED_OFFLINE_ONLY",
+  "safety_gate": "COMPLETED_OFFLINE_ONLY",
+  "planner_recorded_interface": "COMPLETED_OFFLINE_ONLY",
+  "planner_live_interface": "BLOCKED_SAFETY_REVIEW",
+  "openvla_adapter": "COMPLETED_OFFLINE_ONLY",
+  "oft_adapter": "COMPLETED_OFFLINE_ONLY",
+  "offline_fixture_smoke_test": "COMPLETED_OFFLINE_ONLY",
+  "sim_planner_reference": "BLOCKED_MISSING_DATA",
+  "real_shadow_mode": "NOT_EXECUTED",
+  "environment_shadow_mode": "NOT_EXECUTED",
+  "prototype_rollout": "NOT_EXECUTED",
+  "closed_loop_rollout": "NOT_EXECUTED",
+  "real_robot_commands_issued": false
+}

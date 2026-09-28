@@ -1,0 +1,18 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "robot_commands_published": 0,
+  "episode_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004",
+  "step_count": 45,
+  "instruction": "Pick up the orange cube.",
+  "pose_source": "planned_commanded_pose",
+  "feedback_pose_samples": 0,
+  "configured_hz": 5.0,
+  "metadata_effective_hz": 4.999134387364149,
+  "timestamp_measured_hz": 4.999134387364149,
+  "invalid_action_steps": [],
+  "invalid_pose_steps": [],
+  "workspace_violation_steps": [],
+  "segment_translation_violation_steps": [],
+  "reasons": [],
+  "real_execution_authorized": false
+}

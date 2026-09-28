@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED_MISSING_DATA",
+  "sample_count": 0,
+  "models": {"openvla": "NOT_EXECUTED", "oft": "NOT_EXECUTED"},
+  "note": "Adapters exist, but no dual-model Phase 10 feature run has been executed."
+}
+

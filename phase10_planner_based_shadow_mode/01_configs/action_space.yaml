@@ -1,0 +1,30 @@
+schema_version: 1
+canonical_order: [dx_m, dy_m, dz_m, drx_rad, dry_rad, drz_rad, gripper_closedness]
+translation_unit: meter
+rotation_representation: delta_rotation_vector
+rotation_unit: radian
+reference_frame: robot_base_world_aligned
+gripper_semantics: "0=open, 1=closed"
+planner:
+  source: steps_with_actions.jsonl.action
+  horizon_steps: 1
+  step_period_seconds: 0.2
+  pose_source_current_real_dataset: planned_commanded_pose
+openvla:
+  variant: openvla_token
+  server_output: denormalized
+  horizon_steps: 1
+  step_period_seconds: 0.2
+oft:
+  variant: oftplus_h5_vision
+  server_output: denormalized
+  inference_period_seconds: 1.0
+  horizon_steps: 5
+  action_step_period_seconds: 0.2
+comparison_rules:
+  - "OpenVLA action[t] vs Planner action[t]."
+  - "OFT chunk[t,k] vs Planner action[t+k], k=0..4."
+  - "Do not compare unequal horizons by raw vector L2."
+  - "Also compare horizon-integrated translation and small-delta rotation sum."
+  - "Keep raw output, denormalized output, postprocessed value, and executed command separate."
+

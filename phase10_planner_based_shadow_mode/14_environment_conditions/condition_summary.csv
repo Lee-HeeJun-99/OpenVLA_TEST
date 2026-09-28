@@ -1,0 +1,6 @@
+condition_id,planned_pilot_trials,completed_trials,status,notes
+baseline,5,0,NOT_EXECUTED,Common reference condition
+brightness_change,5,0,NOT_EXECUTED,One-factor pilot
+distractor_order_position_change,5,0,NOT_EXECUTED,One-factor pilot
+additional_object,5,0,NOT_EXECUTED,One-factor pilot
+

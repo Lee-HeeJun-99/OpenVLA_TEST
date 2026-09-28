@@ -1,0 +1,29 @@
+schema_version: 1
+experiment_id: phase10_planner_shadow_baseline
+mode: recorded-input_shadow
+domain: real
+instruction: "Pick up the orange cube."
+target_color_dataset: orange
+target_prim_sim: red
+planned_trials: 30
+control_hz: 5.0
+oft_inference_hz: 1.0
+oft_chunk_size: 5
+openvla_inference_hz: 5.0
+random_seed: 20260928
+robot_execution:
+  enabled: false
+  requires_explicit_user_approval: true
+  planner_is_only_allowed_controller: true
+  ai_publish_allowed: false
+input_policy:
+  primary_comparison: recorded-input_shadow
+  online_shadow_use: latency_only
+  closed_loop: out_of_scope_until_approved
+data_validity:
+  require_camera_timestamp: true
+  require_state_timestamp: true
+  require_planner_timestamp: true
+  measured_pose_required_for_measured_tracking_claims: true
+  planned_pose_must_not_be_labeled_measured: true
+

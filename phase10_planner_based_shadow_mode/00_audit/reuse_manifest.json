@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-28",
+  "repository_commit": "deb9e06050b74650feda64cdcb2305a22c861071",
+  "branch": "lhj-research",
+  "classifications": [
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_data_validation.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "JSONL/image/timing integrity checks; extend to integrated Phase 10 schema and measured-state fields."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_pair_alignment.py",
+      "classification": "REFERENCE_ONLY",
+      "use": "Metric helpers only. Fixed frame-index pairing is not valid as Phase 10 synchronization."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_observation_gap.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "Observation metrics/plots after trial-level alignment."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_representation_gap.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "Within-model paired feature metrics and MMD; add trial bootstrap, CKA, energy/Wasserstein/OOD."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_action_gap.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "Component/chunk/gripper helpers only; redefine comparison as model versus time-aligned planner."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_sensitive_energy_projection.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "Policy-sensitive energy after new planner-relative targets exist."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/scripts/phase8_gripper_sensitive_direction.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "Gripper direction analysis with event metrics and trial-level CV."
+    },
+    {
+      "path": "phase8_shadow_mode_distribution_analysis/",
+      "classification": "OFFLINE_RESULT_ONLY",
+      "use": "Environment-conditioned OFT offline response evidence; not Real Shadow Mode."
+    },
+    {
+      "path": "../sim2real_analysis/common/feature_capture.py",
+      "classification": "REUSE_AS_IS",
+      "use": "Forward hooks and compressed feature storage."
+    },
+    {
+      "path": "../sim2real_analysis/04_features/extract_vla_features.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "OFT feature extraction; add explicit OpenVLA hook map and common metadata."
+    },
+    {
+      "path": "../sim2real_analysis/05_offline_actions/run_offline_actions.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "HTTP recorded-image inference pattern; Phase 10 adapters enforce variant/horizon and null executed action."
+    },
+    {
+      "path": "../isaac_sim/a0509_control/lula_planner.py",
+      "classification": "REUSE_AS_IS",
+      "use": "Sim planner only."
+    },
+    {
+      "path": "../isaac_sim/a0509_control/episode_recorder.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "Sim planner record format; Phase 10 logger adds multi-clock/model/safety fields."
+    },
+    {
+      "path": "../isaac_sim/a0509_control/vla_client.py",
+      "classification": "REUSE_WITH_EXTENSION",
+      "use": "HTTP transport; Phase 10 separates OpenVLA K=1 and OFT K=5 adapters."
+    },
+    {
+      "path": "../field/control_contract.json",
+      "classification": "REUSE_AS_IS",
+      "use": "5 Hz canonical action and OFT K=5 / 1 Hz contract."
+    },
+    {
+      "path": "phase9_sim_policy_shadow_replay/01_sim_policy_rollout*/**/*.json",
+      "classification": "DO_NOT_USE_FOR_REAL",
+      "use": "All five policy rollouts failed; diagnostic evidence only."
+    },
+    {
+      "path": "phase9_sim_policy_shadow_replay/scripts/export_real_replay_candidate_from_vla_report.py",
+      "classification": "DO_NOT_USE_FOR_REAL",
+      "use": "Must not export failed Phase 9 policy actions as Real commands or Planner GT."
+    },
+    {
+      "path": "/home/ubuntu/robot_ws/src/openvla_doosan_runtime/",
+      "classification": "REFERENCE_ONLY",
+      "use": "External dirty ROS workspace: camera/inference/action bridge/replay safety references; not imported or executed by Phase 10."
+    },
+    {
+      "path": "/home/ubuntu/robot_ws/src/doosan-robot2/.../collect_episode001_from_align_home.py",
+      "classification": "REFERENCE_ONLY",
+      "use": "Real collection/planner protocol with --execute guard; untracked external code requires review before integration."
+    },
+    {
+      "path": "Real measured TCP/state logger integrated with planner timestamps",
+      "classification": "MISSING",
+      "use": "Required before Real Shadow Mode. Existing Phase 8 episodes report planned_commanded_pose and feedback_pose_samples=0."
+    },
+    {
+      "path": "OpenVLA per-frame Phase 10 feature extraction evidence",
+      "classification": "MISSING",
+      "use": "Adapter implemented; model execution/features not run in this stage."
+    }
+  ]
+}
+

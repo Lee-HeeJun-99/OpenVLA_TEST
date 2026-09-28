@@ -1,0 +1,1 @@
+trial_id,episode_id,frame_id,timestamp_camera,timestamp_state,timestamp_planner,camera_state_delta_sec,clock_domain_comparable,alignment_method,within_tolerance,phase,valid
