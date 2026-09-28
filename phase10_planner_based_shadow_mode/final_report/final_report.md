@@ -6,6 +6,8 @@ The requested pre-Real scope is implemented and audited. The repository now cont
 
 No Real robot command, trajectory replay, gripper command or closed-loop action was executed.
 
+The Real runtime at Git HEAD `86eaa9632d651eb907332334d02f32c1461850d7` was additionally audited from its dirty working tree. Subscriber-independent observer/recorder wrappers were added without ROS imports, publishers, service clients, or action clients. ROS graph and hardware were not contacted.
+
 ## Reused assets
 
 - Phase 8 validation, observation, representation, component/chunk, phase and sensitive-projection code as extension references.
@@ -32,7 +34,7 @@ All five inspected Phase 9 rollouts failed: one policy timeout and four consecut
 
 ## Offline verification
 
-Seven checks passed across the offline test suite:
+Nine unit tests passed across the offline test suite, including these checks:
 
 1. canonical units and horizon integration;
 2. structural AI publish blocking;
@@ -41,6 +43,8 @@ Seven checks passed across the offline test suite:
 5. two-frame recorded-input logging with OpenVLA K=1, OFT K=5 and null executed actions.
 6. planner-only static rate/workspace/segment validation with zero command publishing.
 7. unknown/different clock domains are not subtracted as synchronized timestamps.
+8. robot, gripper, home, trajectory, hold, E-stop and AI-publish paths are all rejected;
+9. synthetic runtime schema/synchronization and observation-only executed-command handling.
 
 This is pipeline evidence, not model-performance evidence.
 
@@ -53,6 +57,8 @@ This is pipeline evidence, not model-performance evidence.
 | Logger and safety gate | `COMPLETED_OFFLINE_ONLY` |
 | Recorded planner loader | `COMPLETED_OFFLINE_ONLY` |
 | Live Planner interface | `BLOCKED_SAFETY_REVIEW` |
+| Real runtime static audit and observer wrapper | `COMPLETED_OFFLINE_ONLY` |
+| Real ROS subscriber binding | `NOT_EXECUTED` |
 | OpenVLA/OFT action adapters | `COMPLETED_OFFLINE_ONLY` |
 | OpenVLA/OFT real feature run | `BLOCKED_MISSING_DATA` |
 | Sim Planner paired reference | `BLOCKED_MISSING_DATA` |
@@ -73,3 +79,5 @@ This is pipeline evidence, not model-performance evidence.
 ## Remaining blockers
 
 The clean repository lacks a reviewed live Real planner/logger integration and measured feedback capture. The external ROS workspace contains candidate code but is dirty/untracked. No valid Phase 10 Sim Planner paired reference or dual-model Phase 10 predictions exist yet. Consequently no observation, representation, planner-relative action, environment, prototype or success-rate conclusion is reported.
+
+Protocol stop state: `BLOCKED_REQUIRES_LOCAL_OPERATOR_AND_HARDWARE`. A dedicated planner action, measured gripper feedback, timestamped EE/executed-command observations, Doosan rotation/reference semantics, joint limits, hold acknowledgement, and physical E-stop state remain unresolved.

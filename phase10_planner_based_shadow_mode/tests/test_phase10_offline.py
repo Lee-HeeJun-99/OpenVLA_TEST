@@ -14,8 +14,11 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "05_model_adapters"))
 sys.path.insert(0, str(ROOT / "02_safety"))
+sys.path.insert(0, str(ROOT / "06_shadow_collection"))
 from action_canonicalizer import canonicalize_action, integrated_displacement  # noqa: E402
 from safety_gate import ShadowCommandGate, decide  # noqa: E402
+from real_runtime_adapter import RealRuntimeObserverAdapter, RemoteSafetyConfig  # noqa: E402
+from real_episode_recorder import RealEpisodeRecorder  # noqa: E402
 
 
 class Phase10OfflineTests(unittest.TestCase):
@@ -29,6 +32,46 @@ class Phase10OfflineTests(unittest.TestCase):
     def test_shadow_ai_publish_is_structurally_blocked(self):
         with self.assertRaises(PermissionError):
             ShadowCommandGate().publish_ai_action([0.0] * 7)
+
+    def test_every_remote_command_path_is_blocked(self):
+        gate = ShadowCommandGate()
+        for method in (gate.publish_robot_command, gate.command_gripper, gate.command_home,
+                       gate.execute_trajectory, gate.call_hold_service, gate.call_estop_service,
+                       gate.publish_ai_action):
+            with self.assertRaises(PermissionError):
+                method(None)
+        with self.assertRaises(PermissionError):
+            RemoteSafetyConfig(allow_service_call=True).validate()
+
+    def test_synthetic_real_runtime_mapping_and_sync(self):
+        config = ROOT / "06_shadow_collection" / "real_shadow_config.yaml"
+        adapter = RealRuntimeObserverAdapter(config)
+        camera = adapter.camera(frame_id="SYNTHETIC_FIXTURE", stamp_sec=10.0,
+                                clock_domain="ros_time", image_path="SYNTHETIC_FIXTURE.png")
+        state = adapter.measured_state(stamp_sec=10.01, clock_domain="ros_time",
+                                       joint_position=[0] * 6, joint_velocity=[0] * 6,
+                                       ee_pose_mm_deg=[400, 0, 300, 0, 180, 0], gripper_open=True)
+        planner = adapter.observed_action(kind="planner_raw_action", stamp_sec=10.02,
+                                          clock_domain="ros_time", values=[0] * 7,
+                                          source="SYNTHETIC_FIXTURE")
+        executed = adapter.observed_action(kind="executed_command", stamp_sec=10.02,
+                                           clock_domain="ros_time", values=[0] * 6,
+                                           source="SYNTHETIC_FIXTURE")
+        row = RealEpisodeRecorder(config).combine(camera, state, planner, executed)
+        self.assertTrue(row["valid"])
+        self.assertTrue(row["executed_command_observation"]["observation_only"])
+        self.assertIsNone(row["openvla_executed_action"])
+        self.assertIsNone(row["oft_executed_action"])
+        other = dict(state, clock_domain="monotonic")
+        row = RealEpisodeRecorder(config).combine(camera, other, planner)
+        self.assertFalse(row["clock_domain_comparable"])
+        self.assertIsNone(row["alignment_deltas"])
+
+    def test_real_wrappers_have_no_ros_command_primitives(self):
+        for name in ("real_runtime_adapter.py", "real_episode_recorder.py"):
+            source = (ROOT / "06_shadow_collection" / name).read_text(encoding="utf-8")
+            for forbidden in ("import rclpy", "create_publisher", "create_client", "ActionClient", "call_async"):
+                self.assertNotIn(forbidden, source)
 
     def test_ai_timeout_does_not_force_planner_hold(self):
         result = decide({"oft_timeout": True})

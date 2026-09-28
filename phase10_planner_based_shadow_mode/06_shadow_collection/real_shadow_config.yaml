@@ -1,0 +1,34 @@
+safety:
+  mode: offline
+  shadow_mode: true
+  allow_robot_command: false
+  allow_gripper_command: false
+  allow_home_command: false
+  allow_trajectory_execution: false
+  allow_service_call: false
+
+runtime_source:
+  root: /home/ubuntu/robot_ws/src/openvla_doosan_runtime
+  revision: 86eaa9632d651eb907332334d02f32c1461850d7
+  working_tree_dirty: true
+
+topics:
+  camera: /vla/image_rgb
+  joint_state: /dsr01/joint_states
+  measured_ee_pose: /doosan/current_pose
+  gripper_state: /vla/gripper_open
+  planner_raw_action: NOT_FOUND
+  planner_target: /vla/target_pose
+  executed_command_observation: /dsr01/servol_stream
+
+mapping:
+  raw_action_order: [dx_m, dy_m, dz_m, dRx_rad, dRy_rad, dRz_rad, gripper_openness]
+  canonical_gripper_transform: closedness=1-openness
+  target_pose_order: [x_mm, y_mm, z_mm, rx_deg, ry_deg, rz_deg]
+  target_pose_rotation_representation: UNRESOLVED_DOOSAN_POSX_EULER_CONVENTION
+  target_pose_reference_frame: UNRESOLVED_REFERENCE_PARAMETER_DEFAULT_0
+  planner_rate_hz: NOT_FOUND
+  camera_rate_hz: NOT_FOUND
+  joint_state_rate_hz: NOT_FOUND
+  ee_pose_poll_rate_hz: 20.0
+  timestamp_clock: ROS_HEADER_FOR_CAMERA_AND_JOINT_STATE;MONOTONIC_FOR_INTERNAL_AGE;EE_POSE_MESSAGE_UNSTAMPED

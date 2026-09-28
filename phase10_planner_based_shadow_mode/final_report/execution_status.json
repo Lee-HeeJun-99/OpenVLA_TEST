@@ -7,13 +7,19 @@
   "safety_gate": "COMPLETED_OFFLINE_ONLY",
   "planner_recorded_interface": "COMPLETED_OFFLINE_ONLY",
   "planner_live_interface": "BLOCKED_SAFETY_REVIEW",
+  "real_runtime_static_audit": "COMPLETED_OFFLINE_ONLY",
+  "real_observer_wrapper": "COMPLETED_OFFLINE_ONLY",
+  "real_ros_subscriber_binding": "NOT_EXECUTED",
   "openvla_adapter": "COMPLETED_OFFLINE_ONLY",
   "oft_adapter": "COMPLETED_OFFLINE_ONLY",
   "offline_fixture_smoke_test": "COMPLETED_OFFLINE_ONLY",
   "sim_planner_reference": "BLOCKED_MISSING_DATA",
-  "real_shadow_mode": "NOT_EXECUTED",
+  "real_shadow_mode": "BLOCKED_REQUIRES_LOCAL_OPERATOR_AND_HARDWARE",
   "environment_shadow_mode": "NOT_EXECUTED",
   "prototype_rollout": "NOT_EXECUTED",
   "closed_loop_rollout": "NOT_EXECUTED",
-  "real_robot_commands_issued": false
+  "real_robot_commands_issued": false,
+  "ros_graph_queried": false,
+  "hardware_connection_attempted": false,
+  "state_changing_ros_calls": 0
 }

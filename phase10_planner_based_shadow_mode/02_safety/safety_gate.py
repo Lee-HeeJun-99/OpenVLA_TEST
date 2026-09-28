@@ -48,7 +48,7 @@ def decide(flags: dict[str, bool], *, stop_on_sync_failure: bool = True) -> Safe
 
 
 class ShadowCommandGate:
-    """Hard structural block: AI commands can never be published in shadow mode."""
+    """Remote-preparation gate: every state-changing path is forbidden."""
 
     def __init__(self, *, shadow_mode: bool = True) -> None:
         if not shadow_mode:
@@ -58,3 +58,20 @@ class ShadowCommandGate:
     def publish_ai_action(self, _action: Sequence[float]) -> None:
         raise PermissionError("AI_ACTION_PUBLISH_BLOCKED_IN_SHADOW_MODE")
 
+    def publish_robot_command(self, _command: object = None) -> None:
+        raise PermissionError("ROBOT_COMMAND_BLOCKED_IN_REMOTE_PREPARATION")
+
+    def command_gripper(self, _command: object = None) -> None:
+        raise PermissionError("GRIPPER_COMMAND_BLOCKED_IN_REMOTE_PREPARATION")
+
+    def command_home(self, _command: object = None) -> None:
+        raise PermissionError("HOME_COMMAND_BLOCKED_IN_REMOTE_PREPARATION")
+
+    def execute_trajectory(self, _trajectory: object = None) -> None:
+        raise PermissionError("TRAJECTORY_EXECUTION_BLOCKED_IN_REMOTE_PREPARATION")
+
+    def call_hold_service(self, _request: object = None) -> None:
+        raise PermissionError("HOLD_SERVICE_BLOCKED_IN_REMOTE_PREPARATION")
+
+    def call_estop_service(self, _request: object = None) -> None:
+        raise PermissionError("ESTOP_SERVICE_BLOCKED_IN_REMOTE_PREPARATION")
