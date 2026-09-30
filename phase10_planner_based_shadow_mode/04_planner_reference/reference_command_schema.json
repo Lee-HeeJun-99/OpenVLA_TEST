@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase10ReferenceCommand",
+  "type": "object",
+  "required": ["episode_id", "step_index", "phase", "reference_pose_previous", "reference_pose_current", "reference_delta_translation_m", "reference_delta_rotation", "reference_gripper_command", "reference_frame", "pose_source", "measured_feedback_available", "measured_action", "canonical_action", "valid", "exclusion_reason"],
+  "properties": {
+    "canonical_action": {"type": "array", "minItems": 7, "maxItems": 7},
+    "pose_source": {"const": "planned_commanded_pose"},
+    "measured_feedback_available": {"const": false},
+    "measured_action": {"type": "null"},
+    "reference_status": {"const": "REFERENCE_COMMAND_NOT_MEASURED_GROUND_TRUTH"}
+  }
+}

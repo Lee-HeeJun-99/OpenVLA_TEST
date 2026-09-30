@@ -1,0 +1,162 @@
+{
+  "audit_type": "READ_ONLY_SOURCE_AUDIT",
+  "generated_outputs_only": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase10_planner_based_shadow_mode/00_audit/real_episode_inventory.csv",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase10_planner_based_shadow_mode/00_audit/real_episode_inventory.md",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase10_planner_based_shadow_mode/00_audit/unprocessed_real_trajectories.json"
+  ],
+  "model_inference_executed": false,
+  "scope_roots": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase8_shadow_mode_distribution_analysis",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase10_planner_based_shadow_mode",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis",
+    "/home/ubuntu/second_a0509_vla_runs/shadow_mode_30rollouts/trajectories_10"
+  ],
+  "counts": {
+    "canonical_real_episodes": 10,
+    "unique_complete_real_trajectories": 10,
+    "exact_sha256_frame_set_duplicate_rows": 0,
+    "same_id_partial_or_derived_real_paths": 2,
+    "reference_extractable_canonical": 10,
+    "phase10_dual_model_reference_action_gap_available": 1,
+    "reference_relative_gap_possible_with_any_existing_model_output": 4,
+    "already_phase10_reference_analyzed": 1,
+    "not_phase10_reference_analyzed": 9
+  },
+  "unprocessed": [
+    {
+      "episode_id": "episode_000008",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000008",
+      "condition": "lighting",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": true,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10 recorded-input OFT prediction under the audited configuration"
+      ],
+      "recommended_order": 1
+    },
+    {
+      "episode_id": "episode_000009",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000009",
+      "condition": "distractor",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": true,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10 recorded-input OFT prediction under the audited configuration"
+      ],
+      "recommended_order": 2
+    },
+    {
+      "episode_id": "episode_000010",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000010",
+      "condition": "extra_object",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": true,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10 recorded-input OFT prediction under the audited configuration"
+      ],
+      "recommended_order": 3
+    },
+    {
+      "episode_id": "episode_000001",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001",
+      "condition": "unknown",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": false,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10-compatible OFT prediction"
+      ],
+      "recommended_order": 4
+    },
+    {
+      "episode_id": "episode_000002",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002",
+      "condition": "unknown",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": false,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10-compatible OFT prediction"
+      ],
+      "recommended_order": 5
+    },
+    {
+      "episode_id": "episode_000003",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003",
+      "condition": "unknown",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": false,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10-compatible OFT prediction"
+      ],
+      "recommended_order": 6
+    },
+    {
+      "episode_id": "episode_000005",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005",
+      "condition": "unknown",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": false,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10-compatible OFT prediction"
+      ],
+      "recommended_order": 7
+    },
+    {
+      "episode_id": "episode_000006",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000006",
+      "condition": "unknown",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": false,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10-compatible OFT prediction"
+      ],
+      "recommended_order": 8
+    },
+    {
+      "episode_id": "episode_000007",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000007",
+      "condition": "unknown",
+      "reference_command_extractable": true,
+      "openvla_prediction_phase10": false,
+      "oft_prediction_phase10": false,
+      "oft_prediction_phase8": false,
+      "missing_for_phase10_dual_model_gap": [
+        "Phase10-compatible OpenVLA prediction",
+        "Phase10-compatible OFT prediction"
+      ],
+      "recommended_order": 9
+    }
+  ],
+  "interpretation": {
+    "phase8": "Environment-conditioned OFT offline output gap for episodes 4/8/9/10; not Reference-relative Action Gap.",
+    "phase10": "Reference-relative dual-model result exists only for episode 4.",
+    "phase_summary_guard": "Ten phase-summary rows are model×phase aggregates and are not ten trajectories.",
+    "duplicate_rule": "Exact duplicate requires equal frame count and identical SHA-256 aggregate of image bytes. Same episode ID or derived replay is reported separately and is not automatically an exact duplicate."
+  }
+}

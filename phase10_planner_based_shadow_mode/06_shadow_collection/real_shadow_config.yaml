@@ -6,6 +6,11 @@ safety:
   allow_home_command: false
   allow_trajectory_execution: false
   allow_service_call: false
+  allow_motion_service: false
+  allow_stop_service: false
+  allow_estop_service: false
+  publish_ai_action: false
+  record_ai_action: true
 
 runtime_source:
   root: /home/ubuntu/robot_ws/src/openvla_doosan_runtime

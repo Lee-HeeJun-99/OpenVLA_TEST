@@ -21,13 +21,21 @@ class RemoteSafetyConfig:
     allow_home_command: bool = False
     allow_trajectory_execution: bool = False
     allow_service_call: bool = False
+    allow_motion_service: bool = False
+    allow_stop_service: bool = False
+    allow_estop_service: bool = False
+    publish_ai_action: bool = False
+    record_ai_action: bool = True
 
     def validate(self) -> None:
-        if self.mode not in {"offline", "dry-run"} or not self.shadow_mode:
+        if self.mode not in {"offline", "dry-run", "offline_preparation"} or not self.shadow_mode:
             raise PermissionError("REMOTE_PREPARATION_REQUIRES_OFFLINE_SHADOW_MODE")
-        unsafe = [name for name, value in vars(self).items() if name.startswith("allow_") and value]
+        unsafe = [name for name, value in vars(self).items()
+                  if (name.startswith("allow_") or name == "publish_ai_action") and value]
         if unsafe:
             raise PermissionError(f"UNSAFE_CAPABILITY_ENABLED:{','.join(sorted(unsafe))}")
+        if not self.record_ai_action:
+            raise ValueError("record_ai_action must remain true for Shadow logging")
 
 
 def load_config(path: Path) -> tuple[RemoteSafetyConfig, dict[str, Any]]:
@@ -66,8 +74,12 @@ class RealRuntimeObserverAdapter:
     def __init__(self, config_path: Path) -> None:
         self.safety, self.config = load_config(config_path)
 
-    def camera(self, *, frame_id: str, stamp_sec: float, clock_domain: str, image_path: str) -> dict[str, Any]:
-        return {"kind": "camera", "frame_id": str(frame_id), "timestamp": float(stamp_sec),
+    def camera(self, *, frame_id: str, stamp_sec: float, clock_domain: str, image_path: str,
+               receive_monotonic_timestamp: float | None = None,
+               receive_ros_timestamp: float | None = None) -> dict[str, Any]:
+        return {"kind": "camera", "frame_id": str(frame_id), "source_timestamp": float(stamp_sec),
+                "receive_monotonic_timestamp": receive_monotonic_timestamp,
+                "receive_ros_timestamp": receive_ros_timestamp,
                 "clock_domain": str(clock_domain), "raw_image_path": str(image_path)}
 
     def measured_state(self, *, stamp_sec: float, clock_domain: str,
@@ -77,7 +89,7 @@ class RealRuntimeObserverAdapter:
         velocities = [float(v) for v in joint_velocity]
         if len(joints) != len(velocities) or not all(math.isfinite(v) for v in joints + velocities):
             raise ValueError("joint position/velocity mismatch or non-finite value")
-        return {"kind": "state", "timestamp": float(stamp_sec), "clock_domain": str(clock_domain),
+        return {"kind": "state", "source_timestamp": float(stamp_sec), "clock_domain": str(clock_domain),
                 "raw_joint_position": joints, "raw_joint_velocity": velocities,
                 "raw_ee_pose_mm_deg": _finite(ee_pose_mm_deg, 6, "ee_pose_mm_deg"),
                 "raw_gripper_state": None if gripper_open is None else {"open": bool(gripper_open)}}
@@ -87,5 +99,5 @@ class RealRuntimeObserverAdapter:
         if kind not in {"planner_raw_action", "planner_target", "executed_command"}:
             raise ValueError(f"unsupported observed action kind: {kind}")
         expected = 7 if kind == "planner_raw_action" else 6
-        return {"kind": kind, "timestamp": float(stamp_sec), "clock_domain": str(clock_domain),
+        return {"kind": kind, "source_timestamp": float(stamp_sec), "clock_domain": str(clock_domain),
                 "values": _finite(values, expected, kind), "source": str(source), "observation_only": True}

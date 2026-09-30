@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETED_WITH_MODEL_SERVER",
+  "comparison": "reference-command-relative error",
+  "rotation_convention": "collector_rpy_assumption",
+  "overall": {
+    "oft_vision_step28560": {
+      "samples": 45,
+      "translation_l1_mean_m": 0.02058852475881988,
+      "translation_l2_rmse_m": 0.017581185771113922,
+      "rotation_l1_mean_rad": 0.22837357692032997,
+      "rotation_l2_rmse_rad": 0.24628410165793732,
+      "gripper_mae": 0.36030815972222224,
+      "gripper_accuracy": 0.6444444444444445,
+      "translation_cosine_distance_mean": 0.9564085954176389
+    },
+    "openvla_step8130": {
+      "samples": 45,
+      "translation_l1_mean_m": 0.01720026444772881,
+      "translation_l2_rmse_m": 0.014574152185501557,
+      "rotation_l1_mean_rad": 0.232868413890247,
+      "rotation_l2_rmse_rad": 0.24958550913946326,
+      "gripper_mae": 0.06836601307189542,
+      "gripper_accuracy": 0.9333333333333333,
+      "translation_cosine_distance_mean": 0.2921796958485542
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "status": "COMPLETED_WITH_MODEL_SERVER",
+  "one_episode_only": true,
+  "models": {
+    "openvla_step8130": {
+      "including_warmup": {
+        "count": 45,
+        "mean": 0.3207331690989021,
+        "median_p50": 0.3153125159442425,
+        "p90": 0.3283294369932264,
+        "p95": 0.3315012964885682,
+        "p99": 0.4510895240865653,
+        "max": 0.5435424279421568,
+        "standard_deviation": 0.03482109716448478,
+        "budget_seconds": 0.2,
+        "budget_exceed_count": 45,
+        "budget_exceed_ratio": 1.0
+      },
+      "excluding_first_request": {
+        "count": 44,
+        "mean": 0.31566932230700995,
+        "median_p50": 0.3149667589459568,
+        "p90": 0.3278359231771901,
+        "p95": 0.32904125908389686,
+        "p99": 0.3328517256351188,
+        "max": 0.3334221919067204,
+        "standard_deviation": 0.009281774138985665,
+        "budget_seconds": 0.2,
+        "budget_exceed_count": 44,
+        "budget_exceed_ratio": 1.0
+      }
+    },
+    "oft_vision_step28560": {
+      "including_warmup": {
+        "count": 9,
+        "mean": 0.31956161801806754,
+        "median_p50": 0.21428074594587088,
+        "p90": 0.41261374591849764,
+        "p95": 0.7844537514727559,
+        "p99": 1.0819257559161632,
+        "max": 1.156293757027015,
+        "standard_deviation": 0.29586569757246634,
+        "budget_seconds": 1.0,
+        "budget_exceed_count": 1,
+        "budget_exceed_ratio": 0.1111111111111111
+      },
+      "excluding_first_request": {
+        "count": 8,
+        "mean": 0.2149701006419491,
+        "median_p50": 0.2134272319963202,
+        "p90": 0.21993918896187098,
+        "p95": 0.2233164660516195,
+        "p99": 0.2260182877234183,
+        "max": 0.22669374314136803,
+        "standard_deviation": 0.004909716050588403,
+        "budget_seconds": 1.0,
+        "budget_exceed_count": 0,
+        "budget_exceed_ratio": 0.0
+      }
+    }
+  }
+}

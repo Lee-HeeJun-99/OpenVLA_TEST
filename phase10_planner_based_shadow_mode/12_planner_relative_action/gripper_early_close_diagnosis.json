@@ -1,0 +1,119 @@
+{
+  "classification": "H. MULTIPLE_CONTRIBUTING_FACTORS",
+  "confirmed_factors": [
+    "model_output_crosses_dataset-closedness threshold early (expanded step 1)",
+    "B. GRIPPER_POLARITY_MISMATCH in Real ActionAdapter",
+    "E. THRESHOLD_DEFINITION_ERROR if step-1 is called runtime close",
+    "G. RUNTIME_OFFLINE_POSTPROCESS_MISMATCH",
+    "Real runtime discards chunk indices 1..4"
+  ],
+  "not_supported": [
+    "C. DENORMALIZATION_ERROR",
+    "D. CANONICALIZATION_ERROR",
+    "F. CHUNK_ALIGNMENT_ERROR in offline expansion"
+  ],
+  "selected_runs": {
+    "openvla": "openvla_step8130_retry",
+    "oft": "oft_vision_step28560_local"
+  },
+  "chunk_mapping": {
+    "inference_frames": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40
+    ],
+    "complete": true,
+    "duplicates": 0,
+    "missing": 0,
+    "off_by_one": false
+  },
+  "event_summary": {
+    "reference": {
+      "first_close_step": 26,
+      "persistent_close_step": {
+        "N1": 26,
+        "N2": 26,
+        "N3": 26,
+        "N5": 26
+      },
+      "open_to_close_transitions": 1,
+      "close_to_open_transitions": 0,
+      "false_close_count": 0,
+      "missed_close_count": 0
+    },
+    "openvla_offline": {
+      "first_close_step": 23,
+      "persistent_close_step": {
+        "N1": 23,
+        "N2": 23,
+        "N3": 23,
+        "N5": 23
+      },
+      "open_to_close_transitions": 1,
+      "close_to_open_transitions": 0,
+      "false_close_count": 3,
+      "missed_close_count": 0
+    },
+    "oft_offline_expanded": {
+      "first_close_step": 1,
+      "persistent_close_step": {
+        "N1": 1,
+        "N2": 1,
+        "N3": 1,
+        "N5": 24
+      },
+      "open_to_close_transitions": 5,
+      "close_to_open_transitions": 4,
+      "false_close_count": 16,
+      "missed_close_count": 0
+    },
+    "openvla_runtime_equivalent": {
+      "first_close_step": 0,
+      "persistent_close_step": {
+        "N1": 0,
+        "N2": 0,
+        "N3": 0,
+        "N5": 0
+      },
+      "open_to_close_transitions": 0,
+      "close_to_open_transitions": 1,
+      "false_close_count": 23,
+      "missed_close_count": 19
+    },
+    "oft_runtime_equivalent_chunk0_hold": {
+      "first_close_step": 10,
+      "persistent_close_step": {
+        "N1": 10,
+        "N2": 10,
+        "N3": 10,
+        "N5": 10
+      },
+      "open_to_close_transitions": 1,
+      "close_to_open_transitions": 1,
+      "false_close_count": 15,
+      "missed_close_count": 19
+    },
+    "oft_chunk_level_first_close": {
+      "inference_frame": 0,
+      "chunk_index": 1,
+      "expanded_step": 1
+    }
+  },
+  "runtime_thresholds": {
+    "open_if_gte": 0.7,
+    "close_if_lte": 0.3,
+    "middle": "hold_last",
+    "initial": "open"
+  },
+  "safety": {
+    "robot_commands": 0,
+    "ros_calls": 0,
+    "closed_loop": 0
+  }
+}

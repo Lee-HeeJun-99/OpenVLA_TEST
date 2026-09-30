@@ -1,0 +1,29 @@
+safety:
+  mode: offline_preparation
+  shadow_mode: true
+  allow_robot_command: false
+  allow_gripper_command: false
+  allow_home_command: false
+  allow_trajectory_execution: false
+  allow_service_call: false
+  allow_motion_service: false
+  allow_stop_service: false
+  allow_estop_service: false
+  publish_ai_action: false
+  record_ai_action: true
+
+observation_interfaces:
+  camera: /vla/image_rgb
+  joint_state: /dsr01/joint_states
+  measured_ee_pose: /doosan/current_pose
+  reference_command: UNRESOLVED_DEDICATED_TOPIC
+  gripper_measured_state: NOT_FOUND
+
+launch_policy:
+  start_reference_controller: false
+  start_robot_bridge: false
+  start_action_adapter: false
+  start_model_servers: false
+  create_publishers: false
+  create_service_clients: false
+  create_action_clients: false

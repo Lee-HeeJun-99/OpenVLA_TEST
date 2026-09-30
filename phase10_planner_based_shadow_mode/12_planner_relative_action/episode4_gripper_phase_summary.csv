@@ -1,0 +1,11 @@
+model,phase,samples,tp,tn,fp,fn,accuracy,precision,recall,f1,balanced_accuracy
+openvla_step8130,alignment,17,0,17,0,0,1.0,0.0,0.0,0.0,0.5
+openvla_step8130,descent_to_grasp,8,1,4,3,0,0.625,0.25,1.0,0.4,0.7857142857142857
+openvla_step8130,grasp_close,10,10,0,0,0,1.0,1.0,1.0,1.0,0.5
+openvla_step8130,hold,2,0,2,0,0,1.0,0.0,0.0,0.0,0.5
+openvla_step8130,lift,8,8,0,0,0,1.0,1.0,1.0,1.0,0.5
+oft_vision_step28560,alignment,17,0,5,12,0,0.29411764705882354,0.0,0.0,0.0,0.14705882352941177
+oft_vision_step28560,descent_to_grasp,8,1,4,3,0,0.625,0.25,1.0,0.4,0.7857142857142857
+oft_vision_step28560,grasp_close,10,10,0,0,0,1.0,1.0,1.0,1.0,0.5
+oft_vision_step28560,hold,2,0,1,1,0,0.5,0.0,0.0,0.0,0.25
+oft_vision_step28560,lift,8,8,0,0,0,1.0,1.0,1.0,1.0,0.5

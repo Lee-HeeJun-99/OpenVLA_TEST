@@ -21,8 +21,8 @@ class RealEpisodeRecorder:
         valid = True
         reason = None
         if comparable:
-            ages = {"camera_state_sec": abs(camera["timestamp"] - state["timestamp"]),
-                    "camera_planner_sec": abs(camera["timestamp"] - planner["timestamp"])}
+            ages = {"camera_state_sec": abs(camera["source_timestamp"] - state["source_timestamp"]),
+                    "camera_planner_sec": abs(camera["source_timestamp"] - planner["source_timestamp"])}
             if max(ages.values()) > self.max_age_sec:
                 valid, reason = False, "MESSAGE_SYNC_TIMEOUT"
         else:

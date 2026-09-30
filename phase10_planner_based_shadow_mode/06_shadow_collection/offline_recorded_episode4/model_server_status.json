@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED_WITH_MODEL_SERVER",
+  "episode": "episode_000004",
+  "openvla": {
+    "source": "openvla_step8130_retry",
+    "variant": "openvla_token",
+    "records": 45,
+    "predictions": 45,
+    "inference_errors": 0,
+    "mean_latency_seconds": 0.3207331690989021,
+    "max_latency_seconds": 0.5435424279421568
+  },
+  "oft": {
+    "source": "oft_vision_step28560_local",
+    "variant": "oftplus_h5_vision",
+    "records": 45,
+    "chunks": 9,
+    "chunk_size": 5,
+    "inference_errors": 0,
+    "mean_latency_seconds": 0.31956161801806754,
+    "max_latency_seconds": 1.156293757027015
+  },
+  "fixture_predictions": 0,
+  "ai_executed_actions": 0,
+  "robot_delivered_commands": 0
+}
