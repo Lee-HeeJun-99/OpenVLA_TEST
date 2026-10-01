@@ -1,0 +1,55 @@
+{
+  "dataset_format": "a0509_openvla_oft_portable_v1",
+  "dataset_key": "a0509_sim_cube_pick",
+  "generated_at": "2026-09-30T13:55:00.241290+00:00",
+  "source_script": "single_robot_simple.py",
+  "robot": "Doosan A0509",
+  "task": "cube_pick",
+  "record_frequency_hz": 5.0,
+  "image_resolution_wh": "source_camera",
+  "image_camera": "primary",
+  "action": {
+    "shape": [
+      7
+    ],
+    "names": [
+      "delta_x_world_m",
+      "delta_y_world_m",
+      "delta_z_world_m",
+      "delta_rotation_vector_x_rad",
+      "delta_rotation_vector_y_rad",
+      "delta_rotation_vector_z_rad",
+      "gripper_closedness_target_0_open_1_closed_continuous"
+    ],
+    "alignment": "observation_t_to_observation_t_plus_1",
+    "gripper_convention": "0_open_1_closed_continuous"
+  },
+  "proprio": {
+    "shape": [
+      7
+    ],
+    "fields": [
+      "joint_1_rad",
+      "joint_2_rad",
+      "joint_3_rad",
+      "joint_4_rad",
+      "joint_5_rad",
+      "joint_6_rad",
+      "gripper_closedness"
+    ]
+  },
+  "splits": {
+    "train": {
+      "episodes": 4,
+      "transitions": 178
+    },
+    "val": {
+      "episodes": 1,
+      "transitions": 45
+    },
+    "all": {
+      "episodes": 5,
+      "transitions": 223
+    }
+  }
+}

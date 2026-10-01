@@ -1,0 +1,66 @@
+{
+  "target_color": "orange",
+  "grid": {
+    "x_range_mm": [
+      380.5,
+      860.5
+    ],
+    "y_range_mm": [
+      -387.0,
+      388.0
+    ],
+    "x_cells": 6,
+    "y_cells": 6,
+    "cell_size_x_mm": 80.0,
+    "cell_size_y_mm": 129.16666666666666,
+    "orange_allowed_x_mm": [
+      380.5,
+      550.0
+    ]
+  },
+  "sim_orange_offset_m": [
+    -0.02,
+    0.005,
+    0.0
+  ],
+  "layout_id": "trajectory_003_xleft_distractor_swap",
+  "episode_id": "episode_000003",
+  "real_layout_mm": {
+    "orange": [
+      420.5,
+      -193.25
+    ],
+    "yellow": [
+      820.5,
+      65.08333333333331
+    ],
+    "blue": [
+      580.5,
+      323.41666666666663
+    ]
+  },
+  "layout_m": {
+    "red": [
+      0.40049999999999997,
+      -0.18825,
+      0.8605289459228516
+    ],
+    "yellow": [
+      0.8205,
+      0.06508333333333331,
+      0.8605289459228516
+    ],
+    "blue": [
+      0.5805,
+      0.32341666666666663,
+      0.8605289459228516
+    ]
+  },
+  "notes": {
+    "red": "The red prim is displayed as the orange target cube in this Isaac scene.",
+    "orange_real_to_sim": "Sim preview/replay applies the existing offset [-20 mm, +5 mm, 0] to the real orange XY.",
+    "collection_goal": "8 trajectories total; orange restricted by x-axis to 380.5 < x < 550 mm."
+  },
+  "condition_id": "distractor_swap",
+  "source_layout": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json"
+}

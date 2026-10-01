@@ -1,0 +1,20 @@
+#usda 1.0
+(
+    subLayers = [@/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda@]
+)
+
+over "World" {
+    over "Environment" {
+        over "Objects" {
+            def Cylinder "Phase11ExtraObject" (
+                displayName = "Phase 11 additional object"
+            ) {
+                float radius = 0.035
+                float height = 0.1
+                color3f[] primvars:displayColor = [(0.25, 0.1, 0.8)]
+                double3 xformOp:translate = (0.82, -0.32, 0.9105289459228516)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+        }
+    }
+}

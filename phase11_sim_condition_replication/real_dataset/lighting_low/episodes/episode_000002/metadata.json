@@ -1,0 +1,285 @@
+{
+  "episode_id": "episode_000002",
+  "episode_index": 0,
+  "dataset_format": "a0509_openvla_oft_portable_v1",
+  "dataset_key": "a0509_sim_cube_pick",
+  "instruction": "Pick up the orange cube.",
+  "target_color": "orange",
+  "demonstration_type": "nominal",
+  "task": "cube_pick",
+  "robot": "Doosan A0509",
+  "camera": "Stereolabs ZED",
+  "camera_mount": "eye_in_hand_vertical",
+  "coordinate_frame": "base",
+  "pose_source": "planned_commanded_pose",
+  "position_unit": "meter",
+  "rotation_unit": "radian",
+  "robot_control_position_unit": "millimeter",
+  "robot_control_rotation_unit": "degree",
+  "image_topic": "/zed/zed_node/rgb/color/rect/image",
+  "image_format": "jpg",
+  "record_frequency_hz": 5.0,
+  "effective_record_frequency_hz": 5.000820327510325,
+  "num_steps": 47,
+  "duration_sec": 9.253857634961605,
+  "success": true,
+  "failure_reason": "",
+  "digital_gripper_command_convention": {
+    "0": "closed",
+    "1": "open"
+  },
+  "gripper_closedness_convention": {
+    "0": "open",
+    "1": "closed"
+  },
+  "gripper_value_semantics": "commanded_state",
+  "action_convention": {
+    "shape": [
+      7
+    ],
+    "values": [
+      "delta_x_world_m",
+      "delta_y_world_m",
+      "delta_z_world_m",
+      "delta_rotation_vector_x_rad",
+      "delta_rotation_vector_y_rad",
+      "delta_rotation_vector_z_rad",
+      "gripper_closedness_target_0_open_1_closed_continuous"
+    ],
+    "alignment": "observation_t_to_observation_t_plus_1"
+  },
+  "proprio_convention": {
+    "shape": [
+      7
+    ],
+    "values": [
+      "joint_1_rad",
+      "joint_2_rad",
+      "joint_3_rad",
+      "joint_4_rad",
+      "joint_5_rad",
+      "joint_6_rad",
+      "gripper_closedness"
+    ]
+  },
+  "collection_mode": "fixed_joint_start_grid_cell_cube_pick",
+  "training_semantics": "The move to the fixed joint start pose is not recorded. Recorded samples begin at the fixed start pose and contain alignment, descent, grasp-close, and lift.",
+  "grid_cell": null,
+  "grid_definition": {
+    "x_range_mm": [
+      380.5,
+      860.5
+    ],
+    "y_range_mm": [
+      -387.0,
+      388.0
+    ],
+    "z_mm": 924.0,
+    "x_cells": 6,
+    "y_cells": 6,
+    "trials_per_cell": 11,
+    "saved_trials_per_cell": 10,
+    "first_trial_per_cell_saved": false
+  },
+  "fixed_start_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.499750000000006
+  ],
+  "random_start_pose_mm_deg": [
+    305.0901794433594,
+    -11.828291893005371,
+    723.6777954101562,
+    179.91046142578125,
+    -155.5612335205078,
+    3.35062313079834
+  ],
+  "route_poses_mm_deg": {
+    "alignment": [
+      497.1175564881165,
+      -323.04822697940045,
+      403.8173830367776,
+      49.02,
+      180.0,
+      -127.62
+    ],
+    "grasp": [
+      500.5,
+      -322.4166666666667,
+      297.8240138201799,
+      49.02,
+      180.0,
+      -127.62
+    ],
+    "lift": [
+      500.5,
+      -322.4166666666667,
+      395.6541378153174,
+      49.02,
+      180.0,
+      -127.62
+    ]
+  },
+  "motion_segments": [
+    {
+      "label": "alignment",
+      "start_time": 0.4022039839765057,
+      "end_time": 4.0542098070145585,
+      "start_pose_mm_deg": [
+        305.0901794433594,
+        -11.828291893005371,
+        723.6777954101562,
+        179.91046142578125,
+        -155.5612335205078,
+        3.35062313079834
+      ],
+      "target_pose_mm_deg": [
+        497.1175564881165,
+        -323.04822697940045,
+        403.8173830367776,
+        49.02,
+        180.0,
+        -127.62
+      ]
+    },
+    {
+      "label": "descent_to_grasp",
+      "start_time": 4.054241493984591,
+      "end_time": 5.649604599981103,
+      "start_pose_mm_deg": [
+        497.1175564881165,
+        -323.04822697940045,
+        403.8173830367776,
+        49.02,
+        180.0,
+        -127.62
+      ],
+      "target_pose_mm_deg": [
+        500.5,
+        -322.4166666666667,
+        297.8240138201799,
+        49.02,
+        180.0,
+        -127.62
+      ]
+    },
+    {
+      "label": "lift",
+      "start_time": 7.663740551972296,
+      "end_time": 9.253471679985523,
+      "start_pose_mm_deg": [
+        500.5,
+        -322.4166666666667,
+        297.8240138201799,
+        49.02,
+        180.0,
+        -127.62
+      ],
+      "target_pose_mm_deg": [
+        500.5,
+        -322.4166666666667,
+        395.6541378153174,
+        49.02,
+        180.0,
+        -127.62
+      ]
+    }
+  ],
+  "workspace_mm": {
+    "x": [
+      380.5,
+      860.5
+    ],
+    "y": [
+      -387.0,
+      388.0
+    ],
+    "z": [
+      924.0,
+      924.0
+    ]
+  },
+  "motion_profile": {
+    "velocity_multiplier": 0,
+    "acceleration_multiplier": 0,
+    "sweep_base": 40.0
+  },
+  "move_velocity_mm_s": 200.0,
+  "move_angular_velocity_deg_s": 200.0,
+  "move_acceleration_mm_s2": 200.0,
+  "move_angular_acceleration_deg_s2": 200.0,
+  "skipped_image": 0,
+  "pose_errors": 0,
+  "image_errors": 0,
+  "duplicate_image_count": 0,
+  "planned_pose_samples": 47,
+  "feedback_pose_samples": 0,
+  "block_layout": {
+    "target_color": "orange",
+    "grid": {
+      "x_range_mm": [
+        380.5,
+        860.5
+      ],
+      "y_range_mm": [
+        -387.0,
+        388.0
+      ],
+      "x_cells": 6,
+      "y_cells": 6,
+      "cell_size_x_mm": 80.0,
+      "cell_size_y_mm": 129.16666666666666,
+      "orange_allowed_x_mm": [
+        380.5,
+        550.0
+      ]
+    },
+    "sim_orange_offset_m": [
+      -0.02,
+      0.005,
+      0.0
+    ],
+    "layout_id": "trajectory_002_xleft",
+    "episode_id": "episode_000002",
+    "real_layout_mm": {
+      "orange": [
+        500.5,
+        -322.4166666666667
+      ],
+      "yellow": [
+        820.5,
+        -64.08333333333334
+      ],
+      "blue": [
+        660.5,
+        323.41666666666663
+      ]
+    },
+    "layout_m": {
+      "red": [
+        0.4804999999999999,
+        -0.3174166666666667,
+        0.8605289459228516
+      ],
+      "yellow": [
+        0.8205,
+        -0.06408333333333334,
+        0.8605289459228516
+      ],
+      "blue": [
+        0.6605,
+        0.32341666666666663,
+        0.8605289459228516
+      ]
+    },
+    "notes": {
+      "red": "The red prim is displayed as the orange target cube in this Isaac scene.",
+      "orange_real_to_sim": "Sim preview/replay applies the existing offset [-20 mm, +5 mm, 0] to the real orange XY.",
+      "collection_goal": "8 trajectories total; orange restricted by x-axis to 380.5 < x < 550 mm."
+    }
+  },
+  "block_layout_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json"
+}

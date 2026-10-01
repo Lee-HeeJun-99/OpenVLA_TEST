@@ -1,0 +1,3433 @@
+{
+  "report_type": "real_episode_joint_replay",
+  "status": "complete",
+  "failure_reason": "",
+  "source_steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004/steps.jsonl",
+  "output": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay.json",
+  "method": "Command recorded joint_position_rad[:6] from real steps.jsonl after confirmed Sim HOME convergence. If home_relative is true, commands are Sim HOME plus each real joint delta from the first real step.",
+  "home_relative": true,
+  "snap_before_capture": true,
+  "prepare_only": false,
+  "attach_cube_on_close": true,
+  "attach_distance_m": 0.3,
+  "attach_events": [
+    {
+      "replay_index": 27,
+      "source_step_index": 27,
+      "distance_m": 0.2525974097464802,
+      "xy_distance_m": 0.020218484264513926,
+      "gripper_closedness": 1.0
+    }
+  ],
+  "cube_layout": null,
+  "home_check": {
+    "converged": true,
+    "reason": "home_set_and_verified",
+    "steps": 1,
+    "max_abs_error_rad": 0.0005634389817714691,
+    "actual_joint_position_rad": [
+      -3.186311960220337,
+      -0.01903725042939186,
+      -0.7153490781784058,
+      0.021879833191633224,
+      -1.9810473918914795,
+      -3.1154162883758545
+    ],
+    "target_joint_position_rad": [
+      -3.185847520828247,
+      -0.018473811447620392,
+      -0.7153055667877197,
+      0.021886058151721954,
+      -1.9810477495193481,
+      -3.115417078133008
+    ]
+  },
+  "replay_rate_hz": 5.0,
+  "physics_hz": 60.0,
+  "hold_steps_per_source_step": 12,
+  "source_step_count": 45,
+  "executed_step_count": 45,
+  "image_capture": {
+    "enabled": true,
+    "output_dir": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images",
+    "frame_count": 45,
+    "frames_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/raw_dataset_oft_episode_000004_home_relative_joint_replay_images/frames.jsonl"
+  },
+  "records": [
+    {
+      "replay_index": 0,
+      "source_step_index": 0,
+      "source_timestamp_s": 0.010449350986164063,
+      "source_image": "episodes/episode_000004/images/primary/000000.jpg",
+      "planner_phase": "hold",
+      "source_joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        7.450141614739891e-08
+      ],
+      "max_abs_joint_error_rad": 7.450141614739891e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.009001454145743937,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.30836527449642975,
+          -0.011480791064606703,
+          1.5390194178785521
+        ],
+        "quaternion_wxyz": [
+          0.1548254755677064,
+          -0.670849787387036,
+          0.710672918025197,
+          -0.14468461723194262
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682913482189178,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -4.79161258226668e-07,
+          3.283927298980416e-06,
+          -1.7066806776711019e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.7216320287897909,
+      "ee_to_cube_xy_m": 0.24577099820407958,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000000.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 1,
+      "source_step_index": 1,
+      "source_timestamp_s": 0.20795710000675172,
+      "source_image": "episodes/episode_000004/images/primary/000001.jpg",
+      "planner_phase": "hold",
+      "source_joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        7.450141614739891e-08
+      ],
+      "max_abs_joint_error_rad": 7.450141614739891e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 2.8774656102292795e-08,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.30836527449642975,
+          -0.011480791064606703,
+          1.5390194178785521
+        ],
+        "quaternion_wxyz": [
+          0.1548254755677064,
+          -0.670849787387036,
+          0.710672918025197,
+          -0.14468461723194262
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.194841262185946e-07,
+          3.6654112136602635e-06,
+          -1.573628310325148e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.721632032410603,
+      "ee_to_cube_xy_m": 0.24577100883549666,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000001.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 2,
+      "source_step_index": 2,
+      "source_timestamp_s": 0.40767841099295765,
+      "source_image": "episodes/episode_000004/images/primary/000002.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "target_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417078133008
+      ],
+      "actual_joint_position_rad": [
+        -3.185847520828247,
+        -0.018473811447620392,
+        -0.7153055667877197,
+        0.021886058151721954,
+        -1.9810477495193481,
+        -3.115417003631592
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        7.450141614739891e-08
+      ],
+      "max_abs_joint_error_rad": 7.450141614739891e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.00011715061705697138,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.30836527449642975,
+          -0.011480791064606703,
+          1.5390194178785521
+        ],
+        "quaternion_wxyz": [
+          0.1548254755677064,
+          -0.670849787387036,
+          0.710672918025197,
+          -0.14468461723194262
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -6.028180905559566e-07,
+          3.3792514386732364e-06,
+          -1.6628430330456467e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.721632032410603,
+      "ee_to_cube_xy_m": 0.24577100883549666,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000002.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 3,
+      "source_step_index": 3,
+      "source_timestamp_s": 0.6074994679656811,
+      "source_image": "episodes/episode_000004/images/primary/000003.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.1874477863311768,
+        -0.01847066916525364,
+        -0.7188621759414673,
+        0.022486180067062378,
+        -1.9790854454040527,
+        0.024937311187386513
+      ],
+      "target_joint_position_rad": [
+        -3.1871490478515625,
+        -0.018237236887216568,
+        -0.7184814810752869,
+        0.02244022861123085,
+        -1.9791823625564575,
+        -3.1166546288833827
+      ],
+      "actual_joint_position_rad": [
+        -3.1871490478515625,
+        -0.018237236887216568,
+        -0.7184814810752869,
+        0.02244022861123085,
+        -1.9791823625564575,
+        -3.116654634475708
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -5.592325269532239e-09
+      ],
+      "max_abs_joint_error_rad": 5.592325269532239e-09,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0003288177580669238,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.30892423302358263,
+          -0.011838085060915724,
+          1.5382391622831721
+        ],
+        "quaternion_wxyz": [
+          0.154445759061519,
+          -0.6710048092540859,
+          0.7106798074759532,
+          -0.1443373295850417
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -7.366822956100805e-07,
+          3.6538144740916323e-06,
+          -1.5394796264445176e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.7206783113921296,
+      "ee_to_cube_xy_m": 0.2451244793212252,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000003.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 4,
+      "source_step_index": 4,
+      "source_timestamp_s": 0.8071443170192651,
+      "source_image": "episodes/episode_000004/images/primary/000004.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.2014429569244385,
+        -0.014636660926043987,
+        -0.7479742169380188,
+        0.02804720401763916,
+        -1.9630862474441528,
+        0.013903971761465073
+      ],
+      "target_joint_position_rad": [
+        -3.201144218444824,
+        -0.014403228648006916,
+        -0.7475935220718384,
+        0.028001252561807632,
+        -1.9631831645965576,
+        -3.127687968309304
+      ],
+      "actual_joint_position_rad": [
+        -3.201144218444824,
+        -0.014403228648006916,
+        -0.7475935220718384,
+        0.028001252561807632,
+        -1.9631831645965576,
+        -3.127687931060791
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.724851316277977e-08
+      ],
+      "max_abs_joint_error_rad": 3.724851316277977e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 7.35390289077209e-05,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.3128439707578384,
+          -0.01569896620492193,
+          1.5314500389573877
+        ],
+        "quaternion_wxyz": [
+          0.1512418729492003,
+          -0.6716002450913272,
+          0.711416965597759,
+          -0.14129723181918302
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -5.810767333969125e-07,
+          3.348245172674069e-06,
+          -1.6261753899016185e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.7124286485817941,
+      "ee_to_cube_xy_m": 0.23962342594453137,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000004.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 5,
+      "source_step_index": 5,
+      "source_timestamp_s": 1.0066812509903684,
+      "source_image": "episodes/episode_000004/images/primary/000005.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.2284491062164307,
+        -0.0097334124147892,
+        -0.8035183548927307,
+        0.037829332053661346,
+        -1.9317433834075928,
+        -0.00900219939649105
+      ],
+      "target_joint_position_rad": [
+        -3.2281503677368164,
+        -0.009499980136752129,
+        -0.8031376600265503,
+        0.03778338059782982,
+        -1.9318403005599976,
+        -3.1505941394672603
+      ],
+      "actual_joint_position_rad": [
+        -3.2281503677368164,
+        -0.009499980136752129,
+        -0.8031376600265503,
+        0.03778338059782982,
+        -1.9318403005599976,
+        -3.1505942344665527
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -9.499929243261818e-08
+      ],
+      "max_abs_joint_error_rad": 9.499929243261818e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0002561424826753589,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.3210988847541404,
+          -0.023633461653242847,
+          1.517316261476698
+        ],
+        "quaternion_wxyz": [
+          0.1446010936095896,
+          -0.6729635292426073,
+          0.7127265193372518,
+          -0.135024148468529
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -7.427843797813694e-07,
+          3.7019042338215513e-06,
+          -1.6121899761856184e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.6952950892846502,
+      "ee_to_cube_xy_m": 0.22817888819031698,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000005.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 6,
+      "source_step_index": 6,
+      "source_timestamp_s": 1.207747632986866,
+      "source_image": "episodes/episode_000004/images/primary/000006.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.26548433303833,
+        -0.008434942923486233,
+        -0.8771533370018005,
+        0.04891761764883995,
+        -1.8886113166809082,
+        -0.0426967516541481
+      ],
+      "target_joint_position_rad": [
+        -3.265185594558716,
+        -0.008201510645449162,
+        -0.8767726421356201,
+        0.04887166619300842,
+        -1.888708233833313,
+        -3.1842886917249174
+      ],
+      "actual_joint_position_rad": [
+        -3.265185594558716,
+        -0.008201510645449162,
+        -0.8767726421356201,
+        0.04887166619300842,
+        -1.888708233833313,
+        -3.184288740158081
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -4.843316370184425e-08
+      ],
+      "max_abs_joint_error_rad": 4.843316370184425e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.00029686375938620113,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.33343907908492976,
+          -0.0356856684395733,
+          1.4959922488986468
+        ],
+        "quaternion_wxyz": [
+          0.1345919478902036,
+          -0.6748420163099531,
+          0.7146314590226801,
+          -0.1255991176758552
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -5.156524593985523e-07,
+          3.5645543903228827e-06,
+          -1.4846912108623656e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.6695574258425111,
+      "ee_to_cube_xy_m": 0.21093473236717086,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000006.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 7,
+      "source_step_index": 7,
+      "source_timestamp_s": 1.4078248600126244,
+      "source_image": "episodes/episode_000004/images/primary/000007.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.3084805011749268,
+        -0.017769671976566315,
+        -0.9593974351882935,
+        0.05805002525448799,
+        -1.8369537591934204,
+        -0.08528126031160355
+      ],
+      "target_joint_position_rad": [
+        -3.3081817626953125,
+        -0.017536239698529243,
+        -0.959016740322113,
+        0.058004073798656464,
+        -1.8370506763458252,
+        -3.226873200382373
+      ],
+      "actual_joint_position_rad": [
+        -3.3081817626953125,
+        -0.017536239698529243,
+        -0.959016740322113,
+        0.058004073798656464,
+        -1.8370506763458252,
+        -3.2268731594085693
+      ],
+      "joint_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.097380346124169e-08
+      ],
+      "max_abs_joint_error_rad": 4.097380346124169e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0002028322939215954,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.3503877179813541,
+          -0.051855229099498225,
+          1.4672310697035416
+        ],
+        "quaternion_wxyz": [
+          0.12093953474779072,
+          -0.677204580506403,
+          0.7169887493207151,
+          -0.11267084105327059
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -5.784275458609045e-07,
+          3.60823923983844e-06,
+          -1.6753515410528053e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.6350231036269292,
+      "ee_to_cube_xy_m": 0.18752813872975221,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000007.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 8,
+      "source_step_index": 8,
+      "source_timestamp_s": 1.6078236380126327,
+      "source_image": "episodes/episode_000004/images/primary/000008.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.3478097915649414,
+        -0.038667891174554825,
+        -1.0308042764663696,
+        0.062187716364860535,
+        -1.7872939109802246,
+        -0.12720999121665955
+      ],
+      "target_joint_position_rad": [
+        -3.347511053085327,
+        -0.038434458896517754,
+        -1.0304235816001892,
+        0.06214176490902901,
+        -1.7873908281326294,
+        -3.268801931287429
+      ],
+      "actual_joint_position_rad": [
+        -3.347511053085327,
+        -0.0384344607591629,
+        -1.030423641204834,
+        0.06214176490902901,
+        -1.7873908281326294,
+        -3.2688019275665283
+      ],
+      "joint_error_rad": [
+        0.0,
+        -1.862645149230957e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.720900476622546e-09
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0010906717386739428,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.36852015742537836,
+          -0.06922026744210336,
+          1.436400776099273
+        ],
+        "quaternion_wxyz": [
+          0.10625902890022963,
+          -0.6794418663532196,
+          0.7192477398332429,
+          -0.09874440626387813
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -5.535038667403569e-07,
+          3.5397640658629825e-06,
+          -1.6543696119697415e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.5983449419046626,
+      "ee_to_cube_xy_m": 0.16244456304498953,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000008.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 9,
+      "source_step_index": 9,
+      "source_timestamp_s": 1.8077602650155313,
+      "source_image": "episodes/episode_000004/images/primary/000009.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.381718158721924,
+        -0.06979493051767349,
+        -1.08771550655365,
+        0.06196819245815277,
+        -1.7418850660324097,
+        -0.16543371975421906
+      ],
+      "target_joint_position_rad": [
+        -3.3814194202423096,
+        -0.06956149823963642,
+        -1.0873348116874695,
+        0.06192224100232124,
+        -1.7419819831848145,
+        -3.3070256598249883
+      ],
+      "actual_joint_position_rad": [
+        -3.3814194202423096,
+        -0.06956149637699127,
+        -1.0873348712921143,
+        0.06192224100232124,
+        -1.7419819831848145,
+        -3.307025671005249
+      ],
+      "joint_error_rad": [
+        0.0,
+        1.862645149230957e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -1.118026071722511e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0010038660518054687,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.386861026236158,
+          -0.08674361412782054,
+          1.4052566500406771
+        ],
+        "quaternion_wxyz": [
+          0.0914720396559036,
+          -0.6814395351359374,
+          0.7211938218950051,
+          -0.08457243744496075
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.232473879208555e-07,
+          3.640756176537252e-06,
+          -1.5262612578226253e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.5617186509154798,
+      "ee_to_cube_xy_m": 0.13711129135203695,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000009.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 10,
+      "source_step_index": 10,
+      "source_timestamp_s": 2.0075666999910027,
+      "source_image": "episodes/episode_000004/images/primary/000010.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.4107890129089355,
+        -0.10941682010889053,
+        -1.1306369304656982,
+        0.05784059688448906,
+        -1.7010080814361572,
+        -0.19932985305786133
+      ],
+      "target_joint_position_rad": [
+        -3.4104902744293213,
+        -0.10918338783085346,
+        -1.1302562355995178,
+        0.05779464542865753,
+        -1.701104998588562,
+        -3.3409217931286306
+      ],
+      "actual_joint_position_rad": [
+        -3.4104902744293213,
+        -0.10918338596820831,
+        -1.130256175994873,
+        0.05779464542865753,
+        -1.701104998588562,
+        -3.3409218788146973
+      ],
+      "joint_error_rad": [
+        0.0,
+        1.862645149230957e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        -8.568606668646339e-08
+      ],
+      "max_abs_joint_error_rad": 8.568606668646339e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.00021317318595692747,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4050173078789317,
+          -0.10421385739103532,
+          1.37434800097007
+        ],
+        "quaternion_wxyz": [
+          0.07663761495085473,
+          -0.6830971244919305,
+          0.7228578503103513,
+          -0.07057990316087351
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -6.689766109957418e-07,
+          3.4016018162219552e-06,
+          -1.6159010556293651e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.5258748908134514,
+      "ee_to_cube_xy_m": 0.11195676936404939,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000010.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 11,
+      "source_step_index": 11,
+      "source_timestamp_s": 2.2057782239862718,
+      "source_image": "episodes/episode_000004/images/primary/000011.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.4361026287078857,
+        -0.1569250077009201,
+        -1.1606132984161377,
+        0.05090487375855446,
+        -1.6643184423446655,
+        -0.22921480238437653
+      ],
+      "target_joint_position_rad": [
+        -3.4358038902282715,
+        -0.15669157542288303,
+        -1.1602326035499573,
+        0.05085892230272293,
+        -1.6644153594970703,
+        -3.3708067424551458
+      ],
+      "actual_joint_position_rad": [
+        -3.4358038902282715,
+        -0.15669158101081848,
+        -1.1602325439453125,
+        0.05085892230272293,
+        -1.6644153594970703,
+        -3.3708066940307617
+      ],
+      "joint_error_rad": [
+        0.0,
+        -5.587935447692871e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        4.8424384058165515e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0003746452516523169,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.42315527408705494,
+          -0.12170224602482513,
+          1.3435205515771536
+        ],
+        "quaternion_wxyz": [
+          0.06183992363274773,
+          -0.6844526460269269,
+          0.7242189981443352,
+          -0.05663251644284909
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -6.225819788596709e-07,
+          3.3654484923317796e-06,
+          -1.8017235561273992e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.4907336732018258,
+      "ee_to_cube_xy_m": 0.08682504998297384,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000011.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 12,
+      "source_step_index": 12,
+      "source_timestamp_s": 2.4064983520074748,
+      "source_image": "episodes/episode_000004/images/primary/000012.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.4583160877227783,
+        -0.21174731850624084,
+        -1.178267478942871,
+        0.04169445112347603,
+        -1.6321731805801392,
+        -0.2552492916584015
+      ],
+      "target_joint_position_rad": [
+        -3.458017349243164,
+        -0.21151388622820377,
+        -1.1778867840766907,
+        0.0416484996676445,
+        -1.632270097732544,
+        -3.3968412317291707
+      ],
+      "actual_joint_position_rad": [
+        -3.458017349243164,
+        -0.21151389181613922,
+        -1.177886724472046,
+        0.0416484996676445,
+        -1.632270097732544,
+        -3.396841287612915
+      ],
+      "joint_error_rad": [
+        0.0,
+        -5.587935447692871e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        -5.588374429876808e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.00016079431977766845,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4413121387989414,
+          -0.1392160475024733,
+          1.3126364825087478
+        ],
+        "quaternion_wxyz": [
+          0.04698575616743393,
+          -0.6855099035482466,
+          0.7252981219338611,
+          -0.04255755131421511
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.468060291808797e-07,
+          3.4188244626420783e-06,
+          -1.5709047147538513e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.45630022248425856,
+      "ee_to_cube_xy_m": 0.06171397334473452,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000012.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 13,
+      "source_step_index": 13,
+      "source_timestamp_s": 2.6068679979653098,
+      "source_image": "episodes/episode_000004/images/primary/000013.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.4768192768096924,
+        -0.269889235496521,
+        -1.183720588684082,
+        0.031245337799191475,
+        -1.6063203811645508,
+        -0.2765938341617584
+      ],
+      "target_joint_position_rad": [
+        -3.476520538330078,
+        -0.2696558032184839,
+        -1.1833398938179016,
+        0.031199386343359947,
+        -1.6064172983169556,
+        -3.4181857742325277
+      ],
+      "actual_joint_position_rad": [
+        -3.476520538330078,
+        -0.2696557939052582,
+        -1.1833398342132568,
+        0.031199386343359947,
+        -1.6064172983169556,
+        -3.4181857109069824
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0005264508313146399,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.45855919855539473,
+          -0.15575939485971418,
+          1.2833301093808733
+        ],
+        "quaternion_wxyz": [
+          0.032896602740764135,
+          -0.6862933407094746,
+          0.7259962146088165,
+          -0.02913349274657043
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -6.120495754657895e-07,
+          3.3860844723676564e-06,
+          -1.7575891888554906e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.42451256622130695,
+      "ee_to_cube_xy_m": 0.03807945189354496,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000013.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 14,
+      "source_step_index": 14,
+      "source_timestamp_s": 2.8067606100230478,
+      "source_image": "episodes/episode_000004/images/primary/000014.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.49225115776062,
+        -0.3286139667034149,
+        -1.1792558431625366,
+        0.020172737538814545,
+        -1.5868061780929565,
+        -0.293720543384552
+      ],
+      "target_joint_position_rad": [
+        -3.491952419281006,
+        -0.32838053442537785,
+        -1.1788751482963562,
+        0.020126786082983017,
+        -1.5869030952453613,
+        -3.4353124834553213
+      ],
+      "actual_joint_position_rad": [
+        -3.491952419281006,
+        -0.3283805251121521,
+        -1.178875207901001,
+        0.020126786082983017,
+        -1.5869030952453613,
+        -3.435312509536743
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -2.6081421911072766e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0019692943013948083,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4744835950504714,
+          -0.17111438192433487,
+          1.2560807584265838
+        ],
+        "quaternion_wxyz": [
+          0.019741128822810323,
+          -0.6867660365168653,
+          0.7264209206917954,
+          -0.016593519849663483
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -7.069491516631388e-07,
+          3.6579201605491107e-06,
+          -1.521776539448183e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.39591078295304544,
+      "ee_to_cube_xy_m": 0.016854214014649014,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000014.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 15,
+      "source_step_index": 15,
+      "source_timestamp_s": 3.0079743299866095,
+      "source_image": "episodes/episode_000004/images/primary/000015.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.5030517578125,
+        -0.37662771344184875,
+        -1.1686887741088867,
+        0.01096720714122057,
+        -1.5750926733016968,
+        -0.30526676774024963
+      ],
+      "target_joint_position_rad": [
+        -3.5027530193328857,
+        -0.3763942811638117,
+        -1.1683080792427063,
+        0.010921255685389042,
+        -1.5751895904541016,
+        -3.446858707811019
+      ],
+      "actual_joint_position_rad": [
+        -3.5027530193328857,
+        -0.37639427185058594,
+        -1.1683080196380615,
+        0.010921255685389042,
+        -1.5751895904541016,
+        -3.4468586444854736
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0033944747571288403,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4867657431163727,
+          -0.18289730802677837,
+          1.2354318938912425
+        ],
+        "quaternion_wxyz": [
+          0.009800987190909353,
+          -0.6869836397028671,
+          0.7265706083305414,
+          -0.007250554521677881
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -4.741719692447077e-07,
+          3.3116864415205782e-06,
+          -1.7193975736518041e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.3749747248688294,
+      "ee_to_cube_xy_m": 0.007333430516926457,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000015.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 16,
+      "source_step_index": 16,
+      "source_timestamp_s": 3.2059124669758603,
+      "source_image": "episodes/episode_000004/images/primary/000016.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.5091214179992676,
+        -0.4061010181903839,
+        -1.159909725189209,
+        0.00529014365747571,
+        -1.5696262121200562,
+        -0.3114774823188782
+      ],
+      "target_joint_position_rad": [
+        -3.5088226795196533,
+        -0.40586758591234684,
+        -1.1595290303230286,
+        0.005244192201644182,
+        -1.569723129272461,
+        -3.4530694223896474
+      ],
+      "actual_joint_position_rad": [
+        -3.5088226795196533,
+        -0.4058675765991211,
+        -1.1595289707183838,
+        0.005244192201644182,
+        -1.569723129272461,
+        -3.4530694484710693
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        -2.6081421911072766e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.002207937682497163,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4939815285468777,
+          -0.18987110003213514,
+          1.2232046831266514
+        ],
+        "quaternion_wxyz": [
+          0.00391183928575771,
+          -0.6870234204841553,
+          0.7266228322288357,
+          -0.0016664043325090208
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -6.424544949368283e-07,
+          3.543041884768172e-06,
+          -1.593191882420797e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.3629362343448261,
+      "ee_to_cube_xy_m": 0.013746876363825768,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000016.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 17,
+      "source_step_index": 17,
+      "source_timestamp_s": 3.4073453010059893,
+      "source_image": "episodes/episode_000004/images/primary/000017.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.511382579803467,
+        -0.4177229404449463,
+        -1.1559293270111084,
+        0.0030090841464698315,
+        -1.5677835941314697,
+        -0.31380459666252136
+      ],
+      "target_joint_position_rad": [
+        -3.5110838413238525,
+        -0.4174895081669092,
+        -1.155548632144928,
+        0.0029631326906383038,
+        -1.5678805112838745,
+        -3.4553965367332906
+      ],
+      "actual_joint_position_rad": [
+        -3.5110838413238525,
+        -0.41748949885368347,
+        -1.1555485725402832,
+        0.0029631326906383038,
+        -1.5678805112838745,
+        -3.4553966522216797
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        -1.154883890741587e-07
+      ],
+      "max_abs_joint_error_rad": 1.154883890741587e-07,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0013341001909354944,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4967821052257805,
+          -0.19256726922991996,
+          1.2184929501908868
+        ],
+        "quaternion_wxyz": [
+          0.001633235440218418,
+          -0.6870457459196992,
+          0.7266121867140384,
+          0.0004535132678324025
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682913482189178,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -4.849118795391405e-07,
+          3.282753596067778e-06,
+          -1.6806841358629754e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.3583766916715706,
+      "ee_to_cube_xy_m": 0.017192501540377485,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000017.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 18,
+      "source_step_index": 18,
+      "source_timestamp_s": 3.6071810419671237,
+      "source_image": "episodes/episode_000004/images/primary/000018.jpg",
+      "planner_phase": "alignment",
+      "source_joint_position_rad": [
+        -3.5115442276000977,
+        -0.4182949364185333,
+        -1.15559983253479,
+        0.002835577353835106,
+        -1.5676637887954712,
+        -0.3139781057834625
+      ],
+      "target_joint_position_rad": [
+        -3.5112454891204834,
+        -0.41806150414049625,
+        -1.1552191376686096,
+        0.002789625898003578,
+        -1.567760705947876,
+        -3.4555700458542318
+      ],
+      "actual_joint_position_rad": [
+        -3.5112454891204834,
+        -0.4180614948272705,
+        -1.1552190780639648,
+        0.002789625898003578,
+        -1.567760705947876,
+        -3.4555699825286865
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0007807661233277807,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.49692642967368117,
+          -0.192740538526072,
+          1.2183088936496065
+        ],
+        "quaternion_wxyz": [
+          0.0015286141851873014,
+          -0.6870500793290297,
+          0.7266083054929284,
+          0.00047140358699910336
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.019797069711785e-07,
+          3.626403213274898e-06,
+          -1.5511859601247124e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.35820222354316633,
+      "ee_to_cube_xy_m": 0.01738675660415346,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000018.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 19,
+      "source_step_index": 19,
+      "source_timestamp_s": 3.8083953469758853,
+      "source_image": "episodes/episode_000004/images/primary/000019.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.511540174484253,
+        -0.41829097270965576,
+        -1.1569033861160278,
+        0.0028432307299226522,
+        -1.5659643411636353,
+        -0.3139500319957733
+      ],
+      "target_joint_position_rad": [
+        -3.5112414360046387,
+        -0.4180575404316187,
+        -1.1565226912498474,
+        0.0027972792740911245,
+        -1.56606125831604,
+        -3.4555419720665426
+      ],
+      "actual_joint_position_rad": [
+        -3.5112414360046387,
+        -0.41805753111839294,
+        -1.1565227508544922,
+        0.0027972792740911245,
+        -1.56606125831604,
+        -3.4555420875549316
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -1.154883890741587e-07
+      ],
+      "max_abs_joint_error_rad": 1.154883890741587e-07,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0025461683499402588,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.49697473610091014,
+          -0.19275576713531578,
+          1.2178325998797184
+        ],
+        "quaternion_wxyz": [
+          0.0016178141780509691,
+          -0.6870398384295799,
+          0.7266178896182048,
+          0.0002925315851818105
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.090536430747306e-07,
+          3.567538669813075e-06,
+          -1.5389877034976962e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.35772895515390224,
+      "ee_to_cube_xy_m": 0.017437363064863726,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000019.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 20,
+      "source_step_index": 20,
+      "source_timestamp_s": 4.012166572967544,
+      "source_image": "episodes/episode_000004/images/primary/000020.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.511411190032959,
+        -0.4190373122692108,
+        -1.1774916648864746,
+        0.0028737816028296947,
+        -1.5448212623596191,
+        -0.3136310577392578
+      ],
+      "target_joint_position_rad": [
+        -3.5111124515533447,
+        -0.41880387999117374,
+        -1.1771109700202942,
+        0.002827830146998167,
+        -1.544918179512024,
+        -3.455222997810027
+      ],
+      "actual_joint_position_rad": [
+        -3.5111124515533447,
+        -0.418803870677948,
+        -1.1771109104156494,
+        0.002827830146998167,
+        -1.544918179512024,
+        -3.4552230834960938
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        -8.568606668646339e-08
+      ],
+      "max_abs_joint_error_rad": 8.568606668646339e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.001839583546950907,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4971314553557243,
+          -0.1927370216354569,
+          1.2098796907585487
+        ],
+        "quaternion_wxyz": [
+          0.001590069720647417,
+          -0.6869489398237184,
+          0.7267038440643719,
+          0.000385714165851808
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682913482189178,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -3.913136765731906e-07,
+          3.284070089648594e-06,
+          -1.5233350723065087e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.3497927804537263,
+      "ee_to_cube_xy_m": 0.017578529359270706,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000020.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 21,
+      "source_step_index": 21,
+      "source_timestamp_s": 4.207818282011431,
+      "source_image": "episodes/episode_000004/images/primary/000021.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.510737895965576,
+        -0.4224638044834137,
+        -1.2201915979385376,
+        0.0029957934748381376,
+        -1.4987053871154785,
+        -0.3130926787853241
+      ],
+      "target_joint_position_rad": [
+        -3.510439157485962,
+        -0.4222303722053766,
+        -1.2198109030723572,
+        0.00294984201900661,
+        -1.4988023042678833,
+        -3.4546846188560933
+      ],
+      "actual_joint_position_rad": [
+        -3.510439157485962,
+        -0.4222303628921509,
+        -1.219810962677002,
+        0.00294984201900661,
+        -1.4988023042678833,
+        -3.4546847343444824
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -1.154883890741587e-07
+      ],
+      "max_abs_joint_error_rad": 1.154883890741587e-07,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0012488038889293396,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4976975130026679,
+          -0.19255116009808768,
+          1.1924000155919492
+        ],
+        "quaternion_wxyz": [
+          0.0016397042606047661,
+          -0.6869474049676594,
+          0.7267051677481288,
+          0.00041634877245663954
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -5.561371381190838e-07,
+          3.5387970456213225e-06,
+          -1.5028434745545383e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.33236178052360915,
+      "ee_to_cube_xy_m": 0.018052886400647374,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000021.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 22,
+      "source_step_index": 22,
+      "source_timestamp_s": 4.4112458829768,
+      "source_image": "episodes/episode_000004/images/primary/000022.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.5096185207366943,
+        -0.4317125976085663,
+        -1.2792463302612305,
+        0.0031499764882028103,
+        -1.4306273460388184,
+        -0.31236547231674194
+      ],
+      "target_joint_position_rad": [
+        -3.50931978225708,
+        -0.4314791653305292,
+        -1.27886563539505,
+        0.0031040250323712826,
+        -1.4307242631912231,
+        -3.453957412387511
+      ],
+      "actual_joint_position_rad": [
+        -3.50931978225708,
+        -0.43147915601730347,
+        -1.2788655757904053,
+        0.0031040250323712826,
+        -1.4307242631912231,
+        -3.4539573192596436
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        9.312786763970848e-08
+      ],
+      "max_abs_joint_error_rad": 9.312786763970848e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0027435123920440674,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.498642429478974,
+          -0.19225128138729852,
+          1.1659097670824121
+        ],
+        "quaternion_wxyz": [
+          0.0016502443076463432,
+          -0.6870092891067097,
+          0.7266465530851856,
+          0.0005479637189439049
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.301851271928172e-07,
+          3.3763135434128344e-06,
+          -1.5878974863881012e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.30596290277306526,
+      "ee_to_cube_xy_m": 0.018863073370964878,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000022.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 23,
+      "source_step_index": 23,
+      "source_timestamp_s": 4.605888668971602,
+      "source_image": "episodes/episode_000004/images/primary/000023.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.508650541305542,
+        -0.44511404633522034,
+        -1.3332616090774536,
+        0.003303293837234378,
+        -1.3631616830825806,
+        -0.3116050660610199
+      ],
+      "target_joint_position_rad": [
+        -3.5083518028259277,
+        -0.44488061405718327,
+        -1.3328809142112732,
+        0.00325734238140285,
+        -1.3632586002349854,
+        -3.453197006131789
+      ],
+      "actual_joint_position_rad": [
+        -3.5083518028259277,
+        -0.4448806047439575,
+        -1.332880973815918,
+        0.00325734238140285,
+        -1.3632586002349854,
+        -3.4531970024108887
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.720900476622546e-09
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.002213686190802533,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.4994908829892506,
+          -0.192001768389377,
+          1.1392161786046213
+        ],
+        "quaternion_wxyz": [
+          0.0017117883707849213,
+          -0.6869982997038256,
+          0.7266567974316684,
+          0.0005520244354746134
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.198253004185972e-07,
+          3.3905891996255377e-06,
+          -1.7683220221442753e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2793763711585752,
+      "ee_to_cube_xy_m": 0.019609943391058815,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000023.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 24,
+      "source_step_index": 24,
+      "source_timestamp_s": 4.806272931979038,
+      "source_image": "episodes/episode_000004/images/primary/000024.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.507946729660034,
+        -0.45645174384117126,
+        -1.3660880327224731,
+        0.003395716892555356,
+        -1.3190360069274902,
+        -0.3111100494861603
+      ],
+      "target_joint_position_rad": [
+        -3.50764799118042,
+        -0.4562183115631342,
+        -1.3657073378562927,
+        0.0033497654367238283,
+        -1.319132924079895,
+        -3.4527019895569295
+      ],
+      "actual_joint_position_rad": [
+        -3.50764799118042,
+        -0.45621830224990845,
+        -1.3657073974609375,
+        0.0033497654367238283,
+        -1.319132924079895,
+        -3.452702045440674
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -5.588374429876808e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.0012255208245639526,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5000846148069469,
+          -0.19181455783818863,
+          1.1214123849146596
+        ],
+        "quaternion_wxyz": [
+          0.001728864079457284,
+          -0.6870149227722617,
+          0.7266410168385645,
+          0.0005827220905623923
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          -3.7601475355586444e-07,
+          3.2683471999916947e-06,
+          -1.6312976640620036e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.26165943886157367,
+      "ee_to_cube_xy_m": 0.020136089626048122,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000024.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 25,
+      "source_step_index": 25,
+      "source_timestamp_s": 5.007141464971937,
+      "source_image": "episodes/episode_000004/images/primary/000025.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.507694959640503,
+        -0.4625359773635864,
+        -1.3804354667663574,
+        0.003435523947700858,
+        -1.2987911701202393,
+        -0.3109365403652191
+      ],
+      "target_joint_position_rad": [
+        -3.5073962211608887,
+        -0.46230254508554935,
+        -1.380054771900177,
+        0.0033895724918693304,
+        -1.298888087272644,
+        -3.4525284804359884
+      ],
+      "actual_joint_position_rad": [
+        -3.5073962211608887,
+        -0.4623025357723236,
+        -1.3800547122955322,
+        0.0033895724918693304,
+        -1.298888087272644,
+        -3.452528476715088
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.720900476622546e-09
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.002518678276703379,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003838446879963,
+          -0.19178026113634708,
+          1.1130651767680175
+        ],
+        "quaternion_wxyz": [
+          0.0016977706441121654,
+          -0.6870155398620938,
+          0.7266404298389779,
+          0.0006717784314342927
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -5.626300776384596e-07,
+          3.3469957543275086e-06,
+          -1.6140581919898978e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2533603447719913,
+      "ee_to_cube_xy_m": 0.020417793926649715,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000025.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 26,
+      "source_step_index": 26,
+      "source_timestamp_s": 5.20628859201679,
+      "source_image": "episodes/episode_000004/images/primary/000026.jpg",
+      "planner_phase": "descent_to_grasp",
+      "source_joint_position_rad": [
+        -3.5076704025268555,
+        -0.46301335096359253,
+        -1.3817447423934937,
+        0.0034379868302494287,
+        -1.2969462871551514,
+        -0.3109339773654938
+      ],
+      "target_joint_position_rad": [
+        -3.507371664047241,
+        -0.46277991868555546,
+        -1.3813640475273132,
+        0.003392035374417901,
+        -1.2970432043075562,
+        -3.452525917436263
+      ],
+      "actual_joint_position_rad": [
+        -3.507371664047241,
+        -0.4627799093723297,
+        -1.381364107131958,
+        0.003392035374417901,
+        -1.2970432043075562,
+        -3.4525258541107178
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 0.0,
+      "actual_gripper_closedness": 0.004248850818338146,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003942061747664,
+          -0.19176990246600673,
+          1.1123464644675114
+        ],
+        "quaternion_wxyz": [
+          0.001710644140644904,
+          -0.6870211107687106,
+          0.7266351560832561,
+          0.0006457542978584383
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48057544231414795,
+          -0.18682914972305298,
+          0.8605288863182068
+        ],
+        "quaternion_wxyz": [
+          0.9999999403953552,
+          -6.260668214963516e-07,
+          3.6667572658188874e-06,
+          -1.4845579698885558e-06
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2526445865313783,
+      "ee_to_cube_xy_m": 0.020425338152156993,
+      "cube_attached": false,
+      "captured_images": {
+        "primary": "images/primary/000026.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 27,
+      "source_step_index": 27,
+      "source_timestamp_s": 5.406268751015887,
+      "source_image": "episodes/episode_000004/images/primary/000027.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076684951782227,
+        -0.46301335096359253,
+        -1.381740689277649,
+        0.0034379868302494287,
+        -1.2969692945480347,
+        -0.3109467327594757
+      ],
+      "target_joint_position_rad": [
+        -3.5073697566986084,
+        -0.46277991868555546,
+        -1.3813599944114685,
+        0.003392035374417901,
+        -1.2970662117004395,
+        -3.452538672830245
+      ],
+      "actual_joint_position_rad": [
+        -3.5073697566986084,
+        -0.4627799093723297,
+        -1.3813600540161133,
+        0.003392035374417901,
+        -1.2970662117004395,
+        -3.4525387287139893
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -5.588374429876808e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8573026748309875,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003925758032245,
+          -0.19176817972753446,
+          1.1123478959009976
+        ],
+        "quaternion_wxyz": [
+          0.001706557774069358,
+          -0.6870264982280537,
+          0.7266300642639593,
+          0.0006542941359070789
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48031067848205566,
+          -0.18942201137542725,
+          0.860560953617096
+        ],
+        "quaternion_wxyz": [
+          0.9998748898506166,
+          -0.0008652426768094301,
+          -0.0002419482334516944,
+          -0.015788946300745083
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020218484264513926,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000027.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 28,
+      "source_step_index": 28,
+      "source_timestamp_s": 5.610974442970473,
+      "source_image": "episodes/episode_000004/images/primary/000028.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076704025268555,
+        -0.46301132440567017,
+        -1.3817284107208252,
+        0.003435435239225626,
+        -1.2970075607299805,
+        -0.310962051153183
+      ],
+      "target_joint_position_rad": [
+        -3.507371664047241,
+        -0.4627778921276331,
+        -1.3813477158546448,
+        0.0033894837833940983,
+        -1.2971044778823853,
+        -3.4525539912239522
+      ],
+      "actual_joint_position_rad": [
+        -3.507371664047241,
+        -0.46277788281440735,
+        -1.38134765625,
+        0.0033894837833940983,
+        -1.2971044778823853,
+        -3.4525539875030518
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.720900476622546e-09
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8551424801478098,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003897530475232,
+          -0.19176854122800704,
+          1.1123533612246945
+        ],
+        "quaternion_wxyz": [
+          0.0017003146391490968,
+          -0.6870316332475199,
+          0.7266252144552953,
+          0.0006645037013995724
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4803020117119924,
+          -0.18942108440971192,
+          0.8605668971223639
+        ],
+        "quaternion_wxyz": [
+          0.999875007108946,
+          -0.0008622997548315726,
+          -0.00023036743049088354,
+          -0.01578185324265413
+        ]
+      },
+      "ee_to_cube_distance_m": 0.25259740974648015,
+      "ee_to_cube_xy_m": 0.020224438322904142,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000028.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 29,
+      "source_step_index": 29,
+      "source_timestamp_s": 5.808495702978689,
+      "source_image": "episodes/episode_000004/images/primary/000029.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076704025268555,
+        -0.4630052149295807,
+        -1.3817120790481567,
+        0.003435435239225626,
+        -1.2970305681228638,
+        -0.3109697103500366
+      ],
+      "target_joint_position_rad": [
+        -3.507371664047241,
+        -0.4627717826515436,
+        -1.3813313841819763,
+        0.0033894837833940983,
+        -1.2971274852752686,
+        -3.452561650420806
+      ],
+      "actual_joint_position_rad": [
+        -3.507371664047241,
+        -0.46277177333831787,
+        -1.381331443786621,
+        0.0033894837833940983,
+        -1.2971274852752686,
+        -3.452561616897583
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.352322286431786e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8584548412854301,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003896456702538,
+          -0.19176849871964205,
+          1.1123623652659957
+        ],
+        "quaternion_wxyz": [
+          0.001700178418738626,
+          -0.6870344319853878,
+          0.7266225682474368,
+          0.0006648107694764443
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4803017333705296,
+          -0.18942113294922047,
+          0.8605759139545528
+        ],
+        "quaternion_wxyz": [
+          0.999875068076554,
+          -0.000862177139019991,
+          -0.00023006520577879136,
+          -0.01577800121676761
+        ]
+      },
+      "ee_to_cube_distance_m": 0.25259740974648015,
+      "ee_to_cube_xy_m": 0.020224597563896215,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000029.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 30,
+      "source_step_index": 30,
+      "source_timestamp_s": 6.0065248889732175,
+      "source_image": "episodes/episode_000004/images/primary/000030.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076725482940674,
+        -0.4629970192909241,
+        -1.3816895484924316,
+        0.0034303320571780205,
+        -1.297038197517395,
+        -0.31097733974456787
+      ],
+      "target_joint_position_rad": [
+        -3.507373809814453,
+        -0.462763587012887,
+        -1.3813088536262512,
+        0.0033843806013464928,
+        -1.2971351146697998,
+        -3.452569279815337
+      ],
+      "actual_joint_position_rad": [
+        -3.507373809814453,
+        -0.46276357769966125,
+        -1.3813087940216064,
+        0.0033843806013464928,
+        -1.2971351146697998,
+        -3.4525692462921143
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.352322286431786e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8572666824249358,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.500391956613912,
+          -0.19177132285127482,
+          1.1123747610903967
+        ],
+        "quaternion_wxyz": [
+          0.0017029905313466608,
+          -0.6870369499239087,
+          0.7266201913607508,
+          0.0006532758748333283
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48030905077559843,
+          -0.18942734446770648,
+          0.8605878788485729
+        ],
+        "quaternion_wxyz": [
+          0.9998751144363827,
+          -0.0008684703698652623,
+          -0.0002401426586842934,
+          -0.015774567647286325
+        ]
+      },
+      "ee_to_cube_distance_m": 0.25259740974648026,
+      "ee_to_cube_xy_m": 0.020219231972881783,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000030.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 31,
+      "source_step_index": 31,
+      "source_timestamp_s": 6.205749592976645,
+      "source_image": "episodes/episode_000004/images/primary/000031.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076744556427,
+        -0.4629867672920227,
+        -1.3816648721694946,
+        0.003427780233323574,
+        -1.2970407009124756,
+        -0.3109799027442932
+      ],
+      "target_joint_position_rad": [
+        -3.507375717163086,
+        -0.46275333501398563,
+        -1.3812841773033142,
+        0.0033818287774920464,
+        -1.2971376180648804,
+        -3.4525718428150625
+      ],
+      "actual_joint_position_rad": [
+        -3.507375717163086,
+        -0.4627533257007599,
+        -1.381284236907959,
+        0.0033818287774920464,
+        -1.2971376180648804,
+        -3.4525718688964844
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -2.6081421911072766e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8562120479242555,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003952319319342,
+          -0.19177402828699347,
+          1.1123889349379539
+        ],
+        "quaternion_wxyz": [
+          0.0017088722241747352,
+          -0.6870374822586947,
+          0.7266196876333915,
+          0.0006381778027447254
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48031969910402084,
+          -0.18943356801988837,
+          0.8606014319954037
+        ],
+        "quaternion_wxyz": [
+          0.9998751158633292,
+          -0.000875168472363998,
+          -0.00025489865686154106,
+          -0.015773875459802866
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020211500997860767,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000031.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 32,
+      "source_step_index": 32,
+      "source_timestamp_s": 6.407706463010982,
+      "source_image": "episodes/episode_000004/images/primary/000032.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.507676601409912,
+        -0.4629765450954437,
+        -1.3816465139389038,
+        0.003427780233323574,
+        -1.2970433235168457,
+        -0.31098243594169617
+      ],
+      "target_joint_position_rad": [
+        -3.507377862930298,
+        -0.46274311281740665,
+        -1.3812658190727234,
+        0.0033818287774920464,
+        -1.2971402406692505,
+        -3.4525743760124654
+      ],
+      "actual_joint_position_rad": [
+        -3.507377862930298,
+        -0.4627431035041809,
+        -1.3812658786773682,
+        0.0033818287774920464,
+        -1.2971402406692505,
+        -3.4525744915008545
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -1.154883890741587e-07
+      ],
+      "max_abs_joint_error_rad": 1.154883890741587e-07,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8554383918386081,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003972191740627,
+          -0.19177602385144424,
+          1.1124009033115294
+        ],
+        "quaternion_wxyz": [
+          0.0017144887458920327,
+          -0.6870376725748073,
+          0.7266195046403833,
+          0.0006264722628801762
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48032779039664314,
+          -0.1894379133128592,
+          0.8606128919243932
+        ],
+        "quaternion_wxyz": [
+          0.9998751124142792,
+          -0.0008796235168945803,
+          -0.0002670943072467248,
+          -0.01577364449136465
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020205165981564147,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000032.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 33,
+      "source_step_index": 33,
+      "source_timestamp_s": 6.607470943010412,
+      "source_image": "episodes/episode_000004/images/primary/000033.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.507678747177124,
+        -0.46296426653862,
+        -1.38163423538208,
+        0.0034252286422997713,
+        -1.2970433235168457,
+        -0.3109849989414215
+      ],
+      "target_joint_position_rad": [
+        -3.5073800086975098,
+        -0.4627308342605829,
+        -1.3812535405158997,
+        0.0033792771864682436,
+        -1.2971402406692505,
+        -3.4525769390121908
+      ],
+      "actual_joint_position_rad": [
+        -3.5073800086975098,
+        -0.4627308249473572,
+        -1.3812534809112549,
+        0.0033792771864682436,
+        -1.2971402406692505,
+        -3.4525768756866455
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8556217419561641,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003978639697025,
+          -0.19177785752278728,
+          1.1124118666431235
+        ],
+        "quaternion_wxyz": [
+          0.001718719245098173,
+          -0.6870380242676523,
+          0.7266191720698817,
+          0.0006148130099924534
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4803340152316471,
+          -0.18944256826871275,
+          0.8606233843637559
+        ],
+        "quaternion_wxyz": [
+          0.9998751117586332,
+          -0.000885013568935483,
+          -0.0002782662201424093,
+          -0.01577319141651772
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020199297069050822,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000033.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 34,
+      "source_step_index": 34,
+      "source_timestamp_s": 6.8072800359805115,
+      "source_image": "episodes/episode_000004/images/primary/000034.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.507680654525757,
+        -0.4629519581794739,
+        -1.381628155708313,
+        0.0034226770512759686,
+        -1.2970433235168457,
+        -0.3109849989414215
+      ],
+      "target_joint_position_rad": [
+        -3.5073819160461426,
+        -0.4627185259014368,
+        -1.3812474608421326,
+        0.003376725595444441,
+        -1.2971402406692505,
+        -3.4525769390121908
+      ],
+      "actual_joint_position_rad": [
+        -3.5073819160461426,
+        -0.46271851658821106,
+        -1.3812475204467773,
+        0.003376725595444441,
+        -1.2971402406692505,
+        -3.4525768756866455
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8565616872932377,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003971498691796,
+          -0.19177903298275445,
+          1.1124205708571873
+        ],
+        "quaternion_wxyz": [
+          0.0017215631120852497,
+          -0.6870375928759775,
+          0.7266195805961098,
+          0.0006060445257162689
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.480337377784224,
+          -0.18944594352307698,
+          0.8606317433685475
+        ],
+        "quaternion_wxyz": [
+          0.9998750959191375,
+          -0.0008893026002765902,
+          -0.00028642406254553973,
+          -0.015773808219476486
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020194993501539516,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000034.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 35,
+      "source_step_index": 35,
+      "source_timestamp_s": 7.007842882012483,
+      "source_image": "episodes/episode_000004/images/primary/000035.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076849460601807,
+        -0.46294379234313965,
+        -1.3816239833831787,
+        0.003420125460252166,
+        -1.2970433235168457,
+        -0.3109849989414215
+      ],
+      "target_joint_position_rad": [
+        -3.5073862075805664,
+        -0.4627103600651026,
+        -1.3812432885169983,
+        0.003374174004420638,
+        -1.2971402406692505,
+        -3.4525769390121908
+      ],
+      "actual_joint_position_rad": [
+        -3.5073862075805664,
+        -0.46271035075187683,
+        -1.3812432289123535,
+        0.003374174004420638,
+        -1.2971402406692505,
+        -3.4525768756866455
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8555896996424116,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003961301476525,
+          -0.19178145955442163,
+          1.112426464401892
+        ],
+        "quaternion_wxyz": [
+          0.0017231504758549352,
+          -0.6870362921611568,
+          0.7266208117949429,
+          0.0005998936117675991
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48033907391241354,
+          -0.18944999851693745,
+          0.8606374054751023
+        ],
+        "quaternion_wxyz": [
+          0.9998750629208104,
+          -0.0008925951910693129,
+          -0.00029185147174535977,
+          -0.01577561436384158
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020192107750129622,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000035.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 36,
+      "source_step_index": 36,
+      "source_timestamp_s": 7.208206253009848,
+      "source_image": "episodes/episode_000004/images/primary/000036.jpg",
+      "planner_phase": "grasp_close",
+      "source_joint_position_rad": [
+        -3.5076868534088135,
+        -0.4629356265068054,
+        -1.3816218376159668,
+        0.003420125460252166,
+        -1.2970407009124756,
+        -0.3109849989414215
+      ],
+      "target_joint_position_rad": [
+        -3.507388114929199,
+        -0.46270219422876835,
+        -1.3812411427497864,
+        0.003374174004420638,
+        -1.2971376180648804,
+        -3.4525769390121908
+      ],
+      "actual_joint_position_rad": [
+        -3.507388114929199,
+        -0.4627021849155426,
+        -1.3812410831451416,
+        0.003374174004420638,
+        -1.2971376180648804,
+        -3.4525768756866455
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8557945986374699,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003955461506854,
+          -0.1917823320179165,
+          1.1124316007961585
+        ],
+        "quaternion_wxyz": [
+          0.0017259471132850407,
+          -0.687035602887516,
+          0.7266214616728844,
+          0.0005940605276786028
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4803415350439998,
+          -0.18945199892545694,
+          0.8606422888767638
+        ],
+        "quaternion_wxyz": [
+          0.9998750439399886,
+          -0.0008948161778182455,
+          -0.0002979245036832555,
+          -0.015776578016532358
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464801,
+      "ee_to_cube_xy_m": 0.020188952766027293,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000036.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 37,
+      "source_step_index": 37,
+      "source_timestamp_s": 7.407918255019467,
+      "source_image": "episodes/episode_000004/images/primary/000037.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.5076889991760254,
+        -0.462761253118515,
+        -1.380953073501587,
+        0.0034202022943645716,
+        -1.2982271909713745,
+        -0.3109849989414215
+      ],
+      "target_joint_position_rad": [
+        -3.507390260696411,
+        -0.46252782084047794,
+        -1.3805723786354065,
+        0.003374250838533044,
+        -1.2983241081237793,
+        -3.4525769390121908
+      ],
+      "actual_joint_position_rad": [
+        -3.507390260696411,
+        -0.4625278115272522,
+        -1.3805723190307617,
+        0.003374250838533044,
+        -1.2983241081237793,
+        -3.4525768756866455
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8529241661187904,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003704743657519,
+          -0.19177384858542404,
+          1.1127614248704703
+        ],
+        "quaternion_wxyz": [
+          0.00165220814460922,
+          -0.6870360259689184,
+          0.7266210897641424,
+          0.0007490921523201412
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48023584148958726,
+          -0.18941233546718686,
+          0.8609788376541068
+        ],
+        "quaternion_wxyz": [
+          0.9998751461619205,
+          -0.0008353618489595902,
+          -0.0001368756657729066,
+          -0.01577557879190503
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020272646232436842,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000037.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 38,
+      "source_step_index": 38,
+      "source_timestamp_s": 7.60736982000526,
+      "source_image": "episodes/episode_000004/images/primary/000038.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.507692813873291,
+        -0.4578774571418762,
+        -1.3672236204147339,
+        0.003403326729312539,
+        -1.3166782855987549,
+        -0.31098243594169617
+      ],
+      "target_joint_position_rad": [
+        -3.5073940753936768,
+        -0.45764402486383915,
+        -1.3668429255485535,
+        0.0033573752734810114,
+        -1.3167752027511597,
+        -3.4525743760124654
+      ],
+      "actual_joint_position_rad": [
+        -3.5073940753936768,
+        -0.4576440155506134,
+        -1.3668429851531982,
+        0.0033573752734810114,
+        -1.3167752027511597,
+        -3.4525744915008545
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -1.154883890741587e-07
+      ],
+      "max_abs_joint_error_rad": 1.154883890741587e-07,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8445590749254515,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003773686062438,
+          -0.19178009426512563,
+          1.1202447605744021
+        ],
+        "quaternion_wxyz": [
+          0.0016871894552829489,
+          -0.6870572461610664,
+          0.726601016305203,
+          0.000676012987846729
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4802807065785606,
+          -0.18943439792723912,
+          0.8684589919244113
+        ],
+        "quaternion_wxyz": [
+          0.9998755662870793,
+          -0.0008632478802043125,
+          -0.0002130246051067025,
+          -0.015746578314515865
+        ]
+      },
+      "ee_to_cube_distance_m": 0.25259740974648015,
+      "ee_to_cube_xy_m": 0.020233094572123644,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000038.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 39,
+      "source_step_index": 39,
+      "source_timestamp_s": 7.807573045021854,
+      "source_image": "episodes/episode_000004/images/primary/000039.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.507711172103882,
+        -0.447976678609848,
+        -1.3341946601867676,
+        0.0032369126565754414,
+        -1.3596479892730713,
+        -0.31090080738067627
+      ],
+      "target_joint_position_rad": [
+        -3.5074124336242676,
+        -0.44774324633181095,
+        -1.3338139653205872,
+        0.0031909612007439137,
+        -1.359744906425476,
+        -3.4524927474514455
+      ],
+      "actual_joint_position_rad": [
+        -3.5074124336242676,
+        -0.4477432370185852,
+        -1.3338139057159424,
+        0.0031909612007439137,
+        -1.359744906425476,
+        -3.4524927139282227
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        3.352322286431786e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8479299327551291,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003485766995871,
+          -0.19180136204747503,
+          1.1373477646680847
+        ],
+        "quaternion_wxyz": [
+          0.001620165671316886,
+          -0.6870845811233509,
+          0.7265753297822086,
+          0.0006660312468357117
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4802307006196417,
+          -0.18948403102405695,
+          0.8855634274872524
+        ],
+        "quaternion_wxyz": [
+          0.9998761172486201,
+          -0.0009172218067624643,
+          -0.00017212227844184692,
+          -0.015708997320325203
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.02025090025258472,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000039.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 40,
+      "source_step_index": 40,
+      "source_timestamp_s": 8.007865488005336,
+      "source_image": "episodes/episode_000004/images/primary/000040.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.5077993869781494,
+        -0.4364391267299652,
+        -1.2800401449203491,
+        0.0031141992658376694,
+        -1.425291895866394,
+        -0.3106992244720459
+      ],
+      "target_joint_position_rad": [
+        -3.507500648498535,
+        -0.43620569445192814,
+        -1.2796594500541687,
+        0.0030682478100061417,
+        -1.4253888130187988,
+        -3.452291164542815
+      ],
+      "actual_joint_position_rad": [
+        -3.507500648498535,
+        -0.4362056851387024,
+        -1.2796595096588135,
+        0.0030682478100061417,
+        -1.4253888130187988,
+        -3.452291250228882
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -8.568606668646339e-08
+      ],
+      "max_abs_joint_error_rad": 8.568606668646339e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8506193274054035,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003351129558661,
+          -0.19186373266254544,
+          1.1630910769400977
+        ],
+        "quaternion_wxyz": [
+          0.0015924940191314916,
+          -0.6870607535409254,
+          0.7265979581214723,
+          0.0006262270209272953
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48022100969913817,
+          -0.18956920375855163,
+          0.9113062295049956
+        ],
+        "quaternion_wxyz": [
+          0.9998755534290646,
+          -0.0009650185742852279,
+          -0.00018003462164091423,
+          -0.015741897741874768
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.02024455513745796,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000040.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 41,
+      "source_step_index": 41,
+      "source_timestamp_s": 8.208699935988989,
+      "source_image": "episodes/episode_000004/images/primary/000041.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.507920026779175,
+        -0.42909523844718933,
+        -1.2218939065933228,
+        0.002990606939420104,
+        -1.4905757904052734,
+        -0.3105946183204651
+      ],
+      "target_joint_position_rad": [
+        -3.5076212882995605,
+        -0.42886180616915226,
+        -1.2215132117271423,
+        0.0029446554835885763,
+        -1.4906727075576782,
+        -3.4521865583912343
+      ],
+      "actual_joint_position_rad": [
+        -3.5076212882995605,
+        -0.4288617968559265,
+        -1.221513271331787,
+        0.0029446554835885763,
+        -1.4906727075576782,
+        -3.4521865844726562
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        -2.6081421911072766e-08
+      ],
+      "max_abs_joint_error_rad": 5.960464477539063e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8546824830680572,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5003024636400064,
+          -0.1919395967250892,
+          1.1882297968240918
+        ],
+        "quaternion_wxyz": [
+          0.0015916702555367139,
+          -0.6870549427686677,
+          0.7266035443192371,
+          0.000511454458134778
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48022779976996743,
+          -0.18968701341928074,
+          0.9364414230861717
+        ],
+        "quaternion_wxyz": [
+          0.9998753219558444,
+          -0.0010477316149009464,
+          -0.0002595831638076309,
+          -0.015750199416152896
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464801,
+      "ee_to_cube_xy_m": 0.020200650015399387,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000041.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 42,
+      "source_step_index": 42,
+      "source_timestamp_s": 8.408435277000535,
+      "source_image": "episodes/episode_000004/images/primary/000042.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.5080161094665527,
+        -0.42662474513053894,
+        -1.1827096939086914,
+        0.0029400521889328957,
+        -1.5321063995361328,
+        -0.31054869294166565
+      ],
+      "target_joint_position_rad": [
+        -3.5077173709869385,
+        -0.42639131285250187,
+        -1.182328999042511,
+        0.002894100733101368,
+        -1.5322033166885376,
+        -3.452140633012435
+      ],
+      "actual_joint_position_rad": [
+        -3.5077173709869385,
+        -0.4263913035392761,
+        -1.1823289394378662,
+        0.002894100733101368,
+        -1.5322033166885376,
+        -3.4521405696868896
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8593596332096334,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5002774968891853,
+          -0.19199430837990988,
+          1.20390885757618
+        ],
+        "quaternion_wxyz": [
+          0.0015989991152587622,
+          -0.6870484509684895,
+          0.7266097097273665,
+          0.0004460420841729171
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.48022818047398086,
+          -0.18976275675240453,
+          0.9521182769357439
+        ],
+        "quaternion_wxyz": [
+          0.9998751194809785,
+          -0.0010894235119667905,
+          -0.00031049050967263566,
+          -0.015759300678071665
+        ]
+      },
+      "ee_to_cube_distance_m": 0.25259740974648015,
+      "ee_to_cube_xy_m": 0.02017312349100181,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000042.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 43,
+      "source_step_index": 43,
+      "source_timestamp_s": 8.60666501900414,
+      "source_image": "episodes/episode_000004/images/primary/000043.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.508061170578003,
+        -0.4261740446090698,
+        -1.1666091680526733,
+        0.002922286745160818,
+        -1.5486743450164795,
+        -0.31053081154823303
+      ],
+      "target_joint_position_rad": [
+        -3.5077624320983887,
+        -0.42594061233103275,
+        -1.166228473186493,
+        0.0028763352893292904,
+        -1.5487712621688843,
+        -3.4521227516190023
+      ],
+      "actual_joint_position_rad": [
+        -3.5077624320983887,
+        -0.425940603017807,
+        -1.1662285327911377,
+        0.0028763352893292904,
+        -1.5487712621688843,
+        -3.452122688293457
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        -5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8551517331587344,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.500277516237967,
+          -0.19202367180504432,
+          1.2100566022867998
+        ],
+        "quaternion_wxyz": [
+          0.0015880017834581884,
+          -0.687043138007886,
+          0.7266147550070706,
+          0.00045008068980308217
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4802228059100705,
+          -0.1897941508064276,
+          0.9582664332165756
+        ],
+        "quaternion_wxyz": [
+          0.999875002417517,
+          -0.001094209992629801,
+          -0.0002997806913412618,
+          -0.015766602027932633
+        ]
+      },
+      "ee_to_cube_distance_m": 0.2525974097464802,
+      "ee_to_cube_xy_m": 0.020178259841203163,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000043.jpg"
+      },
+      "success": true
+    },
+    {
+      "replay_index": 44,
+      "source_step_index": 44,
+      "source_timestamp_s": 8.811973093019333,
+      "source_image": "episodes/episode_000004/images/primary/000044.jpg",
+      "planner_phase": "lift",
+      "source_joint_position_rad": [
+        -3.5080716609954834,
+        -0.42615970969200134,
+        -1.1660034656524658,
+        0.002922288840636611,
+        -1.549248456954956,
+        -0.31053081154823303
+      ],
+      "target_joint_position_rad": [
+        -3.507772922515869,
+        -0.42592627741396427,
+        -1.1656227707862854,
+        0.0028763373848050833,
+        -1.5493453741073608,
+        -3.4521227516190023
+      ],
+      "actual_joint_position_rad": [
+        -3.507772922515869,
+        -0.4259262681007385,
+        -1.1656227111816406,
+        0.0028763373848050833,
+        -1.5493453741073608,
+        -3.452122688293457
+      ],
+      "joint_error_rad": [
+        0.0,
+        9.313225746154785e-09,
+        5.960464477539063e-08,
+        0.0,
+        0.0,
+        6.332554525201317e-08
+      ],
+      "max_abs_joint_error_rad": 6.332554525201317e-08,
+      "target_gripper_closedness": 1.0,
+      "actual_gripper_closedness": 0.8555185176945965,
+      "sim_end_effector_pose": {
+        "position_m": [
+          0.5002807628260497,
+          -0.1920309781510938,
+          1.2102865765764919
+        ],
+        "quaternion_wxyz": [
+          0.001597970058266574,
+          -0.6870399462106325,
+          0.7266177636749571,
+          0.00042931874914307124
+        ]
+      },
+      "sim_cube_pose": {
+        "position_m": [
+          0.4802368998223199,
+          -0.18980542604449438,
+          0.9584955086564011
+        ],
+        "quaternion_wxyz": [
+          0.9998749169403204,
+          -0.0011021048711523707,
+          -0.0003214042088606667,
+          -0.015771046277365426
+        ]
+      },
+      "ee_to_cube_distance_m": 0.25259740974648026,
+      "ee_to_cube_xy_m": 0.020167040593291795,
+      "cube_attached": true,
+      "captured_images": {
+        "primary": "images/primary/000044.jpg"
+      },
+      "success": true
+    }
+  ]
+}

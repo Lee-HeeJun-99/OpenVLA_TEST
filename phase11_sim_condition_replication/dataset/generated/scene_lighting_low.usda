@@ -1,0 +1,17 @@
+#usda 1.0
+(
+    subLayers = [@/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda@]
+)
+
+over "World" {
+    over "Environment" {
+        over "Lighting" {
+            over "FillLight" {
+                float inputs:intensity = 277.5
+            }
+            over "KeyLight" {
+                float inputs:intensity = 992.5
+            }
+        }
+    }
+}

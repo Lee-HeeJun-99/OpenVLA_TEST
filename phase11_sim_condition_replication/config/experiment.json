@@ -1,0 +1,36 @@
+{
+  "experiment_id": "sim_condition_replication_ep1_ep5",
+  "base_episode_ids": [1, 2, 3, 4, 5],
+  "conditions": ["baseline", "lighting_low", "extra_object", "distractor_swap"],
+  "instruction": "Pick up the orange cube.",
+  "scene": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+  "control_app": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/a0509_control_app.py",
+  "isaac_python": "/home/ubuntu/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64/python.sh",
+  "source_real_episode_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes",
+  "source_sim_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis",
+  "dataset_root": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/dataset",
+  "lighting_low": {
+    "fill_intensity": 277.5,
+    "key_intensity": 992.5,
+    "baseline_fill_intensity": 555.0,
+    "baseline_key_intensity": 1985.0
+  },
+  "extra_object": {
+    "prim_path": "/World/Environment/Objects/Phase11ExtraObject",
+    "shape": "Cylinder",
+    "position_m": [0.82, -0.32, 0.9105289459228516],
+    "radius_m": 0.035,
+    "height_m": 0.10,
+    "display_color": [0.25, 0.10, 0.80]
+  },
+  "distractor_swap": {
+    "description": "Swap yellow and blue positions; keep red/orange target unchanged."
+  },
+  "storage": {
+    "minimum_free_gb": 20.0,
+    "warn_free_gb": 30.0,
+    "baseline_copy": true,
+    "save_features": false,
+    "save_model_outputs": false
+  }
+}
