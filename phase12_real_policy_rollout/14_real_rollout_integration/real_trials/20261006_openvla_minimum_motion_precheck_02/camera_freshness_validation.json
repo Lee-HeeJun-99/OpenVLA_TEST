@@ -1,0 +1,36 @@
+{
+  "status": "FAIL",
+  "threshold_s": 0.5,
+  "threshold_changed": false,
+  "prediction_count": 62,
+  "camera_failure_count": 1,
+  "timing": {
+    "health_latency_s": {
+      "median": 0.0030262419022619724,
+      "max": 0.009860979858785868,
+      "p95": 0.008535347878932953
+    },
+    "jpeg_encode_latency_s": {
+      "median": 0.009227097500115633,
+      "max": 0.03605697909370065,
+      "p95": 0.021930024959146976
+    },
+    "selected_frame_age_at_snapshot_s": {
+      "median": 0.003968329867348075,
+      "max": 0.009991202037781477,
+      "p95": 0.009084189776331186
+    },
+    "inference_latency_s": {
+      "median": 0.41563728637993336,
+      "max": 0.5181175959296525,
+      "p95": 0.4505759971216321
+    },
+    "camera_age_s": {
+      "median": 0.4357333369553089,
+      "max": 0.5314244902692735,
+      "p95": 0.47405480686575174
+    }
+  },
+  "rgb_pixel_equivalence_test": "PASS",
+  "physical_commands": 0
+}

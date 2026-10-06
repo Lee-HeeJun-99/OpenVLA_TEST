@@ -1,0 +1,9 @@
+{
+  "status": "UNKNOWN",
+  "tool_offset_verified": false,
+  "tcp_contract_verified": false,
+  "active_tcp_name": null,
+  "source": "FK_ESTIMATED_FLANGE",
+  "getters_called": 0,
+  "operator_current_evidence_received": false
+}

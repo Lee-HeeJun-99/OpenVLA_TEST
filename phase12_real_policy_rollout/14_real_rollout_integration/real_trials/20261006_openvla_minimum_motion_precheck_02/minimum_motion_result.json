@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED",
+  "reason": "CURRENT_TCP_TOOL_AND_OPERATOR_SAFETY_EVIDENCE_MISSING",
+  "gripper_physical_command_enabled": false,
+  "gripper_pulse_enabled": false,
+  "physical_pose_commands": 0,
+  "actual_tcp_response": null,
+  "ack": null,
+  "unexpected_motion": "NOT_ASSESSED_NO_PHYSICAL_STAGE",
+  "motion_authorized": false,
+  "model_action_used_for_motion": false
+}

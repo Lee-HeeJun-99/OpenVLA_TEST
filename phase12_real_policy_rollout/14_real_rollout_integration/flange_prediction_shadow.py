@@ -6,7 +6,7 @@ sys.path[:0]=[str(Path(__file__).resolve().parent.parent/name) for name in ('02_
 from urllib.request import Request,urlopen
 from PIL import Image
 import yaml
-from live_observation import camera_rgb_array
+from live_observation import camera_rgb_array,camera_rgb_image
 from verify_live_model_server import validate_identity
 from model_health import validate_runtime_health
 from canonical_action import CanonicalAction
@@ -37,9 +37,10 @@ def run(args):
     if output.exists():raise FileExistsError('preserve_existing_shadow')
     output.parent.mkdir(parents=True,exist_ok=True)
     config=yaml.safe_load((root/'configs/real_openvla.yaml').read_text());url=config['server_url']
-    def health():
+    def health(strict=True):
         with urlopen(url+'/health',timeout=3) as f:h=json.load(f)
-        validate_identity(h,'openvla');return h
+        if strict:validate_identity(h,'openvla')
+        return h
     h=health();rclpy.init();node=rclpy.create_node('phase12_flange_prediction_only')
     lock=threading.RLock();samples=[];camera=[None];camera_rows=[];fault=[None];halt=threading.Event()
     fk=A0509FlangeFK('/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf')
@@ -80,13 +81,26 @@ def run(args):
         shadow_start=time.monotonic()
         with FsyncJsonlLogger(output) as log:
             while not fault[0] and time.monotonic()-shadow_start<60:
-                with lock:
-                    image,received=camera[0];j=samples[-1];jg=joint_gate(samples,time.monotonic())
-                rgb=camera_rgb_array(image);buffer=io.BytesIO();Image.fromarray(rgb).save(buffer,format='JPEG',quality=95);jpeg=buffer.getvalue()
-                positions=reorder_joint_state(j['names'],j['position']);flange=fk.compute(positions)
+                # Never hold a camera frame across an HTTP health request.
+                health_start=time.monotonic()
+                try:
+                    currenthealth=health(strict=False);validate_runtime_health(currenthealth,h)
+                except Exception as exc:fault[0]='model_health_failure:'+str(exc);break
+                health_latency=time.monotonic()-health_start
+                # Wait for a newly received frame; do not consume a cached one
+                # near its age budget. Watchdog still runs during this wait.
+                frame_deadline=time.monotonic()+.5
+                while not fault[0]:
+                    with lock:image,received=camera[0];j=samples[-1];jg=joint_gate(samples,time.monotonic())
+                    if time.monotonic()-received<=.01:break
+                    if time.monotonic()>frame_deadline:fault[0]='fresh_camera_snapshot_timeout';break
+                    time.sleep(.001)
+                if fault[0]:break
+                snapshot_time=time.monotonic();encode_start=snapshot_time
+                rgb=camera_rgb_image(image);buffer=io.BytesIO();rgb.save(buffer,format='JPEG',quality=95);jpeg=buffer.getvalue()
+                encode_latency=time.monotonic()-encode_start
                 tick=time.monotonic()
                 try:
-                    currenthealth=health();validate_runtime_health(currenthealth,h)
                     request=Request(url+'/predict',data=json.dumps({'image_jpeg_base64':base64.b64encode(jpeg).decode(),'instruction':config['instruction']}).encode(),headers={'Content-Type':'application/json'})
                     with urlopen(request,timeout=1.2) as response:raw=json.load(response)
                     latency=time.monotonic()-tick
@@ -94,6 +108,10 @@ def run(args):
                     if latency>1.2:raise TimeoutError('model_timeout')
                     action=CanonicalAction.from_vector(raw['action'],timestamp_monotonic=tick,sequence_id='live-'+str(len(predictions)),source_model='openvla')
                 except Exception as exc:fault[0]='model_or_action_failure:'+str(exc);break
+                # Vision-only input has no joints/proprio. Refresh safety-only
+                # flange context after inference, not an old pre-inference pose.
+                with lock:j=samples[-1];jg=joint_gate(samples,time.monotonic())
+                positions=reorder_joint_state(j['names'],j['position']);flange=fk.compute(positions)
                 now=time.monotonic()
                 from scipy.spatial.transform import Rotation
                 flange_abc=tuple(Rotation.from_matrix(flange['rotation_matrix']).as_euler('ZYZ',degrees=True))
@@ -110,6 +128,9 @@ def run(args):
                     gripper_closedness=action.gripper_closedness,safety=safety,
                     safety_context='TCP_INVALID; absolute workspace/orientation validation unavailable; phase and gripper physical state UNKNOWN',
                     inference_latency_s=latency,end_to_end_latency_s=now-received,
+                    health_latency_s=health_latency,jpeg_encode_latency_s=encode_latency,
+                    selected_frame_age_at_snapshot_s=snapshot_time-received,
+                    selected_frame_age_at_request_s=tick-received,
                     encoding=image.encoding,resolution=[image.width,image.height],source_image_sha256=hashlib.sha256(bytes(image.data)).hexdigest(),
                     rgb_sha256=hashlib.sha256(rgb.tobytes()).hexdigest(),model_input_sha256=hashlib.sha256(jpeg).hexdigest(),
                     command_requested=False,command_issued=False,delivered_action=None,executed_action=None,robot_delivered_command=None,

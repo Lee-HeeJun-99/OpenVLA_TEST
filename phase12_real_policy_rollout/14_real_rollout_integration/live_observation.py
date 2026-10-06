@@ -3,6 +3,14 @@ import base64,io,json,math,threading,time,hashlib
 from urllib.request import urlopen,Request
 from PIL import Image
 
+def camera_rgb_image(image):
+    """Fast PIL raw decoding with identical RGB pixels and ROS row stride."""
+    modes={'rgb8':('RGB',3),'bgr8':('BGR',3),'rgba8':('RGBX',4),'bgra8':('BGRX',4)}
+    if image.encoding not in modes:raise ValueError('unsupported_camera_encoding')
+    raw,channels=modes[image.encoding]
+    if image.step<image.width*channels:raise ValueError('invalid_camera_step')
+    return Image.frombytes('RGB',(image.width,image.height),bytes(image.data),'raw',raw,image.step,1)
+
 def camera_rgb_array(image):
     """Honor ROS encoding and row padding; discard alpha, never assume RGB."""
     import numpy as np
@@ -113,8 +121,8 @@ class LiveObservation:
             pose=tcp[0]
             if len(pose)!=6 or not all(math.isfinite(x) for x in pose):raise ValueError('invalid_tcp')
             pose=[x/1000 for x in pose[:3]]+pose[3:]
-        arr=camera_rgb_array(image)
-        jpeg=io.BytesIO();Image.fromarray(arr).save(jpeg,format='JPEG',quality=95)
+        arr=camera_rgb_image(image)
+        jpeg=io.BytesIO();arr.save(jpeg,format='JPEG',quality=95)
         return jpeg.getvalue(),dict(receive_monotonic=now,tcp_m_abc=pose,tcp_source=source,
             image_sha256=hashlib.sha256(bytes(image.data)).hexdigest(),image_hash_scope='SOURCE_ROS_PIXEL_BYTES',
             rgb_pixel_sha256=hashlib.sha256(arr.tobytes()).hexdigest(),model_input_sha256=hashlib.sha256(jpeg.getvalue()).hexdigest(),

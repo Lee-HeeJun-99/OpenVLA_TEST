@@ -1,0 +1,145 @@
+{
+  "status": "MODEL_HEALTH_PASS",
+  "health": {
+    "status": "ready",
+    "bundle": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130",
+    "dataset_key": "a0509_sim_cube_pick",
+    "variant": "openvla_token",
+    "chunk_size": 1,
+    "action_dim": 7,
+    "adapter_mode": "merged",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "torch": "2.2.0+cu121",
+    "cuda_runtime": "12.1",
+    "model_load_seconds": 38.23290103813633,
+    "peak_vram_gb": 14.589366912841797,
+    "request_count": 62,
+    "crop_bottom_fraction": 0.0,
+    "server_version": "phase12-health-v1",
+    "model": "openvla",
+    "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130",
+    "requires_proprio": false,
+    "center_crop": false,
+    "preprocessing": {
+      "color_order": "RGB",
+      "source_dtype": "uint8",
+      "tensor_dtype": "bfloat16",
+      "crop_bottom_fraction": 0.0,
+      "processor": {
+        "use_fused_vision_backbone": true,
+        "image_resize_strategy": "resize-naive",
+        "input_sizes": [
+          [
+            3,
+            224,
+            224
+          ],
+          [
+            3,
+            224,
+            224
+          ]
+        ],
+        "interpolations": [
+          "bicubic",
+          "bicubic"
+        ],
+        "means": [
+          [
+            0.485,
+            0.456,
+            0.406
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ]
+        ],
+        "stds": [
+          [
+            0.229,
+            0.224,
+            0.225
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ]
+        ],
+        "tvf_resize_params": [
+          {
+            "antialias": true,
+            "interpolation": 3,
+            "max_size": null,
+            "size": [
+              224,
+              224
+            ]
+          },
+          {
+            "antialias": true,
+            "interpolation": 3,
+            "max_size": null,
+            "size": [
+              224,
+              224
+            ]
+          }
+        ],
+        "tvf_crop_params": [
+          {
+            "output_size": [
+              224,
+              224
+            ]
+          },
+          {
+            "output_size": [
+              224,
+              224
+            ]
+          }
+        ],
+        "tvf_normalize_params": [
+          {
+            "inplace": false,
+            "mean": [
+              0.484375,
+              0.455078125,
+              0.40625
+            ],
+            "std": [
+              0.228515625,
+              0.2236328125,
+              0.224609375
+            ]
+          },
+          {
+            "inplace": false,
+            "mean": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "std": [
+              0.5,
+              0.5,
+              0.5
+            ]
+          }
+        ],
+        "tvf_do_letterbox": false,
+        "tvf_letterbox_fill": null,
+        "_processor_class": "PrismaticProcessor",
+        "auto_map": {
+          "AutoImageProcessor": "processing_prismatic.PrismaticImageProcessor",
+          "AutoProcessor": "processing_prismatic.PrismaticProcessor"
+        },
+        "image_processor_type": "PrismaticImageProcessor"
+      },
+      "instruction_handling": "clean_instruction_then_build_inference_prompt"
+    }
+  }
+}

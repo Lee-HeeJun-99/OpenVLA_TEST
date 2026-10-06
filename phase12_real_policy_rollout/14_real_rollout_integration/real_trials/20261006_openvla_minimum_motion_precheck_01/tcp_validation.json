@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED_CURRENT_TOOL_OFFSET_AND_TCP_UNKNOWN",
+  "active_tcp_name": null,
+  "current_tool_offset": null,
+  "current_operator_pendant_pose": null,
+  "tcp_contract_verified": false,
+  "tool_offset_verified": false,
+  "source": "FK_ESTIMATED_FLANGE_ONLY",
+  "read_only_candidates": {
+    "GetCurrentTcp": "string info TCP name; bool success; no offset or measured pose",
+    "GetCurrentTool": "string info tool name; bool success; no offset or measured pose"
+  },
+  "callback_sources": "dsr_controller2.cpp:1938 get_current_tcp_cb -> Drfl->get_tcp(); :1967 get_current_tool_cb -> Drfl->get_tool()",
+  "candidate_stability": "UNVERIFIED_IN_CURRENT_LIVE_ENVIRONMENT",
+  "getters_called": 0,
+  "past_Tool_v1_value_reused": false,
+  "minimum_motion_authorized": false,
+  "gripper_physical_command_enabled": false,
+  "gripper_pulse_enabled": false,
+  "physical_commands": 0
+}
