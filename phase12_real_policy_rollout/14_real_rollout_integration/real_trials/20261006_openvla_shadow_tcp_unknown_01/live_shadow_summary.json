@@ -1,0 +1,84 @@
+{
+  "status": "LIVE_SHADOW_FAIL",
+  "prediction_count": 61,
+  "shadow_duration_s": 30.252173516899347,
+  "pre_shadow_gate": {
+    "status": "PASS",
+    "count": 2000,
+    "coverage_s": 19.99024122580886,
+    "latest_receive_age_s": 0.002229172270745039,
+    "receive_rate_hz": 99.99879328215135,
+    "max_source_gap_s": 0.011731624603271484,
+    "max_receive_gap_s": 0.01954646920785308,
+    "invalid_values": 0
+  },
+  "safety_rejection_ratio": 1.0,
+  "blockers": {
+    "camera_failure": 9,
+    "gripper_unknown_state_blocks_command": 61,
+    "tcp_failure": 52
+  },
+  "action_magnitude_threshold_exceedances": 0,
+  "watchdog_or_abort_reason": null,
+  "tcp_source": "FK_ESTIMATED_FLANGE",
+  "tcp_contract_verified": false,
+  "tool_offset_verified": false,
+  "motion_authorized": false,
+  "physical_commands": 0,
+  "next_allowed_stage": "TCP_CROSSCHECK_REQUIRED_BEFORE_MOTION",
+  "distributions": {
+    "translation_norm_m": {
+      "mean": 0.0021561620148319413,
+      "median": 0.002249525738126229,
+      "p95": 0.0023688678261456642,
+      "max": 0.0025465057810860154,
+      "min": 0.0019471472558214476
+    },
+    "rotation_norm_deg": {
+      "mean": 0.5975295539199718,
+      "median": 0.6002844477962263,
+      "p95": 0.6002844477962263,
+      "max": 0.6262013152800626,
+      "min": 0.5637021520807409
+    },
+    "gripper_closedness": {
+      "mean": 0.0019607843137254832,
+      "median": 0.0019607843137254832,
+      "p95": 0.0019607843137254832,
+      "max": 0.0019607843137254832,
+      "min": 0.0019607843137254832
+    },
+    "inference_latency_s": {
+      "mean": 0.41624616610924486,
+      "median": 0.4129224307835102,
+      "p95": 0.4503297610208392,
+      "max": 0.47261080611497164,
+      "min": 0.38957116287201643
+    },
+    "end_to_end_latency_s": {
+      "mean": 0.4709069237845843,
+      "median": 0.4632310150191188,
+      "p95": 0.5362122650258243,
+      "max": 0.6164847468025982,
+      "min": 0.42876757588237524
+    },
+    "camera_age_s": {
+      "mean": 0.4709069237845843,
+      "median": 0.4632310150191188,
+      "p95": 0.5362122650258243,
+      "max": 0.6164847468025982,
+      "min": 0.42876757588237524
+    },
+    "jointstate_age_s": {
+      "mean": 0.4562750024965308,
+      "median": 0.45181802473962307,
+      "p95": 0.4993474390357733,
+      "max": 0.524195855949074,
+      "min": 0.4260826581157744
+    }
+  },
+  "model_inference_valid": true,
+  "close_candidate_count": 0,
+  "physical_command_invariant_pass": true,
+  "freshness_finding": "Selected model input aged beyond existing 0.5s safety threshold on 9 responses; latest camera stream watchdog remained fresh. No threshold was relaxed."
+}

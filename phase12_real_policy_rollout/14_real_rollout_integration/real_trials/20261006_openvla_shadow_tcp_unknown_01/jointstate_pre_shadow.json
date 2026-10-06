@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "count": 2000,
+  "coverage_s": 19.99024122580886,
+  "latest_receive_age_s": 0.002229172270745039,
+  "receive_rate_hz": 99.99879328215135,
+  "max_source_gap_s": 0.011731624603271484,
+  "max_receive_gap_s": 0.01954646920785308,
+  "invalid_values": 0
+}

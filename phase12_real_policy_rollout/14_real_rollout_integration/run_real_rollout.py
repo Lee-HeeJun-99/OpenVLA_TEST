@@ -107,6 +107,7 @@ def main():
     parser.add_argument('--protocol',choices=['minimum_motion','short_horizon','full_task'],required=True)
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--live',action='store_true',help='subscriber inputs, no recorded replay')
+    parser.add_argument('--prediction-only-flange',action='store_true',help='vision-only diagnostic Shadow with unverified flange context; dry/live OpenVLA only, never motion')
     parser.add_argument('--recorded-input',type=Path)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--preflight-evidence',type=Path)
@@ -115,6 +116,9 @@ def main():
     parser.add_argument('--model-config',type=Path,help='operator-approved config copy; defaults remain disabled')
     args=parser.parse_args()
     if args.output.exists():raise FileExistsError('preserve_existing_log')
+    if args.prediction_only_flange:
+        from flange_prediction_shadow import run as run_flange_shadow
+        return run_flange_shadow(args)
     if args.recorded_input:
         if args.live:raise ValueError('live_and_recorded_mutually_exclusive')
         if not args.dry_run:raise PermissionError('recorded_input_never_commands_hardware')
