@@ -1,0 +1,35 @@
+{
+  "classification": "OFFLINE_RECORDED_DRY_RUN",
+  "task_success": null,
+  "completion_time_s": null,
+  "trajectory_length_m": null,
+  "tcp_path_deviation_mean_m": null,
+  "first_close_time_s": null,
+  "first_close_type": "MODEL_INTENT",
+  "safety_rejection_count": 0,
+  "safety_intervention_count": 0,
+  "model_latency_mean_s": null,
+  "control_latency_s": null,
+  "translation_action_mean_m": null,
+  "rotation_action_mean_rad": null,
+  "oft_chunk_reject_rate": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0
+  },
+  "records": 0,
+  "command_issued_count": 0,
+  "observation_gap_join_keys": [
+    "episode_id",
+    "condition",
+    "matched_pair_id"
+  ],
+  "aborted": false,
+  "abort_reason": null,
+  "mode": "OFFLINE_AUDIT_ALL",
+  "real_command_integration": "NOT_IMPLEMENTED",
+  "MOTION_READY": false,
+  "input_sha256": "e9300c355c6e5efb2b37c9a51e13d40f60c1dc60e48bf406efdb219dcb95d782"
+}

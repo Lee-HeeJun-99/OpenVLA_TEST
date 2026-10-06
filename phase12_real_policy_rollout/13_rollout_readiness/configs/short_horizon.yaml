@@ -1,0 +1,10 @@
+protocol: short_horizon
+maximum_duration_s: 2
+maximum_actions: 10
+gripper_enabled: false
+automatic_abort: true
+manual_estop_available_required: true
+manual_approval_required: true
+oft_chunk_execution_mode: sequential_k5
+command_mode: disabled
+motion_enabled: false

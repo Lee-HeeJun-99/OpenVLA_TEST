@@ -1,0 +1,17 @@
+model: oft
+checkpoint: oft_mixed480_step28560_merged
+variant: oftplus_h5_vision
+instruction: Pick up the orange cube.
+chunk_size: 5
+inference_rate_hz: 1
+control_rate_hz: 5
+chunk_execution_mode: sequential_k5
+target_step_rule: inference_frame + chunk_index
+target_time_rule: target_step * 0.2
+center_crop: true
+proprio: false
+command_mode: disabled
+motion_enabled: false
+explicit_motion_approval: false
+model_behavior_review: DEFERRED_FOR_MODEL_BEHAVIOR_REVIEW
+safety_config: ../../01_configs/safety_limits.yaml

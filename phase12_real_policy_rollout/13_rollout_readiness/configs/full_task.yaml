@@ -1,0 +1,17 @@
+protocol: full_task
+instruction: Pick up the orange cube.
+target_cube: orange
+maximum_duration_s: 30
+maximum_actions: 150
+manual_approval_required: true
+command_mode: disabled
+motion_enabled: false
+metadata_required:
+  - model
+  - checkpoint
+  - initial_condition
+  - condition
+  - episode_seed
+  - workspace
+  - safety_config_hash
+  - model_config_hash

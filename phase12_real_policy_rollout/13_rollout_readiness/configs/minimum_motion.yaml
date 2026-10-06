@@ -1,0 +1,9 @@
+protocol: minimum_motion
+maximum_actions: 1
+translation_step_m: 0.001
+rotation_enabled: false
+gripper_enabled: false
+manual_approval_required: true
+command_mode: disabled
+motion_enabled: false
+workspace_source: ../../01_configs/safety_limits.yaml

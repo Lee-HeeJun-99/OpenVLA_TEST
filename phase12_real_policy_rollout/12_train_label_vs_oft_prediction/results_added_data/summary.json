@@ -28,7 +28,18 @@
       "max_time_s": 3.2
     }
   ],
-  "classification": "INSUFFICIENT_TRAINING_DATA",
+  "classification": "DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED",
+  "previous_classification": "INSUFFICIENT_TRAINING_DATA",
+  "observed_finding": "DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED",
+  "causal_attribution": "UNRESOLVED",
+  "causal_conclusion": "CAUSAL_ATTRIBUTION_UNRESOLVED",
+  "dataset_representativeness": "LIMITED_SAMPLE_OF_TRAINING_CORPUS",
+  "training_k0_to_k4_increase_pp": 8.2,
+  "oft_episode4_k0_to_k4_increase_pp": 44.4,
+  "oft_phase11_k0_to_k4_increase_pp": 20.3,
+  "rollout_recommendation": "DEFERRED_FOR_MODEL_BEHAVIOR_REVIEW",
+  "rollout_reason": "Repeated offline late-K close bias and early-close behavior warrant model review; rollout may primarily physically reconfirm the known behavior rather than identify its origin.",
+  "future_physical_validation_required": true,
   "supported_findings": [
     "K5 label close prevalence rises",
     "Checkpoint K rise is larger descriptively"

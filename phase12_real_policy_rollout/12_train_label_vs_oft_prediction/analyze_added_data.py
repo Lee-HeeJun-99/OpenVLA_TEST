@@ -46,8 +46,20 @@ def main():
         comparison.append(dict(source=x['source'],k_index=k,training_close_ratio=t['close_ratio_ge_0p7'],prediction_close_ratio=float(x['close_ratio_ge_0p7']),difference=float(x['close_ratio_ge_0p7'])-t['close_ratio_ge_0p7'],training_mean=t['mean'],prediction_mean=float(x['mean']),training_horizon_s=k/10,prediction_horizon_s=k/5))
     write_csv(out/'train_gripper_timing.csv',timing);write_csv(out/'train_k5_distribution.csv',train)
     write_csv(out/'demonstration_timing_summary.csv',stats);write_csv(out/'train_vs_prediction.csv',comparison)
+    train_increase=(next(t['close_ratio_ge_0p7'] for t in train if t['demonstration_type']=='ALL' and t['k_index']==4)-next(t['close_ratio_ge_0p7'] for t in train if t['demonstration_type']=='ALL' and t['k_index']==0))*100
+    prediction_increases={source:(float(next(x['close_ratio_ge_0p7'] for x in predictions if x['source']==source and int(x['k_index'])==4))-float(next(x['close_ratio_ge_0p7'] for x in predictions if x['source']==source and int(x['k_index'])==0)))*100 for source in {x['source'] for x in predictions}}
     summary=dict(unique_episode_count=len(timing),total_steps=sum(x['num_steps'] for x in timing),duplicates=duplicates,
-        demonstration_summary=stats,classification='INSUFFICIENT_TRAINING_DATA',
+        demonstration_summary=stats,classification='DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED',
+        previous_classification='INSUFFICIENT_TRAINING_DATA',
+        observed_finding='DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED',
+        causal_attribution='UNRESOLVED',causal_conclusion='CAUSAL_ATTRIBUTION_UNRESOLVED',
+        dataset_representativeness='LIMITED_SAMPLE_OF_TRAINING_CORPUS',
+        training_k0_to_k4_increase_pp=round(train_increase,1),
+        oft_episode4_k0_to_k4_increase_pp=round(prediction_increases['PHASE10_EPISODE4'],1),
+        oft_phase11_k0_to_k4_increase_pp=round(prediction_increases['PHASE11_OFT_RUN2'],1),
+        rollout_recommendation='DEFERRED_FOR_MODEL_BEHAVIOR_REVIEW',
+        rollout_reason='Repeated offline late-K close bias and early-close behavior warrant model review; rollout may primarily physically reconfirm the known behavior rather than identify its origin.',
+        future_physical_validation_required=True,
         supported_findings=['K5 label close prevalence rises','Checkpoint K rise is larger descriptively'],
         unresolved=['Exact mixed480 membership/resampling unverified','Unmatched blue/red/yellow sim versus orange real inputs','10 Hz versus 5 Hz horizons','Only one nominal episode'],
         provenance=manifest,production_config_changed=False,robot_command_count=0)
@@ -73,10 +85,34 @@ Training K5는 0.4초, prediction K5는 0.8초 horizon이므로 K별 차이는 �
 Phase10 Episode4 첫 close 0.4초는 이번 training 중앙값 2.5초보다 2.1초 빠르지만,
 동일 영상·시작 상태 비교가 아니므로 조기 close 원인의 인과 증거로 사용할 수 없습니다.
 
-판정: INSUFFICIENT_TRAINING_DATA. Label K 증가와 더 큰 prediction K 증가가 관찰됐지만
-정확한 mixed480 포함 여부·resampling, 동일 task/input 비교가 미확인입니다.
+## 확인된 사실과 판정
+
+Primary finding: `DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED`
+Causal attribution: `UNRESOLVED` / `CAUSAL_ATTRIBUTION_UNRESOLVED`
+Dataset representativeness: `LIMITED_SAMPLE_OF_TRAINING_CORPUS`
+기존 `INSUFFICIENT_TRAINING_DATA`는 표본 대표성 제한으로 보존하며 단독 결론으로 사용하지 않습니다.
+
+Training label 자체에도 K 후반 close 비율 증가가 존재합니다.
+K0→K4 증가폭은 training +{train_increase:.1f}%p,
+OFT Episode4 +{prediction_increases['PHASE10_EPISODE4']:.1f}%p,
+OFT Phase11 +{prediction_increases['PHASE11_OFT_RUN2']:.1f}%p입니다.
+OFT prediction은 같은 방향의 증가를 보이며 증가폭이 training보다 큽니다.
+따라서 prediction에서 K 후반 close 편향이 더 강하게 관찰됩니다.
+
+현재 데이터는 checkpoint가 training bias를 증폭했을 가능성을 지지합니다.
+다만 exact mixed480 학습 포함 여부와 resampling이 미확인이고,
+training은 10 Hz / 0.4초 horizon, prediction은 5 Hz / 0.8초 horizon이며,
+동일 observation 기반 matched comparison이 아니므로 인과적 증폭으로 확정할 수 없습니다.
 Nominal 1개로 demonstration type 일반화를 할 수 없습니다.
-재학습 결정 전 exact training split 및 같은 입력의 checkpoint별 prediction을 확보해야 합니다.
+
+## Rollout recommendation
+
+Real rollout: `DEFERRED_FOR_MODEL_BEHAVIOR_REVIEW`.
+K 후반 close 편향과 early-close behavior가 offline에서 반복적으로 확인됐습니다.
+현재 rollout은 새로운 원인 규명보다 기존 현상의 물리적 재확인에 그칠 가능성이 높아,
+exact training split 감사와 동일 입력 checkpoint 비교를 먼저 수행하는 것을 권고합니다.
+모델 수정·검증 이후 real rollout은 최종 physical validation으로 필요합니다.
+현재 phase safety gate를 유지하며 재학습 여부는 후속 모델 검토로 결정합니다.
 Production threshold 변경 없음. 신규 inference·robot command 모두 0회.
 '''
     (ROOT/'added_data_report.md').write_text(report)

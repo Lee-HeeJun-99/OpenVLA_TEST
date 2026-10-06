@@ -1,5 +1,18 @@
 # Training label vs OFT prediction
 
+## 후속 해석 업데이트
+
+추가된 11 episode의 최신 해석은 [added_data_report.md](added_data_report.md)와
+`results_added_data/summary.json`에 기록했습니다.
+
+- Primary finding: `DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED`
+- Causal attribution: `UNRESOLVED` (`CAUSAL_ATTRIBUTION_UNRESOLVED`)
+- Dataset representativeness: `LIMITED_SAMPLE_OF_TRAINING_CORPUS`
+- K0→K4 증가: training +8.2%p, OFT Episode4 +44.4%p, Phase11 +20.3%p.
+- Rollout: `DEFERRED_FOR_MODEL_BEHAVIOR_REVIEW`. 모델 검토 이후 최종 physical validation은 필요합니다.
+
+아래는 최초 단일 episode 분석 기록입니다. 기존 수치와 제한은 보존합니다.
+
 판정: `INSUFFICIENT_TRAINING_DATA`.
 
 제공된 실제 데이터는 1 episode: blue cube / corrective_recovery / 10 Hz / 56 steps.

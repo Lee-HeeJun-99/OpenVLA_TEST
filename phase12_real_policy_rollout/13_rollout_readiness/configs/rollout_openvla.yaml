@@ -1,0 +1,12 @@
+model: openvla
+checkpoint: vanilla_s1_balanced_step8130
+variant: openvla_token
+instruction: Pick up the orange cube.
+chunk_size: 1
+control_rate_hz: 5
+crop_bottom_fraction: 0.0
+proprio: false
+command_mode: disabled
+motion_enabled: false
+explicit_motion_approval: false
+safety_config: ../../01_configs/safety_limits.yaml

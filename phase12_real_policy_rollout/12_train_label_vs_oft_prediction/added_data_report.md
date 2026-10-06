@@ -26,8 +26,32 @@ Training K5는 0.4초, prediction K5는 0.8초 horizon이므로 K별 차이는 �
 Phase10 Episode4 첫 close 0.4초는 이번 training 중앙값 2.5초보다 2.1초 빠르지만,
 동일 영상·시작 상태 비교가 아니므로 조기 close 원인의 인과 증거로 사용할 수 없습니다.
 
-판정: INSUFFICIENT_TRAINING_DATA. Label K 증가와 더 큰 prediction K 증가가 관찰됐지만
-정확한 mixed480 포함 여부·resampling, 동일 task/input 비교가 미확인입니다.
+## 확인된 사실과 판정
+
+Primary finding: `DESCRIPTIVE_K5_CLOSE_AMPLIFICATION_OBSERVED`
+Causal attribution: `UNRESOLVED` / `CAUSAL_ATTRIBUTION_UNRESOLVED`
+Dataset representativeness: `LIMITED_SAMPLE_OF_TRAINING_CORPUS`
+기존 `INSUFFICIENT_TRAINING_DATA`는 표본 대표성 제한으로 보존하며 단독 결론으로 사용하지 않습니다.
+
+Training label 자체에도 K 후반 close 비율 증가가 존재합니다.
+K0→K4 증가폭은 training +8.2%p,
+OFT Episode4 +44.4%p,
+OFT Phase11 +20.3%p입니다.
+OFT prediction은 같은 방향의 증가를 보이며 증가폭이 training보다 큽니다.
+따라서 prediction에서 K 후반 close 편향이 더 강하게 관찰됩니다.
+
+현재 데이터는 checkpoint가 training bias를 증폭했을 가능성을 지지합니다.
+다만 exact mixed480 학습 포함 여부와 resampling이 미확인이고,
+training은 10 Hz / 0.4초 horizon, prediction은 5 Hz / 0.8초 horizon이며,
+동일 observation 기반 matched comparison이 아니므로 인과적 증폭으로 확정할 수 없습니다.
 Nominal 1개로 demonstration type 일반화를 할 수 없습니다.
-재학습 결정 전 exact training split 및 같은 입력의 checkpoint별 prediction을 확보해야 합니다.
+
+## Rollout recommendation
+
+Real rollout: `DEFERRED_FOR_MODEL_BEHAVIOR_REVIEW`.
+K 후반 close 편향과 early-close behavior가 offline에서 반복적으로 확인됐습니다.
+현재 rollout은 새로운 원인 규명보다 기존 현상의 물리적 재확인에 그칠 가능성이 높아,
+exact training split 감사와 동일 입력 checkpoint 비교를 먼저 수행하는 것을 권고합니다.
+모델 수정·검증 이후 real rollout은 최종 physical validation으로 필요합니다.
+현재 phase safety gate를 유지하며 재학습 여부는 후속 모델 검토로 결정합니다.
 Production threshold 변경 없음. 신규 inference·robot command 모두 0회.
