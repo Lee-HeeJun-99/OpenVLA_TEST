@@ -1,0 +1,2 @@
+episode_id,record_frequency_hz,demonstration_type,num_steps_declared,num_steps_actual,first_close_step,first_close_time_s,close_ratio,first_control_target_close_step,label_target_mismatch_count,instruction,target_color,timestamp_wall_elapsed_to_close_s,sim_time_nonmonotonic_count
+train_dataset,10.0,corrective_recovery,56,56,28,2.8,0.5,29,1,Pick up the blue cube.,blue,7.4455022,6

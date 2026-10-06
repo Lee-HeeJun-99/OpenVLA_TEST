@@ -1,0 +1,164 @@
+{
+  "classification": "INSUFFICIENT_TRAINING_DATA",
+  "training": {
+    "episode_id": "train_dataset",
+    "record_frequency_hz": 10.0,
+    "demonstration_type": "corrective_recovery",
+    "num_steps_declared": 56,
+    "num_steps_actual": 56,
+    "first_close_step": 28,
+    "first_close_time_s": 2.8,
+    "close_ratio": 0.5,
+    "first_control_target_close_step": 29,
+    "label_target_mismatch_count": 1,
+    "instruction": "Pick up the blue cube.",
+    "target_color": "blue",
+    "timestamp_wall_elapsed_to_close_s": 7.4455022,
+    "sim_time_nonmonotonic_count": 6
+  },
+  "training_episode_count": 1,
+  "nominal_episode_count": 0,
+  "corrective_recovery_episode_count": 1,
+  "checkpoint_training_membership": "UNVERIFIED",
+  "checkpoint": "oft_mixed480_step28560 / oftplus_h5_vision",
+  "train_k0_to_k4_close_ratio_increase": 0.0714285714285714,
+  "observed_prediction_k_increase": {
+    "PHASE10_EPISODE4": 0.4444444444444444,
+    "PHASE11_OFT_RUN2": 0.203125
+  },
+  "limitations": [
+    "One blue corrective episode; predictions use orange real observations.",
+    "10 Hz K5 spans 0.4 s; 5 Hz K5 spans 0.8 s. K-index distributions have different physical horizons.",
+    "Episode sample-weighted prevalence depends on episode length and post-close hold duration.",
+    "Exact mixed480 membership and any resampling from this source episode are unverified.",
+    "sim_time_s resets; nominal close time uses record_frequency_hz. Wall timestamps differ."
+  ],
+  "answers": {
+    "label_early_close": "Cannot determine premature intent from elapsed time alone. action close at move_grasp step28; control target switches at step29. Transition-aligned label needs source-generation review.",
+    "k_close_ratio_increases": true,
+    "prediction_increase_larger": "Yes descriptively: see CSV; different task, domain and Hz prevent causal attribution.",
+    "checkpoint_amplifies_training_bias": "Not established with one unmatched training episode and unequal horizons.",
+    "rollout_recommendation": "Keep phase safety gate. Audit exact mixed480 train/val corpus and compare checkpoints on matched observations before deciding on calibration/retraining."
+  },
+  "input_sha256": {
+    "episode.json": "99759b057a1e5fe2aa18da3a3760636c7ec7597d461dc2fee9a8382b3b421ae7",
+    "steps.jsonl": "1e4cd2e04d189e2725c41d3bd1d0b5d838c13471b27d90cebb7079db0985e531"
+  },
+  "prediction_provenance": [
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase10_planner_based_shadow_mode/06_shadow_collection/offline_recorded_episode4/oft_vision_step28560_local/samples.jsonl",
+      "sha256": "9d7e914659607049457d18826dbbd7b0f6663ca9d05c2f98a9692e63ecf22f01",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/baseline/episode_000001/samples.jsonl",
+      "sha256": "19f26f635418461ff3a94821a254eea9e923cc41d76a20ed021f2b1d9ca5546a",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/baseline/episode_000002/samples.jsonl",
+      "sha256": "b5caaa01e69fa50f63baf87fe1a154d6c91f15f0a8ff1670794117e7931db331",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/baseline/episode_000003/samples.jsonl",
+      "sha256": "62fcf895ff6131efc2a1662aceb0206a489b33a9e4f479c2212268f0231f25be",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/baseline/episode_000004/samples.jsonl",
+      "sha256": "f8e50fc94120363dff228ca81f37cf521f08da556c149d051d1c5abf03dd3f0e",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/baseline/episode_000005/samples.jsonl",
+      "sha256": "96f1ed3ddcb5ef51cb801ec83fd3d1e2f087a84d61416a76ef682796d0e6ce82",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/distractor_swap/episode_000001/samples.jsonl",
+      "sha256": "ad3e96c99cf85d42245f5a2d8334d15fab18b078afe8be2431c7f94be67a823c",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/distractor_swap/episode_000002/samples.jsonl",
+      "sha256": "11eb507a0a71802b15d6782f355b39ae4b58f209a2126c7da54557bab0cb7eb3",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/distractor_swap/episode_000003/samples.jsonl",
+      "sha256": "c86f602cf51cffe4dee8038cd440b91b2ee275eb1d10344cde8f4225e4b9b74f",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/distractor_swap/episode_000004/samples.jsonl",
+      "sha256": "48765a450d1fbf5277605ccff3403e244f3f5b3725804fa48a3cad8f6122d57a",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/distractor_swap/episode_000005/samples.jsonl",
+      "sha256": "1b3131521c0d9f44d4f4f45ac70a979299e5e995c2976514c5629941ceead446",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/extra_object/episode_000001/samples.jsonl",
+      "sha256": "a2efa3e8d6c44066fa926b527655137dd3c654a8efa1ddc882f91085e82b4d07",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/extra_object/episode_000002/samples.jsonl",
+      "sha256": "9216a4296d5ed47f4c3853a1c028f6b77b5220b23ea105c5b9782d61261efc03",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/extra_object/episode_000003/samples.jsonl",
+      "sha256": "31ca38ad5e7c5a65672969bb1289c617a7905ee6344ea26c206ac1e3e0f74288",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/extra_object/episode_000004/samples.jsonl",
+      "sha256": "78379df3bef3e661f448c07a1c794b805a6c022060c17de28988645d9dc8173b",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/extra_object/episode_000005/samples.jsonl",
+      "sha256": "46808f3cc4003e7bfee7795aeac048f275042770e9980462782ae81dd4f6c950",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/lighting_low/episode_000001/samples.jsonl",
+      "sha256": "7a2859693d0f69dec1aab672774433d066f599207b9eb8136642914b5d8bb6a6",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/lighting_low/episode_000002/samples.jsonl",
+      "sha256": "09584278d9196841859db8099f4d2351b4effae42ac045daeb0d470894067583",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/lighting_low/episode_000003/samples.jsonl",
+      "sha256": "cba941d1d27d09b52eaf525c1cdcc7bcf5a6e37b613798255d9f1206242e8ddd",
+      "valid_chunks": 9
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/lighting_low/episode_000004/samples.jsonl",
+      "sha256": "2d94d01e1fff2a8c22b4ff0408fbad281b4adf8853351b260cced3f123e02603",
+      "valid_chunks": 10
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/01_predictions/oft_run2/lighting_low/episode_000005/samples.jsonl",
+      "sha256": "24f903cc9f3030c93d7e2e8dce2f41bbc58317009a2f343c91a57443492dd6ef",
+      "valid_chunks": 9
+    }
+  ],
+  "production_safety_threshold_changed": false,
+  "execution_counts": {
+    "robot_command": 0,
+    "motion_service_action": 0,
+    "gripper_command": 0,
+    "home": 0,
+    "trajectory": 0,
+    "hold_estop": 0,
+    "real_rollout": 0
+  }
+}
