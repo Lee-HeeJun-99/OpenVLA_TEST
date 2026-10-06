@@ -11,6 +11,7 @@ from canonical_action import CanonicalAction
 from command_sinks import NullCommandSink
 from safety_pipeline import RuntimeState,SafetyPipeline
 from integrated_logger import FsyncJsonlLogger
+from oft_timing_contract import action_age_sec,inference_time_sec,target_step,target_time_sec
 
 def abc(rotation_xyzw):
     if not rotation_xyzw:return (0.,0.,0.)
@@ -30,20 +31,28 @@ def main():
     p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--command-mode',choices=('disabled',),default='disabled');p.add_argument('--limit',type=int,default=0)
     a=p.parse_args();pipeline=SafetyPipeline(a.model,operator_confirmed_initial_open=True);sink=NullCommandSink();n=accepted=0
+    rows=[json.loads(line) for line in a.input.open() if line.strip()]
+    by_frame={int(row.get('frame_id',i)):row for i,row in enumerate(rows)}
     with FsyncJsonlLogger(a.output,minimum_free_bytes=0) as log:
-     for line in a.input.open():
-      row=json.loads(line);acts=actions_for(row,a.model)
+     for row in rows:
+      acts=actions_for(row,a.model)
       if not acts:continue
-      base=float(row.get('frame_id',n))*(1.0 if a.model=='oft' else .2)
-      pos=tuple(float(x) for x in (row.get('raw_ee_position') or (.4,0,.5)))
+      inference_frame=int(row.get('frame_id',n));base=inference_time_sec(inference_frame)
       for k,vector in enumerate(acts):
+       step=target_step(inference_frame,k) if a.model=='oft' else inference_frame
+       mapped=by_frame.get(step,row);now=target_time_sec(inference_frame,k) if a.model=='oft' else base
+       pos=tuple(float(x) for x in (mapped.get('raw_ee_position') or row.get('raw_ee_position') or (.4,0,.5)))
        action=CanonicalAction.from_vector(vector,timestamp_monotonic=base,
         sequence_id=f"{row.get('episode_id','recorded')}-{row.get('frame_id',n)}-k{k}",source_model=a.model,
         chunk_index=k,chunk_size=len(acts))
-       state=RuntimeState(base+.2*k,pos,abc(row.get('raw_ee_rotation')),row.get('phase') or 'unknown')
+       state=RuntimeState(now,pos,abc(mapped.get('raw_ee_rotation') or row.get('raw_ee_rotation')),
+                          mapped.get('phase') or row.get('phase') or 'unknown')
        decision=pipeline.inspect(action,state);receipt=sink.submit(action.as_dict(),decision.as_dict())
        out={"classification":"RECORDED_PREDICTION_COMMAND_DISABLED_SHADOW","episode_id":row.get('episode_id'),
-        "frame_id":row.get('frame_id'),"phase":state.phase,"image_sha256":row.get('raw_image_sha256'),
+        "frame_id":row.get('frame_id'),"inference_frame":inference_frame,"target_step":step,
+        "expected_execution_time_s":now,"action_age_sec":action_age_sec(inference_frame,k) if a.model=='oft' else 0.0,
+        "inference_phase":row.get('phase'),"phase":state.phase,"mapped_phase":state.phase,
+        "image_sha256":row.get('raw_image_sha256'),
         "tcp_source":row.get('pose_source','RECORDED_TCP'),"canonical_action":action.as_dict(),
         "filtered_action":decision.as_dict()['filtered_action'],"safety_decision":decision.as_dict(),
         "sink_receipt":receipt,"latency":row.get('inference_latency_openvla') if a.model=='openvla' else row.get('inference_latency_oft'),
@@ -54,4 +63,3 @@ def main():
     print(json.dumps({'status':'COMPLETE_COMMAND_DISABLED','model':a.model,'records':n,'accepted':accepted,
                       'rejected':n-accepted,'command_issued':False,'output':str(a.output)}))
 if __name__=='__main__':main()
-

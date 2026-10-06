@@ -21,11 +21,14 @@ HERE = Path(__file__).resolve().parent
 P12 = HERE.parent
 LHJ = P12.parent
 SAFETY = P12 / "02_safety"
-sys.path.insert(0, str(SAFETY))
+SHADOW = P12 / "03_shadow_mode"
+sys.path[:0] = [str(SAFETY),str(SHADOW)]
 
 from action_rate_limiter import CanonicalActionRateLimiter  # noqa: E402
 from open_loop_gripper_supervisor import OpenLoopGripperSupervisor  # noqa: E402
 from runtime_safety_supervisor import RuntimeSafetySupervisor  # noqa: E402
+from oft_timing_contract import (inference_time_sec,legacy_recorded_time_sec,
+                                 target_time_sec)  # noqa: E402
 
 RESULTS = HERE / "results"
 PLOTS = HERE / "plots"
@@ -86,7 +89,9 @@ def now_and_source(model, row):
     idx = int(row["canonical_action"].get("chunk_index", 0))
     if model == "openvla":
         return frame * DT, frame * DT
-    return frame * 1.0 + idx * DT, frame * 1.0
+    # This analysis reproduces the immutable pre-fix artifact intentionally.
+    # New runtime decisions use target_time_sec() in prediction_shadow_runtime.
+    return legacy_recorded_time_sec(frame,idx), legacy_recorded_time_sec(frame,0)
 
 
 def replay(model, rows, positions, *, t_step=.004, r_step_deg=4.0,
@@ -379,4 +384,3 @@ def run_analysis():
     summary["production_config_snapshot"]=production_config()
     (RESULTS/"summary.json").write_text(json.dumps(summary,indent=2,ensure_ascii=False)+"\n")
     return all_rows,b,sens,chunks,summary
-

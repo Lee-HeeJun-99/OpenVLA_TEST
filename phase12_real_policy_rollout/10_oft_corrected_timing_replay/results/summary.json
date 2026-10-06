@@ -1,0 +1,92 @@
+{
+  "classification": "MODEL_EARLY_CLOSE_DOMINANT_AFTER_TIMING_FIX",
+  "before": {
+    "accepted": 10,
+    "rejected": 35,
+    "blockers": {
+      "premature_gripper_close": 22,
+      "translation_acceleration_limit": 19,
+      "raw_translation_step_limit": 19
+    }
+  },
+  "after": {
+    "accepted": 13,
+    "rejected": 32,
+    "blockers": {
+      "premature_gripper_close": 22,
+      "raw_translation_step_limit": 19
+    }
+  },
+  "accepted_change": 3,
+  "acceleration_blocker_change": -19,
+  "first_close_candidate_target_step": 2,
+  "reference_close_command_step": 26,
+  "first_valid_grasp_close_step": 27,
+  "early_close_lead_steps": 24,
+  "early_close_lead_s": 4.800000000000001,
+  "k_index": [
+    {
+      "chunk_index": 0,
+      "total": 9,
+      "before_accepted": 6,
+      "after_accepted": 6,
+      "after_rejected": 3,
+      "after_reject_rate": 0.3333333333333333,
+      "before_acceleration_blocker": 0,
+      "after_acceleration_blocker": 0,
+      "after_translation_step_blocker": 1,
+      "after_premature_close": 2
+    },
+    {
+      "chunk_index": 1,
+      "total": 9,
+      "before_accepted": 1,
+      "after_accepted": 3,
+      "after_rejected": 6,
+      "after_reject_rate": 0.6666666666666666,
+      "before_acceleration_blocker": 8,
+      "after_acceleration_blocker": 0,
+      "after_translation_step_blocker": 4,
+      "after_premature_close": 3
+    },
+    {
+      "chunk_index": 2,
+      "total": 9,
+      "before_accepted": 2,
+      "after_accepted": 2,
+      "after_rejected": 7,
+      "after_reject_rate": 0.7777777777777778,
+      "before_acceleration_blocker": 3,
+      "after_acceleration_blocker": 0,
+      "after_translation_step_blocker": 4,
+      "after_premature_close": 5
+    },
+    {
+      "chunk_index": 3,
+      "total": 9,
+      "before_accepted": 0,
+      "after_accepted": 1,
+      "after_rejected": 8,
+      "after_reject_rate": 0.8888888888888888,
+      "before_acceleration_blocker": 5,
+      "after_acceleration_blocker": 0,
+      "after_translation_step_blocker": 4,
+      "after_premature_close": 6
+    },
+    {
+      "chunk_index": 4,
+      "total": 9,
+      "before_accepted": 1,
+      "after_accepted": 1,
+      "after_rejected": 8,
+      "after_reject_rate": 0.8888888888888888,
+      "before_acceleration_blocker": 3,
+      "after_acceleration_blocker": 0,
+      "after_translation_step_blocker": 6,
+      "after_premature_close": 6
+    }
+  ],
+  "production_thresholds_changed": false,
+  "real_robot_commands": 0,
+  "next_step": "Keep corrected runtime timing; investigate OFT checkpoint/gripper intent before sequential-K5 real rollout."
+}

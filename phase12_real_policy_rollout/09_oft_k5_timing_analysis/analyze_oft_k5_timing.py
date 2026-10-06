@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """Offline OFT K=5 target-step, phase, and gripper timing audit."""
 from __future__ import annotations
-import csv,glob,json,math,statistics
+import csv,glob,json,math,statistics,sys
 from collections import Counter,defaultdict
 from pathlib import Path
 import numpy as np
 
 HERE=Path(__file__).resolve().parent;P12=HERE.parent;LHJ=P12.parent;BUNDLE=LHJ.parent
+sys.path.insert(0,str(P12/'03_shadow_mode'))
+from oft_timing_contract import CONTROL_DT_SEC,legacy_recorded_time_sec,target_step,target_time_sec
 SRC=P12.parent/'phase10_planner_based_shadow_mode/06_shadow_collection/offline_recorded_episode4/oft_vision_step28560_local/samples.jsonl'
 DECOUPLED=P12/'08_gripper_state_cascade_analysis/results/decoupled_policy.csv'
 REF_ROOT=BUNDLE/'data/real_world/raw_dataset_oft/episodes'
-OUT=HERE/'results';DT=.2
+OUT=HERE/'results';DT=CONTROL_DT_SEC
 
 def read_jsonl(p):return [json.loads(x) for x in Path(p).read_text().splitlines() if x.strip()]
 def write_csv(p,rows):
@@ -38,13 +40,13 @@ def main():
   if not chunk:continue
   frame=int(inference['frame_id'])
   for k,a in enumerate(chunk):
-   target=frame+k;mapped=by_frame[target];sid=f"{inference['episode_id']}-{frame}-k{k}"
+   target=target_step(frame,k);mapped=by_frame[target];sid=f"{inference['episode_id']}-{frame}-k{k}"
    arr=np.asarray(a,float);close=bool(arr[6]>=.7);mapped_phase=mapped['phase'];coarse=inference['phase']
    refvec=(mapped.get('planner_canonical_action') or {}).get('vector') or mapped.get('planner_raw_action')
    actions.append({'frame':target,'inference_frame':frame,'chunk_id':f'episode4-frame{frame}','chunk_index':k,
     'inference_phase':coarse,'mapped_phase':mapped_phase,'phase_mapping_changed':coarse!=mapped_phase,
-    'expected_execution_time_s':target*DT,'recorded_reference_time_s':mapped.get('timestamp_planner'),
-    'legacy_runner_time_s':frame*1.0+k*DT,'legacy_time_error_s':frame*1.0+k*DT-target*DT,
+    'expected_execution_time_s':target_time_sec(frame,k),'recorded_reference_time_s':mapped.get('timestamp_planner'),
+    'legacy_runner_time_s':legacy_recorded_time_sec(frame,k),'legacy_time_error_s':legacy_recorded_time_sec(frame,k)-target_time_sec(frame,k),
     'gripper_closedness':float(arr[6]),'close_candidate':close,'valid_close_phase':mapped_phase=='grasp_close',
     'premature_close':close and mapped_phase!='grasp_close','reference_gripper_command':float(refvec[6]) if refvec else None,
     'translation_norm_m':float(np.linalg.norm(arr[:3])),'translation_velocity_mm_s':float(np.linalg.norm(arr[:3])/DT*1000),

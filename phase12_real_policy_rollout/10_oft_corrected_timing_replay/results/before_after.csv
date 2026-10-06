@@ -1,0 +1,7 @@
+metric,before,after_corrected,difference
+total,45,45,0
+accepted,10,13,3
+rejected,35,32,-3
+premature_gripper_close,22,22,0
+raw_translation_step_limit,19,19,0
+translation_acceleration_limit,19,0,-19

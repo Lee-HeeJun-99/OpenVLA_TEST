@@ -1,0 +1,6 @@
+chunk_index,total,before_accepted,after_accepted,after_rejected,after_reject_rate,before_acceleration_blocker,after_acceleration_blocker,after_translation_step_blocker,after_premature_close
+0,9,6,6,3,0.3333333333333333,0,0,1,2
+1,9,1,3,6,0.6666666666666666,8,0,4,3
+2,9,2,2,7,0.7777777777777778,3,0,4,5
+3,9,0,1,8,0.8888888888888888,5,0,4,6
+4,9,1,1,8,0.8888888888888888,3,0,6,6
