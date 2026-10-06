@@ -1,0 +1,13 @@
+canonical_translation_unit: meter
+canonical_rotation: world_base_relative_rotvec_radian
+canonical_gripper: {open: 0.0, closed: 1.0}
+translation_boundary_mm_per_m: 1000.0
+empirical_gain_2800_enabled: false
+rotation_composition: R_next=Exp_rotvec@R_current
+doosan_orientation: intrinsic_ZYZ_degree
+gripper_open_threshold: 0.3
+gripper_close_threshold: 0.7
+measured_gripper_feedback: null
+oft_chunk_policy: sequential_k5
+oft_replacement_policy: reject_if_pending
+

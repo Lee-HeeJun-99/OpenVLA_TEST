@@ -2,7 +2,7 @@ import sys, unittest
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(R/'02_safety'))
-from hard_command_gate import HardCommandGate, UNSAFE_FLAGS
+from hard_command_gate import HardCommandGate, UNSAFE_FLAGS,GateState,MotionNotAuthorized
 
 SAFE={"mode":"command_disabled_pre_motion","include_action_adapter":False,"include_doosan_bridge":False,
       **{name:False for name in UNSAFE_FLAGS}}
@@ -29,5 +29,11 @@ class TestHardCommandGate(unittest.TestCase):
  def test_original_command_nodes_excluded_from_phase12_config(self):
   text=(R/'01_configs/command_disabled_runtime.yaml').read_text().lower()
   self.assertIn('include_action_adapter: false',text);self.assertIn('include_doosan_bridge: false',text)
+ def test_gate_states_cannot_enable_motion(self):
+  gate=HardCommandGate(SAFE);self.assertEqual(GateState.COMMAND_DISABLED,gate.state)
+  self.assertEqual(GateState.SHADOW,gate.transition(GateState.SHADOW))
+  self.assertEqual(GateState.READY_FOR_MOTION_APPROVAL,gate.transition(GateState.READY_FOR_MOTION_APPROVAL))
+  with self.assertRaises(MotionNotAuthorized):gate.transition(GateState.MOTION_ENABLED)
+  with self.assertRaises(MotionNotAuthorized):gate.transition(GateState.MOTION_ENABLED,explicit_motion_approval=True)
 
 if __name__=='__main__':unittest.main()

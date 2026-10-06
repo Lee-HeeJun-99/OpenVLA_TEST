@@ -1,0 +1,32 @@
+{
+  "status": "OFFLINE_ROLLOUT_PIPELINE_READY",
+  "real_motion_validation": "PENDING",
+  "prediction_only_shadow": "READY",
+  "mock_closed_loop": "READY",
+  "real_command_integration": "IMPLEMENTED_INTERFACE_ONLY_NOT_VALIDATED",
+  "real_closed_loop_rollout": "NOT_AUTHORIZED",
+  "tests": {"passed": 87, "failed": 0, "skipped": 0},
+  "recorded_validation": {
+    "stationary_episode4": {"records": 30, "valid": 30},
+    "openvla_episode4": {"records": 45, "accepted": 16, "rejected": 29},
+    "oft_episode4": {"records": 45, "accepted": 3, "rejected": 42},
+    "mock_closed_loop": {"records": 5, "accepted": 5},
+    "episodes_8_9_10": "PENDING_RECORDED_DUAL_MODEL_PREDICTIONS"
+  },
+  "known_limitations": [
+    "get_current_posx_vendor_path_not_fixed_and_forbidden",
+    "tcp_fk_or_recorded_source_must_be_labeled_estimated_or_recorded",
+    "measured_gripper_feedback_unavailable_open_loop_policy_only",
+    "doosan_zyz_euler_singularity_may_emit_non_unique_angles_matrix_equivalence_required",
+    "real_command_sink_not_implemented_or_validated"
+  ],
+  "execution_counts": {
+    "robot_command": 0,
+    "motion_service_action": 0,
+    "gripper_command": 0,
+    "home": 0,
+    "trajectory": 0,
+    "hold_estop": 0,
+    "real_closed_loop": 0
+  }
+}

@@ -1,0 +1,6 @@
+mode: mock_closed_loop
+command_sink: mock_doosan
+robot_io: false
+ros_motion_capability: false
+command_issued_field: false
+

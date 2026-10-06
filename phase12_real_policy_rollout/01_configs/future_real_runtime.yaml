@@ -1,0 +1,6 @@
+mode: future_real_disabled
+motion_enabled: false
+command_sink: null
+explicit_motion_approval: false
+create_ros_command_capability: false
+status: IMPLEMENTED_INTERFACE_ONLY_NOT_VALIDATED

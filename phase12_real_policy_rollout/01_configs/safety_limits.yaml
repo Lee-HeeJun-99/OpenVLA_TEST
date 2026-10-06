@@ -1,0 +1,11 @@
+control_rate_hz: 5.0
+max_action_age_sec: 1.2
+translation_step_m: 0.004
+rotation_step_deg: 4.0
+translation_velocity_mm_s: 20.0
+rotation_velocity_deg_s: 20.0
+translation_acceleration_mm_s2: 20.0
+rotation_acceleration_deg_s2: 20.0
+workspace_m: {x: [0.275, 0.554], y: [-0.355, 0.386], z: [0.267, 0.754]}
+failure_policy: fail_closed
+

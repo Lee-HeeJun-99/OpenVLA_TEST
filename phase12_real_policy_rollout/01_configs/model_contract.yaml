@@ -1,0 +1,17 @@
+instruction: "Pick up the orange cube."
+openvla:
+  checkpoint: vanilla_s1_balanced_step8130
+  variant: openvla_token
+  chunk_size: 1
+  crop_bottom_fraction: 0.0
+  proprio: false
+oft:
+  checkpoint: oft_mixed480_step28560_merged
+  variant: oftplus_h5_vision
+  chunk_size: 5
+  inference_rate_hz: 1.0
+  execution_rate_hz: 5.0
+  center_crop: true
+  proprio: false
+execution_order: sequential_models_not_concurrent
+

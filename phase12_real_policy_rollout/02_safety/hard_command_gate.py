@@ -7,6 +7,7 @@ cannot be published, sent to a service, or executed.
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
+from enum import Enum
 from typing import Any, Mapping
 
 
@@ -20,6 +21,14 @@ UNSAFE_FLAGS = (
     "allow_estop_service",
     "publish_ai_action",
 )
+
+class GateState(str, Enum):
+    COMMAND_DISABLED = "COMMAND_DISABLED"
+    SHADOW = "SHADOW"
+    READY_FOR_MOTION_APPROVAL = "READY_FOR_MOTION_APPROVAL"
+    MOTION_ENABLED = "MOTION_ENABLED"
+
+class MotionNotAuthorized(RuntimeError): pass
 
 
 @dataclass(frozen=True)
@@ -54,6 +63,20 @@ class HardCommandGate:
         if config.get("include_doosan_bridge") is not False:
             raise RuntimeError("doosan_bridge_must_be_excluded")
         self._sink = NullCommandSink()
+        self.state = GateState.COMMAND_DISABLED
+
+    def transition(self, requested: GateState, *, explicit_motion_approval=False):
+        requested = GateState(requested)
+        if requested is GateState.MOTION_ENABLED:
+            if explicit_motion_approval is not True:
+                raise MotionNotAuthorized("explicit_motion_approval_required")
+            # Even approval cannot enable this command-incapable build.
+            raise MotionNotAuthorized("real_command_sink_not_installed")
+        if requested in {GateState.SHADOW, GateState.READY_FOR_MOTION_APPROVAL}:
+            self.state = requested
+        elif requested is GateState.COMMAND_DISABLED:
+            self.state = requested
+        return self.state
 
     @property
     def capability_report(self) -> dict[str, Any]:
@@ -80,6 +103,7 @@ class HardCommandGate:
                 "technical_candidate_valid": bool(candidate.get("technical_valid")),
                 "candidate_blockers": blockers,
                 "motion_enable_input_present": False,
+                "gate_state": self.state.value,
                 **receipt,
             },
             "executed_action": None,
@@ -87,4 +111,3 @@ class HardCommandGate:
             "command_issued": False,
             "pre_motion_ready": False,
         }
-

@@ -34,7 +34,8 @@ class CommandDisabledPolicyRuntime:
  def evaluate(self,raw_action,*,action_id,source_monotonic,now_monotonic,current_position_m,current_abc_deg,phase,
               camera_ok=True,state_ok=True,tcp_ok=True,inference_ok=True,communication_ok=True,logger_ok=True,
               chunk_id=None,chunk_index=0,action_age_sec=None):
-  limited=self.limiter.limit(raw_action);a=limited.limited_action
+  raw=tuple(float(v) for v in raw_action)
+  limited=self.limiter.limit(raw);a=limited.limited_action
   safety=self.safety.inspect(action_id=action_id,action=a,source_monotonic=source_monotonic,now_monotonic=now_monotonic,
     camera_ok=camera_ok,state_ok=state_ok,tcp_ok=tcp_ok,inference_ok=inference_ok,communication_ok=communication_ok,logger_ok=logger_ok)
   workspace=PHASE12_DATA_DERIVED_WORKSPACE.inspect_delta(current_position_m,a[:3])
@@ -42,6 +43,8 @@ class CommandDisabledPolicyRuntime:
     communication_ok=communication_ok,logger_ok=logger_ok)
   premature=grip.reason=='close_forbidden_outside_grasp_close'
   blockers=[]
+  if math.sqrt(sum(v*v for v in raw[:3])) > .004+1e-12:blockers.append('raw_translation_step_limit')
+  if math.sqrt(sum(v*v for v in raw[3:6])) > math.radians(4)+1e-12:blockers.append('raw_rotation_step_limit')
   if not safety.accepted:blockers.append(safety.hold_reason)
   if not workspace.accepted:blockers.append(workspace.reason)
   if premature:blockers.append('premature_gripper_close')
@@ -50,8 +53,8 @@ class CommandDisabledPolicyRuntime:
   target=[(float(current_position_m[i])*1000)+dmm[i] for i in range(3)]+abc.tolist()
   return {'classification':'COMMAND_DISABLED_RUNTIME_DRY_RUN','model':self.model,'phase':phase,
    'action_id':action_id,'chunk_id':chunk_id,'chunk_index':chunk_index,'action_age_sec':action_age_sec,
-   'raw_canonical_action':list(map(float,raw_action)),'limited_canonical_action':list(a),
-   'limiter_modified':list(map(float,raw_action))!=list(a),'target_pose_candidate_mm_zyz_deg':target,
+   'raw_canonical_action':list(raw),'limited_canonical_action':list(a),
+   'limiter_modified':list(raw)!=list(a),'target_pose_candidate_mm_zyz_deg':target,
    'gripper':{'raw_closedness':grip.raw_closedness,'command_knowledge_before':grip.command_knowledge_before,
     'command_knowledge_after':grip.command_knowledge_after,'candidate_command':grip.candidate_command,
     'candidate_closed':grip.command_knowledge_after=='COMMAND_CLOSED','suppressed':grip.command_suppressed,

@@ -12,12 +12,14 @@ class QueuedAction:
 
 class ChunkSafetyError(RuntimeError):pass
 class OFTChunkQueue:
-    def __init__(self,mode='sequential_k5',max_age_sec=1.2):
+    def __init__(self,mode='sequential_k5',max_age_sec=1.2,replacement_policy='reject_if_pending'):
         if mode not in ('first_only','sequential_k5'):raise ValueError('invalid chunk mode')
-        self.mode=mode;self.max_age_sec=float(max_age_sec);self._queue=[];self._last_chunk_id=None
+        if replacement_policy not in ('reject_if_pending','replace_pending'):raise ValueError('invalid replacement policy')
+        self.mode=mode;self.max_age_sec=float(max_age_sec);self.replacement_policy=replacement_policy;self._queue=[];self._last_chunk_id=None
     def clear(self):self._queue.clear()
     def enqueue(self,chunk,chunk_id,inference_monotonic):
         if chunk_id==self._last_chunk_id:raise ChunkSafetyError('duplicate_chunk')
+        if self._queue and self.replacement_policy=='reject_if_pending':raise ChunkSafetyError('pending_chunk_not_consumed')
         if len(chunk)!=5:raise ChunkSafetyError('oft_chunk_must_have_k5')
         checked=[]
         for action in chunk:

@@ -1,7 +1,7 @@
 {
-  "overall_status": "BLOCKED_REQUIRES_LOCAL_OPERATOR_AND_HARDWARE",
+  "overall_status": "OFFLINE_ROLLOUT_PIPELINE_READY_REAL_MOTION_VALIDATION_PENDING",
   "gate": 1,
-  "git_revision": "86eaa9632d651eb907332334d02f32c1461850d7",
+  "git_revision": "0375901217b1290a7341f45ce36f6d28f298a4a9",
   "runtime_original_modified_by_gate1": false,
   "ros_graph_audit": "JOINTSTATE_DATA_PLANE_PASSED_WITH_INITIAL_READINESS_GATE",
   "hardware_safety_inventory": "BLOCKED_ROBOT_STATE_MODE_TCP_AND_SAFETY_SIGNALS_UNAVAILABLE",
@@ -24,7 +24,7 @@
     "integrated_bag_camera_max_source_gap_seconds": 0.050021,
     "prediction_only_shadow_allowed": true
   },
-  "pre_rollout_readiness": "BLOCKED_REQUIRES_LOCAL_OPERATOR_AND_HARDWARE",
+  "pre_rollout_readiness": "OFFLINE_READY_REAL_VALIDATION_PENDING",
   "joint_bag_audit": {"wall_record_request_seconds": 35, "bag_duration_seconds": 25.119737489, "messages": 1902, "source_span_seconds": 28.179992663, "source_rate_hz": 67.4592084793546, "source_max_gap_seconds": 3.069995025, "source_gaps_ge_1s": 3, "receive_rate_hz": 75.67754244376371, "receive_max_gap_seconds": 3.072054777, "receive_gaps_ge_1s": 2, "classification": "SUPERSEDED_STARTUP_DISCOVERY_WINDOW_INCLUDED"},
   "jointstate_readiness_gate": {"implemented": true, "warmup_seconds": 2.0, "minimum_stable_samples": 180, "warmup_max_gap_ms": 50, "runtime_stale_gap_ms": 100, "gated_60s_runs_passed": 3, "gated_60s_runs_total": 3, "accepted_samples_each_run": [6001, 6001, 6001], "gaps_ge_100ms_each_run": [0, 0, 0], "classification": "INITIAL_DDS_DISCOVERY_TRANSIENT_MITIGATED"},
   "latest_live_readiness_probe": {"pre_getter_accepted_duration_seconds":9.99994907,"pre_getter_messages":1001,"pre_getter_source_rate_hz":100.00050930259388,"pre_getter_max_source_gap_seconds":0.012023681,"pre_getter_gaps_ge_100ms":0,"position_invalid":0,"velocity_invalid":0,"tcp_getter_calls":1,"tcp_getter_status":"TIMEOUT","tcp_getter_latency_seconds":3.00060588,"post_getter_probe_seconds":15.054080069996417,"post_getter_messages":0,"publisher_endpoint_count":1,"robot_state_getter_calls":0,"robot_mode_getter_calls":0,"classification":"GET_CURRENT_POSX_TIMEOUT_CORRELATED_WITH_FEEDBACK_LOSS"},
@@ -76,7 +76,7 @@
     "oft_k5": "SEQUENTIAL_K5_INTEGRATED_COMMAND_DISABLED"
   },
   "translation_scale": "VERIFIED_UNIT_CONVERSION_1000_MM_PER_M_RUNTIME_2800_NOT_APPROVED",
-  "rotation_convention": "VERIFIED_OFFLINE_NOT_RUNTIME_INTEGRATED",
+  "rotation_convention": "VERIFIED_AND_INTEGRATED_COMMAND_DISABLED",
   "motion_readiness": false,
   "runtime_safety_completion": {
     "watchdog": "PASS_OFFLINE",
@@ -85,7 +85,7 @@
     "logger_atomic_partial_disk_full": "PASS_OFFLINE",
     "runtime_integration": "COMMAND_DISABLED_HARD_GATE_INTEGRATED_NO_DELIVERY_CAPABILITY"
   },
-  "offline_tests": {"passed": 68, "failed": 0},
+  "offline_tests": {"passed": 87, "failed": 0, "skipped": 0},
   "command_disabled_runtime": {
     "status": "END_TO_END_HARD_GATE_DRY_RUN_PASS",
     "physical_safety_values": "DEFERRED_TO_PRE_MOTION_OPERATOR_CHECKLIST",
@@ -133,6 +133,26 @@
     "hard_gate_delivery_blocked": 6,
     "robot_command_capability": false,
     "motion_dry_run": "NOT_EXECUTED_REQUIRES_EXPLICIT_APPROVAL"
+  },
+  "offline_software_completion_20261006": {
+    "status": "OFFLINE_ROLLOUT_PIPELINE_READY",
+    "real_motion_validation": "PENDING",
+    "canonical_action": "PASS",
+    "action_contract": "PASS",
+    "safety_pipeline": "PASS_FAIL_CLOSED",
+    "hard_gate_default": "COMMAND_DISABLED",
+    "null_command_sink": "PASS",
+    "mock_doosan_sink": "PASS_IN_MEMORY_ONLY",
+    "real_doosan_sink": "INTERFACE_SKELETON_ALWAYS_DISABLED",
+    "tcp_source_abstraction": "PASS_WITH_PROVENANCE",
+    "recorded_stationary_episode4": {"records": 30, "valid": 30},
+    "recorded_shadow_openvla_episode4": {"records": 45, "accepted": 16, "rejected": 29},
+    "recorded_shadow_oft_episode4": {"records": 45, "accepted": 3, "rejected": 42},
+    "mock_closed_loop": {"records": 5, "accepted": 5},
+    "episodes_8_9_10": "PENDING_RECORDED_DUAL_MODEL_PREDICTIONS",
+    "all_command_issued_false": true,
+    "all_executed_action_null": true,
+    "all_robot_delivered_command_null": true
   },
   "pre_motion_gate": {
     "status": "OPERATOR_PHYSICAL_CHECKLIST_CONFIRMED_MOTION_NOT_APPROVED",
@@ -221,6 +241,12 @@
       "all_command_issued_false": true
     }
   },
+  "offline_rollout_pipeline": "READY",
+  "prediction_only_shadow": "READY",
+  "mock_closed_loop": "READY",
+  "real_command_integration": "IMPLEMENTED_INTERFACE_ONLY_NOT_VALIDATED",
+  "real_robot_validation": "PENDING",
+  "real_closed_loop_rollout": "NOT_AUTHORIZED",
   "prototype_rollout": "NOT_EXECUTED",
   "condition_rollout": "NOT_EXECUTED",
   "robot_command_count": 0,
