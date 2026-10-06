@@ -1,0 +1,30 @@
+{
+  "camera": {
+    "count": 956,
+    "first_delay_s": 0.19724155077710748,
+    "max_receive_gap_s": 0.4749352429062128,
+    "max_source_gap_s": 0.39988017082214355,
+    "latest_age_s": 0.0451929229311645,
+    "source_gaps_ge_100ms": 16
+  },
+  "joints": {
+    "count": 353,
+    "first_delay_s": 15.998376045841724,
+    "max_receive_gap_s": 3.0771629768423736,
+    "max_source_gap_s": 6.13002347946167,
+    "latest_age_s": 0.04874242702499032,
+    "source_gaps_ge_100ms": 1
+  },
+  "camera_last": {
+    "receive_monotonic": 2168180.062421237,
+    "source_ros": 1791279617.3918018,
+    "encoding": "bgra8",
+    "width": 1280,
+    "height": 720,
+    "source_sha256": "4e78bcfb93f1b3d7c42689e2e93eecea681ec60bb886e78831b722f8a512aa49",
+    "rgb_sha256": "9345cd3df6f5e7fa308b688a8c4b72fadd053fccb2eae8b134bcbe217ada0574"
+  },
+  "robot_commands": 0,
+  "executed_action": null,
+  "robot_delivered_command": null
+}

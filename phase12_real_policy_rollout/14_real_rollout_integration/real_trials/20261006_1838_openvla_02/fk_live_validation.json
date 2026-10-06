@@ -1,0 +1,80 @@
+{
+  "classification": "READ_ONLY_FK_CANDIDATE_VALIDATION",
+  "duration_s": 60.007423885632306,
+  "count": 5261,
+  "first_delay_s": 7.415574837941676,
+  "steady_receive_hz": 100.01592965177471,
+  "max_receive_gap_s": 0.012790055014193058,
+  "max_source_gap_s": 3.0599591732025146,
+  "source_gaps_ge_100ms": 1,
+  "source_regressions": 0,
+  "latest_age_s": 0.0002267099916934967,
+  "jointstate_gate": "FAIL",
+  "invalid_count": 0,
+  "latest_fk_candidate": {
+    "source": "computed_from_measured_joint_state_urdf_fk",
+    "pose_kind": "computed_link6_flange_not_measured_tcp",
+    "reference_frame": "base_link",
+    "child_frame": "link_6",
+    "position_m": [
+      0.3046077501615298,
+      -0.011262126389508763,
+      0.7245037620169807
+    ],
+    "rotation_matrix": [
+      [
+        0.9087910556878299,
+        -0.052185660129943766,
+        0.4139752093768437
+      ],
+      [
+        -0.05822761092437895,
+        -0.9983013695746072,
+        0.0019801089623280384
+      ],
+      [
+        0.41316868519750943,
+        -0.02590429273818419,
+        -0.9102860018641921
+      ]
+    ],
+    "quaternion_wxyz": [
+      -0.007135899540891195,
+      0.9769056283908172,
+      -0.02825586930955607,
+      0.2116744623369723
+    ],
+    "joint_order": [
+      "joint_1",
+      "joint_2",
+      "joint_3",
+      "joint_4",
+      "joint_5",
+      "joint_6"
+    ],
+    "joint_position_rad": [
+      -3.1861462593078613,
+      -0.018707243725657463,
+      -0.7156862616539001,
+      0.021932009607553482,
+      -1.9809508323669434,
+      0.026174861937761307
+    ],
+    "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+    "tool_offset_applied": false,
+    "measured_tcp_available": false,
+    "valid_for_observation": true,
+    "valid_as_measured_tcp": false,
+    "valid_for_motion_readiness": false,
+    "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+    "command_issued": false,
+    "executed_action": null,
+    "robot_delivered_command": null
+  },
+  "urdf_sha256": "fc1541ff6acb04e503174c6817c0b0fb721a342a0a7fa85e55be5cf5297a0742",
+  "tcp_gate": "BLOCKED_PENDING_CURRENT_OPERATOR_TOOL_AND_POSE_CROSSCHECK",
+  "motion_authorized": false,
+  "robot_commands": 0,
+  "executed_action": null,
+  "robot_delivered_command": null
+}

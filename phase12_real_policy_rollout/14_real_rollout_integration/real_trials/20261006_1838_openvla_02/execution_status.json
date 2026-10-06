@@ -1,0 +1,20 @@
+{
+  "status": "BLOCKED_TECHNICAL_VALIDATION_FAILED",
+  "openvla_gpu_health": "PASS",
+  "prediction_latency_s": 0.8850645129568875,
+  "verifier_jpeg_sha256": "9ba0bf93eb4c85dc5da289bb22a6282fbb36ee7c042a40663521ddcbabeeb8bf",
+  "verifier_jpeg_policy": "PIL default; runtime JPEG quality95 is a separately hashed input",
+  "camera_preprocessing": "PASS",
+  "tcp": "UNVERIFIED",
+  "integrated_live_dry_run": "BLOCKED_NOT_EXECUTED",
+  "jointstate_motion_gate": "FAIL",
+  "minimum_motion": "BLOCKED",
+  "short_horizon": "NOT_EXECUTED",
+  "full_rollout": "NOT_EXECUTED",
+  "oft": "NOT_STARTED",
+  "tests": {"pass": 7, "fail": 0, "scope": "camera encoding3 + live contracts4; full suite not run"},
+  "physical_commands_executed": 0,
+  "executed_action": null,
+  "robot_delivered_command": null,
+  "motion_authorized": false
+}

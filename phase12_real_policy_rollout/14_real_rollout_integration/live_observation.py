@@ -3,6 +3,15 @@ import base64,io,json,math,threading,time,hashlib
 from urllib.request import urlopen,Request
 from PIL import Image
 
+def camera_rgb_array(image):
+    """Honor ROS encoding and row padding; discard alpha, never assume RGB."""
+    import numpy as np
+    channels={'rgb8':3,'bgr8':3,'rgba8':4,'bgra8':4}.get(image.encoding)
+    if channels is None:raise ValueError('unsupported_camera_encoding')
+    if image.step<image.width*channels:raise ValueError('invalid_camera_step')
+    arr=np.frombuffer(bytes(image.data),dtype=np.uint8).reshape(image.height,image.step)[:,:image.width*channels].reshape(image.height,image.width,channels)
+    return arr[:,:,[2,1,0]] if image.encoding in ('bgr8','bgra8') else arr[:,:,:3]
+
 class LiveObservation:
     def __init__(self,url,checkpoint,variant,evidence):
         import rclpy
@@ -104,13 +113,12 @@ class LiveObservation:
             pose=tcp[0]
             if len(pose)!=6 or not all(math.isfinite(x) for x in pose):raise ValueError('invalid_tcp')
             pose=[x/1000 for x in pose[:3]]+pose[3:]
-        if image.encoding not in ('rgb8','bgr8'):raise ValueError('unsupported_camera_encoding')
-        import numpy as np
-        arr=np.frombuffer(bytes(image.data),dtype=np.uint8).reshape(image.height,image.step)[:,:image.width*3].reshape(image.height,image.width,3)
-        if image.encoding=='bgr8':arr=arr[:,:,::-1]
+        arr=camera_rgb_array(image)
         jpeg=io.BytesIO();Image.fromarray(arr).save(jpeg,format='JPEG',quality=95)
         return jpeg.getvalue(),dict(receive_monotonic=now,tcp_m_abc=pose,tcp_source=source,
             image_sha256=hashlib.sha256(bytes(image.data)).hexdigest(),image_hash_scope='SOURCE_ROS_PIXEL_BYTES',
+            rgb_pixel_sha256=hashlib.sha256(arr.tobytes()).hexdigest(),model_input_sha256=hashlib.sha256(jpeg.getvalue()).hexdigest(),
+            camera_encoding=image.encoding,model_color_order='RGB',
             camera_ok=now-ci<=.5,joint_state_ok=finite and now-ji<=.5,tcp_ok=now-tcp[1]<=.5,
             model_ok=True,communication_ok=now-ji<=.5,
             **self.hardware_monitor.snapshot(),
