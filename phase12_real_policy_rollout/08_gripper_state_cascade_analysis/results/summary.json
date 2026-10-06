@@ -1,0 +1,73 @@
+{
+  "classification": "OFT_EPISODE4_GRIPPER_STATE_CAUSAL_REPLAY",
+  "current": {
+    "total": 45,
+    "accepted": 3,
+    "rejected": 42,
+    "blockers": {
+      "premature_gripper_close": 3,
+      "translation_acceleration_limit": 19,
+      "gripper_stale_or_timeout": 19,
+      "gripper_unknown_state_blocks_command": 20,
+      "raw_translation_step_limit": 19
+    }
+  },
+  "decoupled": {
+    "total": 45,
+    "accepted": 10,
+    "rejected": 35,
+    "blockers": {
+      "premature_gripper_close": 22,
+      "translation_acceleration_limit": 19,
+      "raw_translation_step_limit": 19
+    }
+  },
+  "cascade_generated_rejects_removed": 7,
+  "cascade_classification": "GRIPPER_STATE_CASCADE_CONFIRMED_PARTIAL",
+  "remaining_oft_dominant_cause": "MIXED",
+  "k_index": [
+    {
+      "chunk_index": 0,
+      "total": 9,
+      "current_accepted": 2,
+      "current_rejected": 7,
+      "decoupled_accepted": 6,
+      "decoupled_rejected": 3
+    },
+    {
+      "chunk_index": 1,
+      "total": 9,
+      "current_accepted": 1,
+      "current_rejected": 8,
+      "decoupled_accepted": 1,
+      "decoupled_rejected": 8
+    },
+    {
+      "chunk_index": 2,
+      "total": 9,
+      "current_accepted": 0,
+      "current_rejected": 9,
+      "decoupled_accepted": 2,
+      "decoupled_rejected": 7
+    },
+    {
+      "chunk_index": 3,
+      "total": 9,
+      "current_accepted": 0,
+      "current_rejected": 9,
+      "decoupled_accepted": 0,
+      "decoupled_rejected": 9
+    },
+    {
+      "chunk_index": 4,
+      "total": 9,
+      "current_accepted": 0,
+      "current_rejected": 9,
+      "decoupled_accepted": 1,
+      "decoupled_rejected": 8
+    }
+  ],
+  "production_thresholds_changed": false,
+  "real_robot_commands": 0,
+  "interpretation_limit": "Recorded Episode 4 command-disabled causal software replay; not task success or real rollout."
+}

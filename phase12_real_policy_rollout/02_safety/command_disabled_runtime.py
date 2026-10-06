@@ -4,7 +4,7 @@ import math
 from scipy.spatial.transform import Rotation
 from action_contract import compose_world_rotvec_with_doosan_zyz,translation_m_to_mm
 from action_rate_limiter import CanonicalActionRateLimiter
-from open_loop_gripper_supervisor import OpenLoopGripperSupervisor
+from open_loop_gripper_supervisor import OpenLoopGripperSupervisor,GripperRuntimeContext
 from oft_chunk_queue import OFTChunkQueue
 from runtime_safety_supervisor import RuntimeSafetySupervisor
 from workspace_contract import PHASE12_DATA_DERIVED_WORKSPACE
@@ -39,8 +39,10 @@ class CommandDisabledPolicyRuntime:
   safety=self.safety.inspect(action_id=action_id,action=a,source_monotonic=source_monotonic,now_monotonic=now_monotonic,
     camera_ok=camera_ok,state_ok=state_ok,tcp_ok=tcp_ok,inference_ok=inference_ok,communication_ok=communication_ok,logger_ok=logger_ok)
   workspace=PHASE12_DATA_DERIVED_WORKSPACE.inspect_delta(current_position_m,a[:3])
-  grip=self.gripper.resolve(raw_action[6],phase=phase,fresh=safety.accepted,
-    communication_ok=communication_ok,logger_ok=logger_ok)
+  grip=self.gripper.resolve_with_context(raw_action[6],phase=phase,context=GripperRuntimeContext(
+    prediction_fresh=inference_ok,action_accepted=safety.accepted and workspace.accepted,
+    communication_ok=communication_ok,command_channel_ok=communication_ok,
+    initial_state_known=self.gripper.state.value!='UNKNOWN',candidate_executed=False))
   premature=grip.reason=='close_forbidden_outside_grasp_close'
   blockers=[]
   if math.sqrt(sum(v*v for v in raw[:3])) > .004+1e-12:blockers.append('raw_translation_step_limit')
@@ -59,6 +61,13 @@ class CommandDisabledPolicyRuntime:
     'command_knowledge_after':grip.command_knowledge_after,'candidate_command':grip.candidate_command,
     'candidate_closed':grip.command_knowledge_after=='COMMAND_CLOSED','suppressed':grip.command_suppressed,
     'premature_close':premature,'close_count':grip.close_count,'lift_allowed':grip.lift_allowed,
+    'model_gripper_closedness':grip.raw_closedness,
+    'gripper_command_knowledge_before':grip.command_knowledge_before,
+    'gripper_command_knowledge_after':grip.command_knowledge_after,
+    'gripper_candidate':grip.candidate_command,
+    'gripper_candidate_executed':False,
+    'gripper_state_invalidated':grip.state_invalidated,
+    'gripper_state_invalidation_reason':grip.state_invalidation_reason,
     'measured_gripper_state':None,'reason':grip.reason},
    'workspace_status':PHASE12_DATA_DERIVED_WORKSPACE.provenance,'technical_blockers':blockers,
    'hold_required':bool(blockers),'technical_valid':not blockers,

@@ -1,0 +1,6 @@
+blocker,current_count,decoupled_count,difference
+gripper_stale_or_timeout,19,0,-19
+gripper_unknown_state_blocks_command,20,0,-20
+premature_gripper_close,3,22,19
+raw_translation_step_limit,19,19,0
+translation_acceleration_limit,19,19,0

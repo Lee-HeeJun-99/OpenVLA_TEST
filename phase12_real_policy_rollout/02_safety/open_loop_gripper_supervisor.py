@@ -27,6 +27,25 @@ class OpenLoopDecision:
     close_count: int
     reason: str
     measured_gripper_state: None = None
+    candidate_executed: bool = False
+    state_invalidated: bool = False
+    state_invalidation_reason: str | None = None
+
+
+@dataclass(frozen=True)
+class GripperRuntimeContext:
+    """Independent facts used to reason about a gripper candidate.
+
+    `action_accepted` is not freshness and cannot invalidate command knowledge.
+    `candidate_executed` means an acknowledged command-side transition; it is
+    always false in command-disabled Shadow.
+    """
+    prediction_fresh: bool
+    action_accepted: bool
+    communication_ok: bool
+    command_channel_ok: bool
+    initial_state_known: bool
+    candidate_executed: bool = False
 
 
 class OpenLoopGripperSupervisor:
@@ -50,7 +69,69 @@ class OpenLoopGripperSupervisor:
         before = self.state
         self.state = CommandKnowledge.UNKNOWN
         return OpenLoopDecision(None, before.value, self.state.value, None, True,
-                                False, False, self.close_count, reason)
+                                False, False, self.close_count, reason,
+                                candidate_executed=False,state_invalidated=True,
+                                state_invalidation_reason=reason)
+
+    def resolve_with_context(self, closedness, *, phase, context:GripperRuntimeContext) -> OpenLoopDecision:
+        """Evaluate a candidate without conflating action rejection and state loss."""
+        before=self.state
+        try:value=float(closedness)
+        except (TypeError,ValueError):
+            return OpenLoopDecision(None,before.value,before.value,None,True,False,False,
+                                    self.close_count,"invalid_closedness")
+        if not math.isfinite(value):
+            return OpenLoopDecision(value,before.value,before.value,None,True,False,False,
+                                    self.close_count,"invalid_closedness")
+        if not context.communication_ok:
+            return self.invalidate("communication_failure")
+        if not context.command_channel_ok:
+            return self.invalidate("command_channel_failure")
+        if not context.initial_state_known:
+            self.state=CommandKnowledge.UNKNOWN
+        if self.state is CommandKnowledge.UNKNOWN:
+            return OpenLoopDecision(value,before.value,self.state.value,None,True,False,False,
+                                    self.close_count,"unknown_state_blocks_command")
+        if not context.prediction_fresh:
+            return OpenLoopDecision(value,before.value,self.state.value,None,True,False,
+                                    self.state is CommandKnowledge.COMMAND_CLOSED,self.close_count,
+                                    "prediction_stale_state_preserved")
+
+        requested=None
+        if value<=self.open_threshold:requested=CommandKnowledge.COMMAND_OPEN
+        elif value>=self.close_threshold:requested=CommandKnowledge.COMMAND_CLOSED
+        if requested is None:
+            return OpenLoopDecision(value,before.value,self.state.value,None,True,True,
+                                    self.state is CommandKnowledge.COMMAND_CLOSED,self.close_count,
+                                    "hysteresis_hold")
+        candidate="CLOSE" if requested is CommandKnowledge.COMMAND_CLOSED else "OPEN"
+        if requested is self.state:
+            return OpenLoopDecision(value,before.value,self.state.value,None,True,True,
+                                    self.state is CommandKnowledge.COMMAND_CLOSED,self.close_count,
+                                    "duplicate_suppressed")
+        if requested is CommandKnowledge.COMMAND_CLOSED and phase!="grasp_close":
+            return OpenLoopDecision(value,before.value,self.state.value,candidate,True,False,False,
+                                    self.close_count,"close_forbidden_outside_grasp_close")
+        # A rejected whole action or command-disabled sink cannot change what the
+        # runtime knows was last commanded.
+        if not context.action_accepted:
+            return OpenLoopDecision(value,before.value,self.state.value,candidate,True,True,
+                                    self.state is CommandKnowledge.COMMAND_CLOSED,self.close_count,
+                                    "candidate_not_applied_action_rejected")
+        if not context.candidate_executed:
+            return OpenLoopDecision(value,before.value,self.state.value,candidate,True,True,
+                                    self.state is CommandKnowledge.COMMAND_CLOSED,self.close_count,
+                                    "candidate_not_executed_command_disabled")
+        # Only acknowledged execution changes command knowledge.
+        if requested is CommandKnowledge.COMMAND_CLOSED:
+            if self.close_count>=1:
+                return OpenLoopDecision(value,before.value,self.state.value,None,True,False,False,
+                                        self.close_count,"close_limit_exceeded")
+            self.close_count+=1
+        self.state=requested
+        return OpenLoopDecision(value,before.value,self.state.value,candidate,False,True,
+                                self.state is CommandKnowledge.COMMAND_CLOSED,self.close_count,
+                                "command_candidate_acknowledged",candidate_executed=True)
 
     def resolve(self, closedness, *, phase, fresh=True, communication_ok=True,
                 logger_ok=True, command_result_known=True) -> OpenLoopDecision:
@@ -105,4 +186,3 @@ class OpenLoopGripperSupervisor:
         self.state = requested
         return OpenLoopDecision(value, before.value, self.state.value, "OPEN", False,
                                 True, False, self.close_count, "open_candidate")
-
