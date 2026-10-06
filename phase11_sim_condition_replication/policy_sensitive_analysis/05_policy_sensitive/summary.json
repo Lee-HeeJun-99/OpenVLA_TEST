@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETED_WITH_FEATURES",
+  "feature_pairs": 3420,
+  "primary_layers": {
+    "openvla": "projector.output",
+    "oft": "action_hidden_states.input"
+  },
+  "split": {
+    "train": [
+      "episode_000001",
+      "episode_000002",
+      "episode_000003",
+      "episode_000004"
+    ],
+    "validation": [
+      "episode_000005"
+    ]
+  },
+  "warning": "OpenVLA action-hidden hook is unavailable; projector.output is an upstream proxy. Covariance-selected policy subspace has at most action dimension 7, so requested k>7 saturates."
+}

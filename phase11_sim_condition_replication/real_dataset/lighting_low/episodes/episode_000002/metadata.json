@@ -19,9 +19,9 @@
   "image_topic": "/zed/zed_node/rgb/color/rect/image",
   "image_format": "jpg",
   "record_frequency_hz": 5.0,
-  "effective_record_frequency_hz": 5.000820327510325,
-  "num_steps": 47,
-  "duration_sec": 9.253857634961605,
+  "effective_record_frequency_hz": 4.892758974659534,
+  "num_steps": 46,
+  "duration_sec": 9.384870642097667,
   "success": true,
   "failure_reason": "",
   "digital_gripper_command_convention": {
@@ -90,12 +90,12 @@
     1.499750000000006
   ],
   "random_start_pose_mm_deg": [
-    305.0901794433594,
-    -11.828291893005371,
-    723.6777954101562,
-    179.91046142578125,
-    -155.5612335205078,
-    3.35062313079834
+    305.098388671875,
+    -11.832084655761719,
+    723.6712646484375,
+    179.90965270996094,
+    -155.56224060058594,
+    3.350210189819336
   ],
   "route_poses_mm_deg": {
     "alignment": [
@@ -109,7 +109,7 @@
     "grasp": [
       500.5,
       -322.4166666666667,
-      297.8240138201799,
+      287.8240138201799,
       49.02,
       180.0,
       -127.62
@@ -126,15 +126,15 @@
   "motion_segments": [
     {
       "label": "alignment",
-      "start_time": 0.4022039839765057,
-      "end_time": 4.0542098070145585,
+      "start_time": 0.402596342144534,
+      "end_time": 3.985497998073697,
       "start_pose_mm_deg": [
-        305.0901794433594,
-        -11.828291893005371,
-        723.6777954101562,
-        179.91046142578125,
-        -155.5612335205078,
-        3.35062313079834
+        305.098388671875,
+        -11.832084655761719,
+        723.6712646484375,
+        179.90965270996094,
+        -155.56224060058594,
+        3.350210189819336
       ],
       "target_pose_mm_deg": [
         497.1175564881165,
@@ -147,8 +147,8 @@
     },
     {
       "label": "descent_to_grasp",
-      "start_time": 4.054241493984591,
-      "end_time": 5.649604599981103,
+      "start_time": 3.985534457024187,
+      "end_time": 5.685233851196244,
       "start_pose_mm_deg": [
         497.1175564881165,
         -323.04822697940045,
@@ -160,7 +160,7 @@
       "target_pose_mm_deg": [
         500.5,
         -322.4166666666667,
-        297.8240138201799,
+        287.8240138201799,
         49.02,
         180.0,
         -127.62
@@ -168,12 +168,12 @@
     },
     {
       "label": "lift",
-      "start_time": 7.663740551972296,
-      "end_time": 9.253471679985523,
+      "start_time": 7.6975621660239995,
+      "end_time": 9.384474520105869,
       "start_pose_mm_deg": [
         500.5,
         -322.4166666666667,
-        297.8240138201799,
+        287.8240138201799,
         49.02,
         180.0,
         -127.62
@@ -211,11 +211,11 @@
   "move_angular_velocity_deg_s": 200.0,
   "move_acceleration_mm_s2": 200.0,
   "move_angular_acceleration_deg_s2": 200.0,
-  "skipped_image": 0,
+  "skipped_image": 1,
   "pose_errors": 0,
   "image_errors": 0,
   "duplicate_image_count": 0,
-  "planned_pose_samples": 47,
+  "planned_pose_samples": 46,
   "feedback_pose_samples": 0,
   "block_layout": {
     "target_color": "orange",

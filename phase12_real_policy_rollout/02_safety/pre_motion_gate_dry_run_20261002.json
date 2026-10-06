@@ -1,0 +1,12 @@
+{
+  "classification": "COMMAND_DISABLED_PRE_MOTION_DRY_RUN",
+  "ready": false,
+  "blockers": ["protective_stop_clear", "servo_state_verified", "robot_mode_verified", "hold_ack_verified", "gripper_feedback_or_approved_no_feedback_policy", "workspace_site_approved"],
+  "hold_required": true,
+  "command_issued": false,
+  "candidate_duration_seconds": 30.0,
+  "duration_status": "CANDIDATE_NOT_OPERATOR_APPROVED",
+  "workspace_status": "DATA_DERIVED_CANDIDATE_NOT_OPERATOR_APPROVED",
+  "executed_action": null,
+  "robot_delivered_command": null
+}

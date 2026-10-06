@@ -1,0 +1,7 @@
+{
+  "valid_pairs": 15,
+  "aligned_samples": 684,
+  "method": "same phase plus nearest normalized within-phase progress",
+  "raw_index_only": false,
+  "excluded_pairs": 0
+}

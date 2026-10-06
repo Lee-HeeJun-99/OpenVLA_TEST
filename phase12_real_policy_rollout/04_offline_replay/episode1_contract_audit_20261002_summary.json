@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETED_OFFLINE_COMMAND_FREE",
+  "records": 6,
+  "openvla_records": 1,
+  "oft_records": 5,
+  "oft_chunk_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "all_executed_action_null": true,
+  "all_robot_delivered_command_null": true,
+  "all_command_issued_false": true,
+  "motion_readiness": false,
+  "output": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/04_offline_replay/episode1_contract_audit_20261002.jsonl"
+}

@@ -1,0 +1,32 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 31759882921
+  starting_time:
+    nanoseconds_since_epoch: 1790928463558113659
+  message_count: 5054
+  topics_with_message_count:
+    - topic_metadata:
+        name: /dsr01/joint_states
+        type: sensor_msgs/msg/JointState
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+      message_count: 3177
+    - topic_metadata:
+        name: /zed/zed_node/rgb/color/rect/image/compressed
+        type: sensor_msgs/msg/CompressedImage
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+      message_count: 1877
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - stationary_observation_post_relaunch_20261002_0.db3
+  files:
+    - path: stationary_observation_post_relaunch_20261002_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1790928463558113659
+      duration:
+        nanoseconds: 31759882921
+      message_count: 5054

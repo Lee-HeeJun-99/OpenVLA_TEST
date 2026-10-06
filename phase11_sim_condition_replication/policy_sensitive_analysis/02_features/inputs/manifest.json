@@ -1,0 +1,21 @@
+{
+  "instruction": "Pick up the orange cube.",
+  "conditions": {
+    "baseline": {
+      "count": 228,
+      "list_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/02_features/inputs/baseline_images.txt"
+    },
+    "lighting_low": {
+      "count": 227,
+      "list_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/02_features/inputs/lighting_low_images.txt"
+    },
+    "extra_object": {
+      "count": 229,
+      "list_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/02_features/inputs/extra_object_images.txt"
+    },
+    "distractor_swap": {
+      "count": 228,
+      "list_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/policy_sensitive_analysis/02_features/inputs/distractor_swap_images.txt"
+    }
+  }
+}

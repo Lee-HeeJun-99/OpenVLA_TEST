@@ -1,0 +1,7 @@
+model,condition,n,pearson,spearman
+openvla,distractor_swap,3,-0.057890683297745577,0.5
+openvla,extra_object,3,-0.9232072021520638,-1.0
+openvla,lighting_low,4,0.8575852262674036,0.39999999999999997
+oft,distractor_swap,3,0.9946625403663811,1.0
+oft,extra_object,3,-0.9251266140548395,-1.0
+oft,lighting_low,2,nan,nan

@@ -1,0 +1,123 @@
+#!/usr/bin/env bpftrace
+
+/* Diagnostic-only uprobes. This script was not executed. Filter with -p PID. */
+
+BEGIN { printf("DSR_UPROBE_TRACE_START mono_ns=%llu\n", nsecs); }
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_get_current_posx
+{
+  @start[tid, "getposx"] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=_get_current_posx ctrl=%p ref=%d\n", nsecs, tid, arg0, arg1);
+}
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_get_current_posx
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=_get_current_posx result=%p duration_ns=%llu\n", nsecs, tid, retval, nsecs-@start[tid, "getposx"]);
+  delete(@start[tid, "getposx"]);
+}
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi
+{
+  @start[tid, "send0472"] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=SEND_0472_ENTRY function=SendCurrentTaskPoseCommand handler=%p payload=%p size=%d\n", nsecs, tid, arg0, arg1, arg2);
+}
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=SEND_0472_EXIT function=SendCurrentTaskPoseCommand result=%p duration_ns=%llu\n", nsecs, tid, retval, nsecs-@start[tid, "send0472"]);
+  delete(@start[tid, "send0472"]);
+}
+
+/* SendCurrentTaskPoseCommand response-state mutex. */
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi+0x72 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_WAIT_START lock=send0472_response_state\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi+0x77 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_ACQUIRED lock=send0472_response_state\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi+0x90 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_RELEASE lock=send0472_response_state\n", nsecs, tid); }
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv { printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=CNDKHandler::run handler=%p\n", nsecs, tid, arg0); }
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv { printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=CNDKHandler::run\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0xd7 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_WAIT_START lock=tcp_handler_queue\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0xdc { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_ACQUIRED lock=tcp_handler_queue\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x138 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_RELEASE lock=tcp_handler_queue\n", nsecs, tid); }
+
+/* 0x0472 response: payload copy/flag clear, Event::set call, completion. */
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x111c { printf("DSR_UPROBE mono_ns=%llu tid=%d event=RESPONSE_0472_DISPATCH_START function=CNDKHandler::run\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x114e { printf("DSR_UPROBE mono_ns=%llu tid=%d event=RESPONSE_0472_EVENT_SET_START function=CNDKHandler::run\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x1153 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=RESPONSE_0472_DISPATCH_END function=CNDKHandler::run\n", nsecs, tid); }
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework14CNDKHandlerUDP3runEv { printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=CNDKHandlerUDP::run handler=%p\n", nsecs, tid, arg0); }
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework14CNDKHandlerUDP3runEv { printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=CNDKHandlerUDP::run\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework14CNDKHandlerUDP3runEv+0xd7 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_WAIT_START lock=udp_handler_queue\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework14CNDKHandlerUDP3runEv+0xdc { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_ACQUIRED lock=udp_handler_queue\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework14CNDKHandlerUDP3runEv+0x138 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=LOCK_RELEASE lock=udp_handler_queue\n", nsecs, tid); }
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_read_data_rt { @start[tid, "readrt"] = nsecs; printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=_read_data_rt ctrl=%p\n", nsecs, tid, arg0); }
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_read_data_rt { printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=_read_data_rt result=%p duration_ns=%llu\n", nsecs, tid, retval, nsecs-@start[tid, "readrt"]); delete(@start[tid, "readrt"]); }
+
+/* TCP/UDP receive boundaries distinguish arrival from handler dispatch. */
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework16CNDKClientSocket9OnReceiveEi { printf("DSR_UPROBE mono_ns=%llu tid=%d event=TCP_RECEIVE_ENTRY function=CNDKClientSocket::OnReceive bytes_hint=%d\n", nsecs, tid, arg1); }
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework16CNDKClientSocket9OnReceiveEi { printf("DSR_UPROBE mono_ns=%llu tid=%d event=TCP_RECEIVE_EXIT function=CNDKClientSocket::OnReceive result=%d\n", nsecs, tid, retval); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework19CNDKClientSocketUDP9OnReceiveEi { printf("DSR_UPROBE mono_ns=%llu tid=%d event=UDP_RECEIVE_ENTRY function=CNDKClientSocketUDP::OnReceive bytes_hint=%d\n", nsecs, tid, arg1); }
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework19CNDKClientSocketUDP9OnReceiveEi { printf("DSR_UPROBE mono_ns=%llu tid=%d event=UDP_RECEIVE_EXIT function=CNDKClientSocketUDP::OnReceive result=%d\n", nsecs, tid, retval); }
+
+/* Message is populated; realtime publisher is about to be unlocked/notified. */
+uprobe:/opt/ros/humble/lib/libjoint_state_broadcaster.so:_ZN23joint_state_broadcaster21JointStateBroadcaster6updateERKN6rclcpp4TimeERKNS1_8DurationE
+{
+  @jsb_start[tid] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=JointStateBroadcaster::update self=%p\n", nsecs, tid, arg0);
+}
+uprobe:/opt/ros/humble/lib/libjoint_state_broadcaster.so:_ZN23joint_state_broadcaster21JointStateBroadcaster6updateERKN6rclcpp4TimeERKNS1_8DurationE+0x820 { printf("DSR_UPROBE mono_ns=%llu tid=%d event=JOINT_STATE_PRE_PUBLISH function=JointStateBroadcaster::update\n", nsecs, tid); }
+uretprobe:/opt/ros/humble/lib/libjoint_state_broadcaster.so:_ZN23joint_state_broadcaster21JointStateBroadcaster6updateERKN6rclcpp4TimeERKNS1_8DurationE
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=JointStateBroadcaster::update duration_ns=%llu\n", nsecs, tid, nsecs-@jsb_start[tid]);
+  delete(@jsb_start[tid]);
+}
+
+/*
+ * Service request boundary before the user callback.  A successful return
+ * from rcl/rmw take proves middleware delivery even when get_current_posx_cb
+ * never starts.  Handles are retained verbatim for same-run correlation.
+ */
+uprobe:/opt/ros/humble/lib/librcl.so:rcl_take_request_with_info
+{
+  @rcl_take_start[tid] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=rcl_take_request_with_info service=%p request_header=%p request=%p\n", nsecs, tid, arg0, arg1, arg2);
+}
+uretprobe:/opt/ros/humble/lib/librcl.so:rcl_take_request_with_info
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=rcl_take_request_with_info rc=%d duration_ns=%llu\n", nsecs, tid, retval, nsecs-@rcl_take_start[tid]);
+  delete(@rcl_take_start[tid]);
+}
+
+uprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_take_request
+{
+  @rmw_take_start[tid] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=rmw_take_request service=%p request_header=%p request=%p\n", nsecs, tid, arg0, arg1, arg2);
+}
+uretprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_take_request
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=rmw_take_request rc=%d duration_ns=%llu\n", nsecs, tid, retval, nsecs-@rmw_take_start[tid]);
+  delete(@rmw_take_start[tid]);
+}
+
+/* Publish boundary.  Correlate tid and time with JointStateBroadcaster::update. */
+uprobe:/opt/ros/humble/lib/librcl.so:rcl_publish
+{
+  @rcl_publish_start[tid] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=rcl_publish publisher=%p message=%p\n", nsecs, tid, arg0, arg1);
+}
+uretprobe:/opt/ros/humble/lib/librcl.so:rcl_publish
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=rcl_publish rc=%d duration_ns=%llu\n", nsecs, tid, retval, nsecs-@rcl_publish_start[tid]);
+  delete(@rcl_publish_start[tid]);
+}
+
+uprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_publish
+{
+  @rmw_publish_start[tid] = nsecs;
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=ENTRY function=rmw_publish publisher=%p message=%p\n", nsecs, tid, arg0, arg1);
+}
+uretprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_publish
+{
+  printf("DSR_UPROBE mono_ns=%llu tid=%d event=EXIT function=rmw_publish rc=%d duration_ns=%llu\n", nsecs, tid, retval, nsecs-@rmw_publish_start[tid]);
+  delete(@rmw_publish_start[tid]);
+}
+
+END { printf("DSR_UPROBE_TRACE_END mono_ns=%llu\n", nsecs); }

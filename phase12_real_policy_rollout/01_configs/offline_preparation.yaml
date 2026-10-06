@@ -1,0 +1,24 @@
+mode: offline_preparation
+shadow_mode: true
+allow_robot_command: false
+allow_gripper_command: false
+allow_home_command: false
+allow_trajectory_execution: false
+allow_motion_service: false
+allow_stop_service: false
+allow_estop_service: false
+publish_ai_action: false
+record_ai_action: true
+instruction: "Pick up the orange cube."
+openvla_checkpoint: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130
+oft_checkpoint: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged
+oft_variant: oftplus_h5_vision
+oft_chunk_size: 5
+oft_inference_hz: 1.0
+control_hz: 5.0
+chunk_execution_mode: UNRESOLVED_REQUIRES_APPROVAL
+gripper_closedness_open_threshold: 0.3
+gripper_closedness_close_threshold: 0.7
+workspace_limits: UNRESOLVED_REQUIRES_LOCAL_MEASUREMENT
+home_joint: UNRESOLVED_REQUIRES_LOCAL_OPERATOR
+gripper_home: UNRESOLVED_REQUIRES_LOCAL_OPERATOR

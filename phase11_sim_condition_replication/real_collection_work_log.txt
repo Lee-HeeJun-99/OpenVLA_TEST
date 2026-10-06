@@ -826,3 +826,280 @@ command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/ds
 Collected episode_000005 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/distractor_swap/episodes/episode_000005
 postcheck_expected_steps=43 postcheck_actual_steps=43
 [2026-09-30T22:55:00+09:00] finished condition=distractor_swap base_episode=000005
+
+[2026-10-01T16:16:56+09:00] condition=lighting_low base_episode=000001 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+free_kb_before=65130320
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839017.194103484] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+[INFO] [1790839017.303259947] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839029.052553544] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839032.135164166] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839032.135617641] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839036.165656072] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839037.228145275] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.56645, -1.09729, -40.97368, 1.26173, -113.50553, 1.5038]
+[INFO] [1790839039.645376439] [dsr01.collect_episode001_from_align_home]: Move alignment: [417.12, -323.05, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839043.116761670] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [420.5, -322.42, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[WARN] [1790839043.844923578] [dsr01.collect_episode001_from_align_home]: Skipping sample: stale image: age=0.121s
+[INFO] [1790839044.825804417] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839046.839715519] [dsr01.collect_episode001_from_align_home]: Move lift: [420.5, -322.42, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[WARN] [1790839048.441153007] [dsr01.collect_episode001_from_align_home]: Skipping sample: stale image: age=0.102s
+Collected episode_000001 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+postcheck_expected_steps=46 postcheck_actual_steps=45
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:17:48+09:00] condition=lighting_low base_episode=000001 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+free_kb_before=65122188
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839069.222429312] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+[INFO] [1790839069.424053390] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[ERROR] [1790839084.436615265] [dsr01.collect_episode001_from_align_home]: Collection failed: No joint state received from /dsr01/joint_states
+Traceback (most recent call last):
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 1175, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 1171, in main
+    return run_collection(args, ros_args)
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 992, in run_collection
+    recorder.wait_for_first_joint_state()
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py", line 1159, in wait_for_first_joint_state
+    raise TimeoutError(f"No joint state received from {self.joint_state_topic}")
+TimeoutError: No joint state received from /dsr01/joint_states
+
+[2026-10-01T16:18:33+09:00] condition=lighting_low base_episode=000001 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+free_kb_before=65122172
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory001_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839114.604060036] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+[INFO] [1790839114.810198552] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839122.633037435] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839122.690966427] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839122.691417988] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839126.716522115] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839128.125971434] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.52097, -1.05344, -40.98024, 1.26012, -113.50845, 1.50848]
+[INFO] [1790839130.538541329] [dsr01.collect_episode001_from_align_home]: Move alignment: [417.12, -323.05, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[WARN] [1790839131.135656088] [dsr01.collect_episode001_from_align_home]: Skipping sample: stale image: age=0.114s
+[INFO] [1790839134.022105846] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [420.5, -322.42, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839135.725510155] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839137.739536929] [dsr01.collect_episode001_from_align_home]: Move lift: [420.5, -322.42, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000001 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001
+postcheck_expected_steps=46 postcheck_actual_steps=46
+[2026-10-01T16:18:59+09:00] finished condition=lighting_low base_episode=000001
+
+[2026-10-01T16:19:47+09:00] condition=lighting_low base_episode=000002 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+free_kb_before=65112272
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839188.837237140] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+[INFO] [1790839188.990117445] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[ERROR] [1790839204.012212257] [dsr01.collect_episode001_from_align_home]: Collection failed: No joint state received from /dsr01/joint_states
+Traceback (most recent call last):
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 1175, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 1171, in main
+    return run_collection(args, ros_args)
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 992, in run_collection
+    recorder.wait_for_first_joint_state()
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py", line 1159, in wait_for_first_joint_state
+    raise TimeoutError(f"No joint state received from {self.joint_state_topic}")
+TimeoutError: No joint state received from /dsr01/joint_states
+
+[2026-10-01T16:20:40+09:00] condition=lighting_low base_episode=000002 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+free_kb_before=65112268
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839241.139162923] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+[INFO] [1790839241.190400843] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839250.881174000] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839250.940701167] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839250.941192366] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839254.966451080] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839256.334700293] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.51662, -1.04957, -40.97473, 1.26027, -113.5105, 1.51038]
+[INFO] [1790839258.745739454] [dsr01.collect_episode001_from_align_home]: Move alignment: [497.12, -323.05, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839262.331078520] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [500.5, -322.42, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839264.027464615] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839266.040977458] [dsr01.collect_episode001_from_align_home]: Move lift: [500.5, -322.42, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000002 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+postcheck_expected_steps=47 postcheck_actual_steps=47
+[2026-10-01T16:21:07+09:00] finished condition=lighting_low base_episode=000002
+
+[2026-10-01T16:21:23+09:00] condition=lighting_low base_episode=000002 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+free_kb_before=65104156
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839284.509941773] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+[INFO] [1790839284.611224378] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839284.611704068] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[ERROR] [1790839289.616686247] [dsr01.collect_episode001_from_align_home]: Collection failed: Service call timed out: set_robot_mode
+Traceback (most recent call last):
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 1175, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 1171, in main
+    return run_collection(args, ros_args)
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py", line 996, in run_collection
+    robot.set_autonomous_mode()
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py", line 808, in set_autonomous_mode
+    result = self._call_service(
+  File "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py", line 798, in _call_service
+    raise TimeoutError(f"Service call timed out: {service_name}")
+TimeoutError: Service call timed out: set_robot_mode
+
+[2026-10-01T16:21:34+09:00] condition=lighting_low base_episode=000002 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+free_kb_before=65104148
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory002_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839295.199532476] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+[INFO] [1790839295.402586056] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839295.402936591] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839299.768130261] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839299.768501861] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839308.918414124] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839310.235746126] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.51839, -1.0396, -40.98646, 1.26056, -113.50933, 1.51009]
+[INFO] [1790839312.646507808] [dsr01.collect_episode001_from_align_home]: Move alignment: [497.12, -323.05, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839316.229337366] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [500.5, -322.42, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839317.928762587] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839319.941308517] [dsr01.collect_episode001_from_align_home]: Move lift: [500.5, -322.42, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[WARN] [1790839320.245870779] [dsr01.collect_episode001_from_align_home]: Skipping sample: stale image: age=0.104s
+Collected episode_000002 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002
+postcheck_expected_steps=47 postcheck_actual_steps=46
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:22:54+09:00] condition=lighting_low base_episode=000003 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003
+free_kb_before=65096516
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839375.529806568] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003
+[INFO] [1790839375.780903073] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839381.041835600] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839387.182257593] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839387.182630217] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839391.208747423] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839392.537341648] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.51826, -1.04101, -40.98657, 1.26027, -113.50919, 1.51024]
+[INFO] [1790839394.947142507] [dsr01.collect_episode001_from_align_home]: Move alignment: [417.12, -193.88, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839398.032770587] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [420.5, -193.25, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839399.735313755] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839401.753472545] [dsr01.collect_episode001_from_align_home]: Move lift: [420.5, -193.25, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000003 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003
+postcheck_expected_steps=44 postcheck_actual_steps=45
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:23:41+09:00] condition=lighting_low base_episode=000003 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003
+free_kb_before=65088484
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory003_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839421.833250985] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003
+[INFO] [1790839422.485801242] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839423.290820927] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839429.435092166] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839429.435575698] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839433.460391463] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839434.939940138] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.52858, -1.0586, -40.97403, 1.26041, -113.50904, 1.50731]
+[INFO] [1790839437.349870144] [dsr01.collect_episode001_from_align_home]: Move alignment: [417.12, -193.88, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839440.434980670] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [420.5, -193.25, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839442.132563846] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839444.147472765] [dsr01.collect_episode001_from_align_home]: Move lift: [420.5, -193.25, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000003 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003
+postcheck_expected_steps=44 postcheck_actual_steps=45
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:24:53+09:00] condition=lighting_low base_episode=000004 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004
+free_kb_before=65080632
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839494.185942717] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004
+[INFO] [1790839497.193412209] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839497.194252108] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839497.246730964] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839497.247124033] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839501.274683388] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839502.745410407] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.52823, -1.05813, -40.97239, 1.26056, -113.50948, 1.50775]
+[INFO] [1790839505.160261320] [dsr01.collect_episode001_from_align_home]: Move alignment: [497.12, -193.88, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839508.439032856] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [500.5, -193.25, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839510.145741900] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839512.162619269] [dsr01.collect_episode001_from_align_home]: Move lift: [500.5, -193.25, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000004 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004
+postcheck_expected_steps=45 postcheck_actual_steps=46
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:25:40+09:00] condition=lighting_low base_episode=000004 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004
+free_kb_before=65072664
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory004_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839541.244586592] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004
+[INFO] [1790839542.498246721] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839542.498606132] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839544.245204545] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839544.245568724] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839550.193299910] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839551.344839129] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.52097, -1.04031, -40.96617, 1.26012, -113.51357, 1.5098]
+[INFO] [1790839553.758325162] [dsr01.collect_episode001_from_align_home]: Move alignment: [497.12, -193.88, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839557.038347282] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [500.5, -193.25, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839558.740255446] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839560.757553793] [dsr01.collect_episode001_from_align_home]: Move lift: [500.5, -193.25, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000004 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004
+postcheck_expected_steps=45 postcheck_actual_steps=46
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:26:22+09:00] condition=lighting_low base_episode=000005 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005
+free_kb_before=65064816
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839583.663855771] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005
+[INFO] [1790839583.772603700] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839586.379321419] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839592.496871662] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839592.497328940] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839600.648955651] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839601.847310926] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.52307, -1.04207, -40.97039, 1.26012, -113.51138, 1.50921]
+[INFO] [1790839604.258447657] [dsr01.collect_episode001_from_align_home]: Move alignment: [417.12, -64.71, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839607.141112602] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [420.5, -64.08, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839608.844584420] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839610.857499913] [dsr01.collect_episode001_from_align_home]: Move lift: [420.5, -64.08, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000005 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005
+postcheck_expected_steps=43 postcheck_actual_steps=44
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze
+
+[2026-10-01T16:27:15+09:00] condition=lighting_low base_episode=000005 mode=--execute
+source_episode=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005
+layout=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json
+output=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005
+free_kb_before=65057096
+command=/usr/bin/python3 /home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/collect_episode001_from_align_home.py --episode-dir /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005 --reference-steps-jsonl /home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005/steps.jsonl --layout-json /home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/sim2real_analysis/trajectory005_manual_layout.json --instruction Pick\ up\ the\ orange\ cube. --replay-mode tcp-z-offset --record-hz 5.0 --skip-sim-replay --execute 
+[INFO] [1790839636.296117560] [dsr01.collect_episode001_from_align_home]: episode_dir=/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005
+[INFO] [1790839636.397256804] [dsr01.collect_episode001_from_align_home]: Receiving image: /zed/zed_node/rgb/color/rect/image
+[INFO] [1790839640.564191658] [dsr01.collect_episode001_from_align_home]: Receiving joint state: /dsr01/joint_states
+[INFO] [1790839643.641699765] [dsr01.collect_episode001_from_align_home]: Robot speed mode=normal, operation speed=100%
+[INFO] [1790839643.642078485] [dsr01.collect_episode001_from_align_home]: Gripper OPEN
+[INFO] [1790839647.666010826] [dsr01.collect_episode001_from_align_home]: Move real HOME with joint_6 +180 deg: [-182.55, -1.07, -41.01, 1.26, -113.5, 1.5]
+[INFO] [1790839649.247298727] [dsr01.collect_episode001_from_align_home]: HOME confirmed: [-182.54137, -1.06317, -40.97567, 1.26071, -113.50845, 1.50424]
+[INFO] [1790839651.658149478] [dsr01.collect_episode001_from_align_home]: Move alignment: [417.12, -64.71, 403.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839654.541825775] [dsr01.collect_episode001_from_align_home]: Move descent_to_grasp: [420.5, -64.08, 287.82, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+[INFO] [1790839656.240727628] [dsr01.collect_episode001_from_align_home]: Gripper CLOSED
+[INFO] [1790839658.254984230] [dsr01.collect_episode001_from_align_home]: Move lift: [420.5, -64.08, 395.65, 49.02, 180.0, -127.62], vel=[200. 200.], acc=[200. 200.]
+Collected episode_000005 into /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005
+postcheck_expected_steps=43 postcheck_actual_steps=44
+INVALID_INCOMPLETE_EPISODE: step count mismatch; preserve for audit and do not analyze

@@ -1,0 +1,18 @@
+{
+  "overall_status": "COMPLETED_PHASE11_POLICY_SENSITIVE_ANALYSIS",
+  "data_audit": "COMPLETED_PHASE11_DATA_INTEGRITY",
+  "valid_pairs": 15,
+  "excluded_pairs": 0,
+  "aligned_samples": 684,
+  "alignment": "COMPLETED_OFFLINE_ONLY",
+  "observation_gap": "COMPLETED_OFFLINE_ONLY",
+  "openvla_inference": "COMPLETED_WITH_MODEL_SERVER_912_PREDICTIONS",
+  "oft_inference": "COMPLETED_WITH_MODEL_SERVER_192_K5_PREDICTIONS",
+  "feature_extraction": "COMPLETED_1824_FULL_FEATURE_RECORDS",
+  "policy_sensitive_analysis": "COMPLETED_WITH_OPENVLA_PROJECTOR_PROXY_AND_OFT_ACTION_HIDDEN",
+  "action_gap": "COMPLETED_WITH_MODEL_SERVER_1368_ALIGNED_ROWS",
+  "rollout": "NOT_EXECUTED",
+  "oft_failed_attempt": "192_CONNECTION_REFUSED_ERRORS_ZERO_PREDICTIONS",
+  "robot_commands": 0,
+  "ros_operations": 0
+}

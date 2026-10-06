@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETED_PHASE11_POLICY_SENSITIVE_ANALYSIS",
+  "valid_pairs": 15,
+  "aligned_samples": 684,
+  "actual_predictions": {
+    "openvla": 912,
+    "oft_k5_inferences": 192
+  },
+  "feature_records": 1824,
+  "feature_pair_layer_rows": 3420,
+  "recommendations": [
+    {
+      "category": "LOW_POLICY_IMPACT",
+      "condition": "distractor_swap",
+      "basis": "lowest scale-normalized action shift for both models"
+    },
+    {
+      "category": "HIGH_POLICY_IMPACT",
+      "condition": "extra_object",
+      "basis": "highest mean scale-normalized action shift for both models"
+    },
+    {
+      "category": "PHASE_SPECIFIC_IMPACT",
+      "condition": "lighting_low",
+      "basis": "OFT gripper false-close concentrated before/reference grasp despite not highest normalized total shift"
+    }
+  ],
+  "limitations": [
+    "five paired episode IDs only",
+    "OpenVLA action-hidden hook unavailable; projector proxy used",
+    "train-selected subspace did not consistently outperform random projection",
+    "offline prediction does not establish closed-loop success"
+  ]
+}

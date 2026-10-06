@@ -1,0 +1,73 @@
+{
+  "classification": "ZED_SUBSCRIBER_ONLY_CONTINUITY_PROBE",
+  "duration_s": 60.0,
+  "raw_topic": "/zed/zed_node/rgb/color/rect/image",
+  "compressed_topic": "/zed/zed_node/rgb/color/rect/image/compressed",
+  "publisher_created": false,
+  "service_client_created": false,
+  "command_issued": false,
+  "frame_hashing_enabled": false,
+  "shapes": [
+    [
+      1280,
+      720,
+      "bgra8",
+      5120
+    ]
+  ],
+  "compressed_formats": [
+    "bgra8; jpeg compressed bgr8"
+  ],
+  "raw": {
+    "source": {
+      "count": 3526,
+      "span_s": 59.953093,
+      "rate_hz": 58.79596570605623,
+      "median_gap_s": 0.016713,
+      "max_gap_s": 0.050146,
+      "gap_ge_50ms": 15,
+      "gap_ge_100ms": 0,
+      "gap_ge_500ms": 0,
+      "duplicate_or_nonmonotonic": 0
+    },
+    "receive_monotonic": {
+      "count": 3526,
+      "span_s": 59.926363552,
+      "rate_hz": 58.82219095342313,
+      "median_gap_s": 0.01666776,
+      "max_gap_s": 0.051758663,
+      "gap_ge_50ms": 9,
+      "gap_ge_100ms": 0,
+      "gap_ge_500ms": 0,
+      "duplicate_or_nonmonotonic": 0
+    },
+    "unique_hashes": null,
+    "duplicate_hashes": null
+  },
+  "compressed": {
+    "source": {
+      "count": 3525,
+      "span_s": 59.936339,
+      "rate_hz": 58.79571656854117,
+      "median_gap_s": 0.016713,
+      "max_gap_s": 0.050146,
+      "gap_ge_50ms": 15,
+      "gap_ge_100ms": 0,
+      "gap_ge_500ms": 0,
+      "duplicate_or_nonmonotonic": 0
+    },
+    "receive_monotonic": {
+      "count": 3525,
+      "span_s": 59.937907363,
+      "rate_hz": 58.79417809263365,
+      "median_gap_s": 0.016665473,
+      "max_gap_s": 0.052015674,
+      "gap_ge_50ms": 7,
+      "gap_ge_100ms": 0,
+      "gap_ge_500ms": 0,
+      "duplicate_or_nonmonotonic": 0
+    },
+    "unique_hashes": null,
+    "duplicate_hashes": null
+  }
+}

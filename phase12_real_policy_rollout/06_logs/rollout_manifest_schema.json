@@ -1,0 +1,1 @@
+{"status":"SCHEMA_ONLY_NO_REAL_TRIALS","fields":["experiment_id","model","condition","layout_id","rollout_id","status","success","failure_reason","infrastructure_failure","operator_intervention","log_path","config_snapshot","git_revision"]}

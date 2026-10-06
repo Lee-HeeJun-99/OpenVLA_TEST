@@ -1,0 +1,4 @@
+category,condition,basis
+LOW_POLICY_IMPACT,distractor_swap,lowest scale-normalized action shift for both models
+HIGH_POLICY_IMPACT,extra_object,highest mean scale-normalized action shift for both models
+PHASE_SPECIFIC_IMPACT,lighting_low,OFT gripper false-close concentrated before/reference grasp despite not highest normalized total shift

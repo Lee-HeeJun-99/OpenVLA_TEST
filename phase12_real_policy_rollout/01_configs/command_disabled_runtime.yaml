@@ -1,0 +1,27 @@
+mode: command_disabled_pre_motion
+shadow_mode: true
+include_action_adapter: false
+include_doosan_bridge: false
+allow_robot_command: false
+allow_gripper_command: false
+allow_home_command: false
+allow_trajectory_execution: false
+allow_motion_service: false
+allow_stop_service: false
+allow_estop_service: false
+publish_ai_action: false
+record_ai_action: true
+command_sink: null_command_sink
+physical_safety_values: deferred_to_pre_motion_operator_checklist
+translation_scale_mm_per_m: 1000.0
+legacy_translation_gain_2800_enabled: false
+gripper_semantics: 0_open_1_closed
+gripper_open_threshold: 0.3
+gripper_close_threshold: 0.7
+oft_chunk_execution_mode: sequential_k5
+control_rate_hz: 5.0
+translation_velocity_limit_mm_s: 20.0
+rotation_velocity_limit_deg_s: 20.0
+translation_acceleration_limit_mm_s2: 20.0
+rotation_acceleration_limit_deg_s2: 20.0
+

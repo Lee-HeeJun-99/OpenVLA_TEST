@@ -8,3 +8,4 @@ phase6_environment_attribution/01_preprocessing/full_forward_features/
 # Python cache
 __pycache__/
 *.pyc
+*.db3

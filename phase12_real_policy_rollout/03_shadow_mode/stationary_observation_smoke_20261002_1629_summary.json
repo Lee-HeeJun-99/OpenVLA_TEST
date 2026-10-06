@@ -1,0 +1,34 @@
+{
+  "classification": "STATIONARY_OBSERVATION_TEST",
+  "status": "PARTIAL_PASS_CAMERA_GAPS",
+  "bag": "stationary_observation_smoke_20261002_1629",
+  "duration_seconds": 11.310064653,
+  "bag_size_mib": 43.8,
+  "joint_state": {
+    "count": 1132,
+    "source_rate_hz": 100.00000404951388,
+    "source_max_gap_seconds": 0.012282956,
+    "gaps_ge_50ms": 0,
+    "gaps_ge_100ms": 0,
+    "duplicate_or_nonmonotonic": 0,
+    "position_invalid": 0,
+    "velocity_invalid": 0,
+    "missing_joint": 0,
+    "observed_order": ["joint_1", "joint_2", "joint_4", "joint_5", "joint_3", "joint_6"]
+  },
+  "camera": {
+    "topic": "/zed/zed_node/rgb/color/rect/image/compressed",
+    "count": 277,
+    "source_rate_hz": 24.86354104930089,
+    "source_max_gap_seconds": 0.516908,
+    "source_gaps_ge_50ms": 66,
+    "source_gaps_ge_100ms": 24,
+    "unique_image_hashes": 277,
+    "duplicate_image_hashes": 0
+  },
+  "measured_tcp": null,
+  "measured_tcp_status": "NOT_AVAILABLE_MINIMAL_OBSERVER",
+  "executed_action": null,
+  "robot_delivered_command": null,
+  "command_issued": false
+}

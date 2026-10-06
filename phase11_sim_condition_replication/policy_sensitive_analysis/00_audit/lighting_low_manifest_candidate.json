@@ -1,0 +1,27 @@
+{
+  "status": "RECONSTRUCTED_CANDIDATE_NOT_SOURCE_MANIFEST",
+  "condition": "lighting_low",
+  "episodes": [
+    {
+      "episode_id": "episode_000001",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000001"
+    },
+    {
+      "episode_id": "episode_000002",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000002"
+    },
+    {
+      "episode_id": "episode_000003",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000003"
+    },
+    {
+      "episode_id": "episode_000004",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000004"
+    },
+    {
+      "episode_id": "episode_000005",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase11_sim_condition_replication/real_dataset/lighting_low/episodes/episode_000005"
+    }
+  ],
+  "warning": "Condition identity is inferred from directory placement; no source condition manifest was found."
+}

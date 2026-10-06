@@ -1,0 +1,5 @@
+{
+  "selected_rows": 202,
+  "high_cost_rows": 18,
+  "policy": "phase centers plus metric extrema; high-cost uses per-condition extrema and OFT-lighting false-close events"
+}

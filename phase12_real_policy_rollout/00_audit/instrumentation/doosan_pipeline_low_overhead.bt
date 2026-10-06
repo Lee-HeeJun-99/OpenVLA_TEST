@@ -1,0 +1,135 @@
+#!/usr/bin/env bpftrace
+
+/*
+ * Low-overhead Phase 12 pipeline instrumentation.
+ *
+ * Run only with `-p <ros2_control_node PID>`. High-rate paths update counters
+ * and last timestamps; they do not print per invocation. Getter-specific and
+ * service-take boundaries remain event-level so a single request is visible.
+ */
+
+BEGIN
+{
+  printf("P12_PIPELINE_TRACE_START mono_ns=%llu pid_filter_required=1\n", nsecs);
+}
+
+/* Controller-side callback and vendor request path: always print. */
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_get_current_posx
+{
+  @getposx_start[tid] = nsecs;
+  printf("P12_TRACE mono_ns=%llu tid=%d event=ENTRY function=_get_current_posx ctrl=%p ref=%d\n", nsecs, tid, arg0, arg1);
+}
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_get_current_posx
+{
+  printf("P12_TRACE mono_ns=%llu tid=%d event=EXIT function=_get_current_posx result=%p duration_ns=%llu\n", nsecs, tid, retval, nsecs-@getposx_start[tid]);
+  delete(@getposx_start[tid]);
+}
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi
+{
+  @send0472_start[tid] = nsecs;
+  printf("P12_TRACE mono_ns=%llu tid=%d event=SEND_0472_ENTRY handler=%p payload=%p size=%d\n", nsecs, tid, arg0, arg1, arg2);
+}
+uretprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler26SendCurrentTaskPoseCommandEPhi
+{
+  printf("P12_TRACE mono_ns=%llu tid=%d event=SEND_0472_EXIT result=%p duration_ns=%llu\n", nsecs, tid, retval, nsecs-@send0472_start[tid]);
+  delete(@send0472_start[tid]);
+}
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x111c
+{ printf("P12_TRACE mono_ns=%llu tid=%d event=RESPONSE_0472_DISPATCH_START\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x114e
+{ printf("P12_TRACE mono_ns=%llu tid=%d event=RESPONSE_0472_EVENT_SET_START\n", nsecs, tid); }
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework11CNDKHandler3runEv+0x1153
+{ printf("P12_TRACE mono_ns=%llu tid=%d event=RESPONSE_0472_DISPATCH_END\n", nsecs, tid); }
+
+/* Middleware request-take boundaries: normally only fire for ready services. */
+uprobe:/opt/ros/humble/lib/librcl.so:rcl_take_request_with_info
+{
+  @rcl_take_start[tid] = nsecs;
+  printf("P12_TRACE mono_ns=%llu tid=%d event=ENTRY function=rcl_take_request_with_info service=%p\n", nsecs, tid, arg0);
+}
+uretprobe:/opt/ros/humble/lib/librcl.so:rcl_take_request_with_info
+{
+  printf("P12_TRACE mono_ns=%llu tid=%d event=EXIT function=rcl_take_request_with_info rc=%d duration_ns=%llu\n", nsecs, tid, retval, nsecs-@rcl_take_start[tid]);
+  delete(@rcl_take_start[tid]);
+}
+
+uprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_take_request
+{
+  @rmw_take_start[tid] = nsecs;
+  printf("P12_TRACE mono_ns=%llu tid=%d event=ENTRY function=rmw_take_request service=%p\n", nsecs, tid, arg0);
+}
+uretprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_take_request
+{
+  printf("P12_TRACE mono_ns=%llu tid=%d event=EXIT function=rmw_take_request rc=%d duration_ns=%llu\n", nsecs, tid, retval, nsecs-@rmw_take_start[tid]);
+  delete(@rmw_take_start[tid]);
+}
+
+/* High-rate pipeline: counters and last monotonic timestamps only. */
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_read_data_rt
+{
+  @readrt_count = @readrt_count + 1;
+  @readrt_last_ns = nsecs;
+}
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework19CNDKClientSocketUDP9OnReceiveEi
+{
+  @udp_receive_count = @udp_receive_count + 1;
+  @udp_receive_last_ns = nsecs;
+}
+
+uprobe:/home/ubuntu/robot_ws/install/dsr_hardware2/lib/libdsr_hardware2.so:_ZN12DRAFramework16CNDKClientSocket9OnReceiveEi
+{
+  @tcp_receive_count = @tcp_receive_count + 1;
+  @tcp_receive_last_ns = nsecs;
+}
+
+uprobe:/opt/ros/humble/lib/libjoint_state_broadcaster.so:_ZN23joint_state_broadcaster21JointStateBroadcaster6updateERKN6rclcpp4TimeERKNS1_8DurationE
+{
+  @jsb_update_count = @jsb_update_count + 1;
+  @jsb_update_last_ns = nsecs;
+}
+
+uprobe:/opt/ros/humble/lib/libjoint_state_broadcaster.so:_ZN23joint_state_broadcaster21JointStateBroadcaster6updateERKN6rclcpp4TimeERKNS1_8DurationE+0x820
+{
+  @jsb_pre_publish_count = @jsb_pre_publish_count + 1;
+  @jsb_pre_publish_last_ns = nsecs;
+}
+
+uprobe:/opt/ros/humble/lib/librcl.so:rcl_publish
+{
+  @rcl_publish_count = @rcl_publish_count + 1;
+  @rcl_publish_last_ns = nsecs;
+}
+
+uprobe:/opt/ros/humble/lib/librmw_fastrtps_cpp.so:rmw_publish
+{
+  @rmw_publish_count = @rmw_publish_count + 1;
+  @rmw_publish_last_ns = nsecs;
+}
+
+interval:s:1
+{
+  printf("P12_SUMMARY mono_ns=%llu readrt=%llu readrt_last=%llu udp_rx=%llu udp_last=%llu tcp_rx=%llu tcp_last=%llu jsb_update=%llu jsb_update_last=%llu jsb_prepub=%llu jsb_prepub_last=%llu rcl_pub=%llu rcl_pub_last=%llu rmw_pub=%llu rmw_pub_last=%llu\n",
+    nsecs,
+    @readrt_count, @readrt_last_ns,
+    @udp_receive_count, @udp_receive_last_ns,
+    @tcp_receive_count, @tcp_receive_last_ns,
+    @jsb_update_count, @jsb_update_last_ns,
+    @jsb_pre_publish_count, @jsb_pre_publish_last_ns,
+    @rcl_publish_count, @rcl_publish_last_ns,
+    @rmw_publish_count, @rmw_publish_last_ns);
+  @readrt_count = 0;
+  @udp_receive_count = 0;
+  @tcp_receive_count = 0;
+  @jsb_update_count = 0;
+  @jsb_pre_publish_count = 0;
+  @rcl_publish_count = 0;
+  @rmw_publish_count = 0;
+}
+
+END
+{
+  printf("P12_PIPELINE_TRACE_END mono_ns=%llu\n", nsecs);
+}

@@ -1,0 +1,80 @@
+status: COMMAND_DISABLED_PRE_MOTION_INTEGRATION_COMPLETE
+motion_readiness: false
+mode: command_disabled_pre_motion
+shadow_mode: true
+instruction: "Pick up the orange cube."
+allow_robot_command: false
+allow_gripper_command: false
+allow_home_command: false
+allow_trajectory_execution: false
+allow_motion_service: false
+allow_stop_service: false
+allow_estop_service: false
+publish_ai_action: false
+camera_topic: /zed/zed_node/rgb/color/rect/image
+joint_state_topic: /dsr01/joint_states
+joint_canonical_order: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6]
+effort_policy: unsupported_not_invalidating
+measured_tcp_source: NOT_AVAILABLE
+computed_tcp_proxy_source: JOINTSTATE_URDF_LINK6_FK
+active_tcp_name_operator_reported: Tool_v1
+active_tcp_offset_operator_reported: [0, 0, 0, 0, 0, 0]
+stationary_pendant_crosscheck: ONE_POSE_PASS_POSITION_1_178MM_ROTATION_0_177DEG
+continuous_measured_tcp_status: NOT_AVAILABLE
+translation_unit_conversion_mm_per_m: 1000.0
+translation_scale_status: VERIFIED_UNIT_CONVERSION_2800_EMPIRICAL_GAIN_REJECTED
+rotation_convention_status: DOOSAN_ZYZ_DEG_AND_DATASET_WORLD_ROTVEC_INTEGRATED_COMMAND_DISABLED
+oft_chunk_execution_policy: SEQUENTIAL_K5_INTEGRATED_COMMAND_DISABLED
+oft_inference_rate_hz: 1.0
+oft_execution_rate_hz: 5.0
+gripper_model_semantics: 0_open_1_closed
+gripper_open_threshold: 0.3
+gripper_close_threshold: 0.7
+gripper_runtime_contract: PHASE12_OPEN_LOOP_SUPERVISOR_INTEGRATED_COMMAND_DISABLED
+measured_gripper_feedback: NOT_FOUND
+openvla_checkpoint: vanilla_s1_balanced_step8130
+openvla_variant: openvla_token
+openvla_chunk_size: 1
+openvla_crop_bottom_fraction: 0.0
+oft_checkpoint: oft_mixed480_step28560_merged
+oft_variant: oftplus_h5_vision
+oft_chunk_size: 5
+oft_use_proprio: false
+oft_center_crop: true
+stationary_observation: NOT_EXECUTED
+stationary_live_shadow: NOT_EXECUTED
+
+# Operator-requested motion-profile equivalent, recorded for offline safety tests.
+# This section does not enable commands or constitute motion approval.
+operator_requested_motion_profile_status: CANDIDATE_OFFLINE_ONLY
+operator_requested_motion_profile_source: "최종 선택: 각 velocity/acceleration 20"
+task_translation_velocity_limit_mm_s: 20.0
+task_rotation_velocity_limit_deg_s: 20.0
+task_translation_acceleration_limit_mm_s2: 20.0
+task_rotation_acceleration_limit_deg_s2: 20.0
+joint_velocity_limit_deg_s: 20.0
+joint_acceleration_limit_deg_s2: 20.0
+canonical_translation_velocity_limit_m_s: 0.02
+canonical_rotation_velocity_limit_rad_s: 0.3490658503988659
+canonical_translation_acceleration_limit_m_s2: 0.02
+canonical_rotation_acceleration_limit_rad_s2: 0.3490658503988659
+control_rate_hz: 5.0
+velocity_derived_translation_step_ceiling_m: 0.004
+velocity_derived_rotation_step_ceiling_rad: 0.06981317007977318
+motion_profile_applied_to_robot_runtime: false
+workspace_status: DATA_DERIVED_AND_OPERATOR_APPROVED
+workspace_min_m: [0.275, -0.355, 0.267]
+workspace_max_m: [0.554, 0.386, 0.754]
+workspace_source_pose_kind: planned_actual_duration_not_measured_tcp
+workspace_reference_episode_count: 10
+workspace_reference_pose_count: 452
+protective_stop_status: OPERATOR_CONFIRMED_NOT_CONTROLLER_TELEMETRY
+servo_state_status: OPERATOR_CONFIRMED_NOT_CONTROLLER_TELEMETRY
+hold_acknowledgement_status: NOT_FOUND
+measured_gripper_feedback_status: NOT_FOUND
+gripper_no_feedback_closed_loop_policy: APPROVED_AND_IMPLEMENTED_COMMAND_DISABLED
+maximum_rollout_duration_candidate_seconds: 30.0
+maximum_rollout_duration_status: OPERATOR_APPROVED
+pre_motion_gate_mode: FAIL_CLOSED_COMMAND_DISABLED
+physical_safety_values: OPERATOR_CONFIRMED
+command_disabled_runtime_wrapper: FULL_BOUNDARY_FACADE_INTEGRATED_AND_TESTED_NO_DELIVERY_CAPABILITY

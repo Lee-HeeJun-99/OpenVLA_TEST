@@ -1,0 +1,39 @@
+mode: subscriber_only_shadow
+shadow_mode: true
+allow_robot_command: false
+allow_gripper_command: false
+allow_home_command: false
+allow_trajectory_execution: false
+allow_motion_service: false
+allow_stop_service: false
+allow_estop_service: false
+publish_ai_action: false
+record_ai_action: true
+instruction: "Pick up the orange cube."
+topics:
+  camera: /zed/zed_node/rgb/color/rect/image
+  joint_state: /dsr01/joint_states
+  measured_tcp_pose: /doosan/current_pose
+  safety_state: null
+models:
+  openvla:
+    url: http://127.0.0.1:8766
+    checkpoint: vanilla_s1_balanced_step8130
+    variant: openvla_token
+    dataset_key: a0509_sim_cube_pick
+    chunk_size: 1
+    crop_bottom_fraction: 0.0
+  oft:
+    url: http://127.0.0.1:8765
+    checkpoint: oft_mixed480_step28560_merged
+    variant: oftplus_h5_vision
+    dataset_key: a0509_sim_cube_pick
+    chunk_size: 5
+    proprio: false
+    preprocessing: phase11_training_center_crop
+timeouts:
+  model_seconds: 5.0
+  stale_sample_seconds: 1.0
+oft_chunk_execution_mode: sequential_k5_logging_only
+translation_scale_status: VERIFIED_UNIT_CONVERSION_1000_MM_PER_M_NO_COMMAND
+rotation_convention_status: VERIFIED_OFFLINE_ZYZ_WORLD_ROTVEC_NO_COMMAND

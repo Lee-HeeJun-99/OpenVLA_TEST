@@ -1,0 +1,8 @@
+{
+  "scope": "observation_only",
+  "aligned_frames_per_condition": 228,
+  "lighting_low": {"pixel_l1_mean": 0.100931, "pixel_l2_rmse_mean": 0.148038, "ssim_mean": 0.816944},
+  "extra_object": {"pixel_l1_mean": 0.029568, "pixel_l2_rmse_mean": 0.074165, "ssim_mean": 0.918996},
+  "distractor_swap": {"pixel_l1_mean": 0.013597, "pixel_l2_rmse_mean": 0.032679, "ssim_mean": 0.935607},
+  "policy_sensitive_interpretation_allowed": false
+}

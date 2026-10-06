@@ -1,0 +1,39 @@
+{
+  "classification": "STATIONARY_OBSERVATION_TEST",
+  "status": "PASS_POST_RELAUNCH",
+  "duration_seconds": 31.759882921,
+  "bag": "03_shadow_mode/stationary_observation_post_relaunch_20261002",
+  "joint_state": {
+    "count": 3177,
+    "source_rate_hz": 100.00002903968098,
+    "source_max_gap_seconds": 0.010637477,
+    "source_gaps_ge_50ms": 0,
+    "source_gaps_ge_100ms": 0,
+    "position_invalid": 0,
+    "velocity_invalid": 0,
+    "missing_joint": 0,
+    "effort_unsupported": 3177,
+    "observed_order": ["joint_1", "joint_2", "joint_4", "joint_5", "joint_3", "joint_6"]
+  },
+  "camera": {
+    "topic": "/zed/zed_node/rgb/color/rect/image/compressed",
+    "count": 1877,
+    "source_rate_hz": 59.14558092026614,
+    "source_max_gap_seconds": 0.050021,
+    "source_gaps_ge_50ms": 3,
+    "source_gaps_ge_100ms": 0,
+    "unique_hashes": 1877,
+    "duplicate_hashes": 0,
+    "format": "bgra8; jpeg compressed bgr8"
+  },
+  "tcp": {
+    "source": "computed_from_measured_joint_state_urdf_fk",
+    "pose_kind": "computed_link6_flange_not_continuous_measured_controller_tcp",
+    "one_pose_pendant_crosscheck": "PASS",
+    "continuous_measured_controller_tcp": null
+  },
+  "executed_action": null,
+  "robot_delivered_command": null,
+  "command_issued": false,
+  "model_inference_executed": false
+}

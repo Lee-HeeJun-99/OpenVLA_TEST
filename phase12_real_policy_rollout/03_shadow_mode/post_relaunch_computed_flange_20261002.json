@@ -1,0 +1,81 @@
+{
+  "classification": "SUBSCRIBER_ONLY_COMPUTED_FLANGE_OBSERVATION",
+  "topic": "/dsr01/joint_states",
+  "joint_source_timestamp_ns": 1790928354727894275,
+  "receive_ros_timestamp_ns": 1790928354728150824,
+  "receive_monotonic_timestamp_ns": 1816917238622934,
+  "observed_joint_order": [
+    "joint_1",
+    "joint_2",
+    "joint_4",
+    "joint_5",
+    "joint_3",
+    "joint_6"
+  ],
+  "fk": {
+    "source": "computed_from_measured_joint_state_urdf_fk",
+    "pose_kind": "computed_link6_flange_not_measured_tcp",
+    "reference_frame": "base_link",
+    "child_frame": "link_6",
+    "position_m": [
+      0.30679714416202136,
+      -0.012186147469242792,
+      0.723030764587196
+    ],
+    "rotation_matrix": [
+      [
+        0.9100876356837607,
+        -0.05450006688064879,
+        0.4108165504036405
+      ],
+      [
+        -0.060144062367246745,
+        -0.9981893742595204,
+        0.0008154001176395936
+      ],
+      [
+        0.4100282760219188,
+        -0.025450261794172594,
+        -0.9117176630059884
+      ]
+    ],
+    "quaternion_wxyz": [
+      -0.006719345545735433,
+      0.9772403328953003,
+      -0.029328540121813188,
+      0.20999052095854892
+    ],
+    "joint_order": [
+      "joint_1",
+      "joint_2",
+      "joint_3",
+      "joint_4",
+      "joint_5",
+      "joint_6"
+    ],
+    "joint_position_rad": [
+      -3.188736915588379,
+      -0.021675197407603264,
+      -0.7178725600242615,
+      0.021652095019817352,
+      -1.9792640209197998,
+      0.025524191558361053
+    ],
+    "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+    "tool_offset_applied": false,
+    "measured_tcp_available": false,
+    "valid_for_observation": true,
+    "valid_as_measured_tcp": false,
+    "valid_for_motion_readiness": false,
+    "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+    "command_issued": false,
+    "executed_action": null,
+    "robot_delivered_command": null
+  },
+  "publisher_created": false,
+  "service_client_created": false,
+  "action_client_created": false,
+  "command_issued": false,
+  "executed_action": null,
+  "robot_delivered_command": null
+}

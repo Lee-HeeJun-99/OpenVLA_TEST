@@ -1,0 +1,28 @@
+{
+  "classification": "COMMAND_DISABLED_BOUNDARY_DRY_RUN",
+  "created_wall_time": 1790931641.6602998,
+  "records": 6,
+  "technical_valid": 4,
+  "hard_gate_delivery_blocked": 6,
+  "all_executed_action_null": true,
+  "all_robot_delivered_command_null": true,
+  "all_command_issued_false": true,
+  "capabilities": {
+    "robot_publisher": false,
+    "gripper_publisher_or_client": false,
+    "motion_service_client": false,
+    "motion_action_client": false,
+    "home_capability": false,
+    "trajectory_capability": false,
+    "hold_or_estop_client": false,
+    "realtime_write_capability": false,
+    "action_adapter_loaded": false,
+    "doosan_bridge_loaded": false,
+    "sink": {
+      "sink_name": "NULL_COMMAND_SINK"
+    }
+  },
+  "robot_command_count": 0,
+  "motion_service_action_count": 0,
+  "gripper_command_count": 0
+}

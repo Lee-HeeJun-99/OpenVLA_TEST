@@ -1,0 +1,7 @@
+{
+  "required": ["experiment_id","model","condition","layout_id","rollout_id","episode_step","phase","instruction","image_path","image_sha256","camera_source_timestamp","receive_monotonic_timestamp","ros_timestamp","joint_state","measured_tcp_pose","commanded_tcp_pose","raw_model_action","denormalized_action","canonical_action","postprocessed_action","executed_command","measured_robot_feedback","raw_gripper_value","canonical_gripper_closedness","commanded_gripper_state","measured_gripper_state","oft_chunk_id","oft_chunk_index","action_age_sec","inference_latency_sec","timeout","communication_status","hold_required","hold_reason","estop_state","success","failure_reason","operator_intervention","ai_executed_action"],
+  "null_rules": {"ai_executed_action_shadow":"must_be_null","measured_gripper_state_when_unavailable":"must_be_null","robot_delivered_command_command_disabled":"must_be_null"},
+  "open_loop_gripper_policy": {"knowledge_states":["UNKNOWN","COMMAND_OPEN","COMMAND_CLOSED"],"initial_state":"UNKNOWN","requires_operator_confirmed_open":true,"close_allowed_phase":"grasp_close","maximum_close_commands_per_rollout":1,"unknown_blocks_lift":true,"commanded_state_is_not_measured_state":true},
+  "clock_policy":"Never subtract timestamps from different clock_domain values.",
+  "durability":"append then flush and fsync; failure sets hold_required but this offline implementation never calls Hold"
+}

@@ -1,0 +1,20 @@
+{
+  "overall_status": "COMPLETED_WITH_PARTIAL_ATTRIBUTION",
+  "selected_frame_rows": 202,
+  "high_cost_selected_rows": 18,
+  "analyzed_image_instances": 36,
+  "occlusion_heatmap_files": 72,
+  "component_chunk_heatmaps": 800,
+  "roi_metric_rows": 4000,
+  "method_agreement_rows": 400,
+  "occlusion": "COMPLETED_LOCAL_MEAN_AND_GAUSSIAN_BLUR",
+  "attention_rollout": "BLOCKED_NOT_CAPTURED_REQUIRES_INSTRUMENTED_FORWARD",
+  "gradient_attribution": "BLOCKED_GRADIENT_PATH_RUNTIME_USES_INFERENCE_MODE",
+  "integrated_gradients": "BLOCKED_GRADIENT_PATH_RUNTIME_USES_INFERENCE_MODE",
+  "reliable_rois": ["target_orange", "table_background_complement"],
+  "unresolved_rois": ["robot_gripper", "yellow_cube", "blue_cube", "red_cube", "extra_object"],
+  "robot_commands": 0,
+  "ros_operations": 0,
+  "trajectory_operations": 0,
+  "gripper_home_operations": 0
+}

@@ -1,0 +1,13 @@
+{
+  "train": [
+    "episode_000001",
+    "episode_000002",
+    "episode_000003",
+    "episode_000005"
+  ],
+  "val": [
+    "episode_000004"
+  ],
+  "split_seed": 20260805,
+  "val_fraction": 0.1
+}
