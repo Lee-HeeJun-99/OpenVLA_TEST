@@ -1,0 +1,8 @@
+model,blocker,canonical_category,action_count,percent_total,percent_rejected
+openvla,raw_translation_step_limit,raw_translation_step_limit,27,60.0,93.10344827586206
+openvla,premature_gripper_close,premature_gripper_close,4,8.88888888888889,13.793103448275861
+oft,gripper_unknown_state_blocks_command,gripper_state_invalidated,20,44.44444444444444,47.61904761904762
+oft,gripper_stale_or_timeout,gripper_state_invalidated,19,42.22222222222222,45.23809523809524
+oft,raw_translation_step_limit,raw_translation_step_limit,19,42.22222222222222,45.23809523809524
+oft,translation_acceleration_limit,translation_acceleration_limit,19,42.22222222222222,45.23809523809524
+oft,premature_gripper_close,premature_gripper_close,3,6.666666666666667,7.142857142857143

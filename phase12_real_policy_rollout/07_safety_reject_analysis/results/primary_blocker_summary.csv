@@ -1,0 +1,7 @@
+model,primary_blocker,count,percent_rejected
+openvla,raw_translation_step_limit,27,93.10344827586206
+openvla,premature_gripper_close,2,6.896551724137931
+oft,raw_translation_step_limit,19,45.23809523809524
+oft,gripper_unknown_state_blocks_command,12,28.571428571428573
+oft,translation_acceleration_limit,8,19.047619047619047
+oft,premature_gripper_close,3,7.142857142857143

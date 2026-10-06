@@ -1,0 +1,8 @@
+model,ignored_blocker,baseline_accepted,hypothetical_accepted,accepted_gain,note
+openvla,premature_gripper_close,16,18,2,posthoc analysis only; stateful downstream effects are not replayed
+openvla,raw_translation_step_limit,16,41,25,posthoc analysis only; stateful downstream effects are not replayed
+oft,gripper_stale_or_timeout,3,3,0,posthoc analysis only; stateful downstream effects are not replayed
+oft,gripper_unknown_state_blocks_command,3,15,12,posthoc analysis only; stateful downstream effects are not replayed
+oft,premature_gripper_close,3,6,3,posthoc analysis only; stateful downstream effects are not replayed
+oft,raw_translation_step_limit,3,3,0,posthoc analysis only; stateful downstream effects are not replayed
+oft,translation_acceleration_limit,3,3,0,posthoc analysis only; stateful downstream effects are not replayed

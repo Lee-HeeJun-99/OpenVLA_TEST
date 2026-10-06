@@ -1,0 +1,198 @@
+{
+  "classification": "EPISODE4_OFFLINE_SAFETY_REJECT_ANALYSIS",
+  "production_safety_config_changed": false,
+  "real_robot_commands": 0,
+  "reproduction": {
+    "expected": {
+      "openvla": [
+        45,
+        16,
+        29
+      ],
+      "oft": [
+        45,
+        3,
+        42
+      ]
+    },
+    "replay_blocker_mismatches": {
+      "openvla": [],
+      "oft": []
+    }
+  },
+  "models": {
+    "openvla": {
+      "total": 45,
+      "accepted": 16,
+      "rejected": 29,
+      "translation_norm_m": {
+        "mean": 0.006643145766434001,
+        "std": 0.005160157238926465,
+        "median": 0.006092212011624648,
+        "p90": 0.016573939737687428,
+        "p95": 0.016573939737687428,
+        "p99": 0.01921274756313112,
+        "max": 0.02128609656883686
+      },
+      "rotation_norm_deg": {
+        "mean": 0.30134020116743426,
+        "std": 0.4725046559542367,
+        "median": 0.0656193385943666,
+        "p90": 0.8021402001732751,
+        "p95": 0.8297916532154358,
+        "p99": 1.8056050895854798,
+        "max": 2.565535660784005
+      },
+      "translation_exceedance": {
+        "1mm": 44,
+        "2mm": 41,
+        "3mm": 34,
+        "4mm": 27
+      },
+      "rotation_exceedance": {
+        "1deg": 1,
+        "2deg": 1,
+        "3deg": 0,
+        "4deg": 0,
+        "5deg": 0
+      },
+      "implied_translation_velocity_mm_s": {
+        "max": 106.4304828441843,
+        "exceed_20_count": 27
+      },
+      "implied_translation_acceleration_mm_s2": {
+        "max": 488.06386941367936,
+        "exceed_20_count": 15
+      },
+      "gripper": {
+        "first_close_candidate_frame": 23,
+        "first_grasp_close_frame": 27,
+        "close_lead_frames": 4,
+        "premature_close_candidates": 12
+      },
+      "largest_single_threshold_gain": 17,
+      "dominant_cause": "MIXED"
+    },
+    "oft": {
+      "total": 45,
+      "accepted": 3,
+      "rejected": 42,
+      "translation_norm_m": {
+        "mean": 0.005278635852721763,
+        "std": 0.004225621736883408,
+        "median": 0.003394063814057108,
+        "p90": 0.012180316040951097,
+        "p95": 0.012485664455844604,
+        "p99": 0.012723538121827789,
+        "max": 0.01275887459329339
+      },
+      "rotation_norm_deg": {
+        "mean": 0.09594519390695046,
+        "std": 0.1267009276504797,
+        "median": 0.042997059807519236,
+        "p90": 0.21363054081400412,
+        "p95": 0.2953755829493181,
+        "p99": 0.5313423248533811,
+        "max": 0.6964672948494969
+      },
+      "translation_exceedance": {
+        "1mm": 41,
+        "2mm": 33,
+        "3mm": 26,
+        "4mm": 19
+      },
+      "rotation_exceedance": {
+        "1deg": 0,
+        "2deg": 0,
+        "3deg": 0,
+        "4deg": 0,
+        "5deg": 0
+      },
+      "implied_translation_velocity_mm_s": {
+        "max": 63.79437296646695,
+        "exceed_20_count": 19
+      },
+      "implied_translation_acceleration_mm_s2": {
+        "max": 296.62450889402123,
+        "exceed_20_count": 35
+      },
+      "gripper": {
+        "first_close_candidate_frame": 0,
+        "first_grasp_close_frame": 30,
+        "close_lead_frames": 30,
+        "premature_close_candidates": 22
+      },
+      "largest_single_threshold_gain": 11,
+      "dominant_cause": "MIXED"
+    }
+  },
+  "top_blocker_combinations": {
+    "openvla": [
+      {
+        "combination": "raw_translation_step_limit",
+        "count": 25
+      },
+      {
+        "combination": "premature_gripper_close",
+        "count": 2
+      },
+      {
+        "combination": "premature_gripper_close + raw_translation_step_limit",
+        "count": 2
+      }
+    ],
+    "oft": [
+      {
+        "combination": "gripper_unknown_state_blocks_command",
+        "count": 12
+      },
+      {
+        "combination": "gripper_stale_or_timeout + raw_translation_step_limit + translation_acceleration_limit",
+        "count": 11
+      },
+      {
+        "combination": "gripper_stale_or_timeout + translation_acceleration_limit",
+        "count": 8
+      },
+      {
+        "combination": "gripper_unknown_state_blocks_command + raw_translation_step_limit",
+        "count": 8
+      },
+      {
+        "combination": "premature_gripper_close",
+        "count": 3
+      }
+    ]
+  },
+  "limitations": [
+    "accepted/rejected is SafetyPipeline gating, not task success",
+    "TCP source is planned_actual_duration, not measured feedback",
+    "one recorded Episode 4 only",
+    "sensitivity is analysis-only"
+  ],
+  "production_config_snapshot": {
+    "control_rate_hz": 5.0,
+    "max_action_age_sec": 1.2,
+    "translation_step_m": 0.004,
+    "rotation_step_deg": 4.0,
+    "translation_velocity_mm_s": 20.0,
+    "rotation_velocity_deg_s": 20.0,
+    "translation_acceleration_mm_s2": 20.0,
+    "rotation_acceleration_deg_s2": 20.0,
+    "workspace_m": {
+      "x": [
+        0.275,
+        0.554
+      ],
+      "y": [
+        -0.355,
+        0.386
+      ],
+      "z": [
+        0.267,
+        0.754
+      ]
+    },
+    "failure_policy": "fail_closed"
+  }
+}
