@@ -1,0 +1,11 @@
+{
+  "status": "CURRENT_TCP_UNKNOWN",
+  "active_tcp_name": null,
+  "verified_flange_to_tcp": null,
+  "source": "FK_ESTIMATED_FLANGE",
+  "zero_offset_applied": false,
+  "measured_tcp_available": false,
+  "controller_evidence": null,
+  "explanation": "Actual a0509 robot_description ends at link_6, only world/base fixed joint. Observed left_TCP/right_TCP belong to SO101 scene, not current Doosan controller tool. /doosan/current_pose has no publishers.",
+  "getters_called": 0
+}

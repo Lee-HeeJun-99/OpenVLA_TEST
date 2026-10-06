@@ -1,0 +1,14 @@
+{
+  "pre_window": {
+    "status": "PASS",
+    "count": 2000,
+    "coverage_s": 19.990407693199813,
+    "latest_receive_age_s": 0.001432039774954319,
+    "receive_rate_hz": 99.99796055585223,
+    "max_source_gap_s": 0.011418342590332031,
+    "max_receive_gap_s": 0.01614705380052328,
+    "invalid_values": 0
+  },
+  "status": "FAIL_DURING_SHADOW",
+  "abort_reason": "joint_state_freshness_or_continuity"
+}

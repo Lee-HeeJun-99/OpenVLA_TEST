@@ -1,0 +1,24 @@
+{
+  "status": "BLOCKED_TCP_CONTRACT_UNKNOWN",
+  "also_blocked_by": [
+    "JointState watchdog fault",
+    "Hardware/operator UNKNOWN",
+    "30s camera validation aborted"
+  ],
+  "physical_pose_command_count": 0,
+  "gripper_command_enabled": false,
+  "gripper_pulse_enabled": false,
+  "requested_delta_m": null,
+  "protocol_delta_m": [
+    0.0005,
+    0,
+    0
+  ],
+  "observed_delta_m": null,
+  "ack": null,
+  "unexpected_motion": "NOT_ASSESSED_NO_PHYSICAL_STAGE",
+  "short_horizon": "NOT_EXECUTED",
+  "full_task": "NOT_EXECUTED",
+  "model_action_used": false,
+  "motion_authorized": false
+}

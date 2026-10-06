@@ -1,0 +1,29 @@
+{
+  "status": "LIVE_SHADOW_FAIL",
+  "prediction_count": 56,
+  "shadow_duration_s": 27.43716636719182,
+  "pre_shadow_gate": {
+    "status": "PASS",
+    "count": 2000,
+    "coverage_s": 19.990407693199813,
+    "latest_receive_age_s": 0.001432039774954319,
+    "receive_rate_hz": 99.99796055585223,
+    "max_source_gap_s": 0.011418342590332031,
+    "max_receive_gap_s": 0.01614705380052328,
+    "invalid_values": 0
+  },
+  "safety_rejection_ratio": 1.0,
+  "blockers": {
+    "tcp_failure": 55,
+    "gripper_unknown_state_blocks_command": 56,
+    "joint_state_failure": 1
+  },
+  "action_magnitude_threshold_exceedances": 0,
+  "watchdog_or_abort_reason": "joint_state_freshness_or_continuity",
+  "tcp_source": "FK_ESTIMATED_FLANGE",
+  "tcp_contract_verified": false,
+  "tool_offset_verified": false,
+  "motion_authorized": false,
+  "physical_commands": 0,
+  "next_allowed_stage": "TCP_CROSSCHECK_REQUIRED_BEFORE_MOTION"
+}

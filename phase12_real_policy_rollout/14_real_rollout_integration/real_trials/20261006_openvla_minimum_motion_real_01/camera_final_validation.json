@@ -1,0 +1,11 @@
+{
+  "status": "FAIL_VALIDATION_ABORTED_BEFORE_30_SECONDS",
+  "observed_prediction_count": 56,
+  "observed_duration_s": 27.43716636719182,
+  "camera_failure_count": 0,
+  "max_camera_age_s": 0.49322909908369184,
+  "threshold_s": 0.5,
+  "threshold_changed": false,
+  "observed_frame_freshness": "PASS_WITHIN_RECORDED_INTERVAL",
+  "abort_reason": "joint_state_freshness_or_continuity"
+}

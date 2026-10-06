@@ -1,0 +1,9 @@
+{
+  "status": "UNKNOWN_FAIL_CLOSED",
+  "operator_present": "UNCONFIRMED",
+  "estop_accessible": "UNCONFIRMED",
+  "workspace_clear": "UNCONFIRMED",
+  "protective_stop_clear": "UNCONFIRMED",
+  "robot_mode_authority": "UNCONFIRMED",
+  "motion_authorized": false
+}
