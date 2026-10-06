@@ -1,0 +1,45 @@
+{
+  "run": "run3",
+  "duration_s": 60.00671522319317,
+  "start_wall": 1791278608.463024,
+  "message_count": 4473,
+  "full_window_rate_hz": 74.54165726890417,
+  "first_receive_delay_s": 9.18693088926375,
+  "steady_receive": {
+    "mean_gap_s": 0.011363983043816861,
+    "p95_gap_s": 0.010464843828231096,
+    "p99_gap_s": 0.010839255061000586,
+    "max_gap_s": 3.0675054942257702,
+    "gaps_ge_100ms": 2,
+    "gaps_ge_500ms": 2,
+    "gaps_ge_1s": 2,
+    "duplicates": 0,
+    "regressions": 0,
+    "rate_hz": 87.9973153905839
+  },
+  "steady_source": {
+    "mean_gap_s": 0.01136404766379614,
+    "p95_gap_s": 0.010044097900390625,
+    "p99_gap_s": 0.010409116744995117,
+    "max_gap_s": 3.060013771057129,
+    "gaps_ge_100ms": 2,
+    "gaps_ge_500ms": 2,
+    "gaps_ge_1s": 2,
+    "duplicates": 0,
+    "regressions": 0,
+    "rate_hz": 87.99681500684166
+  },
+  "invalid_position": 0,
+  "invalid_velocity": 0,
+  "missing_joint_name": 0,
+  "observed_orders": [
+    "[\"joint_1\", \"joint_2\", \"joint_4\", \"joint_5\", \"joint_3\", \"joint_6\"]"
+  ],
+  "subscriber_qos": {
+    "reliability": "BEST_EFFORT",
+    "durability": "VOLATILE",
+    "history": "KEEP_LAST",
+    "depth": 5
+  },
+  "robot_command_count": 0
+}

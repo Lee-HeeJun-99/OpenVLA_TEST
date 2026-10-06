@@ -1,0 +1,154 @@
+{
+  "classification": "JOINTSTATE_INCONCLUSIVE",
+  "runs": [
+    {
+      "run": "run1",
+      "duration_s": 60.00447216583416,
+      "start_wall": 1791278376.3154964,
+      "message_count": 4349,
+      "full_window_rate_hz": 72.47793111121257,
+      "first_receive_delay_s": 10.425179711077362,
+      "steady_receive": {
+        "mean_gap_s": 0.011402760966374216,
+        "p95_gap_s": 0.010347386822104454,
+        "p99_gap_s": 0.010645564645528793,
+        "max_gap_s": 3.0664143608883023,
+        "gaps_ge_100ms": 2,
+        "gaps_ge_500ms": 2,
+        "gaps_ge_1s": 2,
+        "duplicates": 0,
+        "regressions": 0,
+        "rate_hz": 87.69805864991083
+      },
+      "steady_source": {
+        "mean_gap_s": 0.011402949896446586,
+        "p95_gap_s": 0.010032415390014648,
+        "p99_gap_s": 0.010087251663208008,
+        "max_gap_s": 3.060014247894287,
+        "gaps_ge_100ms": 2,
+        "gaps_ge_500ms": 2,
+        "gaps_ge_1s": 2,
+        "duplicates": 0,
+        "regressions": 0,
+        "rate_hz": 87.69660562234185
+      },
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joint_name": 0,
+      "observed_orders": [
+        "[\"joint_1\", \"joint_2\", \"joint_4\", \"joint_5\", \"joint_3\", \"joint_6\"]"
+      ],
+      "subscriber_qos": {
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "history": "KEEP_LAST",
+        "depth": 5
+      },
+      "robot_command_count": 0
+    },
+    {
+      "run": "run2",
+      "duration_s": 60.000610657036304,
+      "start_wall": 1791278517.8093157,
+      "message_count": 4809,
+      "full_window_rate_hz": 80.14918427227784,
+      "first_receive_delay_s": 2.7605595770291984,
+      "steady_receive": {
+        "mean_gap_s": 0.01190515130496012,
+        "p95_gap_s": 0.01048303209245205,
+        "p99_gap_s": 0.010853220708668232,
+        "max_gap_s": 3.072212290018797,
+        "gaps_ge_100ms": 3,
+        "gaps_ge_500ms": 3,
+        "gaps_ge_1s": 3,
+        "duplicates": 0,
+        "regressions": 0,
+        "rate_hz": 83.99725248207164
+      },
+      "steady_source": {
+        "mean_gap_s": 0.0119051566834061,
+        "p95_gap_s": 0.01004171371459961,
+        "p99_gap_s": 0.010364770889282227,
+        "max_gap_s": 3.070002555847168,
+        "gaps_ge_100ms": 3,
+        "gaps_ge_500ms": 3,
+        "gaps_ge_1s": 3,
+        "duplicates": 0,
+        "regressions": 0,
+        "rate_hz": 83.99721453425651
+      },
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joint_name": 0,
+      "observed_orders": [
+        "[\"joint_1\", \"joint_2\", \"joint_4\", \"joint_5\", \"joint_3\", \"joint_6\"]"
+      ],
+      "subscriber_qos": {
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "history": "KEEP_LAST",
+        "depth": 5
+      },
+      "robot_command_count": 0
+    },
+    {
+      "run": "run3",
+      "duration_s": 60.00671522319317,
+      "start_wall": 1791278608.463024,
+      "message_count": 4473,
+      "full_window_rate_hz": 74.54165726890417,
+      "first_receive_delay_s": 9.18693088926375,
+      "steady_receive": {
+        "mean_gap_s": 0.011363983043816861,
+        "p95_gap_s": 0.010464843828231096,
+        "p99_gap_s": 0.010839255061000586,
+        "max_gap_s": 3.0675054942257702,
+        "gaps_ge_100ms": 2,
+        "gaps_ge_500ms": 2,
+        "gaps_ge_1s": 2,
+        "duplicates": 0,
+        "regressions": 0,
+        "rate_hz": 87.9973153905839
+      },
+      "steady_source": {
+        "mean_gap_s": 0.01136404766379614,
+        "p95_gap_s": 0.010044097900390625,
+        "p99_gap_s": 0.010409116744995117,
+        "max_gap_s": 3.060013771057129,
+        "gaps_ge_100ms": 2,
+        "gaps_ge_500ms": 2,
+        "gaps_ge_1s": 2,
+        "duplicates": 0,
+        "regressions": 0,
+        "rate_hz": 87.99681500684166
+      },
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joint_name": 0,
+      "observed_orders": [
+        "[\"joint_1\", \"joint_2\", \"joint_4\", \"joint_5\", \"joint_3\", \"joint_6\"]"
+      ],
+      "subscriber_qos": {
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "history": "KEEP_LAST",
+        "depth": 5
+      },
+      "robot_command_count": 0
+    }
+  ],
+  "external_command_log_detected": true,
+  "observed_source_discontinuity": true,
+  "camera_comparison": "NOT_EXECUTED_JOINTSTATE_ONLY_FAILED",
+  "commands_by_this_agent": {
+    "robot": 0,
+    "motion_service_action": 0,
+    "gripper": 0,
+    "home": 0,
+    "trajectory": 0,
+    "hold_estop": 0,
+    "real_rollout": 0
+  },
+  "external_physical_command_count": "UNKNOWN; driver callback logs observed",
+  "motion_authorized": false
+}

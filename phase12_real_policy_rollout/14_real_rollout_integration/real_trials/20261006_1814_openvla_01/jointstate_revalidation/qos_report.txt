@@ -1,0 +1,30 @@
+Before measurement: ros2 topic info /dsr01/joint_states --verbose
+Type: sensor_msgs/msg/JointState
+Publisher count: 1
+Publisher node/namespace: _NODE_NAME_UNKNOWN_ / _NODE_NAMESPACE_UNKNOWN_
+Publisher reliability: RELIABLE
+Publisher durability: TRANSIENT_LOCAL
+Publisher history/depth: UNKNOWN (CLI did not expose it)
+Publisher deadline/lifespan/liveliness lease: Infinite
+Publisher liveliness: AUTOMATIC
+Existing subscriber: /dsr01/robot_state_publisher
+Existing subscriber reliability: BEST_EFFORT
+Existing subscriber durability: VOLATILE
+Existing subscriber history/depth: UNKNOWN
+Audit subscriber: BEST_EFFORT, VOLATILE, KEEP_LAST, depth 5
+Compatibility: compatible offered/requested reliability and durability.
+No publisher QoS modification; audit sensor-data QoS matches previous observer.
+BEST_EFFORT compatibility does not guarantee delivery of every published sample.
+ROS graph polling deliberately excluded from the timed measurement loops.
+Before measurement node list:
+/dsr01/robot_state_publisher
+/dsr01/rviz2
+/dsr01/transform_listener_impl_592b9c76c580
+/launch_ros_3017687
+/so101_usd_dashboard
+/zed/transform_listener_impl_7bdd480e4420
+/zed/zed_container
+/zed/zed_node
+/zed/zed_state_publisher
+Camera launch PID 3017687 terminated by SIGINT before Run 1.
+Driver PID 3017586 remained present after camera termination.

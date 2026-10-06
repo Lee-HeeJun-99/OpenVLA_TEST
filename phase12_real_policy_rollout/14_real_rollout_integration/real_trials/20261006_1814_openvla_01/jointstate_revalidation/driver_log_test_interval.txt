@@ -1,0 +1,3 @@
+[INFO] [1791278478.174090550] [dsr_controller2]: set_robot_mode_cb() called and calling Drfl->set_robot_mode(1)
+[INFO] [1791278479.699680798] [dsr_controller2]: movej_cb() 0x73e11f076b00
+[INFO] [1791278479.699736233] [dsr_controller2]: movej_cb() called and calling Drfl->movej
