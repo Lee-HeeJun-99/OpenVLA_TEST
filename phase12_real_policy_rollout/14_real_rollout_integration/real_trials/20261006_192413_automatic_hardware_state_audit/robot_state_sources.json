@@ -1,0 +1,87 @@
+{
+  "current_values": {
+    "mode": "UNKNOWN",
+    "servo": "UNKNOWN",
+    "protective_stop": "UNKNOWN",
+    "emergency_stop": "UNKNOWN",
+    "authority": "UNKNOWN",
+    "motion_state": "UNKNOWN"
+  },
+  "messages": {},
+  "endpoints": {
+    "/dsr01/joint_states": [
+      {
+        "node": "_NODE_NAMESPACE_UNKNOWN_/_NODE_NAME_UNKNOWN_",
+        "type": "sensor_msgs/msg/JointState",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      }
+    ],
+    "/dsr01/robot_state": [],
+    "/dsr01/robot_disconnection": [
+      {
+        "node": "_NODE_NAMESPACE_UNKNOWN_/_NODE_NAME_UNKNOWN_",
+        "type": "dsr_msgs2/msg/RobotDisconnection",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      }
+    ],
+    "/dsr01/error": [
+      {
+        "node": "_NODE_NAMESPACE_UNKNOWN_/_NODE_NAME_UNKNOWN_",
+        "type": "dsr_msgs2/msg/RobotError",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      }
+    ],
+    "/doosan/current_pose": [],
+    "/tf": [
+      {
+        "node": "/dsr01/robot_state_publisher",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      },
+      {
+        "node": "/zed/zed_state_publisher",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      },
+      {
+        "node": "/zed/zed_node",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      },
+      {
+        "node": "//robot_state_publisher",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      },
+      {
+        "node": "//_World_SO101_ROS2_ActionGraph_PublishTCP",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.VOLATILE, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      }
+    ],
+    "/tf_static": [
+      {
+        "node": "/dsr01/robot_state_publisher",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      },
+      {
+        "node": "/zed/zed_state_publisher",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      },
+      {
+        "node": "//robot_state_publisher",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+      }
+    ]
+  },
+  "connected": "PROCESS_PRESENT_NOT_CONTROLLER_STATE_PROOF",
+  "manual_confirmations": [
+    "operator_present",
+    "physical_estop_accessible",
+    "workspace_physically_clear"
+  ],
+  "provenance": "UNKNOWN"
+}

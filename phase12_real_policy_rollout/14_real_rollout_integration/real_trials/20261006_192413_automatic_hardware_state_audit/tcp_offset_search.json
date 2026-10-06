@@ -1,0 +1,1183 @@
+{
+  "status": "NOT_FOUND",
+  "active_name_verified": false,
+  "frames": {
+    "world->so101_left_gripper_frame": {
+      "header": {
+        "stamp": {
+          "sec": 107022,
+          "nanosec": 988915016
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "so101_left_gripper_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0033517368137836456,
+          "y": -0.3439241349697113,
+          "z": 0.9047236442565918
+        },
+        "rotation": {
+          "x": 0.33921581506729126,
+          "y": 1.3986136764287949e-06,
+          "z": 4.116678610444069e-06,
+          "w": 0.940708577632904
+        }
+      }
+    },
+    "world->so101_right_gripper_frame": {
+      "header": {
+        "stamp": {
+          "sec": 107022,
+          "nanosec": 988915016
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "so101_right_gripper_frame",
+      "transform": {
+        "translation": {
+          "x": 0.22873042523860931,
+          "y": -0.3439236879348755,
+          "z": 0.9047269821166992
+        },
+        "rotation": {
+          "x": 0.3392256796360016,
+          "y": 1.432141289114952e-06,
+          "z": 4.138215444982052e-06,
+          "w": 0.9407050013542175
+        }
+      }
+    },
+    "world->left_TCP": {
+      "header": {
+        "stamp": {
+          "sec": 107022,
+          "nanosec": 988915016
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "left_TCP",
+      "transform": {
+        "translation": {
+          "x": -0.003952277824282646,
+          "y": -0.28027141094207764,
+          "z": 0.8275979161262512
+        },
+        "rotation": {
+          "x": -4.116678610444069e-06,
+          "y": 0.940708577632904,
+          "z": 0.33921581506729126,
+          "w": -1.3986136764287949e-06
+        }
+      }
+    },
+    "world->right_TCP": {
+      "header": {
+        "stamp": {
+          "sec": 107022,
+          "nanosec": 988915016
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "right_TCP",
+      "transform": {
+        "translation": {
+          "x": 0.22812987864017487,
+          "y": -0.2802693545818329,
+          "z": 0.8276025652885437
+        },
+        "rotation": {
+          "x": -4.138215444982052e-06,
+          "y": 0.9407050013542175,
+          "z": 0.3392256796360016,
+          "w": -1.432141289114952e-06
+        }
+      }
+    },
+    "world->base_link": {
+      "header": {
+        "stamp": {
+          "sec": 1791277811,
+          "nanosec": 553726411
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "base_link",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_camera_link->zed_camera_center": {
+      "header": {
+        "stamp": {
+          "sec": 1791279525,
+          "nanosec": 554033011
+        },
+        "frame_id": "zed_camera_link"
+      },
+      "child_frame_id": "zed_camera_center",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.015
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_camera_center->zed_left_camera_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1791282276,
+          "nanosec": 28815773
+        },
+        "frame_id": "zed_camera_center"
+      },
+      "child_frame_id": "zed_left_camera_frame",
+      "transform": {
+        "translation": {
+          "x": -0.01,
+          "y": 0.059856995940208435,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_left_camera_frame->zed_left_camera_frame_optical": {
+      "header": {
+        "stamp": {
+          "sec": 1791279525,
+          "nanosec": 554033011
+        },
+        "frame_id": "zed_left_camera_frame"
+      },
+      "child_frame_id": "zed_left_camera_frame_optical",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.5,
+          "y": -0.4999999999999999,
+          "z": 0.5,
+          "w": -0.5000000000000001
+        }
+      }
+    },
+    "zed_camera_center->zed_right_camera_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1791282276,
+          "nanosec": 28815773
+        },
+        "frame_id": "zed_camera_center"
+      },
+      "child_frame_id": "zed_right_camera_frame",
+      "transform": {
+        "translation": {
+          "x": -0.01,
+          "y": -0.059856995940208435,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_right_camera_frame->zed_right_camera_frame_optical": {
+      "header": {
+        "stamp": {
+          "sec": 1791279525,
+          "nanosec": 554033011
+        },
+        "frame_id": "zed_right_camera_frame"
+      },
+      "child_frame_id": "zed_right_camera_frame_optical",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.5,
+          "y": -0.4999999999999999,
+          "z": 0.5,
+          "w": -0.5000000000000001
+        }
+      }
+    },
+    "odom->zed_camera_link": {
+      "header": {
+        "stamp": {
+          "sec": 1791282276,
+          "nanosec": 28815773
+        },
+        "frame_id": "odom"
+      },
+      "child_frame_id": "zed_camera_link",
+      "transform": {
+        "translation": {
+          "x": 0.0023803026337275435,
+          "y": 0.003213816438117358,
+          "z": 8.010582948720155e-05
+        },
+        "rotation": {
+          "x": 0.0008334185653393583,
+          "y": 0.0002498644733025548,
+          "z": -0.0005645356360988603,
+          "w": 0.9999994621401942
+        }
+      }
+    },
+    "map->odom": {
+      "header": {
+        "stamp": {
+          "sec": 1791282276,
+          "nanosec": 28815773
+        },
+        "frame_id": "map"
+      },
+      "child_frame_id": "odom",
+      "transform": {
+        "translation": {
+          "x": -2.1814249744181327e-05,
+          "y": -1.1554749935306988e-05,
+          "z": 1.6269236735537602e-05
+        },
+        "rotation": {
+          "x": 0.0043231835476400145,
+          "y": 0.7057159919640128,
+          "z": -0.0030926638254784307,
+          "w": 0.7084749001909939
+        }
+      }
+    },
+    "base_link->link_1": {
+      "header": {
+        "stamp": {
+          "sec": 1791282274,
+          "nanosec": 929413652
+        },
+        "frame_id": "base_link"
+      },
+      "child_frame_id": "link_1",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.156
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.9997518822882686,
+          "w": 0.0222749604054397
+        }
+      }
+    },
+    "link_1->link_2": {
+      "header": {
+        "stamp": {
+          "sec": 1791282274,
+          "nanosec": 929413652
+        },
+        "frame_id": "link_1"
+      },
+      "child_frame_id": "link_2",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.4954032171071826,
+          "y": 0.504655812491743,
+          "z": 0.5046539074373912,
+          "w": -0.4951995528131315
+        }
+      }
+    },
+    "link_2->link_3": {
+      "header": {
+        "stamp": {
+          "sec": 1791282274,
+          "nanosec": 929413652
+        },
+        "frame_id": "link_2"
+      },
+      "child_frame_id": "link_3",
+      "transform": {
+        "translation": {
+          "x": 0.409,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.41473983434493455,
+          "w": 0.909940036380165
+        }
+      }
+    },
+    "link_3->link_4": {
+      "header": {
+        "stamp": {
+          "sec": 1791282274,
+          "nanosec": 929413652
+        },
+        "frame_id": "link_3"
+      },
+      "child_frame_id": "link_4",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.367,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.7071362670204232,
+          "y": -0.00775477054904595,
+          "z": 0.007753191270896248,
+          "w": 0.7069922569754702
+        }
+      }
+    },
+    "link_4->link_5": {
+      "header": {
+        "stamp": {
+          "sec": 1791282274,
+          "nanosec": 929413652
+        },
+        "frame_id": "link_4"
+      },
+      "child_frame_id": "link_5",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.387740710656565,
+          "y": 0.5914042423768953,
+          "z": 0.5912838014442174,
+          "w": -0.3876617463044649
+        }
+      }
+    },
+    "link_5->link_6": {
+      "header": {
+        "stamp": {
+          "sec": 1791282274,
+          "nanosec": 929413652
+        },
+        "frame_id": "link_5"
+      },
+      "child_frame_id": "link_6",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.124,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.7071182246448687,
+          "y": -0.009254889353013912,
+          "z": 0.00925300457196969,
+          "w": 0.7069742182742901
+        }
+      }
+    },
+    "L_Index_Tip_1->L_Index_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Index_Tip_1"
+      },
+      "child_frame_id": "L_Index_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Midle_Tip_1->L_Middle_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Midle_Tip_1"
+      },
+      "child_frame_id": "L_Middle_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Pinky_Tip_1->L_Pinky_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Pinky_Tip_1"
+      },
+      "child_frame_id": "L_Pinky_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Ring_Tip_1->L_Ring_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Ring_Tip_1"
+      },
+      "child_frame_id": "L_Ring_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Middle_1->L_Thumb_Tip_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Middle_1"
+      },
+      "child_frame_id": "L_Thumb_Tip_1",
+      "transform": {
+        "translation": {
+          "x": 0.031506,
+          "y": 0.000124,
+          "z": 0.024645
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Knuckle_1->L_Thumb_Middle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Knuckle_1"
+      },
+      "child_frame_id": "L_Thumb_Middle_1",
+      "transform": {
+        "translation": {
+          "x": 0.046855,
+          "y": 0.010808,
+          "z": 0.021295
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Dist_KC_1->L_Thumb_Knuckle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Dist_KC_1"
+      },
+      "child_frame_id": "L_Thumb_Knuckle_1",
+      "transform": {
+        "translation": {
+          "x": 0.005242,
+          "y": -0.0081,
+          "z": 0.011134
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Prox_KC_1->L_Thumb_Dist_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Prox_KC_1"
+      },
+      "child_frame_id": "L_Thumb_Dist_KC_1",
+      "transform": {
+        "translation": {
+          "x": -0.007225,
+          "y": 0.005798,
+          "z": 0.00515
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_middle_bulk->L_Thumb_Prox_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_middle_bulk"
+      },
+      "child_frame_id": "L_Thumb_Prox_KC_1",
+      "transform": {
+        "translation": {
+          "x": 0.028048,
+          "y": 0.005551,
+          "z": 0.010472
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Index_Tip_1->R_Index_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Index_Tip_1"
+      },
+      "child_frame_id": "R_Index_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Midle_Tip_1->R_Middle_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Midle_Tip_1"
+      },
+      "child_frame_id": "R_Middle_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Pinky_Tip_1->R_Pinky_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Pinky_Tip_1"
+      },
+      "child_frame_id": "R_Pinky_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Ring_Tip_1->R_Ring_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Ring_Tip_1"
+      },
+      "child_frame_id": "R_Ring_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Middle_1->Thumb_Tip_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Middle_1"
+      },
+      "child_frame_id": "Thumb_Tip_1",
+      "transform": {
+        "translation": {
+          "x": 0.031506,
+          "y": -0.000124,
+          "z": 0.024645
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Knuckle_1->Thumb_Middle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Knuckle_1"
+      },
+      "child_frame_id": "Thumb_Middle_1",
+      "transform": {
+        "translation": {
+          "x": 0.046855,
+          "y": -0.010808,
+          "z": 0.021295
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Dist_KC_1->Thumb_Knuckle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Dist_KC_1"
+      },
+      "child_frame_id": "Thumb_Knuckle_1",
+      "transform": {
+        "translation": {
+          "x": 0.005242,
+          "y": 0.0081,
+          "z": 0.011134
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Prox_KC_1->Thumb_Dist_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Prox_KC_1"
+      },
+      "child_frame_id": "Thumb_Dist_KC_1",
+      "transform": {
+        "translation": {
+          "x": -0.007225,
+          "y": -0.005798,
+          "z": 0.00515
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_middle_bulk->Thumb_Prox_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_middle_bulk"
+      },
+      "child_frame_id": "Thumb_Prox_KC_1",
+      "transform": {
+        "translation": {
+          "x": 0.026917,
+          "y": -0.00751,
+          "z": 0.012735
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_elbow_roll->arm_left_mount": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_elbow_roll"
+      },
+      "child_frame_id": "arm_left_mount",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.012
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_mount->arm_left_forearm": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_mount"
+      },
+      "child_frame_id": "arm_left_forearm",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_middle_bulk->arm_left_hand_cover": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_middle_bulk"
+      },
+      "child_frame_id": "arm_left_hand_cover",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.012,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_index_bulk->arm_left_middle_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_index_bulk"
+      },
+      "child_frame_id": "arm_left_middle_bulk",
+      "transform": {
+        "translation": {
+          "x": -4e-06,
+          "y": -0.006,
+          "z": -0.000452
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_ring_bulk->arm_left_pinky_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_ring_bulk"
+      },
+      "child_frame_id": "arm_left_pinky_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.006738,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_middle_bulk->arm_left_ring_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_middle_bulk"
+      },
+      "child_frame_id": "arm_left_ring_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.029,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_elbow_roll->arm_right_mount": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_elbow_roll"
+      },
+      "child_frame_id": "arm_right_mount",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.012
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_mount->arm_right_forearm": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_mount"
+      },
+      "child_frame_id": "arm_right_forearm",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_middle_bulk->arm_right_hand_cover": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_middle_bulk"
+      },
+      "child_frame_id": "arm_right_hand_cover",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.012,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_index_bulk->arm_right_middle_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_index_bulk"
+      },
+      "child_frame_id": "arm_right_middle_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.006,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_ring_bulk->arm_right_pinky_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_ring_bulk"
+      },
+      "child_frame_id": "arm_right_pinky_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.006043,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_middle_bulk->arm_right_ring_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_middle_bulk"
+      },
+      "child_frame_id": "arm_right_ring_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.029,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "base->imu_2": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "base"
+      },
+      "child_frame_id": "imu_2",
+      "transform": {
+        "translation": {
+          "x": 0.061722,
+          "y": -5.97549e-17,
+          "z": 0.68
+        },
+        "rotation": {
+          "x": -3.061614999999659e-17,
+          "y": 5.66215e-15,
+          "z": -6.030799999999998e-16,
+          "w": 1.0
+        }
+      }
+    },
+    "imu_2->imu": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "imu_2"
+      },
+      "child_frame_id": "imu",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -6.33816e-19,
+          "z": 0.005
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": -4.772455e-32,
+          "w": 1.0
+        }
+      }
+    },
+    "world->base": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "base",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    }
+  },
+  "robot_descriptions": [
+    "<?xml version=\"1.0\" ?> <!-- =================================================================================== --> <!-- |    This document was autogenerated by xacro from /home/ubuntu/robot_ws/install/dsr_description2/share/dsr_description2/xacro/a0509.urdf.xacro | --> <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | --> <!-- =================================================================================== --> <robot name=\"a0509\"> <material name=\"black\"> <color rgba=\"0.0 0.0 0.0 1.0\"/> </material> <material name=\"white\"> <color rgba=\"1.0 1.0 1.0 1.0\"/> </material> <material name=\"orange\"> <color rgba=\"1.0 0.4 0.0 1.0\"/> </material> <material name=\"dr_gray\"> <color rgba=\"0.490 0.490 0.486 1.0\"/> </material> <material name=\"dr_white\"> <color rgba=\"0.941 0.941 0.941 1.0\"/> </material> <material name=\"dr_blue\"> <color rgba=\"0 0 0.15 1\"/> </material> <link name=\"base_link\"> <inertial> <mass value=\"2.198\"/> <origin xyz=\"-1e-06   -0.001096    0.058957\"/> <inertia ixx=\"0.010511\" ixy=\"4.9786e-06\" ixz=\"7.1839e-06\" iyy=\"0.012033\" iyz=\"-2.3529e-05\" izz=\"0.012481\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_0_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_0_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- joint 1 --> <joint name=\"joint_1\" type=\"revolute\"> <parent link=\"base_link\"/> <child link=\"link_1\"/> <origin rpy=\"0 0 0\" xyz=\"0 0 0.1560\"/> <axis xyz=\"0 0 1\"/> <limit effort=\"194\" lower=\"-6.2832\" upper=\"6.2832\" velocity=\"3.1416\"/> <dynamics friction=\"0\"/> </joint> <link name=\"link_1\"> <inertial> <mass value=\"3.715\"/> <origin xyz=\"-6.9e-05    0.024423   -0.007375\"/> <inertia ixx=\"0.01899\" ixy=\"7.8574e-07\" ixz=\"1.865e-05\" iyy=\"0.013731\" iyz=\"-0.00072828\" izz=\"0.01686\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_1_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_1_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_1_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_1_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_1_2.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_1_2.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- joint2 --> <joint name=\"joint_2\" type=\"revolute\"> <parent link=\"link_1\"/> <child link=\"link_2\"/> <origin rpy=\"0 -1.571 -1.571\" xyz=\"0 0 0\"/> <axis xyz=\"0 0 1\"/> <limit effort=\"194\" lower=\"-6.2832\" upper=\"6.2832\" velocity=\"3.1416\"/> <dynamics friction=\"0\"/> </joint> <link name=\"link_2\"> <inertial> <mass value=\"6.837\"/> <origin xyz=\"0.20449 -1.2521e-17     0.13271\"/> <inertia ixx=\"0.019399\" ixy=\"0.00010317\" ixz=\"4.2985e-06\" iyy=\"0.25627\" iyz=\"5.1674e-06\" izz=\"0.25442\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_2_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_2_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_2_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_2_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_2_2.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_2_2.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- joint3 --> <joint name=\"joint_3\" type=\"revolute\"> <parent link=\"link_2\"/> <child link=\"link_3\"/> <origin rpy=\"0 0 1.571\" xyz=\"0.409 0 0\"/> <axis xyz=\"0 0 1\"/> <limit effort=\"163\" lower=\"-2.7925\" upper=\"2.7925\" velocity=\"3.1416\"/> <dynamics friction=\"0\"/> </joint> <link name=\"link_3\"> <inertial> <mass value=\"2.769\"/> <origin xyz=\"7.1e-05   -0.005123    0.033009\"/> <inertia ixx=\"0.012526\" ixy=\"-7.1869e-06\" ixz=\"1.3345e-05\" iyy=\"0.013868\" iyz=\"-0.00047287\" izz=\"0.0088186\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_3_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_3_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_3_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_3_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- joint4 --> <joint name=\"joint_4\" type=\"revolute\"> <parent link=\"link_3\"/> <child link=\"link_4\"/> <origin rpy=\"1.571 0 0\" xyz=\"0 -0.367 0\"/> <axis xyz=\"0 0 1\"/> <limit effort=\"50\" lower=\"-6.2832\" upper=\"6.2832\" velocity=\"6.2832\"/> <dynamics friction=\"0\"/> </joint> <link name=\"link_4\"> <inertial> <mass value=\"2.679\"/> <origin xyz=\"-8.6e-05    0.086348   -0.086031\"/> <inertia ixx=\"0.056068\" ixy=\"2.2109e-05\" ixz=\"1.4522e-05\" iyy=\"0.047122\" iyz=\"-0.014997\" izz=\"0.013329\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_4_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_4_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_4_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_4_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- joint5 --> <joint name=\"joint_5\" type=\"revolute\"> <parent link=\"link_4\"/> <child link=\"link_5\"/> <origin rpy=\"-1.571 0 0\" xyz=\"0 0 0\"/> <axis xyz=\"0 0 1\"/> <limit effort=\"50\" lower=\"-6.2832\" upper=\"6.2832\" velocity=\"6.2832\"/> <dynamics friction=\"0\"/> </joint> <link name=\"link_5\"> <inertial> <mass value=\"2.051\"/> <origin xyz=\"9.1e-05   -0.006457    0.015434\"/> <inertia ixx=\"0.0090788\" ixy=\"-5.3997e-06\" ixz=\"8.3955e-06\" iyy=\"0.0084721\" iyz=\"-0.0001816\" izz=\"0.010453\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_5_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_5_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_5_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_5_1.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- joint6 --> <joint name=\"joint_6\" type=\"revolute\"> <parent link=\"link_5\"/> <child link=\"link_6\"/> <origin rpy=\"1.571 0 0\" xyz=\"0 -0.124 0\"/> <axis xyz=\"0 0 1\"/> <limit effort=\"50\" lower=\"-6.2832\" upper=\"6.2832\" velocity=\"6.2832\"/> <dynamics friction=\"0\"/> </joint> <link name=\"link_6\"> <inertial> <mass value=\"0.773\"/> <origin xyz=\"-2.2e-05      -7e-06   -0.051746\"/> <inertia ixx=\"0.0087483\" ixy=\"7.9428e-06\" ixz=\"1.7034e-06\" iyy=\"0.0078566\" iyz=\"9.6857e-06\" izz=\"0.0044452\"/> </inertial> <collision> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_collision/A0509_6_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </collision> <visual> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <geometry> <mesh filename=\"package://dsr_description2/meshes/a0509_white/A0509_6_0.dae\" scale=\"0.001 0.001 0.001\"/> </geometry> </visual> </link> <!-- Transmission 1 --> <transmission name=\"tran1\"> <type>transmission_interface/SimpleTransmission</type> <joint name=\"joint1\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> </joint> <actuator name=\"motor1\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> <mechanicalReduction>1</mechanicalReduction> </actuator> </transmission> <!-- Transmission 2 --> <transmission name=\"tran2\"> <type>transmission_interface/SimpleTransmission</type> <joint name=\"joint2\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> </joint> <actuator name=\"motor2\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> <mechanicalReduction>1</mechanicalReduction> </actuator> </transmission> <!-- Transmission 3 --> <transmission name=\"tran3\"> <type>transmission_interface/SimpleTransmission</type> <joint name=\"joint3\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> </joint> <actuator name=\"motor3\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> <mechanicalReduction>1</mechanicalReduction> </actuator> </transmission> <!-- Transmission 4 --> <transmission name=\"tran4\"> <type>transmission_interface/SimpleTransmission</type> <joint name=\"joint4\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> </joint> <actuator name=\"motor4\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> <mechanicalReduction>1</mechanicalReduction> </actuator> </transmission> <!-- Transmission 5 --> <transmission name=\"tran5\"> <type>transmission_interface/SimpleTransmission</type> <joint name=\"joint5\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> </joint> <actuator name=\"motor5\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> <mechanicalReduction>1</mechanicalReduction> </actuator> </transmission> <!-- Transmission 6 --> <transmission name=\"tran6\"> <type>transmission_interface/SimpleTransmission</type> <joint name=\"joint6\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> </joint> <actuator name=\"motor6\"> <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> <mechanicalReduction>1</mechanicalReduction> </actuator> </transmission> <!-- ros_control plugin --> <gazebo> <plugin filename=\"ign_ros2_control-system\" name=\"ign_ros2_control::IgnitionROS2ControlPlugin\"> <ros> <namespace></namespace> </ros> <parameters>/home/ubuntu/robot_ws/install/dsr_controller2/share/dsr_controller2/config/dsr_controller2_gz.yaml</parameters> </plugin> </gazebo> <!-- Base --> <gazebo reference=\"base_0\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- Link1 --> <gazebo reference=\"link1\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- Link2 --> <gazebo reference=\"link2\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- Link3 --> <gazebo reference=\"link3\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- Link4 --> <gazebo reference=\"link4\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- Link5 --> <gazebo reference=\"link5\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- Link6 --> <gazebo reference=\"link6\"> <kp>100000.0</kp> <kd>100.0</kd> <mu1>30.0</mu1> <mu2>30.0</mu2> <maxVel>1.0</maxVel> <minDepth>0.001</minDepth> </gazebo> <!-- World --> <link name=\"world\"/> <joint name=\"world_fixed\" type=\"fixed\"> <origin rpy=\"0 0 0\" xyz=\"0 0 0\"/> <parent link=\"world\"/> <child link=\"base_link\"/> </joint> <ros2_control name=\"a0509\" type=\"system\"> <hardware> <plugin>dsr_hardware2/DRHWInterface</plugin> <param name=\"host\">192.168.0.110</param> <param name=\"rt_host\">192.168.137.50</param> <param name=\"port\">12345</param> <param name=\"mode\">real</param> <param name=\"model\">a0509</param> <param name=\"update_rate\">100</param> </hardware> <joint name=\"joint_1\"> <command_interface name=\"position\"> <param name=\"min\">{-2*pi}</param> <param name=\"max\">{2*pi}</param> </command_interface> <command_interface name=\"velocity\"> <param name=\"min\">-3.15</param> <param name=\"max\">3.15</param> </command_interface> <state_interface name=\"position\"> <param name=\"initial_value\">0.0</param> </state_interface> <state_interface name=\"velocity\"/> </joint> <joint name=\"joint_2\"> <command_interface name=\"position\"> <param name=\"min\">{-2*pi}</param> <param name=\"max\">{2*pi}</param> </command_interface> <command_interface name=\"velocity\"> <param name=\"min\">-3.15</param> <param name=\"max\">3.15</param> </command_interface> <state_interface name=\"position\"> <param name=\"initial_value\">0.0</param> </state_interface> <state_interface name=\"velocity\"/> </joint> <joint name=\"joint_3\"> <command_interface name=\"position\"> <param name=\"min\">{-pi}</param> <param name=\"max\">{pi}</param> </command_interface> <command_interface name=\"velocity\"> <param name=\"min\">-3.15</param> <param name=\"max\">3.15</param> </command_interface> <state_interface name=\"position\"> <param name=\"initial_value\">0.0</param> </state_interface> <state_interface name=\"velocity\"/> </joint> <joint name=\"joint_4\"> <command_interface name=\"position\"> <param name=\"min\">{-2*pi}</param> <param name=\"max\">{2*pi}</param> </command_interface> <command_interface name=\"velocity\"> <param name=\"min\">-3.2</param> <param name=\"max\">3.2</param> </command_interface> <state_interface name=\"position\"> <param name=\"initial_value\">0.0</param> </state_interface> <state_interface name=\"velocity\"/> </joint> <joint name=\"joint_5\"> <command_interface name=\"position\"> <param name=\"min\">{-2*pi}</param> <param name=\"max\">{2*pi}</param> </command_interface> <command_interface name=\"velocity\"> <param name=\"min\">-3.2</param> <param name=\"max\">3.2</param> </command_interface> <state_interface name=\"position\"> <param name=\"initial_value\">0.0</param> </state_interface> <state_interface name=\"velocity\"/> </joint> <joint name=\"joint_6\"> <command_interface name=\"position\"> <param name=\"min\">{-2*pi}</param> <param name=\"max\">{2*pi}</param> </command_interface> <command_interface name=\"velocity\"> <param name=\"min\">-3.2</param> <param name=\"max\">3.2</param> </command_interface> <state_interface name=\"position\"> <param name=\"initial_value\">0.0</param> </state_interface> <state_interface name=\"velocity\"/> </joint> </ros2_control> </robot>"
+  ],
+  "reason": "TF and URDF cannot establish currently active controller TCP; historical values not reused."
+}

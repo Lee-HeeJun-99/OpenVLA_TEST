@@ -1,0 +1,10 @@
+{
+  "active_tcp_name": "UNKNOWN",
+  "active_tool_name": "UNKNOWN",
+  "requests": 0,
+  "service_presence": {
+    "/dsr01/tcp/get_current_tcp": true,
+    "/dsr01/tool/get_current_tool": true
+  },
+  "reason": "No getter with proven live stability; graph presence is not success evidence."
+}

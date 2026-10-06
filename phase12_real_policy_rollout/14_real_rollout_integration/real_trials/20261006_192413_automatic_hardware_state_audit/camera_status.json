@@ -1,0 +1,26 @@
+{
+  "count": 741,
+  "first_receive_delay": 0.005932467989623547,
+  "receive_rate": 37.0336337219749,
+  "latest_age": 0.0203215847723186,
+  "max_source_gap": 0.133363,
+  "max_receive_gap": 0.13450287701562047,
+  "source_duplicate": 0,
+  "source_regression": 0,
+  "gap_ge_100ms": 6,
+  "invalid_count": 0,
+  "clock_domains": {
+    "source": "ROS_HEADER",
+    "receive": "HOST_MONOTONIC"
+  },
+  "latest_metadata": {
+    "receive": 2170838.568896612,
+    "source_ns": 1791282276028815773,
+    "width": 1280,
+    "height": 720,
+    "encoding": "bgra8",
+    "hash": "e9024fe7057d634abcdbad8eab24dd5aa88a29b73a3b072d5291abba959dab23"
+  },
+  "status": "PASS",
+  "model_selected_frame_age_validated": false
+}
