@@ -1,0 +1,128 @@
+{
+  "classification": "MIXED",
+  "dominant_finding": "MODEL_EARLY_CLOSE_DOMINANT_WITH_RUNTIME_MAPPING_DEFECTS",
+  "actions": 45,
+  "chunks": 9,
+  "first_close_candidate": {
+    "inference_frame": 0,
+    "chunk_index": 2,
+    "expanded_target_frame": 2,
+    "expected_execution_time_s": 0.4,
+    "closedness": 0.84375
+  },
+  "first_mapped_grasp_close_frame": 27,
+  "first_inference_grid_grasp_close_frame": 30,
+  "reference_episode4_close_command_step": 26,
+  "reference_episode4_closed_state_step": 27,
+  "model_lead_vs_reference_command_frames": 24,
+  "model_lead_vs_reference_command_s": 4.800000000000001,
+  "model_lead_vs_grasp_phase_frames": 25,
+  "model_lead_vs_grasp_phase_s": 5.0,
+  "phase_mapping": {
+    "changed_actions": 10,
+    "total": 45,
+    "premature_count_coarse_inference_phase": 22,
+    "premature_count_target_step_phase": 22
+  },
+  "legacy_runner_timing_bug": {
+    "formula": "frame_id*1.0 + chunk_index*0.2",
+    "correct_formula": "frame_id*0.2 + chunk_index*0.2",
+    "max_time_error_s": 32.0
+  },
+  "reference_close_distribution": {
+    "episodes": 10,
+    "command_steps": [
+      27,
+      28,
+      25,
+      26,
+      24,
+      25,
+      29,
+      26,
+      26,
+      26
+    ],
+    "median_command_step": 26.0
+  },
+  "k_index": [
+    {
+      "chunk_index": 0,
+      "count": 9,
+      "gripper_closedness_mean": 0.5951605902777778,
+      "translation_norm_mean_m": 0.002383039863643255,
+      "translation_velocity_mean_mm_s": 11.915199318216274,
+      "translation_acceleration_mean_mm_s2": 188.88433397592968,
+      "translation_acceleration_max_mm_s2": 296.62450889402123,
+      "accepted": 6,
+      "rejected": 3,
+      "reject_rate": 0.3333333333333333,
+      "translation_step_blockers": 1,
+      "acceleration_blockers": 0,
+      "premature_close_blockers": 2
+    },
+    {
+      "chunk_index": 1,
+      "count": 9,
+      "gripper_closedness_mean": 0.7163628472222222,
+      "translation_norm_mean_m": 0.003565569216870414,
+      "translation_velocity_mean_mm_s": 17.82784608435207,
+      "translation_acceleration_mean_mm_s2": 69.278395367735,
+      "translation_acceleration_max_mm_s2": 164.73610183027753,
+      "accepted": 1,
+      "rejected": 8,
+      "reject_rate": 0.8888888888888888,
+      "translation_step_blockers": 4,
+      "acceleration_blockers": 8,
+      "premature_close_blockers": 3
+    },
+    {
+      "chunk_index": 2,
+      "count": 9,
+      "gripper_closedness_mean": 0.79296875,
+      "translation_norm_mean_m": 0.00588110820740494,
+      "translation_velocity_mean_mm_s": 29.405541037024697,
+      "translation_acceleration_mean_mm_s2": 89.35022600751593,
+      "translation_acceleration_max_mm_s2": 169.7760381660353,
+      "accepted": 2,
+      "rejected": 7,
+      "reject_rate": 0.7777777777777778,
+      "translation_step_blockers": 4,
+      "acceleration_blockers": 3,
+      "premature_close_blockers": 5
+    },
+    {
+      "chunk_index": 3,
+      "count": 9,
+      "gripper_closedness_mean": 0.859375,
+      "translation_norm_mean_m": 0.007222968395061787,
+      "translation_velocity_mean_mm_s": 36.114841975308934,
+      "translation_acceleration_mean_mm_s2": 42.013433525794184,
+      "translation_acceleration_max_mm_s2": 127.5959427419632,
+      "accepted": 0,
+      "rejected": 9,
+      "reject_rate": 1.0,
+      "translation_step_blockers": 4,
+      "acceleration_blockers": 5,
+      "premature_close_blockers": 6
+    },
+    {
+      "chunk_index": 4,
+      "count": 9,
+      "gripper_closedness_mean": 0.9079861111111112,
+      "translation_norm_mean_m": 0.00734049358062842,
+      "translation_velocity_mean_mm_s": 36.7024679031421,
+      "translation_acceleration_mean_mm_s2": 17.79940994378414,
+      "translation_acceleration_max_mm_s2": 24.71013296477465,
+      "accepted": 1,
+      "rejected": 8,
+      "reject_rate": 0.8888888888888888,
+      "translation_step_blockers": 6,
+      "acceleration_blockers": 3,
+      "premature_close_blockers": 6
+    }
+  ],
+  "production_thresholds_changed": false,
+  "real_robot_commands": 0,
+  "training_dataset_note": "Checkpoint training corpus was not present as step-level episodes; 10 stored scripted reference trajectories are reported separately and are not claimed as training samples."
+}

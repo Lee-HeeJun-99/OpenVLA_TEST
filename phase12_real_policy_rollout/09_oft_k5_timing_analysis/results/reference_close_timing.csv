@@ -1,0 +1,11 @@
+episode_id,steps,reference_close_command_step,reference_closed_state_step
+episode_000001,46,27,28
+episode_000002,47,28,29
+episode_000003,44,25,26
+episode_000004,45,26,27
+episode_000005,43,24,25
+episode_000006,44,25,26
+episode_000007,48,29,30
+episode_000008,45,26,27
+episode_000009,45,26,27
+episode_000010,45,26,27
