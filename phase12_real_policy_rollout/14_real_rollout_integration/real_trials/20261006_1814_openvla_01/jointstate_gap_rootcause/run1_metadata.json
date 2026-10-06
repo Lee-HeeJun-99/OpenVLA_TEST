@@ -1,0 +1,14 @@
+{
+  "run": "run1",
+  "start_wall": 1791278980.0716312,
+  "end_wall": 1791279100.0797095,
+  "duration_s": 120.30337769305333,
+  "counts": {
+    "best_effort": 5588,
+    "reliable": 5587
+  },
+  "bag_returncode": 0,
+  "external_command_detected": false,
+  "robot_command_calls_by_measurement": 0,
+  "clock_domains": "source ROS; subscriber receive monotonic/wall; bag receive ROS/system (NOT monotonic)"
+}

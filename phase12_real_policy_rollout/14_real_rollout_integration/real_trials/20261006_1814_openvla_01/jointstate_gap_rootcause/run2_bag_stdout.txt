@@ -1,0 +1,11 @@
+stdin is not a terminal device. Keyboard handling disabled.[INFO] [1791279131.092683131] [rosbag2_recorder]: Press SPACE for pausing/resuming
+[INFO] [1791279131.094325730] [rosbag2_storage]: Opened database '/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_1814_openvla_01/jointstate_gap_rootcause/run2_rosbag/run2_rosbag_0.db3' for READ_WRITE.
+[INFO] [1791279131.094999201] [rosbag2_recorder]: Listening for topics...
+[INFO] [1791279131.095011699] [rosbag2_recorder]: Event publisher thread: Starting
+[INFO] [1791279131.095171124] [rosbag2_recorder]: Recording...
+[INFO] [1791279141.425898312] [rosbag2_recorder]: Overriding subscription profile for /dsr01/joint_states
+[INFO] [1791279141.430474664] [rosbag2_recorder]: Subscribed to topic '/dsr01/joint_states'
+[INFO] [1791279141.430498451] [rosbag2_recorder]: All requested topics are subscribed. Stopping discovery...
+[INFO] [1791279250.744096325] [rosbag2_cpp]: Writing remaining messages from cache to the bag. It may take a while
+[INFO] [1791279250.744706504] [rosbag2_recorder]: Event publisher thread: Exiting
+[INFO] [1791279250.744748956] [rosbag2_recorder]: Recording stopped
