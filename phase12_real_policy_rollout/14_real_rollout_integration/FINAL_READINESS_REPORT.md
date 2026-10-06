@@ -1,5 +1,20 @@
 # Final readiness report
 
+## Follow-up implementation — 2026-10-06
+
+Added independent `hardware_watchdog.py`, interruptible gripper pulse cancellation with mandatory abort value, `task_phase.py` geometry-driven sequence detector, `oft_action_scheduler.py` single worker/no-overlap target cadence, strict `model_health.py`, and actual generated-service DDS tests. Live dry-run CLI now accepts `--live`; watchdog/scheduler/phase modules are wired into that path. Full-task geometry defaults null and must be approved. Physical grasp remains UNVERIFIED even when sequence completes.
+
+Latest tests: 100 core + 4 readiness + 19 integration + 3 isolated DDS = **126 PASS / 0 FAIL / 0 SKIP**. DDS test used ROS_DOMAIN_ID=231 and ROS_LOCALHOST_ONLY=1, fake nodes only, no robot driver launch. Actual service discovery, generated request serialization, response parsing, delayed-response timeout, success=false and server disappearance passed. First sandbox run emitted transport permission errors; the permitted localhost-only run passed without those errors. Fake DDS requests are not physical commands.
+
+Remaining software blockers:
+
+- Continuous protective-stop/servo/robot-state source is not integrated; watchdog currently consumes fresh operator evidence for those facts. That is not continuous hardware feedback.
+- Strict preprocessing validator exists and is tested, but existing model health payloads do not expose all required normalization/dtype/input fields and live server integration is not complete.
+- The new command worker/watchdog concurrent abort path still needs end-to-end interruption and logger concurrency verification, including unresolved in-flight commands. Component tests alone do not establish that property.
+- Live dry-run was not executed; recorded delegate does not test all newly wired background modules. Non-dry guard remains intentionally active.
+
+**Verdict remains PARTIAL_REAL_COMMAND_INTEGRATION_COMMAND_DISABLED. HARDWARE_VALIDATION_ONLY_REMAINING is not supported.** No production threshold changed. All physical command counts remain zero.
+
 2026-10-06
 
 | Item | Result |

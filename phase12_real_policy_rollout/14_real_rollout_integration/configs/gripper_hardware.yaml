@@ -1,4 +1,6 @@
 polarity_confirmed: false
+abort_value: null
+abort_value_confirmed: false
 gripper_open_output_index: 1
 gripper_closed_output_index: 2
 gripper_open_hardware_value: 1

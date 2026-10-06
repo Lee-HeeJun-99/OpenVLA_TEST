@@ -7,7 +7,7 @@ from integration_metrics import collect
 class MoreContracts(unittest.TestCase):
     def test_gripper_ack_is_not_measurement(self):
         t=FakeRosTransport()
-        cfg=dict(polarity_confirmed=True,gripper_closed_output_index=2,
+        cfg=dict(polarity_confirmed=True,abort_value=0,gripper_closed_output_index=2,
             gripper_closed_hardware_value=1,inactive_hardware_value=0,closed_pulse_count=1,closed_pulse_time_s=0)
         s=RealDoosanCommandSink(lambda:t,Authorization(True,True,True,'MOTION_ENABLED'),gripper_config=cfg)
         self.assertIsNone(s.send_gripper(True)['measured_gripper_state'])

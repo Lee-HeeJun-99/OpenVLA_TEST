@@ -3,6 +3,7 @@ from dataclasses import dataclass, asdict
 import math
 import time
 import uuid
+import threading
 
 SERVICES = {
     'pose': ('/dsr01/motion/move_line','MoveLine'),
@@ -33,6 +34,11 @@ class RealDoosanCommandSink:
         self.events=[]
         self.aborted=False
         self.last_gripper=None
+        self.gripper_cancel=threading.Event()
+        self.gripper_state='GRIPPER_IDLE'
+
+    def cancel_gripper(self):
+        self.gripper_cancel.set();self.gripper_state='GRIPPER_ABORTED'
 
     def health_check(self):
         return {'command_capability_enabled':self.transport is not None,
@@ -77,19 +83,26 @@ class RealDoosanCommandSink:
         self.authorization.require()
         cfg=self.gripper_config
         if cfg.get('polarity_confirmed') is not True:raise PermissionError('gripper_polarity_unconfirmed')
+        if cfg.get('abort_value') not in (0,1):raise PermissionError('gripper_abort_value_unconfirmed')
+        if self.gripper_cancel.is_set():raise PermissionError('gripper_aborted')
         if closed==self.last_gripper:return {'state':'suppressed','command_type':'gripper','reason':'duplicate'}
         prefix='closed' if closed else 'open'
         index=cfg[f'gripper_{prefix}_output_index']
         active=cfg[f'gripper_{prefix}_hardware_value'];inactive=cfg['inactive_hardware_value']
         if index not in range(1,7) or active not in (0,1) or inactive not in (0,1):raise ValueError('invalid_gripper_io')
         events=[]
+        self.gripper_state='GRIPPER_CLOSING' if closed else 'GRIPPER_OPENING'
         for _ in range(cfg[f'{prefix}_pulse_count']):
             on=self._send('gripper',dict(index=index,value=active));events.append(on)
             if on['state']!='completed':return {'state':on['state'],'events':events}
-            time.sleep(cfg[f'{prefix}_pulse_time_s'])
+            if self.gripper_cancel.wait(cfg[f'{prefix}_pulse_time_s']):
+                safe=self._send('gripper',dict(index=index,value=cfg['abort_value']),emergency=True)
+                events.append(safe)
+                return {'state':'aborted','events':events,'measured_gripper_state':None}
             off=self._send('gripper',dict(index=index,value=inactive));events.append(off)
             if off['state']!='completed':return {'state':off['state'],'events':events}
         self.last_gripper=closed
+        self.gripper_state='GRIPPER_HOLDING'
         return {'state':'completed','events':events,'measured_gripper_state':None}
 
     def hold(self):return self._send('hold',{'stop_mode':3},emergency=True)
@@ -98,6 +111,7 @@ class RealDoosanCommandSink:
 class AbortBoundary:
     def __init__(self,sink):self.sink=sink;self.state='RUNNING';self.reason=None;self.receipt=None;self.transitions=['RUNNING']
     def abort(self,reason):
+        self.sink.cancel_gripper()
         self.reason=reason;self.state='HOLD_REQUESTED'
         self.transitions.append(self.state)
         self.receipt=self.sink.hold()

@@ -98,6 +98,7 @@ def main():
     parser.add_argument('--model',choices=['openvla','oft'],required=True)
     parser.add_argument('--protocol',choices=['minimum_motion','short_horizon','full_task'],required=True)
     parser.add_argument('--dry-run',action='store_true')
+    parser.add_argument('--live',action='store_true',help='subscriber inputs, no recorded replay')
     parser.add_argument('--recorded-input',type=Path)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--preflight-evidence',type=Path)
@@ -106,6 +107,7 @@ def main():
     args=parser.parse_args()
     if args.output.exists():raise FileExistsError('preserve_existing_log')
     if args.recorded_input:
+        if args.live:raise ValueError('live_and_recorded_mutually_exclusive')
         if not args.dry_run:raise PermissionError('recorded_input_never_commands_hardware')
         from rollout_runner import run
         print(json.dumps(run(args.model,args.recorded_input,args.output,initial_open_acknowledged=False,protocol=args.protocol),indent=2))
@@ -146,9 +148,28 @@ def main():
     sink=RealDoosanCommandSink(lambda:RosServiceTransport(obs.node),auth,gripper_config=gripper)
     limit={'minimum_motion':1,'short_horizon':10,'full_task':150}[args.protocol]
     passed=False
+    watchdog=None
+    scheduler=None
     try:
         with FsyncJsonlLogger(args.output) as logger:
             controller=Controller(args.model,args.protocol,sink,logger,dry_run=args.dry_run,initial_open=evidence.get('gripper_initial_confirmed') is True)
+            from hardware_watchdog import HardwareWatchdog
+            from oft_action_scheduler import ActionScheduler
+            from task_phase import TaskPhase
+            phase_machine=None
+            if args.protocol=='full_task':
+                phase_config=yaml.safe_load((ROOT/'configs/task_phase.yaml').read_text())
+                if phase_config['grasp_pose_m'] is None or phase_config['pregrasp_z_m'] is None:
+                    raise PermissionError('approved_task_geometry_required')
+                phase_machine=TaskPhase(phase_config)
+            def watch_snapshot():
+                _,current=obs.snapshot()
+                return {**current,'protective_stop_ok':evidence.get('protective_stop_confirmed') is True,
+                    'servo_mode_ok':current['robot_state_ok'] and evidence.get('servo_confirmed') is True,
+                    'logger_ok':not controller.aborted,'command_ack_ok':not sink.aborted,
+                    'manual_abort_clear':not controller.aborted}
+            watchdog=HardwareWatchdog(watch_snapshot,controller.abort).start()
+            scheduler=ActionScheduler(lambda payload:controller.step(**payload))
             started=time.monotonic();seq=0
             while controller.count<limit and not controller.aborted:
                 image,observation=obs.snapshot()
@@ -163,26 +184,42 @@ def main():
                     _,observation=obs.snapshot()
                     observation.update(getattr(obs,'last_prediction',{}))
                     observation['inference_frame']=seq
-                    controller.step(vector,observation,inference_time=base,chunk_id=f'live-{seq}',chunk_index=k)
+                    if phase_machine:
+                        closed=controller.pipeline.runtime.gripper.state.value=='COMMAND_CLOSED'
+                        phase=phase_machine.update(observation['tcp_m_abc'],command_closed=closed,
+                            safety_ok=not controller.aborted,elapsed=time.monotonic()-started)
+                        if phase=='COMPLETE':break
+                        observation['phase']={'APPROACH':'alignment','DESCEND':'descent_to_grasp',
+                            'GRASP_CLOSE':'grasp_close','LIFT':'lift','COMPLETE':'final_hold','ABORT':'abort'}[phase]
+                    payload=dict(vector=vector,obs=observation,inference_time=base,chunk_id=f'live-{seq}',chunk_index=k)
+                    row=scheduler.dispatch(seq,k,base-seq*.2,payload)
+                    if row['status']=='NO_OVERLAPPING_MOTION':controller.abort('cadence_unresolved_previous_command')
                     if controller.aborted:break
                 seq+=len(actions)
+                if phase_machine and phase_machine.phase=='COMPLETE':break
                 cadence=base+(1. if args.model=='oft' else .2)
                 if time.monotonic()<cadence:time.sleep(cadence-time.monotonic())
                 if time.monotonic()-started>limit*.2:
                     if controller.count<limit:controller.abort('protocol_duration_timeout')
                     break
-            passed=not controller.aborted and controller.count==limit
+            if scheduler.pending:scheduler.pending.result(timeout=sink.ack_timeout+1)
+            passed=not controller.aborted and (phase_machine.phase=='COMPLETE' if phase_machine else controller.count==limit)
     except KeyboardInterrupt:
         if 'controller' in locals():controller.abort('manual_abort')
     except Exception as exc:
         if 'controller' in locals() and not controller.aborted:controller.abort(str(exc))
         raise
     finally:
+        if watchdog:watchdog.close()
+        if scheduler:scheduler.close()
         obs.close()
         if args.session_results:
             from integration_metrics import collect
             save_stage(args.protocol,args.session_results,identity,passed=passed,dry_run=args.dry_run,
                 details={'command_events':sink.events,'protocol_completed':passed,'task_success':None,
-                    'metrics':collect(controller.rows,sink.events) if 'controller' in locals() else {}})
+                    'metrics':collect(controller.rows,sink.events) if 'controller' in locals() else {},
+                    'watchdog_fault':watchdog.fault if watchdog else None,
+                    'dispatch_timeline':scheduler.rows if scheduler else [],
+                    'physical_grasp_success':'UNVERIFIED'})
 
 if __name__=='__main__':main()

@@ -1,5 +1,16 @@
 # Runbook — preparation only, real runner currently blocked
 
+Follow-up validation (offline fake DDS only):
+
+```bash
+source /opt/ros/humble/setup.bash
+source /home/ubuntu/robot_ws/install/setup.bash
+cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration
+ROS_DOMAIN_ID=231 ROS_LOCALHOST_ONLY=1 /usr/bin/python3 tests/dds_fake_integration.py
+```
+
+Use no real driver in test domain231. Live dry-run accepts `--dry-run --live`; non-dry motion is still blocked pending the software items in FINAL_READINESS_REPORT. Do not bypass that guard by modifying approvals.
+
 Do not launch hardware during offline development. The following existing driver command is a future operator procedure, not an instruction executed in this task. Hardware initialization can acquire authority and servo-on even without a Move command.
 
 ## Terminal 1 — future operator-controlled driver

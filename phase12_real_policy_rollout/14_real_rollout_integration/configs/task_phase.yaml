@@ -1,0 +1,8 @@
+# Target geometry must be measured/approved on site, not guessed here.
+grasp_pose_m: null
+pregrasp_z_m: null
+pregrasp_z_tolerance_m: 0.005
+grasp_xy_tolerance_m: 0.005
+grasp_z_tolerance_m: 0.005
+lift_height_threshold_m: 0.05
+max_duration_s: 30
