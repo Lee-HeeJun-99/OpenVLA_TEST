@@ -1,5 +1,45 @@
 # Final readiness report
 
+## Current verdict — 2026-10-06
+
+| Item | Latest result |
+|---|---|
+| Pre-robot software | **COMPLETE within the audited interfaces and offline/fake test scope** |
+| Verdict | **PRE_ROBOT_SOFTWARE_COMPLETE** |
+| Hardware | HARDWARE_VALIDATION_PENDING / HARDWARE_INTERFACE_VERIFICATION_PENDING |
+| GPU models | GPU_RUNTIME_VALIDATION_PENDING |
+| Physical rollout | PHYSICAL_ROLLOUT_NOT_EXECUTED / NOT_AUTHORIZED |
+| Unit/regression/DDS | **137 PASS / 0 FAIL / 0 SKIP** (100 core + 4 readiness + 29 integration + 4 DDS) |
+| Fake-live subprocesses | **13 PASS**: both models + 11 fault scenarios |
+| Stage/intercept subprocess script | **7 PASS**: minimum, both short models, full phase sequence, ACK timeout, success=false, pulse abort |
+| Remaining identified software blockers | **NONE in this pre-robot integration scope** |
+| Physical commands executed | **0** |
+
+### Implemented and actually tested
+
+- State interface and provenance: optional real driver RT mode/state subscribers, generated RobotState parser, authority enum, fresh operator-confirmation fallback, UNKNOWN fail-closed. Repository source findings are in reports/robot_state_source_audit.md. No new synthetic real status or getter polling was introduced.
+- Model health: strict processor normalization/resize/input-size checks against actual checkpoint preprocessor_config.json; versioned live metadata; checkpoint/K/proprio/instruction/crop/dtype enforcement. `verify_live_model_server.py` is prediction-only and refuses fixture predictions as GPU evidence. Actual CUDA loading has **not** been tested here.
+- Process failures: camera/JointState/TCP/RobotState loss, protective stop, servo loss, invalid operation mode, authority loss, model identity mismatch, model disconnect, logger failure. All inhibited commands and failed closed; logger-write failure has a terminal FAIL stage artifact rather than claiming an impossible successful JSONL append.
+- Real generated request intercept: deterministic 0.5 mm base-X minimum command; exactly one pose request, rotation unchanged, no gripper. Short protocols used 10 pose requests each. Full fake sequence APPROACH→DESCEND→GRASP_CLOSE→LIFT→COMPLETE passed with acknowledged command knowledge and physical_success=null.
+- Concurrent delayed DDS request/watchdog/Hold logging passed, with one Hold and no commands accepted after abort. In-flight request is ABORTED_IN_FLIGHT / IN_FLIGHT_STATUS_UNKNOWN, not assumed physically cancelled. Actual physical standstill is not established by fake ACK.
+- OFT target step/frame mapping, actual dispatch spacing, lateness recording and no-overlap are retained. Watchdog abort flushes pending scheduler work. Grasp-close has an ACK barrier: stale remaining chunk actions are explicitly discarded instead of replayed while gripper pulse is pending.
+- Observation Gap IDs/scores are carried through action logs and metric links, including null values. Stage generator writes status/counts/latency/lateness/faults with flush/fsync and never upgrades dry artifacts to physical PASS.
+- Unconditional software blocker removed. Default configs remain disabled. Non-dry requires actual fresh observation/state, stationary preflight, authority, verified model health, matching service types, workspace/stop/gripper confirmations, explicit per-stage approval and previous real PASS. Fake evidence is forbidden for hardware authorization.
+
+### Hardware-only remaining and limits of this verdict
+
+Use HARDWARE_DAY_CHECKLIST.md: actual robot connection, E-stop/protective stop/servo/mode/authority, live TCP/JointState, gripper polarity and abort output, workspace/task geometry, actual GPU health, live prediction-only Shadow, minimum motion, short horizon and full rollout. Dedicated servo-enabled output was not identified; that field is **HARDWARE_SOURCE_NOT_AVAILABLE_IN_CURRENT_SOFTWARE_INTERFACE**, not fabricated measured data. Operator-confirmed values keep their provenance and expire after60 seconds.
+
+This verdict means the implemented software paths passed the listed tests. It is **not** REAL_ROLLOUT_READY, proof of hardware compatibility, a guarantee that hardware validation cannot uncover new software work, or a claim that synchronous MoveLine achieves5 Hz. Actual driver callback serialization may delay Hold while a synchronous service is pending; real stop latency/acknowledgement must be measured before permitting model control. Fake DDS used a reentrant test server and does not prove real driver stop responsiveness. Physical E-stop remains the independent safety boundary.
+
+OFT early-close findings remain unchanged. Model-use review and explicit authorization are still required; software completion does not imply the checkpoint is safe or task-successful. Production thresholds were not changed. No robot/motion/gripper/Home/trajectory/physical Hold/E-stop/real rollout was executed.
+
+### Files and reproducibility
+
+Added: verify_live_model_server.py, HARDWARE_DAY_CHECKLIST.md, reports/robot_state_source_audit.md, tests/intercept_stages.py, tests/test_final_contracts.py. Updated: live observation/state/watchdog, concurrent logger, scheduler abort wiring, runner/protocol handling, stage result, metrics, fake graph, runbook and reports. Earlier bundle server metadata changes live outside the lhj Git root at runtime/vanilla-support/serve_adapter.py and runtime/openvla-oft/vla-scripts/serve_a0509_oft.py; they are bundle dependencies, not silently represented as tracked repository changes.
+
+Historical reports below are retained and superseded by this section.
+
 ## Latest follow-up — live contract and process E2E
 
 This section supersedes earlier follow-ups below. **131 unittest PASS / 0 FAIL / 0 SKIP**, plus **7 process scenarios PASS**: separate OpenVLA and OFT live dry-run subprocesses (10 actions each), camera loss, JointState loss, TCP loss, RobotState loss, protective-stop fault. Test graph is localhost-only domain231; HTTP outputs are explicitly fixture data, not research predictions. No physical command executed.

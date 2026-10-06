@@ -1,5 +1,7 @@
 # Real rollout integration — command-disabled implementation
 
+Current verdict: **PRE_ROBOT_SOFTWARE_COMPLETE** (audited offline/fake scope), **HARDWARE_VALIDATION_PENDING**, physical rollout **NOT_AUTHORIZED**. Latest validation: 137 unittest/regression/DDS PASS, 13 fake-live process scenarios PASS, 7 generated-request/stage-intercept scenarios PASS. Default configs remain disabled. Hardware/GPU execution is pending; this is not proof of real driver stop responsiveness or physical task success. See the current top section of FINAL_READINESS_REPORT.md and HARDWARE_DAY_CHECKLIST.md; older summaries below are history.
+
 Latest follow-up: 131 unit/regression/DDS tests PASS plus 7 fake-live subprocess scenarios PASS. RobotState normalization, concurrency-safe logger, idempotent abort and actual processor metadata were added. This is still command-disabled: verified live servo/manual-auto sources and remaining E2E/model checks are documented in the latest FINAL_READINESS_REPORT section. Fake graph results are infrastructure tests, not model behavior findings.
 
 Follow-up: background watchdog, interruptible gripper pulse, geometric phase detector, no-overlap scheduler and real isolated DDS integration tests are now added. Latest validation is 126 PASS. See the follow-up section of FINAL_READINESS_REPORT for exact remaining integration blockers; the older baseline below is retained as history and does not supersede the follow-up.

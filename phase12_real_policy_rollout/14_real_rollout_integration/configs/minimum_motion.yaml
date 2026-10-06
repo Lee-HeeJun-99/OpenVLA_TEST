@@ -1,6 +1,7 @@
 protocol: minimum_motion
 maximum_actions: 1
 translation_step_m: 0.001
+deterministic_delta_m: [0.0005, 0.0, 0.0]
 rotation_enabled: false
 gripper_enabled: false
 motion_enabled: false

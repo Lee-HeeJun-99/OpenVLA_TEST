@@ -1,10 +1,16 @@
 {
-  "status": "PARTIAL_REAL_COMMAND_INTEGRATION_COMMAND_DISABLED",
-  "unit_and_regression": {"pass": 127, "fail": 0, "skip": 0},
+  "status": "PRE_ROBOT_SOFTWARE_COMPLETE",
+  "hardware": "HARDWARE_VALIDATION_PENDING",
+  "gpu": "GPU_RUNTIME_VALIDATION_PENDING",
+  "real_rollout": "PHYSICAL_ROLLOUT_NOT_EXECUTED",
+  "unit_and_regression": {"pass": 133, "fail": 0, "skip": 0},
   "isolated_dds": {"pass": 4, "fail": 0, "skip": 0},
-  "process_scenarios_pass": ["openvla_live_dry_run", "oft_live_dry_run", "camera_loss", "jointstate_loss", "tcp_loss", "robotstate_loss", "protective_stop"],
+  "process_scenarios_pass": ["openvla_live_dry_run", "oft_live_dry_run", "camera_loss", "jointstate_loss", "tcp_loss", "robotstate_loss", "protective_stop", "servo_loss", "invalid_mode", "authority_loss", "model_health_mismatch", "model_disconnect", "logger_failure"],
+  "intercept_scenarios_pass": 7,
   "physical_commands": 0,
   "production_thresholds_changed": false,
   "real_gpu_model_health_executed": false,
-  "remaining": ["Verified live servo/manual-auto signal integration", "Real model health contract snapshot and preprocessing integration verification", "Remaining process failure injections and full-task/minimum-motion request-intercept E2E coverage"]
+  "remaining_software_blockers": [],
+  "hardware_only_remaining": ["Physical safety/source/polarity/workspace verification", "Actual GPU model health", "Live shadow", "Minimum motion", "Short horizon", "Full rollout"],
+  "scope": "Audited offline/fake integration; not physical compatibility or stop-latency proof"
 }

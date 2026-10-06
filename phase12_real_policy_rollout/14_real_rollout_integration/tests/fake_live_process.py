@@ -23,6 +23,8 @@ def run(model,fault=None):
         def do_GET(self):self.reply(health)
         def do_POST(self):
             self.rfile.read(int(self.headers.get('Content-Length',0)))
+            if fault=='disconnect' and first_prediction[0] and time.monotonic()-first_prediction[0]>.3:
+                self.send_error(503,'FAKE_MODEL_DISCONNECTED');return
             self.reply({'actions':[[0]*7]*5,'action':[0]*7,'fixture':True})
         def reply(self,value):
             self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps(value).encode())
@@ -33,6 +35,7 @@ def run(model,fault=None):
         if first_prediction[0] is None:first_prediction[0]=time.monotonic()
         old_post(self)
     Handler.do_POST=tracked_post
+    if fault=='health_mismatch':health['variant']='WRONG_MODEL'
     server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
     http=threading.Thread(target=server.serve_forever);http.start()
     node=rclpy.create_node('fake_observations_'+model)
@@ -49,20 +52,31 @@ def run(model,fault=None):
         t=Float64MultiArray();t.data=[400.,0.,500.,0.,0.,0.]
         if not (inject and fault=='tcp'):tcp.publish(t)
         s=RobotState();s.robot_state=5 if inject and fault=='protective' else 1;s.disconnected=False
+        s.access_control=3 if inject and fault=='authority' else 2
+        if inject and fault=='servo':s.robot_state_str=json.dumps({'servo':False})
+        if inject and fault=='mode':s.robot_state_str=json.dumps({'mode':'INVALID'})
         if not (inject and fault=='state'):status.publish(s)
     node.create_timer(.01,publish);executor=MultiThreadedExecutor();executor.add_node(node)
     spin=threading.Thread(target=executor.spin);spin.start()
     try:
         with tempfile.TemporaryDirectory() as d:
             path=Path(d);evidence={k:True for k in REQUIRED};evidence.update(source='FAKE_TEST_GRAPH',verified_wall_time=time.time(),phase='alignment',verified_model_health_contract=health,verified_robot_state_topic='/phase12_test/robot_state')
+            evidence['fake_fault']=fault
             (path/'evidence.json').write_text(json.dumps(evidence))
             result=subprocess.run([sys.executable,str(ROOT/'run_real_rollout.py'),'--dry-run','--live','--model',model,
                 '--protocol','short_horizon','--output',str(path/'log.jsonl'),'--preflight-evidence',str(path/'evidence.json'),
                 '--session-results',str(path/'stages')],capture_output=True,text=True,timeout=20)
             if result.returncode and not fault:raise RuntimeError(result.stderr)
+            if fault=='health_mismatch':
+                if result.returncode==0:raise AssertionError('wrong_model_accepted')
+                print(model+': HEALTH_MISMATCH_FAIL_CLOSED_PASS');return
             rows=[json.loads(x) for x in (path/'log.jsonl').read_text().splitlines()]
             actions=[r for r in rows if r.get('event')=='ACTION']
             if any(r['command_issued'] for r in actions):raise AssertionError('command_issued')
+            if fault=='logger':
+                artifact=json.loads((path/'stages/short_horizon_result.json').read_text())
+                if artifact['status']!='FAIL' or result.returncode==0:raise AssertionError('logger_fail_open')
+                print(model+': LOGGER_FAILURE_TERMINAL_ARTIFACT_PASS');return
             if fault:
                 if not any(r.get('event')=='ABORT' for r in rows):raise AssertionError('no_abort:'+str(fault))
                 print(model+': '+fault+' LOSS_FAIL_CLOSED_PASS')
@@ -76,5 +90,5 @@ if __name__=='__main__':
     rclpy.init()
     try:
         run('openvla');run('oft')
-        for fault in ('camera','joints','tcp','state','protective'):run('openvla',fault)
+        for fault in ('camera','joints','tcp','state','protective','servo','mode','authority','health_mismatch','disconnect','logger'):run('openvla',fault)
     finally:rclpy.shutdown()

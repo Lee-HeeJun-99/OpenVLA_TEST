@@ -28,3 +28,15 @@ def select_tcp(observation, *, fk_function=None, fk_approved=False):
     if fk_approved and fk_function and observation.get('joint_positions_by_name'):
         return {'pose':fk_function(observation['joint_positions_by_name']),'tcp_source':'FK_ESTIMATED'}
     raise RuntimeError('tcp_unavailable')
+
+if __name__=='__main__':
+    import argparse,json
+    from pathlib import Path
+    parser=argparse.ArgumentParser(description='Evidence-only check; runner separately verifies live inputs')
+    parser.add_argument('--evidence',type=Path,required=True)
+    parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args()
+    result=preflight(json.loads(args.evidence.read_text()),dry_run=True)
+    result['scope']='EVIDENCE_ONLY_NOT_MOTION_AUTHORIZATION'
+    with args.output.open('x') as f:json.dump(result,f,indent=2)
+    print(json.dumps(result,indent=2))

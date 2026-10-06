@@ -12,5 +12,9 @@ def collect(rows, events):
         tcp_deviation_m=None,first_close_intent_time_s=min(close) if close else None,
         safety_rejection_count=sum(bool(r.get('safety_blockers')) for r in rows),
         holds=sum(e.get('command_type')=='hold' for e in events),ack_latency_s=ack,
+        model_latency_s=[r.get('observation',{}).get('inference_latency_s') for r in rows if r.get('observation',{}).get('inference_latency_s') is not None],
+        command_latency_s=[e['completed_at']-e['requested_at'] for e in events if e.get('completed_at') is not None],
         blockers=dict(Counter(b for r in rows for b in r.get('safety_blockers',[]))),
+        observation_gap_links=[{key:r.get(key) for key in ('matched_pair_id','condition','sim_observation_id',
+            'real_observation_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')} for r in rows],
         oft_k_index_reject=dict(Counter(r['chunk_index'] for r in rows if r.get('safety_blockers'))))

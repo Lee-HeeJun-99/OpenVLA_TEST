@@ -2,7 +2,7 @@
 import threading
 
 REQUIRED=('camera_ok','joint_state_ok','tcp_ok','robot_state_ok','protective_stop_ok',
-          'servo_mode_ok','logger_ok','model_ok','command_ack_ok','manual_abort_clear')
+          'servo_mode_ok','authority_ok','logger_ok','model_ok','command_ack_ok','manual_abort_clear')
 
 class HardwareWatchdog:
     def __init__(self,snapshot,on_fault,period=.02):
