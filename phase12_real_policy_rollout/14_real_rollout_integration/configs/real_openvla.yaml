@@ -1,0 +1,9 @@
+model: openvla
+checkpoint: vanilla_s1_balanced_step8130
+variant: openvla_token
+server_url: http://127.0.0.1:8766
+instruction: Pick up the orange cube.
+crop_bottom_fraction: 0.0
+chunk_size: 1
+motion_enabled: false
+explicit_motion_approval: false

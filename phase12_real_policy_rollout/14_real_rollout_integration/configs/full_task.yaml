@@ -1,0 +1,6 @@
+protocol: full_task
+maximum_duration_s: 30
+maximum_actions: 150
+gripper_enabled: true
+motion_enabled: false
+explicit_motion_approval: false

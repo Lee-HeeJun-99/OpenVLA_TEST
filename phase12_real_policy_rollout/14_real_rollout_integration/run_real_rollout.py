@@ -1,0 +1,188 @@
+"""Same gated controller used with fake, recorded, and future live observations."""
+import argparse
+import hashlib
+import json
+import math
+from pathlib import Path
+import sys
+import time
+
+ROOT=Path(__file__).resolve().parent
+PHASE=ROOT.parent
+sys.path[:0]=[str(PHASE/'02_safety'),str(PHASE/'03_shadow_mode'),str(PHASE/'13_rollout_readiness/runtime')]
+from canonical_action import CanonicalAction
+from safety_pipeline import SafetyPipeline,RuntimeState
+from integrated_logger import FsyncJsonlLogger
+from command_sinks import NullCommandSink
+from real_sink import Authorization,RealDoosanCommandSink,AbortBoundary,RosServiceTransport
+from pre_real_rollout_check import preflight
+from stage_gate import require_stage,save_stage
+
+
+class Controller:
+    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False):
+        self.pipeline=SafetyPipeline(model,operator_confirmed_initial_open=initial_open)
+        self.model=model;self.protocol=protocol;self.sink=sink;self.log=logger;self.dry_run=dry_run
+        self.abort_boundary=AbortBoundary(sink) if not dry_run else None
+        self.aborted=False;self.count=0;self.rows=[]
+
+    def abort(self,reason):
+        self.aborted=True
+        result={'state':'ABORTED','reason':reason,'command_issued':False}
+        if not self.dry_run:result=self.abort_boundary.abort(reason)
+        # Stop path must still run when logger is broken; preserve error for caller.
+        try:self.log.append({'event':'ABORT','abort':result,'dry_run':self.dry_run})
+        except Exception:pass
+        return result
+
+    def step(self,vector,obs,*,inference_time,chunk_id,chunk_index):
+        if self.aborted:raise RuntimeError('session_aborted')
+        now=obs['receive_monotonic'];reason=[];candidate={};decision=None
+        try:
+            if not obs.get('robot_state_ok'):raise ValueError('unexpected_robot_state')
+            if obs.get('manual_abort'):raise ValueError('manual_abort')
+            action=CanonicalAction.from_vector(vector,timestamp_monotonic=inference_time,
+                sequence_id=f'{chunk_id}-k{chunk_index}',source_model=self.model,
+                chunk_index=chunk_index,chunk_size=5 if self.model=='oft' else 1)
+            state=RuntimeState(now,tuple(obs['tcp_m_abc'][:3]),tuple(obs['tcp_m_abc'][3:]),obs['phase'],
+                camera_ok=obs['camera_ok'],joint_state_ok=obs['joint_state_ok'],tcp_ok=obs['tcp_ok'],
+                model_ok=obs['model_ok'],communication_ok=obs.get('communication_ok',False),logger_ok=True)
+            decision=self.pipeline.inspect(action,state);candidate=dict(decision.candidate);reason=list(decision.reason)
+            if self.protocol=='minimum_motion' and (math.dist(vector[:3],[0,0,0])>.001 or any(vector[3:6]) or vector[6]!=0):reason.append('minimum_motion_protocol')
+            if self.protocol!='full_task' and vector[6]>=.7:reason.append('protocol_gripper_disabled')
+        except Exception as exc:reason.append(str(exc))
+        record={'event':'ACTION','command_requested':not reason,'command_issued':False,'command_acknowledged':False,
+            'executed_action':None,'robot_delivered_command':None,'observation':obs,'raw_model_output':obs.get('raw_model_output'),
+            'canonical_action':list(vector),'filtered_action':candidate.get('limited_canonical_action'),
+            'safety_blockers':reason,'chunk_id':chunk_id,'chunk_index':chunk_index,
+            'target_step':obs.get('inference_frame',0)+chunk_index,
+            'target_time':(obs.get('inference_frame',0)+chunk_index)*.2,
+            'phase':obs['phase'],'tcp_source':obs.get('tcp_source'),'dry_run':self.dry_run,
+            **{key:obs.get(key) for key in ('episode_id','condition','matched_pair_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')}}
+        from rollout_runner import finite_json
+        record=finite_json(record)
+        try:self.log.append(record)
+        except Exception:
+            self.abort('logger_failure');raise
+        self.rows.append(record);self.count+=1
+        if reason:return self.abort('|'.join(reason))
+        if self.dry_run:
+            record['sink_receipt']=NullCommandSink().submit(action.as_dict(),decision.as_dict())
+            return record
+        receipt=self.sink.send_pose(candidate['target_pose_candidate_mm_zyz_deg'])
+        # Send/ACK/completion each persisted by their actual timestamp, not fabricated.
+        record['command_receipt']=receipt
+        record['command_issued']=receipt.get('sent_at') is not None
+        record['command_acknowledged']=receipt.get('ack_at') is not None
+        try:self.log.append({'event':'COMMAND_RESULT',**record})
+        except Exception:self.abort('logger_failure');raise
+        if receipt['state']!='completed':return self.abort(receipt.get('failure_reason','command_failed'))
+        grip=candidate.get('gripper',{})
+        cmd=grip.get('candidate_command')
+        if self.protocol=='full_task' and cmd in ('OPEN','CLOSE','CLOSED','COMMAND_OPEN','COMMAND_CLOSED'):
+            g=self.sink.send_gripper(cmd in ('CLOSE','CLOSED','COMMAND_CLOSED'))
+            if g['state'] not in ('completed','suppressed'):return self.abort('gripper_command_failed')
+            from open_loop_gripper_supervisor import GripperRuntimeContext
+            supervisor=self.pipeline.runtime.gripper
+            transition=supervisor.resolve_with_context(vector[6],phase=obs['phase'],
+                context=GripperRuntimeContext(True,True,True,True,True,candidate_executed=True))
+            try:self.log.append({'event':'GRIPPER_RESULT','receipt':g,
+                'command_knowledge_after':transition.command_knowledge_after,'measured_gripper_state':None})
+            except Exception:self.abort('logger_failure');raise
+        return record
+
+
+def main():
+    import yaml
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--model',choices=['openvla','oft'],required=True)
+    parser.add_argument('--protocol',choices=['minimum_motion','short_horizon','full_task'],required=True)
+    parser.add_argument('--dry-run',action='store_true')
+    parser.add_argument('--recorded-input',type=Path)
+    parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--preflight-evidence',type=Path)
+    parser.add_argument('--approval',type=Path)
+    parser.add_argument('--session-results',type=Path)
+    args=parser.parse_args()
+    if args.output.exists():raise FileExistsError('preserve_existing_log')
+    if args.recorded_input:
+        if not args.dry_run:raise PermissionError('recorded_input_never_commands_hardware')
+        from rollout_runner import run
+        print(json.dumps(run(args.model,args.recorded_input,args.output,initial_open_acknowledged=False,protocol=args.protocol),indent=2))
+        return
+    from live_observation import LiveObservation
+    model=yaml.safe_load((ROOT/'configs'/f'real_{args.model}.yaml').read_text())
+    evidence=json.loads(args.preflight_evidence.read_text()) if args.preflight_evidence else {}
+    readiness=preflight(evidence,dry_run=args.dry_run)
+    approval=json.loads(args.approval.read_text()) if args.approval else {}
+    identity={'model':args.model,'checkpoint':model['checkpoint'],'protocol_config_sha256':hashlib.sha256((ROOT/'configs/hardware_interface.yaml').read_bytes()).hexdigest()}
+    if not args.dry_run:
+        if model.get('motion_enabled') is not True or model.get('explicit_motion_approval') is not True:
+            raise PermissionError('real_config_default_disabled')
+        if args.model=='oft' and evidence.get('model_behavior_review_passed') is not True:
+            raise PermissionError('oft_model_behavior_review_pending')
+        if not readiness['MOTION_READY']:raise PermissionError('hardware_preflight_incomplete')
+        if not (approval.get('explicit_motion_approval') is True and approval.get('protocol')==args.protocol and approval.get('model')==args.model and approval.get('operator') and 0<=time.time()-approval.get('approved_wall_time',0)<=60):raise PermissionError('explicit_stage_approval_required')
+        if not args.session_results:raise PermissionError('session_results_required')
+        require_stage(args.protocol,args.session_results,identity)
+    obs=LiveObservation(model['server_url'],model['checkpoint'],model['variant'],evidence)
+    # Do not authorize from a checklist alone: require actual observations first.
+    if not args.dry_run:
+        try:
+            _,live=obs.snapshot()
+            if not all(live[k] for k in ('camera_ok','joint_state_ok','tcp_ok','robot_state_ok')):
+                raise PermissionError('live_observation_preflight_failed')
+            graph=dict(obs.node.get_service_names_and_types())
+            from real_sink import SERVICES
+            if any('dsr_msgs2/srv/'+typ not in graph.get(name,[]) for name,typ in SERVICES.values()):
+                raise PermissionError('live_command_service_contract_missing')
+            # Current adapter has no continuously verified stop/state signal or
+            # asynchronous watchdog; refuse live motion rather than fail open.
+            raise PermissionError('continuous_hardware_watchdog_integration_pending')
+        finally:obs.close()
+    auth=Authorization(not args.dry_run,not args.dry_run,readiness['MOTION_READY'],'MOTION_ENABLED' if not args.dry_run else 'COMMAND_DISABLED')
+    gripper=yaml.safe_load((ROOT/'configs/gripper_hardware.yaml').read_text())
+    gripper['polarity_confirmed']=evidence.get('gripper_polarity_confirmed') is True
+    sink=RealDoosanCommandSink(lambda:RosServiceTransport(obs.node),auth,gripper_config=gripper)
+    limit={'minimum_motion':1,'short_horizon':10,'full_task':150}[args.protocol]
+    passed=False
+    try:
+        with FsyncJsonlLogger(args.output) as logger:
+            controller=Controller(args.model,args.protocol,sink,logger,dry_run=args.dry_run,initial_open=evidence.get('gripper_initial_confirmed') is True)
+            started=time.monotonic();seq=0
+            while controller.count<limit and not controller.aborted:
+                image,observation=obs.snapshot()
+                base=time.monotonic()
+                if args.protocol=='minimum_motion':actions=[[.0005,0,0,0,0,0,0]]
+                else:actions=obs.predict(image,args.model)
+                if len(actions)!=(5 if args.model=='oft' and args.protocol!='minimum_motion' else 1):
+                    controller.abort('partial_chunk');break
+                for k,vector in enumerate(actions):
+                    scheduled=base+k*.2
+                    if time.monotonic()<scheduled:time.sleep(scheduled-time.monotonic())
+                    _,observation=obs.snapshot()
+                    observation.update(getattr(obs,'last_prediction',{}))
+                    observation['inference_frame']=seq
+                    controller.step(vector,observation,inference_time=base,chunk_id=f'live-{seq}',chunk_index=k)
+                    if controller.aborted:break
+                seq+=len(actions)
+                cadence=base+(1. if args.model=='oft' else .2)
+                if time.monotonic()<cadence:time.sleep(cadence-time.monotonic())
+                if time.monotonic()-started>limit*.2:
+                    if controller.count<limit:controller.abort('protocol_duration_timeout')
+                    break
+            passed=not controller.aborted and controller.count==limit
+    except KeyboardInterrupt:
+        if 'controller' in locals():controller.abort('manual_abort')
+    except Exception as exc:
+        if 'controller' in locals() and not controller.aborted:controller.abort(str(exc))
+        raise
+    finally:
+        obs.close()
+        if args.session_results:
+            from integration_metrics import collect
+            save_stage(args.protocol,args.session_results,identity,passed=passed,dry_run=args.dry_run,
+                details={'command_events':sink.events,'protocol_completed':passed,'task_success':None,
+                    'metrics':collect(controller.rows,sink.events) if 'controller' in locals() else {}})
+
+if __name__=='__main__':main()

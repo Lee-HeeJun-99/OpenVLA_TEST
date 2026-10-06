@@ -1,0 +1,16 @@
+namespace: /dsr01
+pose_service: /dsr01/motion/move_line
+pose_type: dsr_msgs2/srv/MoveLine
+stop_service: /dsr01/motion/move_stop
+stop_type: dsr_msgs2/srv/MoveStop
+gripper_service: /dsr01/io/set_tool_digital_output
+gripper_type: dsr_msgs2/srv/SetToolDigitalOutput
+motion_sync_type: 0
+reference: 0
+mode: 0
+velocity: [20.0, 20.0]
+acceleration: [20.0, 20.0]
+hold_stop_mode: 3
+stop_mode: 0
+motion_enabled: false
+explicit_motion_approval: false

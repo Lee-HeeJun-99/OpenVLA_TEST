@@ -1,0 +1,14 @@
+model: oft
+checkpoint: oft_mixed480_step28560_merged
+variant: oftplus_h5_vision
+server_url: http://127.0.0.1:8765
+instruction: Pick up the orange cube.
+center_crop: true
+proprio: false
+chunk_size: 5
+chunk_execution_mode: sequential_k5
+inference_hz: 1
+control_hz: 5
+motion_enabled: false
+explicit_motion_approval: false
+model_behavior_review_required: true

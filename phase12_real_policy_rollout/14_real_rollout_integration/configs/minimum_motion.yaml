@@ -1,0 +1,7 @@
+protocol: minimum_motion
+maximum_actions: 1
+translation_step_m: 0.001
+rotation_enabled: false
+gripper_enabled: false
+motion_enabled: false
+explicit_motion_approval: false

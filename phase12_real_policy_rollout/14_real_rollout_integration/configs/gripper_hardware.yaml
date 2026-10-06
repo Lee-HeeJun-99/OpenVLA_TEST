@@ -1,0 +1,11 @@
+polarity_confirmed: false
+gripper_open_output_index: 1
+gripper_closed_output_index: 2
+gripper_open_hardware_value: 1
+gripper_closed_hardware_value: 1
+inactive_hardware_value: 0
+open_pulse_count: 2
+closed_pulse_count: 1
+open_pulse_time_s: 1.0
+closed_pulse_time_s: 4.0
+measured_gripper_state: UNKNOWN

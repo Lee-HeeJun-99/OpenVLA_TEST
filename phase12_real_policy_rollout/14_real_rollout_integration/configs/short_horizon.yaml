@@ -1,0 +1,6 @@
+protocol: short_horizon
+duration_s: 2
+maximum_actions: 10
+gripper_enabled: false
+motion_enabled: false
+explicit_motion_approval: false
