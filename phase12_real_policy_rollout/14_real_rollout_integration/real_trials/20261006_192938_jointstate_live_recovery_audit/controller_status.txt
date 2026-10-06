@@ -1,0 +1,13 @@
+{
+  "command": [
+    "ros2",
+    "control",
+    "list_controllers",
+    "-c",
+    "/dsr01/controller_manager"
+  ],
+  "duration_s": 12.17502597393468,
+  "timeout": true,
+  "exit_code": 2,
+  "output": "[INFO] [1791282580.861175570] [_ros2cli_3027408]: waiting for service /dsr01/controller_manager/list_controllers to become available...\n"
+}

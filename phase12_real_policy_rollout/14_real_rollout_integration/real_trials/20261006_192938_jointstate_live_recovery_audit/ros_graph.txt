@@ -1,0 +1,11 @@
+{
+  "command": [
+    "ros2",
+    "node",
+    "list"
+  ],
+  "duration_s": 1.0904725953005254,
+  "timeout": false,
+  "exit_code": 0,
+  "output": "/dsr01/robot_state_publisher\n/dsr01/rviz2\n/dsr01/transform_listener_impl_592b9c76c580\n/launch_ros_3020648\n/so101_usd_dashboard\n/zed/transform_listener_impl_73dde01056b0\n/zed/zed_container\n/zed/zed_node\n/zed/zed_state_publisher\n"
+}

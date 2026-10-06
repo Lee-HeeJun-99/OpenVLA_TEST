@@ -1,0 +1,79 @@
+{
+  "subscribers": {
+    "best_effort": {
+      "count": 0,
+      "first_receive_delay": null,
+      "receive_rate": 0,
+      "max_source_gap": null,
+      "max_receive_gap": null,
+      "latest_age": null,
+      "invalid": 0,
+      "duplicate": 0,
+      "regression": 0,
+      "recent_20s_pass": false
+    },
+    "reliable": {
+      "count": 0,
+      "first_receive_delay": null,
+      "receive_rate": 0,
+      "max_source_gap": null,
+      "max_receive_gap": null,
+      "latest_age": null,
+      "invalid": 0,
+      "duplicate": 0,
+      "regression": 0,
+      "recent_20s_pass": false
+    }
+  },
+  "publishers": [
+    {
+      "name": "_NODE_NAME_UNKNOWN_",
+      "namespace": "_NODE_NAMESPACE_UNKNOWN_",
+      "gid": [
+        1,
+        15,
+        11,
+        206,
+        114,
+        11,
+        56,
+        57,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        70,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "type": "sensor_msgs/msg/JointState",
+      "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+    }
+  ],
+  "rosbag_count": 467,
+  "rosbag_phase_elapsed": 25.464036878198385,
+  "rosbag_receive_rate": 100.00236662253131,
+  "rosbag_first_receive_delay": "APPROX_19.982s_FROM_RECORDER_LOG_CLOCK_NOT_MONOTONIC",
+  "rosbag_source_coverage_s": 4.659965374,
+  "rosbag_max_source_gap_s": 0.010986633,
+  "rosbag_max_receive_gap_s": 0.011235484,
+  "rosbag_source_gap_ge_100ms": 0,
+  "controller_status": "UNKNOWN_DISCOVERY_WAIT_TIMEOUT_12s",
+  "broadcaster_status": "UNKNOWN",
+  "bag_recovery_observed": true,
+  "clean_20s_gate": "NOT_ESTABLISHED",
+  "classification": "STILL_INCONCLUSIVE",
+  "hardware_feedback": "UNKNOWN",
+  "controller_connection": "UNKNOWN",
+  "physical_commands": 0,
+  "next_allowed_stage": "BLOCKED"
+}

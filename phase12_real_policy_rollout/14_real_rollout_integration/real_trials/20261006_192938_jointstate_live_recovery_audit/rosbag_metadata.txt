@@ -1,0 +1,12 @@
+{
+  "command": [
+    "ros2",
+    "bag",
+    "info",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_192938_jointstate_live_recovery_audit/jointstate_bag"
+  ],
+  "duration_s": 0.28805276192724705,
+  "timeout": false,
+  "exit_code": 0,
+  "output": "\nFiles:             jointstate_bag_0.db3\nBag size:          169.0 KiB\nStorage id:        sqlite3\nDuration:          4.659889718s\nStart:             Oct  6 2026 19:30:55.349707035 (1791282655.349707035)\nEnd:               Oct  6 2026 19:31:00.009596753 (1791282660.009596753)\nMessages:          467\nTopic information: Topic: /dsr01/joint_states | Type: sensor_msgs/msg/JointState | Count: 467 | Serialization Format: cdr\n\n"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "ros2",
+    "control",
+    "list_hardware_interfaces",
+    "-c",
+    "/dsr01/controller_manager"
+  ],
+  "duration_s": 12.165107164997607,
+  "timeout": true,
+  "exit_code": 2,
+  "output": "[INFO] [1791282593.004791976] [_ros2cli_3027473]: waiting for service /dsr01/controller_manager/list_hardware_interfaces to become available...\n[WARN] [1791282603.019033093] [_ros2cli_3027473]: Could not contact service /dsr01/controller_manager/list_hardware_interfaces\n[INFO] [1791282603.019609788] [_ros2cli_3027473]: waiting for service /dsr01/controller_manager/list_hardware_interfaces to become available...\n"
+}

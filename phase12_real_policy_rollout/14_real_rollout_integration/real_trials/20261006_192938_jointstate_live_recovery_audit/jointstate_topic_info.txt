@@ -1,0 +1,13 @@
+{
+  "command": [
+    "ros2",
+    "topic",
+    "info",
+    "-v",
+    "/dsr01/joint_states"
+  ],
+  "duration_s": 0.5872691660188138,
+  "timeout": false,
+  "exit_code": 0,
+  "output": "Type: sensor_msgs/msg/JointState\n\nPublisher count: 0\n\nSubscription count: 1\n\nNode name: robot_state_publisher\nNode namespace: /dsr01\nTopic type: sensor_msgs/msg/JointState\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.0b.ce.6a.0b.c4.94.00.00.00.00.00.00.15.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: BEST_EFFORT\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\n"
+}

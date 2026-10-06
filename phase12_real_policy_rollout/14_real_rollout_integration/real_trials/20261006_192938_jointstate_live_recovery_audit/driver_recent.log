@@ -1,0 +1,3 @@
+/home/ubuntu/.ros/log/ros2_control_node_3017586_1791277811547.log
+[WARN] [1791282578.066693153] [dsr_hw_interface2]: [REAL] Skip dt=0.015086 (expected=0.010000, allowed=[0.003000, 0.015000])
+[WARN] [1791282578.069400147] [dsr_hw_interface2]: [REAL] Skip dt=0.002728 (expected=0.010000, allowed=[0.003000, 0.015000])
