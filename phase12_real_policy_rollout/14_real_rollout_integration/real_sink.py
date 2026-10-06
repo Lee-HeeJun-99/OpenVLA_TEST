@@ -36,9 +36,14 @@ class RealDoosanCommandSink:
         self.last_gripper=None
         self.gripper_cancel=threading.Event()
         self.gripper_state='GRIPPER_IDLE'
+        self._transport_lock=threading.Lock()
+        self._abort_event=threading.Event()
 
     def cancel_gripper(self):
         self.gripper_cancel.set();self.gripper_state='GRIPPER_ABORTED'
+
+    def inhibit(self):
+        self.aborted=True;self._abort_event.set();self.cancel_gripper()
 
     def health_check(self):
         return {'command_capability_enabled':self.transport is not None,
@@ -49,7 +54,8 @@ class RealDoosanCommandSink:
     def _send(self, kind, request, *, emergency=False):
         self.authorization.require()
         if self.aborted and not emergency:raise RuntimeError('pipeline_aborted')
-        if self.transport is None:self.transport=self.factory()
+        with self._transport_lock:
+            if self.transport is None:self.transport=self.factory()
         event=dict(command_id=uuid.uuid4().hex,command_type=kind,requested_at=time.monotonic(),
             sent_at=None,ack_at=None,completed_at=None,ack_latency=None,state='requested',
             request=request,result=None,failure_reason=None,clock_domain='HOST_MONOTONIC')
@@ -60,6 +66,10 @@ class RealDoosanCommandSink:
             result=self.wait_for_ack(future,self.ack_timeout)
             event.update(ack_at=time.monotonic(),state='acknowledged',result=result)
             event['ack_latency']=event['ack_at']-event['sent_at']
+            if self._abort_event.is_set() and not emergency:
+                event.update(state='ABORTED_IN_FLIGHT',failure_reason='IN_FLIGHT_STATUS_UNKNOWN',
+                    physical_completion='UNVERIFIED')
+                return dict(event)
             if result.get('success') is not True:raise RuntimeError('service_response_failure')
             event.update(state='completed',completed_at=time.monotonic(),
                 completion_evidence='SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK')
@@ -109,9 +119,16 @@ class RealDoosanCommandSink:
     def stop(self):return self._send('stop',{'stop_mode':0},emergency=True)
 
 class AbortBoundary:
-    def __init__(self,sink):self.sink=sink;self.state='RUNNING';self.reason=None;self.receipt=None;self.transitions=['RUNNING']
+    def __init__(self,sink):
+        self.sink=sink;self.state='RUNNING';self.reason=None;self.receipt=None;self.transitions=['RUNNING']
+        self.lock=threading.Lock()
     def abort(self,reason):
-        self.sink.cancel_gripper()
+        with self.lock:
+            if self.state!='RUNNING':return {'state':self.state,'reason':self.reason,'receipt':self.receipt}
+            self.state='ABORT_REQUESTED';self.reason=reason
+            self.sink.inhibit()
+        return self._abort_once(reason)
+    def _abort_once(self,reason):
         self.reason=reason;self.state='HOLD_REQUESTED'
         self.transitions.append(self.state)
         self.receipt=self.sink.hold()

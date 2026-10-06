@@ -37,6 +37,8 @@ class Controller:
 
     def step(self,vector,obs,*,inference_time,chunk_id,chunk_index):
         if self.aborted:raise RuntimeError('session_aborted')
+        if obs.get('live_execution_clock'):
+            obs=dict(obs);obs['receive_monotonic']=time.monotonic()
         now=obs['receive_monotonic'];reason=[];candidate={};decision=None
         try:
             if not obs.get('robot_state_ok'):raise ValueError('unexpected_robot_state')
@@ -119,6 +121,7 @@ def main():
     approval=json.loads(args.approval.read_text()) if args.approval else {}
     identity={'model':args.model,'checkpoint':model['checkpoint'],'protocol_config_sha256':hashlib.sha256((ROOT/'configs/hardware_interface.yaml').read_bytes()).hexdigest()}
     if not args.dry_run:
+        if evidence.get('source')=='FAKE_TEST_GRAPH':raise PermissionError('fake_evidence_never_authorizes_hardware')
         if model.get('motion_enabled') is not True or model.get('explicit_motion_approval') is not True:
             raise PermissionError('real_config_default_disabled')
         if args.model=='oft' and evidence.get('model_behavior_review_passed') is not True:
@@ -152,6 +155,8 @@ def main():
     scheduler=None
     try:
         with FsyncJsonlLogger(args.output) as logger:
+            from concurrent_logger import ConcurrentLogger
+            logger=ConcurrentLogger(logger)
             controller=Controller(args.model,args.protocol,sink,logger,dry_run=args.dry_run,initial_open=evidence.get('gripper_initial_confirmed') is True)
             from hardware_watchdog import HardwareWatchdog
             from oft_action_scheduler import ActionScheduler
@@ -164,8 +169,7 @@ def main():
                 phase_machine=TaskPhase(phase_config)
             def watch_snapshot():
                 _,current=obs.snapshot()
-                return {**current,'protective_stop_ok':evidence.get('protective_stop_confirmed') is True,
-                    'servo_mode_ok':current['robot_state_ok'] and evidence.get('servo_confirmed') is True,
+                return {**current,
                     'logger_ok':not controller.aborted,'command_ack_ok':not sink.aborted,
                     'manual_abort_clear':not controller.aborted}
             watchdog=HardwareWatchdog(watch_snapshot,controller.abort).start()
@@ -184,6 +188,7 @@ def main():
                     _,observation=obs.snapshot()
                     observation.update(getattr(obs,'last_prediction',{}))
                     observation['inference_frame']=seq
+                    observation['live_execution_clock']=True
                     if phase_machine:
                         closed=controller.pipeline.runtime.gripper.state.value=='COMMAND_CLOSED'
                         phase=phase_machine.update(observation['tcp_m_abc'],command_closed=closed,

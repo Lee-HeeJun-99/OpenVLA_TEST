@@ -1,5 +1,16 @@
 # Runbook — preparation only, real runner currently blocked
 
+Process-level fake graph validation, no robot driver:
+
+```bash
+source /opt/ros/humble/setup.bash
+source /home/ubuntu/robot_ws/install/setup.bash
+cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration
+ROS_DOMAIN_ID=231 ROS_LOCALHOST_ONLY=1 /home/ubuntu/a0509_vla_linux_field_bundle_20260903/environment/a6000_ubuntu22_py310/bin/python tests/fake_live_process.py
+```
+
+Ports8765/8766 must be free; the test never stops an existing server to obtain them. It starts fake publishers and fake HTTP servers and launches the actual runner with --dry-run --live. Fake evidence is refused for non-dry motion. Do not run tests in the real driver DDS domain. Real model health requires a reviewed `verified_model_health_contract` including the actual processor dictionary; do not copy the fake contract into production evidence.
+
 Follow-up validation (offline fake DDS only):
 
 ```bash

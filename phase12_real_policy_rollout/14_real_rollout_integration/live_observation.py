@@ -11,15 +11,29 @@ class LiveObservation:
         from sensor_msgs.msg import Image as ImageMsg,JointState
         from std_msgs.msg import Float64MultiArray
         rclpy.init();self.node=rclpy.create_node('phase12_gated_rollout_observation')
+        from robot_state_monitor import RobotStateMonitor
+        self.hardware_monitor=RobotStateMonitor()
         self.executor=MultiThreadedExecutor(num_threads=4);self.executor.add_node(self.node)
         self.lock=threading.Lock();self.data={};self.url=url;self.evidence=evidence
         self.node.create_subscription(ImageMsg,'/zed/zed_node/rgb/color/rect/image',self.camera,qos_profile_sensor_data)
         self.node.create_subscription(JointState,'/dsr01/joint_states',self.joints,qos_profile_sensor_data)
         self.node.create_subscription(Float64MultiArray,'/doosan/current_pose',self.tcp,10)
+        if evidence.get('verified_robot_state_topic'):
+            from dsr_msgs2.msg import RobotState
+            self.node.create_subscription(RobotState,evidence['verified_robot_state_topic'],self.robot_state,10)
         self.thread=threading.Thread(target=self.executor.spin,daemon=True);self.thread.start()
         with urlopen(url+'/health',timeout=3) as response:self.health=json.load(response)
         if self.health.get('variant')!=variant:raise RuntimeError('model_variant_mismatch')
         if checkpoint not in str(self.health.get('bundle',self.health.get('checkpoint',''))):raise RuntimeError('checkpoint_mismatch')
+        from model_health import validate_runtime_health
+        if 'verified_model_health_contract' not in evidence:raise RuntimeError('verified_model_health_contract_required')
+        validate_runtime_health(self.health,evidence['verified_model_health_contract'])
+        deadline=time.monotonic()+5
+        while time.monotonic()<deadline:
+            with self.lock:ready=all(k in self.data for k in ('camera','joints')) and ('tcp' in self.data or evidence.get('fk_tcp_approved') is True)
+            if evidence.get('verified_robot_state_topic'):ready=ready and self.hardware_monitor.value is not None
+            if ready:break
+            time.sleep(.02)
 
     def camera(self,msg):
         with self.lock:self.data['camera']=(msg,time.monotonic())
@@ -27,6 +41,11 @@ class LiveObservation:
         with self.lock:self.data['joints']=(msg,time.monotonic())
     def tcp(self,msg):
         with self.lock:self.data['tcp']=(list(msg.data),time.monotonic())
+    def robot_state(self,msg):
+        # Fake graph metadata is explicitly barred from motion approval.
+        fake=self.evidence.get('source')=='FAKE_TEST_GRAPH'
+        self.hardware_monitor.update(msg,self.evidence['verified_robot_state_topic'],
+            robot_mode='AUTO' if fake else None,servo_enabled=True if fake else None)
 
     def snapshot(self):
         with self.lock:data=dict(self.data)
@@ -63,7 +82,7 @@ class LiveObservation:
             image_sha256=hashlib.sha256(bytes(image.data)).hexdigest(),image_hash_scope='SOURCE_ROS_PIXEL_BYTES',
             camera_ok=now-ci<=.5,joint_state_ok=finite and now-ji<=.5,tcp_ok=now-tcp[1]<=.5,
             model_ok=True,communication_ok=now-ji<=.5,
-            robot_state_ok=self.evidence.get('robot_mode_confirmed') is True and time.time()-self.evidence.get('verified_wall_time',0)<=60,
+            **self.hardware_monitor.snapshot(),
             phase=self.evidence.get('phase','unknown'),joint_positions_by_name=positions,
             joint_velocity_by_name=velocities,effort='UNSUPPORTED',
             image_source_timestamp={'sec':image.header.stamp.sec,'nanosec':image.header.stamp.nanosec},

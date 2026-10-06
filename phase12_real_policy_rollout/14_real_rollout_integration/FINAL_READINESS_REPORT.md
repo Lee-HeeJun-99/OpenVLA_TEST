@@ -1,5 +1,32 @@
 # Final readiness report
 
+## Latest follow-up — live contract and process E2E
+
+This section supersedes earlier follow-ups below. **131 unittest PASS / 0 FAIL / 0 SKIP**, plus **7 process scenarios PASS**: separate OpenVLA and OFT live dry-run subprocesses (10 actions each), camera loss, JointState loss, TCP loss, RobotState loss, protective-stop fault. Test graph is localhost-only domain231; HTTP outputs are explicitly fixture data, not research predictions. No physical command executed.
+
+Completed additions:
+
+- RobotStateMonitor consumes the actual generated RobotState schema, tracks receive age, disconnected/stop states, and refuses unknown servo/manual-auto values. Source topic is supplied explicitly, never assumed from a message definition.
+- ConcurrentLogger serializes JSONL writes; 80 records from four threads had no corruption, duplicate IDs or missing sequence numbers.
+- Delayed real DDS fake-service request + independent watchdog fault + exactly one Hold request + terminal ABORTED_IN_FLIGHT passed. Physical stop remains UNVERIFIED. New command after abort was rejected.
+- AbortBoundary is idempotent; cancellation is not asserted for already delivered service requests. Scheduler enforces actual dispatch spacing without relaxing production rate limits.
+- Both model server implementations now expose versioned preprocessing metadata from their actual image processor, RGB/uint8 ingress, bfloat16 tensor path, crop and instruction handling. Strict nested metadata comparison is wired into live observation. Servers were syntax-checked, not GPU-loaded in this task.
+- Fake graph process testing found and fixed initial TCP discovery and receive-time snapshot races. Process fixtures cannot satisfy non-dry approval.
+
+### Verified driver source limitations
+
+`dsr_controller2.cpp` optionally publishes `/rt_topic/robot_state` and `/rt_topic/robot_mode` as Float32MultiArray from selected RT fields when `use_rt_topic_pub_` is enabled. It also publishes RobotDisconnection and RobotError. The presence of RobotState.msg does not mean the controller publishes a full RobotState topic. The optional RT publisher performs RT reads and must not be enabled here merely to make tests pass.
+
+RobotState.actual_mode is POSITION/TORQUE, not MANUAL/AUTO. Explicit servo-enabled is not identified in these messages. The implemented fake RobotState source uses a clearly marked synthetic AUTO/servo value and cannot authorize hardware. A real verified adapter for those signals is still needed; no operator checklist is promoted to a live measured signal.
+
+### Remaining software blockers
+
+1. Verified real servo/manual-auto source adapter and optional RT-state integration. The monitor rejects unknowns, and unconditional non-dry guard is retained until this is resolved.
+2. Actual GPU server health snapshot and preprocessing-contract verification. Payload generation and fake HTTP strict validation are implemented, not real-checkpoint runtime validated.
+3. Remaining end-to-end injections: servo drop, model health mismatch, logger failure and full-stage/minimum-motion intercept on the process graph. DDS timeout/failure tests and component tests do not replace all these paths.
+
+Live/recorded software readiness must therefore not be labeled hardware-only. **PARTIAL_REAL_COMMAND_INTEGRATION_COMMAND_DISABLED** remains the verdict. Existing runtime original and production thresholds are unchanged; two prediction-only server source files were updated with metadata. No real getter, motion, gripper, Home, trajectory, Hold/E-stop or rollout was called.
+
 ## Follow-up implementation — 2026-10-06
 
 Added independent `hardware_watchdog.py`, interruptible gripper pulse cancellation with mandatory abort value, `task_phase.py` geometry-driven sequence detector, `oft_action_scheduler.py` single worker/no-overlap target cadence, strict `model_health.py`, and actual generated-service DDS tests. Live dry-run CLI now accepts `--live`; watchdog/scheduler/phase modules are wired into that path. Full-task geometry defaults null and must be approved. Physical grasp remains UNVERIFIED even when sequence completes.

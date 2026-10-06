@@ -1,0 +1,10 @@
+{
+  "status": "PARTIAL_REAL_COMMAND_INTEGRATION_COMMAND_DISABLED",
+  "unit_and_regression": {"pass": 127, "fail": 0, "skip": 0},
+  "isolated_dds": {"pass": 4, "fail": 0, "skip": 0},
+  "process_scenarios_pass": ["openvla_live_dry_run", "oft_live_dry_run", "camera_loss", "jointstate_loss", "tcp_loss", "robotstate_loss", "protective_stop"],
+  "physical_commands": 0,
+  "production_thresholds_changed": false,
+  "real_gpu_model_health_executed": false,
+  "remaining": ["Verified live servo/manual-auto signal integration", "Real model health contract snapshot and preprocessing integration verification", "Remaining process failure injections and full-task/minimum-motion request-intercept E2E coverage"]
+}
