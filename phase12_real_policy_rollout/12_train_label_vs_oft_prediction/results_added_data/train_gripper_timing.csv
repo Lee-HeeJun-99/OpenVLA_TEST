@@ -1,0 +1,12 @@
+episode_path,demonstration_type,target_color,record_frequency_hz,num_steps,first_close_step,first_close_time_s,close_ratio,first_close_phase,first_control_close_step,label_control_mismatch_count,steps_sha256
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/1,corrective_recovery,red,10.0,49,24,2.4,0.5102040816326531,move_grasp,25,1,87f1d25128bfd27b659db3290c21d89add92c4251e115d061b293cb70e5eec0d
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/10,corrective_recovery,red,10.0,45,23,2.3,0.4888888888888889,move_grasp,24,1,75501c896c3df1b0feb543196e61ac09769088f32c32ff7e167f13072e094652
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/2,corrective_recovery,blue,10.0,46,25,2.5,0.45652173913043476,move_grasp,26,1,5da071905edefd553b56e84c2c3d1e8063049515466d773eec5cf4580b71804c
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/3,corrective_recovery,yellow,10.0,49,22,2.2,0.5510204081632653,move_grasp,23,1,b75af23845239450b3d56863473bd661d5beb6d4493f0875ff99768926cb06c4
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/4,corrective_recovery,red,10.0,49,25,2.5,0.4897959183673469,move_grasp,26,1,123ac3349309900891501bdce63715da509531ea106440061fb9604f7cf4c1b2
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/5,corrective_recovery,red,10.0,42,21,2.1,0.5,move_grasp,22,1,098eda828e57284e267be20593c5378ea2d4c1a1641a0cbd6f7649767a0b66ca
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/6,nominal,yellow,10.0,57,32,3.2,0.43859649122807015,move_grasp,33,1,0f04bf7c70c39e1af230f60cde0f01ba3c8849b6dce7569a5f9e542647a2ad93
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/7,corrective_recovery,blue,10.0,47,26,2.6,0.44680851063829785,closing_gripper,27,1,6914d8d549fb57229cfcc890c6ee553b557aea6c8d2414ffc7ddf1ba23678074
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/8,corrective_recovery,blue,10.0,56,30,3.0,0.4642857142857143,closing_gripper,31,1,b3ca4234f30283633b25bba25c806a768b9e6dbc893c00e406390f5d6e3d1385
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/9,corrective_recovery,yellow,10.0,43,20,2.0,0.5348837209302325,move_grasp,21,1,381c1e49a205f76fbf5988d6358266f9c35a0a7803d3961738ca2c80a1a269fb
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset,corrective_recovery,blue,10.0,56,28,2.8,0.5,move_grasp,29,1,1e4cd2e04d189e2725c41d3bd1d0b5d838c13471b27d90cebb7079db0985e531

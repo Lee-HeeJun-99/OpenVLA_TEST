@@ -1,0 +1,112 @@
+{
+  "unique_episode_count": 11,
+  "total_steps": 539,
+  "duplicates": [],
+  "demonstration_summary": [
+    {
+      "demonstration_type": "ALL",
+      "episode_count": 11,
+      "min_time_s": 2.0,
+      "median_time_s": 2.5,
+      "mean_time_s": 2.5090909090909093,
+      "max_time_s": 3.2
+    },
+    {
+      "demonstration_type": "corrective_recovery",
+      "episode_count": 10,
+      "min_time_s": 2.0,
+      "median_time_s": 2.45,
+      "mean_time_s": 2.44,
+      "max_time_s": 3.0
+    },
+    {
+      "demonstration_type": "nominal",
+      "episode_count": 1,
+      "min_time_s": 3.2,
+      "median_time_s": 3.2,
+      "mean_time_s": 3.2,
+      "max_time_s": 3.2
+    }
+  ],
+  "classification": "INSUFFICIENT_TRAINING_DATA",
+  "supported_findings": [
+    "K5 label close prevalence rises",
+    "Checkpoint K rise is larger descriptively"
+  ],
+  "unresolved": [
+    "Exact mixed480 membership/resampling unverified",
+    "Unmatched blue/red/yellow sim versus orange real inputs",
+    "10 Hz versus 5 Hz horizons",
+    "Only one nominal episode"
+  ],
+  "provenance": [
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/1/episode.json",
+      "episode_sha256": "47c5ecc01c6e92cdb9d1bcea07e431e7e87130567326cf622883277a173b81d1",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/1/steps.jsonl",
+      "steps_sha256": "87f1d25128bfd27b659db3290c21d89add92c4251e115d061b293cb70e5eec0d"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/10/episode.json",
+      "episode_sha256": "27ddf3cbebe360a0840f3ed6214396e489717711f2fe2a30e6bb42fe6e844d1d",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/10/steps.jsonl",
+      "steps_sha256": "75501c896c3df1b0feb543196e61ac09769088f32c32ff7e167f13072e094652"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/2/episode.json",
+      "episode_sha256": "6c6f6fd66e56c4c780d534f6502f037d716dbde2331e0936a8bf51f8dfb18c94",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/2/steps.jsonl",
+      "steps_sha256": "5da071905edefd553b56e84c2c3d1e8063049515466d773eec5cf4580b71804c"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/3/episode.json",
+      "episode_sha256": "93a088b8e4e430a92030e5e21084becb6f3a20290badbb92f10acb4a8943360e",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/3/steps.jsonl",
+      "steps_sha256": "b75af23845239450b3d56863473bd661d5beb6d4493f0875ff99768926cb06c4"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/4/episode.json",
+      "episode_sha256": "8165b20e3bcfb7130d7d6ed3dcf51ca4a6cd5b9fa38e874f15ba1b2a8068b47d",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/4/steps.jsonl",
+      "steps_sha256": "123ac3349309900891501bdce63715da509531ea106440061fb9604f7cf4c1b2"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/5/episode.json",
+      "episode_sha256": "cb9eaa3a798544310ddb68bf8a0e1b3342e30011f8664f2556dad40417a76066",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/5/steps.jsonl",
+      "steps_sha256": "098eda828e57284e267be20593c5378ea2d4c1a1641a0cbd6f7649767a0b66ca"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/6/episode.json",
+      "episode_sha256": "1f2ad54e706f07a852bef1470f7bca8d0345de78fd966c6fc9e31a6e9d3e5f1c",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/6/steps.jsonl",
+      "steps_sha256": "0f04bf7c70c39e1af230f60cde0f01ba3c8849b6dce7569a5f9e542647a2ad93"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/7/episode.json",
+      "episode_sha256": "50b573dfe6dd52ca819f4f5b36576a73c399ca219840222d724540dc992a2247",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/7/steps.jsonl",
+      "steps_sha256": "6914d8d549fb57229cfcc890c6ee553b557aea6c8d2414ffc7ddf1ba23678074"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/8/episode.json",
+      "episode_sha256": "0b5b5a0004a52c138fece3650c03846bccf15c8efeaa62aa9b2eae58e472fa26",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/8/steps.jsonl",
+      "steps_sha256": "b3ca4234f30283633b25bba25c806a768b9e6dbc893c00e406390f5d6e3d1385"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/9/episode.json",
+      "episode_sha256": "012260b2b7cd1d2e7a2c20e1651727d0a68bdb59c0ec103710b0c41eb23929c9",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/9/steps.jsonl",
+      "steps_sha256": "381c1e49a205f76fbf5988d6358266f9c35a0a7803d3961738ca2c80a1a269fb"
+    },
+    {
+      "episode_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/episode.json",
+      "episode_sha256": "99759b057a1e5fe2aa18da3a3760636c7ec7597d461dc2fee9a8382b3b421ae7",
+      "steps_jsonl": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/steps.jsonl",
+      "steps_sha256": "1e4cd2e04d189e2725c41d3bd1d0b5d838c13471b27d90cebb7079db0985e531"
+    }
+  ],
+  "production_config_changed": false,
+  "robot_command_count": 0
+}
