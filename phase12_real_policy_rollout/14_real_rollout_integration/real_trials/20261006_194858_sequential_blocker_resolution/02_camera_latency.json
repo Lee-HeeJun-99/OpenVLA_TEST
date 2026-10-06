@@ -1,0 +1,48 @@
+{
+  "summary": {
+    "health_s": {
+      "median": 0.0018763730768114328,
+      "max": 0.004994526971131563
+    },
+    "snapshot_wait_s": {
+      "median": 0.0019576200284063816,
+      "max": 0.055290485732257366
+    },
+    "frame_age_at_snapshot_s": {
+      "median": 0.0010065911337733269,
+      "max": 0.010170538909733295
+    },
+    "bgra_rgb_s": {
+      "median": 0.0020314091816544533,
+      "max": 0.009536739904433489
+    },
+    "jpeg_encode_s": {
+      "median": 0.004203253425657749,
+      "max": 0.012720897328108549
+    },
+    "http_response_s": {
+      "median": 0.39333679410628974,
+      "max": 0.4605651148594916
+    },
+    "response_decode_s": {
+      "median": 4.700245335698128e-05,
+      "max": 0.0001230207271873951
+    },
+    "safety_and_action_evaluation_s": {
+      "median": 0.0007028914988040924,
+      "max": 0.0016148691065609455
+    },
+    "server_reported_inference_s": {
+      "median": 0.3608016667421907,
+      "max": 0.38493591407313943
+    },
+    "hash_and_record_s": {
+      "median": 0.019639145815744996,
+      "max": 0.029300241265445948
+    }
+  },
+  "source_trial": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_195255_sequential_camera_warm_validation",
+  "pixel_and_jpeg_contract_unchanged": true,
+  "hashing_after_inference": true,
+  "caveat": "server inference_seconds times synchronized model call after processor/device transfer and after lock acquisition; not all HTTP time is GPU inference"
+}

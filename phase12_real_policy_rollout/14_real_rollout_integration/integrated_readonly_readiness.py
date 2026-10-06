@@ -15,7 +15,9 @@ from canonical_action import CanonicalAction
 from safety_pipeline import SafetyPipeline,RuntimeState
 
 def main():
-    out=ROOT/'real_trials'/datetime.datetime.now().strftime('%Y%m%d_%H%M%S_integrated_rollout_readiness');out.mkdir(exist_ok=False,parents=True)
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--joint-window',type=float,default=30);parser.add_argument('--skip-prediction',action='store_true');parser.add_argument('--suffix',default='integrated_rollout_readiness');args=parser.parse_args()
+    out=ROOT/'real_trials'/datetime.datetime.now().strftime('%Y%m%d_%H%M%S_'+args.suffix);out.mkdir(exist_ok=False,parents=True)
     def save(name,value):
         with (out/name).open('x') as f:json.dump(value,f,indent=2)
     def run(args,timeout=8):
@@ -35,7 +37,9 @@ def main():
     def joint(kind):
         def cb(m):
             now=time.monotonic();valid=len(m.name)==6 and set(m.name)=={f'joint_{i}' for i in range(1,7)} and len(m.position)==len(m.velocity)==6 and all(math.isfinite(v) for v in list(m.position)+list(m.velocity))
-            with lock:rows[kind].append(dict(sequence=len(rows[kind]),receive=now,receive_wall=time.time(),source=m.header.stamp.sec+m.header.stamp.nanosec/1e9,names=list(m.name),position=list(m.position),velocity=list(m.velocity),valid=valid))
+            source=m.header.stamp.sec+m.header.stamp.nanosec/1e9
+            receive_ros=node.get_clock().now().nanoseconds/1e9
+            with lock:rows[kind].append(dict(sequence=len(rows[kind]),receive=now,receive_wall=time.time(),receive_ros=receive_ros,source=source,names=list(m.name),position=list(m.position),velocity=list(m.velocity),valid=valid,header_fresh_same_ros_clock=0<=receive_ros-source<.1))
         return cb
     def cam(m):
         with lock:camera[0]=(m,time.monotonic())
@@ -56,21 +60,22 @@ def main():
     started=time.monotonic();first=None;deadline=started+60
     while time.monotonic()<deadline:
         with lock:
-            if rows['best_effort'] and rows['reliable']:
-                first=max(rows[k][0]['receive'] for k in rows);break
+            fresh={k:next((r for r in v if r['valid'] and r['header_fresh_same_ros_clock']),None) for k,v in rows.items()}
+            if all(fresh.values()):
+                first=max(r['receive'] for r in fresh.values());break
         time.sleep(.05)
     if first is not None:
-        while time.monotonic()<first+30:time.sleep(.05)
+        while time.monotonic()<first+args.joint_window:time.sleep(.05)
     measured_end=time.monotonic()
     def stats(data,begin=None,end=None):
         data=[d for d in data if (begin is None or d['receive']>=begin) and (end is None or d['receive']<=end)]
         sg=[b['source']-a['source'] for a,b in zip(data,data[1:])];rg=[b['receive']-a['receive'] for a,b in zip(data,data[1:])]
         duration=data[-1]['receive']-data[0]['receive'] if len(data)>1 else 0
         result=dict(count=len(data),coverage=duration,rate=(len(data)-1)/duration if duration else 0,max_source_gap=max(sg,default=None),max_receive_gap=max(rg,default=None),latest_age=measured_end-data[-1]['receive'] if data else None,invalid=sum(not d['valid'] for d in data),duplicate=sum(g==0 for g in sg),regression=sum(g<0 for g in sg),first_receive_delay=data[0]['receive']-started if data else None)
-        result['pass']=duration>=29.9 and bool(sg) and all(0<g<.1 for g in sg) and all(0<g<.1 for g in rg) and result['invalid']==0 and result['latest_age']<.5
+        result['pass']=duration>=args.joint_window-.1 and bool(sg) and all(0<g<.1 for g in sg) and all(0<g<.1 for g in rg) and result['invalid']==0 and result['latest_age']<.5
         return result
     with lock:measured={k:stats(v,first,measured_end) for k,v in rows.items()}
-    gate=all(s['pass'] for s in measured.values());save('jointstate_clean_gate.json',dict(status='JOINTSTATE_CLEAN_GATE_PASS' if gate else 'JOINTSTATE_CLEAN_GATE_FAIL',subscribers=measured,discovery_wait_limit_s=60,first_both_connected=first,window_s=30))
+    gate=all(s['pass'] for s in measured.values());save('jointstate_clean_gate.json',dict(status='JOINTSTATE_CLEAN_GATE_PASS' if gate else 'JOINTSTATE_CLEAN_GATE_FAIL',subscribers=measured,discovery_wait_limit_s=60,first_both_connected=first,window_s=args.joint_window))
     # CLI cache comparison is obtained while the direct observer remains alive.
     save('cli_topic_info.json',run(['ros2','topic','info','-v','/dsr01/joint_states']))
     service_names={n for sample in timeline for n,_ in sample['services']}
@@ -79,6 +84,7 @@ def main():
     # marks integrated readiness PASS or supplies synthetic TCP/hardware state.
     health=None;config=None;pred=[];error=None;health_status='FAIL';pipeline=SafetyPipeline('openvla',operator_confirmed_initial_open=False)
     try:
+        if args.skip_prediction:raise RuntimeError('SKIPPED_MODEL_OFF_FOR_JOINTSTATE_ONLY')
         with urlopen('http://127.0.0.1:8766/health',timeout=3) as f:health=json.load(f)
         config=validate_identity(health,'openvla');health_status='IDENTITY_PASS'
     except Exception as exc:error='health:'+str(exc)
@@ -86,17 +92,22 @@ def main():
     with (out/'openvla_shadow.jsonl').open('x') as logfile:
         while config and time.monotonic()-shadow_start<30:
             try:
+                health_begin=time.monotonic()
                 with urlopen(config['server_url']+'/health',timeout=3) as f:current=json.load(f)
                 validate_runtime_health(current,health)
+                health_latency=time.monotonic()-health_begin
+                snapshot_wait_begin=time.monotonic()
                 waituntil=time.monotonic()+.5
                 while time.monotonic()<waituntil:
                     with lock:selected=camera[0]
                     if selected and time.monotonic()-selected[1]<=.01:break
                     time.sleep(.001)
                 if not selected or time.monotonic()-selected[1]>.01:raise TimeoutError('camera_snapshot_not_fresh')
-                image,received=selected;snapshot=time.monotonic();rgb=camera_rgb_image(image);buf=io.BytesIO();rgb.save(buf,format='JPEG',quality=95);jpeg=buf.getvalue();requesttime=time.monotonic()
+                image,received=selected;snapshot=time.monotonic();rgb_begin=snapshot;rgb=camera_rgb_image(image);rgb_end=time.monotonic();buf=io.BytesIO();rgb.save(buf,format='JPEG',quality=95);jpeg=buf.getvalue();encode_end=time.monotonic();requesttime=time.monotonic()
                 req=Request(config['server_url']+'/predict',data=json.dumps(dict(image_jpeg_base64=base64.b64encode(jpeg).decode(),instruction=config['instruction'])).encode(),headers={'Content-Type':'application/json'})
-                with urlopen(req,timeout=1.2) as f:raw=json.load(f)
+                http_begin=time.monotonic()
+                with urlopen(req,timeout=1.2) as f:response_bytes=f.read()
+                http_end=time.monotonic();raw=json.loads(response_bytes);decode_end=time.monotonic()
                 if raw.get('fixture'):raise ValueError('fixture_forbidden')
                 now=time.monotonic();action=CanonicalAction.from_vector(raw['action'],timestamp_monotonic=requesttime,sequence_id=str(len(pred)),source_model='openvla');health_status='MODEL_HEALTH_PASS'
                 with lock:recent=rows['best_effort'][-1] if rows['best_effort'] else None
@@ -104,7 +115,10 @@ def main():
                 # No flange/current TCP supplied as a verified TCP; origin is
                 # explicitly invalid safety context, not a claimed measurement.
                 decision=pipeline.inspect(action,RuntimeState(now,(0.,0.,0.),(0.,0.,0.),'unknown',camera_ok=now-received<.5,joint_state_ok=joint_ok,tcp_ok=False)).as_dict()
+                safety_end=time.monotonic()
                 record=dict(timestamp=time.time(),frame_id=len(pred),instruction=config['instruction'],raw_model_output=raw,canonical_action=action.as_dict(),translation_norm_m=math.dist(action.translation_m,(0,0,0)),rotation_norm_deg=math.degrees(math.dist(action.rotation_rotvec_rad,(0,0,0))),gripper_closedness=action.gripper_closedness,camera_age_s=now-received,snapshot_age_s=snapshot-received,inference_latency_s=now-requesttime,end_to_end_latency_s=now-received,safety=decision,jointstate_fresh=joint_ok,tcp_source='UNAVAILABLE',tcp_contract_verified=False,current_tcp=None,model_input_sha256=hashlib.sha256(jpeg).hexdigest(),source_image_sha256=hashlib.sha256(bytes(image.data)).hexdigest(),rgb_sha256=hashlib.sha256(rgb.tobytes()).hexdigest(),encoding=image.encoding,resolution=[image.width,image.height],command_issued=False,command_requested=False,executed_action=None,robot_delivered_command=None,delivered_action=None,diagnostic_scope='VISION_ONLY_NO_MOTION_READINESS')
+                record['latency_breakdown']=dict(health_s=health_latency,snapshot_wait_s=snapshot-snapshot_wait_begin,frame_age_at_snapshot_s=snapshot-received,bgra_rgb_s=rgb_end-rgb_begin,jpeg_encode_s=encode_end-rgb_end,http_response_s=http_end-http_begin,response_decode_s=decode_end-http_end,safety_and_action_evaluation_s=safety_end-now,server_reported_inference_s=raw.get('inference_seconds'),hash_and_record_s=time.monotonic()-safety_end,server_gpu_only_s=None)
+                record['latency_caveat']='Server inference_seconds times synchronized model call after processor/device transfer and lock acquisition; HTTP residual is not network-only. Research hashes are after response.'
                 logfile.write(json.dumps(record)+'\n');logfile.flush();os.fsync(logfile.fileno());pred.append(record)
             except Exception as exc:error=str(exc);break
         logfile.write(json.dumps(dict(event='TERMINAL',error=error,command_issued=False))+'\n');logfile.flush();os.fsync(logfile.fileno())

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "duration_s": 30.188694714102894,
+  "count": 68,
+  "camera_failure": 0,
+  "max_selected_frame_age_s": 0.4690681351348758,
+  "full_hardware_watchdog": "NOT_VERIFIED",
+  "scope": "CAMERA_MODEL_ONLY_DIAGNOSTIC"
+}

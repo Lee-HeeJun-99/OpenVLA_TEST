@@ -1,0 +1,12 @@
+{
+  "command": [
+    "ros2",
+    "topic",
+    "info",
+    "-v",
+    "/dsr01/joint_states"
+  ],
+  "output": "Type: sensor_msgs/msg/JointState\n\nPublisher count: 1\n\nNode name: joint_state_broadcaster\nNode namespace: /dsr01\nTopic type: sensor_msgs/msg/JointState\nEndpoint type: PUBLISHER\nGID: 01.0f.0b.ce.72.0b.38.39.00.00.00.00.00.00.46.03.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: TRANSIENT_LOCAL\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\nSubscription count: 4\n\nNode name: phase12_integrated_readonly_readiness\nNode namespace: /\nTopic type: sensor_msgs/msg/JointState\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.0b.ce.05.3e.94.e6.00.00.00.00.00.00.11.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: BEST_EFFORT\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\nNode name: phase12_integrated_readonly_readiness\nNode namespace: /\nTopic type: sensor_msgs/msg/JointState\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.0b.ce.05.3e.94.e6.00.00.00.00.00.00.12.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: TRANSIENT_LOCAL\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\nNode name: robot_state_publisher\nNode namespace: /dsr01\nTopic type: sensor_msgs/msg/JointState\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.0b.ce.6a.0b.c4.94.00.00.00.00.00.00.15.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: BEST_EFFORT\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\nNode name: rosbag2_recorder\nNode namespace: /\nTopic type: sensor_msgs/msg/JointState\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.0b.ce.c7.3e.98.3e.00.00.00.00.00.00.12.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: TRANSIENT_LOCAL\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\n",
+  "returncode": 0,
+  "duration": 0.4816227378323674
+}

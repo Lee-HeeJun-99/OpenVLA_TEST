@@ -1,0 +1,5 @@
+{
+  "requests": 0,
+  "classification": "READ_ONLY_BUT_LIVE_STABILITY_UNVERIFIED",
+  "reason": "Controller connection affirmative source unknown; all invocation prerequisites not satisfied."
+}

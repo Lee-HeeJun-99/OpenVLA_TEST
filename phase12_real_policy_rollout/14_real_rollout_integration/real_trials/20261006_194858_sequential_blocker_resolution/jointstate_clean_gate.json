@@ -1,0 +1,34 @@
+{
+  "status": "JOINTSTATE_CLEAN_GATE_FAIL",
+  "subscribers": {
+    "best_effort": {
+      "count": 2646,
+      "coverage": 56.97961651487276,
+      "rate": 46.420108835053405,
+      "max_source_gap": 3.0700149536132812,
+      "max_receive_gap": 3.072312918957323,
+      "latest_age": 0.001265964936465025,
+      "invalid": 0,
+      "duplicate": 0,
+      "regression": 0,
+      "first_receive_delay": 3.4728790940716863,
+      "pass": false
+    },
+    "reliable": {
+      "count": 2647,
+      "coverage": 60.03372857393697,
+      "rate": 44.07522342613139,
+      "max_source_gap": 3.0700149536132812,
+      "max_receive_gap": 3.072433311957866,
+      "latest_age": 0.0010979687795042992,
+      "invalid": 0,
+      "duplicate": 0,
+      "regression": 0,
+      "first_receive_delay": 0.41893503116443753,
+      "pass": false
+    }
+  },
+  "discovery_wait_limit_s": 60,
+  "first_both_connected": 2172302.796744528,
+  "window_s": 60.0
+}

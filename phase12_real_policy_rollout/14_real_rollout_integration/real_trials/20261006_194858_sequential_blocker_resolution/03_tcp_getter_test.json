@@ -1,0 +1,8 @@
+{
+  "requests": 0,
+  "status": "NOT_EXECUTED_PREREQUISITES_FAILED",
+  "jointstate": "JOINTSTATE_CLEAN_GATE_FAIL",
+  "controller_connection": "UNKNOWN",
+  "source_callback": "getter-only",
+  "vendor_stability": "UNVERIFIED"
+}

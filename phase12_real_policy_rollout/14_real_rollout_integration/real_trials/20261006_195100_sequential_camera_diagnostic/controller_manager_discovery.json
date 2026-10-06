@@ -1,0 +1,8 @@
+{
+  "services": {
+    "/dsr01/controller_manager/list_controllers": "AVAILABLE_IN_DIRECT_GRAPH",
+    "/dsr01/controller_manager/list_hardware_interfaces": "AVAILABLE_IN_DIRECT_GRAPH"
+  },
+  "service_gid": "UNAVAILABLE_IN_RCLPY_HUMBLE_GRAPH_API",
+  "calls": 0
+}

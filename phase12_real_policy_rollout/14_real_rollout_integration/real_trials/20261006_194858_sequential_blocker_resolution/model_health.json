@@ -1,0 +1,5 @@
+{
+  "status": "FAIL",
+  "health": null,
+  "error": "health:SKIPPED_MODEL_OFF_FOR_JOINTSTATE_ONLY"
+}

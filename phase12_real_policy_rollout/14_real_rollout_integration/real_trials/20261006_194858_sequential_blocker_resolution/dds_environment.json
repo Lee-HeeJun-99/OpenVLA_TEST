@@ -1,0 +1,39 @@
+{
+  "environment": {
+    "ROS_VERSION": "2",
+    "ROS_PYTHON_VERSION": "3",
+    "ROS_LOCALHOST_ONLY": "0",
+    "ROS_DISTRO": "humble"
+  },
+  "default_domain": 0,
+  "network": [
+    {
+      "command": [
+        "ip",
+        "addr"
+      ],
+      "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n    inet 127.0.0.1/8 scope host lo\n       valid_lft forever preferred_lft forever\n    inet6 ::1/128 scope host \n       valid_lft forever preferred_lft forever\n2: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000\n    link/ether f0:2f:74:d4:3f:8a brd ff:ff:ff:ff:ff:ff\n    inet 192.168.0.100/24 brd 192.168.0.255 scope global noprefixroute enp3s0\n       valid_lft forever preferred_lft forever\n    inet6 fe80::6f16:cde7:8877:15cf/64 scope link noprefixroute \n       valid_lft forever preferred_lft forever\n3: enp6s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000\n    link/ether f0:2f:74:d4:3f:8b brd ff:ff:ff:ff:ff:ff\n4: wlp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000\n    link/ether 14:18:c3:40:b7:d5 brd ff:ff:ff:ff:ff:ff\n    inet 192.168.1.98/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp4s0\n       valid_lft 5868sec preferred_lft 5868sec\n    inet6 fe80::1cbd:97df:42c0:3ce3/64 scope link noprefixroute \n       valid_lft forever preferred_lft forever\n",
+      "returncode": 0,
+      "duration": 0.005333632230758667
+    },
+    {
+      "command": [
+        "ip",
+        "route"
+      ],
+      "output": "default via 192.168.1.1 dev wlp4s0 proto dhcp metric 600 \ndefault via 192.168.0.1 dev enp3s0 proto static metric 20100 \n169.254.0.0/16 dev wlp4s0 scope link metric 1000 \n192.168.0.0/24 dev enp3s0 proto kernel scope link src 192.168.0.100 metric 100 \n192.168.1.0/24 dev wlp4s0 proto kernel scope link src 192.168.1.98 metric 600 \n",
+      "returncode": 0,
+      "duration": 0.0024228631518781185
+    }
+  ],
+  "daemon": {
+    "command": [
+      "ros2",
+      "daemon",
+      "status"
+    ],
+    "output": "The daemon is running\n",
+    "returncode": 0,
+    "duration": 0.3920936589129269
+  }
+}
