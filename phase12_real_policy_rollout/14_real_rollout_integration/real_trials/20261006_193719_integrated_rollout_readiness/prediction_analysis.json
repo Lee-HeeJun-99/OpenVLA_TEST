@@ -1,0 +1,11 @@
+{
+  "blockers": {
+    "camera_failure": 2,
+    "workspace_violation": 66,
+    "gripper_unknown_state_blocks_command": 66,
+    "joint_state_failure": 64
+  },
+  "latency_max_s": 0.5159862702712417,
+  "nan_inf": 0,
+  "command_records_all_disabled": true
+}

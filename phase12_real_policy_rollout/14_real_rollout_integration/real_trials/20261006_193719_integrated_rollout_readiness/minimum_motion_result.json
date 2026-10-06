@@ -1,0 +1,14 @@
+{
+  "authorized": false,
+  "executed": false,
+  "physical_pose_commands": 0,
+  "requested_delta": null,
+  "protocol_delta_m": [
+    0.0005,
+    0,
+    0
+  ],
+  "observed_delta": null,
+  "result": "BLOCKED",
+  "next_allowed_stage": "BLOCKED"
+}

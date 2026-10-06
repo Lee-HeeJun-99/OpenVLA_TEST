@@ -1,0 +1,41 @@
+{
+  "samples": 359,
+  "network_deltas": {
+    "lo": {
+      "rx_bytes": 25933576,
+      "rx_errors": 0,
+      "rx_drops": 0,
+      "tx_bytes": 25933576,
+      "tx_errors": 0,
+      "tx_drops": 0
+    },
+    "enp3s0": {
+      "rx_bytes": 98747718,
+      "rx_errors": 0,
+      "rx_drops": 0,
+      "tx_bytes": 539184,
+      "tx_errors": 0,
+      "tx_drops": 0
+    },
+    "enp6s0": {
+      "rx_bytes": 60,
+      "rx_errors": 0,
+      "rx_drops": 0,
+      "tx_bytes": 0,
+      "tx_errors": 0,
+      "tx_drops": 0
+    },
+    "wlp4s0": {
+      "rx_bytes": 5149835,
+      "rx_errors": 0,
+      "rx_drops": 0,
+      "tx_bytes": 8436384,
+      "tx_errors": 0,
+      "tx_drops": 0
+    }
+  },
+  "load_1min_max": 7.6875,
+  "driver_cpu_baseline": "~203% from captured ps; cumulative CPU alone not proof of stall",
+  "causality": "UNRESOLVED_NO_CONTROLLED_HOST_INTERVENTION",
+  "raw_gap_alignment": "source ROS timestamps align only with receive_wall; monotonic timestamps remain separate"
+}

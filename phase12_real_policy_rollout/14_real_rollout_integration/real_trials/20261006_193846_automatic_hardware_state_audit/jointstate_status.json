@@ -1,0 +1,28 @@
+{
+  "count": 1135,
+  "first_receive_delay": 8.657355348113924,
+  "receive_rate": 100.02495206233584,
+  "latest_age": 0.01638768706470728,
+  "max_source_gap": 0.011200684,
+  "max_receive_gap": 0.03143679490312934,
+  "source_duplicate": 0,
+  "source_regression": 0,
+  "gap_ge_100ms": 0,
+  "invalid_count": 0,
+  "clock_domains": {
+    "source": "ROS_HEADER",
+    "receive": "HOST_MONOTONIC"
+  },
+  "observed_orders": [
+    [
+      "joint_1",
+      "joint_2",
+      "joint_4",
+      "joint_5",
+      "joint_3",
+      "joint_6"
+    ]
+  ],
+  "effort": "UNSUPPORTED_NOT_VALIDATED",
+  "status": "FAIL"
+}

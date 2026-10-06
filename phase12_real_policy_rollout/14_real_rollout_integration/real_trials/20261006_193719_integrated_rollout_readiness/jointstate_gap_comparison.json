@@ -1,0 +1,145 @@
+{
+  "events": {
+    "best_effort": [
+      {
+        "before": 1791283053.6294053,
+        "after": 1791283056.6893795,
+        "source_gap": 3.059974193572998
+      },
+      {
+        "before": 1791283056.699374,
+        "after": 1791283059.759367,
+        "source_gap": 3.059993028640747
+      },
+      {
+        "before": 1791283059.76937,
+        "after": 1791283062.829379,
+        "source_gap": 3.060009002685547
+      },
+      {
+        "before": 1791283062.8393788,
+        "after": 1791283065.9094026,
+        "source_gap": 3.070023775100708
+      },
+      {
+        "before": 1791283065.919385,
+        "after": 1791283068.979374,
+        "source_gap": 3.0599889755249023
+      },
+      {
+        "before": 1791283068.9893904,
+        "after": 1791283072.0493739,
+        "source_gap": 3.059983491897583
+      },
+      {
+        "before": 1791283072.0593688,
+        "after": 1791283075.119395,
+        "source_gap": 3.060026168823242
+      }
+    ],
+    "reliable": [
+      {
+        "before": 1791283053.6294053,
+        "after": 1791283056.6893795,
+        "source_gap": 3.059974193572998
+      },
+      {
+        "before": 1791283056.699374,
+        "after": 1791283059.759367,
+        "source_gap": 3.059993028640747
+      },
+      {
+        "before": 1791283059.76937,
+        "after": 1791283062.829379,
+        "source_gap": 3.060009002685547
+      },
+      {
+        "before": 1791283062.8393788,
+        "after": 1791283065.9094026,
+        "source_gap": 3.070023775100708
+      },
+      {
+        "before": 1791283065.919385,
+        "after": 1791283068.979374,
+        "source_gap": 3.0599889755249023
+      },
+      {
+        "before": 1791283068.9893904,
+        "after": 1791283072.0493739,
+        "source_gap": 3.059983491897583
+      },
+      {
+        "before": 1791283072.0593688,
+        "after": 1791283075.119395,
+        "source_gap": 3.060026168823242
+      }
+    ],
+    "bag": [
+      {
+        "before": 1791283068.9893904,
+        "after": 1791283072.0493739,
+        "source_gap": 3.059983491897583
+      },
+      {
+        "before": 1791283072.0593688,
+        "after": 1791283075.119395,
+        "source_gap": 3.060026168823242
+      }
+    ]
+  },
+  "shared": [
+    {
+      "before": 1791283053.6294053,
+      "after": 1791283056.6893795,
+      "source_gap": 3.059974193572998,
+      "reliable": true,
+      "bag": false
+    },
+    {
+      "before": 1791283056.699374,
+      "after": 1791283059.759367,
+      "source_gap": 3.059993028640747,
+      "reliable": true,
+      "bag": false
+    },
+    {
+      "before": 1791283059.76937,
+      "after": 1791283062.829379,
+      "source_gap": 3.060009002685547,
+      "reliable": true,
+      "bag": false
+    },
+    {
+      "before": 1791283062.8393788,
+      "after": 1791283065.9094026,
+      "source_gap": 3.070023775100708,
+      "reliable": true,
+      "bag": false
+    },
+    {
+      "before": 1791283065.919385,
+      "after": 1791283068.979374,
+      "source_gap": 3.0599889755249023,
+      "reliable": true,
+      "bag": false
+    },
+    {
+      "before": 1791283068.9893904,
+      "after": 1791283072.0493739,
+      "source_gap": 3.059983491897583,
+      "reliable": true,
+      "bag": true
+    },
+    {
+      "before": 1791283072.0593688,
+      "after": 1791283075.119395,
+      "source_gap": 3.060026168823242,
+      "reliable": true,
+      "bag": true
+    }
+  ],
+  "bag_count": 3916,
+  "bag_source_coverage_s": 45.250049352645874,
+  "bag_receive_clock": "ROS_SYSTEM_NOT_MONOTONIC",
+  "interpretation": "Matching source gaps across same-host observers establishes received stream omissions, not whether controller/driver generation or DDS common delivery caused them."
+}

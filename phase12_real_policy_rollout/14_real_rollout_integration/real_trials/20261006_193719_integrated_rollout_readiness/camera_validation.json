@@ -1,0 +1,9 @@
+{
+  "status": "FAIL",
+  "duration_s": 30.034317276906222,
+  "count": 66,
+  "camera_failure": 2,
+  "max_selected_frame_age_s": 0.5260893800295889,
+  "full_hardware_watchdog": "NOT_VERIFIED",
+  "scope": "CAMERA_MODEL_ONLY_DIAGNOSTIC"
+}

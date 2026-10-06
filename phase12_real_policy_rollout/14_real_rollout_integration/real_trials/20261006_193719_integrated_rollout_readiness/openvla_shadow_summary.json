@@ -1,0 +1,11 @@
+{
+  "status": "INTEGRATED_SHADOW_NOT_READY",
+  "predictions": 66,
+  "duration_s": 30.034317276906222,
+  "anomalies": 0,
+  "translation_max_m": 0.0023688678261456642,
+  "rotation_max_deg": 0.8894775421312758,
+  "close_candidates": 0,
+  "physical_commands": 0,
+  "error": null
+}
