@@ -1,0 +1,1 @@
+{"invalid_timestamp": 2252673.084448482, "invalid_wall_time": 1791364110.5739958, "clock_domain": "HOST_MONOTONIC", "invalid_reason": "MODEL_INPUT_CONSTRUCTION_FAILURE", "invalid_category": "INVALID_MODEL_INPUT", "last_valid_observation": null, "last_prediction": null, "command_count_before_invalid": 0}

@@ -107,6 +107,7 @@ class LiveObservation:
     def snapshot(self):
         with self.lock:
             data=dict(self.data);joint_status=self.joint_readiness.status(time.monotonic())
+            joint_sample=dict(self.joint_readiness.last or {})
         if joint_status['phase']!='RUNTIME_READY' or joint_status['fault']:
             raise RuntimeError(joint_status['fault'] or 'joint_state_warmup_not_ready')
         now=time.monotonic()
@@ -139,22 +140,33 @@ class LiveObservation:
             image_sha256=hashlib.sha256(bytes(image.data)).hexdigest(),image_hash_scope='SOURCE_ROS_PIXEL_BYTES',
             rgb_pixel_sha256=hashlib.sha256(arr.tobytes()).hexdigest(),model_input_sha256=hashlib.sha256(jpeg.getvalue()).hexdigest(),
             camera_encoding=image.encoding,model_color_order='RGB',
-            camera_ok=now-ci<=.5,joint_state_ok=finite and now-ji<=.5,tcp_ok=now-tcp[1]<=.5,
+            camera_ok=now-ci<.5,joint_state_ok=finite and now-ji<.5,tcp_ok=now-tcp[1]<.5,
+            camera_receive_monotonic=ci,
+            camera={'selected_age':now-ci,'encoding':image.encoding,'resolution':[image.width,image.height],
+                    'resolution_valid':image.width>0 and image.height>0 and (not self.evidence.get('camera_resolution') or list(self.evidence['camera_resolution'])==[image.width,image.height]),
+                    'stream_alive':now-ci<.5},
+            jointstate={'names':list(joints.name),'position':list(joints.position),'velocity':list(joints.velocity),
+                        'source':joint_sample.get('source'),'sample_id':ji,'latest_age':now-ji,
+                        'source_gap':joint_status.get('source_gap'),'receive_gap':joint_status.get('receive_gap')},
             model_ok=True,communication_ok=now-ji<=.5,
             **self.hardware_monitor.snapshot(),
             phase=self.evidence.get('phase','unknown'),joint_positions_by_name=positions,
             joint_velocity_by_name=velocities,effort='UNSUPPORTED',
             image_source_timestamp={'sec':image.header.stamp.sec,'nanosec':image.header.stamp.nanosec},
             joint_source_timestamp={'sec':joints.header.stamp.sec,'nanosec':joints.header.stamp.nanosec},
-            tcp_source_timestamp=None,clock_domains={'source':'ROS_HEADER','receive':'HOST_MONOTONIC'})
+            tcp_source_timestamp=None,clock_domains={'source':'ROS_HEADER','receive':'HOST_MONOTONIC'},
+            **{key:self.evidence.get(key) for key in ('episode_id','condition','matched_pair_id','sim_observation_id','real_observation_id',
+                'observation_gap_score','representation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')})
 
-    def predict(self,image,model):
+    def predict(self,image,model,*,selected_frame_receive=None):
         payload={'image_jpeg_base64':base64.b64encode(image).decode(),'instruction':'Pick up the orange cube.'}
         request=Request(self.url+'/predict',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'})
         started=time.monotonic()
         with urlopen(request,timeout=1.2) as response:result=json.load(response)
         self.last_prediction={'raw_model_output':result,'inference_latency_s':time.monotonic()-started,
             'model_input_sha256':hashlib.sha256(image).hexdigest()}
+        if selected_frame_receive is not None:
+            self.last_prediction['selected_prediction_frame_age']=time.monotonic()-selected_frame_receive
         return result['actions'] if model=='oft' else [result['action']]
 
     def check_health(self):
@@ -171,3 +183,27 @@ class LiveObservation:
     def close(self):
         import rclpy
         self.executor.shutdown();self.thread.join(timeout=2);self.node.destroy_node();rclpy.shutdown()
+
+    def rearm_trial_readiness(self,previous_trial,*,generation):
+        """Same subscribers/participant; only a NEW trial's readiness is rearmed.
+
+        Does not clear an old trial, re-enable its sink, reset the robot, or grant
+        physical batch authorization. Call after prior worker/watchdog teardown.
+        """
+        from jointstate_runtime_startup import JointStateStartup
+        if previous_trial.status is None or not previous_trial.commands_inhibited:
+            raise PermissionError('active_trial_readiness_reset_forbidden')
+        with self.lock:
+            old=self.joint_readiness
+            self.__dict__.setdefault('trial_readiness_history',[]).append({'started':old.started,'first_fresh':old.first_fresh,'fault':old.fault,'events':list(old.events)})
+            self.joint_readiness=JointStateStartup(time.monotonic())
+            self.joint_readiness.last=old.last
+        deadline=self.joint_readiness.started+71
+        while time.monotonic()<deadline:
+            with self.lock:s=self.joint_readiness.status(time.monotonic())
+            if s['fault']:return {**s,'generation':generation}
+            if s['phase']=='RUNTIME_READY':
+                return {**s,'generation':generation,'first_fresh_after_rearm':self.joint_readiness.first_fresh>=self.joint_readiness.started,
+                        'warmup_seconds':time.monotonic()-self.joint_readiness.first_fresh}
+            time.sleep(.02)
+        raise TimeoutError('JOINTSTATE_DISCOVERY_TIMEOUT')

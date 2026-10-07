@@ -28,7 +28,6 @@ def run(model,fault=None):
             self.reply({'actions':[[0]*7]*5,'action':[0]*7,'fixture':True})
         def reply(self,value):
             self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps(value).encode())
-    port=8765 if model=='oft' else 8766
     first_prediction=[None]
     old_post=Handler.do_POST
     def tracked_post(self):
@@ -36,7 +35,9 @@ def run(model,fault=None):
         old_post(self)
     Handler.do_POST=tracked_post
     if fault=='health_mismatch':health['variant']='WRONG_MODEL'
-    server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
+    # Never bind the real model server's 8765/8766 ports. This test owns an
+    # ephemeral HTTP endpoint and an explicitly disabled per-test config.
+    server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
     http=threading.Thread(target=server.serve_forever);http.start()
     node=rclpy.create_node('fake_observations_'+model)
     camera=node.create_publisher(Image,'/zed/zed_node/rgb/color/rect/image',10)
@@ -63,13 +64,18 @@ def run(model,fault=None):
             path=Path(d);evidence={k:True for k in REQUIRED};evidence.update(source='FAKE_TEST_GRAPH',verified_wall_time=time.time(),phase='alignment',verified_model_health_contract=health,verified_robot_state_topic='/phase12_test/robot_state')
             evidence['fake_fault']=fault
             (path/'evidence.json').write_text(json.dumps(evidence))
+            cfg.update(server_url=f'http://127.0.0.1:{server.server_port}',motion_enabled=False,explicit_motion_approval=False)
+            (path/'model.yaml').write_text(yaml.safe_dump(cfg))
             result=subprocess.run([sys.executable,str(ROOT/'run_real_rollout.py'),'--dry-run','--live','--model',model,
                 '--protocol','short_horizon','--output',str(path/'log.jsonl'),'--preflight-evidence',str(path/'evidence.json'),
-                '--session-results',str(path/'stages')],capture_output=True,text=True,timeout=20)
+                '--session-results',str(path/'stages'),'--model-config',str(path/'model.yaml')],capture_output=True,text=True,timeout=20)
             if result.returncode and not fault:raise RuntimeError(result.stderr)
             if fault=='health_mismatch':
                 if result.returncode==0:raise AssertionError('wrong_model_accepted')
                 print(model+': HEALTH_MISMATCH_FAIL_CLOSED_PASS');return
+            trial=json.loads((path/'trial_result/trial_summary.json').read_text())
+            if trial['status'] not in ('SUCCESS','FAILURE','INVALID'):raise AssertionError('bad_terminal_status')
+            if fault and (trial['status']!='INVALID' or trial['task_success'] is not None):raise AssertionError('infrastructure_counted_as_task_failure')
             rows=[json.loads(x) for x in (path/'log.jsonl').read_text().splitlines()]
             actions=[r for r in rows if r.get('event')=='ACTION']
             if any(r['command_issued'] for r in actions):raise AssertionError('command_issued')

@@ -1,0 +1,1 @@
+{"receive_monotonic": 1.0, "tcp_m_abc": [0.4, 0, 0.5, 10, 20, 30], "phase": "alignment", "robot_state_ok": true, "camera_ok": false, "joint_state_ok": true, "tcp_ok": true, "model_ok": true, "communication_ok": true, "episode_id": 4}

@@ -54,7 +54,8 @@ class DDSIntegration(unittest.TestCase):
                 worker=threading.Thread(target=lambda:(results.append(sink.send_pose([400,0,500,0,0,0])),log.append({'terminal':results[-1]})))
                 worker.start()
                 deadline=time.monotonic()+1
-                while not sink.events and time.monotonic()<deadline:time.sleep(.005)
+                while (not sink.events or sink.events[0]['sent_at'] is None) and time.monotonic()<deadline:time.sleep(.005)
+                self.assertIsNotNone(sink.events[0]['sent_at'],'in-flight abort requires actual dispatch evidence')
                 watch=HardwareWatchdog(lambda:state,lambda reason:log.append({'abort':boundary.abort(reason)}),.005).start()
                 state['camera_ok']=False;worker.join(2)
                 deadline=time.monotonic()+2

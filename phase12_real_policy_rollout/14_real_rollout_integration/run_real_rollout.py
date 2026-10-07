@@ -10,7 +10,8 @@ import threading
 
 ROOT=Path(__file__).resolve().parent
 PHASE=ROOT.parent
-sys.path[:0]=[str(PHASE/'02_safety'),str(PHASE/'03_shadow_mode'),str(PHASE/'13_rollout_readiness/runtime')]
+sys.path[:0]=[str(PHASE/'02_safety'),str(PHASE/'03_shadow_mode'),str(PHASE/'13_rollout_readiness/runtime'),str(PHASE/'15_valid_invalid_rollout_policy')]
+from rollout_trial_classifier import RolloutTrial
 from canonical_action import CanonicalAction
 from safety_pipeline import SafetyPipeline,RuntimeState
 from integrated_logger import FsyncJsonlLogger
@@ -21,18 +22,22 @@ from stage_gate import require_stage,save_stage
 
 
 class Controller:
-    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False):
+    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False,trial=None):
         self.pipeline=SafetyPipeline(model,operator_confirmed_initial_open=initial_open)
         self.model=model;self.protocol=protocol;self.sink=sink;self.log=logger;self.dry_run=dry_run
         self.abort_boundary=AbortBoundary(sink) if not dry_run else None
         self.aborted=False;self.count=0;self.rows=[]
         self.abort_lock=threading.Lock();self.abort_reason=None
         self.scheduler=None
+        self.trial=trial
+        if trial is not None:sink.trial_guard=trial
 
     def abort(self,reason):
         with self.abort_lock:
             if self.aborted:return {'state':'ABORTED','reason':self.abort_reason,'command_issued':False}
             self.aborted=True;self.abort_reason=reason
+            if self.trial:self.trial.invalidate(reason)
+            self.sink.inhibit()
         if self.scheduler:self.scheduler.abort()
         result={'state':'ABORTED','reason':reason,'command_issued':False}
         if not self.dry_run:result=self.abort_boundary.abort(reason)
@@ -43,9 +48,15 @@ class Controller:
 
     def step(self,vector,obs,*,inference_time,chunk_id,chunk_index):
         if self.aborted:raise RuntimeError('session_aborted')
+        if self.trial:
+            obs=dict(obs)
+            if obs.get('episode_id') is None:obs['episode_id']=self.trial.trial_id
         if obs.get('live_execution_clock'):
             obs=dict(obs);obs['receive_monotonic']=time.monotonic()
         now=obs['receive_monotonic'];reason=[];candidate={};decision=None
+        if self.trial:self.trial.prediction({'raw_action':list(vector),'raw_model_output':obs.get('raw_model_output'),
+                                            'chunk_id':chunk_id,'chunk_index':chunk_index,'observation':obs})
+        if self.trial and not self.trial.observe(obs):return self.abort(self.trial.summary()['invalid_reason'])
         try:
             if not obs.get('robot_state_ok'):raise ValueError('unexpected_robot_state')
             if obs.get('manual_abort'):raise ValueError('manual_abort')
@@ -69,11 +80,13 @@ class Controller:
             **{key:obs.get(key) for key in ('episode_id','condition','matched_pair_id','sim_observation_id','real_observation_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')}}
         from rollout_runner import finite_json
         record=finite_json(record)
+        if self.trial and reason:self.trial.invalidate('|'.join(reason))
         try:self.log.append(record)
         except Exception:
             self.abort('logger_failure');raise
         self.rows.append(record);self.count+=1
         if reason:return self.abort('|'.join(reason))
+        if self.trial and not self.trial.command_allowed():return self.abort(self.trial.summary()['invalid_reason'] or 'trial_command_inhibited')
         if self.dry_run:
             record['sink_receipt']=NullCommandSink().submit(action.as_dict(),decision.as_dict())
             return record
@@ -114,6 +127,7 @@ def main():
     parser.add_argument('--approval',type=Path)
     parser.add_argument('--session-results',type=Path)
     parser.add_argument('--model-config',type=Path,help='operator-approved config copy; defaults remain disabled')
+    parser.add_argument('--task-outcome-evidence',type=Path,help='post-trial explicit task_success boolean; protocol ACK/COMPLETE alone is not task evidence')
     args=parser.parse_args()
     if args.output.exists():raise FileExistsError('preserve_existing_log')
     if args.prediction_only_flange:
@@ -177,7 +191,13 @@ def main():
             from concurrent_logger import ConcurrentLogger
             fault=3 if args.dry_run and evidence.get('source')=='FAKE_TEST_GRAPH' and evidence.get('fake_fault')=='logger' else None
             logger=ConcurrentLogger(logger,fail_after=fault)
-            controller=Controller(args.model,args.protocol,sink,logger,dry_run=args.dry_run,initial_open=evidence.get('gripper_initial_confirmed') is True)
+            trial=RolloutTrial(args.output.parent.name,evaluation_scope='prediction_only' if args.dry_run else 'task')
+            js=obs.joint_readiness.status(time.monotonic())
+            logger.append({'event':'TRIAL_STARTUP_READINESS','scope':'PRE_TRIAL_NOT_PERFORMANCE',
+                           'readiness':js,'startup_warmup_events':list(obs.joint_readiness.events)})
+            trial.start({**js,'first_fresh_after_rearm':obs.joint_readiness.first_fresh is not None and obs.joint_readiness.first_fresh>=obs.joint_readiness.started,
+                         'warmup_seconds':time.monotonic()-obs.joint_readiness.first_fresh if obs.joint_readiness.first_fresh is not None else 0})
+            controller=Controller(args.model,args.protocol,sink,logger,dry_run=args.dry_run,initial_open=evidence.get('gripper_initial_confirmed') is True,trial=trial)
             from hardware_watchdog import HardwareWatchdog
             from oft_action_scheduler import ActionScheduler
             from task_phase import TaskPhase
@@ -208,7 +228,7 @@ def main():
                         controller.abort('minimum_motion_config_invalid');break
                     actions=[list(delta)+[0,0,0,0]]
                 else:
-                    try:actions=obs.predict(image,args.model)
+                    try:actions=obs.predict(image,args.model,selected_frame_receive=observation.get('camera_receive_monotonic'))
                     except Exception as exc:
                         controller.abort('model_inference_failure:'+str(exc));break
                 if len(actions)!=(5 if args.model=='oft' and args.protocol!='minimum_motion' else 1):
@@ -220,6 +240,8 @@ def main():
                     except Exception as exc:
                         controller.abort('observation_failure:'+str(exc));break
                     observation.update(getattr(obs,'last_prediction',{}))
+                    if observation.get('selected_prediction_frame_age') is not None:
+                        observation['camera']['selected_age']=observation['selected_prediction_frame_age']
                     observation['inference_frame']=seq
                     observation['live_execution_clock']=True
                     if phase_machine:
@@ -260,6 +282,18 @@ def main():
         if watchdog:watchdog.close()
         if scheduler:scheduler.close()
         obs.close()
+        if 'trial' in locals():
+            if trial.status is None:
+                try:outcome=json.loads(args.task_outcome_evidence.read_text()) if args.task_outcome_evidence else {}
+                except Exception as exc:
+                    trial.invalidate('TASK_OUTCOME_EVIDENCE_ERROR:'+str(exc));outcome={}
+                physical_evidence=args.dry_run or (outcome.get('operator') and outcome.get('physical_task_evidence') is True and
+                    trial.started_wall_time<=outcome.get('observed_wall_time',0)<=time.time())
+                if outcome.get('trial_id')==trial.trial_id and isinstance(outcome.get('task_success'),bool) and outcome.get('evaluation_scope')==trial.evaluation_scope and physical_evidence:
+                    trial.finish(outcome['task_success'],persist=lambda summary:trial.save(args.output.parent/'trial_result',summary=summary))
+                else:trial.invalidate('TASK_OUTCOME_UNVERIFIED',category='INVALID_TASK_OUTCOME_UNVERIFIED')
+            if trial.status=='INVALID':trial.save(args.output.parent/'trial_result')
+            if not args.dry_run and trial.status=='INVALID':passed=False
         if args.session_results:
             from integration_metrics import collect
             save_stage(args.protocol,args.session_results,identity,passed=passed,dry_run=args.dry_run,

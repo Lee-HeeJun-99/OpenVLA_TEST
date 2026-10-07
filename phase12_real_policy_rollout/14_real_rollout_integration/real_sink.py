@@ -38,6 +38,8 @@ class RealDoosanCommandSink:
         self.gripper_state='GRIPPER_IDLE'
         self._transport_lock=threading.Lock()
         self._abort_event=threading.Event()
+        self.trial_guard=None
+        self._dispatch_lock=threading.RLock()
 
     def cancel_gripper(self):
         self.gripper_cancel.set();self.gripper_state='GRIPPER_ABORTED'
@@ -61,8 +63,16 @@ class RealDoosanCommandSink:
             request=request,result=None,failure_reason=None,clock_domain='HOST_MONOTONIC')
         self.events.append(event)
         try:
-            future=self.transport.send(*SERVICES[kind],request)
-            event.update(sent_at=time.monotonic(),state='sent')
+            # Discovery/request construction may block, but never holds the trial
+            # invalidation lock. Only the actual async submission is serialized.
+            prepared=self.transport.prepare(*SERVICES[kind],request) if hasattr(self.transport,'prepare') else None
+            gate=self.trial_guard.lock if self.trial_guard is not None else self._dispatch_lock
+            with gate:
+                if not emergency and (self.aborted or (self.trial_guard is not None and not self.trial_guard.command_allowed())):
+                    raise PermissionError('trial_command_inhibited')
+                future=self.transport.dispatch_prepared(prepared) if prepared is not None else self.transport.send(*SERVICES[kind],request)
+                event.update(sent_at=time.monotonic(),state='sent')
+                if not emergency and self.trial_guard is not None:self.trial_guard.command_dispatched()
             result=self.wait_for_ack(future,self.ack_timeout)
             event.update(ack_at=time.monotonic(),state='acknowledged',result=result)
             event['ack_latency']=event['ack_at']-event['sent_at']
@@ -144,6 +154,8 @@ class RosServiceTransport:
     """Lazy import; only authorized sink constructs this transport."""
     def __init__(self,node):self.node=node;self.clients={}
     def send(self,name,type_name,values):
+        return self.dispatch_prepared(self.prepare(name,type_name,values))
+    def prepare(self,name,type_name,values):
         if (name,type_name) not in SERVICES.values():raise ValueError('service_not_allowlisted')
         import dsr_msgs2.srv as interfaces
         cls=getattr(interfaces,type_name)
@@ -152,6 +164,10 @@ class RosServiceTransport:
         if not client.wait_for_service(timeout_sec=1.):raise TimeoutError('service_unavailable')
         request=cls.Request()
         for key,value in values.items():setattr(request,key,value)
+        return client,request
+    @staticmethod
+    def dispatch_prepared(prepared):
+        client,request=prepared
         return client.call_async(request)
     def wait(self,future,timeout):
         # Node must run in an independent MultiThreadedExecutor.

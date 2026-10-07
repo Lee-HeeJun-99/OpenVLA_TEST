@@ -1,0 +1,9 @@
+[
+  {"task_success": true, "predictions": [{"action": [0,0,0,0,0,0,0]}]},
+  {"task_success": null, "predictions": [{"action": [0,0,0,0,0,0,0], "observation": {"joint_state_ok": false}}]},
+  {"task_success": false, "predictions": [{"action": [0,0,0,0,0,0,0]}]},
+  {"task_success": null, "predictions": [{"action": [0,0,0,0,0,0,0], "observation": {"camera_ok": false}}]},
+  {"task_success": null, "predictions": [{"action": [0.0041,0,0,0,0,0,0]}]},
+  {"task_success": null, "predictions": [{"action": [0,0,0,0,0,0,0], "runtime_error": "MODEL_INPUT_CONSTRUCTION_FAILURE"}]},
+  {"task_success": true, "predictions": [{"action": [0,0,0,0,0,0,0]}]}
+]
