@@ -26,7 +26,9 @@ class BatchTests(unittest.TestCase):
             s=RolloutBatch(2,3).run(prepare,execute,Path(d)/'batch');self.assertEqual(s['total_attempts'],3);self.assertEqual(s['valid_trials'],2);self.assertEqual(generations,[1,2,3])
     def test_old_ready_and_physical_batch_blocked(self):
         with tempfile.TemporaryDirectory() as d:
-            s=RolloutBatch(1,1).run(lambda _: {**READY,'generation':0},lambda _: True,Path(d)/'a');self.assertEqual(s['invalid_trials'],1)
+            s=RolloutBatch(1,1).run(lambda _: {**READY,'generation':0},lambda _: True,Path(d)/'a')
+            self.assertEqual(s['invalid_trials'],0);self.assertEqual(s['total_attempts'],0)
+            self.assertEqual(len(s['pretrial_blocks']),1)
             with self.assertRaises(PermissionError):RolloutBatch(1,1,physical=True).run(lambda _:READY,lambda _:True,Path(d)/'b')
 
 if __name__=='__main__':unittest.main()

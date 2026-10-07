@@ -68,7 +68,7 @@ def run(args):
                 if not camera[0] or now-camera[0][1]>.5:fault[0]='camera_stale';return
     try:
         # The same node/subscribers survive discovery, warm-up and inference.
-        deadline=readiness.started+71
+        deadline=readiness.started+120
         while time.monotonic()<deadline:
             with lock:
                 pre=readiness.status(time.monotonic());c=camera[0]

@@ -32,7 +32,7 @@ class RolloutBatch:
         import json
         from pathlib import Path
         from rollout_trial_classifier import RolloutTrial
-        output=Path(output);output.mkdir(parents=True,exist_ok=False);trials=[];stop=None
+        output=Path(output);output.mkdir(parents=True,exist_ok=False);trials=[];stop=None;pretrial_blocks=[]
         if self.physical:raise PermissionError('physical_batch_not_authorized_requires_validated_recovery_and_operator_reset')
         for attempt in range(1,self.maximum+1):
             if sum(t['status']!='INVALID' for t in trials)>=self.target:break
@@ -44,7 +44,13 @@ class RolloutBatch:
                 trial.start(ready)
                 outcome=execute(trial)
                 if trial.status is None:trial.finish(outcome,persist=lambda summary:trial.save(directory,summary=summary))
-            except Exception as exc:trial.invalidate(str(exc))
+            except Exception as exc:
+                if trial.started is None:
+                    blocked=dict(attempt=attempt,reason=str(exc),task_status=None,task_success=None)
+                    directory.mkdir(parents=True,exist_ok=True)
+                    (directory/'pretrial_blocked.json').write_text(json.dumps(blocked,indent=2))
+                    pretrial_blocks.append(blocked);stop='PRETRIAL_READINESS_BLOCKED';break
+                trial.invalidate(str(exc))
             trials.append(trial.summary())
             try:
                 if trial.status=='INVALID':trial.save(directory)
@@ -52,7 +58,7 @@ class RolloutBatch:
                 stop='ARTIFACT_PERSISTENCE_FAILURE:'+str(exc);break
         summary=summarize_trials(trials)
         reached=summary['valid_trials']>=self.target
-        summary.update(stop_reason=stop,trials=trials,physical_commands=0,evaluation_scope='simulation_task_fixture',
+        summary.update(stop_reason=stop,trials=trials,pretrial_blocks=pretrial_blocks,physical_commands=0,evaluation_scope='simulation_task_fixture',
                        target_valid_rollouts=self.target,max_attempts=self.maximum,target_reached=reached,
                        termination_reason=stop or ('TARGET_REACHED' if reached else 'MAX_ATTEMPTS_REACHED'))
         (output/'batch_summary.json').write_text(json.dumps(summary,indent=2));return summary

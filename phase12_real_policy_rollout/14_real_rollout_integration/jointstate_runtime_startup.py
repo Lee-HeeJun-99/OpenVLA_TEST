@@ -1,40 +1,70 @@
-"""Persistent subscriber readiness; startup never relaxes runtime limits."""
+"""Recoverable pre-trial readiness; runtime faults remain terminal."""
+import math
+
 class JointStateStartup:
+    READINESS_TIMEOUT = 120.
+    CLEAN_SECONDS = 10.
+
     def __init__(self, started):
         self.started=started; self.first_fresh=None; self.last=None
         self.phase='WAIT_DISCOVERY'; self.fault=None; self.events=[]
-
-    def update(self, now):
-        if self.fault:return
-        if self.first_fresh is None:
-            if now-self.started>=60:self.fail('JOINTSTATE_DISCOVERY_TIMEOUT')
-        elif now-self.first_fresh>=10:
-            self.phase='RUNTIME_READY'
-            if self.last is None or now-self.last['receive']>=.1:
-                self.fail('joint_state_receive_timeout')
+        self.clean_since=None; self.ready_at=None
 
     def fail(self, reason):
         self.fault=reason; self.phase='RUNTIME_FAULT'
 
+    def readiness_timeout(self):
+        self.fault='JOINTSTATE_READINESS_TIMEOUT';self.phase='READINESS_TIMEOUT'
+
+    def reset_clean(self, now, reason, **detail):
+        self.events.append(dict(event='STARTUP_WARMUP_EVENT',phase=self.phase,
+                                timestamp=now,reason=reason,clean_timer_reset=True,**detail))
+        self.clean_since=None
+
+    def update(self, now):
+        if self.fault:return
+        age=now-self.last['receive'] if self.last else None
+        if self.phase=='RUNTIME_READY':
+            if age is None or age>=.1:self.fail('joint_state_receive_timeout')
+            return
+        if now-self.started>=self.READINESS_TIMEOUT:
+            self.readiness_timeout();return
+        if self.clean_since is not None:
+            if age is None or age<0 or age>=.1:
+                self.reset_clean(now,'PRE_TRIAL_RECEIVE_STALE',latest_receive_age_s=age)
+            elif now-self.clean_since>=self.CLEAN_SECONDS:
+                self.phase='RUNTIME_READY';self.ready_at=now
+
     def sample(self, row):
-        now=row['receive']; self.update(now)
-        previous=self.last
+        now=row['receive'];previous=self.last
         sg=row['source']-previous['source'] if previous else None
         rg=now-previous['receive'] if previous else None
         row.update(source_gap=sg,receive_gap=rg)
-        regression=sg is not None and sg<0
-        if previous and (sg<=0 or sg>=.1 or rg<=0 or rg>=.1):
-            self.events.append(dict(phase=self.phase,before=previous['source'],after=row['source'],
-                receive_before=previous['receive'],receive_after=now,source_gap=sg,receive_gap=rg,
-                header_age=row['header_age']))
-        if self.phase=='RUNTIME_READY' and (not row['valid'] or
-                (sg is not None and not 0<sg<.1) or (rg is not None and not 0<rg<.1)):
-            self.fail('joint_state_runtime_invalid_or_gap')
-        if self.first_fresh is None and not self.fault:
-            self.phase='WAIT_FIRST_FRESH_SAMPLE'
-            if row['valid'] and not regression and 0<=row['header_age']<.1:
-                self.first_fresh=now; self.phase='WARMUP'
-        row['phase']=self.phase; self.last=row
+        valid=row['valid'] and all(math.isfinite(row[k]) for k in ('receive','source','header_age'))
+        bad_gap=previous is not None and (not 0<sg<.1 or not 0<rg<.1)
+        bad_header=not 0<=row['header_age']<.5
+        if self.phase=='RUNTIME_READY':
+            if bad_gap or not valid or bad_header:
+                self.events.append(dict(event='RUNTIME_EVENT',phase=self.phase,before=previous['source'] if previous else None,
+                    after=row['source'],receive_before=previous['receive'] if previous else None,receive_after=now,
+                    source_gap=sg,receive_gap=rg,header_age=row['header_age']))
+                self.fail('joint_state_runtime_invalid_or_gap')
+        elif not self.fault:
+            if now-self.started>=self.READINESS_TIMEOUT:self.readiness_timeout()
+            else:
+                if self.first_fresh is None:self.phase='WAIT_FIRST_FRESH_SAMPLE'
+                if bad_gap or not valid or bad_header:
+                    self.reset_clean(now,'PRE_TRIAL_INVALID_OR_GAP',before=previous['source'] if previous else None,
+                        after=row['source'],receive_before=previous['receive'] if previous else None,receive_after=now,
+                        source_gap=sg,receive_gap=rg,header_age=row['header_age'])
+                fresh=valid and 0<=row['header_age']<.1 and (sg is None or sg>0) and (rg is None or rg>0)
+                if fresh:
+                    if self.first_fresh is None:self.first_fresh=now
+                    self.phase='WARMUP'
+                    if self.clean_since is None:self.clean_since=now
+        row['phase']=self.phase;self.last=row
+        self.update(now)
+        row['phase']=self.phase
 
     def status(self, now):
         self.update(now)
@@ -42,4 +72,6 @@ class JointStateStartup:
             discovery_delay_s=self.first_fresh-self.started if self.first_fresh is not None else None,
             latest_receive_age_s=now-self.last['receive'] if self.last else None,
             source_gap=self.last.get('source_gap') if self.last else None,
-            receive_gap=self.last.get('receive_gap') if self.last else None)
+            receive_gap=self.last.get('receive_gap') if self.last else None,
+            clean_since=self.clean_since,clean_window_s=now-self.clean_since if self.clean_since is not None else 0,
+            ready_at=self.ready_at,readiness_timeout_s=self.READINESS_TIMEOUT)

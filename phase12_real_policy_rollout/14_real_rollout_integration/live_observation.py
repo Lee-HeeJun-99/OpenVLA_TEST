@@ -55,7 +55,7 @@ class LiveObservation:
             from verify_live_model_server import validate_identity
             validate_identity(self.health,evidence['verified_model_health_contract']['model'])
         self.health_checked=time.monotonic();self.health_ok=True
-        deadline=self.joint_readiness.started+71
+        deadline=self.joint_readiness.started+120
         while time.monotonic()<deadline:
             with self.lock:
                 state=self.joint_readiness.status(time.monotonic())
@@ -198,12 +198,12 @@ class LiveObservation:
             self.__dict__.setdefault('trial_readiness_history',[]).append({'started':old.started,'first_fresh':old.first_fresh,'fault':old.fault,'events':list(old.events)})
             self.joint_readiness=JointStateStartup(time.monotonic())
             self.joint_readiness.last=old.last
-        deadline=self.joint_readiness.started+71
+        deadline=self.joint_readiness.started+120
         while time.monotonic()<deadline:
             with self.lock:s=self.joint_readiness.status(time.monotonic())
             if s['fault']:return {**s,'generation':generation}
             if s['phase']=='RUNTIME_READY':
                 return {**s,'generation':generation,'first_fresh_after_rearm':self.joint_readiness.first_fresh>=self.joint_readiness.started,
-                        'warmup_seconds':time.monotonic()-self.joint_readiness.first_fresh}
+                        'warmup_seconds':s['clean_window_s']}
             time.sleep(.02)
-        raise TimeoutError('JOINTSTATE_DISCOVERY_TIMEOUT')
+        raise TimeoutError('JOINTSTATE_READINESS_TIMEOUT')

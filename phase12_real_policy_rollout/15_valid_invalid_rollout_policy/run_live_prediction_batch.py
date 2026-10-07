@@ -123,22 +123,29 @@ def run(args):
                 state['joint_rows'] = []
                 readiness = state['readiness']
             # SAME node/subscribers; new first fresh sample + ten-second warm-up.
-            deadline = readiness.started+71
+            deadline = readiness.started+120
             while time.monotonic() < deadline:
                 with lock: status = readiness.status(time.monotonic()); image = state['camera']
                 if status['fault']: break
                 if status['phase'] == 'RUNTIME_READY' and image and time.monotonic()-image[1] < .5: break
                 time.sleep(.02)
             write_json(directory/'readiness.json', status)
-            with lock:
-                startup_rows = list(state['joint_rows'])
-                if status['phase'] != 'RUNTIME_READY' or status['fault']:
-                    trial.invalidate(status['fault'] or 'JOINTSTATE_DISCOVERY_TIMEOUT')
-                else:
-                    trial.start({**status, 'first_fresh_after_rearm':readiness.first_fresh >= readiness.started,
-                                 'warmup_seconds':time.monotonic()-readiness.first_fresh})
-                    state['active'] = trial
+            with lock:startup_rows = list(state['joint_rows'])
             write_json(directory/'startup_warmup_samples.json', startup_rows)
+            if status['phase'] != 'RUNTIME_READY' or status['fault']:
+                # No performance trial has started: BLOCKED, not task INVALID.
+                write_json(directory/'pretrial_blocked.json',dict(reason=status['fault'] or 'JOINTSTATE_READINESS_TIMEOUT',
+                    task_status=None,task_success=None,readiness=status,startup_events=readiness.events))
+                fatal=status['fault'] or 'JOINTSTATE_READINESS_TIMEOUT'
+                break
+            with lock:
+                status=readiness.status(time.monotonic())
+                if status['fault']:
+                    write_json(directory/'pretrial_blocked.json',dict(reason=status['fault'],task_status=None,task_success=None,readiness=status))
+                    fatal=status['fault'];break
+                trial.start({**status, 'first_fresh_after_rearm':readiness.first_fresh >= readiness.started,
+                             'warmup_seconds':status['clean_window_s']})
+                state['active'] = trial
             runtime_t0 = time.monotonic()
             with (directory/'live_predictions.jsonl').open('x') as stream:
                 try:

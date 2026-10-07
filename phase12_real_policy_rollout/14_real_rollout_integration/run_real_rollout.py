@@ -196,7 +196,7 @@ def main():
             logger.append({'event':'TRIAL_STARTUP_READINESS','scope':'PRE_TRIAL_NOT_PERFORMANCE',
                            'readiness':js,'startup_warmup_events':list(obs.joint_readiness.events)})
             trial.start({**js,'first_fresh_after_rearm':obs.joint_readiness.first_fresh is not None and obs.joint_readiness.first_fresh>=obs.joint_readiness.started,
-                         'warmup_seconds':time.monotonic()-obs.joint_readiness.first_fresh if obs.joint_readiness.first_fresh is not None else 0})
+                         'warmup_seconds':js['clean_window_s']})
             controller=Controller(args.model,args.protocol,sink,logger,dry_run=args.dry_run,initial_open=evidence.get('gripper_initial_confirmed') is True,trial=trial)
             from hardware_watchdog import HardwareWatchdog
             from oft_action_scheduler import ActionScheduler

@@ -119,7 +119,7 @@ def main():
             if s['fault'] or s['phase']=='RUNTIME_READY':break
             time.sleep(.02)
         # No restart within an experimental window, even after a runtime fault.
-        t0=current[0].first_fresh+10 if current[0].first_fresh is not None else None
+        t0=current[0].ready_at
         if t0 is None:
             result=dict(run=name,status='DISCOVERY_NOT_STABILIZED',state=s,flags=sorted(wanted));results.append(result);save(name,result);print(json.dumps(result),flush=True);return result
         t1=t0+duration;next_graph=t0;next_cli=t0;next_host=t0
@@ -135,10 +135,10 @@ def main():
         with lock:data=[r for r in rows[offset:] if t0<=r['receive']<t1];warm=[r for r in rows[offset:] if r['receive']<t0];events=list(current[0].events)
         sg=[r['source_gap'] for r in data if r['source_gap'] is not None];rg=[r['receive_gap'] for r in data if r['receive_gap'] is not None]
         cov=data[-1]['receive']-data[0]['receive'] if len(data)>1 else 0
-        runtime_events=[e for e in events if e['receive_after']>=t0]
+        runtime_events=[e for e in events if e.get('event')=='RUNTIME_EVENT' and e.get('receive_after',t0)>=t0]
         passed=cov>=duration-.1 and bool(data) and all(r['valid'] for r in data) and all(0<x<.1 for x in sg+rg) and not status()['fault']
         result=dict(run=name,status='PASS' if passed else 'FAIL',duration=duration,t0=t0,t1=t1,first_fresh_delay=current[0].first_fresh-current[0].started,
-            warmup_event_count=sum(e['receive_after']<t0 for e in events),runtime_message_count=len(data),coverage=cov,rate=(len(data)-1)/cov if cov else 0,
+            warmup_event_count=sum(e.get('event')=='STARTUP_WARMUP_EVENT' for e in events),runtime_message_count=len(data),coverage=cov,rate=(len(data)-1)/cov if cov else 0,
             max_source_gap=max(sg,default=None),max_receive_gap=max(rg,default=None),max_header_age=max((r['header_age'] for r in data),default=None),
             runtime_event_count=len(runtime_events),runtime_events=runtime_events,invalid=sum(not r['valid'] for r in data),duplicate=sum(x==0 for x in sg),regression=sum(x<0 for x in sg),state=status(),flags=sorted(wanted),
             host_load_max=max((x['load'][0] for x in host if x['run']==name),default=None),process_cpu=command(['ps','-eo','pid,pcpu,pmem,nlwp,args']))

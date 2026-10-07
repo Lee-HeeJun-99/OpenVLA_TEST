@@ -8,7 +8,13 @@ No threshold tuning: JointState source/receive gaps must remain strictly below10
 
 ## Trial lifecycle
 
-`WAIT_DISCOVERY → FIRST_FRESH_SAMPLE → 10 s WARMUP → RUNTIME_READY → start trial`.
+`WAIT_DISCOVERY → FIRST_FRESH_SAMPLE → consecutive 10 s CLEAN WARMUP → RUNTIME_READY → start trial`.
+
+Readiness has a 120-second overall deadline. Pre-trial gaps, stale samples, invalid
+values or timestamp errors are STARTUP_WARMUP_EVENTs and reset the clean timer.
+Recovery starts a new clean timer, not a performance trial. A readiness timeout
+is BLOCKED and excluded from task SUCCESS/FAILURE/INVALID counts. Only after
+RUNTIME_READY are sensor faults terminal for the current trial; no in-trial reset.
 
 Only the new trial's fresh readiness may start it. Startup/warm-up events are retained as pre-trial evidence and excluded from trial failure counts. Existing runtime faults stay latched. The same invalid trial can never reset or resume. `LiveObservation.rearm_trial_readiness()` creates a new readiness state on the existing node/subscribers, retains old events, seeds prior timestamp comparison and waits for a **new** fresh sample plus10 s. It does not clear a trial or sink, grant physical approval, or reset/move the robot. Call only after the previous worker/watchdog has finished.
 

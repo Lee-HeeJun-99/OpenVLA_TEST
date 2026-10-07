@@ -7,7 +7,9 @@ The existing driver, camera and model server are not restarted or modified.
 
 Each attempt creates new readiness state on the same subscriptions:
 FIRST_FRESH_SAMPLE (valid six joints, finite values, ROS header age <100 ms),
-10-second warm-up, then runtime. Startup/warm-up samples are retained separately.
+10 consecutive clean seconds of warm-up, then runtime. Pre-trial gap/stale events
+reset this clean timer; the overall readiness deadline is 120 seconds. A readiness
+timeout is pre-trial BLOCKED, not task INVALID. Startup/warm-up samples are retained separately.
 The trial window is not restarted on failure. An independent monitor runs during
 HTTP inference; invalidation prevents further inference reservation. Responses to
 already in-flight requests are discarded from performance and retained separately.

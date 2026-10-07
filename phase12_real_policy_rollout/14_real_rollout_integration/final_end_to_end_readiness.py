@@ -196,14 +196,13 @@ def main():
         for topic,types in graph['topics']:
             if types and types[0] in ('dsr_msgs2/msg/RobotState','dsr_msgs2/msg/RobotStateRt'):
                 node.create_subscription(get_message(types[0]),topic,lambda m,t=topic:hardware_sample(m,t),qos_profile_sensor_data)
-        while state.first_fresh is None and not status()['fault']:time.sleep(.02)
-        if state.first_fresh is not None:
-            t0=state.first_fresh+10
-            while time.monotonic()<t0:time.sleep(.02)
+        while status()['phase']!='RUNTIME_READY' and not status()['fault']:time.sleep(.02)
+        if state.ready_at is not None:
+            t0=state.ready_at
             print('BASELINE_180_BEGIN',flush=True)
             while time.monotonic()<t0+180:time.sleep(.05)
             baseline=window_result(rows,t0,t0+180,status())
-        else:baseline=dict(status='FAIL',reason='JOINTSTATE_DISCOVERY_TIMEOUT',duration_s=0,state=status())
+        else:baseline=dict(status='FAIL',reason=status()['fault'] or 'JOINTSTATE_READINESS_TIMEOUT',duration_s=0,state=status())
         save('01_jointstate_180s',baseline);print('BASELINE '+json.dumps(baseline),flush=True)
         if health_ok:
             cold=predict('FIRST_TRIAL_PREDICTION_NOT_PROVEN_SERVER_COLD');save('cold_prediction',cold)
