@@ -1,0 +1,1179 @@
+{
+  "messages": {},
+  "tf": {
+    "odom->zed_camera_link": {
+      "header": {
+        "stamp": {
+          "sec": 1791358177,
+          "nanosec": 604862170
+        },
+        "frame_id": "odom"
+      },
+      "child_frame_id": "zed_camera_link",
+      "transform": {
+        "translation": {
+          "x": 0.0006645710391761806,
+          "y": 0.0006388207510187396,
+          "z": 0.003650924227789064
+        },
+        "rotation": {
+          "x": 0.0008035512906177733,
+          "y": 0.0026089428546100064,
+          "z": -0.00040106971664076815,
+          "w": 0.9999961934255356
+        }
+      }
+    },
+    "map->odom": {
+      "header": {
+        "stamp": {
+          "sec": 1791358177,
+          "nanosec": 604862170
+        },
+        "frame_id": "map"
+      },
+      "child_frame_id": "odom",
+      "transform": {
+        "translation": {
+          "x": 7.1687060040678124e-06,
+          "y": -1.6362488447337824e-05,
+          "z": 2.1908393066505947e-05
+        },
+        "rotation": {
+          "x": 0.004005619141198614,
+          "y": 0.7064123548216764,
+          "z": -0.003317789246210385,
+          "w": 0.7077814155832878
+        }
+      }
+    },
+    "world->base_link": {
+      "header": {
+        "stamp": {
+          "sec": 1791355878,
+          "nanosec": 276078379
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "base_link",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_camera_center->zed_left_camera_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1791358177,
+          "nanosec": 604862170
+        },
+        "frame_id": "zed_camera_center"
+      },
+      "child_frame_id": "zed_left_camera_frame",
+      "transform": {
+        "translation": {
+          "x": -0.01,
+          "y": 0.059856995940208435,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_camera_link->zed_camera_center": {
+      "header": {
+        "stamp": {
+          "sec": 1791356715,
+          "nanosec": 64891146
+        },
+        "frame_id": "zed_camera_link"
+      },
+      "child_frame_id": "zed_camera_center",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.015
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_left_camera_frame->zed_left_camera_frame_optical": {
+      "header": {
+        "stamp": {
+          "sec": 1791356715,
+          "nanosec": 64891146
+        },
+        "frame_id": "zed_left_camera_frame"
+      },
+      "child_frame_id": "zed_left_camera_frame_optical",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.5,
+          "y": -0.4999999999999999,
+          "z": 0.5,
+          "w": -0.5000000000000001
+        }
+      }
+    },
+    "zed_camera_center->zed_right_camera_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1791358177,
+          "nanosec": 604862170
+        },
+        "frame_id": "zed_camera_center"
+      },
+      "child_frame_id": "zed_right_camera_frame",
+      "transform": {
+        "translation": {
+          "x": -0.01,
+          "y": -0.059856995940208435,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "zed_right_camera_frame->zed_right_camera_frame_optical": {
+      "header": {
+        "stamp": {
+          "sec": 1791356715,
+          "nanosec": 64891146
+        },
+        "frame_id": "zed_right_camera_frame"
+      },
+      "child_frame_id": "zed_right_camera_frame_optical",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.5,
+          "y": -0.4999999999999999,
+          "z": 0.5,
+          "w": -0.5000000000000001
+        }
+      }
+    },
+    "world->so101_left_gripper_frame": {
+      "header": {
+        "stamp": {
+          "sec": 166576,
+          "nanosec": 175354290
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "so101_left_gripper_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0033517368137836456,
+          "y": -0.3439241349697113,
+          "z": 0.9047236442565918
+        },
+        "rotation": {
+          "x": 0.33921581506729126,
+          "y": 1.3986136764287949e-06,
+          "z": 4.116678610444069e-06,
+          "w": 0.940708577632904
+        }
+      }
+    },
+    "world->so101_right_gripper_frame": {
+      "header": {
+        "stamp": {
+          "sec": 166576,
+          "nanosec": 175354290
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "so101_right_gripper_frame",
+      "transform": {
+        "translation": {
+          "x": 0.22873042523860931,
+          "y": -0.3439236879348755,
+          "z": 0.9047269821166992
+        },
+        "rotation": {
+          "x": 0.3392256796360016,
+          "y": 1.432141289114952e-06,
+          "z": 4.138215444982052e-06,
+          "w": 0.9407050013542175
+        }
+      }
+    },
+    "world->left_TCP": {
+      "header": {
+        "stamp": {
+          "sec": 166576,
+          "nanosec": 175354290
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "left_TCP",
+      "transform": {
+        "translation": {
+          "x": -0.003952277824282646,
+          "y": -0.28027141094207764,
+          "z": 0.8275979161262512
+        },
+        "rotation": {
+          "x": -4.116678610444069e-06,
+          "y": 0.940708577632904,
+          "z": 0.33921581506729126,
+          "w": -1.3986136764287949e-06
+        }
+      }
+    },
+    "world->right_TCP": {
+      "header": {
+        "stamp": {
+          "sec": 166576,
+          "nanosec": 175354290
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "right_TCP",
+      "transform": {
+        "translation": {
+          "x": 0.22812987864017487,
+          "y": -0.2802693545818329,
+          "z": 0.8276025652885437
+        },
+        "rotation": {
+          "x": -4.138215444982052e-06,
+          "y": 0.9407050013542175,
+          "z": 0.3392256796360016,
+          "w": -1.432141289114952e-06
+        }
+      }
+    },
+    "base_link->link_1": {
+      "header": {
+        "stamp": {
+          "sec": 1791358174,
+          "nanosec": 701302531
+        },
+        "frame_id": "base_link"
+      },
+      "child_frame_id": "link_1",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.156
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.9997518822882686,
+          "w": 0.0222749604054397
+        }
+      }
+    },
+    "link_1->link_2": {
+      "header": {
+        "stamp": {
+          "sec": 1791358174,
+          "nanosec": 701302531
+        },
+        "frame_id": "link_1"
+      },
+      "child_frame_id": "link_2",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.4954032171071826,
+          "y": 0.504655812491743,
+          "z": 0.5046539074373912,
+          "w": -0.4951995528131315
+        }
+      }
+    },
+    "link_2->link_3": {
+      "header": {
+        "stamp": {
+          "sec": 1791358174,
+          "nanosec": 701302531
+        },
+        "frame_id": "link_2"
+      },
+      "child_frame_id": "link_3",
+      "transform": {
+        "translation": {
+          "x": 0.409,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.41473983434493455,
+          "w": 0.909940036380165
+        }
+      }
+    },
+    "link_3->link_4": {
+      "header": {
+        "stamp": {
+          "sec": 1791358174,
+          "nanosec": 701302531
+        },
+        "frame_id": "link_3"
+      },
+      "child_frame_id": "link_4",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.367,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.7071362670204232,
+          "y": -0.00775477054904595,
+          "z": 0.007753191270896248,
+          "w": 0.7069922569754702
+        }
+      }
+    },
+    "link_4->link_5": {
+      "header": {
+        "stamp": {
+          "sec": 1791358174,
+          "nanosec": 701302531
+        },
+        "frame_id": "link_4"
+      },
+      "child_frame_id": "link_5",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.387740710656565,
+          "y": 0.5914042423768953,
+          "z": 0.5912838014442174,
+          "w": -0.3876617463044649
+        }
+      }
+    },
+    "link_5->link_6": {
+      "header": {
+        "stamp": {
+          "sec": 1791358174,
+          "nanosec": 701302531
+        },
+        "frame_id": "link_5"
+      },
+      "child_frame_id": "link_6",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.124,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.7071182246448687,
+          "y": -0.009254889353013912,
+          "z": 0.00925300457196969,
+          "w": 0.7069742182742901
+        }
+      }
+    },
+    "L_Index_Tip_1->L_Index_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Index_Tip_1"
+      },
+      "child_frame_id": "L_Index_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Midle_Tip_1->L_Middle_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Midle_Tip_1"
+      },
+      "child_frame_id": "L_Middle_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Pinky_Tip_1->L_Pinky_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Pinky_Tip_1"
+      },
+      "child_frame_id": "L_Pinky_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Ring_Tip_1->L_Ring_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Ring_Tip_1"
+      },
+      "child_frame_id": "L_Ring_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Middle_1->L_Thumb_Tip_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Middle_1"
+      },
+      "child_frame_id": "L_Thumb_Tip_1",
+      "transform": {
+        "translation": {
+          "x": 0.031506,
+          "y": 0.000124,
+          "z": 0.024645
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Knuckle_1->L_Thumb_Middle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Knuckle_1"
+      },
+      "child_frame_id": "L_Thumb_Middle_1",
+      "transform": {
+        "translation": {
+          "x": 0.046855,
+          "y": 0.010808,
+          "z": 0.021295
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Dist_KC_1->L_Thumb_Knuckle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Dist_KC_1"
+      },
+      "child_frame_id": "L_Thumb_Knuckle_1",
+      "transform": {
+        "translation": {
+          "x": 0.005242,
+          "y": -0.0081,
+          "z": 0.011134
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "L_Thumb_Prox_KC_1->L_Thumb_Dist_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "L_Thumb_Prox_KC_1"
+      },
+      "child_frame_id": "L_Thumb_Dist_KC_1",
+      "transform": {
+        "translation": {
+          "x": -0.007225,
+          "y": 0.005798,
+          "z": 0.00515
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_middle_bulk->L_Thumb_Prox_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_middle_bulk"
+      },
+      "child_frame_id": "L_Thumb_Prox_KC_1",
+      "transform": {
+        "translation": {
+          "x": 0.028048,
+          "y": 0.005551,
+          "z": 0.010472
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Index_Tip_1->R_Index_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Index_Tip_1"
+      },
+      "child_frame_id": "R_Index_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Midle_Tip_1->R_Middle_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Midle_Tip_1"
+      },
+      "child_frame_id": "R_Middle_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Pinky_Tip_1->R_Pinky_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Pinky_Tip_1"
+      },
+      "child_frame_id": "R_Pinky_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Ring_Tip_1->R_Ring_tip_frame": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Ring_Tip_1"
+      },
+      "child_frame_id": "R_Ring_tip_frame",
+      "transform": {
+        "translation": {
+          "x": -0.0011,
+          "y": -0.00309,
+          "z": 0.0179
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Middle_1->Thumb_Tip_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Middle_1"
+      },
+      "child_frame_id": "Thumb_Tip_1",
+      "transform": {
+        "translation": {
+          "x": 0.031506,
+          "y": -0.000124,
+          "z": 0.024645
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Knuckle_1->Thumb_Middle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Knuckle_1"
+      },
+      "child_frame_id": "Thumb_Middle_1",
+      "transform": {
+        "translation": {
+          "x": 0.046855,
+          "y": -0.010808,
+          "z": 0.021295
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Dist_KC_1->Thumb_Knuckle_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Dist_KC_1"
+      },
+      "child_frame_id": "Thumb_Knuckle_1",
+      "transform": {
+        "translation": {
+          "x": 0.005242,
+          "y": 0.0081,
+          "z": 0.011134
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "Thumb_Prox_KC_1->Thumb_Dist_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "Thumb_Prox_KC_1"
+      },
+      "child_frame_id": "Thumb_Dist_KC_1",
+      "transform": {
+        "translation": {
+          "x": -0.007225,
+          "y": -0.005798,
+          "z": 0.00515
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_middle_bulk->Thumb_Prox_KC_1": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_middle_bulk"
+      },
+      "child_frame_id": "Thumb_Prox_KC_1",
+      "transform": {
+        "translation": {
+          "x": 0.026917,
+          "y": -0.00751,
+          "z": 0.012735
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_elbow_roll->arm_left_mount": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_elbow_roll"
+      },
+      "child_frame_id": "arm_left_mount",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.012
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_mount->arm_left_forearm": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_mount"
+      },
+      "child_frame_id": "arm_left_forearm",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_middle_bulk->arm_left_hand_cover": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_middle_bulk"
+      },
+      "child_frame_id": "arm_left_hand_cover",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.012,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_index_bulk->arm_left_middle_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_index_bulk"
+      },
+      "child_frame_id": "arm_left_middle_bulk",
+      "transform": {
+        "translation": {
+          "x": -4e-06,
+          "y": -0.006,
+          "z": -0.000452
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_ring_bulk->arm_left_pinky_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_ring_bulk"
+      },
+      "child_frame_id": "arm_left_pinky_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.006738,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_left_middle_bulk->arm_left_ring_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_left_middle_bulk"
+      },
+      "child_frame_id": "arm_left_ring_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.029,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_elbow_roll->arm_right_mount": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_elbow_roll"
+      },
+      "child_frame_id": "arm_right_mount",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.012
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_mount->arm_right_forearm": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_mount"
+      },
+      "child_frame_id": "arm_right_forearm",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_middle_bulk->arm_right_hand_cover": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_middle_bulk"
+      },
+      "child_frame_id": "arm_right_hand_cover",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.012,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_index_bulk->arm_right_middle_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_index_bulk"
+      },
+      "child_frame_id": "arm_right_middle_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.006,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_ring_bulk->arm_right_pinky_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_ring_bulk"
+      },
+      "child_frame_id": "arm_right_pinky_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.006043,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "arm_right_middle_bulk->arm_right_ring_bulk": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "arm_right_middle_bulk"
+      },
+      "child_frame_id": "arm_right_ring_bulk",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -0.029,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    },
+    "base->imu_2": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "base"
+      },
+      "child_frame_id": "imu_2",
+      "transform": {
+        "translation": {
+          "x": 0.061722,
+          "y": -5.97549e-17,
+          "z": 0.68
+        },
+        "rotation": {
+          "x": -3.061614999999659e-17,
+          "y": 5.66215e-15,
+          "z": -6.030799999999998e-16,
+          "w": 1.0
+        }
+      }
+    },
+    "imu_2->imu": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "imu_2"
+      },
+      "child_frame_id": "imu",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": -6.33816e-19,
+          "z": 0.005
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": -4.772455e-32,
+          "w": 1.0
+        }
+      }
+    },
+    "world->base": {
+      "header": {
+        "stamp": {
+          "sec": 1790098815,
+          "nanosec": 489650624
+        },
+        "frame_id": "world"
+      },
+      "child_frame_id": "base",
+      "transform": {
+        "translation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        }
+      }
+    }
+  },
+  "logs": []
+}

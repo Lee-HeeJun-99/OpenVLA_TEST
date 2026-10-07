@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "receive": 2246729.687300158,
+  "age_s": 0.00023231562227010727,
+  "encoding": "bgra8",
+  "resolution": [
+    1280,
+    720
+  ],
+  "selected_frame_age_s": 0.43938358779996634,
+  "selected_frame_failure": false
+}

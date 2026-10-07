@@ -1,0 +1,29 @@
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/pre_rollout_verified_config.yaml:20:active_tcp_name_operator_reported: Tool_v1
+/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/pre_rollout_verified_config.yaml:21:active_tcp_offset_operator_reported: [0, 0, 0, 0, 0, 0]
+/home/ubuntu/robot_ws/install/dsr_common2/lib/dsr_common2/imp/DRFC.py:402:OPERATION_TCP_NAME_EXCCED_MAX_NUMBER                    = 1032
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp:1946:auto config_create_tcp_cb = [this](const std::shared_ptr<dsr_msgs2::srv::ConfigCreateTcp::Request> req, std::shared_ptr<dsr_msgs2::srv::ConfigCreateTcp::Response> res) -> void 
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp:1974:auto config_create_tool_cb = [this](const std::shared_ptr<dsr_msgs2::srv::ConfigCreateTool::Request> req, std::shared_ptr<dsr_msgs2::srv::ConfigCreateTool::Response> res) -> void
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp:2500:  m_nh_srv_config_create_tcp      = get_node()->create_service<dsr_msgs2::srv::ConfigCreateTcp>("tcp/config_create_tcp", config_create_tcp_cb);    
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp:2506:  m_nh_srv_config_create_tool     = get_node()->create_service<dsr_msgs2::srv::ConfigCreateTool>("tool/config_create_tool", config_create_tool_cb); 
+/home/ubuntu/robot_ws/install/dsr_common2/lib/dsr_common2/imp/DSR_ROBOT2.py:175:_ros2_config_create_tcp          = g_node.create_client(ConfigCreateTcp,                _srv_name_prefix +"tcp/config_create_tcp")
+/home/ubuntu/robot_ws/install/dsr_common2/lib/dsr_common2/imp/DSR_ROBOT2.py:181:_ros2_config_create_tool         = g_node.create_client(ConfigCreateTool,               _srv_name_prefix +"tool/config_create_tool")
+/home/ubuntu/robot_ws/install/dsr_common2/lib/dsr_common2/imp/DSR_ROBOT2.py:6397:        req = ConfigCreateTcp.Request()  
+/home/ubuntu/robot_ws/install/dsr_common2/lib/dsr_common2/imp/DSR_ROBOT2.py:6446:        req = ConfigCreateTool.Request() 
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/src/dsr_robot.cpp:746:    ros::ServiceClient srvConfigCreateTcp = node->serviceClient<dsr_msgs2::ConfigCreateTcp>(m_strSrvNamePrefix + "/tcp/config_create_tcp");
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/src/dsr_robot.cpp:747:    dsr_msgs2::ConfigCreateTcp srv;
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/src/dsr_robot.cpp:754:    if(srvConfigCreateTcp.call(srv))
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/src/dsr_robot.cpp:840:    ros::ServiceClient srvConfigCreateTool = node->serviceClient<dsr_msgs2::ConfigCreateTool>(m_strSrvNamePrefix + "/tool/config_create_tool");
+/home/ubuntu/robot_ws/install/dsr_common2/lib/python3.10/site-packages/DRFC.py:402:OPERATION_TCP_NAME_EXCCED_MAX_NUMBER                    = 1032
+/home/ubuntu/robot_ws/install/dsr_common2/lib/python3.10/site-packages/DSR_ROBOT2.py:175:_ros2_config_create_tcp          = g_node.create_client(ConfigCreateTcp,                _srv_name_prefix +"tcp/config_create_tcp")
+/home/ubuntu/robot_ws/install/dsr_common2/lib/python3.10/site-packages/DSR_ROBOT2.py:181:_ros2_config_create_tool         = g_node.create_client(ConfigCreateTool,               _srv_name_prefix +"tool/config_create_tool")
+/home/ubuntu/robot_ws/install/dsr_common2/lib/python3.10/site-packages/DSR_ROBOT2.py:6397:        req = ConfigCreateTcp.Request()  
+/home/ubuntu/robot_ws/install/dsr_common2/lib/python3.10/site-packages/DSR_ROBOT2.py:6446:        req = ConfigCreateTool.Request() 
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/imp/DRFC.py:402:OPERATION_TCP_NAME_EXCCED_MAX_NUMBER                    = 1032
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/imp/DSR_ROBOT2.py:175:_ros2_config_create_tcp          = g_node.create_client(ConfigCreateTcp,                _srv_name_prefix +"tcp/config_create_tcp")
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/imp/DSR_ROBOT2.py:181:_ros2_config_create_tool         = g_node.create_client(ConfigCreateTool,               _srv_name_prefix +"tool/config_create_tool")
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/imp/DSR_ROBOT2.py:6397:        req = ConfigCreateTcp.Request()  
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/imp/DSR_ROBOT2.py:6446:        req = ConfigCreateTool.Request() 
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_tests/test/test_cli_dsr_system.py:1808:	# 	config_create_tool_cli = self.node.create_client(ConfigCreateTool, "tool/config_create_tool")
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_tests/test/test_cli_dsr_system.py:1809:	# 	config_create_tool_req = ConfigCreateTool.Request()
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_tests/test/test_cli_dsr_system.py:1851:	# 	config_create_tool_cli = self.node.create_client(ConfigCreateTool, "tool/config_create_tool")
+/home/ubuntu/robot_ws/src/doosan-robot2/dsr_tests/test/test_cli_dsr_system.py:1852:	# 	config_create_tool_req = ConfigCreateTool.Request()

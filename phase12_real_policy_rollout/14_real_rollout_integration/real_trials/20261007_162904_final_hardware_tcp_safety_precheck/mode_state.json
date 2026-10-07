@@ -1,0 +1,47 @@
+{
+  "mode": {
+    "status": "NOT_EXECUTED",
+    "endpoint": "/dsr01/system/get_robot_mode",
+    "provenance": "UNKNOWN",
+    "before": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2246717.952253882,
+      "discovery_delay_s": 10.629798683803529,
+      "latest_receive_age_s": 0.9024647953920066,
+      "source_gap": 0.009744644165039062,
+      "receive_gap": 0.011764287948608398
+    },
+    "reason": "runtime_gate_failed"
+  },
+  "state": {
+    "status": "NOT_EXECUTED",
+    "endpoint": "/dsr01/system/get_robot_state",
+    "provenance": "UNKNOWN",
+    "before": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2246717.952253882,
+      "discovery_delay_s": 10.629798683803529,
+      "latest_receive_age_s": 0.9033040590584278,
+      "source_gap": 0.009744644165039062,
+      "receive_gap": 0.011764287948608398
+    },
+    "reason": "runtime_gate_failed"
+  },
+  "system": {
+    "status": "NOT_EXECUTED",
+    "endpoint": "/dsr01/system/get_robot_system",
+    "provenance": "UNKNOWN",
+    "before": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2246717.952253882,
+      "discovery_delay_s": 10.629798683803529,
+      "latest_receive_age_s": 0.9042126862332225,
+      "source_gap": 0.009744644165039062,
+      "receive_gap": 0.011764287948608398
+    },
+    "reason": "runtime_gate_failed"
+  }
+}

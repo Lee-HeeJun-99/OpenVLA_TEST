@@ -1,0 +1,6 @@
+{
+  "value": "UNKNOWN",
+  "provenance": "UNKNOWN",
+  "reason": "No validated fresh affirmative signal; raw candidates retained in hardware_raw_sources.json",
+  "gripper_output_disabled": null
+}
