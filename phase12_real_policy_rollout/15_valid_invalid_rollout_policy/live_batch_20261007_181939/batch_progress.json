@@ -1,0 +1,14 @@
+{
+  "total_attempts": 17,
+  "valid_trials": 0,
+  "invalid_trials": 17,
+  "invalid_rate": 1.0,
+  "invalid_reason_counts": {
+    "raw_translation_step_limit": 17
+  },
+  "invalid_category_counts": {
+    "INVALID_SAFETY_REJECTION": 17
+  },
+  "task_success_rate": null,
+  "physical_commands": 0
+}

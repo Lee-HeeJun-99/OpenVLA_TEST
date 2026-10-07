@@ -1,0 +1,95 @@
+{
+  "invalid_timestamp": 2253377.843080664,
+  "invalid_wall_time": 1791364815.332616,
+  "clock_domain": "HOST_MONOTONIC",
+  "invalid_reason": "raw_translation_step_limit",
+  "invalid_category": "INVALID_SAFETY_REJECTION",
+  "last_valid_observation": {
+    "timestamp_wall": 1791364815.3321197,
+    "frame_id": 0,
+    "image_timestamp": 1791364814.725264,
+    "camera": {
+      "selected_age": 0.44762366404756904,
+      "encoding": "bgra8",
+      "resolution": [
+        1280,
+        720
+      ],
+      "resolution_valid": true,
+      "stream_alive": true
+    },
+    "jointstate": {
+      "receive": 2253377.842048493,
+      "source": 1791364815.3313234,
+      "header_age": 0.0002675056457519531,
+      "valid": true,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "sample_id": 1061,
+      "source_gap": 0.010026931762695312,
+      "receive_gap": 0.00989673612639308,
+      "phase": "RUNTIME_READY",
+      "latest_age": 0.0005395659245550632
+    },
+    "joint_state_phase": "RUNTIME_READY",
+    "tcp_source": "UNAVAILABLE",
+    "tcp_contract_verified": false,
+    "instruction": "Pick up the orange cube.",
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": null,
+    "condition": null,
+    "matched_pair_id": null,
+    "real_observation_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null
+  },
+  "last_prediction": {
+    "raw_model_output": {
+      "action": [
+        0.0023606151805061204,
+        0.001063571543452932,
+        -0.0031727667238336255,
+        -0.016118624231487313,
+        0.005423869874274334,
+        0.04268811285723608,
+        0.0019607843137254832
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.3876389469951391,
+      "request_index": 293
+    },
+    "inference_latency_s": 0.4285616693086922,
+    "camera_selected_age_s": 0.44762366404756904
+  },
+  "command_count_before_invalid": 0
+}

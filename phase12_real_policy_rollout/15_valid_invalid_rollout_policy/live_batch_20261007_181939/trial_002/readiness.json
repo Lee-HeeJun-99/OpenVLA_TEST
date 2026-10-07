@@ -1,0 +1,9 @@
+{
+  "phase": "RUNTIME_READY",
+  "fault": null,
+  "first_fresh_sample": 2253377.862267923,
+  "discovery_delay_s": 0.0011496152728796005,
+  "latest_receive_age_s": 0.007661524228751659,
+  "source_gap": 0.009992122650146484,
+  "receive_gap": 0.009878139942884445
+}

@@ -1,0 +1,95 @@
+{
+  "invalid_timestamp": 2253410.811789338,
+  "invalid_wall_time": 1791364848.3013353,
+  "clock_domain": "HOST_MONOTONIC",
+  "invalid_reason": "raw_translation_step_limit",
+  "invalid_category": "INVALID_SAFETY_REJECTION",
+  "last_valid_observation": {
+    "timestamp_wall": 1791364848.3003976,
+    "frame_id": 1,
+    "image_timestamp": 1791364847.7064881,
+    "camera": {
+      "selected_age": 0.4212045129388571,
+      "encoding": "bgra8",
+      "resolution": [
+        1280,
+        720
+      ],
+      "resolution_valid": true,
+      "stream_alive": true
+    },
+    "jointstate": {
+      "receive": 2253410.802174703,
+      "source": 1791364848.291298,
+      "header_age": 0.0004341602325439453,
+      "valid": true,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "sample_id": 4357,
+      "source_gap": 0.010005474090576172,
+      "receive_gap": 0.010147140361368656,
+      "phase": "RUNTIME_READY",
+      "latest_age": 0.00867882976308465
+    },
+    "joint_state_phase": "RUNTIME_READY",
+    "tcp_source": "UNAVAILABLE",
+    "tcp_contract_verified": false,
+    "instruction": "Pick up the orange cube.",
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": null,
+    "condition": null,
+    "matched_pair_id": null,
+    "real_observation_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null
+  },
+  "last_prediction": {
+    "raw_model_output": {
+      "action": [
+        0.0014968155858540912,
+        0.0026335443427412267,
+        -0.004661766779945446,
+        -0.016459386455152054,
+        0.005860893501520913,
+        0.018794676041420613,
+        0.0019607843137254832
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.3784221229143441,
+      "request_index": 299
+    },
+    "inference_latency_s": 0.41093447199091315,
+    "camera_selected_age_s": 0.4212045129388571
+  },
+  "command_count_before_invalid": 0
+}
