@@ -1,0 +1,12 @@
+{
+  "file": "/home/ubuntu/.ros/log/ros2_control_node_3061204_1791355878269.log",
+  "events": [
+    {
+      "event_wall_time": 1791360860.1635804,
+      "source_gap": 0.009997844696044922,
+      "receive_gap": 0.10199831193313003,
+      "lines_within_1s": []
+    }
+  ],
+  "event_silence_not_safety_pass": true
+}

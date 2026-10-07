@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "duration_s": 180.0,
+  "message_count": 18000,
+  "coverage_s": 179.98994441283867,
+  "rate_hz": 100.00003088348159,
+  "max_source_gap_s": 0.012284994125366211,
+  "max_receive_gap_s": 0.06550357304513454,
+  "source_events_100ms": 0,
+  "receive_events_100ms": 0,
+  "invalid": 0,
+  "missing": 0,
+  "duplicate": 0,
+  "regression": 0,
+  "state": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2249124.932754802,
+    "discovery_delay_s": 13.184945901855826,
+    "latest_receive_age_s": 0.0003293449990451336,
+    "source_gap": 0.009980440139770508,
+    "receive_gap": 0.009699447080492973
+  }
+}

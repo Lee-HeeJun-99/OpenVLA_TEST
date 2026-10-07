@@ -1,0 +1,235 @@
+{
+  "events": [
+    {
+      "phase": "WARMUP",
+      "before": 1791360562.4213274,
+      "after": 1791360562.4312966,
+      "receive_before": 2249124.932754802,
+      "receive_after": 2249127.994437049,
+      "source_gap": 0.009969234466552734,
+      "receive_gap": 3.0616822470910847,
+      "header_age": 3.0526955127716064
+    },
+    {
+      "phase": "WARMUP",
+      "before": 1791360562.4312966,
+      "after": 1791360565.4912922,
+      "receive_before": 2249127.994437049,
+      "receive_after": 2249128.002063251,
+      "source_gap": 3.059995651245117,
+      "receive_gap": 0.007626201957464218,
+      "header_age": 0.0003209114074707031
+    },
+    {
+      "phase": "RUNTIME_FAULT",
+      "before": 1791360860.0612962,
+      "after": 1791360860.071294,
+      "receive_before": 2249422.572037585,
+      "receive_after": 2249422.674035897,
+      "source_gap": 0.009997844696044922,
+      "receive_gap": 0.10199831193313003,
+      "header_age": 0.09229326248168945
+    }
+  ],
+  "rows": [
+    {
+      "wall_time": 1791360565.4839857,
+      "receive": 2249127.994437049,
+      "source": 1791360562.4312966,
+      "header_age": 3.0526955127716064,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "INFERENCE_OFF",
+      "camera_callback": {
+        "receive": 2249127.993898011,
+        "wall_time": 1791360565.483427,
+        "source": 1791360565.4607062,
+        "callback_gap": 0.016263868659734726,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360565.2983098,
+        "receive": 2249127.808785806,
+        "activity": "INFERENCE_OFF",
+        "load": [
+          5.21044921875,
+          3.85205078125,
+          4.1259765625
+        ],
+        "cpu": "cpu  78539930 243708 14230850 4397477376 487249 0 668564 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17401313974 23975295    0    0    0     0          0         0 17401313974 23975295    0    0    0     0       0          0\nenp3s0: 108792443022 85659392    0    0    0     0          0         0 634114405 8647598    0    0    0     0       0          0\nenp6s0: 64449397  557770    0  262    0     0          0     19490        0       0    0    0    0     0       0          0\nwlp4s0: 11577084455 20129115    0    0    0     0          0         0 23511854528 42434219    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:         1072204 kB\nMemAvailable:   21512600 kB\nBuffers:          546560 kB\nCached:         19592668 kB\nSwapCached:        38456 kB\nActive:         14858284 kB\nInactive:       14619892 kB\nActive(anon):    4710500 kB\nInactive(anon):  4582376 kB\nActive(file):   10147784 kB\nInactive(file): 10037516 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               436 kB\nWriteback:             0 kB\nAnonPages:       9302368 kB\nMapped:          2352080 kB\nShmem:            358024 kB\nKReclaimable:     724916 kB\nSlab:            1108476 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383560 kB\nKernelStack:       30176 kB\nPageTables:        92232 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30763176 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245360 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16303 0 10 0 945701 5980 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 18 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243256 79 4 0 90334 9965 0 0 20 0 86 0 224802599 14524923904 271075 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 620549 1517 8 0 2961 471 0 1 20 0 53 0 224802727 32824418304 450542 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 8 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009969234466552734,
+      "receive_gap": 3.0616822470910847,
+      "phase": "WARMUP"
+    },
+    {
+      "wall_time": 1791360565.491607,
+      "receive": 2249128.002063251,
+      "source": 1791360565.4912922,
+      "header_age": 0.0003209114074707031,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "INFERENCE_OFF",
+      "camera_callback": {
+        "receive": 2249127.993898011,
+        "wall_time": 1791360565.483427,
+        "source": 1791360565.4607062,
+        "callback_gap": 0.016263868659734726,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360565.2983098,
+        "receive": 2249127.808785806,
+        "activity": "INFERENCE_OFF",
+        "load": [
+          5.21044921875,
+          3.85205078125,
+          4.1259765625
+        ],
+        "cpu": "cpu  78539930 243708 14230850 4397477376 487249 0 668564 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17401313974 23975295    0    0    0     0          0         0 17401313974 23975295    0    0    0     0       0          0\nenp3s0: 108792443022 85659392    0    0    0     0          0         0 634114405 8647598    0    0    0     0       0          0\nenp6s0: 64449397  557770    0  262    0     0          0     19490        0       0    0    0    0     0       0          0\nwlp4s0: 11577084455 20129115    0    0    0     0          0         0 23511854528 42434219    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:         1072204 kB\nMemAvailable:   21512600 kB\nBuffers:          546560 kB\nCached:         19592668 kB\nSwapCached:        38456 kB\nActive:         14858284 kB\nInactive:       14619892 kB\nActive(anon):    4710500 kB\nInactive(anon):  4582376 kB\nActive(file):   10147784 kB\nInactive(file): 10037516 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               436 kB\nWriteback:             0 kB\nAnonPages:       9302368 kB\nMapped:          2352080 kB\nShmem:            358024 kB\nKReclaimable:     724916 kB\nSlab:            1108476 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383560 kB\nKernelStack:       30176 kB\nPageTables:        92232 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30763176 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245360 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16303 0 10 0 945701 5980 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 18 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243256 79 4 0 90334 9965 0 0 20 0 86 0 224802599 14524923904 271075 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 620549 1517 8 0 2961 471 0 1 20 0 53 0 224802727 32824418304 450542 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 8 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 3.059995651245117,
+      "receive_gap": 0.007626201957464218,
+      "phase": "WARMUP"
+    },
+    {
+      "wall_time": 1791360860.1635804,
+      "receive": 2249422.674035897,
+      "source": 1791360860.071294,
+      "header_age": 0.09229326248168945,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_236",
+      "camera_callback": {
+        "receive": 2249422.571157577,
+        "wall_time": 1791360860.060687,
+        "source": 1791360860.037234,
+        "callback_gap": 0.013171818107366562,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360859.6658514,
+        "receive": 2249422.176326609,
+        "activity": "HTTP_235",
+        "load": [
+          7.38916015625,
+          5.3349609375,
+          4.626953125
+        ],
+        "cpu": "cpu  78683122 243710 14242130 4397908261 487382 0 670019 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17470124317 24040586    0    0    0     0          0         0 17470124317 24040586    0    0    0     0       0          0\nenp3s0: 109193168811 85973648    0    0    0     0          0         0 636383659 8679366    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11588940406 20167988    0    0    0     0          0         0 23541693347 42542650    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          581136 kB\nMemAvailable:   21067380 kB\nBuffers:          549064 kB\nCached:         19639368 kB\nSwapCached:        38456 kB\nActive:         15322336 kB\nInactive:       14665408 kB\nActive(anon):    5174220 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10083032 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1488 kB\nWriteback:             0 kB\nAnonPages:       9762656 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108152 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383236 kB\nKernelStack:       30304 kB\nPageTables:        93928 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30951376 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245392 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1005348 6466 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 14 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243569 79 4 0 120610 12705 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 722559 1517 8 0 17885 602 0 1 20 0 63 0 224802727 33972236288 553923 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 17 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009997844696044922,
+      "receive_gap": 0.10199831193313003,
+      "phase": "RUNTIME_FAULT"
+    }
+  ],
+  "startup_warmup_preserved": true
+}

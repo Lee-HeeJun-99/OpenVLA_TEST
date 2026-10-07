@@ -1,0 +1,23 @@
+{
+  "watchdog_events": [
+    {
+      "wall_time": 1791360860.163433,
+      "receive": 2249422.673908264,
+      "reason": "joint_state_receive_timeout",
+      "commands_inhibited": true
+    }
+  ],
+  "watchdog_status": "FAIL",
+  "logger_errors": [],
+  "logger_status": "PASS",
+  "threads_joined_after_run": true,
+  "command_capability_absent": true,
+  "logger_session": {
+    "state": "COMPLETE",
+    "records": 293,
+    "closed_wall_time": 1791360887.2296033
+  },
+  "jsonl_records": 293,
+  "unique_frame_ids": 293,
+  "watchdog_scope": "Independent JointState receive/source watchdog; selected-camera-age fail-closed at each response plus passive camera callback recording. No physical abort path was invoked."
+}

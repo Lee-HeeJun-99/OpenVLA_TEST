@@ -1,0 +1,7 @@
+{
+  "value": "UNKNOWN",
+  "provenance": "UNKNOWN",
+  "fresh_affirmative_evidence": false,
+  "reason": "Current persistent runtime stability/source evidence insufficient for controlled refresh; no inference from STANDBY or event silence",
+  "getter_called": false
+}

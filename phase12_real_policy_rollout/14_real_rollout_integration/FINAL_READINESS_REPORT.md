@@ -1,5 +1,30 @@
 # Final readiness report
 
+## Latest real read-only verdict — 2026-10-07
+
+**BLOCKED_MULTIPLE — minimum-motion NOT_AUTHORIZED; physical commands 0.**
+
+Evidence: [20261007_170908 long audit](real_trials/20261007_170908_final_end_to_end_readiness/FINAL_END_TO_END_READINESS_REPORT.md), starting HEAD `7b9533cd00056312fe42c78fbdb4660455f3bd60`, branch `lhj-research`.
+
+| Current measurement | Result |
+|---|---|
+| Persistent 180 s JointState baseline | PASS; 18,000 samples; 100.000 Hz; source/receive max 12.285/65.504 ms; ≥100 ms events 0 |
+| Same-subscriber 120 s Shadow JointState | FAIL; receive max 101.998 ms, one event; source max 50.002 ms, ≥100 ms source events 0 |
+| Event's adjacent source gap | 9.998 ms; not a reproduced 3 s source discontinuity |
+| OpenVLA current GPU health / actual predictions | PASS identity; 291 successful predictions /292 attempts; model failures 0 |
+| Camera | FAIL: one missing ≤10 ms snapshot; successful selected-age max 0.49473 s; ≥0.5 s violations 0 |
+| Translation median/p95/max | 0.606/3.451/4.613 mm; >4 mm 15 isolated runs |
+| Rotation max / close candidates / NaN-Inf | 3.744 deg /0 /0 |
+| TCP | FLANGE_ONLY; active name/tool/offset/current TCP unverified |
+| Connection/authority/servo/protection/E-stop | UNKNOWN; old AUTO/STANDBY/REAL not fresh affirmative evidence |
+| Logger | COMPLETE, 293 records including separate first-trial prediction; no logger errors |
+| Current unittest/regression suites | 192 PASS /0 FAIL /0 SKIP (100 core +66 integration +26 analysis/readiness) |
+| Manual operator/workspace/E-stop access | REQUIRED, not inferred |
+
+The 4 mm threshold is a configured fail-closed raw translation-step limit, not a manufacturer physical limit or merely a plotting threshold. Training sample (11 unique episodes/539 steps, 10 Hz) median/p95/max 7.096/29.148/48.315 mm; live 4.613 mm is within that observed sample range but remains above the unchanged command acceptance limit. Exact checkpoint training membership and matched-input equivalence are unverified. A deterministic 0.5 mm minimum-motion is independent of model output; TCP/hardware/current-runtime gates still block it.
+
+No driver/controller restart, mode/tool/servo setter, gripper, pose command, Home, trajectory, physical Hold/Stop or physical rollout. Source/cache freshness risks prevented unsafe Cartesian/alarm calls; empty TCP/tool getters were not repeated. Runtime failure latched; diagnostic vision-only collection continued with command capability absent, not motion readiness. Older offline/fake claims below are historical scope only.
+
 ## Current verdict — 2026-10-06
 
 | Item | Latest result |

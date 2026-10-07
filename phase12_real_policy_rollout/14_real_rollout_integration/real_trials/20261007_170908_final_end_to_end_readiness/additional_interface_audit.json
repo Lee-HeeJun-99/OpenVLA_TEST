@@ -1,0 +1,47 @@
+{
+  "source": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+  "getters_called": 0,
+  "reason": "JointState runtime fault prevents conditional getter refresh; source audit still completed",
+  "interfaces": [
+    {
+      "name": "GetControlMode",
+      "callback_line": 913,
+      "value_source": "g_stDrState.nActualMode cache",
+      "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+      "meaning": "position/torque control mode; NOT AUTO/MANUAL operation mode, servo or authority",
+      "freshness": "no exposed timestamp in response"
+    },
+    {
+      "name": "GetRobotLinkInfo",
+      "callback_line": 1198,
+      "vendor_call": "get_robot_link_info(link_info)",
+      "meaning": "kinematic DH d/a/alpha/theta/offset/gradient/rotation; NOT controller connection status",
+      "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED"
+    },
+    {
+      "name": "GetToolDigitalOutput",
+      "callback_line": 1695,
+      "vendor_call": "get_tool_digital_output(index-1)",
+      "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+      "meaning": "IO bit; NOT measured gripper physical open/closed feedback"
+    },
+    {
+      "name": "GetToolDigitalInput",
+      "callback_line": 1708,
+      "vendor_call": "get_tool_digital_input(index-1)",
+      "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+      "meaning": "IO bit, sensor/polarity binding UNKNOWN"
+    }
+  ],
+  "rt_publisher_config": {
+    "file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/config/dsr_controller2.yaml",
+    "use_rt_topic_pub": false,
+    "configured_keys": ["actual_joint_position"],
+    "current_tcp_topic_sample_obtained": false
+  },
+  "state_cache": {
+    "access_control_callback_line": 3103,
+    "public_fresh_authority_source_obtained": false,
+    "robotstate_schema_is_not_live_publication": true
+  }
+}

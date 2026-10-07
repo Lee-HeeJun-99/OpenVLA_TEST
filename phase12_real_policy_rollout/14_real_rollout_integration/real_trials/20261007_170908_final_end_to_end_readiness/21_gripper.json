@@ -1,0 +1,6 @@
+{
+  "state": "UNKNOWN",
+  "physical_command_disabled": true,
+  "pulse_disabled": true,
+  "model_intent_not_executed": true
+}

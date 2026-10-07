@@ -1,0 +1,24 @@
+{
+  "model_health_end": "MODEL_HEALTH_PASS",
+  "checkpoint": "step8130",
+  "request_count_before": 0,
+  "request_count_after": 292,
+  "actual_model_requests_this_trial": 292,
+  "shadow_successful_predictions": 291,
+  "first_trial_prediction": 1,
+  "camera_input_failures_without_http_request": 1,
+  "action_dim": 7,
+  "K": 1,
+  "same_driver_pid": 3061204,
+  "same_camera_pid": 3075971,
+  "same_model_pid": 3076021,
+  "audit_process_exit_code": 0,
+  "physical_commands": 0,
+  "getter_calls_this_trial": 0,
+  "production_threshold_changed": false,
+  "post_analysis_corrections": [
+    "no_frame_within_10ms classified as camera input failure rather than GPU failure",
+    "initial aggregate preserved separately",
+    "thread-join diagnostic now captured after finally cleanup for future runs; this run clean process exit and complete logger are the actual evidence"
+  ]
+}

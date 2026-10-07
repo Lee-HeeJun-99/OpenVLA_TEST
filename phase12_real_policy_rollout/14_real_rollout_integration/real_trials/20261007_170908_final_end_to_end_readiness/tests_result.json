@@ -1,0 +1,19 @@
+{
+  "scope": "All existing Phase 12 unittest/regression discovery suites; not a fresh DDS process or physical test",
+  "pass": 192,
+  "fail": 0,
+  "skip": 0,
+  "suites": {
+    "phase12/tests": 100,
+    "14_real_rollout_integration/tests": 66,
+    "07_safety_reject_analysis": 5,
+    "08_gripper_state_cascade_analysis": 4,
+    "09_oft_k5_timing_analysis": 5,
+    "10_oft_corrected_timing_replay": 5,
+    "11_oft_gripper_model_audit": 3,
+    "13_rollout_readiness/tests": 4
+  },
+  "new_tests": 7,
+  "initial_invocation_error": "Root-cwd invocation lacked integration directory on import path; rerun from integration directory passed. Not a production test failure.",
+  "physical_commands": 0
+}

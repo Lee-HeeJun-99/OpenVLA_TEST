@@ -1,0 +1,249 @@
+{
+  "verdict": "BLOCKED_MULTIPLE",
+  "blockers": [
+    "TCP_CONTRACT_UNVERIFIED",
+    "HARDWARE_STATE_UNKNOWN",
+    "JOINTSTATE_RUNTIME_FAIL",
+    "CAMERA_RUNTIME_FAIL",
+    "RAW_ACTION_STEP_LIMIT_EXCEEDED"
+  ],
+  "manual_confirmations": "REQUIRED",
+  "physical_commands": 0,
+  "next_allowed_stage": "BLOCKED",
+  "summary": {
+    "predictions": 292,
+    "model_failures": 0,
+    "camera_failure": 1,
+    "max_selected_age": 0.494729561265558,
+    "jointstate": {
+      "status": "FAIL",
+      "duration_s": 120.0,
+      "message_count": 11996,
+      "coverage_s": 119.99219670007005,
+      "rate_hz": 99.96483379650468,
+      "max_source_gap_s": 0.050002336502075195,
+      "max_receive_gap_s": 0.10199831193313003,
+      "source_events_100ms": 0,
+      "receive_events_100ms": 1,
+      "invalid": 0,
+      "missing": 0,
+      "duplicate": 0,
+      "regression": 0,
+      "state": {
+        "phase": "RUNTIME_FAULT",
+        "fault": "joint_state_receive_timeout",
+        "first_fresh_sample": 2249124.932754802,
+        "discovery_delay_s": 13.184945901855826,
+        "latest_receive_age_s": 0.003350395243614912,
+        "source_gap": 0.010020256042480469,
+        "receive_gap": 0.010291899088770151
+      }
+    },
+    "translation_mm": {
+      "count": 291,
+      "mean": 0.9067161392556027,
+      "std": 0.9568686410159889,
+      "median": 0.605877713859466,
+      "p90": 0.9079881164153089,
+      "p95": 3.451404485655279,
+      "p99": 4.613487840673505,
+      "max": 4.613487840673505
+    },
+    "rotation_deg": {
+      "count": 291,
+      "mean": 3.529004162874885,
+      "std": 0.7047386126384693,
+      "median": 3.743540020841421,
+      "p90": 3.743540020841421,
+      "p95": 3.743540020841421,
+      "p99": 3.743540020841421,
+      "max": 3.743540020841421
+    },
+    "gripper": {
+      "count": 291,
+      "mean": 0.0019607843137254832,
+      "std": 0.0,
+      "median": 0.0019607843137254832,
+      "p90": 0.0019607843137254832,
+      "p95": 0.0019607843137254832,
+      "p99": 0.0019607843137254832,
+      "max": 0.0019607843137254832
+    },
+    "close_candidates": 0,
+    "over_4mm": 15,
+    "over_4deg": 0,
+    "physical_commands": 0,
+    "tcp_dependent_safety_validation": "INCOMPLETE",
+    "camera_pass": false,
+    "input_failures": 1,
+    "selected_age_failures": 0,
+    "successful_predictions": 291,
+    "nan_inf_count": 0,
+    "inference_latency_s": {
+      "count": 291,
+      "mean": 0.39404184633667527,
+      "std": 0.01597488789301004,
+      "median": 0.39092031214386225,
+      "p90": 0.4106809548102319,
+      "p95": 0.421666327631101,
+      "p99": 0.46020863968879,
+      "max": 0.4888146431185305
+    },
+    "safety_accepted": 0,
+    "safety_rejected": 291,
+    "safety_blocker_occurrences": {
+      "tcp_failure": 234,
+      "gripper_unknown_state_blocks_command": 291,
+      "raw_translation_step_limit": 15,
+      "joint_state_failure": 57
+    },
+    "safety_context_caveat": "TCP is unverified; flange position and placeholder orientation are diagnostic context only. Safety acceptance/task success/motion readiness cannot be inferred from this context."
+  },
+  "baseline": {
+    "status": "PASS",
+    "duration_s": 180.0,
+    "message_count": 18000,
+    "coverage_s": 179.98994441283867,
+    "rate_hz": 100.00003088348159,
+    "max_source_gap_s": 0.012284994125366211,
+    "max_receive_gap_s": 0.06550357304513454,
+    "source_events_100ms": 0,
+    "receive_events_100ms": 0,
+    "invalid": 0,
+    "missing": 0,
+    "duplicate": 0,
+    "regression": 0,
+    "state": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0003293449990451336,
+      "source_gap": 0.009980440139770508,
+      "receive_gap": 0.009699447080492973
+    }
+  },
+  "action_analysis": {
+    "training": {
+      "count": 539,
+      "mean": 10.386665350242646,
+      "std": 11.026948873338725,
+      "median": 7.095518739607351,
+      "p90": 25.201022032834132,
+      "p95": 29.14799397261564,
+      "p99": 37.64361539449053,
+      "max": 48.31506790879339
+    },
+    "real": {
+      "count": 291,
+      "mean": 0.9067161392556027,
+      "std": 0.9568686410159889,
+      "median": 0.605877713859466,
+      "p90": 0.9079881164153089,
+      "p95": 3.451404485655279,
+      "p99": 4.613487840673505,
+      "max": 4.613487840673505
+    },
+    "real_xyz_mm": {
+      "dx": {
+        "count": 291,
+        "mean": 0.26701430728249337,
+        "std": 0.47616498191513956,
+        "median": 0.11473623441084733,
+        "p90": 0.11473623441084733,
+        "p95": 1.7559554642496995,
+        "p99": 1.7559554642496995,
+        "max": 1.7559554642496995
+      },
+      "dy": {
+        "count": 291,
+        "mean": 0.48944346078078,
+        "std": 0.6739141052002035,
+        "median": 0.2785851438087839,
+        "p90": 0.2785851438087839,
+        "p95": 2.110220076311794,
+        "p99": 3.0260375425632997,
+        "max": 3.0260375425632997
+      },
+      "dz": {
+        "count": 291,
+        "mean": -0.6672213831368782,
+        "std": 0.5484546712779733,
+        "median": -0.5256555129681713,
+        "p90": -0.5256555129681713,
+        "p95": -0.5256555129681713,
+        "p99": -0.5256555129681713,
+        "max": -0.5256555129681713
+      }
+    },
+    "real_max_within_training_observed_range": true,
+    "training_hz": [
+      10.0
+    ],
+    "live_prediction_hz": 2.425,
+    "instruction": "Pick up the orange cube.",
+    "interpretation": "Observed live magnitude is compared descriptively to an unmatched limited training sample, not calibrated physical risk or causality. A tail within this sample does not authorize commands.",
+    "step_limit": {
+      "translation_m": 0.004,
+      "rotation_deg": 4,
+      "category": "CONFIGURED_FAIL_CLOSED_RAW_ACTION_STEP_LIMIT",
+      "source": "02_safety/command_disabled_runtime.py evaluate + 01_configs/safety_limits.yaml",
+      "history": "74bb158e Initial commit; no independently documented manufacturer or hardware-calibrated derivation found",
+      "model_control": "Exceeding raw limit remains rejected",
+      "deterministic_minimum_motion": "Uses independent 0.5 mm delta, never model output; model-tail warning alone is not proof this minimum delta unsafe"
+    }
+  },
+  "watchdog_logger": {
+    "watchdog_events": [
+      {
+        "wall_time": 1791360860.163433,
+        "receive": 2249422.673908264,
+        "reason": "joint_state_receive_timeout",
+        "commands_inhibited": true
+      }
+    ],
+    "watchdog_status": "FAIL",
+    "logger_errors": [],
+    "logger_status": "PASS",
+    "threads_joined_after_run": true,
+    "command_capability_absent": true,
+    "logger_session": {
+      "state": "COMPLETE",
+      "records": 293,
+      "closed_wall_time": 1791360887.2296033
+    },
+    "jsonl_records": 293,
+    "unique_frame_ids": 293,
+    "watchdog_scope": "Independent JointState receive/source watchdog; selected-camera-age fail-closed at each response plus passive camera callback recording. No physical abort path was invoked."
+  },
+  "software_complete_manual_only": false,
+  "remaining_blockers": [
+    "TCP_CONTRACT_UNVERIFIED",
+    "HARDWARE_STATE_UNKNOWN",
+    "JOINTSTATE_RUNTIME_FAIL",
+    "CAMERA_RUNTIME_FAIL",
+    "RAW_ACTION_STEP_LIMIT_EXCEEDED",
+    "MANUAL_SAFETY_CONFIRMATIONS_REQUIRED"
+  ],
+  "jointstate_classification": "JOINTSTATE_RUNTIME_UNSTABLE",
+  "production_thresholds_changed": false,
+  "tests": {
+    "scope": "All existing Phase 12 unittest/regression discovery suites; not a fresh DDS process or physical test",
+    "pass": 192,
+    "fail": 0,
+    "skip": 0,
+    "suites": {
+      "phase12/tests": 100,
+      "14_real_rollout_integration/tests": 66,
+      "07_safety_reject_analysis": 5,
+      "08_gripper_state_cascade_analysis": 4,
+      "09_oft_k5_timing_analysis": 5,
+      "10_oft_corrected_timing_replay": 5,
+      "11_oft_gripper_model_audit": 3,
+      "13_rollout_readiness/tests": 4
+    },
+    "new_tests": 7,
+    "initial_invocation_error": "Root-cwd invocation lacked integration directory on import path; rerun from integration directory passed. Not a production test failure.",
+    "physical_commands": 0
+  }
+}

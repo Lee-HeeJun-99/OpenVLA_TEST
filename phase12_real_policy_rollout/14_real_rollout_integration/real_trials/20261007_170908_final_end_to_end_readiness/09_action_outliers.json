@@ -1,0 +1,3272 @@
+[
+  {
+    "frame_id": 8,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360766.10947,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_8",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.02145723240223496,
+      0.01801015033897582,
+      0.052412185979951675,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.02145723240223496,
+        0.01801015033897582,
+        0.052412185979951675
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249328.619963263,
+      "sequence_id": "8",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 3.4050354774314315,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.3965842220932245,
+    "camera_timestamp": 1791360766.0775342,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.01094482745975256,
+      "source_gap": 0.00998830795288086,
+      "receive_gap": 0.009757386986166239
+    },
+    "joint_state": {
+      "wall_time": 1791360766.4916058,
+      "receive": 2249329.002038331,
+      "source": 1791360766.4912927,
+      "header_age": 0.0003209114074707031,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_8",
+      "camera_callback": {
+        "receive": 2249328.994716192,
+        "wall_time": 1791360766.4842436,
+        "source": 1791360766.4609141,
+        "callback_gap": 0.017319511156529188,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360765.5322473,
+        "receive": 2249328.042723178,
+        "activity": "HTTP_6",
+        "load": [
+          3.84326171875,
+          4.115234375,
+          4.1943359375
+        ],
+        "cpu": "cpu  78627256 243710 14237255 4397781889 487272 0 669549 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17411746428 24016200    0    0    0     0          0         0 17411746428 24016200    0    0    0     0       0          0\nenp3s0: 109065036979 85873225    0    0    0     0          0         0 635658073 8669228    0    0    0     0       0          0\nenp6s0: 64455832  557807    0  262    0     0          0     19492        0       0    0    0    0     0       0          0\nwlp4s0: 11584660785 20154965    0    0    0     0          0         0 23532086645 42508222    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          653120 kB\nMemAvailable:   21095780 kB\nBuffers:          547040 kB\nCached:         19598400 kB\nSwapCached:        38456 kB\nActive:         15271484 kB\nInactive:       14621824 kB\nActive(anon):    5123368 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10039448 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1808 kB\nWriteback:             0 kB\nAnonPages:       9711152 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108364 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383448 kB\nKernelStack:       30300 kB\nPageTables:        93804 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30949256 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245424 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 986275 6306 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 14 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243503 79 4 0 110974 11824 0 0 20 0 86 0 224802599 14524923904 271355 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 707970 1517 8 0 3436 513 0 1 20 0 63 0 224802727 33972236288 547422 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 17 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.00998830795288086,
+      "receive_gap": 0.009757386986166239,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.0046086241491138935,
+      "rgb_conversion": 0.005771807860583067,
+      "jpeg_encode": 0.004846058785915375,
+      "http_request_and_decode": 0.3803127519786358,
+      "end_to_end": 0.39197559794411063
+    },
+    "inference_latency": 0.3803127519786358,
+    "model_input_hash": "bae6b15aad709d40573b33b8b89e716b54c7b8f08784cd584cd6049ee7182d69",
+    "source_image_hash": "8ccc2307cbd70f3d8a0e6367676c6613a37921991ed08bab1608ee9e211ec4f2",
+    "image_path": "images/000008.jpg"
+  },
+  {
+    "frame_id": 10,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360766.9050634,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_10",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.002110220076311794,
+      -0.003007322273154537,
+      -0.023274630928446928,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.002110220076311794,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.023274630928446928,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249329.41554764,
+      "sequence_id": "10",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.071903193533597,
+    "rotation_deg": 1.8878247637199732,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.40947030298411846,
+    "camera_timestamp": 1791360766.877562,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0013514598831534386,
+      "source_gap": 0.009999752044677734,
+      "receive_gap": 0.010000963229686022
+    },
+    "joint_state": {
+      "wall_time": 1791360767.3115447,
+      "receive": 2249329.821998082,
+      "source": 1791360767.3112895,
+      "header_age": 0.0002593994140625,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_10",
+      "camera_callback": {
+        "receive": 2249329.800896508,
+        "wall_time": 1791360767.2904258,
+        "source": 1791360767.260955,
+        "callback_gap": 0.04889105632901192,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360766.5343595,
+        "receive": 2249329.044834897,
+        "activity": "HTTP_9",
+        "load": [
+          3.84326171875,
+          4.115234375,
+          4.1943359375
+        ],
+        "cpu": "cpu  78627836 243710 14237317 4397783255 487273 0 669558 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17412498752 24016512    0    0    0     0          0         0 17412498752 24016512    0    0    0     0       0          0\nenp3s0: 109066402136 85874294    0    0    0     0          0         0 635667100 8669337    0    0    0     0       0          0\nenp6s0: 64455832  557807    0  262    0     0          0     19492        0       0    0    0    0     0       0          0\nwlp4s0: 11584727184 20155128    0    0    0     0          0         0 23532175450 42508590    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          652868 kB\nMemAvailable:   21096092 kB\nBuffers:          547072 kB\nCached:         19598940 kB\nSwapCached:        38456 kB\nActive:         15272044 kB\nInactive:       14622388 kB\nActive(anon):    5123928 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10040012 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2336 kB\nWriteback:             8 kB\nAnonPages:       9711644 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108356 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383440 kB\nKernelStack:       30252 kB\nPageTables:        93808 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30949436 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245424 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 986478 6307 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 9 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243504 79 4 0 111080 11832 0 0 20 0 86 0 224802599 14524923904 271355 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 708058 1517 8 0 3574 516 0 1 20 0 63 0 224802727 33972236288 547502 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 19 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009999752044677734,
+      "receive_gap": 0.010000963229686022,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.0024263900704681873,
+      "rgb_conversion": 0.0032282457686960697,
+      "jpeg_encode": 0.0044208671897649765,
+      "http_request_and_decode": 0.3983241720125079,
+      "end_to_end": 0.4070439129136503
+    },
+    "inference_latency": 0.3983241720125079,
+    "model_input_hash": "4739aeed10944c32431124bff813bc876191183c6903f7ff2490b879cc66dd34",
+    "source_image_hash": "77b3abe3ec9a569d69d6b773cb9a0418db9b1a0a129fb7f735d0f9be83fc7543",
+    "image_path": "images/000010.jpg"
+  },
+  {
+    "frame_id": 92,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360800.8546994,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_92",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249363.36518397,
+      "sequence_id": "92",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.4000101052224636,
+    "camera_timestamp": 1791360800.8311532,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0038216994144022465,
+      "source_gap": 0.009998798370361328,
+      "receive_gap": 0.008910526987165213
+    },
+    "joint_state": {
+      "wall_time": 1791360801.251885,
+      "receive": 2249363.762323457,
+      "source": 1791360801.251309,
+      "header_age": 0.0005881786346435547,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_92",
+      "camera_callback": {
+        "receive": 2249363.752865125,
+        "wall_time": 1791360801.2423964,
+        "source": 1791360801.2145112,
+        "callback_gap": 0.04834683984518051,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360800.5803723,
+        "receive": 2249363.090847443,
+        "activity": "HTTP_91",
+        "load": [
+          5.6357421875,
+          4.556640625,
+          4.34033203125
+        ],
+        "cpu": "cpu  78647919 243710 14239073 4397829083 487313 0 669726 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17432978385 24025080    0    0    0     0          0         0 17432978385 24025080    0    0    0     0       0          0\nenp3s0: 109112768631 85910626    0    0    0     0          0         0 635925514 8672959    0    0    0     0       0          0\nenp6s0: 64456492  557818    0  262    0     0          0     19492        0       0    0    0    0     0       0          0\nwlp4s0: 11585979423 20159735    0    0    0     0          0         0 23535191199 42520730    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          648824 kB\nMemAvailable:   21107516 kB\nBuffers:          547764 kB\nCached:         19613708 kB\nSwapCached:        38456 kB\nActive:         15275512 kB\nInactive:       14637856 kB\nActive(anon):    5127396 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10055480 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               792 kB\nWriteback:             8 kB\nAnonPages:       9715248 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108388 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383472 kB\nKernelStack:       30300 kB\nPageTables:        93816 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30940300 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245440 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 993372 6367 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 15 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243527 79 4 0 114531 12154 0 0 20 0 86 0 224802599 14524923904 271395 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 711275 1517 8 0 8748 556 0 1 20 0 63 0 224802727 33972236288 547976 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 14 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009998798370361328,
+      "receive_gap": 0.008910526987165213,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.00015957700088620186,
+      "rgb_conversion": 0.001203739084303379,
+      "jpeg_encode": 0.003727157134562731,
+      "http_request_and_decode": 0.3939514830708504,
+      "end_to_end": 0.3998505282215774
+    },
+    "inference_latency": 0.3939514830708504,
+    "model_input_hash": "abae2925a72f123b44a7a8d2951826c966647d5adbff8c061aca2b3125910856",
+    "source_image_hash": "7aaf43c7bf17061d6b2d6876bec2421e4a3663681d793e402d792755b42c72ca",
+    "image_path": "images/000092.jpg"
+  },
+  {
+    "frame_id": 102,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360804.9500926,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_102",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249367.46057861,
+      "sequence_id": "102",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.4407698418945074,
+    "camera_timestamp": 1791360804.9149272,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0031585562974214554,
+      "source_gap": 0.009998321533203125,
+      "receive_gap": 0.009974389802664518
+    },
+    "joint_state": {
+      "wall_time": 1791360805.3815463,
+      "receive": 2249367.892008117,
+      "source": 1791360805.3812895,
+      "header_age": 0.00026035308837890625,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_102",
+      "camera_callback": {
+        "receive": 2249367.869990235,
+        "wall_time": 1791360805.3595197,
+        "source": 1791360805.3315842,
+        "callback_gap": 0.011735544074326754,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360804.5836613,
+        "receive": 2249367.094136571,
+        "activity": "HTTP_101",
+        "load": [
+          5.42431640625,
+          4.53076171875,
+          4.3330078125
+        ],
+        "cpu": "cpu  78650353 243710 14239303 4397834430 487317 0 669746 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17435626721 24026242    0    0    0     0          0         0 17435626721 24026242    0    0    0     0       0          0\nenp3s0: 109118203889 85914889    0    0    0     0          0         0 635955874 8673393    0    0    0     0       0          0\nenp6s0: 64456492  557818    0  262    0     0          0     19492        0       0    0    0    0     0       0          0\nwlp4s0: 11586126066 20160307    0    0    0     0          0         0 23535671456 42522316    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          612188 kB\nMemAvailable:   21072740 kB\nBuffers:          547844 kB\nCached:         19615508 kB\nSwapCached:        38456 kB\nActive:         15297708 kB\nInactive:       14639716 kB\nActive(anon):    5149592 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10057340 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2716 kB\nWriteback:             0 kB\nAnonPages:       9737436 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108356 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383440 kB\nKernelStack:       30152 kB\nPageTables:        93864 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30940132 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245408 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 994184 6374 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 12 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243530 79 4 0 114923 12207 0 0 20 0 86 0 224802599 14524923904 271395 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 717058 1517 8 0 9346 559 0 1 20 0 63 0 224802727 33972236288 553336 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 14 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009998321533203125,
+      "receive_gap": 0.009974389802664518,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.006954300217330456,
+      "rgb_conversion": 0.0032458528876304626,
+      "jpeg_encode": 0.004495009779930115,
+      "http_request_and_decode": 0.42509660590440035,
+      "end_to_end": 0.43381554167717695
+    },
+    "inference_latency": 0.42509660590440035,
+    "model_input_hash": "ffff94bf8115ff1828e636ce8572354cea37d204706deb194969e9b78e59e6cc",
+    "source_image_hash": "1e67e43c70e43c7bfb8de32a62beccb6a8df9bf61b98eab363404bf7869f5c80",
+    "image_path": "images/000102.jpg"
+  },
+  {
+    "frame_id": 125,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360814.3900049,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_125",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.02145723240223496,
+      0.018272364515323766,
+      0.007959280276108953,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.02145723240223496,
+        0.018272364515323766,
+        0.007959280276108953
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249376.900494339,
+      "sequence_id": "125",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.6779372722269645,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.3930848012678325,
+    "camera_timestamp": 1791360814.3658261,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0019255690276622772,
+      "source_gap": 0.010004997253417969,
+      "receive_gap": 0.010160186793655157
+    },
+    "joint_state": {
+      "wall_time": 1791360814.781828,
+      "receive": 2249377.292258341,
+      "source": 1791360814.7812994,
+      "header_age": 0.0005424022674560547,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_125",
+      "camera_callback": {
+        "receive": 2249377.267820169,
+        "wall_time": 1791360814.7573483,
+        "source": 1791360814.7326152,
+        "callback_gap": 0.013860251288861036,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360814.6040268,
+        "receive": 2249377.114502449,
+        "activity": "HTTP_125",
+        "load": [
+          5.34619140625,
+          4.54541015625,
+          4.34033203125
+        ],
+        "cpu": "cpu  78656281 243710 14239816 4397847895 487328 0 669796 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17441664941 24028815    0    0    0     0          0         0 17441664941 24028815    0    0    0     0       0          0\nenp3s0: 109131858860 85925579    0    0    0     0          0         0 636034144 8674471    0    0    0     0       0          0\nenp6s0: 64456492  557818    0  262    0     0          0     19492        0       0    0    0    0     0       0          0\nwlp4s0: 11586567057 20161685    0    0    0     0          0         0 23536626336 42526004    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          611136 kB\nMemAvailable:   21075868 kB\nBuffers:          548044 kB\nCached:         19619980 kB\nSwapCached:        38456 kB\nActive:         15302780 kB\nInactive:       14643896 kB\nActive(anon):    5154664 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10061520 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              6644 kB\nWriteback:             0 kB\nAnonPages:       9742696 kB\nMapped:          2398832 kB\nShmem:            362120 kB\nKReclaimable:     724916 kB\nSlab:            1108188 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383272 kB\nKernelStack:       30200 kB\nPageTables:        93872 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30942332 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245360 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 996207 6397 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 18 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243537 79 4 0 115981 12291 0 0 20 0 86 0 224802599 14524923904 271395 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 718526 1517 8 0 10888 568 0 1 20 0 63 0 224802727 33972236288 554015 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 14 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.010004997253417969,
+      "receive_gap": 0.010160186793655157,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.000256488099694252,
+      "rgb_conversion": 0.001933509949594736,
+      "jpeg_encode": 0.004079337231814861,
+      "http_request_and_decode": 0.3859179122373462,
+      "end_to_end": 0.39282831316813827
+    },
+    "inference_latency": 0.3859179122373462,
+    "model_input_hash": "32b556e0dc13ca073b34b09e0b4402f5217cbf93b73985705df01905b28a4323",
+    "source_image_hash": "51248b6fcbb64a5da8bd6eeefa67442dc09cebc688c87141b3bf9f58768205c9",
+    "image_path": "images/000125.jpg"
+  },
+  {
+    "frame_id": 153,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360826.1933062,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_153",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249388.703791638,
+      "sequence_id": "153",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.409374319948256,
+    "camera_timestamp": 1791360826.167226,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.010091954842209816,
+      "source_gap": 0.010011911392211914,
+      "receive_gap": 0.009919560048729181
+    },
+    "joint_state": {
+      "wall_time": 1791360826.5922573,
+      "receive": 2249389.102686237,
+      "source": 1791360826.5913265,
+      "header_age": 0.0009400844573974609,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_153",
+      "camera_callback": {
+        "receive": 2249389.054657561,
+        "wall_time": 1791360826.5441859,
+        "source": 1791360826.517218,
+        "callback_gap": 0.052734353579580784,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360825.6235683,
+        "receive": 2249388.134044577,
+        "activity": "HTTP_151",
+        "load": [
+          7.18017578125,
+          4.97119140625,
+          4.48193359375
+        ],
+        "cpu": "cpu  78662914 243710 14240383 4397862577 487341 0 669848 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17448181162 24031644    0    0    0     0          0         0 17448181162 24031644    0    0    0     0       0          0\nenp3s0: 109146785096 85937286    0    0    0     0          0         0 636118873 8675666    0    0    0     0       0          0\nenp6s0: 64456492  557818    0  262    0     0          0     19492        0       0    0    0    0     0       0          0\nwlp4s0: 11586959131 20163180    0    0    0     0          0         0 23537596836 42529965    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          603160 kB\nMemAvailable:   21073160 kB\nBuffers:          548280 kB\nCached:         19624504 kB\nSwapCached:        38456 kB\nActive:         15312516 kB\nInactive:       14649164 kB\nActive(anon):    5164400 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10066788 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               456 kB\nWriteback:           532 kB\nAnonPages:       9752128 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108284 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383368 kB\nKernelStack:       30220 kB\nPageTables:        93884 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30961120 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245392 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 998438 6418 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 4 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243545 79 4 0 117140 12389 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 719488 1517 8 0 12609 576 0 1 20 0 63 0 224802727 33972236288 553930 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 4 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.010011911392211914,
+      "receive_gap": 0.009919560048729181,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.002353518735617399,
+      "rgb_conversion": 0.0016283192671835423,
+      "jpeg_encode": 0.003783653024584055,
+      "http_request_and_decode": 0.4005964379757643,
+      "end_to_end": 0.4070208012126386
+    },
+    "inference_latency": 0.4005964379757643,
+    "model_input_hash": "b67903f71569370629b0c5dbcb081a68ba408aeb59a26b8ebd5264a50032abcc",
+    "source_image_hash": "5837e2a57052426494e2eba869fcab5933ed06690d229e543b04057daffda92c",
+    "image_path": "images/000153.jpg"
+  },
+  {
+    "frame_id": 178,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360835.9776723,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_178",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.02145723240223496,
+      0.01801015033897582,
+      0.049078218052163475,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.02145723240223496,
+        0.01801015033897582,
+        0.049078218052163475
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249398.488154214,
+      "sequence_id": "178",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 3.2378198472435975,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.3918695510365069,
+    "camera_timestamp": 1791360835.951517,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.006851297803223133,
+      "source_gap": 0.01000070571899414,
+      "receive_gap": 0.009916798211634159
+    },
+    "joint_state": {
+      "wall_time": 1791360836.361575,
+      "receive": 2249398.872034055,
+      "source": 1791360836.3612945,
+      "header_age": 0.0002856254577636719,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_178",
+      "camera_callback": {
+        "receive": 2249398.869294534,
+        "wall_time": 1791360836.358823,
+        "source": 1791360836.3347602,
+        "callback_gap": 0.017830036114901304,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360835.6328084,
+        "receive": 2249398.143283873,
+        "activity": "HTTP_177",
+        "load": [
+          8.53271484375,
+          5.34716796875,
+          4.6103515625
+        ],
+        "cpu": "cpu  78668806 243710 14240881 4397876057 487355 0 669899 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17454472970 24034207    0    0    0     0          0         0 17454472970 24034207    0    0    0     0       0          0\nenp3s0: 109160424683 85947978    0    0    0     0          0         0 636197353 8676757    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11588042850 20164950    0    0    0     0          0         0 23538526562 42533533    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          584120 kB\nMemAvailable:   21058936 kB\nBuffers:          548536 kB\nCached:         19629068 kB\nSwapCached:        38456 kB\nActive:         15320328 kB\nInactive:       14653980 kB\nActive(anon):    5172212 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10071604 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               608 kB\nWriteback:             0 kB\nAnonPages:       9760068 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108252 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383336 kB\nKernelStack:       30172 kB\nPageTables:        93900 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30982020 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245376 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1000470 6431 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 2 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243551 79 4 0 118132 12484 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 720413 1517 8 0 14192 583 0 1 20 0 63 0 224802727 33972236288 553969 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 17 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.01000070571899414,
+      "receive_gap": 0.009916798211634159,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.002408677712082863,
+      "rgb_conversion": 0.0015870560891926289,
+      "jpeg_encode": 0.003650845028460026,
+      "http_request_and_decode": 0.38332734629511833,
+      "end_to_end": 0.38946087332442403
+    },
+    "inference_latency": 0.38332734629511833,
+    "model_input_hash": "dc532296d29eadf0a41094073b9f676f2788a4fc0246172317627876029f9ed6",
+    "source_image_hash": "d0dc50e468e133e6a4d16a66c3772749fa6a1fed8dfd0e89ebcf38705d5fafad",
+    "image_path": "images/000178.jpg"
+  },
+  {
+    "frame_id": 184,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360838.4002972,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_184",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249400.910791891,
+      "sequence_id": "184",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.40495005808770657,
+    "camera_timestamp": 1791360838.3685262,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0021700840443372726,
+      "source_gap": 0.0100555419921875,
+      "receive_gap": 0.012260585092008114
+    },
+    "joint_state": {
+      "wall_time": 1791360838.8041441,
+      "receive": 2249401.3145717,
+      "source": 1791360838.8013651,
+      "header_age": 0.0027990341186523438,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_184",
+      "camera_callback": {
+        "receive": 2249401.306618925,
+        "wall_time": 1791360838.79615,
+        "source": 1791360838.7686641,
+        "callback_gap": 0.01906402036547661,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360838.6390092,
+        "receive": 2249401.149485147,
+        "activity": "HTTP_184",
+        "load": [
+          8.32958984375,
+          5.3583984375,
+          4.6181640625
+        ],
+        "cpu": "cpu  78670582 243710 14241036 4397880099 487357 0 669914 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17456237534 24035005    0    0    0     0          0         0 17456237534 24035005    0    0    0     0       0          0\nenp3s0: 109164520707 85951181    0    0    0     0          0         0 636219898 8677072    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11588173719 20165375    0    0    0     0          0         0 23538800172 42534615    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          583004 kB\nMemAvailable:   21058972 kB\nBuffers:          548596 kB\nCached:         19630152 kB\nSwapCached:        38456 kB\nActive:         15323412 kB\nInactive:       14655132 kB\nActive(anon):    5175296 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10072756 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1648 kB\nWriteback:             0 kB\nAnonPages:       9763096 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108284 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383368 kB\nKernelStack:       30252 kB\nPageTables:        93920 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30985416 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245408 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1001080 6436 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 2 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243554 79 4 0 118460 12510 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 720672 1517 8 0 14641 584 0 1 20 0 63 0 224802727 33972236288 553957 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 7 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.0100555419921875,
+      "receive_gap": 0.012260585092008114,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.0005994653329253197,
+      "rgb_conversion": 0.005206490866839886,
+      "jpeg_encode": 0.005939561873674393,
+      "http_request_and_decode": 0.392055869102478,
+      "end_to_end": 0.40435059275478125
+    },
+    "inference_latency": 0.392055869102478,
+    "model_input_hash": "0513dd8d4a088db06ec8fb6a382a48c6fd3f29a270fae172a375befdc9ddfd23",
+    "source_image_hash": "75ee8343bbfb91ad824c02c0b1f28f05c4dc2f63e4cd80919dd2a3b7ff58364d",
+    "image_path": "images/000184.jpg"
+  },
+  {
+    "frame_id": 198,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360844.1362202,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_198",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249406.646713548,
+      "sequence_id": "198",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.4075306812301278,
+    "camera_timestamp": 1791360844.102235,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0009272731840610504,
+      "source_gap": 0.009940624237060547,
+      "receive_gap": 0.011210408993065357
+    },
+    "joint_state": {
+      "wall_time": 1791360844.543377,
+      "receive": 2249407.053830145,
+      "source": 1791360844.5413048,
+      "header_age": 0.0020766258239746094,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_198",
+      "camera_callback": {
+        "receive": 2249407.05332918,
+        "wall_time": 1791360844.5428581,
+        "source": 1791360844.5191052,
+        "callback_gap": 0.012412207201123238,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360843.6494956,
+        "receive": 2249406.159970807,
+        "activity": "HTTP_196",
+        "load": [
+          8.0625,
+          5.35205078125,
+          4.62060546875
+        ],
+        "cpu": "cpu  78673606 243710 14241312 4397886768 487362 0 669943 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17459220771 24036218    0    0    0     0          0         0 17459220771 24036218    0    0    0     0       0          0\nenp3s0: 109171348099 85956521    0    0    0     0          0         0 636256915 8677598    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11588364093 20165958    0    0    0     0          0         0 23539261038 42536368    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          586312 kB\nMemAvailable:   21064728 kB\nBuffers:          548692 kB\nCached:         19632496 kB\nSwapCached:        38456 kB\nActive:         15320456 kB\nInactive:       14657580 kB\nActive(anon):    5172340 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10075204 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              4192 kB\nWriteback:            24 kB\nAnonPages:       9760244 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108156 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383240 kB\nKernelStack:       30280 kB\nPageTables:        93900 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30999780 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245440 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1002096 6445 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 12 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243558 79 4 0 119008 12557 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 721116 1517 8 0 15397 587 0 1 20 0 63 0 224802727 33972236288 553982 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 3 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009940624237060547,
+      "receive_gap": 0.011210408993065357,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.00020203692838549614,
+      "rgb_conversion": 0.003903249278664589,
+      "jpeg_encode": 0.00495437765493989,
+      "http_request_and_decode": 0.39746551495045424,
+      "end_to_end": 0.4073286443017423
+    },
+    "inference_latency": 0.39746551495045424,
+    "model_input_hash": "d93c262ecc8913697c6a69a0ce516906aa949947e82f942ee273fe2276852473",
+    "source_image_hash": "92e80c804b5298f10c8bb074bb38e23ad81b53518b914d10c3b2e95e10526de1",
+    "image_path": "images/000198.jpg"
+  },
+  {
+    "frame_id": 205,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360847.0421395,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_205",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249409.552634613,
+      "sequence_id": "205",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.42030606092885137,
+    "camera_timestamp": 1791360847.0025842,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0025175618939101696,
+      "source_gap": 0.00998997688293457,
+      "receive_gap": 0.009674263186752796
+    },
+    "joint_state": {
+      "wall_time": 1791360847.4515512,
+      "receive": 2249409.962012277,
+      "source": 1791360847.4512904,
+      "header_age": 0.0002644062042236328,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_205",
+      "camera_callback": {
+        "receive": 2249409.956178315,
+        "wall_time": 1791360847.445706,
+        "source": 1791360847.4192312,
+        "callback_gap": 0.013582357205450535,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360846.6525056,
+        "receive": 2249409.162981045,
+        "activity": "HTTP_204",
+        "load": [
+          8.0625,
+          5.35205078125,
+          4.62060546875
+        ],
+        "cpu": "cpu  78675394 243710 14241467 4397890820 487366 0 669955 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17461209359 24036999    0    0    0     0          0         0 17461209359 24036999    0    0    0     0       0          0\nenp3s0: 109175441577 85959738    0    0    0     0          0         0 636280894 8677934    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11588463444 20166312    0    0    0     0          0         0 23539521968 42537380    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          583656 kB\nMemAvailable:   21063600 kB\nBuffers:          548772 kB\nCached:         19633960 kB\nSwapCached:        38456 kB\nActive:         15321416 kB\nInactive:       14659108 kB\nActive(anon):    5173300 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10076732 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               768 kB\nWriteback:            16 kB\nAnonPages:       9761072 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108276 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383360 kB\nKernelStack:       30272 kB\nPageTables:        93920 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30951328 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245312 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1002707 6448 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 16 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243560 79 4 0 119316 12582 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 721375 1517 8 0 15840 589 0 1 20 0 54 0 224802727 33921880064 553942 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 5 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.00998997688293457,
+      "receive_gap": 0.009674263186752796,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.009131527971476316,
+      "rgb_conversion": 0.007829047739505768,
+      "jpeg_encode": 0.007055104244500399,
+      "http_request_and_decode": 0.3940777312964201,
+      "end_to_end": 0.41117453295737505
+    },
+    "inference_latency": 0.3940777312964201,
+    "model_input_hash": "5bd29cbbcb2547c2dcbfdfd54efbbd80770e390da408e9c9ce0d870dc8c7e53e",
+    "source_image_hash": "221e38520cad515e8b798af213bc42157753ec2f423b1a7647164989fde7b4cf",
+    "image_path": "images/000205.jpg"
+  },
+  {
+    "frame_id": 228,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360856.6797924,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_228",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249419.190277987,
+      "sequence_id": "228",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.39907483709976077,
+    "camera_timestamp": 1791360856.6535861,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.008080230094492435,
+      "source_gap": 0.010033607482910156,
+      "receive_gap": 0.01025364501401782
+    },
+    "joint_state": {
+      "wall_time": 1791360857.0718231,
+      "receive": 2249419.582270024,
+      "source": 1791360857.071323,
+      "header_age": 0.0005049705505371094,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_228",
+      "camera_callback": {
+        "receive": 2249419.538823119,
+        "wall_time": 1791360857.0283518,
+        "source": 1791360857.0036092,
+        "callback_gap": 0.01351493876427412,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360856.66114,
+        "receive": 2249419.17161527,
+        "activity": "INFERENCE_IDLE",
+        "load": [
+          7.6845703125,
+          5.35791015625,
+          4.63037109375
+        ],
+        "cpu": "cpu  78681315 243710 14241988 4397904258 487379 0 670008 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17468129948 24039778    0    0    0     0          0         0 17468129948 24039778    0    0    0     0       0          0\nenp3s0: 109189080332 85970439    0    0    0     0          0         0 636360034 8679035    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11588839290 20167617    0    0    0     0          0         0 23541442538 42541633    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          583820 kB\nMemAvailable:   21068340 kB\nBuffers:          549004 kB\nCached:         19638304 kB\nSwapCached:        38456 kB\nActive:         15322964 kB\nInactive:       14663684 kB\nActive(anon):    5174848 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10081308 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               420 kB\nWriteback:             4 kB\nAnonPages:       9762628 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1107992 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383076 kB\nKernelStack:       30280 kB\nPageTables:        93916 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30934684 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245328 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1004739 6462 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 12 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243566 79 4 0 120310 12682 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 722263 1517 8 0 17364 596 0 1 20 0 53 0 224802727 33921880064 553892 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 17 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.010033607482910156,
+      "receive_gap": 0.01025364501401782,
+      "phase": "RUNTIME_READY"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "tcp_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.00018764007836580276,
+      "rgb_conversion": 0.001317235641181469,
+      "jpeg_encode": 0.0037146201357245445,
+      "http_request_and_decode": 0.39292653230950236,
+      "end_to_end": 0.39888719702139497
+    },
+    "inference_latency": 0.39292653230950236,
+    "model_input_hash": "51634d1bf21cfb539f09b30b4da06e103ae01dc30cc10af52bdaf3e53f2825c1",
+    "source_image_hash": "078a1cd564bbd9b146ec590a2e7a4611a88031857b8b8d626a18131f7ecd1c32",
+    "image_path": "images/000228.jpg"
+  },
+  {
+    "frame_id": 243,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360862.8232584,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_243",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.019185484244470002,
+      0.020981911004252556,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.019185484244470002,
+        0.020981911004252556,
+        0.010181925561301089
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249425.333746561,
+      "sequence_id": "243",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7302898565711669,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.40636332891881466,
+    "camera_timestamp": 1791360862.787579,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.010146718006581068,
+      "source_gap": 0.010000944137573242,
+      "receive_gap": 0.010299202054738998
+    },
+    "joint_state": {
+      "wall_time": 1791360863.2120786,
+      "receive": 2249425.722525882,
+      "source": 1791360863.2113144,
+      "header_age": 0.0007770061492919922,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_243",
+      "camera_callback": {
+        "receive": 2249425.711269005,
+        "wall_time": 1791360863.2007983,
+        "source": 1791360863.1709952,
+        "callback_gap": 0.08387753926217556,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360862.6704218,
+        "receive": 2249425.180897323,
+        "activity": "HTTP_242",
+        "load": [
+          7.38916015625,
+          5.3349609375,
+          4.626953125
+        ],
+        "cpu": "cpu  78684921 243710 14242294 4397912293 487385 0 670034 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17471879932 24041334    0    0    0     0          0         0 17471879932 24041334    0    0    0     0       0          0\nenp3s0: 109197265670 85976856    0    0    0     0          0         0 636406732 8679689    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11589039504 20168336    0    0    0     0          0         0 23541963031 42543697    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          569152 kB\nMemAvailable:   21056852 kB\nBuffers:          549120 kB\nCached:         19640820 kB\nSwapCached:        38456 kB\nActive:         15332264 kB\nInactive:       14666864 kB\nActive(anon):    5184148 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10084488 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3008 kB\nWriteback:             4 kB\nAnonPages:       9772484 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108184 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383268 kB\nKernelStack:       30184 kB\nPageTables:        93912 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30962004 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245376 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1005956 6473 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 14 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243571 79 4 0 120933 12728 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 722818 1517 8 0 18333 604 0 1 20 0 63 0 224802727 33972236288 553866 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 19 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.010000944137573242,
+      "receive_gap": 0.010299202054738998,
+      "phase": "RUNTIME_FAULT"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "joint_state_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.008596093859523535,
+      "rgb_conversion": 0.005669930949807167,
+      "jpeg_encode": 0.004672411363571882,
+      "http_request_and_decode": 0.3864932949654758,
+      "end_to_end": 0.3977672350592911
+    },
+    "inference_latency": 0.3864932949654758,
+    "model_input_hash": "43697cde30be789e343107817a79bae50cb2d17c9fcf86c29256b485f490d256",
+    "source_image_hash": "d3de1d72ce151ee4742130a2d70a785819072575927732e9647e97ab02194e71",
+    "image_path": "images/000243.jpg"
+  },
+  {
+    "frame_id": 284,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360879.7262018,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_284",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.002110220076311794,
+      -0.003007322273154537,
+      -0.004419121218997787,
+      0.01801015033897582,
+      0.05435700060449479,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.002110220076311794,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.004419121218997787,
+        0.01801015033897582,
+        0.05435700060449479
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249442.236686765,
+      "sequence_id": "284",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.071903193533597,
+    "rotation_deg": 3.2906825577375223,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.4021769231185317,
+    "camera_timestamp": 1791360879.6891441,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.010291676968336105,
+      "source_gap": 0.009989738464355469,
+      "receive_gap": 0.009871888905763626
+    },
+    "joint_state": {
+      "wall_time": 1791360880.11219,
+      "receive": 2249442.622618982,
+      "source": 1791360880.111301,
+      "header_age": 0.0009043216705322266,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_284",
+      "camera_callback": {
+        "receive": 2249442.611955996,
+        "wall_time": 1791360880.101492,
+        "source": 1791360880.0726302,
+        "callback_gap": 0.021505835000425577,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360879.6975884,
+        "receive": 2249442.208063896,
+        "activity": "HTTP_283",
+        "load": [
+          7.11083984375,
+          5.40869140625,
+          4.6669921875
+        ],
+        "cpu": "cpu  78695030 243710 14243179 4397935168 487405 0 670111 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17482138224 24045577    0    0    0     0          0         0 17482138224 24045577    0    0    0     0       0          0\nenp3s0: 109220446693 85995009    0    0    0     0          0         0 636536791 8681518    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11589611620 20170332    0    0    0     0          0         0 23543460344 42549523    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          531408 kB\nMemAvailable:   21027068 kB\nBuffers:          549600 kB\nCached:         19648256 kB\nSwapCached:        38456 kB\nActive:         15356632 kB\nInactive:       14674824 kB\nActive(anon):    5208516 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10092448 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1316 kB\nWriteback:            24 kB\nAnonPages:       9796928 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108428 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383512 kB\nKernelStack:       30288 kB\nPageTables:        93992 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30981720 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245344 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1009402 6508 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 4 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243582 79 4 0 122673 12896 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 729899 1517 8 0 20951 618 0 1 20 0 63 0 224802727 33972236288 559300 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 0 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009989738464355469,
+      "receive_gap": 0.009871888905763626,
+      "phase": "RUNTIME_FAULT"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "joint_state_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.007242562249302864,
+      "rgb_conversion": 0.0024105897173285484,
+      "jpeg_encode": 0.0043821679428219795,
+      "http_request_and_decode": 0.3872649949043989,
+      "end_to_end": 0.39493436086922884
+    },
+    "inference_latency": 0.3872649949043989,
+    "model_input_hash": "b106bc8279457c67f2bcec4d63349a3b991c41ae2e341c0a479d5448434fc6b0",
+    "source_image_hash": "51f82af86e6784b1bfb38ece6b3b018d0c4ff578b1c22cfc9fe35f758dffc71c",
+    "image_path": "images/000284.jpg"
+  },
+  {
+    "frame_id": 288,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360881.3797023,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_288",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.02157081981012321,
+      0.018272364515323766,
+      0.010737586882599124,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.02157081981012321,
+        0.018272364515323766,
+        0.010737586882599124
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249443.890187734,
+      "sequence_id": "288",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7326411824936012,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.4019397823140025,
+    "camera_timestamp": 1791360881.3560731,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.010584386996924877,
+      "source_gap": 0.009998798370361328,
+      "receive_gap": 0.009874986950308084
+    },
+    "joint_state": {
+      "wall_time": 1791360881.7715883,
+      "receive": 2249444.282035367,
+      "source": 1791360881.7712965,
+      "header_age": 0.00029850006103515625,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_288",
+      "camera_callback": {
+        "receive": 2249444.274012854,
+        "wall_time": 1791360881.7635405,
+        "source": 1791360881.7393231,
+        "callback_gap": 0.015786136034876108,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360881.701495,
+        "receive": 2249444.211970527,
+        "activity": "HTTP_288",
+        "load": [
+          7.11083984375,
+          5.40869140625,
+          4.6669921875
+        ],
+        "cpu": "cpu  78696241 243710 14243309 4397937814 487407 0 670123 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17483405655 24046103    0    0    0     0          0         0 17483405655 24046103    0    0    0     0       0          0\nenp3s0: 109223177508 85997150    0    0    0     0          0         0 636552415 8681737    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11589676675 20170580    0    0    0     0          0         0 23543645106 42550236    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          529672 kB\nMemAvailable:   21026244 kB\nBuffers:          549640 kB\nCached:         19649136 kB\nSwapCached:        38456 kB\nActive:         15356956 kB\nInactive:       14675736 kB\nActive(anon):    5208840 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10093360 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2176 kB\nWriteback:            16 kB\nAnonPages:       9797240 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108428 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383512 kB\nKernelStack:       30268 kB\nPageTables:        94000 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30982744 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245280 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1009806 6513 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 6 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243585 79 4 0 122880 12919 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 730088 1517 8 0 21254 621 0 1 20 0 63 0 224802727 33972236288 559300 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 0 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.009998798370361328,
+      "receive_gap": 0.009874986950308084,
+      "phase": "RUNTIME_FAULT"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "joint_state_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.00026760296896100044,
+      "rgb_conversion": 0.0013487143442034721,
+      "jpeg_encode": 0.003815616015344858,
+      "http_request_and_decode": 0.39557615108788013,
+      "end_to_end": 0.4016721793450415
+    },
+    "inference_latency": 0.39557615108788013,
+    "model_input_hash": "02793dcde09dd7ed0cf26a91e150f08336794d19512bcb001fded6f7a21adad5",
+    "source_image_hash": "adba2946a1bce49cd953ea163ef5387b81761ebbcebac8d24b93f51d1dd74dca",
+    "image_path": "images/000288.jpg"
+  },
+  {
+    "frame_id": 292,
+    "segment": "RUNTIME_SHADOW",
+    "timestamp": 1791360883.002518,
+    "instruction": "Pick up the orange cube.",
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_contract_verified": false,
+    "tool_offset_verified": false,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "episode_id": "20261007_170908_final_end_to_end_readiness",
+    "real_observation_id": "20261007_170908_final_end_to_end_readiness_292",
+    "condition": null,
+    "matched_pair_id": null,
+    "sim_observation_id": null,
+    "observation_gap_score": null,
+    "action_gap_translation": null,
+    "action_gap_rotation": null,
+    "action_gap_gripper": null,
+    "valid": true,
+    "raw_action": [
+      0.0017559554642496995,
+      0.0030260375425632995,
+      -0.003007322273154537,
+      -0.02157081981012321,
+      0.018272364515323766,
+      0.010737586882599124,
+      0.0019607843137254832
+    ],
+    "canonical_action": {
+      "translation_m": [
+        0.0017559554642496995,
+        0.0030260375425632995,
+        -0.003007322273154537
+      ],
+      "rotation_rotvec_rad": [
+        -0.02157081981012321,
+        0.018272364515323766,
+        0.010737586882599124
+      ],
+      "gripper_closedness": 0.0019607843137254832,
+      "timestamp_monotonic": 2249445.513018742,
+      "sequence_id": "292",
+      "source_model": "openvla",
+      "chunk_index": 0,
+      "chunk_size": 1
+    },
+    "translation_mm": 4.613487840673505,
+    "rotation_deg": 1.7326411824936012,
+    "gripper": 0.0019607843137254832,
+    "camera_age": 0.39213769789785147,
+    "camera_timestamp": 1791360882.9728951,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "jointstate": {
+      "phase": "RUNTIME_FAULT",
+      "fault": "joint_state_receive_timeout",
+      "first_fresh_sample": 2249124.932754802,
+      "discovery_delay_s": 13.184945901855826,
+      "latest_receive_age_s": 0.0033140662126243114,
+      "source_gap": 0.010020256042480469,
+      "receive_gap": 0.010291899088770151
+    },
+    "joint_state": {
+      "wall_time": 1791360883.3919072,
+      "receive": 2249445.902347271,
+      "source": 1791360883.3913102,
+      "header_age": 0.0006098747253417969,
+      "valid": true,
+      "missing": false,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "http_activity": "HTTP_292",
+      "camera_callback": {
+        "receive": 2249445.876350942,
+        "wall_time": 1791360883.365889,
+        "source": 1791360883.339626,
+        "callback_gap": 0.01895231707021594,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      "host": {
+        "wall_time": 1791360882.7030323,
+        "receive": 2249445.213507626,
+        "activity": "HTTP_291",
+        "load": [
+          7.11083984375,
+          5.40869140625,
+          4.6669921875
+        ],
+        "cpu": "cpu  78696817 243710 14243344 4397939187 487409 0 670127 0 0 0",
+        "network": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo: 17484143119 24046349    0    0    0     0          0         0 17484143119 24046349    0    0    0     0       0          0\nenp3s0: 109224543071 85998223    0    0    0     0          0         0 636560218 8681846    0    0    0     0       0          0\nenp6s0: 64456552  557819    0  262    0     0          0     19493        0       0    0    0    0     0       0          0\nwlp4s0: 11589711633 20170691    0    0    0     0          0         0 23543722798 42550561    0    0    0     0       0          0\n",
+        "memory": "MemTotal:       32698160 kB\nMemFree:          528916 kB\nMemAvailable:   21025688 kB\nBuffers:          549664 kB\nCached:         19649332 kB\nSwapCached:        38456 kB\nActive:         15357628 kB\nInactive:       14675936 kB\nActive(anon):    5209512 kB\nInactive(anon):  4582376 kB\nActive(file):   10148116 kB\nInactive(file): 10093560 kB\nUnevictable:          24 kB\nMlocked:              16 kB\nSwapTotal:       2097148 kB\nSwapFree:         168420 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2564 kB\nWriteback:             0 kB\nAnonPages:       9797876 kB\nMapped:          2398752 kB\nShmem:            361964 kB\nKReclaimable:     724916 kB\nSlab:            1108364 kB\nSReclaimable:     724916 kB\nSUnreclaim:       383448 kB\nKernelStack:       30236 kB\nPageTables:        93988 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    18446228 kB\nCommitted_AS:   30982744 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      245312 kB\nVmallocChunk:          0 kB\nPercpu:            20160 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    31524404 kB\nDirectMap2M:     1867776 kB\nDirectMap1G:     1048576 kB\n",
+        "processes": {
+          "3061204": "3061204 (ros2_control_no) S 3061188 3061188 2912103 34817 3061188 4194304 16304 0 10 0 1010009 6514 0 0 20 0 39 0 224444076 2744651776 29522 18446744073709551615 104700156370944 104700156386797 140737181841888 0 0 0 4096 0 1098925310 0 0 0 17 6 0 0 0 0 0 104700156397760 104700156399840 104701162930176 140737181847209 140737181847445 140737181847445 140737181855679 0\n",
+          "3075971": "3075971 (zed_node_main) S 3075939 3075939 3075939 0 -1 4194304 243586 79 4 0 122987 12926 0 0 20 0 86 0 224802599 14524923904 271435 18446744073709551615 103475066208256 103475066229173 140727391394544 0 0 0 0 0 16386 0 0 0 17 10 0 0 0 0 0 103475066243224 103475066245152 103476063244288 140727391402686 140727391402861 140727391402861 140727391412149 0\n",
+          "3076021": "3076021 (python) S 2978245 3076021 3076021 0 -1 4194304 730342 1517 8 0 21415 622 0 1 20 0 63 0 224802727 33972236288 559380 18446744073709551615 101588875538432 101588878362669 140730631359520 0 0 0 0 16781312 2 0 0 0 17 19 0 0 0 0 0 101588880726032 101588881010072 101589459005440 140730631367991 140730631368407 140730631368407 140730631376793 0\n"
+        }
+      },
+      "graph_cli_activity": false,
+      "source_gap": 0.010020256042480469,
+      "receive_gap": 0.010291899088770151,
+      "phase": "RUNTIME_FAULT"
+    },
+    "fk_flange": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3046077501615298,
+        -0.011262126389508763,
+        0.7245037620169807
+      ],
+      "rotation_matrix": [
+        [
+          0.9087910556878299,
+          -0.052185660129943766,
+          0.4139752093768437
+        ],
+        [
+          -0.05822761092437895,
+          -0.9983013695746072,
+          0.0019801089623280384
+        ],
+        [
+          0.41316868519750943,
+          -0.02590429273818419,
+          -0.9102860018641921
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.007135899540891195,
+        0.9769056283908172,
+        -0.02825586930955607,
+        0.2116744623369723
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        -0.7156862616539001,
+        0.021932009607553482,
+        -1.9809508323669434,
+        0.026174861937761307
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "safety": {
+      "accepted": false,
+      "rejected": true,
+      "hold_required": true,
+      "reason": [
+        "raw_translation_step_limit",
+        "joint_state_failure",
+        "gripper_unknown_state_blocks_command"
+      ],
+      "filtered_action": null,
+      "command_issued": false
+    },
+    "latency": {
+      "snapshot_receive_age": 0.00028497306630015373,
+      "rgb_conversion": 0.003440889995545149,
+      "jpeg_encode": 0.004937293007969856,
+      "http_request_and_decode": 0.3821346890181303,
+      "end_to_end": 0.3918527248315513
+    },
+    "inference_latency": 0.3821346890181303,
+    "model_input_hash": "251623652f0d33579fea7047c672780135387d74f095bc8f129e945dc8ed9aac",
+    "source_image_hash": "74c9b0f716920d5ae56d8d4883f8bfb42d7c168f5bd034ed9e01ea6073ed0ed2",
+    "image_path": "images/000292.jpg"
+  }
+]

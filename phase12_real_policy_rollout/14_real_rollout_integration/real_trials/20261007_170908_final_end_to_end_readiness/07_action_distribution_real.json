@@ -1,0 +1,70 @@
+{
+  "training": {
+    "count": 539,
+    "mean": 10.386665350242646,
+    "std": 11.026948873338725,
+    "median": 7.095518739607351,
+    "p90": 25.201022032834132,
+    "p95": 29.14799397261564,
+    "p99": 37.64361539449053,
+    "max": 48.31506790879339
+  },
+  "real": {
+    "count": 291,
+    "mean": 0.9067161392556027,
+    "std": 0.9568686410159889,
+    "median": 0.605877713859466,
+    "p90": 0.9079881164153089,
+    "p95": 3.451404485655279,
+    "p99": 4.613487840673505,
+    "max": 4.613487840673505
+  },
+  "real_xyz_mm": {
+    "dx": {
+      "count": 291,
+      "mean": 0.26701430728249337,
+      "std": 0.47616498191513956,
+      "median": 0.11473623441084733,
+      "p90": 0.11473623441084733,
+      "p95": 1.7559554642496995,
+      "p99": 1.7559554642496995,
+      "max": 1.7559554642496995
+    },
+    "dy": {
+      "count": 291,
+      "mean": 0.48944346078078,
+      "std": 0.6739141052002035,
+      "median": 0.2785851438087839,
+      "p90": 0.2785851438087839,
+      "p95": 2.110220076311794,
+      "p99": 3.0260375425632997,
+      "max": 3.0260375425632997
+    },
+    "dz": {
+      "count": 291,
+      "mean": -0.6672213831368782,
+      "std": 0.5484546712779733,
+      "median": -0.5256555129681713,
+      "p90": -0.5256555129681713,
+      "p95": -0.5256555129681713,
+      "p99": -0.5256555129681713,
+      "max": -0.5256555129681713
+    }
+  },
+  "real_max_within_training_observed_range": true,
+  "training_hz": [
+    10.0
+  ],
+  "live_prediction_hz": 2.425,
+  "instruction": "Pick up the orange cube.",
+  "interpretation": "Observed live magnitude is compared descriptively to an unmatched limited training sample, not calibrated physical risk or causality. A tail within this sample does not authorize commands.",
+  "step_limit": {
+    "translation_m": 0.004,
+    "rotation_deg": 4,
+    "category": "CONFIGURED_FAIL_CLOSED_RAW_ACTION_STEP_LIMIT",
+    "source": "02_safety/command_disabled_runtime.py evaluate + 01_configs/safety_limits.yaml",
+    "history": "74bb158e Initial commit; no independently documented manufacturer or hardware-calibrated derivation found",
+    "model_control": "Exceeding raw limit remains rejected",
+    "deterministic_minimum_motion": "Uses independent 0.5 mm delta, never model output; model-tail warning alone is not proof this minimum delta unsafe"
+  }
+}

@@ -1,6 +1,14 @@
 # Real rollout integration — command-disabled implementation
 
-Current verdict: **PRE_ROBOT_SOFTWARE_COMPLETE** (audited offline/fake scope), **HARDWARE_VALIDATION_PENDING**, physical rollout **NOT_AUTHORIZED**. Latest validation: 137 unittest/regression/DDS PASS, 13 fake-live process scenarios PASS, 7 generated-request/stage-intercept scenarios PASS. Default configs remain disabled. Hardware/GPU execution is pending; this is not proof of real driver stop responsiveness or physical task success. See the current top section of FINAL_READINESS_REPORT.md and HARDWARE_DAY_CHECKLIST.md; older summaries below are history.
+## Latest real read-only validation — 2026-10-07
+
+Current real readiness: **BLOCKED_MULTIPLE**. [Long end-to-end report](real_trials/20261007_170908_final_end_to_end_readiness/FINAL_END_TO_END_READINESS_REPORT.md) supersedes older real-readiness assumptions, not the historical offline/fake implementation results below.
+
+Same persistent JointState/camera subscribers: 180 s baseline PASS (18,000 samples, 100 Hz, ≥100 ms events 0). Subsequent 120 s OpenVLA Shadow FAIL: one 101.998 ms receive gap (corresponding source gap 9.998 ms), one unavailable ≤10 ms camera snapshot. Successful predictions 291/292 attempts; selected-frame max age 0.49473 s, age-limit violations 0, GPU/model failures 0. TCP active binding and independent hardware safety states remain unknown; no getter refresh after runtime fault. Physical commands **0**; production limits unchanged.
+
+`final_end_to_end_readiness.py` is a command-incapable long audit with background image/JSONL logging. `summarize_long_readiness.py` performs offline distribution/context interpretation. Current Phase 12 unittest/regression suites: **192 PASS / 0 FAIL / 0 SKIP**, including 7 new long-audit tests; this is not a new DDS/process/hardware PASS claim. Training sample: 11 episodes/539 steps; its translation median/max 7.096/48.315 mm does not invalidate the configured 4 mm raw-action safety gate or establish checkpoint membership.
+
+Historical offline/fake verdict (2026-10-06): **PRE_ROBOT_SOFTWARE_COMPLETE** (audited offline/fake scope), **HARDWARE_VALIDATION_PENDING**, physical rollout **NOT_AUTHORIZED**. Then-validation: 137 unittest/regression/DDS PASS, 13 fake-live process scenarios PASS, 7 generated-request/stage-intercept scenarios PASS. Default configs remain disabled. Hardware/GPU execution was pending in that report; it is not proof of real driver stop responsiveness or physical task success. See the current top section of FINAL_READINESS_REPORT.md and HARDWARE_DAY_CHECKLIST.md; older summaries below are history.
 
 Latest follow-up: 131 unit/regression/DDS tests PASS plus 7 fake-live subprocess scenarios PASS. RobotState normalization, concurrency-safe logger, idempotent abort and actual processor metadata were added. This is still command-disabled: verified live servo/manual-auto sources and remaining E2E/model checks are documented in the latest FINAL_READINESS_REPORT section. Fake graph results are infrastructure tests, not model behavior findings.
 

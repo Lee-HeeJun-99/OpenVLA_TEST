@@ -1,0 +1,26 @@
+{
+  "lo": {
+    "rx_errors": 0,
+    "rx_drops": 0,
+    "tx_errors": 0,
+    "tx_drops": 0
+  },
+  "enp3s0": {
+    "rx_errors": 0,
+    "rx_drops": 0,
+    "tx_errors": 0,
+    "tx_drops": 0
+  },
+  "enp6s0": {
+    "rx_errors": 0,
+    "rx_drops": 0,
+    "tx_errors": 0,
+    "tx_drops": 0
+  },
+  "wlp4s0": {
+    "rx_errors": 0,
+    "rx_drops": 0,
+    "tx_errors": 0,
+    "tx_drops": 0
+  }
+}

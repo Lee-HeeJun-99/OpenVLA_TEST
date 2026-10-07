@@ -1,0 +1,161 @@
+{
+  "episodes": [
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/1/episode.json",
+      "steps_sha256": "87f1d25128bfd27b659db3290c21d89add92c4251e115d061b293cb70e5eec0d",
+      "count": 49,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 24,
+      "first_close_seconds": 2.4
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/10/episode.json",
+      "steps_sha256": "75501c896c3df1b0feb543196e61ac09769088f32c32ff7e167f13072e094652",
+      "count": 45,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 23,
+      "first_close_seconds": 2.3
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/2/episode.json",
+      "steps_sha256": "5da071905edefd553b56e84c2c3d1e8063049515466d773eec5cf4580b71804c",
+      "count": 46,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 25,
+      "first_close_seconds": 2.5
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/3/episode.json",
+      "steps_sha256": "b75af23845239450b3d56863473bd661d5beb6d4493f0875ff99768926cb06c4",
+      "count": 49,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 22,
+      "first_close_seconds": 2.2
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/4/episode.json",
+      "steps_sha256": "123ac3349309900891501bdce63715da509531ea106440061fb9604f7cf4c1b2",
+      "count": 49,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 25,
+      "first_close_seconds": 2.5
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/5/episode.json",
+      "steps_sha256": "098eda828e57284e267be20593c5378ea2d4c1a1641a0cbd6f7649767a0b66ca",
+      "count": 42,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 21,
+      "first_close_seconds": 2.1
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/6/episode.json",
+      "steps_sha256": "0f04bf7c70c39e1af230f60cde0f01ba3c8849b6dce7569a5f9e542647a2ad93",
+      "count": 57,
+      "hz": 10.0,
+      "demonstration_type": "nominal",
+      "first_close_step": 32,
+      "first_close_seconds": 3.2
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/7/episode.json",
+      "steps_sha256": "6914d8d549fb57229cfcc890c6ee553b557aea6c8d2414ffc7ddf1ba23678074",
+      "count": 47,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 26,
+      "first_close_seconds": 2.6
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/8/episode.json",
+      "steps_sha256": "b3ca4234f30283633b25bba25c806a768b9e6dbc893c00e406390f5d6e3d1385",
+      "count": 56,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 30,
+      "first_close_seconds": 3.0
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/9/episode.json",
+      "steps_sha256": "381c1e49a205f76fbf5988d6358266f9c35a0a7803d3961738ca2c80a1a269fb",
+      "count": 43,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 20,
+      "first_close_seconds": 2.0
+    },
+    {
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/train_dataset/episode.json",
+      "steps_sha256": "1e4cd2e04d189e2725c41d3bd1d0b5d838c13471b27d90cebb7079db0985e531",
+      "count": 56,
+      "hz": 10.0,
+      "demonstration_type": "corrective_recovery",
+      "first_close_step": 28,
+      "first_close_seconds": 2.8
+    }
+  ],
+  "unique_episodes": 11,
+  "steps": 539,
+  "translation_norm_mm": {
+    "count": 539,
+    "mean": 10.386665350242646,
+    "std": 11.026948873338725,
+    "median": 7.095518739607351,
+    "p90": 25.201022032834132,
+    "p95": 29.14799397261564,
+    "p99": 37.64361539449053,
+    "max": 48.31506790879339
+  },
+  "xyz_mm": {
+    "dx": {
+      "count": 539,
+      "mean": 1.1637939141685218,
+      "std": 4.431725713627301,
+      "median": 0.0015161312643674485,
+      "p90": 6.47359230763882,
+      "p95": 9.586946547061167,
+      "p99": 21.6628365616969,
+      "max": 25.208248733601586
+    },
+    "dy": {
+      "count": 539,
+      "mean": 0.4474463714920801,
+      "std": 3.0251579145327834,
+      "median": 0.00082659264361018,
+      "p90": 1.741939507242068,
+      "p95": 4.9160343398226605,
+      "p99": 14.614148765649173,
+      "max": 18.242881827914086
+    },
+    "dz": {
+      "count": 539,
+      "mean": 2.721349212322387,
+      "std": 13.846453671574062,
+      "median": 0.004134910367215028,
+      "p90": 20.247483810929662,
+      "p95": 24.43883691362247,
+      "p99": 35.82788955746206,
+      "max": 41.55239097346719
+    }
+  },
+  "over_4mm": 288,
+  "gripper": {
+    "count": 539,
+    "mean": 0.48794063079777367,
+    "std": 0.49985455045887545,
+    "median": 0.0,
+    "p90": 1.0,
+    "p95": 1.0,
+    "p99": 1.0,
+    "max": 1.0
+  },
+  "checkpoint_training_membership": "UNVERIFIED",
+  "representativeness": "LIMITED_SAMPLE",
+  "units": "world-relative translation meters per dataset action schema; norms reported mm"
+}

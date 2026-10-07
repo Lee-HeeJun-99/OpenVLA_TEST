@@ -1,0 +1,9 @@
+{
+  "value": "UNKNOWN",
+  "provenance": "UNKNOWN",
+  "fresh_affirmative_evidence": false,
+  "reason": "Current persistent runtime stability/source evidence insufficient for controlled refresh; no inference from STANDBY or event silence",
+  "getter_called": false,
+  "previous_not_current": "STANDBY",
+  "previous_evidence": "20261007_162114_tcp_hardware_precheck, same driver session; not fresh safety PASS"
+}

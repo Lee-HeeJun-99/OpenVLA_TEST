@@ -9,3 +9,6 @@ phase6_environment_attribution/01_preprocessing/full_forward_features/
 __pycache__/
 *.pyc
 *.db3
+
+# Large raw JointState logs
+jointstate_all_samples.json
