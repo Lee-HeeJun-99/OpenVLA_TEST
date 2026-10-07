@@ -1,0 +1,12 @@
+[
+  {
+    "phase": "WAIT_FIRST_FRESH_SAMPLE",
+    "before": 1791357682.1013002,
+    "after": 1791357685.1712942,
+    "receive_before": 2246247.674594427,
+    "receive_after": 2246247.682536927,
+    "source_gap": 3.0699939727783203,
+    "receive_gap": 0.007942500058561563,
+    "header_age": 0.0008025169372558594
+  }
+]

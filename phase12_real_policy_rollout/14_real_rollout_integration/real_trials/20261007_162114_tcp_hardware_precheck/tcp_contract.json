@@ -1,0 +1,8 @@
+{
+  "classification": "TCP_UNKNOWN",
+  "active_tcp_name": "UNKNOWN",
+  "active_tool_name": "UNKNOWN",
+  "offset_verified": false,
+  "source": "FK_ESTIMATED_FLANGE_ONLY",
+  "tcp_contract_verified": false
+}

@@ -1,0 +1,32 @@
+{
+  "endpoint": "/dsr01/system/get_robot_system",
+  "request_count": 1,
+  "status": "RESPONSE",
+  "before": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2246247.682536927,
+    "discovery_delay_s": 10.841079744044691,
+    "latest_receive_age_s": 0.0004685590974986553,
+    "source_gap": 0.009996652603149414,
+    "receive_gap": 0.011010018642991781
+  },
+  "request_wall": 1791357699.3246489,
+  "request_monotonic": 2246261.835122697,
+  "rosout_offset": 0,
+  "latency_s": 0.010211542714387178,
+  "response": {
+    "robot_system": 0,
+    "success": true
+  },
+  "after": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2246247.682536927,
+    "discovery_delay_s": 10.841079744044691,
+    "latest_receive_age_s": 0.009317183401435614,
+    "source_gap": 0.010029792785644531,
+    "receive_gap": 0.010056712664663792
+  },
+  "driver_log_delta": []
+}

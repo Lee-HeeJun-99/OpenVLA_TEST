@@ -1,0 +1,32 @@
+{
+  "endpoint": "/dsr01/tcp/get_current_tcp",
+  "request_count": 1,
+  "status": "RESPONSE",
+  "before": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2246247.682536927,
+    "discovery_delay_s": 10.841079744044691,
+    "latest_receive_age_s": 0.0003302288241684437,
+    "source_gap": 0.009951114654541016,
+    "receive_gap": 0.005870749242603779
+  },
+  "request_wall": 1791357695.2317972,
+  "request_monotonic": 2246257.742271301,
+  "rosout_offset": 0,
+  "latency_s": 0.011620121076703072,
+  "response": {
+    "info": "",
+    "success": true
+  },
+  "after": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2246247.682536927,
+    "discovery_delay_s": 10.841079744044691,
+    "latest_receive_age_s": 0.0003143860958516598,
+    "source_gap": 0.010031938552856445,
+    "receive_gap": 0.013651353772729635
+  },
+  "driver_log_delta": []
+}

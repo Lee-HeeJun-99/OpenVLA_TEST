@@ -1,0 +1,6 @@
+{
+  "status": "NOT_VERIFIED",
+  "get_current_posx": "NOT_CALLED_KNOWN_FEEDBACK_LOSS_RISK",
+  "get_current_pose": "NOT_CALLED_VENDOR_STABILITY_UNVERIFIED_NULL_POINTER_DEREFERENCE_WITHOUT_CHECK",
+  "fk_flange_not_actual_tcp": true
+}

@@ -1,0 +1,9 @@
+Driver file: /home/ubuntu/.ros/log/ros2_control_node_3061204_1791355878269.log
+Byte offset baseline: tcp_tool_getter_precheck.json driver_log_offsets
+Read after completed trial; rosout subscription received no messages, so file delta is the evidence, not event silence.
+
+[INFO] [1791357697.282726848] [dsr_controller2]: get_robot_mode_cb() called and calling Drfl->get_robot_mode()
+[INFO] [1791357698.307511723] [dsr_controller2]: get_robot_state_cb() called and calling Drfl->get_robot_state()
+[INFO] [1791357699.325267188] [dsr_controller2]: get_robot_system_cb() called and calling Drfl->get_robot_system()
+
+Matching launch.log contains the same3 callbacks. No appended motion/mode-setter/disconnect/error lines observed in the examined file delta. This is limited log evidence, not proof of protective/E-stop/authority/servo state. TCP/tool callbacks have commented logging in visible source.

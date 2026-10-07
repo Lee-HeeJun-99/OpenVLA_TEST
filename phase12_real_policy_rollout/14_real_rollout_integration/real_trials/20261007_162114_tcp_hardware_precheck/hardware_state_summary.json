@@ -1,0 +1,10 @@
+{
+  "controller_connection": "UNKNOWN",
+  "robot_mode": 1,
+  "robot_state": 1,
+  "authority": "UNKNOWN",
+  "servo": "UNKNOWN",
+  "protective_stop": "UNKNOWN",
+  "emergency_stop": "UNKNOWN",
+  "provenance": "CONTROLLER_REPORTED_FOR_SUCCESSFUL_RESPONSES_ONLY"
+}
