@@ -1,0 +1,10 @@
+{
+  "invalid_timestamp": 2254354.851065158,
+  "invalid_wall_time": 1791365792.3405979,
+  "clock_domain": "HOST_MONOTONIC",
+  "invalid_reason": "joint_state_receive_timeout",
+  "invalid_category": "INVALID_JOINTSTATE_GAP",
+  "last_valid_observation": null,
+  "last_prediction": null,
+  "command_count_before_invalid": 0
+}

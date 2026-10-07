@@ -1,0 +1,14 @@
+{
+  "total_attempts": 1,
+  "valid_trials": 0,
+  "invalid_trials": 1,
+  "invalid_rate": 1.0,
+  "invalid_reason_counts": {
+    "joint_state_receive_timeout": 1
+  },
+  "invalid_category_counts": {
+    "INVALID_JOINTSTATE_GAP": 1
+  },
+  "task_success_rate": null,
+  "physical_commands": 0
+}
