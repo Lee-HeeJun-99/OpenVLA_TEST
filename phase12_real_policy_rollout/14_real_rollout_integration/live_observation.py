@@ -32,6 +32,8 @@ class LiveObservation:
         self.hardware_monitor=RobotStateMonitor()
         self.executor=MultiThreadedExecutor(num_threads=4);self.executor.add_node(self.node)
         self.lock=threading.Lock();self.data={};self.url=url;self.evidence=evidence;self.rt_state={}
+        from jointstate_runtime_startup import JointStateStartup
+        self.joint_readiness=JointStateStartup(time.monotonic())
         self.node.create_subscription(ImageMsg,'/zed/zed_node/rgb/color/rect/image',self.camera,qos_profile_sensor_data)
         self.node.create_subscription(JointState,'/dsr01/joint_states',self.joints,qos_profile_sensor_data)
         self.node.create_subscription(Float64MultiArray,'/doosan/current_pose',self.tcp,10)
@@ -53,9 +55,12 @@ class LiveObservation:
             from verify_live_model_server import validate_identity
             validate_identity(self.health,evidence['verified_model_health_contract']['model'])
         self.health_checked=time.monotonic();self.health_ok=True
-        deadline=time.monotonic()+5
+        deadline=self.joint_readiness.started+71
         while time.monotonic()<deadline:
-            with self.lock:ready=all(k in self.data for k in ('camera','joints')) and ('tcp' in self.data or evidence.get('fk_tcp_approved') is True)
+            with self.lock:
+                state=self.joint_readiness.status(time.monotonic())
+                ready=state['phase']=='RUNTIME_READY' and all(k in self.data for k in ('camera','joints')) and ('tcp' in self.data or evidence.get('fk_tcp_approved') is True)
+            if state['fault']:break
             if evidence.get('verified_robot_state_topic') or evidence.get('verified_rt_robot_state_topic'):ready=ready and self.hardware_monitor.value is not None
             if ready:break
             time.sleep(.02)
@@ -63,7 +68,11 @@ class LiveObservation:
     def camera(self,msg):
         with self.lock:self.data['camera']=(msg,time.monotonic())
     def joints(self,msg):
-        with self.lock:self.data['joints']=(msg,time.monotonic())
+        now=time.monotonic();source=msg.header.stamp.sec+msg.header.stamp.nanosec/1e9
+        valid=len(msg.name)==6 and len(set(msg.name))==6 and set(msg.name)=={f'joint_{i}' for i in range(1,7)} and len(msg.position)==6 and len(msg.velocity)==6 and all(math.isfinite(x) for x in list(msg.position)+list(msg.velocity))
+        with self.lock:
+            self.joint_readiness.sample(dict(receive=now,source=source,header_age=self.node.get_clock().now().nanoseconds/1e9-source,valid=valid))
+            self.data['joints']=(msg,now)
     def tcp(self,msg):
         with self.lock:self.data['tcp']=(list(msg.data),time.monotonic())
     def robot_state(self,msg):
@@ -96,7 +105,10 @@ class LiveObservation:
             'DRIVER_RT_TOPIC_RECEIVE',robot_mode=mode,now=min(v[1] for v in values.values()),confirmations=confirmations)
 
     def snapshot(self):
-        with self.lock:data=dict(self.data)
+        with self.lock:
+            data=dict(self.data);joint_status=self.joint_readiness.status(time.monotonic())
+        if joint_status['phase']!='RUNTIME_READY' or joint_status['fault']:
+            raise RuntimeError(joint_status['fault'] or 'joint_state_warmup_not_ready')
         now=time.monotonic()
         if 'camera' not in data or 'joints' not in data:raise RuntimeError('observation_unavailable')
         image,ci=data['camera'];joints,ji=data['joints']

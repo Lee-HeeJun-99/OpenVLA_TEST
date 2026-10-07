@@ -1,0 +1,20 @@
+{
+  "classification": "TCP_UNKNOWN",
+  "active_tcp_name": "UNKNOWN",
+  "active_tool_name": "UNKNOWN",
+  "offset_source": "NOT_VERIFIED",
+  "current_cartesian_pose_source": "NOT_VERIFIED_FK_FLANGE_IS_NOT_TCP",
+  "get_current_tcp_source": "dsr_controller2.cpp:1938 -> Drfl->get_tcp(); name only",
+  "get_current_tool_source": "dsr_controller2.cpp:1967 -> Drfl->get_tool(); name only",
+  "getter_live_stability": "UNVERIFIED",
+  "controller_connection_evidence": "NO_FRESH_AFFIRMATIVE_STATE",
+  "getter_requests": 0,
+  "reason_not_called": "Insufficient live stability and controller-state evidence",
+  "passive_followup_trial": "../20261007_161555_automatic_hardware_state_audit",
+  "followup_new_subscriber_jointstate_samples": 0,
+  "followup_camera_frames": 888,
+  "manual_confirmations": "REQUIRED",
+  "motion_authorized": false,
+  "physical_commands": 0,
+  "next_allowed_stage": "BLOCKED"
+}

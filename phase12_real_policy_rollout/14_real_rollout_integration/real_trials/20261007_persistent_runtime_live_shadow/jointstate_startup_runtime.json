@@ -1,0 +1,9 @@
+{
+  "phase": "RUNTIME_FAULT",
+  "fault": "joint_state_receive_timeout",
+  "first_fresh_sample": 2245857.152117218,
+  "discovery_delay_s": 19.039533532690257,
+  "latest_receive_age_s": 0.10680624330416322,
+  "source_gap": 0.010008811950683594,
+  "receive_gap": 0.010125508066266775
+}
