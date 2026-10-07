@@ -1,0 +1,26 @@
+{
+  "predictions": 0,
+  "translation_m": {
+    "median": null,
+    "p95": null,
+    "max": null,
+    "min": null,
+    "mean": null
+  },
+  "rotation_deg": {
+    "median": null,
+    "p95": null,
+    "max": null,
+    "min": null,
+    "mean": null
+  },
+  "gripper": {
+    "median": null,
+    "p95": null,
+    "max": null,
+    "min": null,
+    "mean": null
+  },
+  "close_candidates": 0,
+  "translation_over_4mm": 0
+}

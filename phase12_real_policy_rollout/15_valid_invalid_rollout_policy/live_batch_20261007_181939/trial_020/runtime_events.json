@@ -1,0 +1,97 @@
+[
+  {
+    "invalid_timestamp": 2253585.614739845,
+    "invalid_wall_time": 1791365023.104279,
+    "clock_domain": "HOST_MONOTONIC",
+    "invalid_reason": "raw_translation_step_limit",
+    "invalid_category": "INVALID_SAFETY_REJECTION",
+    "last_valid_observation": {
+      "timestamp_wall": 1791365023.1036692,
+      "frame_id": 1,
+      "image_timestamp": 1791365022.6485043,
+      "camera": {
+        "selected_age": 0.4121011458337307,
+        "encoding": "bgra8",
+        "resolution": [
+          1280,
+          720
+        ],
+        "resolution_valid": true,
+        "stream_alive": true
+      },
+      "jointstate": {
+        "receive": 2253585.613384376,
+        "source": 1791365023.101323,
+        "header_age": 0.0016236305236816406,
+        "valid": true,
+        "names": [
+          "joint_1",
+          "joint_2",
+          "joint_4",
+          "joint_5",
+          "joint_3",
+          "joint_6"
+        ],
+        "position": [
+          -3.1861462593078613,
+          -0.018707243725657463,
+          0.021932009607553482,
+          -1.9809508323669434,
+          -0.7156862616539001,
+          0.026174861937761307
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "sample_id": 21838,
+        "source_gap": 0.010026216506958008,
+        "receive_gap": 0.011224207002669573,
+        "phase": "RUNTIME_READY",
+        "latest_age": 0.0007480662316083908
+      },
+      "joint_state_phase": "RUNTIME_READY",
+      "tcp_source": "UNAVAILABLE",
+      "tcp_contract_verified": false,
+      "instruction": "Pick up the orange cube.",
+      "command_requested": false,
+      "command_issued": false,
+      "delivered_action": null,
+      "executed_action": null,
+      "episode_id": null,
+      "condition": null,
+      "matched_pair_id": null,
+      "real_observation_id": null,
+      "sim_observation_id": null,
+      "observation_gap_score": null,
+      "action_gap_translation": null,
+      "action_gap_rotation": null,
+      "action_gap_gripper": null
+    },
+    "last_prediction": {
+      "raw_model_output": {
+        "action": [
+          0.0023606151805061204,
+          0.0026335443427412267,
+          -0.004661766779945446,
+          -0.00794033086353347,
+          0.0037631800907373322,
+          0.014905046792334375,
+          0.0019607843137254832
+        ],
+        "chunk_size": 1,
+        "variant": "openvla_token",
+        "instruction": "pick up the orange cube",
+        "inference_seconds": 0.36067116912454367,
+        "request_index": 330
+      },
+      "inference_latency_s": 0.39823443023487926,
+      "camera_selected_age_s": 0.4121011458337307
+    },
+    "command_count_before_invalid": 0
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "branch": "lhj-research",
+  "baseline_head": "21bfe424e08e6f68647c23cbf2026b0343cb4a93",
+  "baseline_worktree_clean": true,
+  "ros_domain_id": "0",
+  "driver_pid": 3061204,
+  "zed_pid": 3075971,
+  "batch_pid": 3086436,
+  "model_url": "http://127.0.0.1:8766",
+  "runner_sha256_at_execution": "8532e27e43b0da6ba97987f0c9a8ef524812dd8dcc289f37d931023e4660d737",
+  "runtime_trial_sha256_at_execution": "8bbdd613fae646bbb1ca8adf328c2201ce27d7190fdbb7650960d75a8c3b4ffd",
+  "physical_commands": 0,
+  "robot_command_clients_created": 0,
+  "provenance": "CURRENT_LIVE_MEASUREMENT_NOT_PREVIOUS_PASS_ARTIFACT"
+}

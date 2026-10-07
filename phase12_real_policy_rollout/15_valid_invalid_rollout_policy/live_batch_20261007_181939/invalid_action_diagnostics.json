@@ -1,0 +1,20 @@
+{
+  "scope": "INVALID_TRIAL_DIAGNOSTICS_ONLY_NOT_VALID_ACTION_DISTRIBUTION",
+  "prediction_count": 38,
+  "translation_m": {"median": 0.004095135790464677, "p95": 0.005851506587727916, "max": 0.005851506587727916},
+  "rotation_deg": {"median": 0.9901099472218209, "p95": 1.477371351636135, "max": 2.6328039690649985},
+  "inference_latency_s": {"median": 0.3992349673062563, "p95": 0.4391419512219727, "max": 0.4412473519332707},
+  "camera_max_selected_age_s": 0.4593219142407179,
+  "jointstate_max_source_gap_s": 0.011097431182861328,
+  "jointstate_max_receive_gap_s": 0.01859144400805235,
+  "runtime_observed_duration_sum_s": 17.63398391287774,
+  "gripper_min": 0.0019607843137254832,
+  "gripper_max": 0.0019607843137254832,
+  "close_candidate_count": 0,
+  "translation_over_4mm": 20,
+  "classification_errors": 0,
+  "prediction_dispatched_after_invalid": 0,
+  "commands_logged": 0,
+  "all_20_attempt_artifacts_present": true,
+  "physical_commands": 0
+}
