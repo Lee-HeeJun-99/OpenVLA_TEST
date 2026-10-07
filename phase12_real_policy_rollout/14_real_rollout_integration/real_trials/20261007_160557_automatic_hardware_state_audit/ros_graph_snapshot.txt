@@ -1,0 +1,45 @@
+[
+  {
+    "command": [
+      "ros2",
+      "node",
+      "list"
+    ],
+    "exit_code": 0,
+    "stdout": "/dsr01/robot_state_publisher\n/launch_ros_3062081\n/phase12_flange_prediction_only\n/so101_usd_dashboard\n/zed/transform_listener_impl_7b739c0f2470\n/zed/zed_container\n/zed/zed_node\n/zed/zed_state_publisher\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ros2",
+      "topic",
+      "list",
+      "-t"
+    ],
+    "exit_code": 0,
+    "stdout": "/clicked_point [geometry_msgs/msg/PointStamped]\n/clock [rosgraph_msgs/msg/Clock]\n/diagnostics [diagnostic_msgs/msg/DiagnosticArray]\n/dsr01/joint_states [sensor_msgs/msg/JointState]\n/dsr01/robot_description [std_msgs/msg/String]\n/left_cam/camera_info [sensor_msgs/msg/CameraInfo]\n/left_cam/image_raw [sensor_msgs/msg/Image]\n/parameter_events [rcl_interfaces/msg/ParameterEvent]\n/right_cam/camera_info [sensor_msgs/msg/CameraInfo]\n/right_cam/image_raw [sensor_msgs/msg/Image]\n/rosout [rcl_interfaces/msg/Log]\n/so101_left/joint_command [sensor_msgs/msg/JointState]\n/so101_left/joint_states [sensor_msgs/msg/JointState]\n/so101_left/tcp_target [geometry_msgs/msg/PointStamped]\n/so101_right/joint_command [sensor_msgs/msg/JointState]\n/so101_right/joint_states [sensor_msgs/msg/JointState]\n/so101_right/tcp_target [geometry_msgs/msg/PointStamped]\n/tf [tf2_msgs/msg/TFMessage]\n/tf_static [tf2_msgs/msg/TFMessage]\n/top_cam/camera_info [sensor_msgs/msg/CameraInfo]\n/top_cam/image_raw [sensor_msgs/msg/Image]\n/zed/joint_states [sensor_msgs/msg/JointState]\n/zed/zed_description [std_msgs/msg/String]\n/zed/zed_node/depth/camera_info [sensor_msgs/msg/CameraInfo]\n/zed/zed_node/depth/depth_registered [sensor_msgs/msg/Image]\n/zed/zed_node/depth/depth_registered/camera_info [sensor_msgs/msg/CameraInfo]\n/zed/zed_node/depth/depth_registered/compressedDepth [sensor_msgs/msg/CompressedImage]\n/zed/zed_node/imu/data [sensor_msgs/msg/Imu]\n/zed/zed_node/odom [nav_msgs/msg/Odometry]\n/zed/zed_node/point_cloud/cloud_registered [sensor_msgs/msg/PointCloud2]\n/zed/zed_node/pose [geometry_msgs/msg/PoseStamped]\n/zed/zed_node/pose/status [zed_msgs/msg/PosTrackStatus]\n/zed/zed_node/rgb/color/rect/camera_info [sensor_msgs/msg/CameraInfo]\n/zed/zed_node/rgb/color/rect/image [sensor_msgs/msg/Image]\n/zed/zed_node/rgb/color/rect/image/camera_info [sensor_msgs/msg/CameraInfo]\n/zed/zed_node/rgb/color/rect/image/compressed [sensor_msgs/msg/CompressedImage]\n/zed/zed_node/rgb/color/rect/image/theora [theora_image_transport/msg/Packet]\n/zed/zed_node/status/health [zed_msgs/msg/HealthStatusStamped]\n/zed/zed_node/status/heartbeat [zed_msgs/msg/Heartbeat]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ros2",
+      "service",
+      "list",
+      "-t"
+    ],
+    "exit_code": 0,
+    "stdout": "/dsr01/robot_state_publisher/describe_parameters [rcl_interfaces/srv/DescribeParameters]\n/dsr01/robot_state_publisher/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]\n/dsr01/robot_state_publisher/get_parameters [rcl_interfaces/srv/GetParameters]\n/dsr01/robot_state_publisher/list_parameters [rcl_interfaces/srv/ListParameters]\n/dsr01/robot_state_publisher/set_parameters [rcl_interfaces/srv/SetParameters]\n/dsr01/robot_state_publisher/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]\n/launch_ros_3062081/describe_parameters [rcl_interfaces/srv/DescribeParameters]\n/launch_ros_3062081/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]\n/launch_ros_3062081/get_parameters [rcl_interfaces/srv/GetParameters]\n/launch_ros_3062081/list_parameters [rcl_interfaces/srv/ListParameters]\n/launch_ros_3062081/set_parameters [rcl_interfaces/srv/SetParameters]\n/launch_ros_3062081/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]\n/phase12_flange_prediction_only/describe_parameters [rcl_interfaces/srv/DescribeParameters]\n/phase12_flange_prediction_only/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]\n/phase12_flange_prediction_only/get_parameters [rcl_interfaces/srv/GetParameters]\n/phase12_flange_prediction_only/list_parameters [rcl_interfaces/srv/ListParameters]\n/phase12_flange_prediction_only/set_parameters [rcl_interfaces/srv/SetParameters]\n/phase12_flange_prediction_only/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]\n/so101_usd_dashboard/describe_parameters [rcl_interfaces/srv/DescribeParameters]\n/so101_usd_dashboard/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]\n/so101_usd_dashboard/get_parameters [rcl_interfaces/srv/GetParameters]\n/so101_usd_dashboard/list_parameters [rcl_interfaces/srv/ListParameters]\n/so101_usd_dashboard/set_parameters [rcl_interfaces/srv/SetParameters]\n/so101_usd_dashboard/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]\n/zed/zed_node/describe_parameters [rcl_interfaces/srv/DescribeParameters]\n/zed/zed_node/enable_body_trk [std_srvs/srv/SetBool]\n/zed/zed_node/enable_depth [std_srvs/srv/SetBool]\n/zed/zed_node/enable_mapping [std_srvs/srv/SetBool]\n/zed/zed_node/enable_obj_det [std_srvs/srv/SetBool]\n/zed/zed_node/enable_streaming [std_srvs/srv/SetBool]\n/zed/zed_node/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]\n/zed/zed_node/get_parameters [rcl_interfaces/srv/GetParameters]\n/zed/zed_node/list_parameters [rcl_interfaces/srv/ListParameters]\n/zed/zed_node/reset_odometry [std_srvs/srv/Trigger]\n/zed/zed_node/reset_pos_tracking [std_srvs/srv/Trigger]\n/zed/zed_node/reset_roi [std_srvs/srv/Trigger]\n/zed/zed_node/save_area_memory [zed_msgs/srv/SaveAreaMemory]\n/zed/zed_node/set_parameters [rcl_interfaces/srv/SetParameters]\n/zed/zed_node/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]\n/zed/zed_node/set_pose [zed_msgs/srv/SetPose]\n/zed/zed_node/set_roi [zed_msgs/srv/SetROI]\n/zed/zed_node/start_svo_rec [zed_msgs/srv/StartSvoRec]\n/zed/zed_node/stop_svo_rec [std_srvs/srv/Trigger]\n/zed/zed_state_publisher/describe_parameters [rcl_interfaces/srv/DescribeParameters]\n/zed/zed_state_publisher/get_parameter_types [rcl_interfaces/srv/GetParameterTypes]\n/zed/zed_state_publisher/get_parameters [rcl_interfaces/srv/GetParameters]\n/zed/zed_state_publisher/list_parameters [rcl_interfaces/srv/ListParameters]\n/zed/zed_state_publisher/set_parameters [rcl_interfaces/srv/SetParameters]\n/zed/zed_state_publisher/set_parameters_atomically [rcl_interfaces/srv/SetParametersAtomically]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ros2",
+      "action",
+      "list",
+      "-t"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

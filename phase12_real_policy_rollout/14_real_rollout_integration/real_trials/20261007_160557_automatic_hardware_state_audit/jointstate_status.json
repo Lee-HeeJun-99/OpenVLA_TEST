@@ -1,0 +1,19 @@
+{
+  "count": 0,
+  "first_receive_delay": null,
+  "receive_rate": 0,
+  "latest_age": null,
+  "max_source_gap": null,
+  "max_receive_gap": null,
+  "source_duplicate": 0,
+  "source_regression": 0,
+  "gap_ge_100ms": 0,
+  "invalid_count": 0,
+  "clock_domains": {
+    "source": "ROS_HEADER",
+    "receive": "HOST_MONOTONIC"
+  },
+  "observed_orders": [],
+  "effort": "UNSUPPORTED_NOT_VALIDATED",
+  "status": "FAIL"
+}

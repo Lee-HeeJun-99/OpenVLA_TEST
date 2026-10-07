@@ -1,0 +1,25 @@
+{
+  "status": "LIVE_SHADOW_FAIL",
+  "prediction_count": 0,
+  "shadow_duration_s": 0.014050852973014116,
+  "pre_shadow_gate": {
+    "status": "FAIL",
+    "count": 0,
+    "coverage_s": 0,
+    "latest_receive_age_s": null,
+    "receive_rate_hz": null,
+    "max_source_gap_s": null,
+    "max_receive_gap_s": null,
+    "invalid_values": 0
+  },
+  "safety_rejection_ratio": null,
+  "blockers": {},
+  "action_magnitude_threshold_exceedances": 0,
+  "watchdog_or_abort_reason": "pre_shadow_jointstate_gate_failed",
+  "tcp_source": "FK_ESTIMATED_FLANGE",
+  "tcp_contract_verified": false,
+  "tool_offset_verified": false,
+  "motion_authorized": false,
+  "physical_commands": 0,
+  "next_allowed_stage": "TCP_CROSSCHECK_REQUIRED_BEFORE_MOTION"
+}

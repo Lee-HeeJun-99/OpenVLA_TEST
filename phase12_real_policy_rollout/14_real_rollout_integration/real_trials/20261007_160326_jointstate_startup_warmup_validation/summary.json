@@ -1,0 +1,2032 @@
+{
+  "verdict": "STARTUP_ARTIFACT_ONLY_RUNTIME_PASS",
+  "started_monotonic": 2245169.43011721,
+  "first_fresh_sample_by_subscriber": {
+    "best_effort": 2245181.892110848,
+    "reliable": 2245181.892484366
+  },
+  "shared_first_fresh_sample": 2245181.892484366,
+  "startup_duration_s": 12.462367156054825,
+  "warmup_duration_s": 10,
+  "runtime_t0": 2245191.892484366,
+  "runtime_t1": 2245221.892484366,
+  "runtime_duration_s": 30,
+  "runtime_gate": "JOINTSTATE_RUNTIME_CLEAN_PASS",
+  "phases": {
+    "STARTUP_DISCOVERY_PHASE": {
+      "best_effort": {
+        "count": 1,
+        "coverage_s": 0,
+        "rate_hz": 0,
+        "latest_receive_age_s": 40.01029346790165,
+        "max_source_gap_s": null,
+        "max_receive_gap_s": null,
+        "duplicate": 0,
+        "regression": 0,
+        "invalid_position": 0,
+        "invalid_velocity": 0,
+        "missing_joints": 0,
+        "event_ge_100ms": 0,
+        "pass_runtime": false
+      },
+      "reliable": {
+        "count": 0,
+        "coverage_s": 0,
+        "rate_hz": 0,
+        "latest_receive_age_s": null,
+        "max_source_gap_s": null,
+        "max_receive_gap_s": null,
+        "duplicate": 0,
+        "regression": 0,
+        "invalid_position": 0,
+        "invalid_velocity": 0,
+        "missing_joints": 0,
+        "event_ge_100ms": 0,
+        "pass_runtime": false
+      }
+    },
+    "POST_DISCOVERY_WARMUP": {
+      "best_effort": {
+        "count": 695,
+        "coverage_s": 6.937606300227344,
+        "rate_hz": 100.03450325182877,
+        "latest_receive_age_s": 30.01033930061385,
+        "max_source_gap_s": 3.059984078,
+        "max_receive_gap_s": 3.0623478670604527,
+        "duplicate": 0,
+        "regression": 0,
+        "invalid_position": 0,
+        "invalid_velocity": 0,
+        "missing_joints": 0,
+        "event_ge_100ms": 2,
+        "pass_runtime": false
+      },
+      "reliable": {
+        "count": 696,
+        "coverage_s": 9.999740114901215,
+        "rate_hz": 69.50180624837826,
+        "latest_receive_age_s": 30.010179834906012,
+        "max_source_gap_s": 3.059984078,
+        "max_receive_gap_s": 3.0621401239186525,
+        "duplicate": 0,
+        "regression": 0,
+        "invalid_position": 0,
+        "invalid_velocity": 0,
+        "missing_joints": 0,
+        "event_ge_100ms": 2,
+        "pass_runtime": false
+      }
+    },
+    "RUNTIME_CLEAN_WINDOW": {
+      "best_effort": {
+        "count": 3001,
+        "coverage_s": 30.000168023630977,
+        "rate_hz": 99.99943992436694,
+        "latest_receive_age_s": 0.000142659991979599,
+        "max_source_gap_s": 0.01126504,
+        "max_receive_gap_s": 0.011887668166309595,
+        "duplicate": 0,
+        "regression": 0,
+        "invalid_position": 0,
+        "invalid_velocity": 0,
+        "missing_joints": 0,
+        "event_ge_100ms": 0,
+        "pass_runtime": true
+      },
+      "reliable": {
+        "count": 3000,
+        "coverage_s": 29.989848555997014,
+        "rate_hz": 100.00050498422058,
+        "latest_receive_age_s": 0.0102749178186059,
+        "max_source_gap_s": 0.01126504,
+        "max_receive_gap_s": 0.012271240819245577,
+        "duplicate": 0,
+        "regression": 0,
+        "invalid_position": 0,
+        "invalid_velocity": 0,
+        "missing_joints": 0,
+        "event_ge_100ms": 0,
+        "pass_runtime": true
+      }
+    }
+  },
+  "publisher_discovery": [
+    {
+      "receive_monotonic": 2245169.46056981,
+      "publishers": [
+        {
+          "name": "_NODE_NAME_UNKNOWN_",
+          "namespace": "_NODE_NAMESPACE_UNKNOWN_",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245170.464877102,
+      "publishers": [
+        {
+          "name": "_NODE_NAME_UNKNOWN_",
+          "namespace": "_NODE_NAMESPACE_UNKNOWN_",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245171.469568922,
+      "publishers": [
+        {
+          "name": "_NODE_NAME_UNKNOWN_",
+          "namespace": "_NODE_NAMESPACE_UNKNOWN_",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245172.469871455,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245173.478386112,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245174.480217804,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245175.488942412,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245176.497700245,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245177.505556372,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245178.507675795,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245179.516281065,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245180.524420913,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245181.530463835,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245182.536383728,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245183.54409119,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245184.551786225,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245185.552095125,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245186.552272285,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245187.552353623,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245188.552500047,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245189.552586773,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245190.562094625,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245191.562177216,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245192.562247607,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245193.562289852,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245194.56239041,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245195.562544737,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245196.572063699,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245197.572680199,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245198.582174912,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245199.58227184,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245200.59229699,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245201.592318088,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245202.592556636,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245203.602748846,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245204.612115054,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245205.612809612,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245206.622383105,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245207.622440563,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245208.622566472,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245209.622575522,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245210.632311676,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245211.632421445,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245212.63280717,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245213.64210743,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245214.642484752,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245215.652198696,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245216.652202883,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245217.652363068,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245218.652676226,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245219.662113166,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245220.662209326,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    },
+    {
+      "receive_monotonic": 2245221.662325267,
+      "publishers": [
+        {
+          "name": "joint_state_broadcaster",
+          "namespace": "/dsr01",
+          "gid": [
+            1,
+            15,
+            11,
+            206,
+            212,
+            181,
+            123,
+            72,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qos": "QoSProfile(history=HistoryPolicy.UNKNOWN, depth=0, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL, lifespan=Infinite, deadline=Infinite, liveliness=LivelinessPolicy.AUTOMATIC, liveliness_lease_duration=Infinite, avoid_ros_namespace_conventions=False)"
+        }
+      ]
+    }
+  ],
+  "physical_commands": 0,
+  "next_allowed_stage": "TCP_PRECHECK",
+  "clock_domains": {
+    "source": "ROS_HEADER",
+    "receive_ros": "LOCAL_NODE_ROS_CLOCK",
+    "receive_monotonic": "HOST_MONOTONIC",
+    "receive_wall": "SYSTEM_WALL"
+  },
+  "clock_caveat": "Header-age compared only in ROS clock domain; no source-minus-monotonic arithmetic. Negative age samples never FIRST_FRESH_SAMPLE."
+}

@@ -1,0 +1,16 @@
+{
+  "primary_jointstate_verdict": "STARTUP_ARTIFACT_ONLY_RUNTIME_PASS",
+  "primary_runtime_gate": "JOINTSTATE_RUNTIME_CLEAN_PASS",
+  "current_readiness": "BLOCKED",
+  "gpu_health": "MODEL_HEALTH_PASS",
+  "gpu_health_sample_provenance": "RECORDED_REAL_IMAGE_20261006_NOT_CURRENT_CAMERA_SHADOW",
+  "current_camera_selected_frame_gate": "NOT_EXECUTED_PRE_SHADOW_JOINTSTATE_GATE_FAILED",
+  "followup_jointstate_received_during_65s_wait": 0,
+  "tcp_contract": "UNKNOWN",
+  "hardware_state": "UNKNOWN",
+  "manual_confirmations": "MANUAL_CONFIRMATION_REQUIRED",
+  "physical_commands": 0,
+  "minimum_motion_authorized": false,
+  "next_allowed_stage": "BLOCKED",
+  "primary_pass_is_not_permanent_global_stream_health": true
+}

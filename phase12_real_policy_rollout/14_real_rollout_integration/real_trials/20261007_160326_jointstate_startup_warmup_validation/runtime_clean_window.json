@@ -1,0 +1,35 @@
+{
+  "phase": "RUNTIME_CLEAN_WINDOW",
+  "subscribers": {
+    "best_effort": {
+      "count": 3001,
+      "coverage_s": 30.000168023630977,
+      "rate_hz": 99.99943992436694,
+      "latest_receive_age_s": 0.000142659991979599,
+      "max_source_gap_s": 0.01126504,
+      "max_receive_gap_s": 0.011887668166309595,
+      "duplicate": 0,
+      "regression": 0,
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joints": 0,
+      "event_ge_100ms": 0,
+      "pass_runtime": true
+    },
+    "reliable": {
+      "count": 3000,
+      "coverage_s": 29.989848555997014,
+      "rate_hz": 100.00050498422058,
+      "latest_receive_age_s": 0.0102749178186059,
+      "max_source_gap_s": 0.01126504,
+      "max_receive_gap_s": 0.012271240819245577,
+      "duplicate": 0,
+      "regression": 0,
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joints": 0,
+      "event_ge_100ms": 0,
+      "pass_runtime": true
+    }
+  }
+}

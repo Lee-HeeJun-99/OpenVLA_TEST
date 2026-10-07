@@ -1,0 +1,7 @@
+{
+  "actual_tcp": "NOT_FOUND",
+  "fk_flange_only": true,
+  "tool_offset_verified": false,
+  "classification": "TCP_FLANGE_ONLY",
+  "reason": "Doosan link_6 FK is available, not an active TCP transform."
+}

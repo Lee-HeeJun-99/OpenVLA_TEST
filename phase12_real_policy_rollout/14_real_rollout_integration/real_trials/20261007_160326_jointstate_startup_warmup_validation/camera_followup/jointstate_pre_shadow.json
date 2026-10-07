@@ -1,0 +1,10 @@
+{
+  "status": "FAIL",
+  "count": 0,
+  "coverage_s": 0,
+  "latest_receive_age_s": null,
+  "receive_rate_hz": null,
+  "max_source_gap_s": null,
+  "max_receive_gap_s": null,
+  "invalid_values": 0
+}
