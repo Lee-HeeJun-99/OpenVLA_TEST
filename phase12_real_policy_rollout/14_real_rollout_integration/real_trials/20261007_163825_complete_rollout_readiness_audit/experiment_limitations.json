@@ -1,0 +1,18 @@
+{
+  "classification": "JOINTSTATE_STILL_INCONCLUSIVE",
+  "initial_without_services_isolation": "INVALID_DYNAMIC_AND_CLI_STILL_QUERIED_SERVICE_GRAPH",
+  "service_flag_code_corrected": true,
+  "corrected_followup": "../20261007_165128_complete_rollout_readiness_audit",
+  "corrected_followup_result": "DISCOVERY_TIMEOUT_RUNTIME_NOT_EXECUTED",
+  "initial_followup_failure": "../20261007_165024_complete_rollout_readiness_audit",
+  "initial_followup_failure_reason": "MODEL_CONNECTION_REFUSED_AFTER_MEASUREMENT_CHILD_EXIT",
+  "primary_duration_s": 60,
+  "feature_off_duration_s": 30,
+  "sequential_order_and_participant_history_confounded": true,
+  "causal_attribution": "UNRESOLVED",
+  "rmw_runtime_identifier": "rmw_fastrtps_cpp",
+  "host_network_drop_error_delta": 0,
+  "cpu_snapshots_are_lifetime_ps_average": true,
+  "physical_commands": 0,
+  "getter_requests": 0
+}

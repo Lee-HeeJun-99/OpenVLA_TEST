@@ -1,0 +1,47 @@
+{
+  "run": "COLD_START_BEFORE_C_RUNTIME",
+  "event": "PREDICTION",
+  "receive": 2247446.222963619,
+  "frame_receive": 2247445.567142807,
+  "camera_age": 0.6558208120986819,
+  "encoding": "bgra8",
+  "resolution": [
+    1280,
+    720
+  ],
+  "action": [
+    0.0017559554642496995,
+    0.0026335443427412267,
+    -0.0005256555129681713,
+    -0.004419121218997787,
+    0.020981911004252556,
+    0.010181925561301089,
+    0.0019607843137254832
+  ],
+  "valid": true,
+  "translation_mm": 3.208621061441586,
+  "rotation_deg": 1.3600246814553487,
+  "gripper": 0.0019607843137254832,
+  "inference_latency": 0.6420144671574235,
+  "jointstate": {
+    "phase": "RUNTIME_FAULT",
+    "fault": "joint_state_receive_timeout",
+    "first_fresh_sample": 2247358.413537998,
+    "discovery_delay_s": 0.990868704393506,
+    "latest_receive_age_s": 0.0007738741114735603,
+    "source_gap": 0.009802818298339844,
+    "receive_gap": 0.00980047695338726
+  },
+  "tcp_source": "FK_ESTIMATED_FLANGE",
+  "tcp_contract_verified": false,
+  "command_requested": false,
+  "command_issued": false,
+  "executed_action": null,
+  "robot_delivered_command": null,
+  "matched_pair_id": null,
+  "condition": null,
+  "observation_gap_score": null,
+  "action_gap_translation": null,
+  "action_gap_rotation": null,
+  "action_gap_gripper": null
+}

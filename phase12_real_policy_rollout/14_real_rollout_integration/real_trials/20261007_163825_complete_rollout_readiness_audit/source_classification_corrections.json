@@ -1,0 +1,18 @@
+{
+  "GetLastAlarm": {
+    "classification": "UNSAFE_OR_NULL_RISK",
+    "source": "dsr_controller2.cpp:388-400",
+    "reason": "Repeated vendor pointer dereference without null check; no stability proof",
+    "called": false
+  },
+  "GetCurrentToolFlangePosx": {
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "cache_update_callback": "OnMonitoringDataExCB:2920/2940",
+    "internal_sync_counter": "dSyncTime:2957",
+    "commented_callback_period_ms": 100,
+    "measured_current_cache_rate": null,
+    "getter_exposes_cache_freshness": false,
+    "active_tcp": false,
+    "called": false
+  }
+}

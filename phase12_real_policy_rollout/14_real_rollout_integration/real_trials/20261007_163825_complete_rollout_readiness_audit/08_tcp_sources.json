@@ -1,0 +1,92 @@
+[
+  {
+    "service_type": "GetCurrentTcp",
+    "callback_line": 1938,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_current_tcp_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetCurrentTcp::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetCurrentTcp::Response> res) -> void    \n{\n    //ROS_INFO(\"get_current_tcp_cb() called and calling Drfl->get_tcp\");\n    res->info = Drfl->get_tcp();\n    res->success = true;\n\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_current_tcp  \n# It is the service to get the currently set TCP information from the robot controller\n#____________________________________________________________________________________________\n\n---\nstring         info # tcp name\nbool        success",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetCurrentTool",
+    "callback_line": 1967,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_current_tool_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetCurrentTool::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetCurrentTool::Response> res) -> void \n{\n    //ROS_INFO(\"get_current_tool_cb() called and calling Drfl->get_tool %s\", Drfl->GetCurrentTool().c_str());\n    res->info = Drfl->get_tool();\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_current_tool  \n# It is a service to fetch the currently set tool information from the robot controller\n#____________________________________________________________________________________________\n\n---\nstring         info # tool name\nbool        success",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetCurrentPose",
+    "callback_line": 370,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_current_pose_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetCurrentPose::Request> req, std::shared_ptr<dsr_msgs2::srv::GetCurrentPose::Response> res)-> void\n{\n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"get_current_pose_cb() called and calling Drfl->get_current_pose(%d)\",req->space_type);\n\n    LPROBOT_POSE robot_pos = Drfl->get_current_pose((ROBOT_SPACE)req->space_type);\n    for(int i = 0; i < NUM_TASK; i++){\n        res->pos[i] = robot_pos->_fPosition[i];\n    }\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_current_pose\n#____________________________________________________________________________________________\n\nint8 space_type # 0=ROBOT_SPACE_JOINT, 1=ROBOT_SPACE_TASK\n---\nfloat64[6] pos\nbool       success",
+    "classification": "UNSAFE_OR_NULL_RISK",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetCurrentPosx",
+    "callback_line": 983,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_current_posx_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetCurrentPosx::Request> req, std::shared_ptr<dsr_msgs2::srv::GetCurrentPosx::Response> res)-> void                             \n{\n    dsr_instrumentation::Scope trace_scope(\"get_current_posx_cb\");\n    dsr_instrumentation::trace(\"GET_CURRENT_POSX_REQUEST\", \"get_current_posx_cb\", \"ref=%d\", static_cast<int>(req->ref));\n    std_msgs::msg::Float64MultiArray arr;\n\n#if (_DEBUG_DSR_CTL)\n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"< get_current_posx_cb >\");\n#endif\n\n    LPROBOT_TASK_POSE cur_posx = Drfl->get_current_posx((COORDINATE_SYSTEM)req->ref);\n    dsr_instrumentation::trace(\"GET_CURRENT_POSX_RESULT\", \"get_current_posx_cb\", \"result=%p\", cur_posx);\n    if(nullptr == cur_posx) {\n        res->success = false;\n        return;\n    }\n    arr.data.clear();\n    for (int i = 0; i < NUM_TASK; i++){\n        arr.data.push_back(cur_posx->_fTargetPos[i]);\n    }\n    arr.data.push_back(cur_posx->_iTargetSol);\n    res->task_pos_info.push_back(arr);\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_current_posx()  \n#____________________________________________________________________________________________\n# This service returns the current task position.\n\nint8       ref               # DR_BASE(0), DR_WORLD(2), user coord(101~200)\n                             # <ref is only available in M2.40 or later> \n---\nstd_msgs/Float64MultiArray[] task_pos_info  # task pos = task_pos_info[0][0:5], solution sapce = task_pos_info[0][6]\nbool        success   ",
+    "classification": "UNSAFE_OR_NULL_RISK",
+    "known_posx_feedback_loss": true,
+    "called": false
+  },
+  {
+    "service_type": "GetCurrentToolFlangePosx",
+    "callback_line": 1045,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_current_tool_flange_posx_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetCurrentToolFlangePosx::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetCurrentToolFlangePosx::Response> res) -> void\n{\n    res->success = false;\n#if (_DEBUG_DSR_CTL)\n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"< get_current_tool_flange_posx_cb >\");\n#endif\n    //NO API , get mon_data\n    for(int i=0; i<NUM_TASK; i++){\n        res->pos[i] = g_stDrState.fCurrentToolPosx[i];\n    }\n    res->success = true;        \n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_current_tool_flange_posx()  \n#____________________________________________________________________________________________\n# This service returns the pose of the current tool flange based on the ref coordinate. In other words, it means the return to tcp=(0,0,0,0,0,0).\n\nint8        ref               # DR_BASE(0), DR_WORLD(2)\n---\nfloat64[6]  pos               # Pose of tool flange(posx) \nbool        success",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetRobotMode",
+    "callback_line": 326,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_robot_mode_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetRobotMode::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetRobotMode::Response> res)-> void\n{       \n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"get_robot_mode_cb() called and calling Drfl->get_robot_mode()\");\n    res->robot_mode = Drfl->get_robot_mode();\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_robot_mode\n# Return to current robot-mode\n# 0 : ROBOT_MODE_MANUAL\n# 1 : ROBOT_MODE_AUTONOMOUS\n# 2 : ROBOT_MODE_MEASURE\n# drfl.GetRobotMode()\n#____________________________________________________________________________________________\n\n---\nint8 robot_mode\nbool        success",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetRobotState",
+    "callback_line": 347,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_robot_state_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetRobotState::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetRobotState::Response> res)-> void\n{\n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"get_robot_state_cb() called and calling Drfl->get_robot_state()\");\n\n    res->robot_state = Drfl->get_robot_state();\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_robot_state\n#____________________________________________________________________________________________\n\n---\nint8 robot_state    # 0 : STATE_INITIALIZING\n                    # 1 : STATE_STANDBY\n                    # 2 : STATE_MOVING\n                    # 3 : STATE_SAFE_OFF\n                    # 4 : STATE_TEACHING\n                    # 5 : STATE_SAFE_STOP\n                    # 6 : STATE_EMERGENCY_STOP:\n                    # 7 : STATE_HOMMING\n                    # 8 : STATE_RECOVERY\n                    # 9 : eSTATE_SAFE_STOP2\n                    # 10: STATE_SAFE_OFF2\n                    # 11: STATE_RESERVED1\n                    # 12: STATE_RESERVED2\n                    # 13: STATE_RESERVED3\n                    # 14: STATE_RESERVED4\n                    # 15: STATE_NOT_READY\nbool        success                    ",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetRobotSystem",
+    "callback_line": 339,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_robot_system_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetRobotSystem::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetRobotSystem::Response> res)-> void\n{\n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"get_robot_system_cb() called and calling Drfl->get_robot_system()\");\n\n    res->robot_system = Drfl->get_robot_system();\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_robot_system\n#____________________________________________________________________________________________\n\n---\nint8 robot_system   # 0 : ROBOT_SYSTEM_REAL\n                    # 1 : ROBOT_SYSTEM_VIRTUAL\nbool        success",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  },
+  {
+    "service_type": "GetLastAlarm",
+    "callback_line": 388,
+    "callback_file": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+    "callback": "auto get_last_alarm_cb = [this](const std::shared_ptr<dsr_msgs2::srv::GetLastAlarm::Request> /*req*/, std::shared_ptr<dsr_msgs2::srv::GetLastAlarm::Response> res)-> void\n{\n    RCLCPP_INFO(rclcpp::get_logger(\"dsr_controller2\"),\"get_last_alarm_cb() called and calling Drfl->get_last_alarm()\");\n    res->log_alarm.level = Drfl->get_last_alarm()->_iLevel;\n    res->log_alarm.group = Drfl->get_last_alarm()->_iGroup;\n    res->log_alarm.index = Drfl->get_last_alarm()->_iIndex;\n    for(int i = 0; i < 3; i++){\n        std::string str_temp(Drfl->get_last_alarm()->_szParam[i]);\n        res->log_alarm.param[i] = str_temp;\n    }\n    res->success = true;\n};",
+    "srv_definition": "#____________________________________________________________________________________________\n# get_last_alarm\n###Struct.LOG_ARARM\n#____________________________________________________________________________________________\n\n---\nLogAlarm log_alarm\nbool        success",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "known_posx_feedback_loss": false,
+    "called": false
+  }
+]

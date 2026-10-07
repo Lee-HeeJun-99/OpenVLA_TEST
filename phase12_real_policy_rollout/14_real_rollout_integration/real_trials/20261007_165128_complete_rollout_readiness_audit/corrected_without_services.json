@@ -1,0 +1,23 @@
+{
+  "run": "corrected_without_services",
+  "status": "DISCOVERY_NOT_STABILIZED",
+  "state": {
+    "phase": "RUNTIME_FAULT",
+    "fault": "JOINTSTATE_DISCOVERY_TIMEOUT",
+    "first_fresh_sample": null,
+    "discovery_delay_s": null,
+    "latest_receive_age_s": null,
+    "source_gap": null,
+    "receive_gap": null
+  },
+  "flags": [
+    "camera",
+    "cli",
+    "dynamic",
+    "hash",
+    "http",
+    "rosout",
+    "tf",
+    "tf_static"
+  ]
+}

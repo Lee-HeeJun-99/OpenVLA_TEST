@@ -1,0 +1,7 @@
+{
+  "classification": "TCP_FLANGE_ONLY",
+  "active_tcp": "UNKNOWN",
+  "active_tool": "UNKNOWN",
+  "offset_verified": false,
+  "getter_requests": 0
+}

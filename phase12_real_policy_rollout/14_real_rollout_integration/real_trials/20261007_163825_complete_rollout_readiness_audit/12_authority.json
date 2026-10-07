@@ -1,0 +1,6 @@
+{
+  "value": "UNKNOWN",
+  "provenance": "UNKNOWN",
+  "gripper_output_disabled": true,
+  "reason": "No validated fresh source; schema/TF/event silence not proof"
+}

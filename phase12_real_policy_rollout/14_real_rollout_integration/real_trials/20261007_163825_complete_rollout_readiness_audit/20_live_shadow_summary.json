@@ -1,0 +1,13 @@
+{
+  "predictions": 147,
+  "camera_failure": 1,
+  "max_selected_age": 0.5190789611078799,
+  "model_failures": 0,
+  "action_anomalies": 4,
+  "translation_median": 3.208621061441586,
+  "translation_max": 4.613487840673505,
+  "rotation_max": 3.7395391096315937,
+  "jointstate": "PASS",
+  "status": "FAIL",
+  "physical_commands": 0
+}
