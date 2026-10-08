@@ -1,0 +1,11 @@
+{
+  "status": "NOT_STARTED",
+  "runtime_valid": null,
+  "task_success": null,
+  "invalid_reason": null,
+  "block_reason": "START_POSE_RESET_BLOCKED_HARDWARE_STATE_AND_TCP_UNVERIFIED",
+  "prediction_count": 0,
+  "command_count": 0,
+  "estop_used": null,
+  "unexpected_motion": null
+}

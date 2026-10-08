@@ -1,0 +1,19 @@
+{
+  "requested_specification": {
+    "target_joint_deg": [
+      -182.55277,
+      -1.07182,
+      -41.00585,
+      1.25662,
+      -113.50009,
+      1.49975
+    ],
+    "vel": 10,
+    "acc": 10
+  },
+  "sent": false,
+  "ack": null,
+  "reason": "hardware_preflight:state",
+  "observed_post_block_state": 3,
+  "observed_post_block_state_name": "SAFE_OFF"
+}

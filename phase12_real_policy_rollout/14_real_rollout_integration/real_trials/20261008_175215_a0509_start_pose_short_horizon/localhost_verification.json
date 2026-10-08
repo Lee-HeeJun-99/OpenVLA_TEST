@@ -1,0 +1,5 @@
+{
+  "launch_and_entrypoint_localhost_enforcement": "ALREADY_VERIFIED",
+  "readonly_runtime_and_reset_helper_export": "1",
+  "driver_no_restart": true
+}

@@ -1,0 +1,33 @@
+{
+  "approved_wall_time": 1791450068,
+  "approval_timestamp_semantics": "Software generation time of one-command authorization following user's explicit current approval; not a measured hardware timestamp",
+  "operator_present": true,
+  "workspace_clear": true,
+  "estop_accessible": true,
+  "robot_stationary": true,
+  "authority": true,
+  "servo": true,
+  "protective_stop_clear": true,
+  "emergency_stop_clear": true,
+  "explicit_joint_reset_approval": true,
+  "robot_model": "a0509",
+  "target_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.49975
+  ],
+  "provenance": "OPERATOR_CONFIRMED_IN_CURRENT_CONVERSATION",
+  "confirmation_evidence": {
+    "operator_estop": "User explicitly reported operator at robot with E-stop immediately accessible",
+    "workspace_stationary": "User answered yes to combined workspace/stationary confirmation",
+    "hardware": "User answered yes to authority/servo/protective/emergency confirmation",
+    "execution": "User explicitly: \uc548\uc804 \ud655\uc778 \ub410\uc73c\ub2c8\uae4c \uc9c4\ud589\ud574"
+  },
+  "gripper_disabled": true,
+  "maximum_joint_commands": 1,
+  "no_home": true,
+  "no_mode_setter": true
+}

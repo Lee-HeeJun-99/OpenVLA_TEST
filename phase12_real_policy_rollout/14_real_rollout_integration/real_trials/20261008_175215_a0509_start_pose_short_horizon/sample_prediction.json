@@ -1,0 +1,7 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "START_POSE_RESET_BLOCKED_BY_CONTROLLER_STATE",
+  "raw_action": null,
+  "camera_age": null,
+  "physical_model_commands": 0
+}

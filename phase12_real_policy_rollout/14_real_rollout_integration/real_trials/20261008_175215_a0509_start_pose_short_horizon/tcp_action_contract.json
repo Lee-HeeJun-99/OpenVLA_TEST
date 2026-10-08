@@ -1,0 +1,10 @@
+{
+  "verified": false,
+  "classification": "TCP_FLANGE_ONLY",
+  "active_tcp": "UNKNOWN",
+  "active_tool": "UNKNOWN",
+  "offset": null,
+  "current_tcp_pose": null,
+  "joint_reset_is_not_cartesian_validation": true,
+  "zero_offset_assumed": false
+}

@@ -1,0 +1,50 @@
+{
+  "status": "START_POSE_NOT_EXECUTED",
+  "physical_joint_commands": 0,
+  "target_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.49975
+  ],
+  "gripper_commands": 0,
+  "mode_setters": 0,
+  "reason": "hardware_preflight:state",
+  "runtime": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2338669.825264218,
+    "discovery_delay_s": 0.9483213699422777,
+    "latest_receive_age_s": 0.0008494788780808449,
+    "source_gap": 0.010024547576904297,
+    "receive_gap": 0.010016243904829025,
+    "clean_since": 2338669.825264218,
+    "clean_window_s": 10.02078565210104,
+    "ready_at": 2338679.828265795,
+    "readiness_timeout_s": 120
+  },
+  "events": [],
+  "faults": [],
+  "stop_receipts": [],
+  "physical_stop_commands_requested": 0,
+  "command_thread_alive": false,
+  "last_preflight_error_deg": [
+    -0.14159437236460803,
+    0.011628111911983208,
+    0.03278143333328387,
+    -0.014195890091692753,
+    0.09601400255543524,
+    -0.04550870388149186
+  ],
+  "max_abs_error_deg": 0.14159437236460803,
+  "motion_validation": "NOT_EXECUTED",
+  "position_snapshot": "WITHIN_EXISTING_0.5_DEG_TOLERANCE_NOT_PHYSICAL_COMMAND_PATH_PASS",
+  "current_state_readonly": {
+    "robot_state": 3,
+    "name": "SAFE_OFF",
+    "success": true,
+    "received_wall_time": 1791450190.3669925
+  }
+}

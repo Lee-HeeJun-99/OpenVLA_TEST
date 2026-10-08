@@ -1,0 +1,5 @@
+{
+  "reset_executed": false,
+  "after_motion_sample": null,
+  "last_preflight_sample_file": "jointstate_before_reset.json"
+}

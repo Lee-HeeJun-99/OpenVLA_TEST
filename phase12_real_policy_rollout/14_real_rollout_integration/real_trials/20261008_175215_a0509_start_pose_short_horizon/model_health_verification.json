@@ -1,0 +1,12 @@
+{
+  "status": "MODEL_HEALTH_PASS",
+  "scope": "STRICT_CURRENT_IDENTITY_AND_PROCESSOR_HEALTH_ONLY",
+  "sample_prediction_executed": false,
+  "server_restored_using": "./scripts/serve.sh vanilla 8766 0 127.0.0.1",
+  "checkpoint": "vanilla_s1_balanced_step8130",
+  "variant": "openvla_token",
+  "chunk_size": 1,
+  "action_dim": 7,
+  "requires_proprio": false,
+  "server_left_running": true
+}

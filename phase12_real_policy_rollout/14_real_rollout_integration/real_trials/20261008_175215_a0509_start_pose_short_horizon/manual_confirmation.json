@@ -1,0 +1,20 @@
+{
+  "provenance": "OPERATOR_CONFIRMED_IN_CONVERSATION",
+  "operator_present": true,
+  "estop_accessible": true,
+  "workspace_clear": true,
+  "robot_stationary": true,
+  "authority": true,
+  "servo": true,
+  "protective_stop_clear": true,
+  "emergency_stop_clear": true,
+  "latest_explicit_approval": "안전 확인 됐으니까 진행해",
+  "actual_operator_check_wall_time": "NOT_EXPLICITLY_PROVIDED",
+  "confirmation_record": "joint_reset_approval.json",
+  "conflicting_driver_evidence": {
+    "robot_state": 3,
+    "name": "SAFE_OFF",
+    "received_wall_time": 1791450190.3669925
+  },
+  "motion_authorized_after_conflict": false
+}

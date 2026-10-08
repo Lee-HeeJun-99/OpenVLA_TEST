@@ -1,0 +1,17 @@
+{
+  "name": "ROLL_OUT_START_JOINT_DEG",
+  "target_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.49975
+  ],
+  "api": "DSR_ROBOT2.movej(posj(*target),vel=10,acc=10)",
+  "ROBOT_MODEL": "a0509",
+  "home_zero_is_start": false,
+  "source_align_script": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/align.py",
+  "joint_tolerance_deg": 0.5,
+  "tolerance_source": "existing collect_episode001_from_align_home.py HOME_TOLERANCE_DEG"
+}

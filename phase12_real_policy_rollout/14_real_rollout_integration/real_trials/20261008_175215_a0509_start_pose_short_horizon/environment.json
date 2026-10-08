@@ -1,0 +1,10 @@
+{
+  "branch": "lhj-research",
+  "head_at_start": "12100a33c9c5af9cf06a22c5b9ec4f204e737050",
+  "robot_model": "a0509",
+  "ROS_LOCALHOST_ONLY": "1",
+  "driver_restarted": false,
+  "mode_setters": 0,
+  "servo_setters": 0,
+  "gripper_commands": 0
+}
