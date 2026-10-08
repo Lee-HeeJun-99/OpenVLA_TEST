@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "process_env_checks": [
+    {
+      "pid": 3110373,
+      "kind": "driver",
+      "ROS_LOCALHOST_ONLY": "1"
+    },
+    {
+      "pid": 3110521,
+      "kind": "ZED",
+      "ROS_LOCALHOST_ONLY": "1"
+    },
+    {
+      "pid": 3114451,
+      "kind": "passive_preflight",
+      "ROS_LOCALHOST_ONLY": "1"
+    }
+  ],
+  "physical_runner_started": false
+}

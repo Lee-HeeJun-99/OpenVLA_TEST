@@ -1,0 +1,16 @@
+{
+  "created": false,
+  "request": null,
+  "specification": {
+    "service": "/dsr01/motion/move_line",
+    "reference": "BASE",
+    "delta_mm": [
+      0.5,
+      0,
+      0
+    ],
+    "rotation_delta": 0,
+    "gripper_disabled": true,
+    "maximum_actions": 1
+  }
+}

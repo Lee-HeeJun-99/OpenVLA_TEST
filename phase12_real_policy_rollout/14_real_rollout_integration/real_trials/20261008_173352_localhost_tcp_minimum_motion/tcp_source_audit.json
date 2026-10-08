@@ -1,0 +1,62 @@
+{
+  "source_root": "/home/ubuntu/robot_ws/src/doosan-robot2",
+  "passive_evidence_file": "passive_tf_tcp_evidence.json",
+  "RobotState": {
+    "schema_exists": true,
+    "current_live_topic": false
+  },
+  "RobotStateRt": {
+    "schema_exists": true,
+    "current_live_topic": false
+  },
+  "rt_topic": {
+    "configured_use_rt_topic_pub": false,
+    "current_live_topic": false,
+    "config": "/home/ubuntu/robot_ws/install/dsr_controller2/share/dsr_controller2/config/dsr_controller2.yaml"
+  },
+  "GetCurrentTcp": {
+    "previous_response": "success=true, info=\"\"",
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "recalled": false
+  },
+  "GetCurrentTool": {
+    "previous_response": "success=true, info=\"\"",
+    "recalled": false
+  },
+  "GetCurrentPose": {
+    "classification": "UNSAFE_OR_NULL_RISK",
+    "source": "dsr_controller2.cpp:370-378",
+    "reason": "vendor pointer dereferenced without null check",
+    "called": false
+  },
+  "GetCurrentPosx": {
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "source": "dsr_controller2.cpp:983",
+    "reason": "null check present, prior feedback-loss risk unresolved",
+    "called": false
+  },
+  "GetCurrentToolFlangePosx": {
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "source": "dsr_controller2.cpp:1045-1056",
+    "cache_update": "OnMonitoringDataExCB, dsr_controller2.cpp:2940",
+    "reason": "cache has no request-correlated freshness proof; not active TCP",
+    "called": false
+  },
+  "tcp_database": {
+    "source": "DRFLEx.h:604-637",
+    "finding": "active-name get plus add/delete/set declarations; no verified current six-dimensional offset read exposure found in audited interface"
+  },
+  "runtime_config": {
+    "active_tcp_binding_found": false,
+    "candidates_not_promoted": true
+  },
+  "command_contract": {
+    "translation_unit": "mm",
+    "orientation_unit": "degree",
+    "orientation_convention": "ZYZ",
+    "reference": "BASE",
+    "ref_value": 0,
+    "source": "real_sink.py:96-100; DRFC.h:278",
+    "current_tcp_convention_verified": false
+  }
+}

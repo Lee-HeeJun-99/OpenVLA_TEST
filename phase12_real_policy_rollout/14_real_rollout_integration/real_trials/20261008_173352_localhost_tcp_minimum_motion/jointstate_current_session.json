@@ -1,0 +1,28 @@
+{
+  "status": "JOINTSTATE_CURRENT_SESSION_PASS",
+  "duration_requested_s": 30,
+  "duration_observed_s": 40.14803907694295,
+  "sample_count": 4016,
+  "max_source_gap_s": 0.012809276580810547,
+  "max_receive_gap_s": 0.021355757024139166,
+  "source_gap_ge_100ms": 0,
+  "receive_gap_ge_100ms": 0,
+  "invalid": 0,
+  "duplicate": 0,
+  "regression": 0,
+  "readiness": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2337035.865461618,
+    "discovery_delay_s": 0.9669029791839421,
+    "latest_receive_age_s": 0.00135856494307518,
+    "source_gap": 0.010007858276367188,
+    "receive_gap": 0.010862566996365786,
+    "clean_since": 2337035.865461618,
+    "clean_window_s": 50.15222955588251,
+    "ready_at": 2337045.870786159,
+    "readiness_timeout_s": 120
+  },
+  "post_getter_watch_s": 10,
+  "source_samples": "jointstate_samples.json"
+}

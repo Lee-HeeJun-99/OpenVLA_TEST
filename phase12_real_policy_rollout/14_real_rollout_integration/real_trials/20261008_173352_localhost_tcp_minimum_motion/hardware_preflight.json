@@ -1,0 +1,51 @@
+{
+  "reviewed_readonly_responses": {
+    "mode": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_mode": 1,
+        "success": true
+      },
+      "requested_at": 1791448513.4541106,
+      "latency_s": 0.010219244752079248,
+      "provenance": "DRIVER_REPORTED"
+    },
+    "state": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_state": 1,
+        "success": true
+      },
+      "requested_at": 1791448513.4659045,
+      "latency_s": 0.014024011790752411,
+      "provenance": "DRIVER_REPORTED"
+    },
+    "system": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_system": 0,
+        "success": true
+      },
+      "requested_at": 1791448513.48088,
+      "latency_s": 0.012676885351538658,
+      "provenance": "DRIVER_REPORTED"
+    }
+  },
+  "system": "REAL",
+  "mode": "AUTO",
+  "state": "STANDBY",
+  "connection": "SCALAR_READ_ONLY_REQUEST_PATH_RESPONSIVE_NOT_CONTINUOUS_CONNECTION_PROOF",
+  "authority": "UNKNOWN",
+  "servo": "UNKNOWN",
+  "protective_stop": "UNKNOWN",
+  "emergency_stop": "UNKNOWN",
+  "gripper_output": "DISABLED_BY_MINIMUM_MOTION_PROTOCOL",
+  "gripper_pulse": false,
+  "model_action_used": false,
+  "camera_current_sample_pass": true,
+  "model_current_health": "CONNECTION_REFUSED",
+  "note": "Model prediction not used for deterministic minimum-motion; model health required before later OpenVLA rollout",
+  "logger_evidence": "PRECHECK_ARTIFACT_WRITES_SUCCEEDED_NOT_PHYSICAL_RUNNER_APPROVAL",
+  "watchdog": "CURRENT_READONLY_JOINTSTATE_STATE_MACHINE_ACTIVE_DURING_MEASUREMENT",
+  "motion_authorized": false
+}

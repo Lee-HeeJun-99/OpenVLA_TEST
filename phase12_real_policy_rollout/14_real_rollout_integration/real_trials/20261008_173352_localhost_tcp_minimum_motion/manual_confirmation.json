@@ -1,0 +1,9 @@
+{
+  "operator_present": "REQUIRED",
+  "workspace_clear": "REQUIRED",
+  "estop_accessible": "REQUIRED",
+  "robot_stationary": "REQUIRED",
+  "operator": null,
+  "confirmation_time": null,
+  "actual_input_received": false
+}

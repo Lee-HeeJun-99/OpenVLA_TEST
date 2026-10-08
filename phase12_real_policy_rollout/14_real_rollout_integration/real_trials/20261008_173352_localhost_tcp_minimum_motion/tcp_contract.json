@@ -1,0 +1,11 @@
+{
+  "classification": "TCP_FLANGE_ONLY",
+  "active_tcp_name": "UNKNOWN",
+  "active_tool_name": "UNKNOWN",
+  "offset": null,
+  "offset_verified": false,
+  "current_tcp_pose": null,
+  "current_tcp_verified": false,
+  "zero_offset_assumed": false,
+  "TF_robot_chain_ends_at": "link_6"
+}

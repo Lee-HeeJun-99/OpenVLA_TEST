@@ -1,0 +1,245 @@
+{
+  "frames": {
+    "world->base_link": {
+      "parent": "world",
+      "child": "base_link",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "source_stamp": 1791444748.1909106,
+      "receive_wall": 1791448582.244976
+    },
+    "zed_camera_link->zed_camera_center": {
+      "parent": "zed_camera_link",
+      "child": "zed_camera_center",
+      "translation_m": [
+        0,
+        0,
+        0.015
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "source_stamp": 1791444760.0426893,
+      "receive_wall": 1791448582.2455895
+    },
+    "zed_camera_center->zed_left_camera_frame": {
+      "parent": "zed_camera_center",
+      "child": "zed_left_camera_frame",
+      "translation_m": [
+        -0.01,
+        0.059856995940208435,
+        0
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "source_stamp": 1791448590.199763,
+      "receive_wall": 1791448590.2222443
+    },
+    "zed_left_camera_frame->zed_left_camera_frame_optical": {
+      "parent": "zed_left_camera_frame",
+      "child": "zed_left_camera_frame_optical",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.4999999999999999,
+        0.5,
+        -0.5000000000000001
+      ],
+      "source_stamp": 1791444760.0426893,
+      "receive_wall": 1791448582.2455983
+    },
+    "zed_camera_center->zed_right_camera_frame": {
+      "parent": "zed_camera_center",
+      "child": "zed_right_camera_frame",
+      "translation_m": [
+        -0.01,
+        -0.059856995940208435,
+        0
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "source_stamp": 1791448590.199763,
+      "receive_wall": 1791448590.2227004
+    },
+    "zed_right_camera_frame->zed_right_camera_frame_optical": {
+      "parent": "zed_right_camera_frame",
+      "child": "zed_right_camera_frame_optical",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.5,
+        -0.4999999999999999,
+        0.5,
+        -0.5000000000000001
+      ],
+      "source_stamp": 1791444760.0426893,
+      "receive_wall": 1791448582.2456057
+    },
+    "odom->zed_camera_link": {
+      "parent": "odom",
+      "child": "zed_camera_link",
+      "translation_m": [
+        0.005198970383056347,
+        0.00005401925934814207,
+        -0.004698190287286697
+      ],
+      "quaternion_xyzw": [
+        -0.002453636719569289,
+        0.0007271683973990022,
+        0.003509860076862372,
+        0.9999905658430719
+      ],
+      "source_stamp": 1791448590.199763,
+      "receive_wall": 1791448590.2208233
+    },
+    "map->odom": {
+      "parent": "map",
+      "child": "odom",
+      "translation_m": [
+        -0.000011896926291536485,
+        0.000004050221087123208,
+        -0.000006103773948189749
+      ],
+      "quaternion_xyzw": [
+        0.0053748745117366,
+        -0.5483506231154414,
+        0.004675425216004111,
+        0.8362181804121794
+      ],
+      "source_stamp": 1791448590.199763,
+      "receive_wall": 1791448590.221697
+    },
+    "base_link->link_1": {
+      "parent": "base_link",
+      "child": "link_1",
+      "translation_m": [
+        0,
+        0,
+        0.156
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        -0.00002353329545950297,
+        0.999999999723092
+      ],
+      "source_stamp": 1791448590.184773,
+      "receive_wall": 1791448590.1861382
+    },
+    "link_1->link_2": {
+      "parent": "link_1",
+      "child": "link_2",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.500104844706443,
+        0.4999969808938771,
+        0.49999698211922133,
+        -0.49990117150275143
+      ],
+      "source_stamp": 1791448590.184773,
+      "receive_wall": 1791448590.186144
+    },
+    "link_2->link_3": {
+      "parent": "link_2",
+      "child": "link_3",
+      "translation_m": [
+        0.409,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0.7071628022492166,
+        0.7070507556852164
+      ],
+      "source_stamp": 1791448590.184773,
+      "receive_wall": 1791448590.1861477
+    },
+    "link_3->link_4": {
+      "parent": "link_3",
+      "child": "link_4",
+      "translation_m": [
+        0,
+        -0.367,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071787860840666,
+        -0.00003338433091103866,
+        0.0000333775321097051,
+        0.7070347673800015
+      ],
+      "source_stamp": 1791448590.184773,
+      "receive_wall": 1791448590.1861506
+    },
+    "link_4->link_5": {
+      "parent": "link_4",
+      "child": "link_5",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        -0.7071787868287793,
+        -0.000007824540835839407,
+        -0.00000782294734879871,
+        0.7070347681245626
+      ],
+      "source_stamp": 1791448590.184773,
+      "receive_wall": 1791448590.186154
+    },
+    "link_5->link_6": {
+      "parent": "link_5",
+      "child": "link_6",
+      "translation_m": [
+        0,
+        -0.124,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.7071787860841425,
+        0.00003338272297264079,
+        -0.00003337592449876786,
+        0.7070347673800773
+      ],
+      "source_stamp": 1791448590.184773,
+      "receive_wall": 1791448590.186157
+    }
+  },
+  "cartesian_state_topics": [],
+  "rt_topics": [],
+  "physical_commands": 0
+}

@@ -1,0 +1,22 @@
+{
+  "status": "MINIMUM_MOTION_NOT_EXECUTED",
+  "authorized": false,
+  "executed": false,
+  "physical_commands": 0,
+  "reason": [
+    "CURRENT_VERIFIED_TCP_REQUIRED",
+    "CURRENT_TCP_POSE_NOT_VERIFIED",
+    "AUTHORITY_SERVO_STOP_EVIDENCE_REQUIRED",
+    "ACTUAL_MANUAL_CONFIRMATIONS_REQUIRED"
+  ],
+  "requested_delta_specification_mm": [
+    0.5,
+    0,
+    0
+  ],
+  "observed_delta": null,
+  "unexpected_direction": null,
+  "unexpected_scale": null,
+  "estop_used": null,
+  "next_stage": "BLOCKED"
+}
