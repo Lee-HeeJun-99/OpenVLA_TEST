@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "readiness": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2340420.223175336,
+    "discovery_delay_s": 0.9767340491525829,
+    "latest_receive_age_s": 0.004307432100176811,
+    "source_gap": 0.009972095489501953,
+    "receive_gap": 0.0097520318813622,
+    "clean_since": 2340420.223175336,
+    "clean_window_s": 21.024367238860577,
+    "ready_at": 2340430.223208433,
+    "readiness_timeout_s": 120.0
+  },
+  "startup_events": 0,
+  "clean_window_acquired": true,
+  "time_to_runtime_ready_s": 10.976767146028578,
+  "camera_current": {
+    "receive": 2340441.181687462,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "camera_current_ready": true,
+  "model_identity_pass": true,
+  "model_error": null,
+  "preflight": {
+    "checks": {
+      "ros_graph_alive": true,
+      "camera_ready": true,
+      "joint_state_ready": true,
+      "tcp_ready": false,
+      "robot_mode_confirmed": false,
+      "servo_confirmed": false,
+      "estop_confirmed": false,
+      "protective_stop_confirmed": false,
+      "workspace_confirmed": false,
+      "gripper_polarity_confirmed": false,
+      "gripper_initial_confirmed": false,
+      "clock_valid": false,
+      "model_ready": true,
+      "logger_ready": true,
+      "disk_ready": false,
+      "command_path_confirmed": false,
+      "hold_path_confirmed": false
+    },
+    "evidence_fresh": true,
+    "OBSERVATION_READY": false,
+    "MODEL_READY": true,
+    "LOGGER_READY": false,
+    "COMMAND_PATH_READY": false,
+    "ROBOT_STATE_READY": false,
+    "SAFETY_READY": false,
+    "MOTION_READY": false,
+    "missing": [
+      "tcp_ready",
+      "robot_mode_confirmed",
+      "servo_confirmed",
+      "estop_confirmed",
+      "protective_stop_confirmed",
+      "workspace_confirmed",
+      "gripper_polarity_confirmed",
+      "gripper_initial_confirmed",
+      "clock_valid",
+      "disk_ready",
+      "command_path_confirmed",
+      "hold_path_confirmed"
+    ]
+  },
+  "physical_commands": 0,
+  "task_trial_started": false,
+  "task_status": null,
+  "task_success": null,
+  "executor_error": [],
+  "current_session_runtime": {
+    "duration_requested_s": 0.0,
+    "duration_observed_s": 11.022641096264124,
+    "sample_count": 1103,
+    "max_source_gap_s": 0.013222694396972656,
+    "max_receive_gap_s": 0.03427236573770642,
+    "source_gap_ge_100ms": 0,
+    "receive_gap_ge_100ms": 0
+  }
+}

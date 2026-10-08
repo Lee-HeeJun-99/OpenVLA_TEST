@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "raw_action": [
+    0.00011473623441084733,
+    0.004007270542118483,
+    -0.004330877878587262,
+    0.0005787247280851192,
+    0.004899441521578439,
+    0.011015417543248139,
+    0.0019607843137254832
+  ],
+  "physical_commands": 0,
+  "frame_receive_monotonic": 2340440.381494052,
+  "inference_start_monotonic": 2340440.404201174,
+  "inference_end_monotonic": 2340440.807456847,
+  "camera_age_at_inference_start": 0.02270712237805128,
+  "camera_age_at_inference_end": 0.42596279503777623,
+  "inference_latency": 0.40325567265972495,
+  "source_age_at_inference_start": 0.3089752197265625,
+  "source_age_at_inference_end": 0.712273359298706,
+  "raw_translation_xyz": [
+    0.00011473623441084733,
+    0.004007270542118483,
+    -0.004330877878587262
+  ],
+  "raw_translation_norm": 0.005901515466425031,
+  "raw_rotation_xyz": [
+    0.0005787247280851192,
+    0.004899441521578439,
+    0.011015417543248139
+  ],
+  "raw_rotation_norm": 0.012069750336538156,
+  "gripper_closedness": 0.0019607843137254832,
+  "instruction": "Pick up the orange cube.",
+  "inference_latency_s": 0.40325567265972495,
+  "camera_age_s": 0.02270712237805128,
+  "camera_failure": false,
+  "jointstate_runtime": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2340420.223175336,
+    "discovery_delay_s": 0.9767340491525829,
+    "latest_receive_age_s": 0.003849263768643141,
+    "source_gap": 0.010016679763793945,
+    "receive_gap": 0.010518783237785101,
+    "clean_since": 2340420.223175336,
+    "clean_window_s": 20.584281510673463,
+    "ready_at": 2340430.223208433,
+    "readiness_timeout_s": 120.0
+  },
+  "encoding": "bgra8",
+  "resolution": [
+    1280,
+    720
+  ],
+  "camera_source_stamp": {
+    "sec": 1791451877,
+    "nanosec": 584718147
+  },
+  "camera_receive_monotonic": 2340440.381494052,
+  "source_to_response_age_s": 0.713080644607544,
+  "tcp_source": "FK_ESTIMATED_FLANGE",
+  "tcp_contract_verified": false,
+  "command_requested": false,
+  "command_issued": false,
+  "delivered_action": null,
+  "executed_action": null,
+  "source_image_sha256": "282e96f252045f8631f41059aefb75c13bfd43033d9f5407e16c7bab0383c111",
+  "model_jpeg_sha256": "8f8a0aa65d3be75be957afb4e7bbe768457b20cf28f5ff9023d11c494bd3c1f9"
+}

@@ -120,12 +120,17 @@ def run(output, runtime_duration=0., hardware_refresh=False, single_prediction=F
                     if msg.encoding!='bgra8' or [msg.width,msg.height]!=[1280,720]:raise ValueError('camera_contract')
                     rgb=camera_rgb_image(msg);buffer=io.BytesIO();rgb.save(buffer,format='JPEG',quality=95);jpeg=buffer.getvalue()
                     request=Request('http://127.0.0.1:8766/predict',data=json.dumps(dict(image_jpeg_base64=base64.b64encode(jpeg).decode(),instruction=config['instruction'])).encode(),headers={'Content-Type':'application/json'})
+                    ros_start=node.get_clock().now().nanoseconds/1e9
                     started=time.monotonic()
+                    if not 0<=started-received<.5:raise ValueError('camera_stale_at_inference_start')
                     with urlopen(request,timeout=10) as response:prediction=json.load(response)
-                    finished=time.monotonic();raw=prediction.get('action')
+                    finished=time.monotonic();ros_end=node.get_clock().now().nanoseconds/1e9;raw=prediction.get('action')
                     if not isinstance(raw,list) or len(raw)!=7 or not all(isinstance(x,(int,float)) and math.isfinite(x) for x in raw):raise ValueError('model_action_schema')
                     with lock:after=state.status(finished)
-                    camera_age=finished-received
+                    from camera_inference_timing import inference_timing
+                    timing=inference_timing(received,started,finished,source_stamp=msg.header.stamp.sec+msg.header.stamp.nanosec/1e9,ros_start=ros_start,ros_end=ros_end)
+                    camera_age=timing['camera_age_at_inference_start']
+                    sample.update(timing)
                     sample.update(status='PASS' if camera_age<.5 and not after['fault'] else 'FAIL',raw_action=raw,
                         raw_translation_xyz=raw[:3],raw_translation_norm=math.dist(raw[:3],[0,0,0]),
                         raw_rotation_xyz=raw[3:6],raw_rotation_norm=math.dist(raw[3:6],[0,0,0]),gripper_closedness=raw[6],

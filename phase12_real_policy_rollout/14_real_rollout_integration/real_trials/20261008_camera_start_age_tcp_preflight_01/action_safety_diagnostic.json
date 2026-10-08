@@ -1,0 +1,14 @@
+{
+  "classification": "RAW_TRANSLATION_LIMIT_DIAGNOSTIC",
+  "raw_translation_xyz_m": [0.0013240556669236875, 0.0026335443427412267, -0.0073088779908109],
+  "raw_translation_norm_m": 0.007880886796475193,
+  "existing_limit_m": 0.004,
+  "limit_exceeded": true,
+  "limit_modified": false,
+  "clipping_applied": false,
+  "scaling_applied": false,
+  "task_trial_started": false,
+  "task_status": null,
+  "task_success": null,
+  "physical_commands": 0
+}

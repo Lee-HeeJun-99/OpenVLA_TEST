@@ -19,6 +19,7 @@ from jointstate_runtime_startup import JointStateStartup
 from live_observation import camera_rgb_image
 from verify_live_model_server import validate_identity
 from canonical_action import CanonicalAction
+from action_step_limits import RAW_TRANSLATION_STEP_LIMIT_M,raw_translation_exceeds_limit
 import yaml
 
 
@@ -36,7 +37,9 @@ def distribution(rows):
     return dict(predictions=len(rows), translation_m=stats('translation_norm_m'),
                 rotation_deg=stats('rotation_norm_deg'), gripper=stats('gripper_closedness'),
                 close_candidates=sum(row['gripper_closedness'] >= .7 for row in rows),
-                translation_over_4mm=sum(row['translation_norm_m'] > .004 for row in rows))
+                translation_over_4mm=sum(row['translation_norm_m'] > .004 for row in rows),
+                raw_translation_step_limit_m=RAW_TRANSLATION_STEP_LIMIT_M,
+                translation_over_current_limit=sum(row['translation_norm_m'] > RAW_TRANSLATION_STEP_LIMIT_M+1e-12 for row in rows))
 
 
 def run(args):
@@ -177,7 +180,7 @@ def run(args):
                             if raw.get('fixture') is True: raise ValueError('fixture_forbidden')
                         except Exception as exc:
                             trial.invalidate('MODEL_REQUEST_FAILURE:'+str(exc)); break
-                        now = time.monotonic(); latency = now-tick; selected_age = now-received
+                        now = time.monotonic(); latency = now-tick; selected_age = tick-received
                         peak_camera = max(peak_camera, selected_age)
                         with lock:
                             joint = dict(state['joint']); runtime = readiness.status(now)
@@ -191,7 +194,9 @@ def run(args):
                             command_issued=False, delivered_action=None, executed_action=None,
                             **{key:None for key in ('episode_id','condition','matched_pair_id','real_observation_id',
                                 'sim_observation_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')})
-                        evidence = dict(raw_model_output=raw, inference_latency_s=latency, camera_selected_age_s=selected_age)
+                        evidence = dict(raw_model_output=raw, inference_latency_s=latency, camera_selected_age_s=selected_age,
+                            frame_receive_monotonic=received, inference_start_monotonic=tick, inference_end_monotonic=now,
+                            camera_age_at_inference_start=selected_age, camera_age_at_inference_end=now-received)
                         if trial.status is not None:
                             discarded.append({**evidence,'reason':'IN_FLIGHT_RESPONSE_AFTER_INVALID'}); break
                         trial.prediction(evidence)
@@ -203,7 +208,7 @@ def run(args):
                             trial.invalidate('MODEL_INPUT_NONFINITE_OR_ACTION_SCHEMA:'+str(exc)); break
                         translation = math.dist(action.translation_m,(0,0,0))
                         rotation = math.degrees(math.dist(action.rotation_rotvec_rad,(0,0,0)))
-                        blockers = (['raw_translation_step_limit'] if translation > .004+1e-12 else [])
+                        blockers = (['raw_translation_step_limit'] if raw_translation_exceeds_limit(action.translation_m) else [])
                         if rotation > 4+1e-12: blockers.append('raw_rotation_step_limit')
                         record = {**observation, **evidence,'canonical_action':action.as_dict(),
                                   'translation_norm_m':translation,'rotation_norm_deg':rotation,

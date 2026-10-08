@@ -8,12 +8,13 @@ from open_loop_gripper_supervisor import OpenLoopGripperSupervisor,GripperRuntim
 from oft_chunk_queue import OFTChunkQueue
 from runtime_safety_supervisor import RuntimeSafetySupervisor
 from workspace_contract import PHASE12_DATA_DERIVED_WORKSPACE
+from action_step_limits import RAW_TRANSLATION_STEP_LIMIT_M,raw_translation_exceeds_limit
 
 ALLOWED_CLOSE_PHASES=frozenset(('grasp_close','lift','post_lift'))
 
 def _supervisor():
  return RuntimeSafetySupervisor(max_action_age_sec=1.2,min_command_period_sec=.19,
-  max_translation_m=.004,max_rotation_rad=math.radians(4),
+  max_translation_m=RAW_TRANSLATION_STEP_LIMIT_M,max_rotation_rad=math.radians(4),
   max_translation_velocity_m_s=.02,max_rotation_velocity_rad_s=math.radians(20),
   max_translation_acceleration_m_s2=.02,max_rotation_acceleration_rad_s2=math.radians(20))
 
@@ -45,7 +46,7 @@ class CommandDisabledPolicyRuntime:
     initial_state_known=self.gripper.state.value!='UNKNOWN',candidate_executed=False))
   premature=grip.reason=='close_forbidden_outside_grasp_close'
   blockers=[]
-  if math.sqrt(sum(v*v for v in raw[:3])) > .004+1e-12:blockers.append('raw_translation_step_limit')
+  if raw_translation_exceeds_limit(raw[:3]):blockers.append('raw_translation_step_limit')
   if math.sqrt(sum(v*v for v in raw[3:6])) > math.radians(4)+1e-12:blockers.append('raw_rotation_step_limit')
   if not safety.accepted:blockers.append(safety.hold_reason)
   if not workspace.accepted:blockers.append(workspace.reason)

@@ -20,8 +20,8 @@ gripper_open_threshold: 0.3
 gripper_close_threshold: 0.7
 oft_chunk_execution_mode: sequential_k5
 control_rate_hz: 5.0
+raw_translation_step_limit_m: 0.010
 translation_velocity_limit_mm_s: 20.0
 rotation_velocity_limit_deg_s: 20.0
 translation_acceleration_limit_mm_s2: 20.0
 rotation_acceleration_limit_deg_s2: 20.0
-

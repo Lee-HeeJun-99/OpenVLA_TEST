@@ -1,0 +1,16 @@
+{
+  "previous_raw_translation_limit_m": 0.004,
+  "new_raw_translation_limit_m": 0.010,
+  "clipping": false,
+  "scaling": false,
+  "other_safety_thresholds_changed": false,
+  "reason": "Observed previous real OpenVLA norm 7.881 mm exceeded the previous 4 mm gate. Operator requested 10 mm hard rejection threshold for staged evaluation; raw model action remains unmodified.",
+  "source": "01_configs/safety_limits.yaml: translation_step_m",
+  "production_path": "run_real_rollout.Controller -> SafetyPipeline -> CommandDisabledPolicyRuntime -> action_step_limits",
+  "batch_path": "run_live_prediction_batch -> action_step_limits",
+  "boundary_semantics": "Reject > 0.010 m + 1e-12 m numerical tolerance; exact 10 mm passes",
+  "new_clipping_or_scaling_added": false,
+  "existing_downstream_velocity_acceleration_limiter_removed": false,
+  "existing_downstream_limiter_may_modify_candidate": true,
+  "physical_commands": 0
+}

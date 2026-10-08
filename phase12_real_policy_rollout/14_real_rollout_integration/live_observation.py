@@ -158,15 +158,24 @@ class LiveObservation:
             **{key:self.evidence.get(key) for key in ('episode_id','condition','matched_pair_id','sim_observation_id','real_observation_id',
                 'observation_gap_score','representation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')})
 
-    def predict(self,image,model,*,selected_frame_receive=None):
+    def predict(self,image,model,*,selected_frame_receive=None,selected_frame_source=None):
         payload={'image_jpeg_base64':base64.b64encode(image).decode(),'instruction':'Pick up the orange cube.'}
         request=Request(self.url+'/predict',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'})
+        ros_start=self.node.get_clock().now().nanoseconds/1e9 if selected_frame_source is not None else None
         started=time.monotonic()
+        if selected_frame_receive is not None and not 0<=started-selected_frame_receive<.5:
+            raise ValueError('camera_stale_at_inference_start')
         with urlopen(request,timeout=1.2) as response:result=json.load(response)
-        self.last_prediction={'raw_model_output':result,'inference_latency_s':time.monotonic()-started,
+        finished=time.monotonic()
+        ros_end=self.node.get_clock().now().nanoseconds/1e9 if selected_frame_source is not None else None
+        self.last_prediction={'raw_model_output':result,'inference_latency_s':finished-started,
             'model_input_sha256':hashlib.sha256(image).hexdigest()}
         if selected_frame_receive is not None:
-            self.last_prediction['selected_prediction_frame_age']=time.monotonic()-selected_frame_receive
+            from camera_inference_timing import inference_timing
+            source_stamp=None if selected_frame_source is None else selected_frame_source['sec']+selected_frame_source['nanosec']/1e9
+            self.last_prediction.update(inference_timing(selected_frame_receive,started,finished,
+                source_stamp=source_stamp,ros_start=ros_start,ros_end=ros_end))
+            self.last_prediction['selected_prediction_frame_age']=started-selected_frame_receive
         return result['actions'] if model=='oft' else [result['action']]
 
     def check_health(self):

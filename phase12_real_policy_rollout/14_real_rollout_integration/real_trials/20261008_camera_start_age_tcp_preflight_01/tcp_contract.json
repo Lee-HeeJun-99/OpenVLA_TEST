@@ -1,0 +1,26 @@
+{
+  "classification": "TCP_UNVERIFIED",
+  "active_tcp": null,
+  "active_tool": null,
+  "active_offset": null,
+  "current_tcp_pose": null,
+  "reference_frame": null,
+  "units": null,
+  "orientation_convention": null,
+  "verified": false,
+  "context_source": "FK_ESTIMATED_FLANGE",
+  "controller_robotstate_topics_discovered": false,
+  "graph_evidence": "ros_graph_snapshot.json",
+  "previous_blank_name_getters_repeated": false,
+  "risky_cartesian_getters_called": false,
+  "source_audit": {
+    "get_current_pose": "Vendor pointer dereferenced without null check; not called",
+    "get_current_posx": "Null check exists; prior live stability risk not cleared; not called",
+    "get_current_tool_flange_posx": "Cached flange pose, not active TCP; cannot establish active offset binding"
+  },
+  "pendant_evidence_received": false,
+  "required_pendant_evidence": ["active TCP name", "active TCP offset [x,y,z,rx,ry,rz]", "current TCP pose [x,y,z,rx,ry,rz]", "BASE reference", "displayed units and orientation convention", "confirmation timestamp"],
+  "zero_offset_assumed": false,
+  "flange_assumed_as_tcp": false,
+  "physical_commands": 0
+}

@@ -108,8 +108,10 @@ def run(args):
                 tick=time.monotonic()
                 try:
                     request=Request(url+'/predict',data=json.dumps({'image_jpeg_base64':base64.b64encode(jpeg).decode(),'instruction':config['instruction']}).encode(),headers={'Content-Type':'application/json'})
+                    tick=time.monotonic()
+                    if not 0<=tick-received<.5:raise ValueError('camera_stale_at_inference_start')
                     with urlopen(request,timeout=1.2) as response:raw=json.load(response)
-                    latency=time.monotonic()-tick
+                    finished=time.monotonic();latency=finished-tick
                     if raw.get('fixture') is True:raise ValueError('fixture_forbidden')
                     if latency>1.2:raise TimeoutError('model_timeout')
                     action=CanonicalAction.from_vector(raw['action'],timestamp_monotonic=tick,sequence_id='live-'+str(len(predictions)),source_model='openvla')
@@ -122,12 +124,14 @@ def run(args):
                 from scipy.spatial.transform import Rotation
                 flange_abc=tuple(Rotation.from_matrix(flange['rotation_matrix']).as_euler('ZYZ',degrees=True))
                 decision=pipeline.inspect(action,RuntimeState(now,tuple(flange['position_m']),flange_abc,'unknown',
-                    camera_ok=now-received<.5,joint_state_ok=jg['phase']=='RUNTIME_READY' and not jg['fault'],tcp_ok=False))
+                    camera_ok=0<=tick-received<.5,joint_state_ok=jg['phase']=='RUNTIME_READY' and not jg['fault'],tcp_ok=False))
                 safety=decision.as_dict()
                 # Never serialize a flange-based pose candidate as robot TCP.
                 record=dict(event='PREDICTION',timestamp_wall=time.time(),receive_monotonic=now,frame_id=len(predictions),
                     image_timestamp=dict(sec=image.header.stamp.sec,nanosec=image.header.stamp.nanosec),
-                    jointstate_source_timestamp=j['source'],jointstate_age_s=now-j['receive'],camera_age_s=now-received,
+                    jointstate_source_timestamp=j['source'],jointstate_age_s=now-j['receive'],camera_age_s=tick-received,
+                    frame_receive_monotonic=received,inference_start_monotonic=tick,inference_end_monotonic=finished,
+                    camera_age_at_inference_start=tick-received,camera_age_at_inference_end=finished-received,
                     joint_state_phase=jg['phase'],joint_state_latest_age=jg['latest_receive_age_s'],
                     joint_state_source_gap=jg['source_gap'],joint_state_receive_gap=jg['receive_gap'],
                     tcp_source='FK_ESTIMATED_FLANGE',tcp_contract_verified=False,tool_offset_verified=False,
@@ -148,7 +152,8 @@ def run(args):
             log.append(dict(event='TERMINAL',fault=fault[0],command_issued=False,executed_action=None,robot_delivered_command=None))
         blockers=collections.Counter(b for r in predictions for b in r['safety']['reason'])
         rejected=sum(not r['safety']['accepted'] for r in predictions)
-        anomalies=sum(r['translation_norm_m']>.004 or r['rotation_norm_deg']>4 for r in predictions)
+        from action_step_limits import RAW_TRANSLATION_STEP_LIMIT_M
+        anomalies=sum(r['translation_norm_m']>RAW_TRANSLATION_STEP_LIMIT_M+1e-12 or r['rotation_norm_deg']>4 for r in predictions)
         input_failures=any(b in blockers for b in ('camera_failure','state_failure','communication_failure','inference_failure','logger_failure'))
         complete=len(predictions)>=30 and time.monotonic()-shadow_start>=30
         summary=dict(status=('LIVE_SHADOW_FAIL_JOINTSTATE_RUNTIME' if fault[0] and readiness.first_fresh is not None and readiness.fault else 'LIVE_SHADOW_FAIL') if fault[0] or anomalies or input_failures else ('LIVE_SHADOW_PASS' if complete else 'LIVE_SHADOW_INCONCLUSIVE'),

@@ -228,7 +228,7 @@ def main():
                         controller.abort('minimum_motion_config_invalid');break
                     actions=[list(delta)+[0,0,0,0]]
                 else:
-                    try:actions=obs.predict(image,args.model,selected_frame_receive=observation.get('camera_receive_monotonic'))
+                    try:actions=obs.predict(image,args.model,selected_frame_receive=observation.get('camera_receive_monotonic'),selected_frame_source=observation.get('image_source_timestamp'))
                     except Exception as exc:
                         controller.abort('model_inference_failure:'+str(exc));break
                 if len(actions)!=(5 if args.model=='oft' and args.protocol!='minimum_motion' else 1):
