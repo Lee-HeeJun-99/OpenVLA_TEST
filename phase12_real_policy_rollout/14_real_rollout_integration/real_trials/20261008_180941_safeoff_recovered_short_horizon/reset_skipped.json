@@ -1,0 +1,7 @@
+{
+  "reset_executed": false,
+  "physical_reset_commands": 0,
+  "reason": "START_POSE_POSITION_MATCH",
+  "max_abs_error_deg": 0.14159437236460803,
+  "existing_tolerance_deg": 0.5
+}

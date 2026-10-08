@@ -1,0 +1,13 @@
+{
+  "verified": false,
+  "classification": "TCP_FLANGE_ONLY",
+  "active_tcp": "UNKNOWN",
+  "active_tool": "UNKNOWN",
+  "active_offset": null,
+  "current_tcp_pose": null,
+  "source": "NONE_FOR_VERIFIED_ACTIVE_TCP",
+  "zero_offset_assumed": false,
+  "flange_promoted_to_tcp": false,
+  "pendant_evidence_received": false,
+  "joint_position_match_does_not_validate_tcp": true
+}

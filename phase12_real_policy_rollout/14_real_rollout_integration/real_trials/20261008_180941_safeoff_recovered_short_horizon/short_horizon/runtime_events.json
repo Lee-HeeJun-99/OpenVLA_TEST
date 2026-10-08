@@ -1,0 +1,20 @@
+{
+  "performance_trial_started": false,
+  "jointstate_runtime_faults": 0,
+  "startup_events": 0,
+  "current_hardware_guard": "SAFE_OFF",
+  "jointstate_current_readiness": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2339221.115054131,
+    "discovery_delay_s": 0.03370033111423254,
+    "latest_receive_age_s": 0.007775641977787018,
+    "source_gap": 0.010005950927734375,
+    "receive_gap": 0.010118350852280855,
+    "clean_since": 2339221.115054131,
+    "clean_window_s": 20.107822586782277,
+    "ready_at": 2339231.119480928,
+    "readiness_timeout_s": 120
+  },
+  "physical_commands": 0
+}

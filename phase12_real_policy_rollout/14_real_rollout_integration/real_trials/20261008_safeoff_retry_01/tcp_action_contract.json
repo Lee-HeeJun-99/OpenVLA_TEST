@@ -1,0 +1,9 @@
+{
+  "verified": false,
+  "classification": "TCP_FLANGE_ONLY",
+  "source": "NONE_FOR_VERIFIED_ACTIVE_TCP",
+  "active_tcp": null,
+  "active_offset": null,
+  "current_tcp_pose": null,
+  "zero_offset_assumed": false
+}

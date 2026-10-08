@@ -1,0 +1,16 @@
+{
+  "status": "NOT_STARTED",
+  "runtime_valid": null,
+  "task_success": null,
+  "prediction_count": 0,
+  "preflight_sample_prediction_count": 1,
+  "command_count": 0,
+  "invalid_reason": null,
+  "block_reasons": [
+    "CAMERA_SELECTED_FRAME_STALE_IN_PREFLIGHT",
+    "TCP_ACTION_CONTRACT_UNVERIFIED",
+    "RAW_TRANSLATION_EXCEEDS_EXISTING_4MM_LIMIT"
+  ],
+  "estop_used": null,
+  "unexpected_motion": null
+}

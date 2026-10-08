@@ -4,7 +4,13 @@ from pathlib import Path
 from urllib.request import urlopen
 from jointstate_runtime_startup import JointStateStartup
 
-def run(output, runtime_duration=0., hardware_refresh=False):
+def sample_hardware_ready(hardware):
+    expected={'mode':('robot_mode',1),'state':('robot_state',1),'system':('robot_system',0)}
+    return all(hardware.get(k,{}).get('response',{}).get(field)==value
+               and hardware.get(k,{}).get('response',{}).get('success') is True
+               for k,(field,value) in expected.items())
+
+def run(output, runtime_duration=0., hardware_refresh=False, single_prediction=False):
     import rclpy
     from sensor_msgs.msg import JointState,Image
     from rclpy.qos import qos_profile_sensor_data
@@ -12,7 +18,7 @@ def run(output, runtime_duration=0., hardware_refresh=False):
     from pre_real_rollout_check import preflight
     output.mkdir(parents=True,exist_ok=False)
     __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_clean_readiness_validation')
-    state=JointStateStartup(time.monotonic());lock=threading.RLock();rows=[];camera=[None];halt=threading.Event()
+    state=JointStateStartup(time.monotonic());lock=threading.RLock();rows=[];camera=[None];latest_image=[None];halt=threading.Event()
     def joints(msg):
         now=time.monotonic();source=msg.header.stamp.sec+msg.header.stamp.nanosec/1e9
         valid=len(msg.name)==6 and set(msg.name)=={f'joint_{i}' for i in range(1,7)} and len(msg.position)==len(msg.velocity)==6 and all(math.isfinite(v) for v in list(msg.position)+list(msg.velocity))
@@ -20,7 +26,9 @@ def run(output, runtime_duration=0., hardware_refresh=False):
                  valid=valid,names=list(msg.name),position=list(msg.position),velocity=list(msg.velocity))
         with lock:state.sample(row);rows.append(dict(row))
     def image(msg):
-        with lock:camera[0]=dict(receive=time.monotonic(),encoding=msg.encoding,resolution=[msg.width,msg.height])
+        with lock:
+            camera[0]=dict(receive=time.monotonic(),encoding=msg.encoding,resolution=[msg.width,msg.height])
+            latest_image[0]=(msg,camera[0]['receive'])
     node.create_subscription(JointState,'/dsr01/joint_states',joints,qos_profile_sensor_data)
     node.create_subscription(Image,'/zed/zed_node/rgb/color/rect/image',image,qos_profile_sensor_data)
     spin_error=[]
@@ -78,6 +86,61 @@ def run(output, runtime_duration=0., hardware_refresh=False):
             with urlopen('http://127.0.0.1:8766/health',timeout=3) as response:health=json.load(response)
             validate_identity(health,'openvla')
         except Exception as exc:model_error=str(exc)
+        if single_prediction:
+            import base64,hashlib,io
+            from urllib.request import Request
+            from live_observation import camera_rgb_image
+            from run_joint_start_pose_once import ordered_degrees,TARGET,TOLERANCE_DEG
+            with lock:
+                joint=dict(rows[-1]) if rows else None
+                prediction_gate=state.status(time.monotonic())
+            actual=ordered_degrees(joint) if joint else None
+            errors=[a-b for a,b in zip(actual,TARGET)] if actual else None
+            position_match=bool(errors and max(map(abs,errors))<=TOLERANCE_DEG)
+            save_pose=dict(current_joint_deg=actual,target_joint_deg=TARGET,error_deg=errors,
+                max_abs_error_deg=max(map(abs,errors)) if errors else None,
+                tolerance_deg=TOLERANCE_DEG,position_match=position_match,reset_executed=False,
+                jointstate_source_timestamp=joint['source'] if joint else None)
+            (output/'jointstate_start_pose_check.json').write_text(json.dumps(save_pose,indent=2))
+            sample=dict(status='NOT_EXECUTED',raw_action=None,physical_commands=0)
+            if not sample_hardware_ready(hardware):sample['reason']='HARDWARE_NOT_CURRENT_REAL_AUTO_STANDBY'
+            elif not position_match:sample['reason']='START_POSE_OUTSIDE_EXISTING_TOLERANCE'
+            elif model_error:sample['reason']='MODEL_HEALTH_FAILED'
+            elif prediction_gate['fault']:sample['reason']='JOINTSTATE_RUNTIME_FAULT'
+            else:
+                try:
+                    config=validate_identity(health,'openvla')
+                    timeout=time.monotonic()+2.;selected=None
+                    while time.monotonic()<timeout:
+                        with lock:selected=latest_image[0]
+                        if selected and 0<=time.monotonic()-selected[1]<=.01:break
+                        time.sleep(.001)
+                    if not selected or not 0<=time.monotonic()-selected[1]<=.01:raise ValueError('fresh_frame_timeout')
+                    msg,received=selected
+                    if msg.encoding!='bgra8' or [msg.width,msg.height]!=[1280,720]:raise ValueError('camera_contract')
+                    rgb=camera_rgb_image(msg);buffer=io.BytesIO();rgb.save(buffer,format='JPEG',quality=95);jpeg=buffer.getvalue()
+                    request=Request('http://127.0.0.1:8766/predict',data=json.dumps(dict(image_jpeg_base64=base64.b64encode(jpeg).decode(),instruction=config['instruction'])).encode(),headers={'Content-Type':'application/json'})
+                    started=time.monotonic()
+                    with urlopen(request,timeout=10) as response:prediction=json.load(response)
+                    finished=time.monotonic();raw=prediction.get('action')
+                    if not isinstance(raw,list) or len(raw)!=7 or not all(isinstance(x,(int,float)) and math.isfinite(x) for x in raw):raise ValueError('model_action_schema')
+                    with lock:after=state.status(finished)
+                    camera_age=finished-received
+                    sample.update(status='PASS' if camera_age<.5 and not after['fault'] else 'FAIL',raw_action=raw,
+                        raw_translation_xyz=raw[:3],raw_translation_norm=math.dist(raw[:3],[0,0,0]),
+                        raw_rotation_xyz=raw[3:6],raw_rotation_norm=math.dist(raw[3:6],[0,0,0]),gripper_closedness=raw[6],
+                        instruction=config['instruction'],inference_latency_s=finished-started,camera_age_s=camera_age,
+                        camera_failure=camera_age>=.5,jointstate_runtime=after,encoding=msg.encoding,resolution=[msg.width,msg.height],
+                        camera_source_stamp=dict(sec=msg.header.stamp.sec,nanosec=msg.header.stamp.nanosec),
+                        camera_receive_monotonic=received,source_to_response_age_s=node.get_clock().now().nanoseconds/1e9-(msg.header.stamp.sec+msg.header.stamp.nanosec/1e9),
+                        tcp_source='FK_ESTIMATED_FLANGE',tcp_contract_verified=False,command_requested=False,
+                        command_issued=False,delivered_action=None,executed_action=None)
+                    rgb.save(output/'sample_camera_rgb.png')
+                    (output/'sample_model_input.jpg').write_bytes(jpeg)
+                    sample['source_image_sha256']=hashlib.sha256(bytes(msg.data)).hexdigest()
+                    sample['model_jpeg_sha256']=hashlib.sha256(jpeg).hexdigest()
+                except Exception as exc:sample.update(status='FAIL',reason=str(exc))
+            (output/'sample_prediction.json').write_text(json.dumps(sample,indent=2))
         with lock:
             final=state.status(time.monotonic());cam=dict(camera[0]) if camera[0] else None
             events=list(state.events);samples=list(rows)
@@ -110,6 +173,8 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--runtime-duration',type=float,default=0.)
     parser.add_argument('--hardware-refresh',action='store_true')
+    parser.add_argument('--single-prediction',action='store_true')
     args=parser.parse_args()
     if args.runtime_duration<0:parser.error('--runtime-duration must be nonnegative')
-    run(args.output,args.runtime_duration,args.hardware_refresh)
+    if args.single_prediction and not args.hardware_refresh:parser.error('--single-prediction requires --hardware-refresh')
+    run(args.output,args.runtime_duration,args.hardware_refresh,args.single_prediction)

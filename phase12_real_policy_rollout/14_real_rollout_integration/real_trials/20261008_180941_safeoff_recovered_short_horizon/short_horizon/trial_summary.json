@@ -1,0 +1,14 @@
+{
+  "status": "NOT_STARTED",
+  "runtime_valid": null,
+  "task_success": null,
+  "command_count": 0,
+  "prediction_count": 0,
+  "invalid_reason": null,
+  "block_reason": [
+    "CURRENT_ROBOT_STATE_SAFE_OFF",
+    "TCP_ACTION_CONTRACT_UNVERIFIED"
+  ],
+  "estop_used": null,
+  "unexpected_motion": null
+}

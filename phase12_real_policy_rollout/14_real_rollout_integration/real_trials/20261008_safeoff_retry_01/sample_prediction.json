@@ -1,0 +1,62 @@
+{
+  "status": "FAIL",
+  "raw_action": [
+    0.0014968155858540912,
+    0.0026335443427412267,
+    -0.007474322441489991,
+    -0.008621855310862958,
+    0.002364704483548279,
+    0.014905046792334375,
+    0.0019607843137254832
+  ],
+  "physical_commands": 0,
+  "raw_translation_xyz": [
+    0.0014968155858540912,
+    0.0026335443427412267,
+    -0.007474322441489991
+  ],
+  "raw_translation_norm": 0.008064831595427207,
+  "raw_rotation_xyz": [
+    -0.008621855310862958,
+    0.002364704483548279,
+    0.014905046792334375
+  ],
+  "raw_rotation_norm": 0.017380697229330198,
+  "gripper_closedness": 0.0019607843137254832,
+  "instruction": "Pick up the orange cube.",
+  "inference_latency_s": 0.769390279892832,
+  "camera_age_s": 0.8028486962430179,
+  "camera_failure": true,
+  "jointstate_runtime": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2339421.533439493,
+    "discovery_delay_s": 0.9701262209564447,
+    "latest_receive_age_s": 0.007273395080119371,
+    "source_gap": 0.009964466094970703,
+    "receive_gap": 0.009052596986293793,
+    "clean_since": 2339421.533439493,
+    "clean_window_s": 20.93701813928783,
+    "ready_at": 2339431.533485253,
+    "readiness_timeout_s": 120.0
+  },
+  "encoding": "bgra8",
+  "resolution": [
+    1280,
+    720
+  ],
+  "camera_source_stamp": {
+    "sec": 1791450879,
+    "nanosec": 30540173
+  },
+  "camera_receive_monotonic": 2339441.667608936,
+  "source_to_response_age_s": 0.9295332431793213,
+  "tcp_source": "FK_ESTIMATED_FLANGE",
+  "tcp_contract_verified": false,
+  "command_requested": false,
+  "command_issued": false,
+  "delivered_action": null,
+  "executed_action": null,
+  "source_image_sha256": "9a0aa6f8edac5f7bab3ceea5e8a69bc3c187c236b8b27b6a7e03b1a0d1ba09c1",
+  "model_jpeg_sha256": "042b5d5a09298b8236130bae9b4fa44d20c8a0e5c6523ddd9115b381b79613c4"
+}

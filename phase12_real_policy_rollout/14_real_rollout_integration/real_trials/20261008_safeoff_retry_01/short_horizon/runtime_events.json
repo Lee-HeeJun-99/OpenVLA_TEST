@@ -1,0 +1,25 @@
+{
+  "performance_trial_started": false,
+  "preflight_events": [
+    {
+      "reason": "CAMERA_SELECTED_FRAME_STALE",
+      "age_s": 0.8028486962430179,
+      "threshold_s": 0.5
+    },
+    {
+      "reason": "RAW_TRANSLATION_LIMIT_DIAGNOSTIC",
+      "norm_m": 0.008064831595427207,
+      "existing_limit_m": 0.004
+    }
+  ],
+  "jointstate_runtime": {
+    "duration_requested_s": 0,
+    "duration_observed_s": 11.347740339580923,
+    "sample_count": 1136,
+    "max_source_gap_s": 0.012486934661865234,
+    "max_receive_gap_s": 0.017977672163397074,
+    "source_gap_ge_100ms": 0,
+    "receive_gap_ge_100ms": 0
+  },
+  "physical_commands": 0
+}

@@ -1,0 +1,40 @@
+{
+  "safe_off_recovered": true,
+  "system": "REAL",
+  "mode": "AUTO",
+  "state": "STANDBY",
+  "provenance": "DRIVER_REPORTED",
+  "raw_responses": {
+    "mode": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_mode": 1,
+        "success": true
+      },
+      "requested_at": 1791450869.092709,
+      "latency_s": 0.010614058002829552,
+      "provenance": "DRIVER_REPORTED"
+    },
+    "state": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_state": 1,
+        "success": true
+      },
+      "requested_at": 1791450869.1043444,
+      "latency_s": 0.010179872158914804,
+      "provenance": "DRIVER_REPORTED"
+    },
+    "system": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_system": 0,
+        "success": true
+      },
+      "requested_at": 1791450869.1159952,
+      "latency_s": 0.010230287909507751,
+      "provenance": "DRIVER_REPORTED"
+    }
+  },
+  "setters_called": 0
+}
