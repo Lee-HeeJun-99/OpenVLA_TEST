@@ -50,7 +50,7 @@ def main():
     save('tcp_offset_sources',dict(verified=False,classification='CANDIDATE_ONLY',active_name_unknown=True,search_exit=search.returncode,stderr=search.stderr,search_file='offset_candidate_search.txt'))
     log_offsets={str(p):p.stat().st_size for p in Path('/home/ubuntu/.ros/log').glob('ros2_control_node_*.log')}
     save('driver_log_offsets',log_offsets)
-    rclpy.init();node=rclpy.create_node('phase12_final_persistent_precheck')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_final_persistent_precheck')
     lock=threading.RLock();state=JointStateStartup(time.monotonic());rows=[];logs=[];latest=[None];frames={};messages={};subscriptions={}
     def joints(m):
         now=time.monotonic();source=m.header.stamp.sec+m.header.stamp.nanosec/1e9

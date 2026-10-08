@@ -1,0 +1,35 @@
+{
+  "phase": "POST_DISCOVERY_WARMUP",
+  "subscribers": {
+    "best_effort": {
+      "count": 1000,
+      "coverage_s": 9.98987797088921,
+      "rate_hz": 100.00122152754163,
+      "latest_receive_age_s": 30.01008395012468,
+      "max_source_gap_s": 0.011274732,
+      "max_receive_gap_s": 0.011332014109939337,
+      "duplicate": 0,
+      "regression": 0,
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joints": 0,
+      "event_ge_100ms": 0,
+      "pass_runtime": false
+    },
+    "reliable": {
+      "count": 1001,
+      "coverage_s": 9.999947319738567,
+      "rate_hz": 100.00052680538955,
+      "latest_receive_age_s": 30.00990957627073,
+      "max_source_gap_s": 0.011274732,
+      "max_receive_gap_s": 0.011371363885700703,
+      "duplicate": 0,
+      "regression": 0,
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joints": 0,
+      "event_ge_100ms": 0,
+      "pass_runtime": false
+    }
+  }
+}

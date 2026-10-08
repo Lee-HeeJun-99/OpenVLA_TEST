@@ -1,0 +1,9 @@
+{
+  "branch": "lhj-research",
+  "head": "727afd6a4f79686a6d2aeff3beca72ec15be39c5",
+  "driver_pid": 3110373,
+  "zed_pid": 3110521,
+  "ROS_DOMAIN_ID": null,
+  "RMW_IMPLEMENTATION_env": null,
+  "physical_commands": 0
+}

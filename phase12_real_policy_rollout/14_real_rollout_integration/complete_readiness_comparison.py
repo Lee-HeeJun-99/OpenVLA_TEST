@@ -32,7 +32,7 @@ def main():
         git=[command(['git','branch','--show-current'],cwd=ROOT),command(['git','rev-parse','HEAD'],cwd=ROOT),command(['git','status','--short'],cwd=ROOT)],
         processes=command(['ps','-eo','pid,ppid,args']))
     save('00_environment',env)
-    rclpy.init();node=rclpy.create_node('phase12_feature_flagged_readiness_audit')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_feature_flagged_readiness_audit')
     lock=threading.RLock();rows=[];images=[None];frames={};messages={};logs=[];graph=[];flags=set();subscriptions={};current=[JointStateStartup(time.monotonic())];run_id=['INIT']
     def js(m):
         now=time.monotonic();source=m.header.stamp.sec+m.header.stamp.nanosec/1e9

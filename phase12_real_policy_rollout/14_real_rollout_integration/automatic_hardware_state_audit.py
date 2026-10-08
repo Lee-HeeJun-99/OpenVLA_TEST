@@ -38,7 +38,7 @@ def main():
         entries.append(dict(type='dsr_msgs2/srv/'+name,request=srv.Request.get_fields_and_field_types(),response=srv.Response.get_fields_and_field_types(),source_srv=str(next(SOURCE.glob('dsr_msgs2/srv/**/'+name+'.srv'))),callback_file=str(SOURCE/'dsr_controller2/src/dsr_controller2.cpp'),callback_line=cpp[:at].count('\n')+1,callback=cpp[at:end+3],service_registration=creation,drfl=drfl,wrapper=[line.strip() for line in header.splitlines() if re.search(r'\b'+drfl+r'\(',line)],classification='READ_ONLY_BUT_LIVE_STABILITY_UNVERIFIED',called=False,reason='Visible callback is getter-only; vendor implementation/stability not proven. Posx has prior feedback-loss correlation.'))
     save('read_only_interface_classification.json',dict(getters=entries,forbidden_classes=['STATE_CHANGING','UNKNOWN'],setter_classification='STATE_CHANGING',getter_requests=0))
     (out/'doosan_getter_source_audit.md').write_text('# Getter source audit\n\nNo getter was invoked: none meets SAFE_READ_ONLY live-stability evidence.\nGetCurrentTcp/GetCurrentTool return only string info; success=true is hardcoded, not an independent SDK success check.\n\n'+ '\n\n'.join('## '+e['type']+'\n\n```json\n'+json.dumps(e,indent=2)+'\n```' for e in entries))
-    rclpy.init(); node=rclpy.create_node('phase12_automatic_passive_hardware_audit')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init(); node=rclpy.create_node('phase12_automatic_passive_hardware_audit')
     joints=[]; images=[]; frames={}; descriptions=[]; states={}; logs=[]
     canonical=[f'joint_{i}' for i in range(1,7)]
     def js(m):

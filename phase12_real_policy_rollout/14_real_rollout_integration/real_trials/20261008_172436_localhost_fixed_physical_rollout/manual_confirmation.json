@@ -1,0 +1,7 @@
+{
+  "operator_present": "MANUAL_CONFIRMATION_REQUIRED",
+  "workspace_clear": "MANUAL_CONFIRMATION_REQUIRED",
+  "estop_accessible": "MANUAL_CONFIRMATION_REQUIRED",
+  "robot_stationary": "MANUAL_CONFIRMATION_REQUIRED",
+  "actual_confirmations_received": false
+}

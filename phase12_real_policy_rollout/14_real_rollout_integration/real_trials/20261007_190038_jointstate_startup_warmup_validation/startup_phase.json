@@ -1,0 +1,35 @@
+{
+  "phase": "STARTUP_DISCOVERY_PHASE",
+  "subscribers": {
+    "best_effort": {
+      "count": 2,
+      "coverage_s": 0.009407322853803635,
+      "rate_hz": 106.30016802236919,
+      "latest_receive_age_s": 40.00026185717434,
+      "max_source_gap_s": 0.009999518,
+      "max_receive_gap_s": 0.009407322853803635,
+      "duplicate": 0,
+      "regression": 0,
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joints": 0,
+      "event_ge_100ms": 0,
+      "pass_runtime": false
+    },
+    "reliable": {
+      "count": 0,
+      "coverage_s": 0,
+      "rate_hz": 0,
+      "latest_receive_age_s": null,
+      "max_source_gap_s": null,
+      "max_receive_gap_s": null,
+      "duplicate": 0,
+      "regression": 0,
+      "invalid_position": 0,
+      "invalid_velocity": 0,
+      "missing_joints": 0,
+      "event_ge_100ms": 0,
+      "pass_runtime": false
+    }
+  }
+}

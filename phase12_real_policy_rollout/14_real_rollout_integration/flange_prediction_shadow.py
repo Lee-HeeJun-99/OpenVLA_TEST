@@ -42,7 +42,7 @@ def run(args):
         with urlopen(url+'/health',timeout=3) as f:h=json.load(f)
         if strict:validate_identity(h,'openvla')
         return h
-    h=health();rclpy.init();node=rclpy.create_node('phase12_flange_prediction_only')
+    h=health();__import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_flange_prediction_only')
     lock=threading.RLock();samples=[];camera=[None];camera_rows=[];fault=[None];halt=threading.Event()
     readiness=JointStateStartup(time.monotonic())
     fk=A0509FlangeFK('/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf')

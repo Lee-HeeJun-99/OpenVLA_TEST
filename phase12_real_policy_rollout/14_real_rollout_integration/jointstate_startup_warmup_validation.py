@@ -13,7 +13,7 @@ def phase_at(t,first,t0):
 
 def main():
     out=ROOT/'real_trials'/datetime.datetime.now().strftime('%Y%m%d_%H%M%S_jointstate_startup_warmup_validation');out.mkdir(exist_ok=False,parents=True)
-    rclpy.init();node=rclpy.create_node('phase12_jointstate_fixed_phase_validation')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_jointstate_fixed_phase_validation')
     rows={'best_effort':[],'reliable':[]};firsts={};discovery=[];allrows=[]
     started=time.monotonic();deadline=started+60;first=None;t0=None;end=None
     def receive(kind):

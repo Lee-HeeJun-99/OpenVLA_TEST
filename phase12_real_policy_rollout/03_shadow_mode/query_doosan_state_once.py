@@ -38,7 +38,7 @@ def call(node,name,type_name,srv_type,timeout_sec=3.0):
     return common
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--only',choices=[s[0] for s in SPECS]);parser.add_argument('--timeout',type=float,default=3.0);args=parser.parse_args()
-    rclpy.init();node=Node('phase12_read_only_state_once')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=Node('phase12_read_only_state_once')
     selected=[s for s in SPECS if args.only is None or s[0]==args.only]
     try: print(json.dumps({'classification':'READ_ONLY_ONE_SHOT','results':[call(node,*s,timeout_sec=args.timeout) for s in selected],'command_issued':False,'executed_action':None,'robot_delivered_command':None},ensure_ascii=False))
     finally: node.destroy_node();rclpy.shutdown()

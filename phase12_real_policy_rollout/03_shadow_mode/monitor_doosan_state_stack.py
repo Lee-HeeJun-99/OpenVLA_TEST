@@ -51,7 +51,7 @@ class Monitor(Node):
    'pass':valid and all_up and span/elapsed>=.95 and 90<=((len(self.samples)-1)/span if span>0 else 0)<=110,
    'command_issued':False}
 def main():
- rclpy.init();m=Monitor(30.0)
+ __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();m=Monitor(30.0)
  try:print(json.dumps(m.run(),separators=(',',':')))
  finally:m.destroy_node();rclpy.shutdown()
 if __name__=='__main__':main()

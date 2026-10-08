@@ -1,0 +1,43 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "BLOCKED_VERIFIED_ACTIVE_TCP_REQUIRED_BY_EXISTING_MINIMUM_MOTION_PATH",
+  "branch": "lhj-research",
+  "head": "727afd6a4f79686a6d2aeff3beca72ec15be39c5",
+  "command_type": "MoveLine_CARTESIAN_ACTIVE_TCP",
+  "service": "/dsr01/motion/move_line",
+  "reference": 0,
+  "requested_delta_m": [
+    0.0005,
+    0,
+    0
+  ],
+  "rotation_delta": [
+    0,
+    0,
+    0
+  ],
+  "maximum_actions": 1,
+  "gripper_enabled": false,
+  "physical_commands": 0,
+  "command_clients_created": 0,
+  "observed_joint_delta": null,
+  "observed_flange_delta": null,
+  "command_ack": null,
+  "jointstate_during_motion": "NOT_EXECUTED",
+  "unexpected_direction": null,
+  "unexpected_scale": null,
+  "estop_used": null,
+  "final_robot_state": "NOT_RECHECKED",
+  "current_verified_tcp": "UNKNOWN",
+  "operator_confirmation": "NOT_PROVIDED",
+  "existing_minimum_motion_joint_or_flange_alternative": "NOT_IMPLEMENTED_IN_THIS_PROTOCOL",
+  "new_motion_path_created": false,
+  "production_safety_changed": false,
+  "next_stage": "BLOCKED",
+  "source_evidence": [
+    "configs/minimum_motion.yaml deterministic_delta_m",
+    "run_real_rollout.py minimum_motion builds canonical Cartesian delta",
+    "Controller.step sends target_pose_candidate_mm_zyz_deg via send_pose",
+    "real_sink.py send_pose uses MoveLine ref=0 mode=0"
+  ]
+}

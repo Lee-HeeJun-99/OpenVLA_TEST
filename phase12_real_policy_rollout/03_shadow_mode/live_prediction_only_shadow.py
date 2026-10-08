@@ -58,7 +58,7 @@ def main():
     p.add_argument("--timeout",type=float,default=5);p.add_argument("--instruction",default="Pick up the orange cube.")
     p.add_argument("--camera-topic",default="/zed/zed_node/rgb/color/rect/image")
     p.add_argument("--joint-topic",default="/dsr01/joint_states");a=p.parse_args()
-    rclpy.init(); node=PassiveInputs(a.camera_topic,a.joint_topic); end=time.monotonic()+a.duration; nxt=0.; seen=set(); count=0
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init(); node=PassiveInputs(a.camera_topic,a.joint_topic); end=time.monotonic()+a.duration; nxt=0.; seen=set(); count=0
     try:
       with FsyncJsonlLogger(a.output) as logger:
        while rclpy.ok() and time.monotonic()<end:

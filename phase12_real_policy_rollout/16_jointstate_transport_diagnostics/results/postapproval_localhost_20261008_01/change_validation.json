@@ -1,0 +1,29 @@
+{
+  "scope": "Local A0509 ROS entry paths only",
+  "environment_enforced": {"ROS_LOCALHOST_ONLY": "1"},
+  "unchanged": ["ROS_DOMAIN_ID", "RMW_IMPLEMENTATION", "rt_host", "network configuration", "rollout architecture", "production safety thresholds"],
+  "coverage": ["Doosan real bringup source and installed launch", "ZED launch source (installed symlink)", "OpenVLA local shell and three launch source/installed paths", "OpenVLA nine node entrypoints source/installed paths", "Phase12 live and passive Python entrypoints and inherited ROS subprocesses"],
+  "excluded": ["Docker entrypoints and Dockerfiles", "cross-PC deployment candidates", "historical trial scripts", "isolated fake DDS tests"],
+  "systemd": "No ROS service found in audited scope",
+  "tests": {"unit_tests": {"passed": 7, "failed": 0}, "no_node_launch_contexts": {"passed": 4, "failed": 0}, "shell_syntax": "PASS"},
+  "measurement": {
+    "topic": "/dsr01/joint_states",
+    "duration_s": 180.00824567396194,
+    "samples": 18002,
+    "receive_rate_hz": 100.00097458093182,
+    "max_source_gap_ms": 12.475486,
+    "max_receive_gap_ms": 19.90731805562973,
+    "source_gap_ge_100ms": 0,
+    "receive_gap_ge_100ms": 0,
+    "first_receive_delay_s": 2.858953259885311,
+    "invalid_samples": 0,
+    "duplicate_timestamps": 0,
+    "timestamp_regressions": 0,
+    "parent_ROS_LOCALHOST_ONLY": "0",
+    "observed_ROS_LOCALHOST_ONLY": "1"
+  },
+  "verdict": "NO_100MS_RECEIVE_GAP_OBSERVED_IN_180S",
+  "limitations": ["No guarantee that intermittent delay cannot recur", "Existing processes were not restarted to exercise new launch files", "No physical motion readiness claimed", "Docker cross-host DDS compatibility remains unmodified"],
+  "processes_stopped_or_restarted_by_agent": 0,
+  "physical_commands": 0
+}

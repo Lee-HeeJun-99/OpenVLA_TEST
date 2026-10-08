@@ -25,7 +25,7 @@ def main():
     output=root/'real_trials'/(time.strftime('%Y%m%d_%H%M%S')+'_tcp_hardware_precheck')
     output.mkdir(parents=True,exist_ok=False)
     def save(name,data):(output/(name+'.json')).write_text(json.dumps(data,indent=2))
-    rclpy.init();node=rclpy.create_node('phase12_persistent_tcp_hardware_precheck')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_persistent_tcp_hardware_precheck')
     lock=threading.RLock();state=JointStateStartup(time.monotonic());rows=[];logs=[];cameras=[]
     log_files={p:str(p.stat().st_size) for p in Path('/home/ubuntu/.ros/log').glob('**/*.log')}
     def joint(m):

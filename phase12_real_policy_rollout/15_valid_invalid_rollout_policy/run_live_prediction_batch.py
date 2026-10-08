@@ -47,7 +47,7 @@ def run(args):
     output.mkdir(parents=True, exist_ok=False)
     config = yaml.safe_load((ROOT.parent/'14_real_rollout_integration/configs/real_openvla.yaml').read_text())
     url = config['server_url']
-    rclpy.init()
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init()
     node = rclpy.create_node('phase12_prediction_only_batch')
     lock = threading.RLock()
     stop = threading.Event()

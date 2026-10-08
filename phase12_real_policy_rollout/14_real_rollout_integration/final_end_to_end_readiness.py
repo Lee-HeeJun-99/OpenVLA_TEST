@@ -93,7 +93,7 @@ def main():
         validate_identity(health,'openvla');health_ok=True
         save('04_model_health',dict(status='MODEL_HEALTH_PASS',payload=health,wall_time=time.time()))
     except Exception as exc: save('04_model_health',dict(status='FAIL',reason=str(exc)))
-    rclpy.init();node=rclpy.create_node('phase12_minimal_long_readiness')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_minimal_long_readiness')
     lock=threading.RLock();halt=threading.Event();state=JointStateStartup(time.monotonic());rows=[];camera=[None];cam_rows=[];host=[];hardware={};activity=['INFERENCE_OFF'];logger_fault=[];watch_events=[]
     def joints(m):
         now=time.monotonic();source=m.header.stamp.sec+m.header.stamp.nanosec/1e9

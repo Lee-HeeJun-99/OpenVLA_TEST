@@ -1,0 +1,9 @@
+{
+  "verified_wall_time": 1791448102.11931,
+  "ros_graph_alive": true,
+  "joint_state_ready": true,
+  "camera_ready": true,
+  "model_ready": false,
+  "logger_ready": true,
+  "source": "READ_ONLY_CURRENT_SESSION_NO_HARDWARE_OR_MANUAL_ASSUMPTIONS"
+}

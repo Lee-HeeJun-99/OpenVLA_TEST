@@ -1,0 +1,33 @@
+{
+  "sample_count": 18002,
+  "receive_coverage_s": 180.00824567396194,
+  "receive_rate_hz": 100.00097458093182,
+  "max_source_gap_s": 0.012475486,
+  "max_receive_gap_s": 0.01990731805562973,
+  "source_gap_ge_100ms": 0,
+  "receive_gap_ge_100ms": 0,
+  "duplicate_source_timestamps": 0,
+  "regressions": 0,
+  "invalid_samples": 0,
+  "interpretation": "DIAGNOSTIC_ONLY_NOT_MOTION_READINESS",
+  "case": "postapproval_entrypoint_enforces_localhost",
+  "topic": "/dsr01/joint_states",
+  "duration_requested_s": 180.0,
+  "first_receive_delay_s": 2.858953259885311,
+  "latest_receive_age_s": 0.02624937705695629,
+  "rmw": "rmw_fastrtps_cpp",
+  "environment": {
+    "ROS_DOMAIN_ID": null,
+    "ROS_LOCALHOST_ONLY": "1",
+    "RMW_IMPLEMENTATION": null
+  },
+  "qos": {
+    "reliability": "BEST_EFFORT",
+    "durability": "VOLATILE",
+    "history": "KEEP_LAST",
+    "depth": 1
+  },
+  "publisher_endpoints": [],
+  "physical_commands": 0,
+  "settings_changed": false
+}

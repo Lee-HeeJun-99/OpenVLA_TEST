@@ -1,0 +1,19 @@
+{
+  "stage": "minimum_motion",
+  "status": "NOT_EXECUTED",
+  "authorized": false,
+  "result": "BLOCKED",
+  "physical_commands": 0,
+  "requested_delta_specification": "BASE_X_PLUS_0.5_MM",
+  "requested_target": null,
+  "observed_delta": null,
+  "ack": null,
+  "unexpected_motion": null,
+  "estop_used": null,
+  "reason": [
+    "TCP_CONTRACT_UNVERIFIED",
+    "HARDWARE_AUTHORITY_SERVO_STOP_UNKNOWN",
+    "MANUAL_CONFIRMATIONS_MISSING",
+    "OPENVLA_HEALTH_CONNECTION_REFUSED"
+  ]
+}

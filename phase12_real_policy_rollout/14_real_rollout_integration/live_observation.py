@@ -27,7 +27,7 @@ class LiveObservation:
         from rclpy.qos import qos_profile_sensor_data
         from sensor_msgs.msg import Image as ImageMsg,JointState
         from std_msgs.msg import Float64MultiArray
-        rclpy.init();self.node=rclpy.create_node('phase12_gated_rollout_observation')
+        __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();self.node=rclpy.create_node('phase12_gated_rollout_observation')
         from robot_state_monitor import RobotStateMonitor
         self.hardware_monitor=RobotStateMonitor()
         self.executor=MultiThreadedExecutor(num_threads=4);self.executor.add_node(self.node)

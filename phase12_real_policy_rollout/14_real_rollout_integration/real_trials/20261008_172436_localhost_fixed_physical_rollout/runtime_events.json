@@ -1,0 +1,7 @@
+{
+  "physical_trial_started": false,
+  "jointstate_runtime_faults": 0,
+  "startup_events": 0,
+  "model_preflight_error": "CONNECTION_REFUSED_127.0.0.1_8766",
+  "observation_log": "hardware_current_session/jointstate_samples.json"
+}

@@ -24,7 +24,7 @@ class Once(Node):
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--topic',default='/dsr01/joint_states')
     ap.add_argument('--timeout',type=float,default=5.0); ap.add_argument('--urdf',required=True); ap.add_argument('--output',required=True)
-    a=ap.parse_args(); rclpy.init(); n=Once(a.topic); deadline=time.monotonic()+a.timeout
+    a=ap.parse_args(); __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init(); n=Once(a.topic); deadline=time.monotonic()+a.timeout
     while n.msg is None and time.monotonic()<deadline: rclpy.spin_once(n,timeout_sec=.1)
     if n.msg is None: raise SystemExit('ERROR: JointState timeout; no output written')
     m=n.msg; fk=A0509FlangeFK(a.urdf).compute(reorder_joint_state(m.name,m.position))

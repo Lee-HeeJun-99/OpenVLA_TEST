@@ -132,7 +132,7 @@ def main() -> None:
     parser.add_argument("--output")
     arguments = parser.parse_args()
 
-    rclpy.init()
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init()
     probe = Probe(arguments.topic, reliable=not arguments.best_effort)
     started = time.monotonic()
     try:

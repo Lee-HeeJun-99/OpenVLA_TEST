@@ -57,7 +57,7 @@ def main():
     ap.add_argument('--compressed-topic',default='/zed/zed_node/rgb/color/rect/image/compressed')
     ap.add_argument('--no-hash',action='store_true',help='Disable frame hashing for a low-overhead timing probe')
     ap.add_argument('--output',required=True); args=ap.parse_args()
-    rclpy.init(); node=Probe(args.raw_topic,args.compressed_topic,not args.no_hash); end=time.monotonic()+args.duration
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init(); node=Probe(args.raw_topic,args.compressed_topic,not args.no_hash); end=time.monotonic()+args.duration
     while rclpy.ok() and time.monotonic()<end: rclpy.spin_once(node,timeout_sec=.1)
     out={'classification':'ZED_SUBSCRIBER_ONLY_CONTINUITY_PROBE','duration_s':args.duration,
          'raw_topic':args.raw_topic,'compressed_topic':args.compressed_topic,

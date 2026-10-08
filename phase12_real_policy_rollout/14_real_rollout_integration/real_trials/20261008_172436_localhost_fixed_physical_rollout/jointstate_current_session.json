@@ -1,0 +1,21 @@
+{
+  "status": "JOINTSTATE_CURRENT_SESSION_PASS",
+  "first": {
+    "runtime_s": 30.006351014133543,
+    "samples": 3001,
+    "max_source_gap_ms": 12.462854385375977,
+    "max_receive_gap_ms": 35.74555413797498,
+    "gap_ge_100ms": 0
+  },
+  "hardware_refresh_session": {
+    "runtime_including_post_getter_watch_s": 40.13229589024559,
+    "samples": 4014,
+    "max_source_gap_ms": 12.819528579711914,
+    "max_receive_gap_ms": 24.423652794212103,
+    "gap_ge_100ms": 0,
+    "phase": "RUNTIME_READY",
+    "fault": null
+  },
+  "startup_policy": "10_CONSECUTIVE_CLEAN_SECONDS",
+  "watchdog_thresholds_unchanged": true
+}

@@ -8,6 +8,7 @@ operator_approved_hardware_initialization:=true.
 """
 
 from launch import LaunchDescription
+from launch.actions import SetEnvironmentVariable
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
@@ -72,7 +73,7 @@ def _validated_nodes(context):
 
 def generate_launch_description():
     return LaunchDescription(
-        [
+        [SetEnvironmentVariable("ROS_LOCALHOST_ONLY", "1")] + [
             DeclareLaunchArgument("name", default_value="dsr01"),
             DeclareLaunchArgument("host", default_value="192.168.0.110"),
             DeclareLaunchArgument("rt_host", default_value="192.168.137.50"),
@@ -87,4 +88,3 @@ def generate_launch_description():
             OpaqueFunction(function=_validated_nodes),
         ]
     )
-

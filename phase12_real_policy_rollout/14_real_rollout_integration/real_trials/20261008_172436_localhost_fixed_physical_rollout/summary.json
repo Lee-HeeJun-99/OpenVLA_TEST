@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "readiness": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2336480.955583198,
+    "discovery_delay_s": 0.9668604377657175,
+    "latest_receive_age_s": 0.00031294580549001694,
+    "source_gap": 0.009993791580200195,
+    "receive_gap": 0.010687039233744144,
+    "clean_since": 2336480.955583198,
+    "clean_window_s": 40.010899303946644,
+    "ready_at": 2336490.96101138,
+    "readiness_timeout_s": 120.0
+  },
+  "startup_events": 0,
+  "clean_window_acquired": true,
+  "time_to_runtime_ready_s": 10.972288619726896,
+  "camera_current": {
+    "receive": 2336520.952751777,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "camera_current_ready": true,
+  "model_identity_pass": false,
+  "model_error": "<urlopen error [Errno 111] Connection refused>",
+  "preflight": {
+    "checks": {
+      "ros_graph_alive": true,
+      "camera_ready": true,
+      "joint_state_ready": true,
+      "tcp_ready": false,
+      "robot_mode_confirmed": false,
+      "servo_confirmed": false,
+      "estop_confirmed": false,
+      "protective_stop_confirmed": false,
+      "workspace_confirmed": false,
+      "gripper_polarity_confirmed": false,
+      "gripper_initial_confirmed": false,
+      "clock_valid": false,
+      "model_ready": false,
+      "logger_ready": true,
+      "disk_ready": false,
+      "command_path_confirmed": false,
+      "hold_path_confirmed": false
+    },
+    "evidence_fresh": true,
+    "OBSERVATION_READY": false,
+    "MODEL_READY": false,
+    "LOGGER_READY": false,
+    "COMMAND_PATH_READY": false,
+    "ROBOT_STATE_READY": false,
+    "SAFETY_READY": false,
+    "MOTION_READY": false,
+    "missing": [
+      "tcp_ready",
+      "robot_mode_confirmed",
+      "servo_confirmed",
+      "estop_confirmed",
+      "protective_stop_confirmed",
+      "workspace_confirmed",
+      "gripper_polarity_confirmed",
+      "gripper_initial_confirmed",
+      "clock_valid",
+      "model_ready",
+      "disk_ready",
+      "command_path_confirmed",
+      "hold_path_confirmed"
+    ]
+  },
+  "physical_commands": 0,
+  "task_trial_started": false,
+  "task_status": null,
+  "task_success": null,
+  "executor_error": [],
+  "current_session_runtime": {
+    "duration_requested_s": 30.0,
+    "duration_observed_s": 30.006351014133543,
+    "sample_count": 3001,
+    "max_source_gap_s": 0.012462854385375977,
+    "max_receive_gap_s": 0.03574555413797498,
+    "source_gap_ge_100ms": 0,
+    "receive_gap_ge_100ms": 0
+  }
+}

@@ -32,7 +32,7 @@ def main():
     graph={k:run(['ros2',k,'list']+(['-t'] if k in ('topic','service') else [])) for k in ('node','topic','service')};save('ros_graph.json',graph)
     from rclpy.utilities import get_rmw_implementation_identifier
     logoffset={Path(p):Path(p).stat().st_size for p in glob.glob('/home/ubuntu/.ros/log/ros2_control_node_*.log')}
-    rclpy.init();node=rclpy.create_node('phase12_integrated_readonly_readiness');lock=threading.RLock();stop=threading.Event()
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_integrated_readonly_readiness');lock=threading.RLock();stop=threading.Event()
     rows={'best_effort':[],'reliable':[]};camera=[None];timeline=[];hosts=[]
     def joint(kind):
         def cb(m):

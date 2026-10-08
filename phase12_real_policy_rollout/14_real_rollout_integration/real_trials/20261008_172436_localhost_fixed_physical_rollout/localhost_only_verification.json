@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "driver": {
+    "pid": 3110373,
+    "ROS_LOCALHOST_ONLY": "1"
+  },
+  "zed": {
+    "pid": 3110521,
+    "ROS_LOCALHOST_ONLY": "1"
+  },
+  "current_collector": {
+    "ROS_LOCALHOST_ONLY": "1"
+  },
+  "openvla_process": "NOT_FOUND_IN_CURRENT_PROCESS_SCAN",
+  "openvla_http_health": "CONNECTION_REFUSED",
+  "launch_and_python_entrypoints": "VALIDATED_PREVIOUS_TURN_7_TESTS_AND_4_NO_NODE_LAUNCH_CONTEXTS",
+  "existing_processes_restarted": 0
+}

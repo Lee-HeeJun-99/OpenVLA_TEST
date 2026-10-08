@@ -1,0 +1,38 @@
+{
+  "minimum_motion_authorized": false,
+  "mode": {
+    "value": "AUTO",
+    "raw": 1,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "state": {
+    "value": "STANDBY",
+    "raw": 1,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "system": {
+    "value": "REAL",
+    "raw": 0,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "enum_source": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_common2/include/DRFC.h",
+  "connection": "READ_ONLY_REQUEST_PATH_RESPONDED_NOT_CONTINUOUS_CONNECTION_VALIDATION",
+  "authority": "UNKNOWN",
+  "servo": "UNKNOWN",
+  "protective_stop": "UNKNOWN",
+  "emergency_stop": "UNKNOWN",
+  "camera_current_sample": {
+    "status": "PASS",
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "camera_selected_frame_inference_gate": "NOT_EVALUATED_MODEL_SERVER_UNAVAILABLE",
+  "model_current_health": "FAIL_CONNECTION_REFUSED",
+  "gripper_minimum_motion_protocol": "DISABLED",
+  "gripper_physical_state": "UNKNOWN",
+  "motion_sink_created": false,
+  "stop_test_executed": false
+}

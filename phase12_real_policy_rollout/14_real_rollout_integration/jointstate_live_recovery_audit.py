@@ -29,7 +29,7 @@ def main():
     save('controller_status.txt',run(['ros2','control','list_controllers','-c','/dsr01/controller_manager'],12))
     save('hardware_interface_report.txt',run(['ros2','control','list_hardware_interfaces','-c','/dsr01/controller_manager'],12))
     save('driver_process.txt',run(['ps','-eo','pid,ppid,stat,pcpu,pmem,nlwp,rss,args'],5))
-    rclpy.init();node=rclpy.create_node('phase12_jointstate_live_recovery_audit');rows={'best_effort':[],'reliable':[]}
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_jointstate_live_recovery_audit');rows={'best_effort':[],'reliable':[]}
     start=time.monotonic()
     def cb(kind):
         def receive(m):

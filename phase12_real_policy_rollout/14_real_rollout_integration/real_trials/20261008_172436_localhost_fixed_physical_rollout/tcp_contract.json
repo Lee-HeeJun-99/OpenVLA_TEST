@@ -1,0 +1,19 @@
+{
+  "classification": "TCP_FLANGE_ONLY",
+  "active_tcp": "UNKNOWN",
+  "active_tool": "UNKNOWN",
+  "active_offset_verified": false,
+  "current_tcp_pose_verified": false,
+  "current_pose": null,
+  "reference_frame": "UNVERIFIED_FOR_ACTIVE_TCP",
+  "prior_name_getter_responses": "EMPTY_STRING_NOT_RECALLED",
+  "current_graph_robotstate_tcp_publication": "NOT_DISCOVERED",
+  "candidate_config_active_binding": false,
+  "unsafe_cartesian_getters_called": 0,
+  "zero_offset_assumed": false,
+  "source_audit": {
+    "GetCurrentPose": "VENDOR_POINTER_DEREFERENCE_WITHOUT_NULL_CHECK_NOT_CALLED",
+    "GetCurrentPosx": "NULL_CHECK_PRESENT_BUT_PREVIOUS_LIVE_STABILITY_RISK_NOT_CALLED",
+    "GetCurrentToolFlangePosx": "CACHE_ONLY_WITHOUT_FRESHNESS_PROOF_NOT_CALLED"
+  }
+}

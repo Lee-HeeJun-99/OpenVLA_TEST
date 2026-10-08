@@ -4,14 +4,14 @@ from pathlib import Path
 from urllib.request import urlopen
 from jointstate_runtime_startup import JointStateStartup
 
-def run(output):
+def run(output, runtime_duration=0., hardware_refresh=False):
     import rclpy
     from sensor_msgs.msg import JointState,Image
     from rclpy.qos import qos_profile_sensor_data
     from verify_live_model_server import validate_identity
     from pre_real_rollout_check import preflight
     output.mkdir(parents=True,exist_ok=False)
-    rclpy.init();node=rclpy.create_node('phase12_clean_readiness_validation')
+    __import__("os").environ["ROS_LOCALHOST_ONLY"] = "1"; rclpy.init();node=rclpy.create_node('phase12_clean_readiness_validation')
     state=JointStateStartup(time.monotonic());lock=threading.RLock();rows=[];camera=[None];halt=threading.Event()
     def joints(msg):
         now=time.monotonic();source=msg.header.stamp.sec+msg.header.stamp.nanosec/1e9
@@ -35,6 +35,44 @@ def run(output):
             with lock:status=state.status(time.monotonic())
             if status['phase']=='RUNTIME_READY' or status['fault']:break
             time.sleep(.01)
+        runtime_start=time.monotonic()
+        while not status['fault'] and time.monotonic()-runtime_start<runtime_duration:
+            time.sleep(.01)
+            with lock:status=state.status(time.monotonic())
+        hardware={}
+        if hardware_refresh and not status['fault']:
+            import dsr_msgs2.srv as srv
+            from rosidl_runtime_py.convert import message_to_ordereddict
+            # Reviewed scalar read-only callbacks only; never pose/tool/motion APIs.
+            for key,type_name,path in [('mode','GetRobotMode','/dsr01/system/get_robot_mode'),
+                    ('state','GetRobotState','/dsr01/system/get_robot_state'),
+                    ('system','GetRobotSystem','/dsr01/system/get_robot_system')]:
+                with lock:status=state.status(time.monotonic())
+                if status['fault']:
+                    hardware[key]={'status':'NOT_CALLED_RUNTIME_FAULT'};continue
+                service_type=getattr(srv,type_name)
+                client=node.create_client(service_type,path)
+                try:
+                    if not client.wait_for_service(timeout_sec=1.):
+                        hardware[key]={'status':'NOT_DISCOVERED'};continue
+                    requested=time.time();started=time.monotonic()
+                    future=client.call_async(service_type.Request())
+                    while not future.done() and time.monotonic()-started<3.:
+                        time.sleep(.01)
+                        with lock:status=state.status(time.monotonic())
+                        if status['fault']:break
+                    if future.done():
+                        try:hardware[key]={'status':'RESPONSE','response':message_to_ordereddict(future.result()),
+                            'requested_at':requested,'latency_s':time.monotonic()-started,'provenance':'DRIVER_REPORTED'}
+                        except Exception as exc:hardware[key]={'status':'ERROR','error':str(exc)}
+                    else:hardware[key]={'status':'TIMEOUT_OR_RUNTIME_FAULT','requested_at':requested}
+                finally:node.destroy_client(client)
+            until=time.monotonic()+10.
+            while time.monotonic()<until:
+                time.sleep(.01)
+                with lock:status=state.status(time.monotonic())
+                if status['fault']:break
+            (output/'hardware_getters.json').write_text(json.dumps(hardware,indent=2))
         # Current health only; never call /predict or robot getters/services.
         try:
             with urlopen('http://127.0.0.1:8766/health',timeout=3) as response:health=json.load(response)
@@ -53,6 +91,15 @@ def run(output):
                     camera_current=cam,camera_current_ready=camera_ready,model_identity_pass=not model_error and health is not None,
                     model_error=model_error,preflight=preflight(evidence,dry_run=True),physical_commands=0,
                     task_trial_started=False,task_status=None,task_success=None,executor_error=spin_error)
+        runtime_rows=[r for r in samples if state.ready_at is not None and r['receive']>=state.ready_at]
+        result['current_session_runtime']=dict(duration_requested_s=runtime_duration,
+            duration_observed_s=time.monotonic()-runtime_start, sample_count=len(runtime_rows),
+            max_source_gap_s=max((r['source_gap'] for r in runtime_rows if r['source_gap'] is not None),default=None),
+            max_receive_gap_s=max((r['receive_gap'] for r in runtime_rows if r['receive_gap'] is not None),default=None),
+            source_gap_ge_100ms=sum((r['source_gap'] or 0)>=.1 for r in runtime_rows),
+            receive_gap_ge_100ms=sum((r['receive_gap'] or 0)>=.1 for r in runtime_rows))
+        graph=dict(topics=node.get_topic_names_and_types(),services=node.get_service_names_and_types())
+        (output/'ros_graph_snapshot.json').write_text(json.dumps(graph,indent=2))
         for name,value in [('summary.json',result),('startup_events.json',events),('jointstate_samples.json',samples),('model_health.json',health),('preflight_evidence.json',evidence)]:
             (output/name).write_text(json.dumps(value,indent=2))
         print(json.dumps(result,indent=2),flush=True)
@@ -61,4 +108,8 @@ def run(output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
-    run(parser.parse_args().output)
+    parser.add_argument('--runtime-duration',type=float,default=0.)
+    parser.add_argument('--hardware-refresh',action='store_true')
+    args=parser.parse_args()
+    if args.runtime_duration<0:parser.error('--runtime-duration must be nonnegative')
+    run(args.output,args.runtime_duration,args.hardware_refresh)
