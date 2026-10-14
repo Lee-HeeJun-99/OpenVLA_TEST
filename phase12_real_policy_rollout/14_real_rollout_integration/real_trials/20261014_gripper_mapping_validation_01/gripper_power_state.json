@@ -1,0 +1,17 @@
+{
+  "classification": "TOOL_POWER_UNKNOWN",
+  "actual_voltage": null,
+  "power_enabled": null,
+  "external_gripper_supply": null,
+  "pneumatic_supply": null,
+  "source_evidence": "ROS/source search found no audited current tool-voltage getter or published measured voltage",
+  "tool_output_level_setter_exists_in_vendor_SDK": true,
+  "read_only_power_source_available": false,
+  "power_setter_called": false,
+  "needs_manual_evidence": [
+    "gripper model",
+    "actual Tool/flange or control-box connection",
+    "power/voltage setting or supply evidence",
+    "connector pinout/wiring"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "hardware": {
+    "mode": {
+      "robot_mode": 1,
+      "success": true
+    },
+    "state": {
+      "robot_state": 1,
+      "success": true
+    },
+    "system": {
+      "robot_system": 0,
+      "success": true
+    }
+  },
+  "jointstate": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2864000.18154759,
+    "discovery_delay_s": 0.9659708100371063,
+    "latest_receive_age_s": 0.009620628785341978,
+    "source_gap": 0.009805440902709961,
+    "receive_gap": 0.00703708129003644,
+    "clean_since": 2864000.18154759,
+    "clean_window_s": 10.029518440831453,
+    "ready_at": 2864010.182144489,
+    "readiness_timeout_s": 120.0
+  },
+  "start_pose_error_deg": 4.7751735998247113e-05,
+  "camera_ready": true,
+  "model_ready": true,
+  "max_steps": 150,
+  "max_duration_s": 30,
+  "physical_gripper_disabled": true,
+  "task_success_not_applicable": true
+}

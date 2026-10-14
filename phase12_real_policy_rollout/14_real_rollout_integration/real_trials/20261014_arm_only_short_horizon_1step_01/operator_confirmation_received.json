@@ -1,0 +1,14 @@
+{
+  "operator_present": true,
+  "workspace_clear": true,
+  "estop_accessible": true,
+  "robot_stationary": true,
+  "tcp_arm_only_acceptance": true,
+  "explicit_one_arm_command": true,
+  "confirmed_wall_time": 1791967840,
+  "confirmation_recorded_utc": "2026-10-14 08:50:40 UTC",
+  "provenance": "CURRENT_USER_MESSAGE; receipt time recorded during this turn",
+  "fresh_dispatch_approval_validity_seconds": 60,
+  "dispatch_performed": false,
+  "status": "EXPIRED_DURING_RUNNER_PREPARATION"
+}

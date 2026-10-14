@@ -1,0 +1,12 @@
+{
+  "candidates": [
+    {"behavior": "NO_NEW_COMMAND", "code_support": "legacy bridge clears pending gripper, Controller inhibits future dispatch", "physical_consequence": "UNKNOWN; completed pulse may retain state, in-flight ON may remain ON", "qualifies_as_HOLD_LAST": false, "hardware_verified": false},
+    {"behavior": "HOLD_LAST", "observation_support": "OPEN->CLOSE sequence suggests stateful behavior", "physical_consequence": "retention under cancellation, power/air loss and partial pulse unproven", "hardware_verified": false, "requires_physical_test_and_hardware_evidence": true},
+    {"behavior": "OUTPUT_OFF", "code_support": "current sink explicitly accepts independently configured abort output", "physical_consequence": "electrical OFF known; jaw state unknown", "hardware_verified": false, "normal_pulse_off_not_used_as_failsafe_proof": true},
+    {"behavior": "OPEN", "code_support": "normal OPEN command exists", "fault_design_support_found": false, "physical_consequence": "may release a held cube; suitability unproven", "selected": false}
+  ],
+  "selected_behavior": null,
+  "classification": "GRIPPER_ABORT_PHYSICAL_TEST_REQUIRED",
+  "physical_test_requires_first": ["identify gripper model/wiring or state-retention specification", "select expected safe jaw behavior from design evidence", "fresh operator confirmation"],
+  "no_unsubstantiated_candidate_will_be_physically_executed": true
+}

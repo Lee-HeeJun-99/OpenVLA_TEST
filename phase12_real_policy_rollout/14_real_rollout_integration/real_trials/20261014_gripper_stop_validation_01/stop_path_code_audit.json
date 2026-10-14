@@ -1,0 +1,18 @@
+{
+ "path": "Controller.abort -> sink.inhibit -> AbortBoundary.abort -> sink.hold -> /dsr01/motion/move_stop",
+ "first_request": {"stop_mode": 3},
+ "first_mode_vendor_enum": "STOP_TYPE_HOLD",
+ "fallback_request_if_hold_not_completed": {"stop_mode": 0},
+ "fallback_mode_vendor_enum": "STOP_TYPE_QUICK_STO",
+ "mode_source": "dsr_common2/include/DRFC.h STOP_TYPE enum",
+ "driver_callback": "move_stop_cb -> Drfl->stop((STOP_TYPE)req->stop_mode)",
+ "stop_callback_group": "dedicated MutuallyExclusive cb_group_, separate from default motion callback group",
+ "motion_callback_group": "default group",
+ "separate_groups_support_concurrent_stop_but_not_actual_physical_proof": true,
+ "planned_test_motion": "existing minimum-motion BASE X +0.5 mm, one MoveLine, rotation zero, gripper disabled",
+ "planned_stop_trigger": "observed motion while MoveLine in flight; then existing AbortBoundary exactly once",
+ "idle_ACK_not_accepted_as_stop_proof": true,
+ "new_large_or_continuous_trajectory": false,
+ "requires_fresh_operator_confirmation": true,
+ "physical_stop_test_executed": false
+}

@@ -1,0 +1,7 @@
+{
+  "formal_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "formal_tcp_verified": false,
+  "engineering_basis_accepted_by_operator_for_requested_episode": true,
+  "evidence": ["pendant zero-offset candidate", "controller flange equals Current PosX", "FK/controller consistency", "actual arm one-step direction and scale confirmation"],
+  "this_does_not_override_other_execution_gates": true
+}

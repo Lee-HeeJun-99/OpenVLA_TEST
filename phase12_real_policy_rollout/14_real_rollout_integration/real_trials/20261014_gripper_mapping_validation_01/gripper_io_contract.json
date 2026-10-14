@@ -1,0 +1,110 @@
+{
+  "service": "/dsr01/io/set_tool_digital_output",
+  "type": "dsr_msgs2/srv/SetToolDigitalOutput",
+  "index_semantics": "ONE_BASED_FLANGE_TOOL_DIGITAL_PORT_1_TO_6; NOT_CONTROL_BOX_PORT_OR_PHYSICAL_PIN_NUMBER",
+  "driver_conversion": "request.index -=1 -> GPIO_TOOL_DIGITAL_INDEX -> Drfl->set_tool_digital_output(index,value)",
+  "controller_IO_is_separate": "/dsr01/io/set_ctrl_box_digital_output -> GPIO_CTRLBOX_DIGITAL_INDEX",
+  "open_candidate": {
+    "index": 1,
+    "active_value": 1,
+    "release_value": 0,
+    "mode": "pulse",
+    "width_s": 1,
+    "historical_count": 2
+  },
+  "close_candidate": {
+    "index": 2,
+    "active_value": 1,
+    "release_value": 0,
+    "mode": "pulse",
+    "width_s": 1,
+    "historical_count": 1
+  },
+  "current_states": {
+    "get_tool_digital_input/1": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.0021408330649137497,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 1
+    },
+    "get_tool_digital_input/2": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.0021138968877494335,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 2
+    },
+    "get_tool_digital_output/1": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.0021249377168715,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 1
+    },
+    "get_tool_digital_output/2": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.002114280126988888,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 2
+    },
+    "get_ctrl_box_digital_input/1": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.0021182261407375336,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 1
+    },
+    "get_ctrl_box_digital_input/2": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.002110105939209461,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 2
+    },
+    "get_ctrl_box_digital_output/1": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.0021111113019287586,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 1
+    },
+    "get_ctrl_box_digital_output/2": {
+      "status": "RESPONSE",
+      "response": {
+        "value": 0,
+        "success": true
+      },
+      "latency_s": 0.0021115941926836967,
+      "source": "AUDITED_SCALAR_READ_ONLY_CALLBACK",
+      "request_index": 2
+    }
+  },
+  "output_zero_interpretation": "OFF under DSR_ROBOT2 ON=1/OFF=0 and vendor bool bOnOff; not a jaw state",
+  "service_comment_discrepancy": "Set/GetToolDigitalOutput.srv says0=ON,1=OFF; this conflicts with wrapper constants and vendor bool bOnOff. No inversion applied based on stale comments.",
+  "opposite_channel_handling": "historical and current Phase12 pulse path toggle selected channel only; no explicit opposite-output-off interlock",
+  "wiring_binding": "UNKNOWN",
+  "physical_pinout": "UNKNOWN"
+}

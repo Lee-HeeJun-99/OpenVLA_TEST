@@ -1,0 +1,13 @@
+{
+  "faults_reviewed": ["model_failure", "JointState_fault", "camera_fault", "workspace_rejection", "arm_ACK_failure", "logger_failure", "operator_abort", "controller.abort", "sink.stop"],
+  "phase12_controller_common_path": "Controller.abort -> future dispatch inhibit -> gripper cancel -> AbortBoundary HOLD(3), Stop(0) fallback",
+  "phase12_pulse_cancel_path": "send_gripper wait interrupted -> selected output configured abort_value via emergency IO; missing abort_value blocks normal gripper operation",
+  "idle_gripper_abort_path": "no separate gripper IO write; prior physical jaw retention unproven",
+  "sink_stop_direct_call": "arm MoveStop only; not an independent gripper failsafe",
+  "historical_collector": "normal ON/sleep/OFF pulses; no documented hardware fault jaw-state contract",
+  "legacy_bridge_emergency_stop": "disable bridge; clear pending gripper; arm MoveStop; no explicit jaw OPEN/CLOSE failsafe",
+  "legacy_bridge_pulse_cancellation_risk": "interruptible sleep or _set_tool_output cancellation can raise before inactive OFF write; current ON output may remain asserted",
+  "expected_physical_jaw_state_for_each_fault": "UNKNOWN: no documented independent hardware design found",
+  "logical_vs_electrical_vs_physical_states_kept_distinct": true,
+  "no_live_bridge_or_driver_modified": true
+}

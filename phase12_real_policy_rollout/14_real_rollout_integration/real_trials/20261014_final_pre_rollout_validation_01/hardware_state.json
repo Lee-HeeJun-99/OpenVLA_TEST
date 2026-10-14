@@ -1,0 +1,40 @@
+{
+  "current_responses": {
+    "mode": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_mode": 1,
+        "success": true
+      },
+      "requested_at": 1791966021.787715,
+      "latency_s": 0.010175114963203669,
+      "provenance": "DRIVER_REPORTED"
+    },
+    "state": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_state": 1,
+        "success": true
+      },
+      "requested_at": 1791966021.7993584,
+      "latency_s": 0.010865374933928251,
+      "provenance": "DRIVER_REPORTED"
+    },
+    "system": {
+      "status": "RESPONSE",
+      "response": {
+        "robot_system": 0,
+        "success": true
+      },
+      "requested_at": 1791966021.8113499,
+      "latency_s": 0.010217434260994196,
+      "provenance": "DRIVER_REPORTED"
+    }
+  },
+  "scalar_REAL_AUTO_STANDBY": true,
+  "authority": "UNKNOWN",
+  "servo": "UNKNOWN",
+  "protective_stop": "UNKNOWN",
+  "emergency_stop": "UNKNOWN",
+  "controller_connection": "GETTER_RESPONSE_EVIDENCE_NOT_ALL_STATE_VERIFIED"
+}

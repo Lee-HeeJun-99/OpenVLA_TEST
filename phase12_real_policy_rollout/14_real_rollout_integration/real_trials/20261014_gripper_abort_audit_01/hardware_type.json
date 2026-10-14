@@ -1,0 +1,14 @@
+{
+  "verified_hardware_type": "UNKNOWN",
+  "observed_interface": "two separate tool-output pulse channels",
+  "stateful_or_latching_behavior_supported_not_verified": true,
+  "supported_observations": ["initial CLOSE ACK did not close jaws", "OPEN initialization followed by CLOSE did close jaws"],
+  "does_not_distinguish": ["momentary actuator with internal state", "dual-output solenoid", "relay-triggered gripper", "initialization or edge-detection requirement"],
+  "open_initialization_explanation": "state-dependent behavior is supported; internal electrical/pneumatic mechanism cannot be identified from this sequence alone",
+  "model_or_manufacturer_documentation_found": false,
+  "current_wiring_binding_document_found": false,
+  "tool_voltage_or_supply_verified": false,
+  "jaw_feedback_sensor_mapping_verified": false,
+  "live_io_evidence": "live_io/current_io_states.json",
+  "live_io_result": "Tool and control-box DI/DO channels 1/2 all returned success true, raw value 0; not jaw feedback"
+}

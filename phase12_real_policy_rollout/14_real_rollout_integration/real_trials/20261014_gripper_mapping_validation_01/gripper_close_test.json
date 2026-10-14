@@ -1,0 +1,8 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "NO_NEW_POWER_WIRING_OR_PULSE_LEVEL_EVIDENCE",
+  "previous_fail": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_gripper_stop_validation_01/close_once_01/gripper_mapping_test.json",
+  "previous_result": "REQUEST_CLOSE_IO_ACK_PASS_ACTUAL_OPEN",
+  "new_physical_commands": 0,
+  "automatic_retry": false
+}

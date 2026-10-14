@@ -40,7 +40,9 @@ class SafetyDecision:
 
 
 class SafetyPipeline:
-    def __init__(self, model: str, *, operator_confirmed_initial_open: bool):
+    def __init__(self, model: str, *, operator_confirmed_initial_open: bool, arm_only=False):
+        if arm_only and model!='openvla':raise ValueError('arm_only_openvla_integration_only')
+        self.arm_only=arm_only
         self.runtime = CommandDisabledPolicyRuntime(
             model, operator_confirmed_initial_open=operator_confirmed_initial_open)
 
@@ -56,7 +58,7 @@ class SafetyPipeline:
             communication_ok=state.communication_ok, logger_ok=state.logger_ok,
             chunk_id=action.sequence_id.rsplit("-k", 1)[0] if action.source_model == "oft" else None,
             chunk_index=action.chunk_index,
-            action_age_sec=state.now_monotonic-action.timestamp_monotonic)
+            action_age_sec=state.now_monotonic-action.timestamp_monotonic,arm_only=self.arm_only)
         blockers = list(candidate.get("technical_blockers") or [])
         if not state.joint_limits_ok and "joint_limit_violation" not in blockers:
             blockers.append("joint_limit_violation")
@@ -64,4 +66,3 @@ class SafetyPipeline:
         return SafetyDecision(accepted, not accepted, bool(blockers), tuple(blockers),
                               tuple(candidate["limited_canonical_action"]) if accepted else None,
                               candidate, False)
-

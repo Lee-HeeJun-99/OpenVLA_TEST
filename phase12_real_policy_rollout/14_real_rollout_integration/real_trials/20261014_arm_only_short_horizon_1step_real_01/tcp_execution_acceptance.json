@@ -1,0 +1,8 @@
+{
+  "formal_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "tcp_contract_verified": false,
+  "arm_only_execution_accepted": true,
+  "source": "EXPLICIT_USER_REQUEST",
+  "active_tcp_name_directly_observed": false,
+  "basis": "ZERO_OFFSET_CONSISTENCY_NOT_FORMAL_VERIFICATION"
+}

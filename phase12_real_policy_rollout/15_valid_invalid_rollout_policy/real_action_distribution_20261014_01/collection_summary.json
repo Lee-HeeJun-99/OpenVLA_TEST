@@ -1,0 +1,16 @@
+{
+  "attempts": 50,
+  "inference_requests": 50,
+  "valid_predictions": 50,
+  "invalid_predictions": 0,
+  "preflight_rejections": 0,
+  "error": null,
+  "physical_commands": 0,
+  "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "physical_rollout_ready": false,
+  "current_translation_limit_m": 0.01,
+  "recommendation": "KEEP_10MM_PENDING_REVIEW; empirical percentiles are candidates, not physical safety evidence",
+  "analysis_valid": true,
+  "unique_source_hashes": 50,
+  "independence": "distinct source frames; same stationary scene, not IID or multi-scene policy coverage"
+}

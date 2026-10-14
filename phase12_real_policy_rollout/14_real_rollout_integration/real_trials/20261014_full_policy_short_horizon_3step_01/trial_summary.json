@@ -1,0 +1,19 @@
+{
+ "status": "NOT_STARTED",
+ "evaluation_scope": "FULL_POLICY_SHORT_HORIZON",
+ "task_success": null,
+ "steps_attempted": 0,
+ "steps_completed": 0,
+ "prediction_count": 0,
+ "arm_commands": 0,
+ "gripper_commands": 1,
+ "gripper_initialization_only": true,
+ "physical_hold_stop_commands": 0,
+ "unexpected_motion": null,
+ "estop_used": null,
+ "auto_retry": false,
+ "auto_batch": false,
+ "auto_home": false,
+ "auto_recovery": false,
+ "reason": "OPEN_IO_ACK_PASS; physical OPEN confirmation and production gripper/phase/Stop gates pending"
+}

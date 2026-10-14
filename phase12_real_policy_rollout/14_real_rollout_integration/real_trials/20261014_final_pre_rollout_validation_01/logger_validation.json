@@ -1,0 +1,13 @@
+{
+  "writable": true,
+  "free_bytes": 99321036800,
+  "minimum_free_bytes": 104857600,
+  "jsonl_append": true,
+  "fsync": true,
+  "logger_status": {
+    "state": "COMPLETE",
+    "records": 1,
+    "closed_wall_time": 1791966296.1296992
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "source": "01_configs/safety_limits.yaml via action_step_limits",
+  "previous_m": 0.01,
+  "current_m": 0.013,
+  "boundaries": [
+    {
+      "value_m": 0.0129,
+      "reject": false
+    },
+    {
+      "value_m": 0.012999,
+      "reject": false
+    },
+    {
+      "value_m": 0.013,
+      "reject": false
+    },
+    {
+      "value_m": 0.0131,
+      "reject": true
+    }
+  ],
+  "all_50_gate_pass": true,
+  "current_sample_gate_pass": true,
+  "new_clipping": false,
+  "new_scaling": false
+}

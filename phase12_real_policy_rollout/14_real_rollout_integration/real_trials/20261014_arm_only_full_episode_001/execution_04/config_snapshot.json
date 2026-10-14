@@ -1,0 +1,13 @@
+{
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/mock_runtime.yaml": "4e03709bf65651e722c2b1fd048ad769354d27acd2fdcb805137a8fc1d8a6b6c",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/command_disabled_runtime.yaml": "e0d6d28f9811c4944eb3a250c843d7ea8ccc0e49c1bacf3d0615bf7a2e544c9e",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/action_contract.yaml": "dca98d6c25755bcae3e381fb47aa0b989252a4b0bc76a4a0d1ddf1ce612215f7",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/pre_rollout_verified_config.yaml": "db2dfa8651077f7e4b1377c0e23aaca6958e32af3614af1cd8597b3872297e90",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/future_real_runtime.yaml": "b95859027727a3db1c3032f976de314f9df50b05c8331784793b9643f901949d",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/model_contract.yaml": "54116147f0a819e34510891c1444f2f3dd4ede13dbc1d9764c5afe36d38c4df5",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/safety_limits.yaml": "9289011fda24271d3c7372dab1382ad3eb54163d862eb853ff3ef1d49f6b0251",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/offline_preparation.yaml": "f0652ad9ed8596e2262c9da31adaf84b79fbb91d33eefe683656e06c0c4ad418",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/shadow_runtime.yaml": "610b6beb689045395cdb860f2243a7548f690babd9991bd44b0dea9ffc26b014",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/configs/full_task.yaml": "5d3acee609571c0159ed68b60b7bfb815ff3c959e109357658f9e4d0bb0164f9",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/settle_window.py": "b81aaa32e4d948f97ba3e44f627c632fe4c4ee03490c09bb596b573125d09bec"
+}

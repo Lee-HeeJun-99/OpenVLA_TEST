@@ -1,0 +1,29 @@
+{
+  "translation_frame": "BASE",
+  "translation_input": "metres",
+  "translation_target": "mm",
+  "rotation_input": "base/world relative rotvec radians",
+  "rotation_target": "intrinsic Euler ZYZ degrees",
+  "formula": "p_target_mm=1000*p_current_m+1000*delta_limited_m; R_target=Exp(delta_limited_rotvec_rad) @ R_current; ABC_target=euler_ZYZ_deg(R_target)",
+  "move_line_request": {
+    "ref": 0,
+    "mode": 0,
+    "time": 0,
+    "radius": 0,
+    "blend_type": 0,
+    "sync_type": 0,
+    "vel": [
+      20,
+      20
+    ],
+    "acc": [
+      20,
+      20
+    ]
+  },
+  "sink": "real_sink.RealDoosanCommandSink.send_pose -> RosServiceTransport",
+  "sink_uses": "Active TCP Cartesian absolute target, NOT flange-space interface",
+  "software_convention_verified": true,
+  "physical_axes_tested": false,
+  "actual_target_authorized": false
+}

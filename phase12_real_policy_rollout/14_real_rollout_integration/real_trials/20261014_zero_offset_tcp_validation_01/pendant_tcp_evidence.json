@@ -1,0 +1,16 @@
+{
+  "source": "PENDANT_TCP_SETTINGS",
+  "provenance": "USER_TRANSCRIBED_CANDIDATE",
+  "offset_mm_deg": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "active_tcp_name": null,
+  "current_tcp_pose": null,
+  "image_attached": false,
+  "confirmation_time_unknown": true
+}

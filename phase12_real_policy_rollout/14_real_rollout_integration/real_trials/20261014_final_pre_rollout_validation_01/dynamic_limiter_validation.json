@@ -1,0 +1,79 @@
+{
+  "synthetic_dry_calculation": true,
+  "raw_model_action": [
+    2.835627494564459e-05,
+    1.6923010594068442e-05,
+    0.012875344992038188,
+    0.0005787247280851192,
+    0.002364704483548279,
+    -9.780888271254066e-05,
+    0.9980392156862745
+  ],
+  "raw_norm_mm": 12.875387339051949,
+  "control_rate_hz": 5.0,
+  "raw_implied_velocity_mm_s": [
+    0.14178137472822294,
+    0.08461505297034222,
+    64.37672496019094
+  ],
+  "post_velocity_translation_mm": [
+    0.008809451459262289,
+    0.005257476190324705,
+    3.9999868440420028
+  ],
+  "post_acceleration_translation_mm": [
+    0.0017618902918524583,
+    0.001051495238064941,
+    0.7999973688084003
+  ],
+  "post_velocity_rotation_rad": [
+    0.0005787247280851192,
+    0.002364704483548279,
+    -9.780888271254066e-05
+  ],
+  "post_acceleration_rotation_rad": [
+    0.0005787247280851192,
+    0.002364704483548279,
+    -9.780888271254066e-05
+  ],
+  "post_safety_candidate": [
+    1.7618902918524583e-06,
+    1.051495238064941e-06,
+    0.0007999973688084004,
+    0.0005787247280851192,
+    0.002364704483548279,
+    -9.780888271254066e-05,
+    0.9980392156862745
+  ],
+  "hypothetical_would_be_delivered_action": [
+    1.7618902918524583e-06,
+    1.051495238064941e-06,
+    0.0007999973688084004,
+    0.0005787247280851192,
+    0.002364704483548279,
+    -9.780888271254066e-05,
+    0.9980392156862745
+  ],
+  "actual_delivered_action": null,
+  "candidate_pose_mm_zyz_deg": [
+    305.0919413336512,
+    -11.827240397767307,
+    724.4777927789646,
+    -0.022238438632312105,
+    155.69675341793436,
+    -176.56934095444348
+  ],
+  "technical_blockers": [
+    "gripper_unknown_state_blocks_command"
+  ],
+  "candidate_authorized": false,
+  "limits": {
+    "translation_velocity_mm_s": 20.0,
+    "translation_acceleration_mm_s2": 20.0,
+    "rotation_velocity_deg_s": 20.0,
+    "rotation_acceleration_deg_s2": 20.0
+  },
+  "raw_13mm_implied_velocity_mm_s": 65.0,
+  "actual_evaluation_order": "limiter -> limited-action supervisor/workspace -> raw magnitude blockers; NOT hard gate before limiter",
+  "physical_commands": 0
+}

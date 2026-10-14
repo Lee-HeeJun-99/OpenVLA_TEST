@@ -1,0 +1,10 @@
+{
+  "target_predictions": 50,
+  "max_attempts": 70,
+  "current_translation_limit_m": 0.01,
+  "config_sha256": "53ee9832c34ec39aaacc3facf9112dea5008b57629b8c603b0983395c48741ae",
+  "physical_commands": 0,
+  "clipping": false,
+  "scaling": false,
+  "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED"
+}

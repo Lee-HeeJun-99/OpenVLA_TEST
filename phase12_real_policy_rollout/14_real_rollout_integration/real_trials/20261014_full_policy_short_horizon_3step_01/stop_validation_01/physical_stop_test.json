@@ -1,0 +1,143 @@
+{
+  "status": "OPERATOR_STOP_CONFIRMATION_PENDING",
+  "error": null,
+  "physical_arm_commands": 1,
+  "physical_stop_commands": 1,
+  "physical_gripper_commands": 0,
+  "stop_result": {
+    "state": "ABORTED",
+    "reason": "operator_approved_physical_stop_test",
+    "receipt": {
+      "command_id": "496ca3cb3faf43b8b44c8492751aa57f",
+      "command_type": "hold",
+      "requested_at": 2862146.422050927,
+      "sent_at": 2862146.422995345,
+      "ack_at": 2862146.539783327,
+      "completed_at": 2862146.539790786,
+      "ack_latency": 0.11678798170760274,
+      "state": "completed",
+      "request": {
+        "stop_mode": 3
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    },
+    "transitions": [
+      "RUNNING",
+      "HOLD_REQUESTED",
+      "HOLD_ACKNOWLEDGED",
+      "ABORTED"
+    ]
+  },
+  "motion_receipt": [
+    {
+      "command_id": "807ec460dc7d4db99902421e4728d6bc",
+      "command_type": "pose",
+      "requested_at": 2862146.322790009,
+      "sent_at": 2862146.324185788,
+      "ack_at": 2862146.608215077,
+      "completed_at": null,
+      "ack_latency": 0.28402928868308663,
+      "state": "ABORTED_IN_FLIGHT",
+      "request": {
+        "pos": [
+          305.5901794433594,
+          -11.828291893005371,
+          723.6777954101562,
+          179.91046142578125,
+          -155.5612335205078,
+          3.35062313079834
+        ],
+        "vel": [
+          20.0,
+          20.0
+        ],
+        "acc": [
+          20.0,
+          20.0
+        ],
+        "time": 0.0,
+        "radius": 0.0,
+        "ref": 0,
+        "mode": 0,
+        "blend_type": 0,
+        "sync_type": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": "IN_FLIGHT_STATUS_UNKNOWN",
+      "clock_domain": "HOST_MONOTONIC",
+      "physical_completion": "UNVERIFIED"
+    }
+  ],
+  "events": [
+    {
+      "command_id": "807ec460dc7d4db99902421e4728d6bc",
+      "command_type": "pose",
+      "requested_at": 2862146.322790009,
+      "sent_at": 2862146.324185788,
+      "ack_at": 2862146.608215077,
+      "completed_at": null,
+      "ack_latency": 0.28402928868308663,
+      "state": "ABORTED_IN_FLIGHT",
+      "request": {
+        "pos": [
+          305.5901794433594,
+          -11.828291893005371,
+          723.6777954101562,
+          179.91046142578125,
+          -155.5612335205078,
+          3.35062313079834
+        ],
+        "vel": [
+          20.0,
+          20.0
+        ],
+        "acc": [
+          20.0,
+          20.0
+        ],
+        "time": 0.0,
+        "radius": 0.0,
+        "ref": 0,
+        "mode": 0,
+        "blend_type": 0,
+        "sync_type": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": "IN_FLIGHT_STATUS_UNKNOWN",
+      "clock_domain": "HOST_MONOTONIC",
+      "physical_completion": "UNVERIFIED"
+    },
+    {
+      "command_id": "496ca3cb3faf43b8b44c8492751aa57f",
+      "command_type": "hold",
+      "requested_at": 2862146.422050927,
+      "sent_at": 2862146.422995345,
+      "ack_at": 2862146.539783327,
+      "completed_at": 2862146.539790786,
+      "ack_latency": 0.11678798170760274,
+      "state": "completed",
+      "request": {
+        "stop_mode": 3
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "final_robot_state": 1,
+  "commands_after_abort": 0,
+  "operator_estop_used": null,
+  "auto_retry": false
+}

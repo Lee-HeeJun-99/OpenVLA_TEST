@@ -1,0 +1,248 @@
+{
+  "classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "tcp_contract_verified": false,
+  "pendant": {
+    "source": "PENDANT_TCP_SETTINGS",
+    "provenance": "USER_TRANSCRIBED_CANDIDATE",
+    "offset_mm_deg": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "active_tcp_name": null,
+    "current_tcp_pose": null,
+    "image_attached": false,
+    "confirmation_time_unknown": true
+  },
+  "fk": {
+    "source": "computed_from_measured_joint_state_urdf_fk",
+    "pose_kind": "computed_link6_flange_not_measured_tcp",
+    "reference_frame": "base_link",
+    "child_frame": "link_6",
+    "position_m": [
+      0.3046077501615298,
+      -0.011262126389508763,
+      0.7245037620169807
+    ],
+    "rotation_matrix": [
+      [
+        0.9087910556878299,
+        -0.052185660129943766,
+        0.4139752093768437
+      ],
+      [
+        -0.05822761092437895,
+        -0.9983013695746072,
+        0.0019801089623280384
+      ],
+      [
+        0.41316868519750943,
+        -0.02590429273818419,
+        -0.9102860018641921
+      ]
+    ],
+    "quaternion_wxyz": [
+      -0.007135899540891195,
+      0.9769056283908172,
+      -0.02825586930955607,
+      0.2116744623369723
+    ],
+    "joint_order": [
+      "joint_1",
+      "joint_2",
+      "joint_3",
+      "joint_4",
+      "joint_5",
+      "joint_6"
+    ],
+    "joint_position_rad": [
+      -3.1861462593078613,
+      -0.018707243725657463,
+      -0.7156862616539001,
+      0.021932009607553482,
+      -1.9809508323669434,
+      0.026174861937761307
+    ],
+    "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+    "tool_offset_applied": false,
+    "measured_tcp_available": false,
+    "valid_for_observation": true,
+    "valid_as_measured_tcp": false,
+    "valid_for_motion_readiness": false,
+    "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+    "command_issued": false,
+    "executed_action": null,
+    "robot_delivered_command": null,
+    "position_mm": [
+      304.6077501615298,
+      -11.262126389508763,
+      724.5037620169808
+    ],
+    "orientation_zyz_deg": [
+      0.274052693863423,
+      155.54490482954097,
+      -176.41244234856165
+    ],
+    "joint_source_timestamp": 1791964856.5544856,
+    "joint_receive_timestamp": 2853419.066514946
+  },
+  "controller_flange": {
+    "response": {
+      "pos": [
+        305.0901794433594,
+        -11.828291893005371,
+        723.6777954101562,
+        179.91046142578125,
+        -155.5612335205078,
+        3.35062313079834
+      ],
+      "success": true
+    },
+    "latency_s": 0.007206179201602936,
+    "pre_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.003822972998023033,
+      "source_gap": 0.010008573532104492,
+      "receive_gap": 0.010905573144555092,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 10.014650357887149,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    },
+    "request_fields": {
+      "ref": 0
+    },
+    "sent_once": true,
+    "request_wall_time": 1791964856.5685103,
+    "pose": [
+      305.0901794433594,
+      -11.828291893005371,
+      723.6777954101562,
+      179.91046142578125,
+      -155.5612335205078,
+      3.35062313079834
+    ],
+    "reference": "BASE_REQUESTED",
+    "units": "mm/deg",
+    "orientation_convention": "ZYZ",
+    "usable": true,
+    "post_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.0052450839430093765,
+      "source_gap": 0.009996652603149414,
+      "receive_gap": 0.009911533910781145,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 20.024785117711872,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    }
+  },
+  "current_posx": {
+    "response": {
+      "task_pos_info": [
+        {
+          "layout": {
+            "dim": [],
+            "data_offset": 0
+          },
+          "data": [
+            305.0901794433594,
+            -11.828291893005371,
+            723.6777954101562,
+            179.91046142578125,
+            -155.5612335205078,
+            3.35062313079834,
+            7.0
+          ]
+        }
+      ],
+      "success": true
+    },
+    "latency_s": 0.003816212061792612,
+    "pre_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.00565618509426713,
+      "source_gap": 0.009996652603149414,
+      "receive_gap": 0.009911533910781145,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 20.02519621886313,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    },
+    "request_fields": {
+      "ref": 0
+    },
+    "sent_once": true,
+    "request_wall_time": 1791964866.575728,
+    "pose": [
+      305.0901794433594,
+      -11.828291893005371,
+      723.6777954101562,
+      179.91046142578125,
+      -155.5612335205078,
+      3.35062313079834
+    ],
+    "reference": "BASE_REQUESTED",
+    "units": "mm/deg",
+    "orientation_convention": "ZYZ",
+    "usable": true,
+    "post_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.011229209136217833,
+      "source_gap": 0.009723901748657227,
+      "receive_gap": 0.008787649217993021,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 30.031325133983046,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    }
+  },
+  "comparison": {
+    "fk_vs_flange": {
+      "delta_mm": [
+        0.48242928182958167,
+        -0.5661655034966078,
+        -0.8259666068245224
+      ],
+      "translation_error_mm": 1.1115314772445215,
+      "orientation_error_deg": 0.17820101909269503
+    },
+    "fk_vs_posx": {
+      "delta_mm": [
+        0.48242928182958167,
+        -0.5661655034966078,
+        -0.8259666068245224
+      ],
+      "translation_error_mm": 1.1115314772445215,
+      "orientation_error_deg": 0.17820101909269503
+    },
+    "controller_flange_vs_posx": {
+      "delta_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "translation_error_mm": 0.0,
+      "orientation_error_deg": 0.0
+    },
+    "acceptance_tolerance": null,
+    "active_binding_verified": false
+  },
+  "source_snapshot": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_zero_offset_tcp_validation_01",
+  "warning": "Earlier read-only snapshot; not newly acquired current TCP. No active binding approval or pose tolerance."
+}

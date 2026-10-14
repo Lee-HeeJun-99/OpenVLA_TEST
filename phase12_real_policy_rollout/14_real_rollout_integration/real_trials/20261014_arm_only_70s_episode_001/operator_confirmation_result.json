@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-10-14T11:16:33Z",
+  "source": "OPERATOR_CHAT",
+  "question": "실제 움직임도 예상대로였고, 이상 움직임이나 E-stop 사용은 없었나요?",
+  "response": "좋았어",
+  "interpretation": "positive confirmation in response to expected-motion/no-unexpected-motion/no-E-stop question",
+  "expected_motion_confirmed": true,
+  "unexpected_motion": false,
+  "estop_used": false,
+  "result": "ARM_ONLY_FULL_EPISODE_PASS",
+  "task_success_failure": "NOT_APPLICABLE",
+  "additional_physical_commands": 0
+}

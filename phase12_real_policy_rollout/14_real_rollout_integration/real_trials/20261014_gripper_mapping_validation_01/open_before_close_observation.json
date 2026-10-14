@@ -1,0 +1,18 @@
+{
+ "source": "CURRENT_OPERATOR_USER_MESSAGE",
+ "verbatim": "처음에 열고 시작해야, 나중에 닫히네",
+ "observation": "Operator reports CLOSE works after issuing initial OPEN",
+ "classification": "OPEN_THEN_CLOSE_SEQUENCE_SUPPORTED",
+ "preceding_open_trial": "open_existing_1s_01",
+ "following_close_trial": "close_existing_4s_04",
+ "OPEN_command": {"tool_output": 1, "value_sequence": [1,0], "pulse_duration_s": 1.0},
+ "CLOSE_command": {"tool_output": 2, "value_sequence": [1,0], "pulse_duration_s": 4.0},
+ "initial_jaw_OPEN_is_not_proof_OPEN_initialization_command_was_issued": true,
+ "required_startup_candidate": "approved OPEN initialization followed by actual physical OPEN confirmation before policy CLOSE",
+ "electrical_or_pneumatic_root_cause_confirmed": false,
+ "full_bidirectional_physical_mapping_verified": false,
+ "abort_behavior_verified": false,
+ "earlier_failed_close_artifacts_preserved": true,
+ "additional_physical_commands_this_turn": 0,
+ "production_config_changed": false
+}

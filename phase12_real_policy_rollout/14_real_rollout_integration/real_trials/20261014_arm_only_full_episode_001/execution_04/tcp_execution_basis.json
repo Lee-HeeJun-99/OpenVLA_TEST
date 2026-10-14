@@ -1,0 +1,6 @@
+{
+  "formal_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "formal_verified": false,
+  "engineering_acceptance": true,
+  "source": "EXPLICIT_OPERATOR_ARM_ONLY_APPROVAL"
+}

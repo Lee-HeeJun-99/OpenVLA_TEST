@@ -1,0 +1,38 @@
+{
+  "raw_action": [
+    0.0014104356263888885,
+    -0.00017932358931696795,
+    -0.00019476661160999081,
+    -0.004078358995333046,
+    0.002364704483548279,
+    0.010181925561301089,
+    0.0019607843137254832
+  ],
+  "raw_response": {
+    "action": [
+      0.0014104356263888885,
+      -0.00017932358931696795,
+      -0.00019476661160999081,
+      -0.004078358995333046,
+      0.002364704483548279,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "chunk_size": 1,
+    "variant": "openvla_token",
+    "instruction": "pick up the orange cube",
+    "inference_seconds": 0.3861438650637865,
+    "request_index": 56
+  },
+  "frame_receive_monotonic": 2856711.425234538,
+  "inference_start_monotonic": 2856711.454899507,
+  "inference_end_monotonic": 2856711.896778448,
+  "camera_age_at_inference_start": 0.029664969071745872,
+  "camera_age_at_inference_end": 0.4715439099818468,
+  "inference_latency": 0.44187894091010094,
+  "source_age_at_inference_start": 0.1458415985107422,
+  "source_age_at_inference_end": 0.5877535343170166,
+  "source_image_sha256": "4965626d1d6fcab927e25739131a392a7967d6cf66b78c68234747b6175dbcf8",
+  "model_input_sha256": "70418291cc25b194f760fac3fd3ad081841f503a83990fbf23ca1719849ae723",
+  "physical_gripper_disabled": true
+}

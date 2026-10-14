@@ -1,0 +1,8 @@
+{
+  "source": "OPERATOR_CHAT",
+  "operator_message": "눈으로 확인했어 아까, 그니까 rollout 진행해",
+  "operator_reports_stop_observed": true,
+  "exact_test_identification": "User refers to earlier stop test; not explicitly identified",
+  "automatic_additional_motion": false,
+  "does_not_change_original_ack_or_feedback": true
+}

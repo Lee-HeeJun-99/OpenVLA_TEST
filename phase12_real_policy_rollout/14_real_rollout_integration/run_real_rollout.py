@@ -22,13 +22,32 @@ from stage_gate import require_stage,save_stage
 
 
 class Controller:
-    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False,trial=None):
-        self.pipeline=SafetyPipeline(model,operator_confirmed_initial_open=initial_open)
+    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False,trial=None,arm_only_integration=False,execution_mode='LEGACY',gripper_contract=None):
+        if execution_mode not in ('LEGACY','FULL_POLICY_ROLLOUT','ARM_ONLY_FULL_EPISODE'):raise ValueError('unknown_execution_mode')
+        self.arm_only_episode=execution_mode=='ARM_ONLY_FULL_EPISODE'
+        if self.arm_only_episode and (model!='openvla' or protocol!='full_task' or trial is not None or arm_only_integration):
+            raise ValueError('arm_only_episode_is_not_task_evaluation')
+        if self.arm_only_episode and getattr(sink,'physical_gripper_disabled',False) is not True:
+            raise PermissionError('arm_only_episode_requires_gripper_blocking_sink')
+        self.full_policy=execution_mode=='FULL_POLICY_ROLLOUT'
+        if self.full_policy and (model!='openvla' or protocol!='full_task' or arm_only_integration):
+            raise ValueError('full_policy_requires_openvla_full_task')
+        self.full_policy_gripper=None
+        if self.full_policy:
+            from full_policy_gripper import FullPolicyGripper
+            self.full_policy_gripper=FullPolicyGripper(sink,logger,gripper_contract or {})
+        if arm_only_integration and (model!='openvla' or protocol!='short_horizon' or trial is not None):
+            raise ValueError('arm_only_one_step_is_not_task_evaluation')
+        self.arm_only_integration=arm_only_integration
+        # Full-policy owns gripper hysteresis explicitly; arm safety still uses
+        # the unchanged hard gates, dynamic limiter and workspace checks.
+        self.pipeline=SafetyPipeline(model,operator_confirmed_initial_open=initial_open,arm_only=arm_only_integration or self.full_policy or self.arm_only_episode)
         self.model=model;self.protocol=protocol;self.sink=sink;self.log=logger;self.dry_run=dry_run
         self.abort_boundary=AbortBoundary(sink) if not dry_run else None
         self.aborted=False;self.count=0;self.rows=[]
         self.abort_lock=threading.Lock();self.abort_reason=None
         self.scheduler=None
+        self.full_policy_step_lock=threading.Lock()
         self.trial=trial
         if trial is not None:sink.trial_guard=trial
 
@@ -36,6 +55,7 @@ class Controller:
         with self.abort_lock:
             if self.aborted:return {'state':'ABORTED','reason':self.abort_reason,'command_issued':False}
             self.aborted=True;self.abort_reason=reason
+            if self.full_policy_gripper:self.full_policy_gripper.inhibit()
             if self.trial:self.trial.invalidate(reason)
             self.sink.inhibit()
         if self.scheduler:self.scheduler.abort()
@@ -47,7 +67,17 @@ class Controller:
         return result
 
     def step(self,vector,obs,*,inference_time,chunk_id,chunk_index):
+        if not (self.full_policy or self.arm_only_episode):
+            return self._step(vector,obs,inference_time=inference_time,chunk_id=chunk_id,chunk_index=chunk_index)
+        if not self.full_policy_step_lock.acquire(blocking=False):
+            raise PermissionError('full_policy_command_overlap_forbidden')
+        try:
+            return self._step(vector,obs,inference_time=inference_time,chunk_id=chunk_id,chunk_index=chunk_index)
+        finally:self.full_policy_step_lock.release()
+
+    def _step(self,vector,obs,*,inference_time,chunk_id,chunk_index):
         if self.aborted:raise RuntimeError('session_aborted')
+        if self.arm_only_integration and self.count>=1:raise PermissionError('arm_only_one_command_limit')
         if self.trial:
             obs=dict(obs)
             if obs.get('episode_id') is None:obs['episode_id']=self.trial.trial_id
@@ -58,6 +88,7 @@ class Controller:
                                             'chunk_id':chunk_id,'chunk_index':chunk_index,'observation':obs})
         if self.trial and not self.trial.observe(obs):return self.abort(self.trial.summary()['invalid_reason'])
         try:
+            if self.full_policy_gripper:self.full_policy_gripper.desired(vector[6])
             if not obs.get('robot_state_ok'):raise ValueError('unexpected_robot_state')
             if obs.get('manual_abort'):raise ValueError('manual_abort')
             action=CanonicalAction.from_vector(vector,timestamp_monotonic=inference_time,
@@ -68,9 +99,10 @@ class Controller:
                 model_ok=obs['model_ok'],communication_ok=obs.get('communication_ok',False),logger_ok=True)
             decision=self.pipeline.inspect(action,state);candidate=dict(decision.candidate);reason=list(decision.reason)
             if self.protocol=='minimum_motion' and (math.dist(vector[:3],[0,0,0])>.001 or any(vector[3:6]) or vector[6]!=0):reason.append('minimum_motion_protocol')
-            if self.protocol!='full_task' and vector[6]>=.7:reason.append('protocol_gripper_disabled')
+            if self.protocol!='full_task' and not self.arm_only_integration and vector[6]>=.7:reason.append('protocol_gripper_disabled')
         except Exception as exc:reason.append(str(exc))
-        record={'event':'ACTION','command_requested':not reason,'command_issued':False,'command_acknowledged':False,
+        record={'event':'ACTION','execution_mode':'ARM_ONLY_FULL_EPISODE' if self.arm_only_episode else 'FULL_POLICY_ROLLOUT' if self.full_policy else 'LEGACY','evaluation_scope':'SYSTEM_INTEGRATION_TEST' if self.arm_only_integration or self.arm_only_episode else 'TASK_PROTOCOL',
+            'physical_gripper_disabled':self.arm_only_integration or self.arm_only_episode,'command_requested':not reason,'command_issued':False,'command_acknowledged':False,
             'executed_action':None,'robot_delivered_command':None,'observation':obs,'raw_model_output':obs.get('raw_model_output'),
             'canonical_action':list(vector),'filtered_action':candidate.get('limited_canonical_action'),
             'safety_blockers':reason,'chunk_id':chunk_id,'chunk_index':chunk_index,
@@ -79,6 +111,17 @@ class Controller:
             'phase':obs['phase'],'tcp_source':obs.get('tcp_source'),'dry_run':self.dry_run,
             **{key:obs.get(key) for key in ('episode_id','condition','matched_pair_id','sim_observation_id','real_observation_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')}}
         from rollout_runner import finite_json
+        if self.arm_only_episode:
+            from action_rate_limiter import _scale_to
+            limiter=self.pipeline.runtime.limiter
+            vt,_=_scale_to(tuple(v/limiter.dt for v in vector[:3]),limiter.tv)
+            vr,_=_scale_to(tuple(v/limiter.dt for v in vector[3:6]),limiter.rv)
+            record.update(RAW_MODEL_ACTION=list(vector),
+                POST_HARD_GATE=list(vector) if not reason else None,
+                POST_VELOCITY_LIMIT=[v*limiter.dt for v in vt+vr]+[vector[6]],
+                POST_ACCELERATION_LIMIT=candidate.get('limited_canonical_action'),
+                FINAL_DELIVERED_ARM_ACTION=None if reason else candidate.get('limited_canonical_action',[])[:6],
+                planned_target_pose=candidate.get('target_pose_candidate_mm_zyz_deg'),physical_gripper_command='NONE')
         record=finite_json(record)
         if self.trial and reason:self.trial.invalidate('|'.join(reason))
         try:self.log.append(record)
@@ -98,9 +141,14 @@ class Controller:
         try:self.log.append({**record,'event':'COMMAND_RESULT'})
         except Exception:self.abort('logger_failure');raise
         if receipt['state']!='completed':return self.abort(receipt.get('failure_reason','command_failed'))
+        if self.full_policy_gripper:
+            try:
+                record['gripper_receipt']=self.full_policy_gripper.transition(vector[6])
+            except Exception as exc:return self.abort(str(exc))
+            return record
         grip=candidate.get('gripper',{})
         cmd=grip.get('candidate_command')
-        if self.protocol=='full_task' and cmd in ('OPEN','CLOSE','CLOSED','COMMAND_OPEN','COMMAND_CLOSED'):
+        if self.protocol=='full_task' and not self.arm_only_episode and cmd in ('OPEN','CLOSE','CLOSED','COMMAND_OPEN','COMMAND_CLOSED'):
             g=self.sink.send_gripper(cmd in ('CLOSE','CLOSED','COMMAND_CLOSED'))
             if g['state'] not in ('completed','suppressed'):return self.abort('gripper_command_failed')
             from open_loop_gripper_supervisor import GripperRuntimeContext

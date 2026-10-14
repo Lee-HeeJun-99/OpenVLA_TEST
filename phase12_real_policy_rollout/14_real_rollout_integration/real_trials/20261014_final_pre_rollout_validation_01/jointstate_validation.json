@@ -1,0 +1,14 @@
+{
+  "duration_requested_s": 30.0,
+  "duration_observed_s": 41.05688205640763,
+  "sample_count": 4107,
+  "max_source_gap_s": 0.012769222259521484,
+  "max_receive_gap_s": 0.033417478669434786,
+  "source_gap_ge_100ms": 0,
+  "receive_gap_ge_100ms": 0,
+  "invalid_count": 0,
+  "duplicates": 0,
+  "regressions": 0,
+  "source": "SAME_PERSISTENT_SUBSCRIBER",
+  "readonly_getter_count": 3
+}

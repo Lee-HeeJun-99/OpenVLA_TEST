@@ -1,0 +1,11 @@
+{
+  "operator_present": true,
+  "workspace_clear": true,
+  "estop_accessible": true,
+  "robot_stationary": true,
+  "tcp_arm_only_acceptance": true,
+  "explicit_one_episode": true,
+  "approved_max_duration_s": 70,
+  "confirmed_wall_time": 1791976347.0,
+  "source": "fresh renewed approval: 70\ucd08, operator standing by E-stop"
+}

@@ -1,0 +1,10 @@
+{
+ "operator_present": true,
+ "workspace_clear": true,
+ "estop_accessible": true,
+ "robot_stationary": true,
+ "tcp_arm_only_acceptance": true,
+ "explicit_one_arm_command": true,
+ "confirmed_wall_time": 1791968117,
+ "provenance": "USER_FRESH_CONFIRMATION_RECEIVED_2026-10-14_08:55:17_UTC"
+}

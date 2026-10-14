@@ -1,0 +1,17 @@
+{
+  "status": "SINGLE_MOTION_EXECUTION_CONFIRMED",
+  "requested_translation_mm": [10, 0, 0],
+  "physical_arm_commands": 1,
+  "physical_gripper_commands": 0,
+  "physical_stop_commands": 0,
+  "command_ack_success": true,
+  "command_ack_latency_s": 1.5629541077651083,
+  "final_robot_state": "STANDBY",
+  "runtime_error": null,
+  "operator_confirmation": "operator_confirmation.json",
+  "original_execution_evidence": "physical_stop_test.json",
+  "stop_path_result": "NOT_TESTED_IN_THIS_RUN",
+  "task_success": null,
+  "automatic_retry": false,
+  "additional_motion_on_confirmation": false
+}

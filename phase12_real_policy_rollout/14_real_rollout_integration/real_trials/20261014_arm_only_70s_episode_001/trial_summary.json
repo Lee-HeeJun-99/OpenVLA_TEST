@@ -1,0 +1,22 @@
+{
+  "status": "ARM_ONLY_FULL_EPISODE_PASS",
+  "reason": null,
+  "evaluation_scope": "ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST",
+  "termination": "EXISTING_EPISODE_DURATION_LIMIT",
+  "task_success": null,
+  "task_performance_denominator_included": false,
+  "steps_attempted": 26,
+  "steps_completed": 25,
+  "duration_s": 70.38476442778483,
+  "arm_commands": 25,
+  "physical_gripper_commands": 0,
+  "stop_commands": 0,
+  "gripper_abort_behavior": "UNVERIFIED / UNUSED",
+  "unexpected_motion": false,
+  "estop_used": false,
+  "operator_confirmation_source": "operator_confirmation_result.json",
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "auto_next_episode": false
+}

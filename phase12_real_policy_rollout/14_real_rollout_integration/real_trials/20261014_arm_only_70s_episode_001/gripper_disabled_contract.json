@@ -1,0 +1,7 @@
+{
+  "physical_open": false,
+  "physical_close": false,
+  "physical_gripper_abort": false,
+  "tool_DO_writes": false,
+  "abort_behavior": "UNVERIFIED / UNUSED"
+}

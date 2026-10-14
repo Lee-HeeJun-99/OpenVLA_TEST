@@ -1,0 +1,38 @@
+{
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/real_openvla.yaml": {
+    "sha256": "982ee2bcdf477d0882c3c842dac397af0794c1fc9376d9f6251d09d25151d219",
+    "text": "model: openvla\ncheckpoint: vanilla_s1_balanced_step8130\nvariant: openvla_token\nserver_url: http://127.0.0.1:8766\ninstruction: Pick up the orange cube.\ncrop_bottom_fraction: 0.0\nchunk_size: 1\nmotion_enabled: false\nexplicit_motion_approval: false\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/real_oft.yaml": {
+    "sha256": "c402e0a7462a4bd82b4b97f87a99a25c67b33b5ccfa511b74b428b2f0b9b54df",
+    "text": "model: oft\ncheckpoint: oft_mixed480_step28560_merged\nvariant: oftplus_h5_vision\nserver_url: http://127.0.0.1:8765\ninstruction: Pick up the orange cube.\ncenter_crop: true\nproprio: false\nchunk_size: 5\nchunk_execution_mode: sequential_k5\ninference_hz: 1\ncontrol_hz: 5\nmotion_enabled: false\nexplicit_motion_approval: false\nmodel_behavior_review_required: true\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/gripper_hardware.yaml": {
+    "sha256": "f1522b42c3eaef599311f933fcae652a2b372d64a32b22a9d98a05aecbf13575",
+    "text": "polarity_confirmed: false\nabort_value: null\nabort_value_confirmed: false\ngripper_open_output_index: 1\ngripper_closed_output_index: 2\ngripper_open_hardware_value: 1\ngripper_closed_hardware_value: 1\ninactive_hardware_value: 0\nopen_pulse_count: 2\nclosed_pulse_count: 1\nopen_pulse_time_s: 1.0\nclosed_pulse_time_s: 4.0\nmeasured_gripper_state: UNKNOWN\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/task_phase.yaml": {
+    "sha256": "d79e89255dff8bcfb563fe39ca2001c63195e0b1a51b77546f6cfa99b4d527b3",
+    "text": "# Target geometry must be measured/approved on site, not guessed here.\ngrasp_pose_m: null\npregrasp_z_m: null\npregrasp_z_tolerance_m: 0.005\ngrasp_xy_tolerance_m: 0.005\ngrasp_z_tolerance_m: 0.005\nlift_height_threshold_m: 0.05\nmax_duration_s: 30\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/minimum_motion.yaml": {
+    "sha256": "e375a8abcddfea64a111ddde5f54ada167a78114fd6051cca70975e189edac55",
+    "text": "protocol: minimum_motion\nmaximum_actions: 1\ntranslation_step_m: 0.001\ndeterministic_delta_m: [0.0005, 0.0, 0.0]\nrotation_enabled: false\ngripper_enabled: false\nmotion_enabled: false\nexplicit_motion_approval: false\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/hardware_interface.yaml": {
+    "sha256": "19b376bfcf761f48056b1b48f1599ae9052434504dfd8b309b1abdd84eabcb93",
+    "text": "namespace: /dsr01\npose_service: /dsr01/motion/move_line\npose_type: dsr_msgs2/srv/MoveLine\nstop_service: /dsr01/motion/move_stop\nstop_type: dsr_msgs2/srv/MoveStop\ngripper_service: /dsr01/io/set_tool_digital_output\ngripper_type: dsr_msgs2/srv/SetToolDigitalOutput\nmotion_sync_type: 0\nreference: 0\nmode: 0\nvelocity: [20.0, 20.0]\nacceleration: [20.0, 20.0]\nhold_stop_mode: 3\nstop_mode: 0\nmotion_enabled: false\nexplicit_motion_approval: false\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/full_task.yaml": {
+    "sha256": "5d3acee609571c0159ed68b60b7bfb815ff3c959e109357658f9e4d0bb0164f9",
+    "text": "protocol: full_task\nmaximum_duration_s: 30\nmaximum_actions: 150\ngripper_enabled: true\nmotion_enabled: false\nexplicit_motion_approval: false\n"
+  },
+  "phase12_real_policy_rollout/14_real_rollout_integration/configs/short_horizon.yaml": {
+    "sha256": "b4dd03750821a2aea03c3f6d0e74d5eeab2f09f5cd3c926581398355021f8013",
+    "text": "protocol: short_horizon\nduration_s: 2\nmaximum_actions: 10\ngripper_enabled: false\nmotion_enabled: false\nexplicit_motion_approval: false\n"
+  },
+  "phase12_real_policy_rollout/01_configs/safety_limits.yaml": {
+    "sha256": "9289011fda24271d3c7372dab1382ad3eb54163d862eb853ff3ef1d49f6b0251",
+    "text": "control_rate_hz: 5.0\nmax_action_age_sec: 1.2\ntranslation_step_m: 0.013\nrotation_step_deg: 4.0\ntranslation_velocity_mm_s: 20.0\nrotation_velocity_deg_s: 20.0\ntranslation_acceleration_mm_s2: 20.0\nrotation_acceleration_deg_s2: 20.0\nworkspace_m: {x: [0.275, 0.554], y: [-0.355, 0.386], z: [0.267, 0.754]}\nfailure_policy: fail_closed\n"
+  }
+}

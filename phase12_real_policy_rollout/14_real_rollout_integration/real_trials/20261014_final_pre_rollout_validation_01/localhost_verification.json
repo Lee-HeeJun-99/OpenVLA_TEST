@@ -1,0 +1,14 @@
+{
+  "source": "current /proc PID environ read-only inspection",
+  "processes": {
+    "3245663": {
+      "ROS_LOCALHOST_ONLY": "1"
+    },
+    "3245816": {
+      "ROS_LOCALHOST_ONLY": "1"
+    },
+    "3116004": {
+      "ROS_LOCALHOST_ONLY": "1"
+    }
+  }
+}

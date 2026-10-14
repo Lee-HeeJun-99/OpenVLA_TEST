@@ -1,0 +1,15 @@
+{
+  "gripper_abort_behavior": null,
+  "abort_command": null,
+  "abort_value": null,
+  "physical_expected_state": "UNKNOWN",
+  "evidence_source": ["normal_gripper_contract.json", "hardware_type.json", "fault_behavior_analysis.json", "abort_candidates.json", "live_io/current_io_states.json"],
+  "verified": false,
+  "classification": "GRIPPER_ABORT_BEHAVIOR_UNVERIFIED",
+  "physical_test_executed": false,
+  "physical_commands": 0,
+  "full_policy_launcher": "BLOCKED",
+  "full_episode_readiness": "BLOCKED",
+  "remaining_requirements": ["grounded abort behavior and jaw-state consequence", "verified contract integration into live launcher", "single OPEN pulse count configuration consistent with validated initialization"],
+  "tests": {"integration": 110, "safety": 103, "invalid_policy": 30, "total_pass": 243, "physical_verification": false}
+}

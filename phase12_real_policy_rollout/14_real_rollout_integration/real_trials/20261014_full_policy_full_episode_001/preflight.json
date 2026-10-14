@@ -1,0 +1,9 @@
+{
+  "execution_requested": "FULL_POLICY_ROLLOUT",
+  "task": "Pick up the orange cube.",
+  "result": "BLOCKED_BEFORE_PHYSICAL_INITIALIZATION",
+  "blocking_reason": "GRIPPER_ABORT_BEHAVIOR_UNVERIFIED",
+  "live_checks_this_request": "NOT_RUN: static mandatory abort gate failed first",
+  "previous_session_pass_not_reused_as_current_authorization": true,
+  "physical_commands_this_request": 0
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST",
+  "episode_started": false,
+  "outcome": null,
+  "execution_state": "FRESH_OPERATOR_APPROVAL_PENDING",
+  "task_success": null,
+  "task_success_denominator_included": false,
+  "existing_maximum_duration_s": 30,
+  "existing_maximum_actions": 150,
+  "arm_commands_this_request": 0,
+  "physical_gripper_commands": 0,
+  "gripper_abort_behavior": "UNVERIFIED / UNUSED",
+  "preflight_evidence": "preflight_check/summary.json",
+  "start_pose_error_deg": 0.000047751735998247113,
+  "tests_passed": 250,
+  "auto_retry": false,
+  "auto_batch": false,
+  "auto_home": false,
+  "auto_recovery": false
+}

@@ -1,0 +1,27 @@
+{
+  "source": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_controller2/src/dsr_controller2.cpp",
+  "flange": {
+    "classification": "SAFE_READ_ONLY",
+    "callback": "get_current_tool_flange_posx_cb",
+    "underlying": "g_stDrState.fCurrentToolPosx",
+    "cache_freshness_marker": false,
+    "request_ref_ignored": true,
+    "pose_kind": "FLANGE_ONLY"
+  },
+  "posx": {
+    "classification": "READ_ONLY_BUT_STABILITY_UNVERIFIED",
+    "callback": "get_current_posx_cb",
+    "underlying": "Drfl->get_current_posx(req->ref)",
+    "null_check": true,
+    "prior_feedback_risk": true,
+    "operator_authorized_controlled_once": true
+  },
+  "convention": {
+    "request_ref": 0,
+    "reference": "BASE",
+    "translation": "mm",
+    "orientation": "degrees",
+    "rotation": "intrinsic ZYZ",
+    "project_contract": "02_safety/action_contract.py"
+  }
+}

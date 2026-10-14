@@ -10,7 +10,7 @@ def sample_hardware_ready(hardware):
                and hardware.get(k,{}).get('response',{}).get('success') is True
                for k,(field,value) in expected.items())
 
-def run(output, runtime_duration=0., hardware_refresh=False, single_prediction=False):
+def run(output, runtime_duration=0., hardware_refresh=False, single_prediction=False,io_audit=False):
     import rclpy
     from sensor_msgs.msg import JointState,Image
     from rclpy.qos import qos_profile_sensor_data
@@ -81,7 +81,32 @@ def run(output, runtime_duration=0., hardware_refresh=False, single_prediction=F
                 with lock:status=state.status(time.monotonic())
                 if status['fault']:break
             (output/'hardware_getters.json').write_text(json.dumps(hardware,indent=2))
-        # Current health only; never call /predict or robot getters/services.
+        if io_audit and not status['fault']:
+            from dsr_msgs2.srv import GetToolDigitalInput,GetToolDigitalOutput,GetCtrlBoxDigitalInput,GetCtrlBoxDigitalOutput
+            from rosidl_runtime_py.convert import message_to_ordereddict
+            io_results={}
+            for name,kind in [('get_tool_digital_input',GetToolDigitalInput),('get_tool_digital_output',GetToolDigitalOutput),('get_ctrl_box_digital_input',GetCtrlBoxDigitalInput),('get_ctrl_box_digital_output',GetCtrlBoxDigitalOutput)]:
+                for index in (1,2):
+                    with lock:status=state.status(time.monotonic())
+                    if status['fault']:break
+                    key=f'{name}/{index}';client=node.create_client(kind,'/dsr01/io/'+name)
+                    try:
+                        if not client.wait_for_service(timeout_sec=1):
+                            io_results[key]=dict(status='ENDPOINT_UNAVAILABLE');continue
+                        request=kind.Request();request.index=index;tick=time.monotonic();future=client.call_async(request)
+                        while not future.done() and time.monotonic()-tick<2:
+                            time.sleep(.002)
+                            with lock:status=state.status(time.monotonic())
+                            if status['fault']:break
+                        io_results[key]=dict(status='RESPONSE' if future.done() else 'TIMEOUT',response=message_to_ordereddict(future.result()) if future.done() else None,latency_s=time.monotonic()-tick,source='AUDITED_SCALAR_READ_ONLY_CALLBACK',request_index=index)
+                    finally:node.destroy_client(client)
+            until=time.monotonic()+10
+            while time.monotonic()<until:
+                time.sleep(.01)
+                with lock:status=state.status(time.monotonic())
+                if status['fault']:break
+            (output/'current_io_states.json').write_text(json.dumps(io_results,indent=2))
+        # Current model identity health; prediction remains explicitly opt-in.
         try:
             with urlopen('http://127.0.0.1:8766/health',timeout=3) as response:health=json.load(response)
             validate_identity(health,'openvla')
@@ -179,7 +204,8 @@ if __name__=='__main__':
     parser.add_argument('--runtime-duration',type=float,default=0.)
     parser.add_argument('--hardware-refresh',action='store_true')
     parser.add_argument('--single-prediction',action='store_true')
+    parser.add_argument('--io-audit',action='store_true',help='audited scalar IO getters once per channel1/2, no setter')
     args=parser.parse_args()
     if args.runtime_duration<0:parser.error('--runtime-duration must be nonnegative')
     if args.single_prediction and not args.hardware_refresh:parser.error('--single-prediction requires --hardware-refresh')
-    run(args.output,args.runtime_duration,args.hardware_refresh,args.single_prediction)
+    run(args.output,args.runtime_duration,args.hardware_refresh,args.single_prediction,args.io_audit)

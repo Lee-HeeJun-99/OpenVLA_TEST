@@ -1,0 +1,9 @@
+{
+  "status": "FRESH_CONFIRMATION_REQUIRED",
+  "confirmed_wall_time": null,
+  "old_approval_reused": false,
+  "operator_present": null,
+  "workspace_clear": null,
+  "estop_accessible": null,
+  "robot_stationary": null
+}

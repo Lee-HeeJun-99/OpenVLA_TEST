@@ -1,0 +1,7 @@
+{
+  "expected": "OPEN",
+  "last_operator_reported": "OPEN",
+  "source": "operator report following failed CLOSE; not fresh rollout state",
+  "current_readonly_DI_DO_not_jaw_feedback": true,
+  "fresh_before_rollout_required": true
+}

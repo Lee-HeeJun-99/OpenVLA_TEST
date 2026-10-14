@@ -1,0 +1,14 @@
+{
+  "latest_joint_velocity": [
+    0.0,
+    0.0,
+    0.0,
+    -0.0,
+    -0.0,
+    0.0
+  ],
+  "latest_exact_zero": true,
+  "existing_live_observation_joint_velocity_support": "no independent stationary gate automatically inferred",
+  "zero_offset_test_criterion": "all(v==0) software support only",
+  "manual_stationary_still_required": true
+}

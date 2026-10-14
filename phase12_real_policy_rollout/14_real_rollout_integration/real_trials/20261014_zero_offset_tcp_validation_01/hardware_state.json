@@ -1,0 +1,71 @@
+{
+  "mode": {
+    "response": {
+      "robot_mode": 1,
+      "success": true
+    },
+    "latency_s": 0.0010524732060730457,
+    "pre_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.000582503154873848,
+      "source_gap": 0.010002374649047852,
+      "receive_gap": 0.010404630098491907,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 10.000504314899445,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    },
+    "request_fields": {},
+    "sent_once": true,
+    "request_wall_time": 1791964856.5522382
+  },
+  "state": {
+    "response": {
+      "robot_state": 1,
+      "success": true
+    },
+    "latency_s": 0.0007612379267811775,
+    "pre_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.0075941672548651695,
+      "source_gap": 0.010002374649047852,
+      "receive_gap": 0.010404630098491907,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 10.007515978999436,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    },
+    "request_fields": {},
+    "sent_once": true,
+    "request_wall_time": 1791964856.554261
+  },
+  "system": {
+    "response": {
+      "robot_system": 0,
+      "success": true
+    },
+    "latency_s": 0.0009821988642215729,
+    "pre_jointstate": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2853409.055687561,
+      "discovery_delay_s": 0.04421791108325124,
+      "latest_receive_age_s": 0.009429656900465488,
+      "source_gap": 0.010002374649047852,
+      "receive_gap": 0.010404630098491907,
+      "clean_since": 2853409.055687561,
+      "clean_window_s": 10.009351468645036,
+      "ready_at": 2853419.055762975,
+      "readiness_timeout_s": 120.0
+    },
+    "request_fields": {},
+    "sent_once": true,
+    "request_wall_time": 1791964856.5564206
+  }
+}

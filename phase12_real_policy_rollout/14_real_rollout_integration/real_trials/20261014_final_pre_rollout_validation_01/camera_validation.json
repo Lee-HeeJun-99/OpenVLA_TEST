@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "encoding": "bgra8",
+  "resolution": [
+    1280,
+    720
+  ],
+  "camera_age_at_inference_start": 0.05774180591106415,
+  "camera_age_at_inference_end": 0.49209663504734635,
+  "source_age_at_inference_start": 0.08702921867370605,
+  "source_age_at_inference_end": 0.5214128494262695,
+  "inference_latency": 0.4343548291362822,
+  "source_image_sha256": "bf347c57c81424fefdc973f3fb4a362db358c42c3ff6b9122dd1411b8135dce5",
+  "model_jpeg_sha256": "2d3f01ead9d3de8ef6831569da3ca63495157ca001fd2a9cb5002082cbb24e12",
+  "camera_failure": false
+}

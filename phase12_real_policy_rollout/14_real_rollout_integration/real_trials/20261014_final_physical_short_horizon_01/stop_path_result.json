@@ -1,0 +1,5 @@
+{
+  "status": "NOT_EXECUTED",
+  "physical_commands": 0,
+  "reason": "FRESH_SAFETY_CONFIRMATION_AND_TCP_EXECUTION_ACCEPTANCE_MISSING"
+}

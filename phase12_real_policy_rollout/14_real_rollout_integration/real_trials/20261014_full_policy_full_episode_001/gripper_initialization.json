@@ -1,0 +1,7 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "mandatory gripper abort contract is unverified",
+  "ack": null,
+  "observed_open": null,
+  "gripper_initialized": false
+}

@@ -1,0 +1,35 @@
+{
+  "model": "0=open,1=closed",
+  "model_source": "episode_000001 metadata gripper_closedness_convention; 00_audit/action_conversion_contract.md",
+  "legacy_digital_command": "0=closed,1=open is a different commanded-open signal, NOT physical IO polarity",
+  "physical_config": {
+    "polarity_confirmed": false,
+    "abort_value": null,
+    "abort_value_confirmed": false,
+    "gripper_open_output_index": 1,
+    "gripper_closed_output_index": 2,
+    "gripper_open_hardware_value": 1,
+    "gripper_closed_hardware_value": 1,
+    "inactive_hardware_value": 0,
+    "open_pulse_count": 2,
+    "closed_pulse_count": 1,
+    "open_pulse_time_s": 1.0,
+    "closed_pulse_time_s": 4.0,
+    "measured_gripper_state": "UNKNOWN"
+  },
+  "mapping_classification": "GRIPPER_MAPPING_UNVERIFIED",
+  "hysteresis": {
+    "open": 0.3,
+    "close": 0.7,
+    "boundary": "<=0.3 OPEN, >=0.7 CLOSE"
+  },
+  "physical_IO": "separate open/close channels; configured index1/index2 active1 inactive0, not physically confirmed",
+  "full_policy_requires_mapping": true,
+  "abort_output_confirmed": false,
+  "physical_commands": 0,
+  "short_horizon_gripper_dispatch": false,
+  "short_horizon_close_prediction_blocked": true,
+  "configured_open_pulse_count": 2,
+  "sink_pulse_count_implementation": "one on/off pulse; configured pulse_count not consumed",
+  "legacy_action_adapter_mapping_inverted": true
+}

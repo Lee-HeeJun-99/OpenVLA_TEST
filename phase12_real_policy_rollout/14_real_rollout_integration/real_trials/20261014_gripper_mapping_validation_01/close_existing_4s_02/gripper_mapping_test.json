@@ -1,0 +1,65 @@
+{
+  "status": "GRIPPER_MAPPING_FAILED",
+  "error": null,
+  "requested_logical_state": "CLOSE",
+  "hardware_output_index": 2,
+  "activation_value": 1,
+  "deactivation_value": 0,
+  "pulse_duration_s": 4.0,
+  "logical_command_count": 1,
+  "io_service_requests": 2,
+  "events": [
+    {
+      "command_id": "49613dc9c20640d4826e0fa46d67a13e",
+      "command_type": "gripper",
+      "requested_at": 2861001.403337801,
+      "sent_at": 2861001.404117458,
+      "ack_at": 2861001.4092034,
+      "completed_at": 2861001.409209789,
+      "ack_latency": 0.00508594186976552,
+      "state": "completed",
+      "request": {
+        "index": 2,
+        "value": 1
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    },
+    {
+      "command_id": "72766929ea4342a7a03a5f12243b35ee",
+      "command_type": "gripper",
+      "requested_at": 2861005.413522128,
+      "sent_at": 2861005.413778417,
+      "ack_at": 2861005.418852852,
+      "completed_at": 2861005.418856763,
+      "ack_latency": 0.005074435379356146,
+      "state": "completed",
+      "request": {
+        "index": 2,
+        "value": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "physical_arm_commands": 0,
+  "physical_stop_commands": 0,
+  "actual_physical_state": "NOT_CLOSED",
+  "operator_report": "안닫혔어",
+  "requested_state_observed": false,
+  "automatic_retry_inhibited": true,
+  "polarity_globally_confirmed": false,
+  "abort_jaw_behavior_verified": false,
+  "operator_confirmation_wall_time": 1791972419.0,
+  "source": "existing runtime/config close pulse4s or historical collection pulse1s; channel/value unchanged",
+  "open_pulse_count_this_test": null,
+  "historical_open_pulse_count": 2
+}

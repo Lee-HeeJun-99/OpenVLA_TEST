@@ -1,0 +1,31 @@
+{
+  "tests": {
+    "phase12_real_policy_rollout": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/02_safety/command_disabled_runtime.py:55: UserWarning: Gimbal lock detected. Setting third angle to zero since it is not possible to uniquely determine all angles.\n  dmm=translation_m_to_mm(a[:3]).delta_mm;abc,_=compose_world_rotvec_with_doosan_zyz(current_abc_deg,a[3:6])\n----------------------------------------------------------------------\nRan 103 tests in 0.150s\n\nOK\n"
+    },
+    "phase12_real_policy_rollout/14_real_rollout_integration": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/02_safety/command_disabled_runtime.py:55: UserWarning: Gimbal lock detected. Setting third angle to zero since it is not possible to uniquely determine all angles.\n  dmm=translation_m_to_mm(a[:3]).delta_mm;abc,_=compose_world_rotvec_with_doosan_zyz(current_abc_deg,a[3:6])\n----------------------------------------------------------------------\nRan 92 tests in 0.249s\n\nOK\n"
+    },
+    "phase12_real_policy_rollout/15_valid_invalid_rollout_policy": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 30 tests in 0.062s\n\nOK\n"
+    }
+  },
+  "passed": true,
+  "fake_transport_only": true,
+  "faults_tested": [
+    "JointState",
+    "Camera",
+    "Model",
+    "translation >13mm",
+    "rotation >4deg",
+    "logger",
+    "NaN"
+  ],
+  "future_dispatch_zero": true
+}

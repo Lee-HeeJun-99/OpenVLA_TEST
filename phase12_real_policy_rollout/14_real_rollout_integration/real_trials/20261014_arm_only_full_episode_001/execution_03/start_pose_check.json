@@ -1,0 +1,14 @@
+{
+  "source": "last fresh sample in jointstate.json",
+  "current_joint_deg": [-183.1307724791934, -2.1868842054825706, -41.87585906549691, -3.4862329262027623, -114.24121813306718, -2.982456102269193],
+  "target_joint_deg": [-182.55277, -1.07182, -41.00585, 1.25662, -113.50009, 1.49975],
+  "max_absolute_error_deg": 4.7428529262027626,
+  "tolerance_deg": 0.5,
+  "start_pose": "FAIL",
+  "latest_velocity_rad_s": [0, 0, 0, 0, 0, 0],
+  "jointstate_phase": "RUNTIME_READY",
+  "jointstate_fault": null,
+  "episode_started": false,
+  "physical_commands": 0,
+  "automatic_reset": false
+}

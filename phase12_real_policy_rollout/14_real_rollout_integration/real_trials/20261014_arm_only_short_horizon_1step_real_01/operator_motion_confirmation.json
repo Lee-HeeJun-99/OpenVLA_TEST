@@ -1,0 +1,11 @@
+{
+ "source": "CURRENT_OPERATOR_USER_MESSAGE",
+ "confirmation_recorded_utc": "2026-10-14 08:57:45 UTC",
+ "operator_reported_expected_small_motion": true,
+ "operator_reported_gripper_motion": false,
+ "operator_reported_unexpected_motion": false,
+ "operator_reported_estop_used": false,
+ "verbatim": "예상한 작은 움직임만 있었고 gripper 움직임·이상 움직임·E-stop 사용이 없었습니다.",
+ "classification": "ARM_ONLY_SHORT_HORIZON_PASS",
+ "scope": "SYSTEM_INTEGRATION_TEST_NOT_TASK_SUCCESS_FAILURE"
+}

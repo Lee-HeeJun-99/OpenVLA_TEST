@@ -1,0 +1,9 @@
+{
+  "classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "condition_candidate": "ZERO_OFFSET_CONSISTENCY_SUPPORTED",
+  "accepted": false,
+  "explicit_engineering_approval_received": false,
+  "active_tcp_name_not_directly_observed": true,
+  "evidence_source": "20261014_zero_offset_tcp_validation_01",
+  "formal_verified": false
+}

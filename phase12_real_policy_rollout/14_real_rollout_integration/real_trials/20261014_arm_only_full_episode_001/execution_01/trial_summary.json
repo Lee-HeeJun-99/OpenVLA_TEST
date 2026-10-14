@@ -1,0 +1,21 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "must be real number, not str",
+  "evaluation_scope": "ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST",
+  "termination": null,
+  "task_success": null,
+  "task_performance_denominator_included": false,
+  "steps_attempted": 0,
+  "steps_completed": 0,
+  "duration_s": null,
+  "arm_commands": 0,
+  "physical_gripper_commands": 0,
+  "stop_commands": 0,
+  "gripper_abort_behavior": "UNVERIFIED / UNUSED",
+  "unexpected_motion": null,
+  "estop_used": null,
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "auto_next_episode": false
+}

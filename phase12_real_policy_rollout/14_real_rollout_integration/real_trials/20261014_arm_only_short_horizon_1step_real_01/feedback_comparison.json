@@ -1,0 +1,36 @@
+{
+  "raw_translation_norm_mm": 1.4350678168193218,
+  "requested_delta_mm": [
+    0.7862684173434938,
+    -0.09996661465904517,
+    -0.10857555821531598
+  ],
+  "observed_fk_flange_delta_mm": [
+    0.792227537606216,
+    -0.10499691473057036,
+    -0.10998288281593993
+  ],
+  "requested_norm_mm": 0.8,
+  "observed_norm_mm": 0.8066877078256813,
+  "delta_error_mm": 0.007924367207966422,
+  "direction_cosine": 0.9999859997249326,
+  "magnitude_ratio": 1.0083596347821016,
+  "requested_rotation_deg": 0.642879193456795,
+  "observed_rotation_deg": 0.6418406248031707,
+  "relative_rotation_error_deg": 0.0018751690024800772,
+  "runtime_fault": null,
+  "max_source_gap_s": 0.012043237686157227,
+  "max_receive_gap_s": 0.015125551261007786,
+  "source_gap_ge_100ms": 0,
+  "receive_gap_ge_100ms": 0,
+  "final_joint_velocity": [
+    0.0,
+    0.0,
+    0.0,
+    -0.0,
+    -0.0,
+    0.0
+  ],
+  "feedback_source": "JOINTSTATE_MEASURED_JOINTS_PLUS_FK_ESTIMATED_FLANGE_NOT_MEASURED_TCP",
+  "physical_operator_result_confirmation": "PENDING"
+}

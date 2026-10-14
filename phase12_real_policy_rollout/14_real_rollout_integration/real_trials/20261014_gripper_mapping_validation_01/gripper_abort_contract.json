@@ -1,0 +1,8 @@
+{
+  "classification": "GRIPPER_ABORT_BEHAVIOR_UNVERIFIED",
+  "abort_value": null,
+  "current_sink_abort": "deenergize selected output using configured abort_value; refuses missing value",
+  "last_test_selected_coil_deenergization": 0,
+  "jaw_failsafe_state": "UNKNOWN",
+  "output_off_not_equivalent_to_safe_open_or_hold": true
+}

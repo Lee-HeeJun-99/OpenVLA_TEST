@@ -1,0 +1,9 @@
+{
+  "classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "tcp_contract_verified": false,
+  "error": null,
+  "physical_commands": 0,
+  "next": "BLOCKED",
+  "active_tcp_name": null,
+  "acceptance_tolerance": null
+}

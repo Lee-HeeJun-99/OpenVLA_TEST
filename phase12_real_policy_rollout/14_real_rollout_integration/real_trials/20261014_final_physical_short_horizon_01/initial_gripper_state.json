@@ -1,0 +1,5 @@
+{
+  "initial_gripper_state": "UNKNOWN",
+  "expected_initial_gripper_state": "OPEN",
+  "match": null
+}

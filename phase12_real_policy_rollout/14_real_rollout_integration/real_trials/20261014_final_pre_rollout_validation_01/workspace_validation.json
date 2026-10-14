@@ -1,0 +1,724 @@
+{
+  "bounds": {
+    "x": [
+      0.275,
+      0.554
+    ],
+    "y": [
+      -0.355,
+      0.386
+    ],
+    "z": [
+      0.267,
+      0.754
+    ]
+  },
+  "inside_count": 50,
+  "outside_count": 0,
+  "hypothetical": true,
+  "current_pose_verified": false,
+  "pose_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_zero_offset_tcp_validation_01/controller_current_posx.json",
+  "targets": [
+    {
+      "sample_id": 1,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022238438632312105,
+        155.69675341793436,
+        -176.56934095444348
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.13959862628643446,
+      "finite": true
+    },
+    {
+      "sample_id": 2,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -3.7506430585817525,
+        156.38926205617878,
+        179.34878412016758
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 1.8271704558370974,
+      "finite": true
+    },
+    {
+      "sample_id": 3,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 4,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022238438632312105,
+        155.69675341793436,
+        -176.56934095444348
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.13959862628643446,
+      "finite": true
+    },
+    {
+      "sample_id": 5,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 6,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 7,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 8,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -3.7506430585817525,
+        156.38926205617878,
+        179.34878412016758
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 1.8271704558370974,
+      "finite": true
+    },
+    {
+      "sample_id": 9,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 10,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -3.7506430585817525,
+        156.38926205617878,
+        179.34878412016758
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 1.8271704558370974,
+      "finite": true
+    },
+    {
+      "sample_id": 11,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 12,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 13,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 14,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 15,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 16,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 17,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 18,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 19,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 20,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022238438632312105,
+        155.69675341793436,
+        -176.56934095444348
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.13959862628643446,
+      "finite": true
+    },
+    {
+      "sample_id": 21,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 22,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.02217195141345165,
+        155.5515236999661,
+        -176.5692218265211
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.03501142318267862,
+      "finite": true
+    },
+    {
+      "sample_id": 23,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 24,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 25,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 26,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 27,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 28,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 29,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 30,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.006251197894910985,
+        155.51646364294564,
+        -176.56920823197754
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.056680673952285085,
+      "finite": true
+    },
+    {
+      "sample_id": 31,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022238438632312105,
+        155.69675341793436,
+        -176.56934095444348
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.13959862628643446,
+      "finite": true
+    },
+    {
+      "sample_id": 32,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 33,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 34,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.006251197894910985,
+        155.51646364294564,
+        -176.56920823197754
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.056680673952285085,
+      "finite": true
+    },
+    {
+      "sample_id": 35,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -3.7506430585817525,
+        156.38926205617878,
+        179.34878412016758
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 1.8271704558370974,
+      "finite": true
+    },
+    {
+      "sample_id": 36,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 37,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022217694188830836,
+        155.65168212615572,
+        -176.56930387777754
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.09646758923208595,
+      "finite": true
+    },
+    {
+      "sample_id": 38,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 39,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 40,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.006251197894910985,
+        155.51646364294564,
+        -176.56920823197754
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.056680673952285085,
+      "finite": true
+    },
+    {
+      "sample_id": 41,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -3.7506430585817525,
+        156.38926205617878,
+        179.34878412016758
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 1.8271704558370974,
+      "finite": true
+    },
+    {
+      "sample_id": 42,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 43,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    },
+    {
+      "sample_id": 44,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        734.8986958954035,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 45,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 46,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022238438632312105,
+        155.69675341793436,
+        -176.56934095444348
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.13959862628643446,
+      "finite": true
+    },
+    {
+      "sample_id": 47,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 48,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 49,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022156056612002865,
+        155.5164682507949,
+        -176.56919321896677
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.05601531358911016,
+      "finite": true
+    },
+    {
+      "sample_id": 50,
+      "raw_hypothetical_target_mm_zyz_deg": [
+        305.118535718305,
+        -11.811368882411303,
+        736.5531404021945,
+        -0.022206212591207586,
+        155.62664251961027,
+        -176.56928332095598
+      ],
+      "inside": true,
+      "rotation_geodesic_deg": 0.07351870954040779,
+      "finite": true
+    }
+  ],
+  "physical_commands": 0
+}

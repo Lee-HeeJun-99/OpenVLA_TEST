@@ -1,0 +1,927 @@
+[
+  {
+    "sample_id": 1,
+    "timestamp_wall": 1791965636.6486175,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "current_translation_limit_m": 0.01,
+    "tcp_contract_verified": false,
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+    "instruction": "Pick up the orange cube.",
+    "clipping": false,
+    "scaling": false,
+    "hardware": {
+      "mode": {
+        "response": {
+          "robot_mode": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965636.6489747,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "state": {
+        "response": {
+          "robot_state": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965636.6516786,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "system": {
+        "response": {
+          "robot_system": 0,
+          "success": true
+        },
+        "requested_wall_time": 1791965636.65409,
+        "provenance": "DRIVER_REPORTED"
+      }
+    },
+    "jointstate_before": {
+      "receive": 2854199.165543771,
+      "source": 1791965636.654488,
+      "header_age": 0.0006015300750732422,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010018348693847656,
+      "receive_gap": 0.01016807509586215,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_phase": "RUNTIME_READY",
+    "start_pose_max_error_deg": 4.7751735998247113e-05,
+    "source_image_sha256": "26250a66df8753ca880826eb5d2dbbca84932ed38918a610e284542d63a5085f",
+    "model_input_sha256": "339affaaf05dff23ea0547fa0cc750e383cde5badb739b62e895e666ad8bf944",
+    "camera_source_timestamp": [
+      1791965636,
+      626659352
+    ],
+    "camera_receive_monotonic": 2854199.171266577,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "frame_receive_monotonic": 2854199.171266577,
+    "inference_start_monotonic": 2854199.228686258,
+    "inference_end_monotonic": 2854199.641500689,
+    "camera_age_at_inference_start": 0.05741968099027872,
+    "camera_age_at_inference_end": 0.4702341118827462,
+    "inference_latency": 0.4128144308924675,
+    "source_age_at_inference_start": 0.0915217399597168,
+    "source_age_at_inference_end": 0.5043783187866211,
+    "raw_model_response": {
+      "action": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.012875344992038188,
+        0.0005787247280851192,
+        0.002364704483548279,
+        -9.780888271254066e-05,
+        0.9980392156862745
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.37511669285595417,
+      "request_index": 5
+    },
+    "raw_action": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188,
+      0.0005787247280851192,
+      0.002364704483548279,
+      -9.780888271254066e-05,
+      0.9980392156862745
+    ],
+    "jointstate_after": {
+      "receive": 2854199.635284545,
+      "source": 1791965637.124471,
+      "header_age": 0.00035572052001953125,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010003328323364258,
+      "receive_gap": 0.009986571967601776,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_runtime": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2854189.14551152,
+      "discovery_delay_s": 0.9546449291519821,
+      "latest_receive_age_s": 0.006275550927966833,
+      "source_gap": 0.010003328323364258,
+      "receive_gap": 0.009986571967601776,
+      "clean_since": 2854189.14551152,
+      "clean_window_s": 10.496048575732857,
+      "ready_at": 2854199.149757892,
+      "readiness_timeout_s": 120.0
+    },
+    "classification": "SAMPLE_VALID",
+    "translation_xyz_m": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188
+    ],
+    "translation_norm_m": 0.012875387339051948,
+    "rotation_xyz_rad": [
+      0.0005787247280851192,
+      0.002364704483548279,
+      -9.780888271254066e-05
+    ],
+    "rotation_norm_rad": 0.0024364556599593607,
+    "rotation_norm_deg": 0.13959862628643302,
+    "gripper_closedness": 0.9980392156862745,
+    "translation_gate_pass": false,
+    "rotation_gate_pass": true,
+    "nan_inf_count": 0
+  },
+  {
+    "sample_id": 2,
+    "timestamp_wall": 1791965637.1318998,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "current_translation_limit_m": 0.01,
+    "tcp_contract_verified": false,
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+    "instruction": "Pick up the orange cube.",
+    "clipping": false,
+    "scaling": false,
+    "hardware": {
+      "mode": {
+        "response": {
+          "robot_mode": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965637.1321602,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "state": {
+        "response": {
+          "robot_state": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965637.134521,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "system": {
+        "response": {
+          "robot_system": 0,
+          "success": true
+        },
+        "requested_wall_time": 1791965637.1367545,
+        "provenance": "DRIVER_REPORTED"
+      }
+    },
+    "jointstate_before": {
+      "receive": 2854199.655684208,
+      "source": 1791965637.1445189,
+      "header_age": 0.0007121562957763672,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010043144226074219,
+      "receive_gap": 0.010334041900932789,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_phase": "RUNTIME_READY",
+    "start_pose_max_error_deg": 4.7751735998247113e-05,
+    "source_image_sha256": "8297eb6f793211f05cf456602f0022a47de9409c810df355a5af0f6326fc7c2b",
+    "model_input_sha256": "1917f1e686e0d24dc43da3472b864e3dbac57c879f75489526b7d760a451a1f5",
+    "camera_source_timestamp": [
+      1791965637,
+      110022352
+    ],
+    "camera_receive_monotonic": 2854199.653405979,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "frame_receive_monotonic": 2854199.653405979,
+    "inference_start_monotonic": 2854199.6822749,
+    "inference_end_monotonic": 2854200.103772185,
+    "camera_age_at_inference_start": 0.028868921101093292,
+    "camera_age_at_inference_end": 0.45036620600149035,
+    "inference_latency": 0.42149728490039706,
+    "source_age_at_inference_start": 0.06175374984741211,
+    "source_age_at_inference_end": 0.48329639434814453,
+    "raw_model_response": {
+      "action": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.012875344992038188,
+        -0.027931714651865086,
+        0.015388008575496343,
+        -9.780888271254066e-05,
+        0.9980392156862745
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.3837002031505108,
+      "request_index": 6
+    },
+    "raw_action": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188,
+      -0.027931714651865086,
+      0.015388008575496343,
+      -9.780888271254066e-05,
+      0.9980392156862745
+    ],
+    "jointstate_after": {
+      "receive": 2854200.095683175,
+      "source": 1791965637.5844772,
+      "header_age": 0.0007529258728027344,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009986400604248047,
+      "receive_gap": 0.009826695080846548,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_runtime": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2854189.14551152,
+      "discovery_delay_s": 0.9546449291519821,
+      "latest_receive_age_s": 0.008155300747603178,
+      "source_gap": 0.009986400604248047,
+      "receive_gap": 0.009826695080846548,
+      "clean_since": 2854189.14551152,
+      "clean_window_s": 10.958326955791563,
+      "ready_at": 2854199.149757892,
+      "readiness_timeout_s": 120.0
+    },
+    "classification": "SAMPLE_VALID",
+    "translation_xyz_m": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188
+    ],
+    "translation_norm_m": 0.012875387339051948,
+    "rotation_xyz_rad": [
+      -0.027931714651865086,
+      0.015388008575496343,
+      -9.780888271254066e-05
+    ],
+    "rotation_norm_rad": 0.03189014044952297,
+    "rotation_norm_deg": 1.8271704558370963,
+    "gripper_closedness": 0.9980392156862745,
+    "translation_gate_pass": false,
+    "rotation_gate_pass": true,
+    "nan_inf_count": 0
+  },
+  {
+    "sample_id": 3,
+    "timestamp_wall": 1791965637.594065,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "current_translation_limit_m": 0.01,
+    "tcp_contract_verified": false,
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+    "instruction": "Pick up the orange cube.",
+    "clipping": false,
+    "scaling": false,
+    "hardware": {
+      "mode": {
+        "response": {
+          "robot_mode": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965637.594258,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "state": {
+        "response": {
+          "robot_state": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965637.5965588,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "system": {
+        "response": {
+          "robot_system": 0,
+          "success": true
+        },
+        "requested_wall_time": 1791965637.5988197,
+        "provenance": "DRIVER_REPORTED"
+      }
+    },
+    "jointstate_before": {
+      "receive": 2854200.115324705,
+      "source": 1791965637.6044784,
+      "header_age": 0.0003826618194580078,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009994745254516602,
+      "receive_gap": 0.009832689072936773,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_phase": "RUNTIME_READY",
+    "start_pose_max_error_deg": 4.7751735998247113e-05,
+    "source_image_sha256": "6f71c2c37018375b47c9098ea63c296881d4f585434e282d13c89694802d53a9",
+    "model_input_sha256": "035ddcc4da91c35b5774d0fc50803541ea95a02f76a6fc9266614a96f65aee3a",
+    "camera_source_timestamp": [
+      1791965637,
+      593286352
+    ],
+    "camera_receive_monotonic": 2854200.133898839,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "frame_receive_monotonic": 2854200.133898839,
+    "inference_start_monotonic": 2854200.155959998,
+    "inference_end_monotonic": 2854200.563527481,
+    "camera_age_at_inference_start": 0.022061158902943134,
+    "camera_age_at_inference_end": 0.42962864227592945,
+    "inference_latency": 0.4075674833729863,
+    "source_age_at_inference_start": 0.0521700382232666,
+    "source_age_at_inference_end": 0.4597773551940918,
+    "raw_model_response": {
+      "action": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.012875344992038188,
+        0.0005787247280851192,
+        -0.0007818656326270901,
+        -9.780888271254066e-05,
+        0.9980392156862745
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.37076143780723214,
+      "request_index": 7
+    },
+    "raw_action": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188,
+      0.0005787247280851192,
+      -0.0007818656326270901,
+      -9.780888271254066e-05,
+      0.9980392156862745
+    ],
+    "jointstate_after": {
+      "receive": 2854200.555621416,
+      "source": 1791965638.0444832,
+      "header_age": 0.0006818771362304688,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010007143020629883,
+      "receive_gap": 0.010376994032412767,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_runtime": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2854189.14551152,
+      "discovery_delay_s": 0.9546449291519821,
+      "latest_receive_age_s": 0.007948541082441807,
+      "source_gap": 0.010007143020629883,
+      "receive_gap": 0.010376994032412767,
+      "clean_since": 2854189.14551152,
+      "clean_window_s": 11.418058436829597,
+      "ready_at": 2854199.149757892,
+      "readiness_timeout_s": 120.0
+    },
+    "classification": "SAMPLE_VALID",
+    "translation_xyz_m": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188
+    ],
+    "translation_norm_m": 0.012875387339051948,
+    "rotation_xyz_rad": [
+      0.0005787247280851192,
+      -0.0007818656326270901,
+      -9.780888271254066e-05
+    ],
+    "rotation_norm_rad": 0.0009776516536671078,
+    "rotation_norm_deg": 0.05601531358911093,
+    "gripper_closedness": 0.9980392156862745,
+    "translation_gate_pass": false,
+    "rotation_gate_pass": true,
+    "nan_inf_count": 0
+  },
+  {
+    "sample_id": 4,
+    "timestamp_wall": 1791965638.0536447,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "current_translation_limit_m": 0.01,
+    "tcp_contract_verified": false,
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+    "instruction": "Pick up the orange cube.",
+    "clipping": false,
+    "scaling": false,
+    "hardware": {
+      "mode": {
+        "response": {
+          "robot_mode": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965638.0537536,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "state": {
+        "response": {
+          "robot_state": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965638.0559604,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "system": {
+        "response": {
+          "robot_system": 0,
+          "success": true
+        },
+        "requested_wall_time": 1791965638.058115,
+        "provenance": "DRIVER_REPORTED"
+      }
+    },
+    "jointstate_before": {
+      "receive": 2854200.565254344,
+      "source": 1791965638.054469,
+      "header_age": 0.0003161430358886719,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009985923767089844,
+      "receive_gap": 0.009632928296923637,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_phase": "RUNTIME_READY",
+    "start_pose_max_error_deg": 4.7751735998247113e-05,
+    "source_image_sha256": "4e27458c7481aa8283404490750f989b5a42b8ff0330686cf1c7a628545cc16f",
+    "model_input_sha256": "d51452b8b041e2e1d364a7b81e3e51a9cc2db57a7051a03349d02a2df1c62071",
+    "camera_source_timestamp": [
+      1791965638,
+      76712352
+    ],
+    "camera_receive_monotonic": 2854200.618324206,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "frame_receive_monotonic": 2854200.618324206,
+    "inference_start_monotonic": 2854200.649946058,
+    "inference_end_monotonic": 2854201.063272786,
+    "camera_age_at_inference_start": 0.031621851958334446,
+    "camera_age_at_inference_end": 0.44494857965037227,
+    "inference_latency": 0.4133267276920378,
+    "source_age_at_inference_start": 0.06269288063049316,
+    "source_age_at_inference_end": 0.4761085510253906,
+    "raw_model_response": {
+      "action": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.012875344992038188,
+        0.0005787247280851192,
+        0.002364704483548279,
+        -9.780888271254066e-05,
+        0.9980392156862745
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.368376730941236,
+      "request_index": 8
+    },
+    "raw_action": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188,
+      0.0005787247280851192,
+      0.002364704483548279,
+      -9.780888271254066e-05,
+      0.9980392156862745
+    ],
+    "jointstate_after": {
+      "receive": 2854201.055340152,
+      "source": 1791965638.5444672,
+      "header_age": 0.00040984153747558594,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.00997304916381836,
+      "receive_gap": 0.009199866559356451,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_runtime": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2854189.14551152,
+      "discovery_delay_s": 0.9546449291519821,
+      "latest_receive_age_s": 0.008001736365258694,
+      "source_gap": 0.00997304916381836,
+      "receive_gap": 0.009199866559356451,
+      "clean_since": 2854189.14551152,
+      "clean_window_s": 11.917830368038267,
+      "ready_at": 2854199.149757892,
+      "readiness_timeout_s": 120.0
+    },
+    "classification": "SAMPLE_VALID",
+    "translation_xyz_m": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188
+    ],
+    "translation_norm_m": 0.012875387339051948,
+    "rotation_xyz_rad": [
+      0.0005787247280851192,
+      0.002364704483548279,
+      -9.780888271254066e-05
+    ],
+    "rotation_norm_rad": 0.0024364556599593607,
+    "rotation_norm_deg": 0.13959862628643302,
+    "gripper_closedness": 0.9980392156862745,
+    "translation_gate_pass": false,
+    "rotation_gate_pass": true,
+    "nan_inf_count": 0
+  },
+  {
+    "sample_id": 6,
+    "timestamp_wall": 1791965639.0179222,
+    "command_requested": false,
+    "command_issued": false,
+    "delivered_action": null,
+    "executed_action": null,
+    "current_translation_limit_m": 0.01,
+    "tcp_contract_verified": false,
+    "tcp_source": "FK_ESTIMATED_FLANGE",
+    "tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+    "instruction": "Pick up the orange cube.",
+    "clipping": false,
+    "scaling": false,
+    "hardware": {
+      "mode": {
+        "response": {
+          "robot_mode": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965639.018047,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "state": {
+        "response": {
+          "robot_state": 1,
+          "success": true
+        },
+        "requested_wall_time": 1791965639.0203285,
+        "provenance": "DRIVER_REPORTED"
+      },
+      "system": {
+        "response": {
+          "robot_system": 0,
+          "success": true
+        },
+        "requested_wall_time": 1791965639.022594,
+        "provenance": "DRIVER_REPORTED"
+      }
+    },
+    "jointstate_before": {
+      "receive": 2854201.535392099,
+      "source": 1791965639.0244823,
+      "header_age": 0.000453948974609375,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010003089904785156,
+      "receive_gap": 0.010015897918492556,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_phase": "RUNTIME_READY",
+    "start_pose_max_error_deg": 4.7751735998247113e-05,
+    "source_image_sha256": "ef45e490aa459bbd405c59aef759926c31fba35fa01dce4524c3c37c8ae1c8c9",
+    "model_input_sha256": "29eb3ff726fde0db0ef5b2bc2dcb91f221dd95af091f5bd73428727eb7e9e96b",
+    "camera_source_timestamp": [
+      1791965639,
+      60153352
+    ],
+    "camera_receive_monotonic": 2854201.600167874,
+    "encoding": "bgra8",
+    "resolution": [
+      1280,
+      720
+    ],
+    "frame_receive_monotonic": 2854201.600167874,
+    "inference_start_monotonic": 2854201.617031418,
+    "inference_end_monotonic": 2854202.022283556,
+    "camera_age_at_inference_start": 0.01686354400590062,
+    "camera_age_at_inference_end": 0.42211568215861917,
+    "inference_latency": 0.40525213815271854,
+    "source_age_at_inference_start": 0.04637622833251953,
+    "source_age_at_inference_end": 0.45166516304016113,
+    "raw_model_response": {
+      "action": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.012875344992038188,
+        0.0005787247280851192,
+        -0.0007818656326270901,
+        -9.780888271254066e-05,
+        0.9980392156862745
+      ],
+      "chunk_size": 1,
+      "variant": "openvla_token",
+      "instruction": "pick up the orange cube",
+      "inference_seconds": 0.37128233909606934,
+      "request_index": 10
+    },
+    "raw_action": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188,
+      0.0005787247280851192,
+      -0.0007818656326270901,
+      -9.780888271254066e-05,
+      0.9980392156862745
+    ],
+    "jointstate_after": {
+      "receive": 2854202.015744157,
+      "source": 1791965639.5044918,
+      "header_age": 0.0007953643798828125,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861462593078613,
+        -0.018707243725657463,
+        0.021932009607553482,
+        -1.9809508323669434,
+        -0.7156862616539001,
+        0.026174861937761307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009998798370361328,
+      "receive_gap": 0.010024132207036018,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_runtime": {
+      "phase": "RUNTIME_READY",
+      "fault": null,
+      "first_fresh_sample": 2854189.14551152,
+      "discovery_delay_s": 0.9546449291519821,
+      "latest_receive_age_s": 0.006587309762835503,
+      "source_gap": 0.009998798370361328,
+      "receive_gap": 0.010024132207036018,
+      "clean_since": 2854189.14551152,
+      "clean_window_s": 12.876819946803153,
+      "ready_at": 2854199.149757892,
+      "readiness_timeout_s": 120.0
+    },
+    "classification": "SAMPLE_VALID",
+    "translation_xyz_m": [
+      2.835627494564459e-05,
+      1.6923010594068442e-05,
+      0.012875344992038188
+    ],
+    "translation_norm_m": 0.012875387339051948,
+    "rotation_xyz_rad": [
+      0.0005787247280851192,
+      -0.0007818656326270901,
+      -9.780888271254066e-05
+    ],
+    "rotation_norm_rad": 0.0009776516536671078,
+    "rotation_norm_deg": 0.05601531358911093,
+    "gripper_closedness": 0.9980392156862745,
+    "translation_gate_pass": false,
+    "rotation_gate_pass": true,
+    "nan_inf_count": 0
+  }
+]

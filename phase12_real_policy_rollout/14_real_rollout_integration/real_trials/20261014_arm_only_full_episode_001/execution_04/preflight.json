@@ -1,0 +1,41 @@
+{
+  "hardware": {
+    "mode": {
+      "robot_mode": 1,
+      "success": true
+    },
+    "state": {
+      "robot_state": 1,
+      "success": true
+    },
+    "system": {
+      "robot_system": 0,
+      "success": true
+    }
+  },
+  "jointstate": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2864638.80222031,
+    "discovery_delay_s": 0.9641766031272709,
+    "latest_receive_age_s": 0.006833355873823166,
+    "source_gap": 0.009988784790039062,
+    "receive_gap": 0.011214321944862604,
+    "clean_since": 2864638.80222031,
+    "clean_window_s": 10.037729343865067,
+    "ready_at": 2864648.802760671,
+    "readiness_timeout_s": 120.0
+  },
+  "start_pose_error_deg": 4.7751735998247113e-05,
+  "camera_ready": true,
+  "model_ready": true,
+  "max_steps": 150,
+  "max_duration_s": 30,
+  "physical_gripper_disabled": true,
+  "task_success_not_applicable": true,
+  "settle_policy": {
+    "clean_seconds": 0.2,
+    "timeout_seconds": 2.0,
+    "velocity_criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES"
+  }
+}

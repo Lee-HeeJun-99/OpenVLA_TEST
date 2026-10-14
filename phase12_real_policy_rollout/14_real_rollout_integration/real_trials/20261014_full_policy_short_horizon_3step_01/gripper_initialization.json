@@ -1,0 +1,12 @@
+{
+ "status": "PASS",
+ "reason": "IO_ACK_PASS_AND_CURRENT_OPERATOR_CONFIRMED_OPEN",
+ "OPEN_requested": true,
+ "observed_OPEN": true,
+ "gripper_initialized_open": true,
+ "operator_report": "open",
+ "physical_gripper_commands": 1,
+ "io_service_requests": 2,
+ "io_ack": "PASS",
+ "source": "open_initialization_01/gripper_mapping_test.json"
+}

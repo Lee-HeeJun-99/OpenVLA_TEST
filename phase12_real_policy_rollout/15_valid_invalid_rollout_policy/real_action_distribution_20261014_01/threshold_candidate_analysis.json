@@ -1,0 +1,43 @@
+{
+  "status": "DESCRIPTIVE_CANDIDATES_NOT_APPLIED",
+  "candidates": [
+    {
+      "name": "current_10mm",
+      "threshold_mm": 10.0,
+      "rejection_count": 50,
+      "rejection_rate": 1.0
+    },
+    {
+      "name": "observed_p95",
+      "threshold_mm": 12.875387339051949,
+      "rejection_count": 0,
+      "rejection_rate": 0.0
+    },
+    {
+      "name": "observed_p99",
+      "threshold_mm": 12.875387339051949,
+      "rejection_count": 0,
+      "rejection_rate": 0.0
+    },
+    {
+      "name": "observed_max_no_margin",
+      "threshold_mm": 12.875387339051949,
+      "rejection_count": 0,
+      "rejection_rate": 0.0
+    },
+    {
+      "name": "p99_rounded_up_whole_mm",
+      "threshold_mm": 13,
+      "rejection_count": 0,
+      "rejection_rate": 0.0
+    }
+  ],
+  "margin": null,
+  "reason": "No physical stopping/workspace evidence establishes a safe extra margin. Percentiles describe this one scene, not a physical safety guarantee.",
+  "recommended_candidate_mm": 13,
+  "recommendation_scope": "DESCRIPTIVE_STAGED_EVALUATION_CANDIDATE_REQUIRES_OPERATOR_REVIEW_NOT_PHYSICAL_SAFETY_CERTIFICATION",
+  "derivation": "ceil(empirical p99 in mm), whole-mm reporting resolution. Not inferred from a single max outlier. Current active gate remains 10 mm.",
+  "rounding_headroom_mm": 0.1246126609480509,
+  "applied": false,
+  "production_limit_mm": 10
+}

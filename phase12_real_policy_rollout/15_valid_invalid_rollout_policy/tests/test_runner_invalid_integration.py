@@ -10,11 +10,11 @@ class Log:
     def append(self,r):pass
 
 class InvalidIntegrationTests(unittest.TestCase):
-    def test_translation_over_10mm_invalid_and_inhibit(self):
+    def test_translation_over_13mm_invalid_and_inhibit(self):
         t=trial();transport=FakeRosTransport();sink=RealDoosanCommandSink(lambda:transport,Authorization(True,True,True,'MOTION_ENABLED'))
         c=Controller('openvla','short_horizon',sink,Log(),dry_run=True,initial_open=True,trial=t)
         obs=dict(receive_monotonic=1,tcp_m_abc=[.4,0,.5,10,20,30],phase='alignment',robot_state_ok=True,camera_ok=True,joint_state_ok=True,tcp_ok=True,model_ok=True,communication_ok=True)
-        c.step([.0101,0,0,0,0,0,0],obs,inference_time=1,chunk_id='x',chunk_index=0)
+        c.step([.0131,0,0,0,0,0,0],obs,inference_time=1,chunk_id='x',chunk_index=0)
         self.assertEqual(t.status,'INVALID');self.assertIsNone(t.summary()['task_success'])
         self.assertIn('raw_translation_step_limit',t.summary()['invalid_reason'])
         self.assertEqual(t.summary()['invalid_category'],'INVALID_SAFETY_REJECTION')

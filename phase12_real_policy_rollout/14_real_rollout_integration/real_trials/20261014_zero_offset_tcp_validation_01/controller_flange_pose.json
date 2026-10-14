@@ -1,0 +1,57 @@
+{
+  "response": {
+    "pos": [
+      305.0901794433594,
+      -11.828291893005371,
+      723.6777954101562,
+      179.91046142578125,
+      -155.5612335205078,
+      3.35062313079834
+    ],
+    "success": true
+  },
+  "latency_s": 0.007206179201602936,
+  "pre_jointstate": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2853409.055687561,
+    "discovery_delay_s": 0.04421791108325124,
+    "latest_receive_age_s": 0.003822972998023033,
+    "source_gap": 0.010008573532104492,
+    "receive_gap": 0.010905573144555092,
+    "clean_since": 2853409.055687561,
+    "clean_window_s": 10.014650357887149,
+    "ready_at": 2853419.055762975,
+    "readiness_timeout_s": 120.0
+  },
+  "request_fields": {
+    "ref": 0
+  },
+  "sent_once": true,
+  "request_wall_time": 1791964856.5685103,
+  "pose": [
+    305.0901794433594,
+    -11.828291893005371,
+    723.6777954101562,
+    179.91046142578125,
+    -155.5612335205078,
+    3.35062313079834
+  ],
+  "reference": "BASE_REQUESTED",
+  "units": "mm/deg",
+  "orientation_convention": "ZYZ",
+  "usable": true,
+  "post_jointstate": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2853409.055687561,
+    "discovery_delay_s": 0.04421791108325124,
+    "latest_receive_age_s": 0.0052450839430093765,
+    "source_gap": 0.009996652603149414,
+    "receive_gap": 0.009911533910781145,
+    "clean_since": 2853409.055687561,
+    "clean_window_s": 20.024785117711872,
+    "ready_at": 2853419.055762975,
+    "readiness_timeout_s": 120.0
+  }
+}

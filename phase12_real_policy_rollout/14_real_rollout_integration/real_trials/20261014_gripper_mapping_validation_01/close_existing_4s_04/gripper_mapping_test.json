@@ -1,0 +1,62 @@
+{
+  "status": "PHYSICAL_RESULT_CONFIRMATION_PENDING",
+  "error": null,
+  "requested_logical_state": "CLOSE",
+  "hardware_output_index": 2,
+  "activation_value": 1,
+  "deactivation_value": 0,
+  "pulse_duration_s": 4.0,
+  "logical_command_count": 1,
+  "io_service_requests": 2,
+  "events": [
+    {
+      "command_id": "6261032805ff4119b7339b4c43c3b348",
+      "command_type": "gripper",
+      "requested_at": 2861384.282358476,
+      "sent_at": 2861384.283545847,
+      "ack_at": 2861384.288667426,
+      "completed_at": 2861384.288684351,
+      "ack_latency": 0.005121578928083181,
+      "state": "completed",
+      "request": {
+        "index": 2,
+        "value": 1
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    },
+    {
+      "command_id": "19464210bc4e4a029107e0b3c3d6001e",
+      "command_type": "gripper",
+      "requested_at": 2861388.290099789,
+      "sent_at": 2861388.290522282,
+      "ack_at": 2861388.295615596,
+      "completed_at": 2861388.295625219,
+      "ack_latency": 0.005093314219266176,
+      "state": "completed",
+      "request": {
+        "index": 2,
+        "value": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "physical_arm_commands": 0,
+  "physical_stop_commands": 0,
+  "actual_physical_state": null,
+  "polarity_globally_confirmed": false,
+  "abort_jaw_behavior_verified": false,
+  "operator_confirmation_wall_time": 1791972808.0,
+  "source": "existing runtime/config close pulse4s or historical collection pulse1s; channel/value unchanged",
+  "open_pulse_count_this_test": null,
+  "historical_open_pulse_count": 2
+}

@@ -1,0 +1,20 @@
+{
+  "limit_deg": 4,
+  "boundaries": [
+    {
+      "angle_deg": 3.9999,
+      "raw_gate_rejected": false
+    },
+    {
+      "angle_deg": 4.0,
+      "raw_gate_rejected": false
+    },
+    {
+      "angle_deg": 4.0001,
+      "raw_gate_rejected": true
+    }
+  ],
+  "all_50_gate_pass": true,
+  "current_sample_norm_deg": 0.13959862628643302,
+  "geodesic_conversion_checked": true
+}

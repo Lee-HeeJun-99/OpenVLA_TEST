@@ -1,0 +1,11 @@
+{
+  "formal_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "tcp_contract_verified": false,
+  "arm_only_execution_acceptance": true,
+  "acceptance_source": "CURRENT_USER_REQUEST_SECTION_6",
+  "scope": "SYSTEM_INTEGRATION_TEST; maximum one arm model command",
+  "active_tcp_name_directly_verified": false,
+  "zero_offset_execution_basis": "CONSISTENCY_EVIDENCE_NOT_FORMAL_VERIFICATION",
+  "physical_dispatch_requires_fresh_operator_confirmation_and_live_preflight": true,
+  "evidence_directory": "20261014_zero_offset_tcp_validation_01"
+}

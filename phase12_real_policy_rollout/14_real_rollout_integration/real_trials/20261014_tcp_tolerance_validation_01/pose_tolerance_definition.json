@@ -1,0 +1,14 @@
+{
+  "translation_tolerance_mm": null,
+  "rotation_tolerance_deg": null,
+  "derivation": "NOT_DEFINED: no existing official FK/controller pose tolerance found and no independent historical measured pairs. Current test is held out; p99/max undefined.",
+  "sample_count": 0,
+  "dataset_sources": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase10_planner_based_shadow_mode/00_audit/real_episode_provenance_audit.csv",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_1838_openvla_02/fk_live_validation.json"
+  ],
+  "synthetic_samples_excluded": true,
+  "current_sample_excluded_from_derivation": true,
+  "status": "INSUFFICIENT_EVIDENCE",
+  "other_safety_thresholds_changed": false
+}

@@ -1,0 +1,14 @@
+{
+  "automatic_batch": false,
+  "automatic_retry": false,
+  "automatic_home": false,
+  "automatic_recovery": false,
+  "short_horizon_duration_s": 2,
+  "short_horizon_maximum_actions": 10,
+  "minimum_motion_maximum_actions": 1,
+  "stage_gate_requires_physical_minimum_motion_pass": true,
+  "physical_minimum_motion_pass_evidence_found": false,
+  "physical_stop_validation_found": false,
+  "arm_only_classification": "SYSTEM_INTEGRATION_TEST_NOT_TASK_SUCCESS_RATE",
+  "full_policy_gripper_dispatch_supported_by_current_short_horizon": false
+}

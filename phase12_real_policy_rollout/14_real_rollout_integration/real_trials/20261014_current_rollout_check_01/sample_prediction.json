@@ -1,0 +1,6 @@
+{
+  "status": "NOT_EXECUTED",
+  "raw_action": null,
+  "physical_commands": 0,
+  "reason": "START_POSE_OUTSIDE_EXISTING_TOLERANCE"
+}

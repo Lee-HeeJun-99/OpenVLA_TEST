@@ -1,0 +1,7 @@
+{
+ "status": "NOT_EXECUTED",
+ "reason": "GRIPPER_CLOSE_PHYSICAL_VALIDATION_FAILED; staged sequence halted",
+ "physical_stop_commands": 0,
+ "additional_arm_commands": 0,
+ "automatic_retry": false
+}

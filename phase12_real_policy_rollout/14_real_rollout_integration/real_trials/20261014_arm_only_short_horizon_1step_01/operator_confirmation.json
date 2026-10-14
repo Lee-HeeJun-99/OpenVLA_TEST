@@ -1,0 +1,9 @@
+{
+  "status": "FRESH_CONFIRMATION_REQUIRED",
+  "operator_present": null,
+  "workspace_clear": null,
+  "estop_immediately_accessible": null,
+  "robot_stationary": null,
+  "confirmation_timestamp": null,
+  "old_confirmation_reused": false
+}

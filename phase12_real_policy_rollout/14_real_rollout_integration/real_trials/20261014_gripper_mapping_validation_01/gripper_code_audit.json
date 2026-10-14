@@ -1,0 +1,27 @@
+{
+  "model_closedness": {
+    "0": "OPEN",
+    "1": "CLOSED"
+  },
+  "hysteresis": {
+    "open": 0.3,
+    "close": 0.7
+  },
+  "historical_real_source": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py",
+  "real_collection": "collect_episode001_from_align_home.py imports DigitalGripper; starts OPEN and calls CLOSE during grasp",
+  "current_bridge_source": "/home/ubuntu/robot_ws/src/openvla_doosan_runtime/openvla_doosan_runtime/doosan_bridge_node.py",
+  "current_phase12_source": "real_sink.py send_gripper",
+  "static_mapping_status": "CHANNEL_CANDIDATE_FROM_REAL_CODE_NOT_CURRENT_WIRING_VERIFIED",
+  "pulse_variants": {
+    "historical_open_count": 2,
+    "historical_close_count": 1,
+    "historical_pulse_width_s": 1,
+    "current_runtime_close_pulse_s": 4,
+    "phase12_close_pulse_s": 4,
+    "phase12_open_pulse_s": 1,
+    "phase12_sink_pulse_count_not_consumed": true
+  },
+  "legacy_model_hysteresis_inverted": true,
+  "failed_test_sha256": "07ce7d02bbfcd42fcdaf60c8bd4b71a5f1582c1c1c128c22e67b2ede3bb31531",
+  "failed_test_preserved": true
+}

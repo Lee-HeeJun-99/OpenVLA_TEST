@@ -1,0 +1,7 @@
+{
+  "classification": "GRIPPER_MAPPING_UNVERIFIED",
+  "config": "configs/gripper_hardware.yaml",
+  "polarity_confirmed": false,
+  "abort_value": null,
+  "physical_commands": 0
+}

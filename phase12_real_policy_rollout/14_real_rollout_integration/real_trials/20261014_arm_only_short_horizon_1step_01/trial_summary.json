@@ -1,0 +1,20 @@
+{
+  "evaluation_scope": "SYSTEM_INTEGRATION_TEST",
+  "status": "NOT_EXECUTED",
+  "reason": "FRESH_OPERATOR_CONFIRMATION_NOT_RECEIVED",
+  "task_success": null,
+  "task_status": null,
+  "prediction_count": 0,
+  "physical_arm_command_count": 0,
+  "physical_gripper_command_count": 0,
+  "physical_hold_stop_count": 0,
+  "e_stop_used": null,
+  "unexpected_motion": null,
+  "delivered_action": null,
+  "executed_action": null,
+  "auto_second_step": false,
+  "auto_retry": false,
+  "auto_batch": false,
+  "auto_home": false,
+  "auto_recovery": false
+}

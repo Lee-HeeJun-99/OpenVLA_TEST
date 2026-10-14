@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-10-14T10:34:12Z",
+  "source": "OPERATOR_CHAT_CONFIRMATION",
+  "movement_observed": true,
+  "direction_expected": true,
+  "unexpected_motion": false,
+  "estop_used": false,
+  "operator_messages": ["움직임 확인됐어", "맞아"],
+  "observed_distance_measured_mm": null,
+  "scope": "BOUNDED_BASE_X_10MM_SINGLE_MOTION",
+  "physical_stop_path_verified": false
+}

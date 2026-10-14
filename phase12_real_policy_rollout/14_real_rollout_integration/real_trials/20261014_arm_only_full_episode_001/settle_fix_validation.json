@@ -1,0 +1,24 @@
+{
+  "implementation": "PASS",
+  "scope": "OFFLINE_IMPLEMENTATION_AND_TESTS_NO_ROBOT_COMMANDS",
+  "previous_invalid_trial_preserved": "execution_02/trial_summary.json",
+  "previous_invalid_trial_reclassified": false,
+  "new_settle_policy": {
+    "velocity": "exact zero on all six finite joint velocities; unchanged numeric criterion",
+    "minimum_consecutive_clean_seconds": 0.2,
+    "duration_basis": "one existing 5 Hz control interval; new conservative temporal confirmation, not a historical hardware tolerance",
+    "timeout_seconds": 2.0,
+    "nonzero_sample": "reset clean window and continue only within original timeout",
+    "invalid_gap_regression_stale": "terminal runtime fault; never retried as settle noise",
+    "cached_sample_reuse": false,
+    "all_new_callback_samples_consumed": true,
+    "applied_at": ["before observation", "immediately before dispatch after inference and current-state check", "after command ACK and STANDBY check"],
+    "settle_evidence_logged": true
+  },
+  "unchanged": ["13 mm raw translation gate", "rotation gate", "velocity/acceleration limiter", "workspace gate", "camera inference-start freshness", "action freshness rejection", "JointState runtime watchdog", "gripper IO disabled", "episode 30s/150 actions bounds", "no auto retry/home/recovery"],
+  "test_results": {"integration": 127, "safety": 103, "invalid_policy": 30, "total_pass": 260, "failures": 0},
+  "new_regression_tests": ["single zero insufficient", "cached sample cannot advance clean timer", "200ms clean passes", "tiny nonzero resets clean timer", "gap/regression/invalid remains terminal", "whole callback batch including final nonzero processed", "bounded recovery after isolated nonzero", "sustained nonzero times out", "runtime fault immediate", "no new samples times out"],
+  "live_validation_executed": false,
+  "physical_commands_this_change": 0,
+  "no_full_episode_success_claim": true
+}

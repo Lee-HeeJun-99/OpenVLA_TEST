@@ -1,0 +1,28 @@
+{
+ "requested_scope": "FULL_POLICY_SHORT_HORIZON",
+ "max_steps": 3,
+ "execution_started": false,
+ "physical_commands_this_request": 1,
+ "physical_command_scope": "GRIPPER_OPEN_INITIALIZATION_ONLY",
+ "fresh_operator_confirmation_received": true,
+ "current_start_pose_pass": true,
+ "current_start_pose_max_error_deg": 0.000047751735998247113,
+ "current_start_pose_source": "pre_reset_current_01/jointstate_samples.json",
+ "reset_motion_skipped_because_position_matches": true,
+ "start_pose_tolerance_deg": 0.5,
+ "gripper_initialized_open_current_trial": true,
+ "formal_tcp_classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+ "engineering_TCP_acceptance_requested_by_user": true,
+ "current_pipeline_blockers": [
+   "current short_horizon protocol gripper_enabled=false",
+   "Controller.step only dispatches gripper in full_task",
+   "production gripper polarity_confirmed=false",
+   "production abort_value=null and abort_value_confirmed=false",
+   "CLOSE outside grasp_close rejected by existing gripper phase safety",
+   "physical Stop/abort path never executed/validated"
+ ],
+ "source_refs": ["configs/short_horizon.yaml", "configs/gripper_hardware.yaml", "run_real_rollout.py", "02_safety/open_loop_gripper_supervisor.py"],
+ "no_production_gate_removed": true,
+ "no_old_approval_reused": true,
+ "no_new_prediction": true
+}

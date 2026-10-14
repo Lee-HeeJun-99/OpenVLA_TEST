@@ -1,0 +1,33 @@
+{
+  "classification": "PHYSICAL_SHORT_HORIZON_BLOCKED",
+  "matrix": {
+    "Hardware state": "PASS (REAL/AUTO/STANDBY scalar only)",
+    "JointState": "PASS",
+    "Start pose": "PASS",
+    "Camera": "PASS",
+    "Model identity": "PASS",
+    "Translation 13mm gate": "PASS",
+    "Rotation gate": "PASS",
+    "Dynamic limiter": "PASS (raw action modified)",
+    "Workspace": "PASS (50/50 hypothetical targets; earlier controller pose)",
+    "Action convention": "PASS (software); physical axis proof pending",
+    "TCP evidence": "CONDITIONAL / NOT VERIFIED",
+    "Gripper semantics": "FAIL (hardware mapping unverified)",
+    "Initial gripper state": "FAIL (UNKNOWN)",
+    "Logger": "PASS",
+    "Command inhibition": "PASS",
+    "Operator/E-stop": "FAIL (fresh manual confirmation required)"
+  },
+  "physical_commands": 0,
+  "production_translation_limit_m": 0.013,
+  "blockers": [
+    "TCP_NOT_VERIFIED",
+    "GRIPPER_HARDWARE_MAPPING_AND_ABORT_UNKNOWN",
+    "INITIAL_GRIPPER_UNKNOWN",
+    "FRESH_MANUAL_CONFIRMATION_REQUIRED",
+    "AUTHORITY_SERVO_PROTECTION_UNKNOWN",
+    "PHYSICAL_MINIMUM_MOTION_AND_STOP_PROOF_MISSING",
+    "SHORT_HORIZON_REJECTS_CLOSE_PREDICTIONS"
+  ],
+  "configs_unchanged_after_freeze": true
+}

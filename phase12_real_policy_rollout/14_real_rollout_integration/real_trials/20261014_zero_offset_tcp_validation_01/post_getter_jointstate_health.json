@@ -1,0 +1,31 @@
+{
+  "before": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2853409.055687561,
+    "discovery_delay_s": 0.04421791108325124,
+    "latest_receive_age_s": 0.00016445806249976158,
+    "source_gap": 0.010002374649047852,
+    "receive_gap": 0.010404630098491907,
+    "clean_since": 2853409.055687561,
+    "clean_window_s": 10.00008626980707,
+    "ready_at": 2853419.055762975,
+    "readiness_timeout_s": 120.0
+  },
+  "after": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2853409.055687561,
+    "discovery_delay_s": 0.04421791108325124,
+    "latest_receive_age_s": 0.012802657205611467,
+    "source_gap": 0.009723901748657227,
+    "receive_gap": 0.008787649217993021,
+    "clean_since": 2853409.055687561,
+    "clean_window_s": 30.03289858205244,
+    "ready_at": 2853419.055762975,
+    "readiness_timeout_s": 120.0
+  },
+  "events": [],
+  "sample_count": 3003,
+  "runtime_events": 0
+}

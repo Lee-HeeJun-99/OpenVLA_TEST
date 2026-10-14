@@ -1,0 +1,97 @@
+{
+  "status": "SINGLE_MOTION_OPERATOR_CONFIRMATION_PENDING",
+  "error": null,
+  "physical_arm_commands": 1,
+  "physical_stop_commands": 0,
+  "physical_gripper_commands": 0,
+  "stop_result": null,
+  "motion_receipt": [
+    {
+      "command_id": "1721be187b2843739ccfc3b36c71425f",
+      "command_type": "pose",
+      "requested_at": 2862581.678162213,
+      "sent_at": 2862581.67893713,
+      "ack_at": 2862583.241891238,
+      "completed_at": 2862583.241895238,
+      "ack_latency": 1.5629541077651083,
+      "state": "completed",
+      "request": {
+        "pos": [
+          315.2087707519531,
+          -11.828117370605469,
+          723.6773681640625,
+          179.9105987548828,
+          -155.56124877929688,
+          3.3507080078125
+        ],
+        "vel": [
+          20.0,
+          20.0
+        ],
+        "acc": [
+          20.0,
+          20.0
+        ],
+        "time": 0.0,
+        "radius": 0.0,
+        "ref": 0,
+        "mode": 0,
+        "blend_type": 0,
+        "sync_type": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "events": [
+    {
+      "command_id": "1721be187b2843739ccfc3b36c71425f",
+      "command_type": "pose",
+      "requested_at": 2862581.678162213,
+      "sent_at": 2862581.67893713,
+      "ack_at": 2862583.241891238,
+      "completed_at": 2862583.241895238,
+      "ack_latency": 1.5629541077651083,
+      "state": "completed",
+      "request": {
+        "pos": [
+          315.2087707519531,
+          -11.828117370605469,
+          723.6773681640625,
+          179.9105987548828,
+          -155.56124877929688,
+          3.3507080078125
+        ],
+        "vel": [
+          20.0,
+          20.0
+        ],
+        "acc": [
+          20.0,
+          20.0
+        ],
+        "time": 0.0,
+        "radius": 0.0,
+        "ref": 0,
+        "mode": 0,
+        "blend_type": 0,
+        "sync_type": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "final_robot_state": 1,
+  "commands_after_abort": 0,
+  "operator_estop_used": null,
+  "auto_retry": false,
+  "scope": "BOUNDED_10MM_COMMAND_PATH_TEST_NOT_STOP_VALIDATION"
+}

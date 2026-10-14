@@ -1,0 +1,16 @@
+{
+  "status": {
+    "phase": "RUNTIME_READY",
+    "fault": null,
+    "first_fresh_sample": 2854189.14551152,
+    "discovery_delay_s": 0.9546449291519821,
+    "latest_receive_age_s": 0.0010968176648020744,
+    "source_gap": 0.010002613067626953,
+    "receive_gap": 0.009918270166963339,
+    "clean_since": 2854189.14551152,
+    "clean_window_s": 33.47075796779245,
+    "ready_at": 2854199.149757892,
+    "readiness_timeout_s": 120.0
+  },
+  "events": []
+}

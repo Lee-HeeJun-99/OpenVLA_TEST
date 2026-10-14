@@ -1,0 +1,17 @@
+{
+  "episode_started": false,
+  "execution_state": "NOT_STARTED",
+  "outcome": null,
+  "task_success": null,
+  "runtime_valid": null,
+  "preflight_blocker": "GRIPPER_ABORT_BEHAVIOR_UNVERIFIED",
+  "arm_commands": 0,
+  "gripper_commands": 0,
+  "stop_commands": 0,
+  "steps": 0,
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "test_results": {"integration": 107, "safety": 103, "invalid_policy": 30, "failures": 0},
+  "not_in_task_success_denominator": true
+}

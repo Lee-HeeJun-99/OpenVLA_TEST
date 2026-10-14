@@ -1,0 +1,15 @@
+{
+  "model_convention": "0=OPEN, 1=CLOSED",
+  "open_threshold": 0.3,
+  "close_threshold": 0.7,
+  "boundary_semantics": "<0.3 OPEN; >0.7 CLOSED; inclusive [0.3,0.7] retain previous state",
+  "initialization": "one logical OPEN request, ACK plus actual OPEN confirmation required",
+  "state_is_command_knowledge_not_measured_feedback": true,
+  "abort_behavior": null,
+  "abort_command": null,
+  "abort_behavior_confirmed": false,
+  "evidence_source": "../20261014_gripper_mapping_validation_01/gripper_abort_contract.json",
+  "normal_pulse_output_off_is_not_fault_failsafe_evidence": true,
+  "supported_implementation": "existing sink selected-coil OUTPUT_OFF abort, only with independently confirmed contract",
+  "production_config_changed": false
+}

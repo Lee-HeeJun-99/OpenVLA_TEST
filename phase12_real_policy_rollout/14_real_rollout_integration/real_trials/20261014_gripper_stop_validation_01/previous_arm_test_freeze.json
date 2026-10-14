@@ -1,0 +1,11 @@
+{
+ "classification": "ARM_ONLY_SHORT_HORIZON_PASS",
+ "directory": "20261014_arm_only_short_horizon_1step_real_01",
+ "sha256": {
+   "physical_command_ack.json": "1d24b5179cc7518b42c900f0115f4fefbbc77b3c007dfe785a9078c187fd30c5",
+   "observed_motion.json": "41f3bb45e87b28f2dc54f9a5720b52daa0399845fd090db756246228eb4cc98c",
+   "trial_summary.json": "bf9d9e989521ab32eebee321982c192bba9c7c04e505d0c6d3b1af5ed3678a5b",
+   "feedback_comparison.json": "6aad85300213c504f1adb971a1fd73e55f2aadcc051a7627d7e1d0134e912290"
+ },
+ "previous_metrics_rewritten": false
+}

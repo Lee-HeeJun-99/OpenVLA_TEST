@@ -1,0 +1,5 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "PHYSICAL_STAGE_NOT_AUTHORIZED; no further prediction-only validation requested",
+  "physical_commands": 0
+}

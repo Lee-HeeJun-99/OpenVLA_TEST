@@ -1,0 +1,17 @@
+{
+  "classification": "MULTI_STEP_BLOCKED",
+  "gripper_mapping": "GRIPPER_MAPPING_FAILED",
+  "stop_test": "NOT_EXECUTED",
+  "prior_arm_test": "ARM_ONLY_SHORT_HORIZON_PASS",
+  "tcp": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "physical_commands_this_audit": 0,
+  "blockers": [
+    "CURRENT_WIRING_UNKNOWN",
+    "TOOL_OR_EXTERNAL_POWER_UNKNOWN",
+    "PULSE_VS_LEVEL_CURRENT_HARDWARE_UNVERIFIED",
+    "JAW_ABORT_BEHAVIOR_UNKNOWN",
+    "CLOSE_PHYSICAL_TEST_FAILED",
+    "OPEN_PHYSICAL_TEST_NOT_DONE",
+    "PHYSICAL_STOP_NOT_VALIDATED"
+  ]
+}

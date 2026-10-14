@@ -1,0 +1,31 @@
+{
+  "fk_vs_flange": {
+    "delta_mm": [
+      0.48242928182958167,
+      -0.5661655034966078,
+      -0.8259666068245224
+    ],
+    "translation_error_mm": 1.1115314772445215,
+    "orientation_error_deg": 0.17820101909269503
+  },
+  "fk_vs_posx": {
+    "delta_mm": [
+      0.48242928182958167,
+      -0.5661655034966078,
+      -0.8259666068245224
+    ],
+    "translation_error_mm": 1.1115314772445215,
+    "orientation_error_deg": 0.17820101909269503
+  },
+  "controller_flange_vs_posx": {
+    "delta_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "translation_error_mm": 0.0,
+    "orientation_error_deg": 0.0
+  },
+  "acceptance_tolerance": null,
+  "active_binding_verified": false
+}

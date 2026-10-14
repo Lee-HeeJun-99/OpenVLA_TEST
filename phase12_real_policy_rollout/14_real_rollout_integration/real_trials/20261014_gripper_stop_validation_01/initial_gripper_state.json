@@ -1,0 +1,9 @@
+{
+ "actual_state": "OPEN",
+ "provenance": "CURRENT_USER_CONFIRMATION",
+ "expected_initial_state": "OPEN",
+ "source_expected": "real collection code calls gripper.open() before collection",
+ "initial_state_match": true,
+ "match_scope": "BEFORE_CALIBRATION_TEST_ONLY; must recheck after CLOSE/OPEN tests",
+ "confirmation_expired_for_new_dispatch": true
+}

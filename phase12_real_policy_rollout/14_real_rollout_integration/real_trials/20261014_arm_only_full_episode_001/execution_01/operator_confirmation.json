@@ -1,0 +1,10 @@
+{
+  "operator_present": true,
+  "workspace_clear": true,
+  "estop_accessible": true,
+  "robot_stationary": true,
+  "tcp_arm_only_acceptance": true,
+  "explicit_one_episode": true,
+  "confirmed_wall_time": 1791975333.0,
+  "source": "fresh user approval: \uc9c4\ud589\ud574"
+}

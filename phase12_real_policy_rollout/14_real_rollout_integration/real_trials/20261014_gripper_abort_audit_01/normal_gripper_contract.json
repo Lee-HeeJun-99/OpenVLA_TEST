@@ -1,0 +1,14 @@
+{
+  "endpoint": "/dsr01/io/set_tool_digital_output",
+  "type": "dsr_msgs2/srv/SetToolDigitalOutput",
+  "channel_domain": "one-based Tool/flange digital port, not control-box or connector pin",
+  "OPEN": {"channel": 1, "active_value": 1, "mode": "pulse", "duration_s": 1.0, "trailing_value": 0, "observed_calibration_pulse_count": 1},
+  "CLOSE": {"channel": 2, "active_value": 1, "mode": "pulse", "duration_s": 4.0, "trailing_value": 0, "observed_calibration_pulse_count": 1},
+  "historical_collector": {"open_pulses": 2, "close_pulses": 1, "width_s": 1.0},
+  "current_production_config": {"open_pulses": 2, "close_pulses": 1, "open_width_s": 1.0, "close_width_s": 4.0},
+  "new_full_policy_lifecycle_requires": {"open_pulses": 1, "actual_open_confirmation": true},
+  "config_mismatch_not_silently_modified": true,
+  "logical_model_convention": "0 OPEN / 1 CLOSED",
+  "electrical_off_does_not_prove_physical_open": true,
+  "source": ["run_gripper_mapping_once.py", "real_sink.py", "configs/gripper_hardware.yaml", "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py:974"]
+}

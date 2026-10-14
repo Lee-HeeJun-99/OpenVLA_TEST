@@ -1,0 +1,29 @@
+{
+  "classification": "TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED",
+  "tcp_contract_verified": false,
+  "current_error": {
+    "delta_mm": [
+      0.48242928182958167,
+      -0.5661655034966078,
+      -0.8259666068245224
+    ],
+    "translation_error_mm": 1.1115314772445215,
+    "orientation_error_deg": 0.17820101909269503
+  },
+  "controller_flange_vs_posx": {
+    "delta_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "translation_error_mm": 0.0,
+    "orientation_error_deg": 0.0
+  },
+  "translation_result": "INCONCLUSIVE_NO_TOLERANCE",
+  "rotation_result": "INCONCLUSIVE_NO_TOLERANCE",
+  "active_tcp_name_directly_observed": false,
+  "verification_is_consistency_based": false,
+  "physical_short_horizon_readiness": "BLOCKED",
+  "physical_commands": 0,
+  "additional_known_blocker": "latest real prediction 12.214 mm exceeds unchanged 10 mm gate"
+}

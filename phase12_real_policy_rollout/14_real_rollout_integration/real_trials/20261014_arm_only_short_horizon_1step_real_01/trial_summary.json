@@ -1,0 +1,69 @@
+{
+  "evaluation_scope": "SYSTEM_INTEGRATION_TEST",
+  "status": "ARM_ONLY_SHORT_HORIZON_PASS",
+  "reason": null,
+  "task_success": null,
+  "prediction_count": 1,
+  "physical_arm_commands": 1,
+  "physical_gripper_commands": 0,
+  "physical_hold_stop_commands": 0,
+  "command_events": [
+    {
+      "command_id": "b99bd0f8ff3149169e4aa3794ff90798",
+      "command_type": "pose",
+      "requested_at": 2856712.339299503,
+      "sent_at": 2856712.340924961,
+      "ack_at": 2856712.896917273,
+      "completed_at": 2856712.896924775,
+      "ack_latency": 0.5559923117980361,
+      "state": "completed",
+      "request": {
+        "pos": [
+          305.87644786070285,
+          -11.928258507664417,
+          723.5692198519409,
+          -0.022267463902722492,
+          155.6964940254892,
+          -177.2159758210664
+        ],
+        "vel": [
+          20.0,
+          20.0
+        ],
+        "acc": [
+          20.0,
+          20.0
+        ],
+        "time": 0.0,
+        "radius": 0.0,
+        "ref": 0,
+        "mode": 0,
+        "blend_type": 0,
+        "sync_type": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "raw_action": [
+    0.0014104356263888885,
+    -0.00017932358931696795,
+    -0.00019476661160999081,
+    -0.004078358995333046,
+    0.002364704483548279,
+    0.010181925561301089,
+    0.0019607843137254832
+  ],
+  "estop_used": false,
+  "unexpected_motion": false,
+  "operator_result_confirmation_required": false,
+  "operator_confirmation_utc": "2026-10-14 08:57:45 UTC",
+  "operator_reported_expected_motion": true,
+  "operator_reported_gripper_motion": false,
+  "auto_retry": false,
+  "auto_second_step": false
+}

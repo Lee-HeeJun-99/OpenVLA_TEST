@@ -1,0 +1,7 @@
+{
+  "initial_gripper_state": "UNKNOWN",
+  "expected_initial_gripper_state": "OPEN",
+  "match": null,
+  "provenance": "MANUAL_CONFIRMATION_REQUIRED_OR_VERIFIED_SENSOR",
+  "physical_commands": 0
+}

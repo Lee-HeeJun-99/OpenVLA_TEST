@@ -1,0 +1,6 @@
+{
+  "max_steps": 150,
+  "max_duration_s": 70.0,
+  "requested_duration_s": 70.0,
+  "production_default_changed": false
+}

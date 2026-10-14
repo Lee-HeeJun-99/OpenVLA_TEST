@@ -1,0 +1,148 @@
+{
+  "valid_samples": [],
+  "valid_independent_sample_count": 0,
+  "current_sample_held_out": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_zero_offset_tcp_validation_01",
+  "structured_candidate_files": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/03_shadow_mode/stationary_observation_smoke_20261002_1629_summary.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/final_report/execution_status.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_194858_sequential_blocker_resolution/cartesian_pose_sources.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_195255_sequential_camera_warm_validation/cartesian_pose_sources.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_193719_integrated_rollout_readiness/cartesian_pose_sources.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_195100_sequential_camera_diagnostic/cartesian_pose_sources.json"
+  ],
+  "excluded_candidates": [
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/03_shadow_mode/stationary_observation_smoke_20261002_1629_summary.json",
+      "reason": "NO_AUDITABLE_SYNCHRONIZED_FK_CONTROLLER_PAIR; interface declarations/null unavailable feedback are not measured samples"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/final_report/execution_status.json",
+      "reason": "NO_AUDITABLE_SYNCHRONIZED_FK_CONTROLLER_PAIR; interface declarations/null unavailable feedback are not measured samples"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_194858_sequential_blocker_resolution/cartesian_pose_sources.json",
+      "reason": "NO_AUDITABLE_SYNCHRONIZED_FK_CONTROLLER_PAIR; interface declarations/null unavailable feedback are not measured samples"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_195255_sequential_camera_warm_validation/cartesian_pose_sources.json",
+      "reason": "NO_AUDITABLE_SYNCHRONIZED_FK_CONTROLLER_PAIR; interface declarations/null unavailable feedback are not measured samples"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_193719_integrated_rollout_readiness/cartesian_pose_sources.json",
+      "reason": "NO_AUDITABLE_SYNCHRONIZED_FK_CONTROLLER_PAIR; interface declarations/null unavailable feedback are not measured samples"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_195100_sequential_camera_diagnostic/cartesian_pose_sources.json",
+      "reason": "NO_AUDITABLE_SYNCHRONIZED_FK_CONTROLLER_PAIR; interface declarations/null unavailable feedback are not measured samples"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261006_1838_openvla_02/fk_live_validation.json",
+      "jointstate_gate": "FAIL",
+      "reason": "FK_ONLY_NO_CONTROLLER_POSE_PAIR"
+    }
+  ],
+  "real_episodes": [
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000001",
+      "step_count": 46,
+      "planned_pose_samples": 46,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000002",
+      "step_count": 47,
+      "planned_pose_samples": 47,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000003",
+      "step_count": 44,
+      "planned_pose_samples": 44,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000004",
+      "step_count": 45,
+      "planned_pose_samples": 45,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000005",
+      "step_count": 43,
+      "planned_pose_samples": 43,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000006",
+      "step_count": 44,
+      "planned_pose_samples": 44,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000007",
+      "step_count": 48,
+      "planned_pose_samples": 48,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000008",
+      "step_count": 45,
+      "planned_pose_samples": 45,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000009",
+      "step_count": 45,
+      "planned_pose_samples": 45,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    },
+    {
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/episodes/episode_000010",
+      "step_count": 45,
+      "planned_pose_samples": 45,
+      "feedback_pose_samples": 0,
+      "pose_source": "planned_commanded_pose / per-step planned_actual_duration interpolation",
+      "measured_feedback_available": "PARTIAL: joint position/velocity=yes; measured EE pose=no; measured gripper=no",
+      "included": false,
+      "reason": "PLANNED_COMMANDED_POSE_NOT_MEASURED_CONTROLLER_EE"
+    }
+  ],
+  "synthetic_samples_excluded": true,
+  "scope": "repository JSON/JSONL keyword scan plus actual real episodes 1-10 and historical FK validation"
+}

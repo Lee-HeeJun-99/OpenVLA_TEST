@@ -1,0 +1,29 @@
+{
+  "mode": {
+    "response": {
+      "robot_mode": 1,
+      "success": true
+    },
+    "latency_s": 0.007172881159931421,
+    "observed_wall_time": 1791968148.8195662,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "state": {
+    "response": {
+      "robot_state": 1,
+      "success": true
+    },
+    "latency_s": 0.0022626970894634724,
+    "observed_wall_time": 1791968148.8227851,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "system": {
+    "response": {
+      "robot_system": 0,
+      "success": true
+    },
+    "latency_s": 0.002208676189184189,
+    "observed_wall_time": 1791968148.825627,
+    "provenance": "DRIVER_REPORTED"
+  }
+}

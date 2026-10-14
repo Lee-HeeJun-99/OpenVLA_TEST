@@ -1,0 +1,22 @@
+{
+  "sample_count": 0,
+  "translation_error_mm": {
+    "min": null,
+    "median": null,
+    "mean": null,
+    "p90": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "rotation_error_deg": {
+    "min": null,
+    "median": null,
+    "mean": null,
+    "p90": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "reason": "NO_INDEPENDENT_VALID_HISTORICAL_FK_CONTROLLER_PAIRS"
+}

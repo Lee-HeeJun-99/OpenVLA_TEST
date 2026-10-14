@@ -1,0 +1,19 @@
+{
+ "model_convention": {"0": "OPEN", "1": "CLOSED"},
+ "physical_test_classification": "GRIPPER_MAPPING_REQUIRES_PHYSICAL_TEST",
+ "historical_real_source": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_example2/dsr_example/dsr_example/simple/single_robot_simple.py",
+ "real_collection_caller": "collect_episode001_from_align_home.py imports DigitalGripper and calls open() before collection, close() during grasp",
+ "OPEN": {"output_index": 1, "active_value": 1, "inactive_value": 0, "historical_pulse_count": 2, "pulse_width_s": 1.0},
+ "CLOSE": {"output_index": 2, "active_value": 1, "inactive_value": 0, "historical_pulse_count": 1, "pulse_width_s": 1.0},
+ "legacy_logical_open_bit": {"0": "CLOSED", "1": "OPEN"},
+ "logical_open_bit_is_not_hardware_coil_value": true,
+ "current_production_config_polarity_confirmed": false,
+ "current_production_close_pulse_s": 4.0,
+ "current_production_sink_ignores_pulse_count": true,
+ "abort_value": null,
+ "deenergize_coil_candidate": 0,
+ "deenergize_is_not_verified_safe_jaw_state": true,
+ "test_transport": "existing RealDoosanCommandSink._send and RosServiceTransport in isolated IO-only calibration sink; no automatic policy dispatch",
+ "CLOSE_test_pending": true,
+ "production_mapping_not_promoted_before_actual_result": true
+}
