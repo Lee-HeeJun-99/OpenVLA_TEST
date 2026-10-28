@@ -1,0 +1,35 @@
+{
+  "status": "START_POSE_FAIL",
+  "physical_joint_commands": 1,
+  "target_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.49975
+  ],
+  "gripper_commands": 0,
+  "mode_setters": 0,
+  "reason": "executor_failure",
+  "runtime": {
+    "phase": "RUNTIME_FAULT",
+    "fault": "executor_failure",
+    "first_fresh_sample": 2871720.031529601,
+    "discovery_delay_s": 0.03529012622311711,
+    "latest_receive_age_s": 0.12109185615554452,
+    "source_gap": 0.009987115859985352,
+    "receive_gap": 0.008392537012696266,
+    "clean_since": 2871720.031529601,
+    "clean_window_s": 10.301317370962352,
+    "ready_at": 2871730.03158369,
+    "readiness_timeout_s": 120.0
+  },
+  "events": [],
+  "faults": [
+    "executor_failure:wait set index too big"
+  ],
+  "stop_receipts": [],
+  "physical_stop_commands_requested": 0,
+  "command_thread_alive": false
+}

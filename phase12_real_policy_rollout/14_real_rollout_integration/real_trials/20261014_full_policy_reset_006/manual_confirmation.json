@@ -1,0 +1,22 @@
+{
+  "operator_present": true,
+  "workspace_clear": true,
+  "estop_accessible": true,
+  "robot_stationary": true,
+  "authority": true,
+  "servo": true,
+  "protective_stop_clear": true,
+  "emergency_stop_clear": true,
+  "explicit_joint_reset_approval": true,
+  "robot_model": "a0509",
+  "target_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.49975
+  ],
+  "approved_wall_time": 1791983157.1404724,
+  "confirmation_source": "Current user explicitly approved return and confirmed all listed safety conditions; gripper OPEN"
+}

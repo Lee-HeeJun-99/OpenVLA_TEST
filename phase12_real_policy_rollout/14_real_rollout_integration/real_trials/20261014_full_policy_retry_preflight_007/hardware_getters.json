@@ -1,0 +1,32 @@
+{
+  "mode": {
+    "status": "RESPONSE",
+    "response": {
+      "robot_mode": 1,
+      "success": true
+    },
+    "requested_at": 1791983284.783732,
+    "latency_s": 0.010191890876740217,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "state": {
+    "status": "RESPONSE",
+    "response": {
+      "robot_state": 1,
+      "success": true
+    },
+    "requested_at": 1791983284.7952678,
+    "latency_s": 0.010329988785088062,
+    "provenance": "DRIVER_REPORTED"
+  },
+  "system": {
+    "status": "RESPONSE",
+    "response": {
+      "robot_system": 0,
+      "success": true
+    },
+    "requested_at": 1791983284.807255,
+    "latency_s": 0.010248973965644836,
+    "provenance": "DRIVER_REPORTED"
+  }
+}

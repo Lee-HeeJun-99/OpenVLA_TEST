@@ -1,0 +1,11 @@
+{
+  "unique_pairs_per_condition_method": 225,
+  "total_folds": 10,
+  "held_out_once": true,
+  "baseline_recomputed_both_domains": true,
+  "no_test_features_in_delta": true,
+  "condition_specific_shifts": true,
+  "no_backbone_inference": true,
+  "no_training": true,
+  "no_robot_commands": true
+}

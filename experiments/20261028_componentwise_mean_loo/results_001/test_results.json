@@ -1,0 +1,19 @@
+{
+  "command": "python -m unittest discover -s experiments/20261028_componentwise_mean_loo -p 'test_*.py' -v",
+  "tests_run": 8,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_s": 2.515,
+  "status": "PASS",
+  "checks": [
+    "all five chunk steps included",
+    "7D L2 is not sum of component norms",
+    "invalid shape and NaN rejected",
+    "observation weighting",
+    "fixed inverse normalization",
+    "1350 head replays exactly match",
+    "all fold partitions",
+    "independent train-only delta reconstruction for one fold each in A and C"
+  ],
+  "physical_commands": 0
+}

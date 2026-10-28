@@ -1,0 +1,1 @@
+{"observed_open":true,"operator":"CURRENT_USER","confirmed_wall_time":1792056116,"evidence":"Current user confirms safe after fresh request to confirm workspace/robot stationary/E-stop access/OPEN; previously reported current gripper OPEN. Prior initialization provenance retained; current IO OFF/OFF must independently pass."}

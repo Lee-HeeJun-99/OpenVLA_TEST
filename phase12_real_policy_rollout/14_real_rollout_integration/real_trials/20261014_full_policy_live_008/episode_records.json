@@ -1,0 +1,1608 @@
+[
+  {
+    "step_id": 0,
+    "raw_action": [
+      0.0020150953426453094,
+      -0.0003755701892280052,
+      -0.00019476661160999081,
+      -0.008053918271421719,
+      0.0018402761308523848,
+      0.015182877452983396,
+      0.0019607843137254832
+    ],
+    "camera_timing": {
+      "frame_receive_monotonic": 2871912.528614392,
+      "inference_start_monotonic": 2871912.559423588,
+      "inference_end_monotonic": 2871912.982928367,
+      "camera_age_at_inference_start": 0.030809196177870035,
+      "camera_age_at_inference_end": 0.454313974827528,
+      "inference_latency": 0.42350477864965796,
+      "source_age_at_inference_start": 0.06441450119018555,
+      "source_age_at_inference_end": 0.48796796798706055
+    },
+    "logical_gripper_intent": "OPEN",
+    "pre_observation_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 0,
+      "clean_since": 2871912.259801821,
+      "last_receive": 2871912.469722618
+    },
+    "pre_dispatch_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 21,
+      "reset_count": 0,
+      "clean_since": 2871913.449668501,
+      "last_receive": 2871913.649891059
+    },
+    "physical_gripper_command": "STATE_TRANSITION_ONLY",
+    "source_image_sha256": "cc8f4f4801186107a7747a24ce86586b82797353827c6265ff49a85c1ac8b90a",
+    "model_input_sha256": "65e158888b57c7f4bd4f41727a19033b8e1dac8b34da53b8c20d5c5578e65050",
+    "record": {
+      "event": "ACTION",
+      "execution_mode": "FULL_POLICY_ROLLOUT",
+      "evaluation_scope": "TASK_PROTOCOL",
+      "physical_gripper_disabled": false,
+      "command_requested": true,
+      "command_issued": true,
+      "command_acknowledged": true,
+      "executed_action": null,
+      "robot_delivered_command": null,
+      "observation": {
+        "receive_monotonic": 2871913.655283336,
+        "tcp_m_abc": [
+          0.3052696838378906,
+          -0.011833647727966308,
+          0.7235073852539062,
+          179.91156005859375,
+          -155.5990447998047,
+          3.353705644607544
+        ],
+        "phase": "alignment",
+        "robot_state_ok": true,
+        "camera_ok": true,
+        "joint_state_ok": true,
+        "tcp_ok": true,
+        "model_ok": true,
+        "communication_ok": true,
+        "live_execution_clock": true,
+        "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+        "tcp_contract_verified": false,
+        "raw_model_output": {
+          "action": [
+            0.0020150953426453094,
+            -0.0003755701892280052,
+            -0.00019476661160999081,
+            -0.008053918271421719,
+            0.0018402761308523848,
+            0.015182877452983396,
+            0.0019607843137254832
+          ],
+          "chunk_size": 1,
+          "variant": "openvla_token",
+          "instruction": "pick up the orange cube",
+          "inference_seconds": 0.37458097096532583,
+          "request_index": 104
+        }
+      },
+      "raw_model_output": {
+        "action": [
+          0.0020150953426453094,
+          -0.0003755701892280052,
+          -0.00019476661160999081,
+          -0.008053918271421719,
+          0.0018402761308523848,
+          0.015182877452983396,
+          0.0019607843137254832
+        ],
+        "chunk_size": 1,
+        "variant": "openvla_token",
+        "instruction": "pick up the orange cube",
+        "inference_seconds": 0.37458097096532583,
+        "request_index": 104
+      },
+      "canonical_action": [
+        0.0020150953426453094,
+        -0.0003755701892280052,
+        -0.00019476661160999081,
+        -0.008053918271421719,
+        0.0018402761308523848,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "filtered_action": [
+        0.0007829307257773134,
+        -0.00014592135399737362,
+        -7.567322565731264e-05,
+        -0.006505858864389151,
+        0.001486553050992942,
+        0.012264546837397874,
+        0.0019607843137254832
+      ],
+      "safety_blockers": [],
+      "chunk_id": "episode-step-0",
+      "chunk_index": 0,
+      "target_step": 0,
+      "target_time": 0.0,
+      "phase": "alignment",
+      "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+      "dry_run": false,
+      "episode_id": null,
+      "condition": null,
+      "matched_pair_id": null,
+      "sim_observation_id": null,
+      "real_observation_id": null,
+      "observation_gap_score": null,
+      "action_gap_translation": null,
+      "action_gap_rotation": null,
+      "action_gap_gripper": null,
+      "RAW_MODEL_ACTION": [
+        0.0020150953426453094,
+        -0.0003755701892280052,
+        -0.00019476661160999081,
+        -0.008053918271421719,
+        0.0018402761308523848,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "POST_HARD_GATE": [
+        0.0020150953426453094,
+        -0.0003755701892280052,
+        -0.00019476661160999081,
+        -0.008053918271421719,
+        0.0018402761308523848,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "POST_VELOCITY_LIMIT": [
+        0.0020150953426453094,
+        -0.0003755701892280052,
+        -0.00019476661160999081,
+        -0.008053918271421719,
+        0.0018402761308523845,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "POST_ACCELERATION_LIMIT": [
+        0.0007829307257773134,
+        -0.00014592135399737362,
+        -7.567322565731264e-05,
+        -0.006505858864389151,
+        0.001486553050992942,
+        0.012264546837397874,
+        0.0019607843137254832
+      ],
+      "FINAL_DELIVERED_ARM_ACTION": [
+        0.0007829307257773134,
+        -0.00014592135399737362,
+        -7.567322565731264e-05,
+        -0.006505858864389151,
+        0.001486553050992942,
+        0.012264546837397874
+      ],
+      "planned_target_pose": [
+        306.05261456366793,
+        -11.979569081963682,
+        723.431712028249,
+        -0.20953410710698728,
+        155.68325038579783,
+        -177.55059557150298
+      ],
+      "physical_gripper_command": "STATE_TRANSITION_ONLY",
+      "logical_gripper_before": "OPEN",
+      "command_receipt": {
+        "command_id": "b3c9cfd5d1414c6ba16f22a9643a5015",
+        "command_type": "pose",
+        "requested_at": 2871913.662644059,
+        "sent_at": 2871913.663568381,
+        "ack_at": 2871914.673919064,
+        "completed_at": 2871914.673925919,
+        "ack_latency": 1.010350682772696,
+        "state": "completed",
+        "request": {
+          "pos": [
+            306.05261456366793,
+            -11.979569081963682,
+            723.431712028249,
+            -0.20953410710698728,
+            155.68325038579783,
+            -177.55059557150298
+          ],
+          "vel": [
+            20.0,
+            20.0
+          ],
+          "acc": [
+            20.0,
+            20.0
+          ],
+          "time": 0.0,
+          "radius": 0.0,
+          "ref": 0,
+          "mode": 0,
+          "blend_type": 0,
+          "sync_type": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      "gripper_receipt": {
+        "state": "suppressed",
+        "logical_before": "OPEN",
+        "logical_after": "OPEN",
+        "measured_gripper_state": null
+      },
+      "logical_gripper_after": "OPEN"
+    },
+    "jointstate_before": {
+      "receive": 2871913.649891059,
+      "source": 1791983351.1387184,
+      "header_age": 0.0007317066192626953,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861257553100586,
+        -0.018963860347867012,
+        0.021904023364186287,
+        -1.9810631275177002,
+        -0.715977132320404,
+        0.02620803378522396
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009985685348510742,
+      "receive_gap": 0.010084860026836395,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_after": {
+      "receive": 2871915.420100563,
+      "source": 1791983352.90873,
+      "header_age": 0.0009710788726806641,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.186119556427002,
+        -0.021385321393609047,
+        0.020885935053229332,
+        -1.9825761318206787,
+        -0.7134824395179749,
+        0.0119621641933918
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010007143020629883,
+      "receive_gap": 0.010434926021844149,
+      "phase": "RUNTIME_READY"
+    },
+    "robot_state_after": {
+      "robot_state": 1,
+      "success": true
+    },
+    "post_command_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 2,
+      "clean_since": 2871915.209806189,
+      "last_receive": 2871915.420100563
+    },
+    "fk_before": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3047872857326968,
+        -0.011267179452535957,
+        0.72433327217181
+      ],
+      "rotation_matrix": [
+        [
+          0.9090619108513184,
+          -0.052231390123195665,
+          0.41337431478642744
+        ],
+        [
+          -0.05826304307582772,
+          -0.9982992848585368,
+          0.0019888847322212457
+        ],
+        [
+          0.41256740061581937,
+          -0.025892464863978438,
+          -0.910559015227664
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.0071346122024470385,
+        0.9769749499011631,
+        -0.02827463314443265,
+        0.21135181497893177
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861257553100586,
+        -0.018963860347867012,
+        -0.715977132320404,
+        0.021904023364186287,
+        -1.9810631275177002,
+        0.02620803378522396
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "fk_after": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.30559076178341826,
+        -0.011418658014776834,
+        0.7242560005081544
+      ],
+      "rotation_matrix": [
+        [
+          0.910287349989187,
+          -0.040031596275447924,
+          0.41203690580978664
+        ],
+        [
+          -0.04443335500306049,
+          -0.9990117402153956,
+          0.0011044795058708624
+        ],
+        [
+          0.4115854922283283,
+          -0.019313575832725395,
+          -0.9111664877374049
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.0052230746784487645,
+        0.9773005650696703,
+        -0.021606697646922735,
+        0.21068810033364713
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.186119556427002,
+        -0.021385321393609047,
+        -0.7134824395179749,
+        0.020885935053229332,
+        -1.9825761318206787,
+        0.0119621641933918
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    }
+  },
+  {
+    "step_id": 1,
+    "raw_action": [
+      0.00011473623441084733,
+      8.233854389774753e-05,
+      -0.00019476661160999081,
+      -0.0038511841795565507,
+      0.0032387517380414385,
+      0.006847957633512888,
+      0.0019607843137254832
+    ],
+    "camera_timing": {
+      "frame_receive_monotonic": 2871915.792151463,
+      "inference_start_monotonic": 2871915.809841884,
+      "inference_end_monotonic": 2871916.258243484,
+      "camera_age_at_inference_start": 0.017690420616418123,
+      "camera_age_at_inference_end": 0.4660920207388699,
+      "inference_latency": 0.4484016001224518,
+      "source_age_at_inference_start": 0.047017812728881836,
+      "source_age_at_inference_end": 0.495485782623291
+    },
+    "logical_gripper_intent": "OPEN",
+    "pre_observation_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 1,
+      "clean_since": 2871915.580427772,
+      "last_receive": 2871915.789773914
+    },
+    "pre_dispatch_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 0,
+      "clean_since": 2871916.739647474,
+      "last_receive": 2871916.949980746
+    },
+    "physical_gripper_command": "STATE_TRANSITION_ONLY",
+    "source_image_sha256": "92a4037f8022d47a11523b37e56eb493c91b6f64acfe84e3a7dbbfaaccb4e100",
+    "model_input_sha256": "de3a3cdc3b9efcb3085a689c58b9579963d0e985d5fd85810b9750e264be5a62",
+    "record": {
+      "event": "ACTION",
+      "execution_mode": "FULL_POLICY_ROLLOUT",
+      "evaluation_scope": "TASK_PROTOCOL",
+      "physical_gripper_disabled": false,
+      "command_requested": true,
+      "command_issued": true,
+      "command_acknowledged": true,
+      "executed_action": null,
+      "robot_delivered_command": null,
+      "observation": {
+        "receive_monotonic": 2871916.956902924,
+        "tcp_m_abc": [
+          0.306059326171875,
+          -0.011981382369995117,
+          0.7234329223632813,
+          179.78945922851562,
+          -155.6828155517578,
+          2.4489378929138184
+        ],
+        "phase": "alignment",
+        "robot_state_ok": true,
+        "camera_ok": true,
+        "joint_state_ok": true,
+        "tcp_ok": true,
+        "model_ok": true,
+        "communication_ok": true,
+        "live_execution_clock": true,
+        "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+        "tcp_contract_verified": false,
+        "raw_model_output": {
+          "action": [
+            0.00011473623441084733,
+            8.233854389774753e-05,
+            -0.00019476661160999081,
+            -0.0038511841795565507,
+            0.0032387517380414385,
+            0.006847957633512888,
+            0.0019607843137254832
+          ],
+          "chunk_size": 1,
+          "variant": "openvla_token",
+          "instruction": "pick up the orange cube",
+          "inference_seconds": 0.4070639223791659,
+          "request_index": 105
+        }
+      },
+      "raw_model_output": {
+        "action": [
+          0.00011473623441084733,
+          8.233854389774753e-05,
+          -0.00019476661160999081,
+          -0.0038511841795565507,
+          0.0032387517380414385,
+          0.006847957633512888,
+          0.0019607843137254832
+        ],
+        "chunk_size": 1,
+        "variant": "openvla_token",
+        "instruction": "pick up the orange cube",
+        "inference_seconds": 0.4070639223791659,
+        "request_index": 105
+      },
+      "canonical_action": [
+        0.00011473623441084733,
+        8.233854389774753e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512888,
+        0.0019607843137254832
+      ],
+      "filtered_action": [
+        0.00011473623441084733,
+        8.233854389774752e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512887,
+        0.0019607843137254832
+      ],
+      "safety_blockers": [],
+      "chunk_id": "episode-step-1",
+      "chunk_index": 0,
+      "target_step": 0,
+      "target_time": 0.0,
+      "phase": "alignment",
+      "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+      "dry_run": false,
+      "episode_id": null,
+      "condition": null,
+      "matched_pair_id": null,
+      "sim_observation_id": null,
+      "real_observation_id": null,
+      "observation_gap_score": null,
+      "action_gap_translation": null,
+      "action_gap_rotation": null,
+      "action_gap_gripper": null,
+      "RAW_MODEL_ACTION": [
+        0.00011473623441084733,
+        8.233854389774753e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512888,
+        0.0019607843137254832
+      ],
+      "POST_HARD_GATE": [
+        0.00011473623441084733,
+        8.233854389774753e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512888,
+        0.0019607843137254832
+      ],
+      "POST_VELOCITY_LIMIT": [
+        0.00011473623441084733,
+        8.233854389774753e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512887,
+        0.0019607843137254832
+      ],
+      "POST_ACCELERATION_LIMIT": [
+        0.00011473623441084733,
+        8.233854389774752e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512887,
+        0.0019607843137254832
+      ],
+      "FINAL_DELIVERED_ARM_ACTION": [
+        0.00011473623441084733,
+        8.233854389774752e-05,
+        -0.00019476661160999081,
+        -0.0038511841795565507,
+        0.0032387517380414385,
+        0.006847957633512887
+      ],
+      "planned_target_pose": [
+        306.1740624062858,
+        -11.899043826097369,
+        723.2381557516712,
+        -0.3104655493977184,
+        155.86737876937238,
+        -178.09088097620082
+      ],
+      "physical_gripper_command": "STATE_TRANSITION_ONLY",
+      "logical_gripper_before": "OPEN",
+      "command_receipt": {
+        "command_id": "30d04dfa117147fd8a101d7b093ed44f",
+        "command_type": "pose",
+        "requested_at": 2871916.960688739,
+        "sent_at": 2871916.960991226,
+        "ack_at": 2871917.78130363,
+        "completed_at": 2871917.781310703,
+        "ack_latency": 0.8203124040737748,
+        "state": "completed",
+        "request": {
+          "pos": [
+            306.1740624062858,
+            -11.899043826097369,
+            723.2381557516712,
+            -0.3104655493977184,
+            155.86737876937238,
+            -178.09088097620082
+          ],
+          "vel": [
+            20.0,
+            20.0
+          ],
+          "acc": [
+            20.0,
+            20.0
+          ],
+          "time": 0.0,
+          "radius": 0.0,
+          "ref": 0,
+          "mode": 0,
+          "blend_type": 0,
+          "sync_type": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      "gripper_receipt": {
+        "state": "suppressed",
+        "logical_before": "OPEN",
+        "logical_after": "OPEN",
+        "measured_gripper_state": null
+      },
+      "logical_gripper_after": "OPEN"
+    },
+    "jointstate_before": {
+      "receive": 2871916.949980746,
+      "source": 1791983354.438734,
+      "header_age": 0.0008342266082763672,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1861135959625244,
+        -0.021336209028959274,
+        0.020906349644064903,
+        -1.9825761318206787,
+        -0.7135254144668579,
+        0.011967267841100693
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010012388229370117,
+      "receive_gap": 0.010396609082818031,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_after": {
+      "receive": 2871918.409727171,
+      "source": 1791983355.8987327,
+      "header_age": 0.0005564689636230469,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.185354232788086,
+        -0.02249658852815628,
+        0.019656093791127205,
+        -1.985678791999817,
+        -0.7124611735343933,
+        0.00431996863335371
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.010023355484008789,
+      "receive_gap": 0.01028492208570242,
+      "phase": "RUNTIME_READY"
+    },
+    "robot_state_after": {
+      "robot_state": 1,
+      "success": true
+    },
+    "post_command_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 0,
+      "clean_since": 2871918.199898785,
+      "last_receive": 2871918.409727171
+    },
+    "fk_before": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.30556985779903234,
+        -0.011413576805851807,
+        0.7242582854153488
+      ],
+      "rotation_matrix": [
+        [
+          0.9102853085722111,
+          -0.040015024620110556,
+          0.4120430254260431
+        ],
+        [
+          -0.044424753130747244,
+          -0.9990120994370417,
+          0.0011253833422505768
+        ],
+        [
+          0.4115909356471142,
+          -0.019329329606760762,
+          -0.9111636947936889
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.005232455004125548,
+        0.9772999926843013,
+        -0.02160027074156914,
+        0.21069118163270492
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1861135959625244,
+        -0.021336209028959274,
+        -0.7135254144668579,
+        0.020906349644064903,
+        -1.9825761318206787,
+        0.011967267841100693
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "fk_after": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.30571304761515294,
+        -0.011332637295518543,
+        0.724059530148244
+      ],
+      "rotation_matrix": [
+        [
+          0.9118869623258159,
+          -0.03322910346977111,
+          0.40909411462741796
+        ],
+        [
+          -0.0365936781666092,
+          -0.9993301481623695,
+          0.00039710453932269394
+        ],
+        [
+          0.40880688675514554,
+          -0.01533237282261843,
+          -0.9124921082865288
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.0040219981637826755,
+        0.9777153495234073,
+        -0.017853555656668324,
+        0.20913576783397483
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.185354232788086,
+        -0.02249658852815628,
+        -0.7124611735343933,
+        0.019656093791127205,
+        -1.985678791999817,
+        0.00431996863335371
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    }
+  },
+  {
+    "step_id": 2,
+    "raw_action": [
+      0.0017559554642496995,
+      -0.0005064012558353625,
+      -0.00019476661160999081,
+      -0.00691804419253924,
+      0.0032387517380414385,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "camera_timing": {
+      "frame_receive_monotonic": 2871918.642924585,
+      "inference_start_monotonic": 2871918.660755203,
+      "inference_end_monotonic": 2871919.085693298,
+      "camera_age_at_inference_start": 0.01783061819151044,
+      "camera_age_at_inference_end": 0.44276871299371123,
+      "inference_latency": 0.4249380948022008,
+      "source_age_at_inference_start": 0.04888319969177246,
+      "source_age_at_inference_end": 0.47388434410095215
+    },
+    "logical_gripper_intent": "OPEN",
+    "pre_observation_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 0,
+      "clean_since": 2871918.430115798,
+      "last_receive": 2871918.639592788
+    },
+    "pre_dispatch_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 0,
+      "clean_since": 2871919.55950241,
+      "last_receive": 2871919.7695914
+    },
+    "physical_gripper_command": "STATE_TRANSITION_ONLY",
+    "source_image_sha256": "71045f29cd600dc2c9ad63e5c3a4ffb0b21740331028a7971a2f3629996eb17b",
+    "model_input_sha256": "3e299bfdf144fca1e42835487475f06247237ac895920d7c7d21e9bda77a2055",
+    "record": {
+      "event": "ACTION",
+      "execution_mode": "FULL_POLICY_ROLLOUT",
+      "evaluation_scope": "TASK_PROTOCOL",
+      "physical_gripper_disabled": false,
+      "command_requested": true,
+      "command_issued": true,
+      "command_acknowledged": true,
+      "executed_action": null,
+      "robot_delivered_command": null,
+      "observation": {
+        "receive_monotonic": 2871919.778261952,
+        "tcp_m_abc": [
+          0.3061900634765625,
+          -0.01189453411102295,
+          0.7232365112304687,
+          179.68948364257812,
+          -155.86749267578125,
+          1.908200979232788
+        ],
+        "phase": "alignment",
+        "robot_state_ok": true,
+        "camera_ok": true,
+        "joint_state_ok": true,
+        "tcp_ok": true,
+        "model_ok": true,
+        "communication_ok": true,
+        "live_execution_clock": true,
+        "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+        "tcp_contract_verified": false,
+        "raw_model_output": {
+          "action": [
+            0.0017559554642496995,
+            -0.0005064012558353625,
+            -0.00019476661160999081,
+            -0.00691804419253924,
+            0.0032387517380414385,
+            0.010181925561301089,
+            0.0019607843137254832
+          ],
+          "chunk_size": 1,
+          "variant": "openvla_token",
+          "instruction": "pick up the orange cube",
+          "inference_seconds": 0.3793142079375684,
+          "request_index": 106
+        }
+      },
+      "raw_model_output": {
+        "action": [
+          0.0017559554642496995,
+          -0.0005064012558353625,
+          -0.00019476661160999081,
+          -0.00691804419253924,
+          0.0032387517380414385,
+          0.010181925561301089,
+          0.0019607843137254832
+        ],
+        "chunk_size": 1,
+        "variant": "openvla_token",
+        "instruction": "pick up the orange cube",
+        "inference_seconds": 0.3793142079375684,
+        "request_index": 106
+      },
+      "canonical_action": [
+        0.0017559554642496995,
+        -0.0005064012558353625,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "filtered_action": [
+        0.0008677526210535084,
+        -0.00018778424567697627,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "safety_blockers": [],
+      "chunk_id": "episode-step-2",
+      "chunk_index": 0,
+      "target_step": 0,
+      "target_time": 0.0,
+      "phase": "alignment",
+      "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+      "dry_run": false,
+      "episode_id": null,
+      "condition": null,
+      "matched_pair_id": null,
+      "sim_observation_id": null,
+      "real_observation_id": null,
+      "observation_gap_score": null,
+      "action_gap_translation": null,
+      "action_gap_rotation": null,
+      "action_gap_gripper": null,
+      "RAW_MODEL_ACTION": [
+        0.0017559554642496995,
+        -0.0005064012558353625,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "POST_HARD_GATE": [
+        0.0017559554642496995,
+        -0.0005064012558353625,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "POST_VELOCITY_LIMIT": [
+        0.0017559554642496995,
+        -0.0005064012558353625,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "POST_ACCELERATION_LIMIT": [
+        0.0008677526210535084,
+        -0.00018778424567697627,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "FINAL_DELIVERED_ARM_ACTION": [
+        0.0008677526210535084,
+        -0.00018778424567697627,
+        -0.00019476661160999081,
+        -0.00691804419253924,
+        0.0032387517380414385,
+        0.010181925561301089
+      ],
+      "planned_target_pose": [
+        307.057816097616,
+        -12.082318356699925,
+        723.0417446188587,
+        -0.6190333965673387,
+        156.04984354648246,
+        -179.06841523492784
+      ],
+      "physical_gripper_command": "STATE_TRANSITION_ONLY",
+      "logical_gripper_before": "OPEN",
+      "command_receipt": {
+        "command_id": "dfff897b612148d2b277964f8dc0454d",
+        "command_type": "pose",
+        "requested_at": 2871919.78772197,
+        "sent_at": 2871919.788199082,
+        "ack_at": 2871920.77801665,
+        "completed_at": 2871920.778031905,
+        "ack_latency": 0.9898175681009889,
+        "state": "completed",
+        "request": {
+          "pos": [
+            307.057816097616,
+            -12.082318356699925,
+            723.0417446188587,
+            -0.6190333965673387,
+            156.04984354648246,
+            -179.06841523492784
+          ],
+          "vel": [
+            20.0,
+            20.0
+          ],
+          "acc": [
+            20.0,
+            20.0
+          ],
+          "time": 0.0,
+          "radius": 0.0,
+          "ref": 0,
+          "mode": 0,
+          "blend_type": 0,
+          "sync_type": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      "gripper_receipt": {
+        "state": "suppressed",
+        "logical_before": "OPEN",
+        "logical_after": "OPEN",
+        "measured_gripper_state": null
+      },
+      "logical_gripper_after": "OPEN"
+    },
+    "jointstate_before": {
+      "receive": 2871919.7695914,
+      "source": 1791983357.2587123,
+      "header_age": 0.00042700767517089844,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1853604316711426,
+        -0.0224638469517231,
+        0.01968161016702652,
+        -1.9856736660003662,
+        -0.7124878168106079,
+        0.004327623173594475
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.01000070571899414,
+      "receive_gap": 0.010091416072100401,
+      "phase": "RUNTIME_READY"
+    },
+    "jointstate_after": {
+      "receive": 2871922.029587654,
+      "source": 1791983359.5187125,
+      "header_age": 0.0005064010620117188,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1848080158233643,
+        -0.025477899238467216,
+        0.016951439902186394,
+        -1.9887635707855225,
+        -0.7094813585281372,
+        -0.008422979153692722
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009960412979125977,
+      "receive_gap": 0.008865199983119965,
+      "phase": "RUNTIME_READY"
+    },
+    "robot_state_after": {
+      "robot_state": 1,
+      "success": true
+    },
+    "post_command_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 21,
+      "reset_count": 1,
+      "clean_since": 2871921.829544815,
+      "last_receive": 2871922.029587654
+    },
+    "fk_before": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.3056992968270531,
+        -0.011331028036013492,
+        0.7240619390162962
+      ],
+      "rotation_matrix": [
+        [
+          0.9118822794864588,
+          -0.0332232440833109,
+          0.40910502858209996
+        ],
+        [
+          -0.03659659454797008,
+          -0.9993300330536841,
+          0.00041749780126375605
+        ],
+        [
+          0.40881707110402254,
+          -0.015352559705251793,
+          -0.9124872060935567
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.004032379546179354,
+        0.977714109368595,
+        -0.017852825780628866,
+        0.20914142791043852
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1853604316711426,
+        -0.0224638469517231,
+        -0.7124878168106079,
+        0.01968161016702652,
+        -1.9856736660003662,
+        0.004327623173594475
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    },
+    "fk_after": {
+      "source": "computed_from_measured_joint_state_urdf_fk",
+      "pose_kind": "computed_link6_flange_not_measured_tcp",
+      "reference_frame": "base_link",
+      "child_frame": "link_6",
+      "position_m": [
+        0.30657909777211023,
+        -0.011512758674160907,
+        0.723870186048547
+      ],
+      "rotation_matrix": [
+        [
+          0.9134913494380802,
+          -0.02305751323800357,
+          0.4062042658381056
+        ],
+        [
+          -0.0244544706710846,
+          -0.9996994096534073,
+          -0.0017519140462901738
+        ],
+        [
+          0.40612255953836396,
+          -0.008333151979162264,
+          -0.9137806220379704
+        ]
+      ],
+      "quaternion_wxyz": [
+        -0.0016820929449966996,
+        0.9781323250370394,
+        -0.012143547118558067,
+        0.20762191489421145
+      ],
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "joint_position_rad": [
+        -3.1848080158233643,
+        -0.025477899238467216,
+        -0.7094813585281372,
+        0.016951439902186394,
+        -1.9887635707855225,
+        -0.008422979153692722
+      ],
+      "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+      "tool_offset_applied": false,
+      "measured_tcp_available": false,
+      "valid_for_observation": true,
+      "valid_as_measured_tcp": false,
+      "valid_for_motion_readiness": false,
+      "blocker": "UNVERIFIED_FLANGE_TO_TCP_OFFSET_AND_NO_MEASURED_TCP_CROSSCHECK",
+      "command_issued": false,
+      "executed_action": null,
+      "robot_delivered_command": null
+    }
+  },
+  {
+    "step_id": 3,
+    "raw_action": [
+      0.001151295747993282,
+      -0.0005064012558353625,
+      -0.0003602110622890828,
+      -0.0032832471401153113,
+      0.002714323385345544,
+      0.008514941597406988,
+      0.0019607843137254832
+    ],
+    "camera_timing": {
+      "frame_receive_monotonic": 2871922.465243037,
+      "inference_start_monotonic": 2871922.477981505,
+      "inference_end_monotonic": 2871922.928314991,
+      "camera_age_at_inference_start": 0.012738468125462532,
+      "camera_age_at_inference_end": 0.4630719539709389,
+      "inference_latency": 0.4503334858454764,
+      "source_age_at_inference_start": 0.08236050605773926,
+      "source_age_at_inference_end": 0.5327425003051758
+    },
+    "logical_gripper_intent": "OPEN",
+    "pre_observation_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 1,
+      "clean_since": 2871922.169759176,
+      "last_receive": 2871922.380035148
+    },
+    "pre_dispatch_settle": {
+      "criterion": "SIX_FINITE_EXACT_ZERO_VELOCITIES",
+      "required_clean_seconds": 0.2,
+      "timeout_seconds": 2.0,
+      "clean_sample_count": 22,
+      "reset_count": 0,
+      "clean_since": 2871923.409624237,
+      "last_receive": 2871923.619404286
+    },
+    "physical_gripper_command": "STATE_TRANSITION_ONLY",
+    "source_image_sha256": "893f30598e3f2b331a6f24847558baba03a4e3c61415d1b5df713156ac07237c",
+    "model_input_sha256": "403055c69330a23b77c208be4dc36727a61b0d045ca758fdd18e18547b5deec2",
+    "record": {
+      "event": "ACTION",
+      "execution_mode": "FULL_POLICY_ROLLOUT",
+      "evaluation_scope": "TASK_PROTOCOL",
+      "physical_gripper_disabled": false,
+      "command_requested": true,
+      "command_issued": true,
+      "command_acknowledged": true,
+      "executed_action": null,
+      "robot_delivered_command": null,
+      "observation": {
+        "receive_monotonic": 2871923.627905347,
+        "tcp_m_abc": [
+          0.30705349731445314,
+          -0.012075783729553223,
+          0.723048095703125,
+          179.38232421875,
+          -156.04843139648438,
+          0.9317993521690369
+        ],
+        "phase": "alignment",
+        "robot_state_ok": true,
+        "camera_ok": true,
+        "joint_state_ok": true,
+        "tcp_ok": true,
+        "model_ok": true,
+        "communication_ok": true,
+        "live_execution_clock": true,
+        "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+        "tcp_contract_verified": false,
+        "raw_model_output": {
+          "action": [
+            0.001151295747993282,
+            -0.0005064012558353625,
+            -0.0003602110622890828,
+            -0.0032832471401153113,
+            0.002714323385345544,
+            0.008514941597406988,
+            0.0019607843137254832
+          ],
+          "chunk_size": 1,
+          "variant": "openvla_token",
+          "instruction": "pick up the orange cube",
+          "inference_seconds": 0.40589509485289454,
+          "request_index": 107
+        }
+      },
+      "raw_model_output": {
+        "action": [
+          0.001151295747993282,
+          -0.0005064012558353625,
+          -0.0003602110622890828,
+          -0.0032832471401153113,
+          0.002714323385345544,
+          0.008514941597406988,
+          0.0019607843137254832
+        ],
+        "chunk_size": 1,
+        "variant": "openvla_token",
+        "instruction": "pick up the orange cube",
+        "inference_seconds": 0.40589509485289454,
+        "request_index": 107
+      },
+      "canonical_action": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988,
+        0.0019607843137254832
+      ],
+      "filtered_action": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988,
+        0.0019607843137254832
+      ],
+      "safety_blockers": [],
+      "chunk_id": "episode-step-3",
+      "chunk_index": 0,
+      "target_step": 0,
+      "target_time": 0.0,
+      "phase": "alignment",
+      "tcp_source": "CONTROLLER_ZERO_OFFSET_ENGINEERING_ACCEPTED",
+      "dry_run": false,
+      "episode_id": null,
+      "condition": null,
+      "matched_pair_id": null,
+      "sim_observation_id": null,
+      "real_observation_id": null,
+      "observation_gap_score": null,
+      "action_gap_translation": null,
+      "action_gap_rotation": null,
+      "action_gap_gripper": null,
+      "RAW_MODEL_ACTION": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988,
+        0.0019607843137254832
+      ],
+      "POST_HARD_GATE": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988,
+        0.0019607843137254832
+      ],
+      "POST_VELOCITY_LIMIT": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988,
+        0.0019607843137254832
+      ],
+      "POST_ACCELERATION_LIMIT": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988,
+        0.0019607843137254832
+      ],
+      "FINAL_DELIVERED_ARM_ACTION": [
+        0.001151295747993282,
+        -0.0005064012558353625,
+        -0.0003602110622890828,
+        -0.0032832471401153113,
+        0.002714323385345544,
+        0.008514941597406988
+      ],
+      "planned_target_pose": [
+        308.2047930624464,
+        -12.582184985388585,
+        722.6878846408359,
+        -0.5584022394549243,
+        156.20201258712956,
+        -179.53690311685753
+      ],
+      "physical_gripper_command": "STATE_TRANSITION_ONLY",
+      "logical_gripper_before": "OPEN",
+      "command_receipt": {
+        "command_id": "1b856dfc6fbc4a3894bb3039c3f0e29c",
+        "command_type": "pose",
+        "requested_at": 2871923.630012425,
+        "sent_at": 2871923.630199009,
+        "ack_at": 2871924.784624342,
+        "completed_at": 2871924.784630206,
+        "ack_latency": 1.154425332788378,
+        "state": "completed",
+        "request": {
+          "pos": [
+            308.2047930624464,
+            -12.582184985388585,
+            722.6878846408359,
+            -0.5584022394549243,
+            156.20201258712956,
+            -179.53690311685753
+          ],
+          "vel": [
+            20.0,
+            20.0
+          ],
+          "acc": [
+            20.0,
+            20.0
+          ],
+          "time": 0.0,
+          "radius": 0.0,
+          "ref": 0,
+          "mode": 0,
+          "blend_type": 0,
+          "sync_type": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      "gripper_receipt": {
+        "state": "suppressed",
+        "logical_before": "OPEN",
+        "logical_after": "OPEN",
+        "measured_gripper_state": null
+      },
+      "logical_gripper_after": "OPEN"
+    },
+    "jointstate_before": {
+      "receive": 2871923.619404286,
+      "source": 1791983361.1087053,
+      "header_age": 0.00023889541625976562,
+      "names": [
+        "joint_1",
+        "joint_2",
+        "joint_4",
+        "joint_5",
+        "joint_3",
+        "joint_6"
+      ],
+      "position": [
+        -3.1848325729370117,
+        -0.025473805144429207,
+        0.01695398986339569,
+        -1.9887661933898926,
+        -0.7094977498054504,
+        -0.008422979153692722
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "valid": true,
+      "source_gap": 0.009996414184570312,
+      "receive_gap": 0.009953813161700964,
+      "phase": "RUNTIME_READY"
+    }
+  }
+]

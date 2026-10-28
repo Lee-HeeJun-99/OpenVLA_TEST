@@ -1,0 +1,8 @@
+{
+  "source": "OPERATOR_CHAT",
+  "message": "열렸어. 이제 닫아봐",
+  "observed_physical_state": "OPEN",
+  "electrical_readback_verified": false,
+  "previous_readback_mismatch_preserved": true,
+  "close_test_approved": true
+}

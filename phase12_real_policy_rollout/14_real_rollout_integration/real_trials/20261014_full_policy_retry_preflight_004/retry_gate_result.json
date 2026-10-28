@@ -1,0 +1,14 @@
+{
+  "episode_started": false,
+  "reason": "START_POSE_OUTSIDE_TOLERANCE",
+  "max_start_pose_error_deg": 1.3479943890812105,
+  "tolerance_deg": 0.5,
+  "hardware": "REAL/AUTO/STANDBY",
+  "jointstate": "RUNTIME_READY_NO_FAULT",
+  "jointstate_gap_ge_100ms": 0,
+  "camera_current_stream": "PASS",
+  "model_current_identity": "PASS",
+  "physical_commands_this_request": 0,
+  "automatic_pose_reset": false,
+  "previous_invalid_trial_preserved": true
+}

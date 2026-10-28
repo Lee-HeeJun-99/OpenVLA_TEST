@@ -1,0 +1,30 @@
+{
+  "manifest_sha256": {
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features/P0_current_paired_image/real/feature_manifest.json": "d21bf2e4116a0c22df6d37686d86a2db68a52e686575a155bee89be7d1181123",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features/P0_current_paired_image/sim/feature_manifest.json": "1641941487a3bbeaf4eea72b426f838900a869c33ada3fda56fbb30dd5427f32",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features/P5_brightness_match_sim_to_real/real/feature_manifest.json": "50db400ab49f2334e5cc3b4b2fbbefab1eb64cf78f121c4d8364885d4ca09e51",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features/P5_brightness_match_sim_to_real/sim/feature_manifest.json": "8d264676be288fb5920cb228a95300a1ef4f409222c6d18e6a27edee182033b8",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features/P4_letterbox_224/real/feature_manifest.json": "37497ca46964457010b22ae31771b1caa3b824dcf8b0789d0c2fdffffd998800",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/full_forward_features/P4_letterbox_224/sim/feature_manifest.json": "e4004a25abde752d90c5b8de71f914442a7443be30e240ecb76262957ebdb091"
+  },
+  "additional_sources_sha256": {
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/sim2real_analysis/04_features/extract_vla_features.py": "0c05b5c0848dd42500da0da2b0eaaf7389eb6fd3cc95991a32ba4be5dea314d9",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/a0509_control/episode_recorder.py": "98432981d736b62dab97da7dde6fe52ae329500028307ebfdabc86996dbf25c3",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime/openvla-oft/prismatic/vla/datasets/a0509_dataset.py": "ffe26ebbbefbe9c9b75a10763ef7344ee55f7c6723758d1a5e2a896fb9429707",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_audit/coordinate_frame_audit_summary.md": "70de9c6054b93637b6266949a673ebb9829939605ed663635afcebc0cfb572e8",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase1_audit/preprocessing_audit_summary.md": "62209537f4a2e4048912bfb4936ca4cfc0365c9108e706a2b3c95c824115a42f"
+  },
+  "original_source_image_sizes": {
+    "real": {
+      "(1280, 720)": 225
+    },
+    "sim": {
+      "(1280, 720)": 225
+    }
+  },
+  "original_source_note": "Paired raw Real poses are planned/commanded, not measured. Joint-relative Sim replay is not proof of identical physical EE pose.",
+  "full_forward_inference_required": false,
+  "full_forward_inference_executed": false,
+  "correction_head_only": true,
+  "gripper_discrete_agreement": "NOT_COMPUTED: continuous convention known, but historic 0.5 threshold was explicitly ASSUMED, not verified policy interpretation"
+}

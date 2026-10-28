@@ -1,0 +1,1 @@
+{"observed_open":true,"operator":"CURRENT_USER","confirmed_wall_time":1791983514,"evidence":"User reported gripper opened after episode008 abort, then reported returned to start pose and explicitly requested next execution. No agent gripper writes since user's OPEN confirmation; current IO readback must still pass."}

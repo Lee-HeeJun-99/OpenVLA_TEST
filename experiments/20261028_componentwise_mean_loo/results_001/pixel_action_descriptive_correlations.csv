@@ -1,0 +1,10 @@
+condition,component,pearson,n,p_value,note
+A,translation_l2,-0.27703136197052985,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+A,rotation_l2,-0.4543741634901466,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+A,gripper_abs,-0.2835329596378826,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+B,translation_l2,0.5981506209283907,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+B,rotation_l2,0.7021283599776135,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+B,gripper_abs,0.73743673389592,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+C,translation_l2,0.27590787093407737,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+C,rotation_l2,-0.23346892580211462,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled
+C,gripper_abs,0.20155857755214637,225,,Descriptive only; frame temporal correlation and episode clustering are not modeled

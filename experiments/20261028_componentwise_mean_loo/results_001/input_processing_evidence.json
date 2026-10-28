@@ -1,0 +1,68 @@
+{
+  "A": {
+    "real_input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P0_current_paired_image/real/episode_000001_000000.jpg",
+    "sim_input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P0_current_paired_image/sim/episode_000001_000000.jpg",
+    "image_sizes": {
+      "real": [
+        1280,
+        720
+      ],
+      "sim": [
+        1280,
+        720
+      ]
+    },
+    "recorded_model_tensor_shape": [
+      1,
+      6,
+      224,
+      224
+    ],
+    "inverse_normalization": "Fixed stored processor means/stds, no per-image normalization; PNG only clips to [0,1] and rounds to uint8. MSE uses un-clipped floating RGB.",
+    "brightness_gain_sim_to_real": null
+  },
+  "B": {
+    "real_input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P5_brightness_match_sim_to_real/real/episode_000001_000000.jpg",
+    "sim_input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P5_brightness_match_sim_to_real/sim/episode_000001_000000.jpg",
+    "image_sizes": {
+      "real": [
+        1280,
+        720
+      ],
+      "sim": [
+        1280,
+        720
+      ]
+    },
+    "recorded_model_tensor_shape": [
+      1,
+      6,
+      224,
+      224
+    ],
+    "inverse_normalization": "Fixed stored processor means/stds, no per-image normalization; PNG only clips to [0,1] and rounds to uint8. MSE uses un-clipped floating RGB.",
+    "brightness_gain_sim_to_real": 0.6711140621609467
+  },
+  "C": {
+    "real_input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P4_letterbox_224/real/episode_000001_000000.jpg",
+    "sim_input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/01_preprocessing/condition_inputs/P4_letterbox_224/sim/episode_000001_000000.jpg",
+    "image_sizes": {
+      "real": [
+        224,
+        224
+      ],
+      "sim": [
+        224,
+        224
+      ]
+    },
+    "recorded_model_tensor_shape": [
+      1,
+      6,
+      224,
+      224
+    ],
+    "inverse_normalization": "Fixed stored processor means/stds, no per-image normalization; PNG only clips to [0,1] and rounds to uint8. MSE uses un-clipped floating RGB.",
+    "brightness_gain_sim_to_real": null
+  }
+}

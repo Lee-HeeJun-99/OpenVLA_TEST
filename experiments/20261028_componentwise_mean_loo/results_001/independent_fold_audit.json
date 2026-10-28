@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "fold_count": 10,
+  "pairs_once_per_condition": 225,
+  "episode_counts": {
+    "episode_000001": 46,
+    "episode_000002": 47,
+    "episode_000003": 44,
+    "episode_000004": 45,
+    "episode_000005": 43
+  },
+  "tested_assertions": [
+    "train/test disjoint",
+    "union exactly manifest",
+    "train excludes held-out episode",
+    "test contains only held-out episode",
+    "225 unique held-out pairs once for A and C"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "source": "OPERATOR_CHAT",
+  "message": "열렸어 다시 닫아",
+  "observed_physical_state": "OPEN",
+  "close_test_approved": true,
+  "electrical_readback": [0, 0],
+  "open_hold_times_s": [1.0, 0.2, 0.5]
+}

@@ -1,0 +1,3 @@
+comparison,pixel_mse_model_rgb_reduction_percent,translation_l2_reduction_percent,rotation_l2_reduction_percent,gripper_abs_reduction_percent,action7_l2_reduction_percent
+A_to_B,69.78842232884622,-5.6271528093573915,-22.231610719682255,-1.781472483509082,-1.7769086169064312
+A_to_C,41.512331040179994,58.48273572780954,64.8539949342855,72.47118411984223,72.44943013764312

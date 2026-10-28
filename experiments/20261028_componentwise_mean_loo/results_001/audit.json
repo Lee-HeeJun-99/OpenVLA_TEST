@@ -1,0 +1,270 @@
+{
+  "branch": "lhj-research",
+  "commit": "f8246eb3781b5c0a7d2c32d1a22dfe0b532cb6a4",
+  "git_status": " M phase12_real_policy_rollout/14_real_rollout_integration/README.md\n M phase12_real_policy_rollout/14_real_rollout_integration/configs/gripper_hardware.yaml\n M phase12_real_policy_rollout/14_real_rollout_integration/full_policy_gripper.py\n M phase12_real_policy_rollout/14_real_rollout_integration/real_sink.py\n M phase12_real_policy_rollout/14_real_rollout_integration/run_arm_only_episode.py\n M phase12_real_policy_rollout/14_real_rollout_integration/run_real_rollout.py\n?? experiments/\n?? phase12_real_policy_rollout/14_real_rollout_integration/full_policy_live_mode.py\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_002/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_002_OPEN_confirmation.json\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_003/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_003_OPEN_confirmation.json\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_008/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_008_OPEN_confirmation.json\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_011_OPEN_confirmation.json\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_012/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_012_OPEN_confirmation.json\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_launcher_integration/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_reset_006/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_retry_preflight_004/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_retry_preflight_005/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_retry_preflight_007/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_retry_preflight_009/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_retry_preflight_010/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_interlocked_gripper_5cycles_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_interlocked_gripper_5cycles_002/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_interlocked_gripper_validation_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_operator_timed_gripper_validation_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_operator_timed_gripper_validation_002/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_zed_receive_audit_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261015_full_policy_live_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261015_full_policy_live_001_OPEN_confirmation.json\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261015_rollout_preflight_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261015_stale_action_warm_check_001/\n?? phase12_real_policy_rollout/14_real_rollout_integration/run_gripper_level_open_once.py\n?? phase12_real_policy_rollout/14_real_rollout_integration/run_live_full_policy.py\n?? phase12_real_policy_rollout/14_real_rollout_integration/tests/test_full_policy_live_mode.py\n?? phase12_real_policy_rollout/14_real_rollout_integration/tests/test_gripper_abort_off_retry.py\n?? phase12_real_policy_rollout/14_real_rollout_integration/tests/test_interlocked_gripper.py\n?? phase12_real_policy_rollout/14_real_rollout_integration/tests/test_operator_timed_gripper.py\n",
+  "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged",
+  "dataset_key": "a0509_sim_cube_pick",
+  "dataset_statistics": {
+    "a0509_sim_cube_pick": {
+      "action": {
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "max": [
+          0.02636403329570186,
+          0.03199193905728531,
+          0.030625767972746187,
+          0.006960534874206479,
+          0.027803966133396772,
+          0.0819684889594845,
+          1.0
+        ],
+        "mean": [
+          0.00172668018641563,
+          9.044849585582641e-06,
+          0.0018885157773945067,
+          -0.0029523608365526165,
+          0.002949241832554471,
+          0.008463889248500684,
+          0.49079898471555483
+        ],
+        "min": [
+          -0.023638682756036977,
+          -0.02927706121834416,
+          -0.02992923702942596,
+          -0.038448583933575586,
+          -0.013647476482183576,
+          -0.10112347272685145,
+          0.0
+        ],
+        "q01": [
+          -0.008121573058486294,
+          -0.008910642630304513,
+          -0.020186619656567203,
+          -0.027673177275806687,
+          -0.0016535855642379358,
+          -0.006847744278563999,
+          0.0
+        ],
+        "q99": [
+          0.014771293739213731,
+          0.010844571147620387,
+          0.02095504093976497,
+          0.0010947295019568557,
+          0.02019328370300677,
+          0.06428647224268752,
+          1.0
+        ],
+        "std": [
+          0.0043203213701946235,
+          0.0030042889097228014,
+          0.009466776049143005,
+          0.006615320864472437,
+          0.00604142022793267,
+          0.01762294624623848,
+          0.4878097361214125
+        ]
+      }
+    }
+  },
+  "processor": {
+    "auto_map": {
+      "AutoImageProcessor": "processing_prismatic.PrismaticImageProcessor",
+      "AutoProcessor": "processing_prismatic.PrismaticProcessor"
+    },
+    "image_processor_type": "PrismaticImageProcessor",
+    "image_resize_strategy": "resize-naive",
+    "input_sizes": [
+      [
+        3,
+        224,
+        224
+      ],
+      [
+        3,
+        224,
+        224
+      ]
+    ],
+    "interpolations": [
+      "bicubic",
+      "bicubic"
+    ],
+    "means": [
+      [
+        0.485,
+        0.456,
+        0.406
+      ],
+      [
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "processor_class": "PrismaticProcessor",
+    "stds": [
+      [
+        0.229,
+        0.224,
+        0.225
+      ],
+      [
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "tvf_crop_params": [
+      {
+        "output_size": [
+          224,
+          224
+        ]
+      },
+      {
+        "output_size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "tvf_do_letterbox": false,
+    "tvf_letterbox_fill": null,
+    "tvf_normalize_params": [
+      {
+        "inplace": false,
+        "mean": [
+          0.484375,
+          0.455078125,
+          0.40625
+        ],
+        "std": [
+          0.228515625,
+          0.2236328125,
+          0.224609375
+        ]
+      },
+      {
+        "inplace": false,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "tvf_resize_params": [
+      {
+        "antialias": true,
+        "interpolation": 3,
+        "max_size": null,
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "antialias": true,
+        "interpolation": 3,
+        "max_size": null,
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "use_fused_vision_backbone": true
+  },
+  "training_config": {
+    "bounded_gripper": true,
+    "gripper_loss_weight": 3.0,
+    "use_l1_regression": true,
+    "use_diffusion": false,
+    "use_film": true,
+    "use_proprio": false,
+    "action_chunk_size": 5,
+    "sampling_mode": "natural",
+    "corrective_fraction": 0.6,
+    "seed": 1101,
+    "batch_size": 8,
+    "grad_accumulation_steps": 1,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0,
+    "max_steps": 32640,
+    "checkpoint_every": 4080,
+    "validation_every": 4080,
+    "global_decay_step": 24480,
+    "lr_warmup_steps": 100,
+    "effective_batch_size": 8,
+    "variant": "oftplus_h5_vision",
+    "action_dim": 7,
+    "action_horizon": 5,
+    "actions_per_inference": 5,
+    "gripper": "continuous_0_open_1_closed",
+    "run_id": "s1_mixed480_oftplus_s1101_b24_e43p2",
+    "data_profile": "mixed480",
+    "expected_robot_speed_scale": 1.7126963727221802,
+    "dataset_manifest_sha256": "14389b83a2a708d3f0c958cd77ae98894d94e3bb37caddc07039dcefcbb9d741",
+    "source_archive_sha256": "5b640b55daa06f7eb321e0a52fda9f42aa005625f3c442f39297c8a7574a6f79+midheight_audited",
+    "delta_archive_sha256": "47db1780702010ea5eb0feccebdcc1b5e2bf1fd3a3ea61c680a2b82e72685f65",
+    "finetune_sha256": "306b61b375be8d13167754fa1e0fa325ea633d0c53997facf9b428c2f0b5264d",
+    "dataset_loader_sha256": "d46d62f62cbfadfcdda298bb475921d012af8cfb4348542c5177eefb2157a231",
+    "record_hz": 5.0,
+    "physics_hz": 60.0,
+    "resume": false,
+    "resume_step": null
+  },
+  "pair_count": 225,
+  "episode_counts": {
+    "episode_000001": 46,
+    "episode_000002": 47,
+    "episode_000003": 44,
+    "episode_000004": 45,
+    "episode_000005": 43
+  },
+  "feature": "action_hidden_states.input",
+  "chunk_size": 5,
+  "action_dim": 7,
+  "inference_required": [],
+  "head_replay_required": [
+    "A_none",
+    "B_none",
+    "C_none",
+    "A_mean_LOO",
+    "C_mean_LOO"
+  ],
+  "cached_reaggregation_available": [
+    "A",
+    "B",
+    "C"
+  ],
+  "physical_commands": 0,
+  "source_hashes": {
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/outputs/token_distribution_analysis/5_episodes/paired_inputs/paired_manifest.json": "a806353341e330aa31b42b883f543b5cf45a434b5f17374802570e3b0086f6e4",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/dataset_statistics.json": "233125cab78236143e912c7e6147e24c698b73400cd8822b999ed78f92062fae",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/a0509_training_config.json": "6ac82092b9ec3057127b8a516f9e7a9587f77fb4356a31352bec09849e5b1d49",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/preprocessor_config.json": "bd024783fb785cbdfe35b710b621c5e8678d4c157a9ba625675e67d40d1757da",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt": "1afcdc971c0614a743720b80b3dbace9968f5bf6d2c072247bb4f1ccdb72b25a",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/scripts/action_hidden_token_sensitivity.py": "91b18fbf30febfd281330af2ff10f1dce88420786ee292631c374e6bb31880e7",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/phase6_prepare_condition_images.py": "6d4a86c9ff49f6994f0d01509309e8506eb9e3d9d46d274ba80202c60b4307df",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase6_environment_attribution/scripts/phase6_preprocessing_audit.py": "c949e9322b874eb88300ba076c017cefcc95ded864525534db0f41ce570a47ee",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime/openvla-oft/prismatic/models/action_heads.py": "cc7a5013921082f2c869f9f08846da8c5fd09a74602e1aac60403bea753ff834",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime/openvla-oft/prismatic/extern/hf/modeling_prismatic.py": "749a96df54f15713afb501782c498b8a9a3654b6449fdb976f96a157e372dbd0",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime/openvla-oft/experiments/robot/openvla_utils.py": "14edba2ae4666b1d8232f54f2ebe6597b26f5674c181a43176528e488de43315",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase5_policy_relevant_completion/scripts/loo_correction_ablation.py": "381a71c978683eaeb92efe987561c4c3f7e9d5f07a6a5cfe6bfa564e0ad58a06"
+  },
+  "source_code": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/experiments/20261028_componentwise_mean_loo/analyze.py",
+  "source_code_sha256": "f8058170b4cd6212748856f267bce1b8991ca0c4b144be15187a94a65c032c99"
+}

@@ -1,0 +1,1 @@
+{"observed_open":true,"operator":"CURRENT_USER","confirmed_wall_time":1791983319,"evidence":"User confirmed gripper OPEN before joint-only reset and confirmed robot now aligned; no intervening gripper writes."}

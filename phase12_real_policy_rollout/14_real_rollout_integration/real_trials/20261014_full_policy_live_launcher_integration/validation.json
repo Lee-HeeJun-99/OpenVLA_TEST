@@ -1,0 +1,22 @@
+{
+  "software_integration": "PASS",
+  "entrypoint": "run_live_full_policy.py",
+  "execution_mode": "FULL_POLICY_ROLLOUT",
+  "arm_only_cli_preserved": true,
+  "persistent_jointstate_and_camera": true,
+  "actual_OPEN_confirmation_required_after_initialization_ACK": true,
+  "arm_feedback_settle_before_gripper": true,
+  "gripper_state_transitions_only": true,
+  "abort_policy": "BOTH_OUTPUTS_OFF_MAX_3_TOTAL_ATTEMPTS_ACK_AND_READBACK",
+  "rollout_auto_retry": false,
+  "thresholds_changed_in_this_integration": false,
+  "default_episode_bounds": {"duration_s": 30, "actions": 150},
+  "explicit_70_second_override_supported": true,
+  "task_outcome_requires_post_episode_operator_evidence": true,
+  "invalid_excluded_from_task_success": true,
+  "tests": {"integration": 165, "safety": 103, "invalid_policy": 30, "total_pass": 298},
+  "physical_commands_this_integration": 0,
+  "live_full_policy_validation_executed": false,
+  "formal_TCP_verified": false,
+  "physical_jaw_abort_state_verified": false
+}

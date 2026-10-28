@@ -1,0 +1,14 @@
+{
+  "mode": {
+    "robot_mode": 1,
+    "success": true
+  },
+  "state": {
+    "robot_state": 1,
+    "success": true
+  },
+  "system": {
+    "robot_system": 0,
+    "success": true
+  }
+}

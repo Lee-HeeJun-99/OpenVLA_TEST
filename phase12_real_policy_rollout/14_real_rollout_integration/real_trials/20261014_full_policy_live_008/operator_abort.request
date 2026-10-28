@@ -1,0 +1,1 @@
+Operator reports current gripper CLOSED, contradicting required initial OPEN. Stop current episode and inhibit future dispatch.

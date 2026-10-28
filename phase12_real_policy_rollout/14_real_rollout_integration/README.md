@@ -54,3 +54,64 @@ An initial test run found an import-name collision with the existing metrics mod
 5. Real DDS fake-server/executor integration and model-specific preprocessing health checks need completion. Current tests do not establish these.
 
 OFT early-close review remains required; the premature-close safety is unchanged. Current integration status: `PARTIAL_REAL_COMMAND_INTEGRATION_COMMAND_DISABLED`, not `HARDWARE_VALIDATION_ONLY_REMAINING`.
+
+## OpenVLA full-policy live launcher — 2026-10-14 addition
+
+The legacy status above is not authorization for the new launcher. Explicit
+OpenVLA-only `run_live_full_policy.py` uses the persistent live episode engine
+and `FULL_POLICY_ROLLOUT` Controller mode. Arm-only CLI remains arm-only.
+Software wiring/fake-transport tests completed; this new gripper-inclusive live
+launcher has not yet been physically executed.
+
+Sequence: current REAL/AUTO/STANDBY, named-joint start pose and clean-window
+readiness, camera/model/logger preflight, OFF/OFF initialization, normal OPEN,
+fresh actual OPEN confirmation, bounded episode, sequential arm ACK/feedback/
+settle then gripper state transition. Gripper hysteresis is <0.3 OPEN, >0.7
+CLOSED, middle retain; no duplicate transition. Camera age is gated at inference
+start, raw13mm and existing rotation/dynamic/workspace/JointState gates retained.
+
+Normal OPEN: DO1 ON1.3s, OFF0.2s, ON0.5s, OFF. CLOSE: DO2 ON0.5s, OFF.
+Fault: inhibit future commands, existing arm abort, both Tool outputs OFF with
+ACK/readback confirmation, at most3 total pair attempts. Never retry ON, motion,
+episode, Home or recovery. Electrical OFF policy is operator-approved; physical
+jaw retention/release under faults is still not formally verified. Formal TCP
+also remains supported-not-verified; require explicit engineering acceptance.
+
+```bash
+export ROS_LOCALHOST_ONLY=1
+/usr/bin/python3 run_live_full_policy.py \
+  --approval approval.json \
+  --open-confirmation actual_open.json \
+  --output real_trials/UNIQUE_FULL_POLICY_TRIAL
+```
+
+Default existing bounds:30s/150 actions. Explicit70s override requires both
+`--max-duration-s 70` and `approved_max_duration_s:70` in approval; no unbounded
+execution. Output directory must not exist.
+
+Approval JSON must have execution_mode FULL_POLICY_ROLLOUT, operator_present,
+workspace_clear, estop_accessible, robot_stationary, tcp_engineering_acceptance,
+gripper_mapping_confirmed and explicit_one_episode all actually confirmed true,
+and confirmed_wall_time fresh epoch seconds within60s. Never populate confirmations
+from assumptions. Config mapping is enabled only in that approved session copy.
+
+After OPEN ACK, the launcher waits up to60s for actual_open.json with observed_open
+true, operator identity and confirmed_wall_time AFTER initialization ACK. It
+rechecks approval freshness and start pose before arm dispatch. An old confirmation
+file cannot start the episode. Ctrl+C/operator_abort.request uses software abort;
+neither is a substitute for immediately accessible physical E-stop.
+
+Normal horizon completion remains OPERATOR_RESULT_CONFIRMATION_PENDING, not
+synthetic task SUCCESS/FAILURE. Record actual task outcome after episode end:
+
+```bash
+/usr/bin/python3 run_live_full_policy.py \
+  --output real_trials/UNIQUE_FULL_POLICY_TRIAL \
+  --finalize-outcome task_outcome.json
+```
+
+This is offline/no ROS. Outcome JSON requires operator, task_success boolean,
+confirmed_wall_time after episode_ended_wall_time. INVALID/operator abort cannot
+be promoted to SUCCESS. A valid completed physical trial is required. Hardware
+state is queried at command boundaries, not represented as continuous independent
+authority/servo/protection telemetry. Current safety confirmation remains required.

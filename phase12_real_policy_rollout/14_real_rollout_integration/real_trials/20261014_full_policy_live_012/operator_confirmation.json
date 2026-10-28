@@ -1,0 +1,12 @@
+{
+  "operator_present": true,
+  "workspace_clear": true,
+  "estop_accessible": true,
+  "robot_stationary": true,
+  "tcp_engineering_acceptance": true,
+  "gripper_mapping_confirmed": true,
+  "explicit_one_episode": true,
+  "execution_mode": "FULL_POLICY_ROLLOUT",
+  "confirmed_wall_time": 1791983714,
+  "confirmation_source": "Current user confirms OPEN/workspace safe and requests one rollout; previous explicit safety confirmation"
+}

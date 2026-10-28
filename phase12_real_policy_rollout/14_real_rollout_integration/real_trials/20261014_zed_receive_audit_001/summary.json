@@ -1,0 +1,21 @@
+{
+  "duration_s": 30.00669875787571,
+  "image_count": 613,
+  "hz": 20.570239514833272,
+  "max_receive_gap_s": 0.3902351618744433,
+  "max_source_gap_s": 0.38338804244995117,
+  "receive_gaps_ge_500ms": [],
+  "receive_gaps_ge_100ms": 65,
+  "max_source_age_s": 0.23687982559204102,
+  "jointstate_count": 2909,
+  "jointstate_max_receive_gap_s": 0.03805728489533067,
+  "latest_image": {
+    "receive": 2872575.777467217,
+    "source": 1791984013.2042234,
+    "age": 0.06280684471130371,
+    "encoding": "bgra8",
+    "width": 1280,
+    "height": 720
+  },
+  "physical_commands": 0
+}

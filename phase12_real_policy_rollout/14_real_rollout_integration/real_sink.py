@@ -11,6 +11,7 @@ SERVICES = {
     'hold': ('/dsr01/motion/move_stop','MoveStop'),
     'stop': ('/dsr01/motion/move_stop','MoveStop'),
 }
+READ_SERVICES = {('/dsr01/io/get_tool_digital_output','GetToolDigitalOutput')}
 
 @dataclass(frozen=True)
 class Authorization:
@@ -40,6 +41,10 @@ class RealDoosanCommandSink:
         self._abort_event=threading.Event()
         self.trial_guard=None
         self._dispatch_lock=threading.RLock()
+        self._gripper_level_lock=threading.RLock()
+        self.gripper_outputs_initialized=False
+        self._gripper_off_abort_lock=threading.Lock()
+        self.gripper_off_abort_result=None
 
     def cancel_gripper(self):
         self.gripper_cancel.set();self.gripper_state='GRIPPER_ABORTED'
@@ -104,6 +109,10 @@ class RealDoosanCommandSink:
         cfg=self.gripper_config
         if cfg.get('polarity_confirmed') is not True:raise PermissionError('gripper_polarity_unconfirmed')
         if cfg.get('abort_value') not in (0,1):raise PermissionError('gripper_abort_value_unconfirmed')
+        if cfg.get('command_mode')=='interlocked_level':
+            return self._send_level_gripper(closed)
+        if cfg.get('command_mode')=='operator_timed_pulse':
+            return self._send_timed_gripper(closed)
         if self.gripper_cancel.is_set():raise PermissionError('gripper_aborted')
         if closed==self.last_gripper:return {'state':'suppressed','command_type':'gripper','reason':'duplicate'}
         prefix='closed' if closed else 'open'
@@ -125,8 +134,125 @@ class RealDoosanCommandSink:
         self.gripper_state='GRIPPER_HOLDING'
         return {'state':'completed','events':events,'measured_gripper_state':None}
 
+    def initialize_gripper_outputs(self):
+        """Normal startup OFF/OFF; not an abort or measured OPEN assertion."""
+        self.authorization.require()
+        cfg=self.gripper_config
+        if cfg.get('command_mode') not in ('interlocked_level','operator_timed_pulse'):raise PermissionError('explicit_gripper_initialization_only')
+        if cfg.get('polarity_confirmed') is not True:raise PermissionError('gripper_polarity_unconfirmed')
+        with self._gripper_level_lock:
+            if self.gripper_outputs_initialized:raise PermissionError('gripper_outputs_already_initialized')
+            indices=self._level_indices()
+            events=[]
+            for index in indices:
+                event=self._send('gripper',dict(index=index,value=0));events.append(event)
+                if event['state']!='completed':return dict(state=event['state'],events=events)
+            self.last_gripper=None
+            self.gripper_outputs_initialized=True
+            return dict(state='completed',events=events,electrical_output_state=[0,0],measured_gripper_state=None)
+
+    def _level_indices(self):
+        cfg=self.gripper_config
+        indices=(cfg['gripper_open_output_index'],cfg['gripper_closed_output_index'])
+        if indices!=(1,2) or cfg['inactive_hardware_value']!=0 or any(cfg[f'gripper_{p}_hardware_value']!=1 for p in ('open','closed')):
+            raise ValueError('invalid_interlocked_level_contract')
+        return indices
+
+    def _send_level_gripper(self,closed):
+        if type(closed) is not bool:raise ValueError('logical_gripper_boolean_required')
+        with self._gripper_level_lock:
+            if self.gripper_cancel.is_set() or self.aborted:raise PermissionError('gripper_aborted')
+            if not self.gripper_outputs_initialized:raise PermissionError('gripper_OFF_OFF_initialization_required')
+            open_index,close_index=self._level_indices()
+            if closed==self.last_gripper:return dict(state='suppressed',command_type='gripper',reason='duplicate')
+            opposite,target=(open_index,close_index) if closed else (close_index,open_index)
+            events=[]
+            # Break-before-make: never assert target until opposite OFF ACK.
+            sequence=((opposite,0),(target,1)) if closed else (
+                (close_index,0),(open_index,1),(open_index,0),(open_index,1))
+            hold_s=float(self.gripper_config.get('open_first_high_hold_s',1.0))
+            if not math.isfinite(hold_s) or hold_s<0:raise ValueError('invalid_open_first_high_hold')
+            for step,(index,value) in enumerate(sequence):
+                if self.gripper_cancel.is_set() or self.aborted:raise PermissionError('gripper_aborted')
+                event=self._send('gripper',dict(index=index,value=value));events.append(event)
+                if event['state']!='completed':return dict(state=event['state'],events=events)
+                if not closed and step==1 and self.gripper_cancel.wait(hold_s):
+                    # Cancel only; never invent an electrical/jaw failsafe.
+                    return dict(state='aborted',events=events,measured_gripper_state=None)
+            self.last_gripper=closed
+            self.gripper_state='GRIPPER_HOLDING'
+            return dict(state='completed',events=events,command_mode='interlocked_level',
+                        requested_io_sequence=[dict(index=i,value=v) for i,v in sequence],
+                        open_first_high_hold_s=hold_s if not closed else None,
+                        electrical_output_state=[0,1] if closed else [1,0],measured_gripper_state=None)
+
+    def _send_timed_gripper(self,closed):
+        """Operator-defined normal pulses, not a verified fault cleanup."""
+        if type(closed) is not bool:raise ValueError('logical_gripper_boolean_required')
+        with self._gripper_level_lock:
+            if self.gripper_cancel.is_set() or self.aborted:raise PermissionError('gripper_aborted')
+            if not self.gripper_outputs_initialized:raise PermissionError('gripper_OFF_OFF_initialization_required')
+            open_index,close_index=self._level_indices()
+            if closed==self.last_gripper:return dict(state='suppressed',command_type='gripper',reason='duplicate')
+            cfg=self.gripper_config
+            holds=[float(cfg.get('close_high_hold_s',.5))] if closed else [
+                float(cfg.get('open_first_high_hold_s',1.3)),float(cfg.get('open_second_high_hold_s',.5))]
+            low_hold_s=0. if closed else float(cfg.get('open_between_pulses_low_hold_s',.2))
+            if any(not math.isfinite(v) or v<0 for v in [*holds,low_hold_s]):raise ValueError('invalid_gripper_hold_time')
+            index=close_index if closed else open_index
+            events=[];sequence=[]
+            for pulse_index,hold_s in enumerate(holds):
+                for value in (1,0):
+                    if self.gripper_cancel.is_set() or self.aborted:raise PermissionError('gripper_aborted')
+                    sequence.append(dict(index=index,value=value))
+                    event=self._send('gripper',dict(index=index,value=value));events.append(event)
+                    if event['state']!='completed':return dict(state=event['state'],events=events)
+                    if value==1 and self.gripper_cancel.wait(hold_s):
+                        return dict(state='aborted',events=events,measured_gripper_state=None)
+                if not closed and pulse_index==0 and self.gripper_cancel.wait(low_hold_s):
+                    return dict(state='aborted',events=events,measured_gripper_state=None)
+            self.last_gripper=closed
+            self.gripper_state='GRIPPER_HOLDING'
+            return dict(state='completed',events=events,command_mode='operator_timed_pulse',
+                requested_io_sequence=sequence,high_hold_times_s=holds,
+                between_pulses_low_hold_s=low_hold_s,
+                commanded_final_output_state=[0,0],measured_gripper_state=None)
+
     def hold(self):return self._send('hold',{'stop_mode':3},emergency=True)
     def stop(self):return self._send('stop',{'stop_mode':0},emergency=True)
+
+    def abort_gripper_outputs_off(self):
+        """Operator-approved electrical OFF only; max3 pairs, no jaw claim."""
+        self.authorization.require()
+        if (self.gripper_config.get('abort_behavior')!='BOTH_OUTPUTS_OFF'
+                or self.gripper_config.get('abort_policy_operator_approved') is not True):
+            raise PermissionError('both_outputs_OFF_abort_policy_not_approved')
+        with self._gripper_off_abort_lock:
+            if self.gripper_off_abort_result is not None:return self.gripper_off_abort_result
+            self.inhibit()
+            with self._gripper_level_lock:
+                return self._abort_gripper_outputs_off_once()
+
+    def _abort_gripper_outputs_off_once(self):
+        attempts=[]
+        for attempt in range(1,4):
+            writes=[]
+            for i in (1,2):
+                try:writes.append(self._send('gripper',dict(index=i,value=0),emergency=True))
+                except Exception as exc:writes.append(dict(state='failed',failure_reason=str(exc)))
+            reads=[]
+            for i in (1,2):
+                try:
+                    future=self.transport.send('/dsr01/io/get_tool_digital_output','GetToolDigitalOutput',dict(index=i))
+                    reads.append(self.transport.wait(future,self.ack_timeout))
+                except Exception as exc:reads.append(dict(success=False,error=str(exc)))
+            ok=all(e['state']=='completed' for e in writes) and all(r.get('success') is True and r.get('value')==0 for r in reads)
+            attempts.append(dict(attempt=attempt,writes=writes,readback=reads,success=ok))
+            if ok:break
+        self.gripper_off_abort_result=dict(state='completed' if ok else 'failed',
+            reason=None if ok else 'GRIPPER_OUTPUTS_OFF_FAILED_AFTER_3_ATTEMPTS',
+            attempts=attempts,physical_jaw_state='UNKNOWN',rollout_retry=False)
+        return self.gripper_off_abort_result
 
 class AbortBoundary:
     def __init__(self,sink):
@@ -156,7 +282,7 @@ class RosServiceTransport:
     def send(self,name,type_name,values):
         return self.dispatch_prepared(self.prepare(name,type_name,values))
     def prepare(self,name,type_name,values):
-        if (name,type_name) not in SERVICES.values():raise ValueError('service_not_allowlisted')
+        if (name,type_name) not in SERVICES.values() and (name,type_name) not in READ_SERVICES:raise ValueError('service_not_allowlisted')
         import dsr_msgs2.srv as interfaces
         cls=getattr(interfaces,type_name)
         if name not in self.clients:self.clients[name]=self.node.create_client(cls,name)
@@ -176,15 +302,17 @@ class RosServiceTransport:
         if not future.done():raise TimeoutError('ack_timeout')
         response=future.result()
         if response is None:raise RuntimeError('empty_response')
-        return {'success':bool(response.success)}
+        result={'success':bool(response.success)}
+        if hasattr(response,'value'):result['value']=response.value
+        return result
 
 class FakeRosTransport:
     """Exact service schemas and names, in memory; no DDS/ROS graph."""
     def __init__(self,outcomes=None):self.calls=[];self.outcomes=list(outcomes or [])
     def send(self,name,type_name,values):
-        if (name,type_name) not in SERVICES.values():raise ValueError('unknown_service')
+        if (name,type_name) not in SERVICES.values() and (name,type_name) not in READ_SERVICES:raise ValueError('unknown_service')
         self.calls.append((name,type_name,values));return len(self.calls)
     def wait(self,future,timeout):
-        value=self.outcomes.pop(0) if self.outcomes else {'success':True}
+        value=self.outcomes.pop(0) if self.outcomes else ({'success':True,'value':0} if self.calls[future-1][1]=='GetToolDigitalOutput' else {'success':True})
         if isinstance(value,Exception):raise value
         return value

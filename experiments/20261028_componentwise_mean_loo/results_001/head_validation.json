@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "samples": 1350,
+  "dtype": "bfloat16",
+  "batch_size": 1,
+  "normalized_atol": 1e-06,
+  "decoded_atol": 1e-08,
+  "max_normalized_abs_error": 0.0,
+  "max_decoded_abs_error": 0.0,
+  "torch_version": "2.2.0+cu121",
+  "cuda": "12.1",
+  "device": "NVIDIA GeForce RTX 3090",
+  "head_checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/runtime_state/oft_mixed480_step28560_merged/action_head--28560_checkpoint.pt",
+  "fixed_weights": true,
+  "head_sha256": "1afcdc971c0614a743720b80b3dbace9968f5bf6d2c072247bb4f1ccdb72b25a",
+  "code_sha256": "f8058170b4cd6212748856f267bce1b8991ca0c4b144be15187a94a65c032c99"
+}

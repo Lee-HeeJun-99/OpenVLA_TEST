@@ -1,0 +1,17 @@
+{
+  "planned_open_close_cycles": 5,
+  "completed_cycles": 0,
+  "current_cycle": 1,
+  "current_stage": "OPEN_ACTUAL_OBSERVATION_PENDING",
+  "startup_OFF_OFF_count": 1,
+  "OPEN_sequences_sent": 1,
+  "CLOSE_sequences_sent": 0,
+  "actual_OPEN_confirmed": null,
+  "electrical_readback_verified": false,
+  "readback_mismatch": "requested [1,0], returned [0,0]",
+  "initialization_and_OPEN_ACKs_success": true,
+  "physical_arm_commands": 0,
+  "physical_stop_commands": 0,
+  "automatic_retry": false,
+  "next_action_requires_actual_jaw_confirmation": true
+}

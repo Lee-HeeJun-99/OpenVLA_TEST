@@ -1,0 +1,60 @@
+{
+  "jointstate": {
+    "receive": 2870767.232221096,
+    "source": 1791982204.7207854,
+    "header_age": 0.0009832382202148438,
+    "names": [
+      "joint_1",
+      "joint_2",
+      "joint_4",
+      "joint_5",
+      "joint_3",
+      "joint_6"
+    ],
+    "position": [
+      -3.1860644817352295,
+      -0.02007453329861164,
+      0.022070225328207016,
+      -1.981088399887085,
+      -0.7172533273696899,
+      0.02610086277127266
+    ],
+    "velocity": [
+      0.0,
+      0.0,
+      0.0,
+      -0.0,
+      -0.0,
+      0.0
+    ],
+    "valid": true,
+    "source_gap": 0.010010957717895508,
+    "receive_gap": 0.01048036478459835,
+    "phase": "RUNTIME_READY"
+  },
+  "hardware": {
+    "mode": {
+      "robot_mode": 1,
+      "success": true
+    },
+    "state": {
+      "robot_state": 1,
+      "success": true
+    },
+    "system": {
+      "robot_system": 0,
+      "success": true
+    }
+  },
+  "target_joint_deg": [
+    -182.55277,
+    -1.07182,
+    -41.00585,
+    1.25662,
+    -113.50009,
+    1.49975
+  ],
+  "max_error_deg": 0.08973849999840411,
+  "tolerance_deg": 0.5,
+  "within_tolerance": true
+}

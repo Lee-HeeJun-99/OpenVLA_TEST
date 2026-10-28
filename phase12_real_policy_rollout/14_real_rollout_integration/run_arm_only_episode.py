@@ -35,8 +35,10 @@ def start_pose_error_deg(names,positions):
     return max(abs(math.degrees(ordered[f'joint_{i+1}'])-target) for i,target in enumerate(TARGET))
 
 
-def run(output, approval, requested_duration_s=None):
-    require_approval(approval)
+def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
+    full=_full_policy_mode is not None
+    validate_approval=_full_policy_mode.validate if full else require_approval
+    validate_approval(approval)
     max_steps,max_duration=approved_episode_limits(approval,requested_duration_s)
     import rclpy
     from sensor_msgs.msg import JointState, Image
@@ -49,12 +51,14 @@ def run(output, approval, requested_duration_s=None):
     save('operator_confirmation.json',approval)
     save('episode_limits.json',dict(max_steps=max_steps,max_duration_s=max_duration,
         requested_duration_s=requested_duration_s,production_default_changed=False))
-    save('gripper_disabled_contract.json',dict(physical_open=False,physical_close=False,
-        physical_gripper_abort=False,tool_DO_writes=False,abort_behavior='UNVERIFIED / UNUSED'))
+    if not full:
+        save('gripper_disabled_contract.json',dict(physical_open=False,physical_close=False,
+            physical_gripper_abort=False,tool_DO_writes=False,abort_behavior='UNVERIFIED / UNUSED'))
     save('tcp_execution_basis.json',dict(formal_classification='TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED',
-        formal_verified=False,engineering_acceptance=True,source='EXPLICIT_OPERATOR_ARM_ONLY_APPROVAL'))
+        formal_verified=False,engineering_acceptance=True,source='EXPLICIT_OPERATOR_FULL_POLICY_APPROVAL' if full else 'EXPLICIT_OPERATOR_ARM_ONLY_APPROVAL'))
     config_paths=list((Path(__file__).parent.parent/'01_configs').glob('*.yaml'))+[
         Path(__file__).parent/'configs/full_task.yaml',Path(__file__).parent/'settle_window.py']
+    if full:config_paths.append(Path(__file__).parent/'configs/gripper_hardware.yaml')
     frozen={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in config_paths}
     save('config_snapshot.json',frozen)
     os.environ['ROS_LOCALHOST_ONLY']='1'
@@ -139,19 +143,40 @@ def run(output, approval, requested_duration_s=None):
         if cam is None or time.monotonic()-cam[1]>=.5:raise ValueError('camera_preflight_failed')
         save('preflight.json',dict(hardware=hardware,jointstate=check(),start_pose_error_deg=pose_error,
              camera_ready=True,model_ready=True,max_steps=max_steps,max_duration_s=max_duration,
-             physical_gripper_disabled=True,task_success_not_applicable=True,
+             physical_gripper_disabled=not full,task_success_not_applicable=not full,
              settle_policy=dict(clean_seconds=SETTLE_CLEAN_SECONDS,timeout_seconds=SETTLE_TIMEOUT_SECONDS,
                                 velocity_criterion='SIX_FINITE_EXACT_ZERO_VELOCITIES')))
-        require_approval(approval)
-        sink=ArmOnlyEpisodeSink(lambda:RosServiceTransport(node),Authorization(True,True,True,'MOTION_ENABLED'))
+        validate_approval(approval)
+        sink=_full_policy_mode.make_sink(lambda:RosServiceTransport(node),approval) if full else ArmOnlyEpisodeSink(lambda:RosServiceTransport(node),Authorization(True,True,True,'MOTION_ENABLED'))
+        if full:save('gripper_contract.json',dict(sink.gripper_config,physical_jaw_abort_state_verified=False))
         # One synchronous loop; logger requests are fsynced before each dispatch.
         with ExitStack() as stack:
             logs={name:stack.enter_context(FsyncJsonlLogger(output/f'{name}.jsonl')) for name in
-                  ('runtime_events','observations','predictions','action_pipeline','arm_commands','jointstate')}
+                  ('runtime_events','observations','predictions','action_pipeline','arm_commands','gripper_commands','jointstate')}
             log=logs['runtime_events']
-            log.append(dict(event='LOGGER_PREFLIGHT',scope='ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST',max_steps=max_steps,max_duration_s=max_duration))
-            c=Controller('openvla','full_task',sink,log,dry_run=False,execution_mode='ARM_ONLY_FULL_EPISODE')
-            control[0]=c;started=time.monotonic()
+            log.append(dict(event='LOGGER_PREFLIGHT',scope='FULL_POLICY_ROLLOUT' if full else 'ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST',max_steps=max_steps,max_duration_s=max_duration))
+            c=Controller('openvla','full_task',sink,log,dry_run=False,execution_mode='FULL_POLICY_ROLLOUT' if full else 'ARM_ONLY_FULL_EPISODE',
+                gripper_contract=dict(abort_behavior='BOTH_OUTPUTS_OFF',operator_approved=True) if full else None)
+            control[0]=c
+            if full:
+                def before_gripper():
+                    check()
+                    if getter('/dsr01/system/get_robot_state',GetRobotState)['robot_state']!=1:
+                        raise RuntimeError('robot_not_STANDBY_before_gripper')
+                    snapshot,evidence=settle()
+                    log.append(dict(event='SETTLE_CONFIRMED',stage='PRE_GRIPPER',evidence=evidence,jointstate=snapshot))
+                c.before_gripper_dispatch=before_gripper
+                if _full_policy_mode.confirmed_initialization is not None:
+                    from dsr_msgs2.srv import GetToolDigitalOutput
+                    states=[getter('/dsr01/io/get_tool_digital_output',GetToolDigitalOutput,index=i)['value'] for i in (1,2)]
+                    if states!=[0,0]:raise RuntimeError('current_outputs_not_OFF_OFF_for_confirmed_OPEN_resume')
+                _full_policy_mode.initialize(c,check,save)
+                # Fresh motion approval after operator confirms actual OPEN.
+                validate_approval(approval)
+                _,_=settle()
+                with lock:initial_sample=dict(samples[-1])
+                if start_pose_error_deg(initial_sample['names'],initial_sample['position'])>.5:raise ValueError('start_pose_changed_during_initialization')
+            started=time.monotonic()
             for step in range(max_steps):
                 if time.monotonic()-started>=max_duration:termination='EXISTING_EPISODE_DURATION_LIMIT';break
                 check()
@@ -183,12 +208,12 @@ def run(output, approval, requested_duration_s=None):
                                        ros_start=ros_start,ros_end=node.get_clock().now().nanoseconds/1e9)
                 with lock:before=dict(samples[-1])
                 log.append(dict(event='PREDICTION',step_id=step,raw_action=raw,logical_gripper_intent=intent,
-                                physical_gripper_command='NONE',camera_timing=timing,jointstate=before))
+                                physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',camera_timing=timing,jointstate=before))
                 logs['observations'].append(dict(step_id=step,current_pose=current,jointstate=before,
                     camera_timing=timing,source_image_sha256=hashlib.sha256(bytes(msg.data)).hexdigest(),model_input_sha256=hashlib.sha256(jpeg).hexdigest()))
                 logs['predictions'].append(dict(step_id=step,raw_action=raw,translation_norm_m=math.dist(raw[:3],[0,0,0]),
                     rotation_norm_rad=math.dist(raw[3:6],[0,0,0]),raw_gripper_prediction=raw[6],logical_gripper_intent=intent,
-                    physical_gripper_command='NONE',camera_timing=timing))
+                    physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',camera_timing=timing))
                 rgb.save(output/f'camera_{step:03d}.png')
                 observation=dict(receive_monotonic=time.monotonic(),tcp_m_abc=[v/1000 for v in current[:3]]+current[3:],
                     phase='alignment',robot_state_ok=True,camera_ok=True,joint_state_ok=True,tcp_ok=True,
@@ -206,7 +231,7 @@ def run(output, approval, requested_duration_s=None):
                 check();record=c.step(raw,observation,inference_time=t0,chunk_id=f'episode-step-{step}',chunk_index=0)
                 records.append(dict(step_id=step,raw_action=raw,camera_timing=timing,logical_gripper_intent=intent,
                                     pre_observation_settle=pre_observation_settle,pre_dispatch_settle=pre_dispatch_settle,
-                                    physical_gripper_command='NONE',source_image_sha256=hashlib.sha256(bytes(msg.data)).hexdigest(),
+                                    physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',source_image_sha256=hashlib.sha256(bytes(msg.data)).hexdigest(),
                                     model_input_sha256=hashlib.sha256(jpeg).hexdigest(),record=record,jointstate_before=before))
                 check()
                 if not record.get('command_receipt') or record['command_receipt']['state']!='completed':raise RuntimeError('arm_ack_failure')
@@ -216,8 +241,9 @@ def run(output, approval, requested_duration_s=None):
                 logs['action_pipeline'].append(dict(step_id=step,RAW_MODEL_ACTION=raw,POST_HARD_GATE=raw,
                     POST_VELOCITY_LIMIT=[v*limiter.dt for v in v_t+v_r]+[raw[6]],
                     POST_ACCELERATION_LIMIT=record['filtered_action'],FINAL_DELIVERED_ARM_ACTION=record['filtered_action'][:6],
-                    physical_gripper_command='NONE'))
+                    physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE'))
                 logs['arm_commands'].append(dict(step_id=step,receipt=record['command_receipt']))
+                if full:logs['gripper_commands'].append(dict(step_id=step,receipt=record.get('gripper_receipt')))
                 post=getter('/dsr01/system/get_robot_state',GetRobotState)
                 if post['robot_state']!=1:raise RuntimeError('robot_not_STANDBY_after_motion')
                 after,post_command_settle=settle()
@@ -233,24 +259,35 @@ def run(output, approval, requested_duration_s=None):
     except KeyboardInterrupt:
         error='OPERATOR_ABORT';outcome='OPERATOR_ABORT';fault(error)
     except Exception as exc:
-        error=str(exc);outcome='OPERATOR_ABORT' if error=='operator_abort' else 'ARM_ONLY_FULL_EPISODE_INVALID' if started is not None else 'NOT_EXECUTED';fault(error)
+        error=str(exc);outcome='OPERATOR_ABORT' if error=='operator_abort' else ('INVALID' if full else 'ARM_ONLY_FULL_EPISODE_INVALID') if started is not None else 'NOT_EXECUTED';fault(error)
     finally:
-        for worker in abort_workers:worker.join(4)
+        for worker in abort_workers:
+            if full:
+                # Keep the ROS spinner alive until bounded per-request cleanup
+                # finishes; do not destroy its node during an OFF/readback retry.
+                while worker.is_alive():worker.join(.1)
+            else:worker.join(4)
         halt.set();spinner.join(2)
         events=sink.events if sink else []
-        result=dict(status=outcome,reason=error,evaluation_scope='ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST',
+        result=dict(status=outcome,reason=error,evaluation_scope='FULL_POLICY_ROLLOUT' if full else 'ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST',
             termination=termination,task_success=None,task_performance_denominator_included=False,
             steps_attempted=attempts,steps_completed=completed,duration_s=None if started is None else time.monotonic()-started,
             arm_commands=sum(e['command_type']=='pose' and e['sent_at'] is not None for e in events),
             physical_gripper_commands=sum(e['command_type']=='gripper' and e['sent_at'] is not None for e in events),
             stop_commands=sum(e['command_type'] in ('hold','stop') and e['sent_at'] is not None for e in events),
-            gripper_abort_behavior='UNVERIFIED / UNUSED',unexpected_motion=None,estop_used=None,
+            gripper_abort_behavior='BOTH_OUTPUTS_OFF_MAX_3_ATTEMPTS' if full else 'UNVERIFIED / UNUSED',unexpected_motion=None,estop_used=None,
             auto_retry=False,auto_home=False,auto_recovery=False,auto_next_episode=False)
+        if full:
+            result.update(runtime_valid=started is not None and error is None,
+                          episode_ended_wall_time=time.time())
         try:
             save('trial_summary.json',result)
             save('episode_records.json',records)
             save('jointstate.json',dict(samples=samples,events=gate.events,status=status()))
             save('arm_commands.json',events)
+            if full:
+                save('gripper_commands.json',[e for e in events if e['command_type']=='gripper'])
+                save('gripper_abort_result.json',sink.gripper_off_abort_result if sink else None)
         finally:node.destroy_node();rclpy.shutdown()
         print(json.dumps(result,indent=2))
 

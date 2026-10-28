@@ -1,0 +1,7 @@
+{
+  "pair_count": 225,
+  "pipeline": "original paired images, real head FP32 replay vs original saved BF16 sim",
+  "measured_action7_l2": 0.3702449410043447,
+  "reported_rounded_baseline": 0.370245,
+  "matches_report_at_6_decimals": true
+}

@@ -1,0 +1,6 @@
+condition,method,gripper_fraction_of_numeric_squared_7d,action7_l2,gripper_abs,numeric_L2_minus_gripper,caveat
+A,none,0.999693419273437,0.3702034376725859,0.3694310438368056,0.0007723938357803162,"Numeric mixed-unit decomposition only; not physical importance, and not additive decomposition of mean L2"
+A,mean_LOO,0.9992680344623163,0.12536323347683168,0.12483601209852431,0.0005272213783073659,"Numeric mixed-unit decomposition only; not physical importance, and not additive decomposition of mean L2"
+B,none,0.9995873954258396,0.3767816144566739,0.37601235622829865,0.000769258228375258,"Numeric mixed-unit decomposition only; not physical importance, and not additive decomposition of mean L2"
+C,none,0.9996467319814265,0.1019931567288326,0.10169999186197916,0.00029316486685344867,"Numeric mixed-unit decomposition only; not physical importance, and not additive decomposition of mean L2"
+C,mean_LOO,0.9995227502109502,0.09084705426977273,0.09052058241102431,0.00032647185874841445,"Numeric mixed-unit decomposition only; not physical importance, and not additive decomposition of mean L2"

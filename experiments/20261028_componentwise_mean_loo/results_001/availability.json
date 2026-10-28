@@ -1,0 +1,56 @@
+{
+  "A": {
+    "real": {
+      "records": 225,
+      "feature_files_present": 225,
+      "input_files_present": 225,
+      "shapes": {
+        "[1, 35, 4096]": 225
+      }
+    },
+    "sim": {
+      "records": 225,
+      "feature_files_present": 225,
+      "input_files_present": 225,
+      "shapes": {
+        "[1, 35, 4096]": 225
+      }
+    }
+  },
+  "B": {
+    "real": {
+      "records": 225,
+      "feature_files_present": 225,
+      "input_files_present": 225,
+      "shapes": {
+        "[1, 35, 4096]": 225
+      }
+    },
+    "sim": {
+      "records": 225,
+      "feature_files_present": 225,
+      "input_files_present": 225,
+      "shapes": {
+        "[1, 35, 4096]": 225
+      }
+    }
+  },
+  "C": {
+    "real": {
+      "records": 225,
+      "feature_files_present": 225,
+      "input_files_present": 225,
+      "shapes": {
+        "[1, 35, 4096]": 225
+      }
+    },
+    "sim": {
+      "records": 225,
+      "feature_files_present": 225,
+      "input_files_present": 225,
+      "shapes": {
+        "[1, 35, 4096]": 225
+      }
+    }
+  }
+}

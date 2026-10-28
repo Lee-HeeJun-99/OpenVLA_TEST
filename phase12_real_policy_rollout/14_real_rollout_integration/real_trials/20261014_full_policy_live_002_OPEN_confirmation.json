@@ -1,0 +1,8 @@
+{
+  "observed_open": true,
+  "operator": "CURRENT_OPERATOR_CHAT",
+  "confirmed_wall_time": 1791982144.0,
+  "message": "아 열렸다고 얘기했잖아. 다시 rollout진행해",
+  "scope": "explicit confirmation after prior initialization and timeout OFF cleanup",
+  "new_OPEN_requested": false
+}

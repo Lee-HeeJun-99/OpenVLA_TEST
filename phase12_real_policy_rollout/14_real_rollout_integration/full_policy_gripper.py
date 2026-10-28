@@ -1,7 +1,7 @@
 """Explicit full-policy gripper lifecycle; no ROS calls at import/construction.
 
-Command knowledge is not measured jaw feedback. Abort output requires separate
-hardware evidence, never inferred from a normal pulse's trailing OFF edge.
+Command knowledge is not measured jaw feedback. Operator-approved electrical
+abort policy is distinct from verified physical jaw behavior.
 """
 import math
 import threading
@@ -17,17 +17,20 @@ class FullPolicyGripper:
         self.initialization_ack = False
         self.aborted = False
         self.lock = threading.RLock()
-        # This adapter supports the existing sink's selected-coil OFF abort only.
-        # Other behaviors need their own proven transport implementation.
-        if not (contract.get('abort_behavior') == 'OUTPUT_OFF'
+        # Accept the explicit operator policy separately from hardware evidence.
+        operator_off=(sink.gripper_config.get('abort_behavior')=='BOTH_OUTPUTS_OFF'
+                      and sink.gripper_config.get('abort_policy_operator_approved') is True
+                      and contract.get('abort_behavior')=='BOTH_OUTPUTS_OFF'
+                      and contract.get('operator_approved') is True)
+        if not (operator_off or (contract.get('abort_behavior') == 'OUTPUT_OFF'
                 and contract.get('abort_behavior_confirmed') is True
                 and contract.get('abort_evidence_source')
                 and sink.gripper_config.get('abort_value') == 0
-                and sink.gripper_config.get('abort_value_confirmed') is True):
+                and sink.gripper_config.get('abort_value_confirmed') is True)):
             raise PermissionError('gripper_abort_behavior_unverified')
         if sink.gripper_config.get('polarity_confirmed') is not True:
             raise PermissionError('gripper_mapping_unverified')
-        if sink.gripper_config.get('open_pulse_count') != 1:
+        if sink.gripper_config.get('command_mode') not in ('interlocked_level','operator_timed_pulse') and sink.gripper_config.get('open_pulse_count') != 1:
             raise PermissionError('full_policy_requires_single_open_initialization_pulse')
 
     def initialize_open(self):
@@ -36,7 +39,11 @@ class FullPolicyGripper:
                 raise PermissionError('gripper_aborted')
             if self.initialization_ack:
                 raise PermissionError('open_initialization_already_requested')
-            # One logical OPEN, one pulse; retain the existing channel/value/time.
+            if self.sink.gripper_config.get('command_mode') in ('interlocked_level','operator_timed_pulse'):
+                reset=self.sink.initialize_gripper_outputs()
+                self.logger.append({'event':'GRIPPER_STARTUP_OFF_OFF_ACK','receipt':reset,'measured_gripper_state':None})
+                if reset.get('state')!='completed':raise RuntimeError('gripper_startup_OFF_OFF_ack_failure')
+            # One logical OPEN, retained level for the operator-defined mode.
             self.logger.append({'event': 'GRIPPER_INITIALIZATION_REQUEST', 'desired': 'OPEN'})
             result = self.sink.send_gripper(False)
             self.logger.append({'event': 'GRIPPER_INITIALIZATION_ACK', 'receipt': result,

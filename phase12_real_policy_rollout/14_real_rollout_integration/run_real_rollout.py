@@ -48,6 +48,7 @@ class Controller:
         self.abort_lock=threading.Lock();self.abort_reason=None
         self.scheduler=None
         self.full_policy_step_lock=threading.Lock()
+        self.before_gripper_dispatch=None
         self.trial=trial
         if trial is not None:sink.trial_guard=trial
 
@@ -60,7 +61,12 @@ class Controller:
             self.sink.inhibit()
         if self.scheduler:self.scheduler.abort()
         result={'state':'ABORTED','reason':reason,'command_issued':False}
-        if not self.dry_run:result=self.abort_boundary.abort(reason)
+        if not self.dry_run:
+            try:result=self.abort_boundary.abort(reason)
+            finally:
+                if self.full_policy and self.sink.gripper_config.get('abort_behavior')=='BOTH_OUTPUTS_OFF':
+                    off=self.sink.abort_gripper_outputs_off()
+                    result['gripper_abort']=off
         # Stop path must still run when logger is broken; preserve error for caller.
         try:self.log.append({'event':'ABORT','abort':result,'dry_run':self.dry_run})
         except Exception:pass
@@ -88,6 +94,10 @@ class Controller:
                                             'chunk_id':chunk_id,'chunk_index':chunk_index,'observation':obs})
         if self.trial and not self.trial.observe(obs):return self.abort(self.trial.summary()['invalid_reason'])
         try:
+            if (self.protocol=='full_task' and not self.arm_only_episode
+                    and getattr(self.sink,'gripper_config',{}).get('command_mode') in ('interlocked_level','operator_timed_pulse')
+                    and not getattr(self.sink,'gripper_outputs_initialized',False)):
+                raise ValueError('gripper_OFF_OFF_initialization_required_before_arm_motion')
             if self.full_policy_gripper:self.full_policy_gripper.desired(vector[6])
             if not obs.get('robot_state_ok'):raise ValueError('unexpected_robot_state')
             if obs.get('manual_abort'):raise ValueError('manual_abort')
@@ -111,7 +121,7 @@ class Controller:
             'phase':obs['phase'],'tcp_source':obs.get('tcp_source'),'dry_run':self.dry_run,
             **{key:obs.get(key) for key in ('episode_id','condition','matched_pair_id','sim_observation_id','real_observation_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')}}
         from rollout_runner import finite_json
-        if self.arm_only_episode:
+        if self.arm_only_episode or self.full_policy:
             from action_rate_limiter import _scale_to
             limiter=self.pipeline.runtime.limiter
             vt,_=_scale_to(tuple(v/limiter.dt for v in vector[:3]),limiter.tv)
@@ -121,7 +131,10 @@ class Controller:
                 POST_VELOCITY_LIMIT=[v*limiter.dt for v in vt+vr]+[vector[6]],
                 POST_ACCELERATION_LIMIT=candidate.get('limited_canonical_action'),
                 FINAL_DELIVERED_ARM_ACTION=None if reason else candidate.get('limited_canonical_action',[])[:6],
-                planned_target_pose=candidate.get('target_pose_candidate_mm_zyz_deg'),physical_gripper_command='NONE')
+                planned_target_pose=candidate.get('target_pose_candidate_mm_zyz_deg'),
+                physical_gripper_command='STATE_TRANSITION_ONLY' if self.full_policy else 'NONE')
+            if self.full_policy:
+                record['logical_gripper_before']=self.full_policy_gripper.state
         record=finite_json(record)
         if self.trial and reason:self.trial.invalidate('|'.join(reason))
         try:self.log.append(record)
@@ -143,7 +156,9 @@ class Controller:
         if receipt['state']!='completed':return self.abort(receipt.get('failure_reason','command_failed'))
         if self.full_policy_gripper:
             try:
+                if self.before_gripper_dispatch:self.before_gripper_dispatch()
                 record['gripper_receipt']=self.full_policy_gripper.transition(vector[6])
+                record['logical_gripper_after']=self.full_policy_gripper.state
             except Exception as exc:return self.abort(str(exc))
             return record
         grip=candidate.get('gripper',{})

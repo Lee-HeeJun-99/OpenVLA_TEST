@@ -1,0 +1,6 @@
+{
+  "original_paired_saved_action7_l2": 0.37026206275047585,
+  "phase6_P0_saved_action7_l2": 0.3702034376725859,
+  "old_mean_report": "Phase5 reports FP32 head-recomputed real vs saved BF16 sim (0.370245), not Phase6 JPEG re-encoded P0 saved output (0.370203); no forced numeric reconciliation.",
+  "baseline_source_images_differ": true
+}

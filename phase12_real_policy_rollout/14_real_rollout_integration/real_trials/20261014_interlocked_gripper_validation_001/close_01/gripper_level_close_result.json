@@ -1,0 +1,120 @@
+{
+  "status": "CALIBRATION_FAILED",
+  "requested_state": "CLOSE",
+  "error": "CLOSE_electrical_readback_mismatch",
+  "initialization": null,
+  "transition": {
+    "state": "completed",
+    "events": [
+      {
+        "command_id": "5ebbf42846bd4239bdf37fb38d62fae0",
+        "command_type": "gripper",
+        "requested_at": 2867918.76521064,
+        "sent_at": 2867918.767140592,
+        "ack_at": 2867918.772223333,
+        "completed_at": 2867918.772227085,
+        "ack_latency": 0.005082740914076567,
+        "state": "completed",
+        "request": {
+          "index": 1,
+          "value": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      {
+        "command_id": "c181dcf4e9aa4b77a392f669e7d4b568",
+        "command_type": "gripper",
+        "requested_at": 2867918.772262311,
+        "sent_at": 2867918.772394902,
+        "ack_at": 2867918.777679318,
+        "completed_at": 2867918.777684235,
+        "ack_latency": 0.005284416023641825,
+        "state": "completed",
+        "request": {
+          "index": 2,
+          "value": 1
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      }
+    ],
+    "command_mode": "interlocked_level",
+    "electrical_output_state": [
+      0,
+      1
+    ],
+    "measured_gripper_state": null
+  },
+  "electrical_readback": {
+    "1": {
+      "value": 0,
+      "success": true
+    },
+    "2": {
+      "value": 0,
+      "success": true
+    }
+  },
+  "physical_arm_commands": 0,
+  "physical_stop_commands": 0,
+  "physical_CLOSE_commands": 1,
+  "io_write_count": 2,
+  "events": [
+    {
+      "command_id": "5ebbf42846bd4239bdf37fb38d62fae0",
+      "command_type": "gripper",
+      "requested_at": 2867918.76521064,
+      "sent_at": 2867918.767140592,
+      "ack_at": 2867918.772223333,
+      "completed_at": 2867918.772227085,
+      "ack_latency": 0.005082740914076567,
+      "state": "completed",
+      "request": {
+        "index": 1,
+        "value": 0
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    },
+    {
+      "command_id": "c181dcf4e9aa4b77a392f669e7d4b568",
+      "command_type": "gripper",
+      "requested_at": 2867918.772262311,
+      "sent_at": 2867918.772394902,
+      "ack_at": 2867918.777679318,
+      "completed_at": 2867918.777684235,
+      "ack_latency": 0.005284416023641825,
+      "state": "completed",
+      "request": {
+        "index": 2,
+        "value": 1
+      },
+      "result": {
+        "success": true
+      },
+      "failure_reason": null,
+      "clock_domain": "HOST_MONOTONIC",
+      "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+    }
+  ],
+  "automatic_trailing_OFF": false,
+  "physical_jaw_state": null,
+  "abort_behavior_verified": false,
+  "calibration_only": true,
+  "production_gate_bypassed_for_rollout": false,
+  "operator_approval_time": 1791979345.0026555,
+  "automatic_retry": false
+}

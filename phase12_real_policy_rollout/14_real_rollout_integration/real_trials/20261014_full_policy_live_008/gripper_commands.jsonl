@@ -1,0 +1,4 @@
+{"step_id":0,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":0,"logger_wall_time":1791983352.614589}
+{"step_id":1,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":1,"logger_wall_time":1791983355.67204}
+{"step_id":2,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":2,"logger_wall_time":1791983359.2350693}
+{"step_id":3,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":3,"logger_wall_time":1791983362.5160522}
