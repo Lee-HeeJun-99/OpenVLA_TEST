@@ -1,0 +1,104 @@
+{
+  "case_60fps": {
+    "duration_s": 120.00566134401015,
+    "image_count": 4562,
+    "configured_fps": 60.0,
+    "reported_grab_loop_hz": {
+      "count": 120,
+      "min": 30.0,
+      "median": 39.1,
+      "mean": 39.44916666666666,
+      "max": 54.4
+    },
+    "receiver_hz": 38.006753422052675,
+    "max_receive_gap_s": 0.3191417589841876,
+    "max_source_gap_s": 0.3165111541748047,
+    "max_source_age_s": 0.04033660888671875,
+    "receive_gaps_ge100ms": 57,
+    "receive_gaps_ge500ms": 0,
+    "camera_info_receiver_hz": 38.848391812593846,
+    "camera_info_max_receive_gap_s": 0.3166224579908885,
+    "processing_s": {
+      "count": 120,
+      "min": 0.018368,
+      "median": 0.0255465,
+      "mean": 0.025606,
+      "max": 0.033313
+    },
+    "cpu_idle": {
+      "count": 119,
+      "min": 81.32470119521912,
+      "median": 86.34760705289672,
+      "mean": 86.2464528433763,
+      "max": 89.39165409753645
+    },
+    "frame_drop_interval": {
+      "dropped_increment": 2520,
+      "total_increment": 7139,
+      "interval_rate": 0.3529906149320633
+    },
+    "long_receive_gap_with_short_source_gap_count": 0
+  },
+  "case_30fps": {
+    "duration_s": 120.00677813100629,
+    "image_count": 2859,
+    "configured_fps": 30.0,
+    "reported_grab_loop_hz": {
+      "count": 120,
+      "min": 16.7,
+      "median": 23.7,
+      "mean": 23.976666666666667,
+      "max": 30.0
+    },
+    "receiver_hz": 23.81545683590341,
+    "max_receive_gap_s": 0.16998551998403855,
+    "max_source_gap_s": 0.16689395904541016,
+    "max_source_age_s": 0.0505526065826416,
+    "receive_gaps_ge100ms": 178,
+    "receive_gaps_ge500ms": 0,
+    "camera_info_receiver_hz": 23.86801618073899,
+    "camera_info_max_receive_gap_s": 0.1690688999951817,
+    "processing_s": {
+      "count": 120,
+      "min": 0.033301,
+      "median": 0.042197,
+      "mean": 0.042415425,
+      "max": 0.060025
+    },
+    "cpu_idle": {
+      "count": 119,
+      "min": 85.60039860488291,
+      "median": 89.5582329317269,
+      "mean": 89.22957884574,
+      "max": 91.7925478348439
+    },
+    "frame_drop_interval": {
+      "dropped_increment": 730,
+      "total_increment": 3570,
+      "interval_rate": 0.20448179271708683
+    },
+    "long_receive_gap_with_short_source_gap_count": 0
+  },
+  "parameter_validation": {
+    "only_fps_changed": true,
+    "changes": [
+      {
+        "parameter": "general.grab_frame_rate",
+        "before": 60,
+        "after": 30
+      }
+    ],
+    "usbfs_memory_mb_before": "16",
+    "usbfs_memory_mb_after": "16",
+    "depth_mode": "NONE",
+    "physical_commands": 0
+  },
+  "physical_commands": 0,
+  "driver_restarted": false,
+  "zed_restart_required_for_readonly_grab_fps": true,
+  "limitations": [
+    "Single before/after comparison, not proof that FPS alone causally explains all differences. ZED restart/time/automatic ISP state may contribute.",
+    "Camera is left running at 30 FPS with a trial-specific override; original production YAML is unchanged.",
+    "No OpenVLA inference load was added. No image-corruption detector or full physical readiness validation was run."
+  ]
+}

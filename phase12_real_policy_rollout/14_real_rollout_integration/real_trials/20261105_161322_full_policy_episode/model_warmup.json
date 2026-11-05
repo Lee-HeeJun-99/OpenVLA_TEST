@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "samples": [
+    {
+      "request": 0,
+      "phase": "PREFLIGHT_WARMUP",
+      "first_request_this_preflight": true,
+      "raw_action": [
+        0.002533375099436526,
+        -0.0005718167891390416,
+        -0.0008565444143263552,
+        -0.027931714651865086,
+        0.0038505848161866484,
+        0.011848909525195192,
+        0.0019607843137254832
+      ],
+      "camera_timing": {
+        "frame_receive_monotonic": 73891.280240839,
+        "inference_start_monotonic": 73891.304637852,
+        "inference_end_monotonic": 73891.713377165,
+        "camera_age_at_inference_start": 0.024397012995905243,
+        "camera_age_at_inference_end": 0.43313632599893026,
+        "inference_latency": 0.408739313003025,
+        "source_age_at_inference_start": 0.06335306167602539,
+        "source_age_at_inference_end": 0.47219038009643555
+      },
+      "source_stamp": [
+        1793862812,
+        713997811
+      ],
+      "command_requested": false,
+      "command_issued": false,
+      "excluded_from_episode": true
+    },
+    {
+      "request": 1,
+      "phase": "PREFLIGHT_WARMUP",
+      "first_request_this_preflight": false,
+      "raw_action": [
+        0.002533375099436526,
+        -0.0005064012558353625,
+        -0.003007322273154537,
+        -0.027931714651865086,
+        0.003675775365288017,
+        0.011848909525195192,
+        0.0019607843137254832
+      ],
+      "camera_timing": {
+        "frame_receive_monotonic": 73891.814120508,
+        "inference_start_monotonic": 73891.825037181,
+        "inference_end_monotonic": 73892.2193752,
+        "camera_age_at_inference_start": 0.010916672996245325,
+        "camera_age_at_inference_end": 0.4052546919992892,
+        "inference_latency": 0.3943380190030439,
+        "source_age_at_inference_start": 0.049044132232666016,
+        "source_age_at_inference_end": 0.4434380531311035
+      },
+      "source_stamp": [
+        1793862813,
+        248702811
+      ],
+      "command_requested": false,
+      "command_issued": false,
+      "excluded_from_episode": true
+    },
+    {
+      "request": 2,
+      "phase": "PREFLIGHT_WARMUP",
+      "first_request_this_preflight": false,
+      "raw_action": [
+        0.002533375099436526,
+        -0.0005718167891390416,
+        -0.0008565444143263552,
+        -0.027931714651865086,
+        0.003675775365288017,
+        0.011848909525195192,
+        0.0019607843137254832
+      ],
+      "camera_timing": {
+        "frame_receive_monotonic": 73892.281616558,
+        "inference_start_monotonic": 73892.290302274,
+        "inference_end_monotonic": 73892.68496911,
+        "camera_age_at_inference_start": 0.008685716005857103,
+        "camera_age_at_inference_end": 0.403352552006254,
+        "inference_latency": 0.39466683600039687,
+        "source_age_at_inference_start": 0.048728227615356445,
+        "source_age_at_inference_end": 0.4434468746185303
+      },
+      "source_stamp": [
+        1793862813,
+        714280811
+      ],
+      "command_requested": false,
+      "command_issued": false,
+      "excluded_from_episode": true
+    }
+  ],
+  "existing_action_age_limit_s": 1.2,
+  "existing_settle_s": 0.2,
+  "physical_commands": 0,
+  "actual_dispatch_gate_still_required": true
+}

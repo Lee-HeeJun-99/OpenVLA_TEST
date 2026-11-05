@@ -68,7 +68,7 @@ class FullPolicyTests(unittest.TestCase):
 
     def test_raw_gate_rejects_and_future_dispatch_inhibited(self):
         c, t, obs = self.setup_path(); self.initialize(c)
-        self.step(c, obs, .9, .0131)
+        self.step(c, obs, .9, .0201)
         self.assertTrue(c.aborted)
         before = len(t.calls)
         with self.assertRaises(RuntimeError): self.step(c, obs, .9)

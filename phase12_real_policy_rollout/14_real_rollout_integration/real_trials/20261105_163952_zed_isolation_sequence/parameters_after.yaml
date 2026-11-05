@@ -1,0 +1,179 @@
+/zed/zed_node:
+  ros__parameters:
+    ? ''
+    : zed_node:
+        rgb:
+          color:
+            rect:
+              image:
+                format: jpeg
+                jpeg_quality: 95
+                png_level: 3
+                tiff:
+                  res_unit: inch
+                  xdpi: -1
+                  ydpi: -1
+    advanced:
+      change_thread_priority: false
+    debug:
+      debug_advanced: false
+      debug_body_tracking: false
+      debug_camera_controls: false
+      debug_common: false
+      debug_dyn_params: false
+      debug_gnss: false
+      debug_grab: false
+      debug_mapping: false
+      debug_nitros: false
+      debug_object_detection: false
+      debug_point_cloud: false
+      debug_positional_tracking: false
+      debug_roi: false
+      debug_sensors: false
+      debug_sim: false
+      debug_streaming: false
+      debug_tf: false
+      debug_video_depth: false
+      sdk_verbose: 1
+      sdk_verbose_log_file: ''
+      use_pub_timestamps: false
+    depth:
+      depth_mode: NONE
+      publish_depth_confidence: false
+      publish_depth_info: false
+      publish_depth_map: true
+      publish_disparity: false
+      publish_point_cloud: true
+    diagnostic_updater:
+      period: 1.0
+      use_fqn: false
+    general:
+      async_image_retrieval: false
+      camera_flip: false
+      camera_id: -1
+      camera_max_reconnect: 5
+      camera_model: zed2i
+      camera_name: zed
+      camera_timeout_sec: 5
+      enable_image_validity_check: 1
+      gpu_id: -1
+      grab_compute_capping_fps: 0.0
+      grab_frame_rate: 30
+      grab_resolution: HD720
+      optional_opencv_calibration_file: ''
+      pub_frame_rate: 0.0
+      pub_resolution: NATIVE
+      publish_status: true
+      sdk_use_monotonic_clock: false
+      self_calib: true
+      serial_number: 0
+    mapping:
+      publish_det_plane: false
+    pos_tracking:
+      publish_cam_path: false
+      publish_odom_pose: true
+      publish_pose_cov: false
+    qos_overrides:
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+      /tf:
+        publisher:
+          depth: 100
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/depth/camera_info:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/depth/depth_registered/camera_info:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/imu/data:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/rgb/color/rect/camera_info:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/rgb/color/rect/image/camera_info:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/status/health:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+      /zed/zed_node/status/heartbeat:
+        publisher:
+          depth: 10
+          history: keep_last
+          reliability: reliable
+    region_of_interest:
+      publish_roi_mask: false
+    sensors:
+      publish_baro: false
+      publish_cam_imu_transf: false
+      publish_imu: true
+      publish_imu_raw: false
+      publish_imu_tf: false
+      publish_mag: false
+      publish_temp: false
+      sensors_image_sync: false
+      sensors_pub_rate: 100.0
+    simulation:
+      sim_enabled: false
+    stream:
+      stream_address: ''
+    stream_server:
+      adaptative_bitrate: false
+      bitrate: 12500
+      chunk_size: 16084
+      codec: H265
+      gop_size: -1
+      port: 30000
+      stream_enabled: false
+      target_framerate: 0
+    svo:
+      svo_encoding_preset: DEFAULT
+      svo_path: live
+    use_sim_time: false
+    video:
+      auto_exposure_gain: true
+      auto_whitebalance: true
+      brightness: 4
+      contrast: 4
+      enable_24bit_output: false
+      exposure: 80
+      gain: 80
+      gamma: 8
+      hue: 0
+      publish_gray: false
+      publish_left_right: false
+      publish_raw: false
+      publish_rgb: true
+      publish_stereo: false
+      saturation: 4
+      sharpness: 4
+      whitebalance_temperature: 42
+    zed_node:
+      rgb:
+        color:
+          rect:
+            image:
+              enable_pub_plugins:
+              - image_transport/compressed
+              - image_transport/theora
+

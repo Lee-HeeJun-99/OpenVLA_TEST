@@ -1,0 +1,19 @@
+{
+  "code_baseline_commit": "07039966653ac26f55f2dd0390b4fdf0e1955d72",
+  "implementation_status": "PASS",
+  "regression_tests": {"integration": 176, "safety": 103, "rollout_policy": 30, "total": 309, "failures": 0, "errors": 0},
+  "py_compile": "PASS",
+  "git_diff_check": "PASS",
+  "max_action_age_sec": 1.2,
+  "safety_thresholds_changed": false,
+  "timestamp_rebased": false,
+  "model_output_modified": false,
+  "warmup_predictions_per_preflight": 3,
+  "live_validation_status": "NOT_COMPLETED_CAMERA_SOURCE_UNAVAILABLE",
+  "measured_dispatch_latency_samples": 0,
+  "live_improvement_claimed": false,
+  "physical_commands": 0,
+  "driver_restart": false,
+  "zed_restart": false,
+  "existing_model_server_started": true
+}

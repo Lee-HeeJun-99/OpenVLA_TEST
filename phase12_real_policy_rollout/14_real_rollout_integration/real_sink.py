@@ -45,6 +45,7 @@ class RealDoosanCommandSink:
         self.gripper_outputs_initialized=False
         self._gripper_off_abort_lock=threading.Lock()
         self.gripper_off_abort_result=None
+        self.pose_action_deadline_monotonic=None
 
     def cancel_gripper(self):
         self.gripper_cancel.set();self.gripper_state='GRIPPER_ABORTED'
@@ -75,6 +76,11 @@ class RealDoosanCommandSink:
             with gate:
                 if not emergency and (self.aborted or (self.trial_guard is not None and not self.trial_guard.command_allowed())):
                     raise PermissionError('trial_command_inhibited')
+                # Discovery may consume time AFTER Controller's fsync/age check.
+                # Reject before actual async submission; stop/abort remain usable.
+                if kind=='pose' and not emergency and self.pose_action_deadline_monotonic is not None:
+                    if time.monotonic()>self.pose_action_deadline_monotonic:
+                        raise PermissionError('stale_action')
                 future=self.transport.dispatch_prepared(prepared) if prepared is not None else self.transport.send(*SERVICES[kind],request)
                 event.update(sent_at=time.monotonic(),state='sent')
                 if not emergency and self.trial_guard is not None:self.trial_guard.command_dispatched()

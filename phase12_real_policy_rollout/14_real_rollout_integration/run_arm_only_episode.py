@@ -1,8 +1,6 @@
 """One bounded arm-only episode. No gripper initialization, IO or task outcome."""
 import argparse
-import base64
 import hashlib
-import io
 import json
 import math
 import os
@@ -10,13 +8,14 @@ import threading
 import time
 from contextlib import ExitStack
 from pathlib import Path
-from urllib.request import Request, urlopen
+from urllib.request import urlopen
 import yaml
 from run_arm_only_once import (TARGET, Controller, Authorization, RosServiceTransport,
-    FsyncJsonlLogger, JointStateStartup, camera_rgb_image, inference_timing,
+    FsyncJsonlLogger, JointStateStartup,
     validate_identity, A0509FlangeFK, reorder_joint_state, _scale_to)
 from arm_only_episode_contract import ArmOnlyEpisodeSink, approved_episode_limits, gripper_intent
 from settle_window import wait_for_settle, SETTLE_CLEAN_SECONDS, SETTLE_TIMEOUT_SECONDS
+from rollout_latency import select_fresh_frame, predict_frame, warm_up, archive_request_jpeg, deferred_artifacts
 
 
 def require_approval(approval):
@@ -57,7 +56,8 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
     save('tcp_execution_basis.json',dict(formal_classification='TCP_ZERO_OFFSET_SUPPORTED_NOT_VERIFIED',
         formal_verified=False,engineering_acceptance=True,source='EXPLICIT_OPERATOR_FULL_POLICY_APPROVAL' if full else 'EXPLICIT_OPERATOR_ARM_ONLY_APPROVAL'))
     config_paths=list((Path(__file__).parent.parent/'01_configs').glob('*.yaml'))+[
-        Path(__file__).parent/'configs/full_task.yaml',Path(__file__).parent/'settle_window.py']
+        Path(__file__).parent/'configs/full_task.yaml',Path(__file__).parent/'settle_window.py',
+        Path(__file__).parent/'rollout_latency.py']
     if full:config_paths.append(Path(__file__).parent/'configs/gripper_hardware.yaml')
     frozen={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in config_paths}
     save('config_snapshot.json',frozen)
@@ -122,6 +122,11 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
                 cursor[0]=len(samples)
                 return batch
         return wait_for_settle(drain,check,clock=time.monotonic,sleep=time.sleep)
+    def camera_snapshot():
+        with lock:return camera[0]
+    def predict_fresh():
+        return predict_frame(select_fresh_frame(camera_snapshot,check),
+            lambda:node.get_clock().now().nanoseconds/1e9,check)
     sink=None;error=None;started=None;completed=0;attempts=0;records=[];termination=None
     outcome='NOT_EXECUTED';fk=A0509FlangeFK('/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf')
     try:
@@ -141,6 +146,10 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
         save('model_health.json',health)
         with lock:cam=camera[0]
         if cam is None or time.monotonic()-cam[1]>=.5:raise ValueError('camera_preflight_failed')
+        # Discard preflight predictions before creating any physical sink/client.
+        # The episode still measures age from inference START, never response time.
+        age_limit=yaml.safe_load((Path(__file__).parent.parent/'01_configs/safety_limits.yaml').read_text())['max_action_age_sec']
+        warm_up(predict_fresh,check,save,max_action_age_s=age_limit,settle_s=SETTLE_CLEAN_SECONDS)
         save('preflight.json',dict(hardware=hardware,jointstate=check(),start_pose_error_deg=pose_error,
              camera_ready=True,model_ready=True,max_steps=max_steps,max_duration_s=max_duration,
              physical_gripper_disabled=not full,task_success_not_applicable=not full,
@@ -185,36 +194,22 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
                 if time.monotonic()-started>=max_duration:termination='EXISTING_EPISODE_DURATION_LIMIT';break
                 current=getter('/dsr01/aux_control/get_current_posx',GetCurrentPosx,ref=0)['task_pos_info'][0]['data'][:6]
                 if len(current)!=6 or not all(math.isfinite(v) for v in current):raise ValueError('invalid_current_pose')
-                deadline=time.monotonic()+2
-                while time.monotonic()<deadline:
-                    check()
-                    with lock:selected=camera[0]
-                    if selected and 0<=time.monotonic()-selected[1]<=.01:break
-                    time.sleep(.001)
-                else:raise TimeoutError('fresh_camera_timeout')
-                msg,received=selected
-                if msg.encoding!='bgra8' or [msg.width,msg.height]!=[1280,720]:raise ValueError('camera_contract')
-                rgb=camera_rgb_image(msg);buf=io.BytesIO();rgb.save(buf,format='JPEG',quality=95);jpeg=buf.getvalue()
-                req=Request('http://127.0.0.1:8766/predict',data=json.dumps(dict(image_jpeg_base64=base64.b64encode(jpeg).decode(),instruction='Pick up the orange cube.')).encode(),headers={'Content-Type':'application/json'})
-                ros_start=node.get_clock().now().nanoseconds/1e9;t0=time.monotonic()
-                if not 0<=t0-received<.5:raise ValueError('camera_stale_at_inference_start')
                 if time.monotonic()-started>=max_duration:termination='EXISTING_EPISODE_DURATION_LIMIT';break
                 check();attempts+=1
-                with urlopen(req,timeout=1.2) as response:prediction=json.load(response)
-                t1=time.monotonic();raw=prediction['action']
-                if len(raw)!=7 or not all(math.isfinite(v) for v in raw):raise ValueError('invalid_model_action')
+                sample=predict_fresh()
+                msg,rgb,jpeg,prediction,raw,timing,t0,t1=[sample[k] for k in ('msg','rgb','jpeg','prediction','raw','timing','t0','t1')]
                 intent=gripper_intent(raw[6])
-                timing=inference_timing(received,t0,t1,source_stamp=msg.header.stamp.sec+msg.header.stamp.nanosec/1e9,
-                                       ros_start=ros_start,ros_end=node.get_clock().now().nanoseconds/1e9)
+                artifact_path=output/f'camera_{step:03d}_model_input.jpg'
+                archive_request_jpeg(artifact_path,jpeg)
                 with lock:before=dict(samples[-1])
                 log.append(dict(event='PREDICTION',step_id=step,raw_action=raw,logical_gripper_intent=intent,
                                 physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',camera_timing=timing,jointstate=before))
                 logs['observations'].append(dict(step_id=step,current_pose=current,jointstate=before,
-                    camera_timing=timing,source_image_sha256=hashlib.sha256(bytes(msg.data)).hexdigest(),model_input_sha256=hashlib.sha256(jpeg).hexdigest()))
+                    camera_timing=timing,model_input_file=artifact_path.name,hashes_deferred=True))
                 logs['predictions'].append(dict(step_id=step,raw_action=raw,translation_norm_m=math.dist(raw[:3],[0,0,0]),
                     rotation_norm_rad=math.dist(raw[3:6],[0,0,0]),raw_gripper_prediction=raw[6],logical_gripper_intent=intent,
                     physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',camera_timing=timing))
-                rgb.save(output/f'camera_{step:03d}.png')
+                evidence_done=time.monotonic()
                 observation=dict(receive_monotonic=time.monotonic(),tcp_m_abc=[v/1000 for v in current[:3]]+current[3:],
                     phase='alignment',robot_state_ok=True,camera_ok=True,joint_state_ok=True,tcp_ok=True,
                     model_ok=True,communication_ok=True,live_execution_clock=True,
@@ -224,15 +219,32 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
                 # Current state is checked again after inference, before dispatch.
                 if getter('/dsr01/system/get_robot_state',GetRobotState)['robot_state']!=1:
                     raise RuntimeError('robot_not_STANDBY_before_dispatch')
+                state_check_done=time.monotonic()
                 before,pre_dispatch_settle=settle()
                 log.append(dict(event='SETTLE_CONFIRMED',step_id=step,stage='PRE_DISPATCH',
                     evidence=pre_dispatch_settle,jointstate=before))
                 if time.monotonic()-started>=max_duration:termination='EXISTING_EPISODE_DURATION_LIMIT';break
-                check();record=c.step(raw,observation,inference_time=t0,chunk_id=f'episode-step-{step}',chunk_index=0)
+                dispatch_check_at=time.monotonic()
+                log.append(dict(event='PRE_DISPATCH_TIMING',step_id=step,
+                    inference_latency_s=t1-t0,required_evidence_s=evidence_done-t1,
+                    state_check_s=state_check_done-evidence_done,settle_and_log_s=dispatch_check_at-state_check_done,
+                    action_age_before_controller_s=dispatch_check_at-t0,source_monotonic=t0,
+                    existing_action_age_limit_s=age_limit))
+                check()
+                try:
+                    record=c.step(raw,observation,inference_time=t0,chunk_id=f'episode-step-{step}',chunk_index=0)
+                finally:
+                    # Required model-input JPEG + raw prediction are already durable.
+                    # PNG compression/hash cannot consume the action's dispatch budget.
+                    try:
+                        artifact=deferred_artifacts(output,step,msg,rgb,jpeg)
+                        logs['observations'].append(dict(step_id=step,event='DEFERRED_ARTIFACTS',**artifact))
+                    except Exception:
+                        c.abort('logger_failure');raise
                 records.append(dict(step_id=step,raw_action=raw,camera_timing=timing,logical_gripper_intent=intent,
                                     pre_observation_settle=pre_observation_settle,pre_dispatch_settle=pre_dispatch_settle,
-                                    physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',source_image_sha256=hashlib.sha256(bytes(msg.data)).hexdigest(),
-                                    model_input_sha256=hashlib.sha256(jpeg).hexdigest(),record=record,jointstate_before=before))
+                                    physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE',
+                                    **artifact,record=record,jointstate_before=before))
                 check()
                 if not record.get('command_receipt') or record['command_receipt']['state']!='completed':raise RuntimeError('arm_ack_failure')
                 limiter=c.pipeline.runtime.limiter

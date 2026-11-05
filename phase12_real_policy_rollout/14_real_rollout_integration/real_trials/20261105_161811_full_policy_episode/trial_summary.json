@@ -1,0 +1,23 @@
+{
+  "status": "OPERATOR_RESULT_CONFIRMATION_PENDING",
+  "reason": null,
+  "evaluation_scope": "FULL_POLICY_ROLLOUT",
+  "termination": "EXISTING_EPISODE_DURATION_LIMIT",
+  "task_success": null,
+  "task_performance_denominator_included": false,
+  "steps_attempted": 10,
+  "steps_completed": 10,
+  "duration_s": 30.499916333006695,
+  "arm_commands": 10,
+  "physical_gripper_commands": 6,
+  "stop_commands": 0,
+  "gripper_abort_behavior": "BOTH_OUTPUTS_OFF_MAX_3_ATTEMPTS",
+  "unexpected_motion": null,
+  "estop_used": null,
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "auto_next_episode": false,
+  "runtime_valid": true,
+  "episode_ended_wall_time": 1793863140.0335057
+}

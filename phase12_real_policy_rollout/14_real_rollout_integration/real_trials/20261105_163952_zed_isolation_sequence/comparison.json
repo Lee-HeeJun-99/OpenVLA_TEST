@@ -1,0 +1,88 @@
+{
+  "cases": {
+    "C_model_server_off": {
+      "count": 549,
+      "receive_hz": 9.204630894375473,
+      "max_receive_gap_s": 0.899358526992728,
+      "max_source_gap_s": 0.900073766708374,
+      "max_source_age_s": 0.05328774452209473,
+      "receive_gap_ge_100ms": 183,
+      "receive_gap_ge_500ms": 8,
+      "source_gap_ge_500ms": 5,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75533.889346959,
+        "receive_wall": 1793864455.3620784,
+        "source_timestamp": 1793864455.3165927,
+        "source_age_s": 0.04550623893737793,
+        "receive_gap_s": 0.1641384230024414,
+        "source_gap_s": 0.16659998893737793,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "D_fixed_exposure_gain": {
+      "count": 436,
+      "receive_hz": 7.257776845182622,
+      "max_receive_gap_s": 0.7009496539976681,
+      "max_source_gap_s": 0.700145959854126,
+      "max_source_age_s": 0.061748504638671875,
+      "receive_gap_ge_100ms": 222,
+      "receive_gap_ge_500ms": 10,
+      "source_gap_ge_500ms": 12,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75596.428487307,
+        "receive_wall": 1793864517.901218,
+        "source_timestamp": 1793864517.8558996,
+        "source_age_s": 0.04533815383911133,
+        "receive_gap_s": 0.03470154099341016,
+        "source_gap_s": 0.03309893608093262,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "E_fixed_exposure_gain_and_whitebalance": {
+      "count": 389,
+      "receive_hz": 6.46995246728859,
+      "max_receive_gap_s": 1.0990381899900967,
+      "max_source_gap_s": 1.1001498699188232,
+      "max_source_age_s": 0.06253361701965332,
+      "receive_gap_ge_100ms": 211,
+      "receive_gap_ge_500ms": 14,
+      "source_gap_ge_500ms": 16,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75658.400992055,
+        "receive_wall": 1793864579.8737228,
+        "source_timestamp": 1793864579.8262687,
+        "source_age_s": 0.04747295379638672,
+        "receive_gap_s": 0.16758868799661286,
+        "source_gap_s": 0.16663408279418945,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "F_sdk_only": {
+      "count": 701,
+      "errors": 0,
+      "hz": 11.651794592005517,
+      "max_receive_gap_s": 0.46578259000671096,
+      "receive_gap_ge_500ms": 0,
+      "receive_gap_ge_100ms": 217,
+      "physical_commands": 0,
+      "api": "read + retrieve_image LEFT CPU; HD720/30/depth NONE/AEC ON/AWB ON"
+    }
+  },
+  "physical_commands": 0,
+  "driver_untouched": true,
+  "restoration_verified": true,
+  "parameter_differences": {},
+  "model_restored_ready": true,
+  "sdk_source_max_gap_s": 0.46671,
+  "sdk_nonincreasing_stamps": 0,
+  "interpretation": "Model off and fixed controls did not resolve gaps. SDK-only remains ~11.65Hz at 30Hz, 217 gaps >=100ms but no >=500ms in this 60s sample. Fault is not exclusive to ROS or inference. Exact USB/ISP/SDK cause unresolved; reconnect confounds prohibit declaring ROS causal from max-gap differences."
+}

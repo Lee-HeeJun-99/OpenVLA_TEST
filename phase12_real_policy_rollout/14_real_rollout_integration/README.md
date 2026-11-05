@@ -115,3 +115,24 @@ confirmed_wall_time after episode_ended_wall_time. INVALID/operator abort cannot
 be promoted to SUCCESS. A valid completed physical trial is required. Hardware
 state is queried at command boundaries, not represented as continuous independent
 authority/servo/protection telemetry. Current safety confirmation remains required.
+# 2026-10-30: stale_action critical-path update
+
+The shared episode runner now performs three discarded fresh-frame model warm-up requests before
+physical sink creation. Existing action age (1.2 s), 13 mm gate, camera/JointState watchdogs and full
+settle remain unchanged. Exact model JPEG + mandatory JSONL are durable before dispatch; PNG and hash
+work is deferred until the step returns. Deferred artifact rows join observations by `step_id`.
+Controller rechecks the original inference-start age after logging; sink rechecks its deadline after
+service preparation, immediately before async submission. No timestamp rebasing or gate relaxation.
+
+Command-free live timing probe (use a NEW output directory):
+
+```bash
+source /opt/ros/humble/setup.bash
+source /home/ubuntu/robot_ws/install/setup.bash
+export ROS_LOCALHOST_ONLY=1
+/usr/bin/python3 validate_action_latency.py --output real_trials/NEW_TIMESTAMP_latency_check --samples 5
+```
+
+This probe has no physical transport and only a read-only RobotState service client.
+See `real_trials/20261030_stale_action_latency_fix_002/STALE_ACTION_FIX_REPORT.md` for changes,
+regression results and live-validation limitations. Code/test PASS does not imply live timing/robot readiness PASS.

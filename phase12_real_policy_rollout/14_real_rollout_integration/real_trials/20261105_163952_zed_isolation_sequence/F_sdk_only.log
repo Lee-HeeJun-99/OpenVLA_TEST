@@ -1,0 +1,13 @@
+[2026-11-05 16:43:09 UTC][ZED][INFO] Logging level INFO
+[2026-11-05 16:43:10 UTC][ZED][ERROR] [ZED] The camera could not be initialized. Please verify your camera connection and configuration.
+[2026-11-05 16:43:10 UTC][ZED][INFO] [Init]  Failed to open camera. Trying to re-open for 5 seconds.
+[2026-11-05 16:43:10 UTC][ZED][INFO] [Init]  Random wait interval before consecutive openings: [250], [1500] msec.
+[2026-11-05 16:43:10 UTC][ZED][INFO] [Init]  Waiting 1039 msec before next opening attempt.
+[2026-11-05 16:43:11 UTC][ZED][INFO] [Init]  Timeout in 3410msec
+[2026-11-05 16:43:11 UTC][ZED][INFO] [Init]  Opening Camera. Attempt #2
+[2026-11-05 16:43:12 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-11-05 16:43:12 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-11-05 16:43:12 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-11-05 16:43:12 UTC][ZED][INFO] [Init]  Serial Number: S/N 32950075
+[2026-11-05 16:43:12 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+{"count": 701, "errors": 0, "hz": 11.651794592005517, "max_receive_gap_s": 0.46578259000671096, "receive_gap_ge_500ms": 0, "receive_gap_ge_100ms": 217, "physical_commands": 0, "api": "read + retrieve_image LEFT CPU; HD720/30/depth NONE/AEC ON/AWB ON"}

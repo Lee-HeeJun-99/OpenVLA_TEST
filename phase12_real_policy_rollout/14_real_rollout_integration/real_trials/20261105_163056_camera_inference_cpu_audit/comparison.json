@@ -1,0 +1,217 @@
+{
+  "cases": {
+    "A_server_idle": {
+      "image": {
+        "count": 643,
+        "receive_hz": 10.760203965277416,
+        "max_receive_gap_s": 0.8988629649975337,
+        "max_source_gap_s": 0.8998661041259766,
+        "max_source_age_s": 0.055738210678100586,
+        "receive_gap_ge_100ms": 166,
+        "receive_gap_ge_500ms": 9,
+        "source_gap_ge_500ms": 11,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 74995.058045517,
+          "receive_wall": 1793863916.5307765,
+          "source_timestamp": 1793863916.4874766,
+          "source_age_s": 0.0433199405670166,
+          "receive_gap_s": 0.03123076699557714,
+          "source_gap_s": 0.0332489013671875,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "camera_info": {
+        "count": 644,
+        "receive_hz": 10.770778865454117,
+        "max_receive_gap_s": 0.9042456870083697,
+        "max_source_gap_s": 0.8998661041259766,
+        "max_source_age_s": 0.04162287712097168,
+        "receive_gap_ge_100ms": 175,
+        "receive_gap_ge_500ms": 10,
+        "source_gap_ge_500ms": 11,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 74995.047896961,
+          "receive_wall": 1793863916.520629,
+          "source_timestamp": 1793863916.4874766,
+          "source_age_s": 0.03316831588745117,
+          "receive_gap_s": 0.033361567999236286,
+          "source_gap_s": 0.0332489013671875
+        }
+      },
+      "cpu_mean": 27.162662278626378,
+      "cpu_max": 40.61866125760649,
+      "busiest_core_mean": [
+        [
+          37.35306193383473,
+          "cpu0"
+        ],
+        [
+          39.442898561732214,
+          "cpu7"
+        ],
+        [
+          70.40356740070553,
+          "cpu16"
+        ]
+      ],
+      "gpu_mean": 21.966666666666665,
+      "gpu_max": 27.0,
+      "vram_max_mb": 17623.0,
+      "thread_busy": {
+        "49021": [
+          [
+            0.4599154314194022,
+            1.9454193800141377,
+            "49105"
+          ],
+          [
+            0.03278834810416138,
+            0.969844564761721,
+            "49021"
+          ],
+          [
+            0.0,
+            0.0,
+            "49123"
+          ]
+        ],
+        "52338": [
+          [
+            3.4997670449971654,
+            12.613571787838382,
+            "52459"
+          ],
+          [
+            3.2698107255440414,
+            8.745836561577974,
+            "52458"
+          ],
+          [
+            1.2990183646941706,
+            1.948315639924683,
+            "52457"
+          ]
+        ]
+      },
+      "predictions": 0,
+      "prediction_errors": [],
+      "inference_mean_s": null,
+      "grab_mean_hz": 11.953333333333333,
+      "processing_mean_s": 0.09621818333333333
+    },
+    "B_repeated_inference": {
+      "image": {
+        "count": 631,
+        "receive_hz": 10.500106404753362,
+        "max_receive_gap_s": 1.2354244619928068,
+        "max_source_gap_s": 1.2335171699523926,
+        "max_source_age_s": 0.06336045265197754,
+        "receive_gap_ge_100ms": 165,
+        "receive_gap_ge_500ms": 8,
+        "source_gap_ge_500ms": 7,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 75057.424951272,
+          "receive_wall": 1793863978.897682,
+          "source_timestamp": 1793863978.8574266,
+          "source_age_s": 0.04026222229003906,
+          "receive_gap_s": 0.15965026999765541,
+          "source_gap_s": 0.16673493385314941,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "camera_info": {
+        "count": 643,
+        "receive_hz": 10.693401194621286,
+        "max_receive_gap_s": 1.2345306609931868,
+        "max_source_gap_s": 1.2335171699523926,
+        "max_source_age_s": 0.04373955726623535,
+        "receive_gap_ge_100ms": 167,
+        "receive_gap_ge_500ms": 7,
+        "source_gap_ge_500ms": 7,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 75057.418484005,
+          "receive_wall": 1793863978.8912156,
+          "source_timestamp": 1793863978.8574266,
+          "source_age_s": 0.03379964828491211,
+          "receive_gap_s": 0.16556580699398182,
+          "source_gap_s": 0.16673493385314941
+        }
+      },
+      "cpu_mean": 34.6118852293891,
+      "cpu_max": 42.69094587759231,
+      "busiest_core_mean": [
+        [
+          38.57813053248483,
+          "cpu9"
+        ],
+        [
+          62.87637061734136,
+          "cpu11"
+        ],
+        [
+          71.1012599592553,
+          "cpu15"
+        ]
+      ],
+      "gpu_mean": 58.40983606557377,
+      "gpu_max": 100.0,
+      "vram_max_mb": 17591.0,
+      "thread_busy": {
+        "49021": [
+          [
+            0.3227643163776993,
+            1.9345110159991685,
+            "49105"
+          ],
+          [
+            0.09676843224292297,
+            0.9727149308359819,
+            "49021"
+          ],
+          [
+            0.0,
+            0.0,
+            "49123"
+          ]
+        ],
+        "52338": [
+          [
+            4.134918315854362,
+            6.714948566635356,
+            "52459"
+          ],
+          [
+            3.8595711628565716,
+            7.619885610594871,
+            "52458"
+          ],
+          [
+            1.179757424766612,
+            2.910850824317124,
+            "52457"
+          ]
+        ]
+      },
+      "predictions": 115,
+      "prediction_errors": [],
+      "inference_mean_s": 0.3974750006346174,
+      "grab_mean_hz": 11.254999999999999,
+      "processing_mean_s": 0.09260458333333334
+    }
+  },
+  "physical_commands": 0,
+  "settings_changed": false,
+  "limitations": [
+    "Server remained loaded in both cases; not a server-off comparison.",
+    "No full rollout logger/getter path; inference-only workload.",
+    "Sequential 60s cases; not randomized causal proof."
+  ]
+}

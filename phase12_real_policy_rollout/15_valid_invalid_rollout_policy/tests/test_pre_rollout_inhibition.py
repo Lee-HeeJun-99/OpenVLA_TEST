@@ -21,7 +21,7 @@ class InhibitionPreflightTests(unittest.TestCase):
                 if fault=='jointstate':obs['joint_state_ok']=False
                 if fault=='camera':obs['camera_ok']=False
                 if fault=='model':obs['model_ok']=False
-                if fault=='translation':action[0]=.0131
+                if fault=='translation':action[0]=.0201
                 if fault=='rotation':action[3]=.071
                 if fault=='nan':action[0]=float('nan')
                 try:c.step(action,obs,inference_time=1,chunk_id='a',chunk_index=0)

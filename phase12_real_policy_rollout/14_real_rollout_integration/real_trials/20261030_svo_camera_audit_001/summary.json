@@ -1,0 +1,64 @@
+{
+  "source": "/home/ubuntu/Documents/ZED/HD720_SN32950075_15-44-22.svo2",
+  "sdk": "5.3.0",
+  "svo_frame_count": 316,
+  "decoded_frame_count": 315,
+  "fps": 60.0,
+  "width": 1280,
+  "height": 720,
+  "max_recorded_timestamp_gap_s": 0.050006,
+  "recorded_gaps_ge_500ms": 0,
+  "top_temporal_difference_frames": [
+    {
+      "frame": 294,
+      "image_timestamp_ns": 1793342669021177000,
+      "mean_brightness": 109.9926099537037,
+      "temporal_abs_difference": 75.15089120370371
+    },
+    {
+      "frame": 295,
+      "image_timestamp_ns": 1793342669038107000,
+      "mean_brightness": 113.72142939814815,
+      "temporal_abs_difference": 75.15033564814814
+    },
+    {
+      "frame": 111,
+      "image_timestamp_ns": 1793342664937912000,
+      "mean_brightness": 113.02974537037036,
+      "temporal_abs_difference": 74.83705439814815
+    },
+    {
+      "frame": 110,
+      "image_timestamp_ns": 1793342664920926000,
+      "mean_brightness": 109.22385995370371,
+      "temporal_abs_difference": 74.83565393518519
+    },
+    {
+      "frame": 18,
+      "image_timestamp_ns": 1793342662887825000,
+      "mean_brightness": 112.87653356481482,
+      "temporal_abs_difference": 74.79934027777777
+    },
+    {
+      "frame": 17,
+      "image_timestamp_ns": 1793342662870785000,
+      "mean_brightness": 109.19271412037037,
+      "temporal_abs_difference": 74.79802083333334
+    },
+    {
+      "frame": 300,
+      "image_timestamp_ns": 1793342669171392000,
+      "mean_brightness": 113.72196180555555,
+      "temporal_abs_difference": 0.7735590277777777
+    },
+    {
+      "frame": 180,
+      "image_timestamp_ns": 1793342666521163000,
+      "mean_brightness": 113.25929976851852,
+      "temporal_abs_difference": 0.7644791666666667
+    }
+  ],
+  "physical_camera_opened": false,
+  "depth_enabled": false,
+  "note": "Recorded timestamp gaps are not live ROS receive gaps. Temporal differences are candidate inspection aids, not an artifact detector."
+}

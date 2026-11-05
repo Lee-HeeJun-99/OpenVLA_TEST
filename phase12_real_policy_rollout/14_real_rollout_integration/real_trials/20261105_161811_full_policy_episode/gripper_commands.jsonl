@@ -1,0 +1,10 @@
+{"step_id":0,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":0,"logger_wall_time":1793863111.737219}
+{"step_id":1,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":1,"logger_wall_time":1793863115.03007}
+{"step_id":2,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":2,"logger_wall_time":1793863118.121396}
+{"step_id":3,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":3,"logger_wall_time":1793863121.376929}
+{"step_id":4,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":4,"logger_wall_time":1793863124.6362953}
+{"step_id":5,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":5,"logger_wall_time":1793863127.1775248}
+{"step_id":6,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":6,"logger_wall_time":1793863130.6195803}
+{"step_id":7,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":7,"logger_wall_time":1793863133.1852527}
+{"step_id":8,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":8,"logger_wall_time":1793863136.724857}
+{"step_id":9,"receipt":{"state":"suppressed","logical_before":"OPEN","logical_after":"OPEN","measured_gripper_state":null},"sequence_number":9,"logger_wall_time":1793863139.6868734}

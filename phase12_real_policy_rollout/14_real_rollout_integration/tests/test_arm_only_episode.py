@@ -38,14 +38,14 @@ class ArmEpisodeTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):self.step(c)
         self.assertEqual(len(t.calls),2)
     def test_camera_and_raw_limit_still_reject(self):
-        for kwargs in (dict(camera_ok=False),dict(translation=.0131)):
+        for kwargs in (dict(camera_ok=False),dict(translation=.0201)):
             c,t=self.setup_controller();self.step(c,**kwargs)
             self.assertTrue(c.aborted)
             self.assertFalse(any(n.endswith('move_line') for n,_,_ in t.calls))
     def test_normal_sink_cannot_enable_episode(self):
         with self.assertRaises(PermissionError):Controller('openvla','full_task',RealDoosanCommandSink(None),Log(),execution_mode='ARM_ONLY_FULL_EPISODE')
     def test_existing_limits_and_gripper_boundaries(self):
-        self.assertEqual(episode_limits(),(150,30))
+        self.assertEqual(episode_limits(),(150,500))
         self.assertEqual([gripper_intent(x) for x in (.2,.3,.7,.8)],['OPEN','HOLD','HOLD','CLOSED'])
     def test_overlapping_steps_refused(self):
         c,t=self.setup_controller();c.full_policy_step_lock.acquire()
@@ -61,7 +61,7 @@ class ArmEpisodeTests(unittest.TestCase):
         with self.assertRaises(ValueError):start_pose_error_deg(names[:-1],positions[:-1])
     def test_duration_override_requires_exact_explicit_approval(self):
         from arm_only_episode_contract import approved_episode_limits
-        self.assertEqual(approved_episode_limits({}),(150,30))
+        self.assertEqual(approved_episode_limits({}),(150,500))
         self.assertEqual(approved_episode_limits(dict(explicit_one_episode=True,approved_max_duration_s=70),70),(150,70))
         for a,d in [({},70),({'explicit_one_episode':True,'approved_max_duration_s':70},71),({},float('inf'))]:
             with self.assertRaises(PermissionError):approved_episode_limits(a,d)

@@ -146,6 +146,15 @@ class Controller:
         if self.dry_run:
             record['sink_receipt']=NullCommandSink().submit(action.as_dict(),decision.as_dict())
             return record
+        # Mandatory fsync above can itself stall. Recheck at the physical boundary
+        # using the ORIGINAL inference-start timestamp; never rebase/extend it.
+        if obs.get('live_execution_clock'):
+            dispatch_age=time.monotonic()-inference_time
+            record['action_age_at_dispatch_check_s']=dispatch_age
+            if not math.isfinite(dispatch_age) or dispatch_age<0 or dispatch_age>self.pipeline.runtime.safety.max_action_age_sec:
+                return self.abort('stale_action')
+            self.sink.pose_action_deadline_monotonic=inference_time+self.pipeline.runtime.safety.max_action_age_sec
+        if self.aborted:raise RuntimeError('session_aborted')
         receipt=self.sink.send_pose(candidate['target_pose_candidate_mm_zyz_deg'])
         # Send/ACK/completion each persisted by their actual timestamp, not fabricated.
         record['command_receipt']=receipt

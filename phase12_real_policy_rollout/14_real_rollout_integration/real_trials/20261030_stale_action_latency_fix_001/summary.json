@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED",
+  "physical_commands": 0,
+  "transport_created": false,
+  "samples": [],
+  "reason": "model_preflight:<urlopen error [Errno 111] Connection refused>"
+}

@@ -1,0 +1,54 @@
+{"elapsed_s": 30.0, "image_count": 211, "diagnostic_count": 30, "receive_gaps_ge_500ms": 7}
+{"elapsed_s": 60.0, "image_count": 431, "diagnostic_count": 60, "receive_gaps_ge_500ms": 10}
+{
+  "duration_requested_s": 60.0,
+  "observation_duration_s": 60.00115001799713,
+  "error": null,
+  "physical_commands": 0,
+  "settings_changed": false,
+  "diagnostic_messages": 61,
+  "streams": {
+    "image": {
+      "count": 436,
+      "receive_hz": 7.257776845182622,
+      "max_receive_gap_s": 0.7009496539976681,
+      "max_source_gap_s": 0.700145959854126,
+      "max_source_age_s": 0.061748504638671875,
+      "receive_gap_ge_100ms": 222,
+      "receive_gap_ge_500ms": 10,
+      "source_gap_ge_500ms": 12,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75596.428487307,
+        "receive_wall": 1793864517.901218,
+        "source_timestamp": 1793864517.8558996,
+        "source_age_s": 0.04533815383911133,
+        "receive_gap_s": 0.03470154099341016,
+        "source_gap_s": 0.03309893608093262,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "camera_info": {
+      "count": 442,
+      "receive_hz": 7.312804340670986,
+      "max_receive_gap_s": 0.7003344760014443,
+      "max_source_gap_s": 0.700145959854126,
+      "max_source_age_s": 0.04936361312866211,
+      "receive_gap_ge_100ms": 223,
+      "receive_gap_ge_500ms": 11,
+      "source_gap_ge_500ms": 12,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75596.418813764,
+        "receive_wall": 1793864517.8915455,
+        "source_timestamp": 1793864517.8558996,
+        "source_age_s": 0.035669565200805664,
+        "receive_gap_s": 0.034240623004734516,
+        "source_gap_s": 0.03309893608093262
+      }
+    }
+  },
+  "limitation": "SDK Data Capture frequency/processing time are aggregate diagnostics, not per-grab timestamps. Image header gaps alone do not separate grabbing from wrapper publishing."
+}

@@ -1,0 +1,10 @@
+{
+  "count": 701,
+  "errors": 0,
+  "hz": 11.651794592005517,
+  "max_receive_gap_s": 0.46578259000671096,
+  "receive_gap_ge_500ms": 0,
+  "receive_gap_ge_100ms": 217,
+  "physical_commands": 0,
+  "api": "read + retrieve_image LEFT CPU; HD720/30/depth NONE/AEC ON/AWB ON"
+}

@@ -1,0 +1,70 @@
+{
+  "physical_commands": 0,
+  "processes_restarted_or_stopped": false,
+  "settings_changed": false,
+  "conclusion": "Camera pipeline instability exists with model server idle; inference is not required to reproduce. Exact SDK/USB/ISP root cause remains unisolated.",
+  "software": {
+    "cpu_overall_saturation_supported": false,
+    "cpu_idle_case_mean_busy_percent": 27.162662278626378,
+    "cpu_inference_case_mean_busy_percent": 34.6118852293891,
+    "per_core_transient_saturation_observed": true,
+    "gpu_idle_case_mean_busy_percent": 21.966666666666665,
+    "gpu_inference_case_mean_busy_percent": 58.40983606557377,
+    "gpu_peak_inference_percent": 100,
+    "inference_requests": 115,
+    "inference_errors": 0,
+    "inference_mean_seconds": 0.3974750006346174,
+    "rollout_only_callback_failure_explains_all": false,
+    "publisher_count": 1,
+    "image_publisher_reliability": "RELIABLE",
+    "diagnostic_subscriber_reliability": "BEST_EFFORT",
+    "ros_domain_id": "71, unchanged",
+    "localhost_only": "1 for driver, ZED, model",
+    "depth_mode": "NONE",
+    "capture_setting_hz": 30,
+    "sdk_grab_loop_idle_mean_hz": 11.953333333333333,
+    "sdk_grab_loop_inference_mean_hz": 11.255,
+    "auto_exposure_gain": true,
+    "auto_whitebalance": true,
+    "sdk_version": "5.3.0",
+    "sdk_timing_caveat": "Data Capture is wrapper loop/processing aggregate, not independent hardware acquisition timing; source read()/grab() blocking and wrapper work are included.",
+    "ram_available_gib_approx": 22,
+    "disk_free_gib_approx": 78,
+    "abort_logging_issue": "Initialization can report gripper_initialization_ack_failure after another asynchronous abort, masking the initiating fault. Not modified in this read-only audit."
+  },
+  "hardware": {
+    "cpu": "Intel Core i9-10900, 10 cores / 20 threads",
+    "cpu_current_package_celsius": 49,
+    "cpu_nonzero_thermal_throttle_counts_found": false,
+    "gpu": "RTX 3090, 24 GiB",
+    "gpu_current_celsius": 47,
+    "gpu_current_thermal_slowdown": false,
+    "zed_usb_speed_mbps": 5000,
+    "zed_usb3_path": "2-7 -> 2-7.1 -> 2-7.1.1, two VIA hubs",
+    "usbfs_memory_mb": 16,
+    "camera_runtime_pm": "power/control=on, runtime_status=active",
+    "hub_runtime_pm": "auto, runtime_status=active",
+    "usb_16_26_event": "Disconnect/re-enumeration and UVC -71 near 16:26:34; cannot distinguish manual reconnection from spontaneous failure. Before current launch and not coincident with 16:30-16:32 comparison gaps.",
+    "usb_fault_during_comparison_kernel_log": "No disconnect/reset evidence found for comparison interval",
+    "camera_temperature_and_supply_voltage": "NOT_MEASURED",
+    "cable_hub_signal_integrity": "NOT_VERIFIED"
+  },
+  "limitations": [
+    "Model remained loaded in both conditions; server-off comparison not performed because existing processes were preserved.",
+    "Two image subscribers add observer overhead; same subscriber configuration was used in both conditions.",
+    "Current ZED launch began around 16:27, after USB topology changed around 16:26. Current measurements cannot uniquely establish cause of earlier rollout failures.",
+    "No direct-camera SDK opening, firmware update, camera setting change, USB buffer change, cable replacement, or hub bypass performed.",
+    "Per-thread tick records are descriptive and not full scheduler/USB interrupt tracing."
+  ],
+  "next_isolation_priority": [
+    "Bypass external hubs with known-good short USB3 cable/direct motherboard port; compare unchanged fixed duration.",
+    "Same physical path, server fully off versus loaded idle; requires authorized process stop.",
+    "Fixed exposure/gain and then white balance, one change at a time, with image-quality and timing evidence.",
+    "SDK-only capture comparison, after releasing current camera owner; do not open concurrently."
+  ],
+  "sources": [
+    "https://community.stereolabs.com/t/zed2i-usb-camera-occasionally-has-column-shift/10520",
+    "https://support.stereolabs.com/articles/2190934729",
+    "https://kernel.org/doc/html/v6.7/driver-api/usb/error-codes.html"
+  ]
+}

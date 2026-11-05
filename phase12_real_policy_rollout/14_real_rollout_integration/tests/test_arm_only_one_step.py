@@ -31,7 +31,7 @@ class ArmOnlyTests(unittest.TestCase):
 
     def test_arm_only_still_rejects_large_translation(self):
         c,t,obs=self.setup_controller(True)
-        c.step([.0131,0,0,0,0,0,.998],obs,inference_time=1,chunk_id='one',chunk_index=0)
+        c.step([.0201,0,0,0,0,0,.998],obs,inference_time=1,chunk_id='one',chunk_index=0)
         self.assertTrue(c.aborted)
         self.assertFalse(any(call[0]=='/dsr01/motion/move_line' for call in t.calls))
 

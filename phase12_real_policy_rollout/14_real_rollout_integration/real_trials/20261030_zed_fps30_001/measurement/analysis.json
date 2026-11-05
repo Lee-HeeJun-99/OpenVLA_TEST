@@ -1,0 +1,1108 @@
+{
+  "summary": {
+    "duration_requested_s": 120.0,
+    "observation_duration_s": 120.00677813100629,
+    "error": null,
+    "physical_commands": 0,
+    "settings_changed": false,
+    "diagnostic_messages": 120,
+    "streams": {
+      "image": {
+        "count": 2859,
+        "receive_hz": 23.81545683590341,
+        "max_receive_gap_s": 0.16998551998403855,
+        "max_source_gap_s": 0.16689395904541016,
+        "max_source_age_s": 0.0505526065826416,
+        "receive_gap_ge_100ms": 178,
+        "receive_gap_ge_500ms": 0,
+        "source_gap_ge_500ms": 0,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 176235.271757627,
+          "receive_wall": 1793348097.4664674,
+          "source_timestamp": 1793348097.4221268,
+          "source_age_s": 0.04435157775878906,
+          "receive_gap_s": 0.03777943999739364,
+          "source_gap_s": 0.0331270694732666,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "camera_info": {
+        "count": 2867,
+        "receive_hz": 23.86801618073899,
+        "max_receive_gap_s": 0.1690688999951817,
+        "max_source_gap_s": 0.16689395904541016,
+        "max_source_age_s": 0.0375213623046875,
+        "receive_gap_ge_100ms": 228,
+        "receive_gap_ge_500ms": 0,
+        "source_gap_ge_500ms": 0,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 176235.261669056,
+          "receive_wall": 1793348097.4563794,
+          "source_timestamp": 1793348097.4221268,
+          "source_age_s": 0.03427767753601074,
+          "receive_gap_s": 0.03479230799712241,
+          "source_gap_s": 0.0331270694732666
+        }
+      }
+    },
+    "limitation": "SDK Data Capture frequency/processing time are aggregate diagnostics, not per-grab timestamps. Image header gaps alone do not separate grabbing from wrapper publishing."
+  },
+  "zed_reported_grab_loop_hz": {
+    "count": 120,
+    "min": 16.7,
+    "median": 23.7,
+    "mean": 23.976666666666667,
+    "max": 30.0
+  },
+  "zed_configured_grab_hz": {
+    "count": 120,
+    "min": 30.0,
+    "median": 30.0,
+    "mean": 30.0,
+    "max": 30.0
+  },
+  "zed_reported_processing_s": {
+    "count": 120,
+    "min": 0.033301,
+    "median": 0.042197,
+    "mean": 0.042415425,
+    "max": 0.060025
+  },
+  "diagnostic_status_counts": {
+    "Camera grabbing": 120
+  },
+  "drop_counters_first_last": [
+    {
+      "wall": 1793347977.9036043,
+      "text": "28/214 (13.0841%)"
+    },
+    {
+      "wall": 1793348096.9052114,
+      "text": "758/3784 (20.0317%)"
+    }
+  ],
+  "aggregate_cpu_idle_or_iowait_percent": {
+    "count": 119,
+    "min": 85.60039860488291,
+    "median": 89.5582329317269,
+    "mean": 89.22957884574,
+    "max": 91.7925478348439
+  },
+  "image_receive_gap_s": {
+    "count": 2858,
+    "min": 0.023267341020982713,
+    "median": 0.033632318503805436,
+    "mean": 0.0419895367487737,
+    "max": 0.16998551998403855
+  },
+  "image_source_age_s": {
+    "count": 2859,
+    "min": 0.036139726638793945,
+    "median": 0.04180431365966797,
+    "mean": 0.04181539899780017,
+    "max": 0.0505526065826416
+  },
+  "receive_gap_ge100ms_with_source_gap_lt50ms": 0,
+  "top10_image_receive_gaps": [
+    {
+      "receive_wall": 1793348038.0282135,
+      "receive_gap_s": 0.16998551998403855,
+      "published_source_gap_s": 0.16687893867492676,
+      "source_age_at_arrival_s": 0.04337143898010254,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348037.9848588,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176175.708540358,
+        "receive_wall": 1793348037.9032497,
+        "source_stamp": 1793348037.902753,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 6.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 25.0 Hz (83.5%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.039930 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "296/2013 (14.7044%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 25.0 Hz (83.3%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.002862 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.1 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.6 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348034.6270964,
+      "receive_gap_s": 0.1688690000155475,
+      "published_source_gap_s": 0.16660094261169434,
+      "source_age_at_arrival_s": 0.042695045471191406,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348034.5844197,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176172.708647094,
+        "receive_wall": 1793348034.903356,
+        "source_stamp": 1793348034.902811,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 3.95586 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 20.4 Hz (68.2%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.048896 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "278/1924 (14.4491%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 20.5 Hz (68.2%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003353 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.1 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.6 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348096.699473,
+      "receive_gap_s": 0.1676834519894328,
+      "published_source_gap_s": 0.16689395904541016,
+      "source_age_at_arrival_s": 0.04385852813720703,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348096.6556327,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176234.710502228,
+        "receive_wall": 1793348096.9052114,
+        "source_stamp": 1793348096.9027846,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 2 min, 5.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 23.7 Hz (78.9%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.042260 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "758/3784 (20.0317%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 23.7 Hz (78.9%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003340 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "29.9 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.4 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348050.1638057,
+      "receive_gap_s": 0.1674104350095149,
+      "published_source_gap_s": 0.16646599769592285,
+      "source_age_at_arrival_s": 0.04500746726989746,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348050.1188128,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176187.708328221,
+        "receive_wall": 1793348049.903037,
+        "source_stamp": 1793348049.902745,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 18.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 21.5 Hz (71.5%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.046588 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "364/2374 (15.3328%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 21.4 Hz (71.4%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.002925 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.1 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.6 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348058.5638993,
+      "receive_gap_s": 0.167307264986448,
+      "published_source_gap_s": 0.16659998893737793,
+      "source_age_at_arrival_s": 0.04439902305603027,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348058.5195138,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176196.708495822,
+        "receive_wall": 1793348058.903205,
+        "source_stamp": 1793348058.9027548,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 27.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 16.7 Hz (55.5%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.060025 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "444/2644 (16.7927%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 16.7 Hz (55.5%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003466 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.1 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.6 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348092.0982234,
+      "receive_gap_s": 0.16688016598345712,
+      "published_source_gap_s": 0.16658306121826172,
+      "source_age_at_arrival_s": 0.04305672645568848,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348092.0551848,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176229.708412679,
+        "receive_wall": 1793348091.9031217,
+        "source_stamp": 1793348091.9027038,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 2 min, 0.95576 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 21.4 Hz (71.3%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.046717 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "714/3632 (19.6586%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 21.4 Hz (71.4%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003479 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "29.9 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.4 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348058.363493,
+      "receive_gap_s": 0.1668536080105696,
+      "published_source_gap_s": 0.16646385192871094,
+      "source_age_at_arrival_s": 0.044135332107543945,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348058.3193717,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176195.70864609,
+        "receive_wall": 1793348057.9033551,
+        "source_stamp": 1793348057.9027867,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 26.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 23.6 Hz (78.8%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.042296 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "428/2614 (16.3734%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 23.7 Hz (79.0%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.002953 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.1 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.6 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348080.5638452,
+      "receive_gap_s": 0.1661391629895661,
+      "published_source_gap_s": 0.16655397415161133,
+      "source_age_at_arrival_s": 0.04285120964050293,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348080.5210047,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176218.708674761,
+        "receive_wall": 1793348080.9033837,
+        "source_stamp": 1793348080.9027681,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 49.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 20.4 Hz (68.1%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.048927 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "626/3304 (18.9467%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 20.5 Hz (68.2%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003336 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.0 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.4 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348003.7582664,
+      "receive_gap_s": 0.165868133015465,
+      "published_source_gap_s": 0.1666109561920166,
+      "source_age_at_arrival_s": 0.042662620544433594,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348003.7156177,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176141.709484737,
+        "receive_wall": 1793348003.904194,
+        "source_stamp": 1793348003.9032965,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 0 min, 32.9561 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 23.7 Hz (79.0%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.042205 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "138/994 (13.8833%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 23.7 Hz (78.9%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003379 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.2 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.8 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "receive_wall": 1793348061.7289085,
+      "receive_gap_s": 0.1657827559974976,
+      "published_source_gap_s": 0.16651511192321777,
+      "source_age_at_arrival_s": 0.04260134696960449,
+      "camera_info_callbacks_in_interval": 1,
+      "camera_info_latest_source_in_interval": 1793348061.686324,
+      "nearest_diagnostic": {
+        "receive_monotonic": 176199.70850913,
+        "receive_wall": 1793348061.9032183,
+        "source_stamp": 1793348061.9027803,
+        "statuses": [
+          {
+            "level": 0,
+            "name": "zed_node: ZED 2i",
+            "message": "Camera grabbing",
+            "hardware_id": "Stereolabs ZED 2i - 'zed' - S/N: 32950075",
+            "values": [
+              {
+                "key": "Uptime",
+                "value": "0 days, 0 hours, 1 min, 30.9558 sec"
+              },
+              {
+                "key": "IPC Enabled",
+                "value": "YES"
+              },
+              {
+                "key": "Camera Grab rate",
+                "value": "30 Hz"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Mean Frequency: 19.6 Hz (65.2%)"
+              },
+              {
+                "key": "Data Capture",
+                "value": "Tot. Processing Time: 0.051092 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Frame Drop rate",
+                "value": "466/2732 (17.0571%)"
+              },
+              {
+                "key": "Input mode",
+                "value": "Live Camera"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Mean Frequency: 19.6 Hz (65.2%)"
+              },
+              {
+                "key": "Video/Depth",
+                "value": "Processing Time: 0.003127 sec (Max. 0.033 sec)"
+              },
+              {
+                "key": "Depth status",
+                "value": "INACTIVE"
+              },
+              {
+                "key": "Positional Tracking",
+                "value": "N/A"
+              },
+              {
+                "key": "TF IMU",
+                "value": "DISABLED"
+              },
+              {
+                "key": "IMU Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Magnetometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Barometer Sensor",
+                "value": "Topics not subscribed"
+              },
+              {
+                "key": "Left CMOS Temp.",
+                "value": "30.1 \u00b0C"
+              },
+              {
+                "key": "Right CMOS Temp.",
+                "value": "30.5 \u00b0C"
+              },
+              {
+                "key": "SVO Recording",
+                "value": "NOT ACTIVE"
+              },
+              {
+                "key": "Streaming Server",
+                "value": "NOT ACTIVE"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "No SDK/physical camera opened. No per-grab timestamp probe inserted into running driver.",
+    "SDK diagnostics expose grab-loop moving averages. Image source gaps can arise from capture, processing, publishing or subscriber loss.",
+    "CameraInfo is a low-bandwidth comparison on the same passive node, not a second independent image subscriber.",
+    "No inference load was added; this is not full rollout runtime validation."
+  ]
+}

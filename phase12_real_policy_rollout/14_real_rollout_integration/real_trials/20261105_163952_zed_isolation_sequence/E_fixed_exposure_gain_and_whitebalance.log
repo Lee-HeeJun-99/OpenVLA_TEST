@@ -1,0 +1,54 @@
+{"elapsed_s": 30.0, "image_count": 211, "diagnostic_count": 30, "receive_gaps_ge_500ms": 4}
+{"elapsed_s": 60.0, "image_count": 387, "diagnostic_count": 60, "receive_gaps_ge_500ms": 14}
+{
+  "duration_requested_s": 60.0,
+  "observation_duration_s": 60.00237120500242,
+  "error": null,
+  "physical_commands": 0,
+  "settings_changed": false,
+  "diagnostic_messages": 61,
+  "streams": {
+    "image": {
+      "count": 389,
+      "receive_hz": 6.46995246728859,
+      "max_receive_gap_s": 1.0990381899900967,
+      "max_source_gap_s": 1.1001498699188232,
+      "max_source_age_s": 0.06253361701965332,
+      "receive_gap_ge_100ms": 211,
+      "receive_gap_ge_500ms": 14,
+      "source_gap_ge_500ms": 16,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75658.400992055,
+        "receive_wall": 1793864579.8737228,
+        "source_timestamp": 1793864579.8262687,
+        "source_age_s": 0.04747295379638672,
+        "receive_gap_s": 0.16758868799661286,
+        "source_gap_s": 0.16663408279418945,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "camera_info": {
+      "count": 393,
+      "receive_hz": 6.525900628900978,
+      "max_receive_gap_s": 1.100034686998697,
+      "max_source_gap_s": 1.1001498699188232,
+      "max_source_age_s": 0.04487276077270508,
+      "receive_gap_ge_100ms": 203,
+      "receive_gap_ge_500ms": 13,
+      "source_gap_ge_500ms": 15,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 75658.388041494,
+        "receive_wall": 1793864579.8607726,
+        "source_timestamp": 1793864579.8262687,
+        "source_age_s": 0.03451871871948242,
+        "receive_gap_s": 0.16568030801136047,
+        "source_gap_s": 0.16663408279418945
+      }
+    }
+  },
+  "limitation": "SDK Data Capture frequency/processing time are aggregate diagnostics, not per-grab timestamps. Image header gaps alone do not separate grabbing from wrapper publishing."
+}

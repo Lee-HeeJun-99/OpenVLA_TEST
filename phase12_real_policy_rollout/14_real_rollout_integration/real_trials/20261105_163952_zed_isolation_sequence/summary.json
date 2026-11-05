@@ -1,0 +1,11 @@
+{
+  "error": null,
+  "physical_commands": 0,
+  "driver_untouched": true,
+  "results": [
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_163952_zed_isolation_sequence/F_sdk_only/summary.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_163952_zed_isolation_sequence/D_fixed_exposure_gain/summary.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_163952_zed_isolation_sequence/E_fixed_exposure_gain_and_whitebalance/summary.json",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_163952_zed_isolation_sequence/C_model_server_off/summary.json"
+  ]
+}

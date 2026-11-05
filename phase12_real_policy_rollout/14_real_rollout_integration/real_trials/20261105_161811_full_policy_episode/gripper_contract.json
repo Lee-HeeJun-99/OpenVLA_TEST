@@ -1,0 +1,30 @@
+{
+  "polarity_confirmed": true,
+  "abort_value": 0,
+  "abort_value_confirmed": true,
+  "abort_behavior": "BOTH_OUTPUTS_OFF",
+  "abort_policy_operator_approved": true,
+  "abort_max_attempts": 3,
+  "abort_policy_source": "OPERATOR_SPECIFIED_BOTH_OFF_MAX_3_TOTAL_ATTEMPTS",
+  "physical_jaw_abort_state_verified": false,
+  "gripper_open_output_index": 1,
+  "gripper_closed_output_index": 2,
+  "gripper_open_hardware_value": 1,
+  "gripper_closed_hardware_value": 1,
+  "inactive_hardware_value": 0,
+  "open_pulse_count": 2,
+  "closed_pulse_count": 1,
+  "open_pulse_time_s": 1.0,
+  "closed_pulse_time_s": 4.0,
+  "measured_gripper_state": "UNKNOWN",
+  "command_mode": "operator_timed_pulse",
+  "normal_command_contract_source": "OPERATOR_DEFINED_DO1_DOUBLE_PULSE_DO2_SINGLE_PULSE",
+  "startup_output_state": [
+    0,
+    0
+  ],
+  "open_first_high_hold_s": 1.3,
+  "open_second_high_hold_s": 0.5,
+  "open_between_pulses_low_hold_s": 0.2,
+  "close_high_hold_s": 0.5
+}

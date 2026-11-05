@@ -1,0 +1,23 @@
+{
+  "status": "INVALID",
+  "reason": "raw_translation_step_limit",
+  "evaluation_scope": "FULL_POLICY_ROLLOUT",
+  "termination": null,
+  "task_success": null,
+  "task_performance_denominator_included": false,
+  "steps_attempted": 2,
+  "steps_completed": 1,
+  "duration_s": 5.049203397007659,
+  "arm_commands": 1,
+  "physical_gripper_commands": 8,
+  "stop_commands": 1,
+  "gripper_abort_behavior": "BOTH_OUTPUTS_OFF_MAX_3_ATTEMPTS",
+  "unexpected_motion": null,
+  "estop_used": null,
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "auto_next_episode": false,
+  "runtime_valid": false,
+  "episode_ended_wall_time": 1793862826.3008442
+}

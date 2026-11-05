@@ -1,0 +1,52 @@
+{
+  "duration_requested_s": 60.0,
+  "observation_duration_s": 60.00490440400608,
+  "error": null,
+  "physical_commands": 0,
+  "settings_changed": false,
+  "diagnostic_messages": 60,
+  "streams": {
+    "image": {
+      "count": 643,
+      "receive_hz": 10.760203965277416,
+      "max_receive_gap_s": 0.8988629649975337,
+      "max_source_gap_s": 0.8998661041259766,
+      "max_source_age_s": 0.055738210678100586,
+      "receive_gap_ge_100ms": 166,
+      "receive_gap_ge_500ms": 9,
+      "source_gap_ge_500ms": 11,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 74995.058045517,
+        "receive_wall": 1793863916.5307765,
+        "source_timestamp": 1793863916.4874766,
+        "source_age_s": 0.0433199405670166,
+        "receive_gap_s": 0.03123076699557714,
+        "source_gap_s": 0.0332489013671875,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "camera_info": {
+      "count": 644,
+      "receive_hz": 10.770778865454117,
+      "max_receive_gap_s": 0.9042456870083697,
+      "max_source_gap_s": 0.8998661041259766,
+      "max_source_age_s": 0.04162287712097168,
+      "receive_gap_ge_100ms": 175,
+      "receive_gap_ge_500ms": 10,
+      "source_gap_ge_500ms": 11,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 74995.047896961,
+        "receive_wall": 1793863916.520629,
+        "source_timestamp": 1793863916.4874766,
+        "source_age_s": 0.03316831588745117,
+        "receive_gap_s": 0.033361567999236286,
+        "source_gap_s": 0.0332489013671875
+      }
+    }
+  },
+  "limitation": "SDK Data Capture frequency/processing time are aggregate diagnostics, not per-grab timestamps. Image header gaps alone do not separate grabbing from wrapper publishing."
+}

@@ -1,0 +1,14 @@
+{
+  "only_fps_changed": true,
+  "changes": [
+    {
+      "parameter": "general.grab_frame_rate",
+      "before": 60,
+      "after": 30
+    }
+  ],
+  "usbfs_memory_mb_before": "16",
+  "usbfs_memory_mb_after": "16",
+  "depth_mode": "NONE",
+  "physical_commands": 0
+}

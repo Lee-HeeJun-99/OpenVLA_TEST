@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "physical_commands": 0,
+  "transport_created": false,
+  "samples": [],
+  "reason": "fresh_camera_timeout"
+}

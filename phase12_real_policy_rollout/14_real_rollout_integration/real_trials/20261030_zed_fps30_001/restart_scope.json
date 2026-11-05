@@ -1,0 +1,22 @@
+{
+  "target": "ZED_ONLY",
+  "old_launch_pid": 71185,
+  "old_container_pid": 71202,
+  "original_command": [
+    "/usr/bin/python3",
+    "/opt/ros/humble/bin/ros2",
+    "launch",
+    "zed_wrapper",
+    "zed_camera.launch.py",
+    "camera_model:=zed2i"
+  ],
+  "driver_restart": false,
+  "physical_commands": 0,
+  "usbfs_memory_mb_before": "16",
+  "ros_environment": {
+    "ROS_LOCALHOST_ONLY": "1",
+    "ROS_DOMAIN_ID": null,
+    "RMW_IMPLEMENTATION": null
+  },
+  "parameter_dump_note": "Raw dump contains empty-name image_transport branch rejected by ROS YAML parser. Override excludes that branch; its regenerated values are included in exact before/after comparison."
+}
