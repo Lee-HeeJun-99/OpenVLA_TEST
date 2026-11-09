@@ -1,0 +1,37 @@
+{
+  "scope": "OFFLINE_REPLAY_AND_SOFTWARE_INTEGRATION_ONLY",
+  "physical_commands_issued_by_this_work": 0,
+  "saved_image_replay": {"images": 4, "predictions": 20, "repeats_per_image": 5, "result": "replay_summary.json"},
+  "entrypoints": {
+    "moveline_full_policy": "start_full_policy_confirmed.py --controller moveline",
+    "servo_full_policy": "start_servo_full_policy_confirmed.py",
+    "legacy_servo_arm_only": "start_servo_episode_confirmed.py"
+  },
+  "limits_unchanged": {
+    "moveline_duration_s": 500, "moveline_actions": 150,
+    "servo_duration_s": 500, "servo_predictions": 2000,
+    "translation_hard_gate_m": 0.05, "rotation_hard_gate_deg": 4
+  },
+  "gripper": {
+    "initialization": "OFF/OFF then existing OPEN sequence, ACK plus fresh actual OPEN confirmation required",
+    "open": "DO1=1, wait 1.3s, DO1=0, wait 0.2s, DO1=1, wait 0.5s, DO1=0",
+    "close": "DO2=1, wait 0.5s, DO2=0",
+    "normal_dispatch": "STATE_TRANSITIONS_ONLY",
+    "fault": "BOTH_OUTPUTS_OFF, at most 3 attempts with electrical readback; no automatic episode retry",
+    "abort_physical_jaw_state": "UNKNOWN",
+    "servo_worker": "Serial latest-intent mailbox concurrent with 20Hz arm stream; explicitly approved separately",
+    "moveline": "Existing synchronous Controller/FullPolicyGripper path"
+  },
+  "software_tests": {
+    "passed": 362, "warnings": 6,
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /usr/bin/python3 -m pytest tests ../tests ../15_valid_invalid_rollout_policy/tests -q",
+    "fake_transport_is_not_hardware_validation": true
+  },
+  "unresolved": [
+    "ServoL joint-limit SAFE_OFF2 and failed HOLD ACK in historical physical trials",
+    "Discrete interpolator fixed-goal overshoot/limit-cycle reproduction",
+    "Formal active TCP verification",
+    "New combined ServoL/gripper path has not been physically validated",
+    "Image differences include other scene changes, so cube-only localization is not established"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "SYNTHETIC_FIXED_TARGET_CHARACTERIZATION_NOT_ROBOT_RESPONSE",
+  "requested_delta_mm": 0.8,
+  "max_command_delta_mm": 1.0,
+  "virtual_overshoot_mm": 0.19999999999999996,
+  "final_delta_mm": 0.8499929455307438,
+  "last_second_delta_min_mm": 0.7500073500800681,
+  "last_second_delta_max_mm": 0.8499929455307438,
+  "crossings_of_target": 47,
+  "nominal_duration_s": 7.5,
+  "source_timestamp_refreshed_synthetically": true,
+  "physical_commands": 0
+}

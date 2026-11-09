@@ -1,0 +1,594 @@
+{
+  "physical_commands": 0,
+  "scope": "EXISTING_NOVEMBER_PHYSICAL_EPISODE_LOGS_ONLY",
+  "coordinate": "BASE/base_link +Z upward; raw m converted to mm; measured joints radians reordered by name",
+  "actual_trajectory": "URDF FK flange from measured JointState, not independent measured TCP",
+  "sign_epsilon_mm": 1e-09,
+  "sign_epsilon_is_not_hardware_tolerance": true,
+  "matching": "MoveLine settled before/after with dispatch/ACK; ServoL source_monotonic exact join to publish-return paired requests, first publish to next-source first publish",
+  "limitations": [
+    "Servo publish return is not vendor ACK",
+    "Continuous windows include previous-target inertia and are not isolated settled step responses",
+    "Servo final window includes at most 0.2s after last publish; stop/fault transient can contribute",
+    "No formal active TCP verification; flange FK has nominal-model bias",
+    "No inference, ROS import, service call or robot command performed"
+  ],
+  "inventory": [
+    {
+      "trial": "20261105_161322_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/jointstate.json"
+    },
+    {
+      "trial": "20261105_161811_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "OPERATOR_RESULT_CONFIRMATION_PENDING",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/jointstate.json"
+    },
+    {
+      "trial": "20261105_162144_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/jointstate.json"
+    },
+    {
+      "trial": "20261105_162501_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/jointstate.json"
+    },
+    {
+      "trial": "20261105_175259_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/jointstate.json"
+    },
+    {
+      "trial": "20261106_101231_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/jointstate.json"
+    },
+    {
+      "trial": "20261106_110547_arm_only_servo_episode",
+      "controller": "ServoL",
+      "status": "ARM_ONLY_SERVO_EPISODE_OPERATOR_RESULT_PENDING",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/jointstate.json"
+    },
+    {
+      "trial": "20261106_111406_arm_only_servo_episode",
+      "controller": "ServoL",
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/jointstate.json"
+    },
+    {
+      "trial": "20261106_125319_arm_only_servo_episode",
+      "controller": "ServoL",
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/jointstate.json"
+    },
+    {
+      "trial": "20261106_132009_arm_only_moveline_episode",
+      "controller": "MoveLine",
+      "status": "OPERATOR_ABORT",
+      "prediction_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/predictions.jsonl",
+      "trajectory_file": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/jointstate.json"
+    }
+  ],
+  "trials": [
+    {
+      "trial": "20261105_161322_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "predictions_logged": 2,
+      "submitted_prediction_windows": 1,
+      "matched_feedback_windows": 1,
+      "raw_directions": {
+        "DOWN": 1
+      },
+      "limited_directions": {
+        "DOWN": 1
+      },
+      "submitted_directions": {
+        "DOWN": 1
+      },
+      "observed_directions": {
+        "DOWN": 1
+      },
+      "raw_vs_limited_mismatches": 0,
+      "raw_vs_observed_mismatches": 0,
+      "submitted_vs_observed_mismatches": 0,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 724.2848996878239,
+      "net_observed_z_mm": -0.21886232915687742,
+      "min_fk_z_mm": 724.2440933435525,
+      "max_fk_z_mm": 724.5038815233748,
+      "net_submitted_z_mm": -0.21644124974977785,
+      "max_feedback_boundary_age_ms": 22.74388200021349,
+      "all_prediction_raw_directions": {
+        "DOWN": 1,
+        "UP": 1
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 1,
+      "driver_alarm_counts": {},
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -0.21644124974977785
+    },
+    {
+      "trial": "20261105_161811_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "OPERATOR_RESULT_CONFIRMATION_PENDING",
+      "predictions_logged": 10,
+      "submitted_prediction_windows": 10,
+      "matched_feedback_windows": 10,
+      "raw_directions": {
+        "DOWN": 10
+      },
+      "limited_directions": {
+        "DOWN": 10
+      },
+      "submitted_directions": {
+        "DOWN": 10
+      },
+      "observed_directions": {
+        "DOWN": 10
+      },
+      "raw_vs_limited_mismatches": 0,
+      "raw_vs_observed_mismatches": 0,
+      "submitted_vs_observed_mismatches": 0,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 718.0022829507636,
+      "net_observed_z_mm": -6.5014790662171436,
+      "min_fk_z_mm": 717.9811345702011,
+      "max_fk_z_mm": 724.528226913975,
+      "net_submitted_z_mm": -6.46086787774459,
+      "max_feedback_boundary_age_ms": 17.260521999560297,
+      "all_prediction_raw_directions": {
+        "DOWN": 10
+      },
+      "predictions_without_paired_dispatch_window": 0,
+      "summary_reported_arm_submissions": 10,
+      "driver_alarm_counts": {},
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -6.46086787774459
+    },
+    {
+      "trial": "20261105_162144_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "predictions_logged": 6,
+      "submitted_prediction_windows": 5,
+      "matched_feedback_windows": 5,
+      "raw_directions": {
+        "DOWN": 5
+      },
+      "limited_directions": {
+        "DOWN": 5
+      },
+      "submitted_directions": {
+        "DOWN": 5
+      },
+      "observed_directions": {
+        "DOWN": 5
+      },
+      "raw_vs_limited_mismatches": 0,
+      "raw_vs_observed_mismatches": 0,
+      "submitted_vs_observed_mismatches": 0,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 723.1911957030964,
+      "net_observed_z_mm": -1.3125663138844175,
+      "min_fk_z_mm": 723.16530690033,
+      "max_fk_z_mm": 724.5042242354369,
+      "net_submitted_z_mm": -1.3092024213991635,
+      "max_feedback_boundary_age_ms": 18.420680993585847,
+      "all_prediction_raw_directions": {
+        "DOWN": 6
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 6,
+      "driver_alarm_counts": {},
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -1.3092024213991635
+    },
+    {
+      "trial": "20261105_162501_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "predictions_logged": 3,
+      "submitted_prediction_windows": 3,
+      "matched_feedback_windows": 2,
+      "raw_directions": {
+        "DOWN": 3
+      },
+      "limited_directions": {
+        "DOWN": 3
+      },
+      "submitted_directions": {
+        "DOWN": 3
+      },
+      "observed_directions": {
+        "DOWN": 2
+      },
+      "raw_vs_limited_mismatches": 0,
+      "raw_vs_observed_mismatches": 0,
+      "submitted_vs_observed_mismatches": 0,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 724.2495622444847,
+      "net_observed_z_mm": -0.254199772496122,
+      "min_fk_z_mm": 724.2210992118196,
+      "max_fk_z_mm": 724.5073807020129,
+      "net_submitted_z_mm": -0.6148312929930171,
+      "max_feedback_boundary_age_ms": 16.107650008052588,
+      "all_prediction_raw_directions": {
+        "DOWN": 3
+      },
+      "predictions_without_paired_dispatch_window": 0,
+      "summary_reported_arm_submissions": 3,
+      "driver_alarm_counts": {},
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -0.25462023070394935
+    },
+    {
+      "trial": "20261105_175259_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "predictions_logged": 51,
+      "submitted_prediction_windows": 50,
+      "matched_feedback_windows": 50,
+      "raw_directions": {
+        "DOWN": 50
+      },
+      "limited_directions": {
+        "DOWN": 50
+      },
+      "submitted_directions": {
+        "DOWN": 50
+      },
+      "observed_directions": {
+        "DOWN": 50
+      },
+      "raw_vs_limited_mismatches": 0,
+      "raw_vs_observed_mismatches": 0,
+      "submitted_vs_observed_mismatches": 0,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 633.6056251047006,
+      "net_observed_z_mm": -90.89813691228017,
+      "min_fk_z_mm": 633.546952522804,
+      "max_fk_z_mm": 724.5037620169808,
+      "net_submitted_z_mm": -90.56181636912777,
+      "max_feedback_boundary_age_ms": 18.196136996266432,
+      "all_prediction_raw_directions": {
+        "DOWN": 51
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 51,
+      "driver_alarm_counts": {},
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -90.56181636912777
+    },
+    {
+      "trial": "20261106_101231_full_policy_episode",
+      "controller": "MoveLine",
+      "status": "INVALID",
+      "predictions_logged": 84,
+      "submitted_prediction_windows": 83,
+      "matched_feedback_windows": 83,
+      "raw_directions": {
+        "DOWN": 71,
+        "UP": 12
+      },
+      "limited_directions": {
+        "DOWN": 68,
+        "UP": 15
+      },
+      "submitted_directions": {
+        "DOWN": 68,
+        "UP": 15
+      },
+      "observed_directions": {
+        "DOWN": 65,
+        "UP": 7,
+        "ZERO": 11
+      },
+      "raw_vs_limited_mismatches": 7,
+      "raw_vs_observed_mismatches": 16,
+      "submitted_vs_observed_mismatches": 18,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 669.9134925299174,
+      "net_observed_z_mm": -54.590269487063324,
+      "min_fk_z_mm": 669.8805701135818,
+      "max_fk_z_mm": 724.5043628778258,
+      "net_submitted_z_mm": -36.23678125345987,
+      "max_feedback_boundary_age_ms": 22.4325520102866,
+      "all_prediction_raw_directions": {
+        "DOWN": 71,
+        "UP": 13
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 83,
+      "driver_alarm_counts": {
+        "3205": 54,
+        "1206": 16
+      },
+      "stationary_identical_joint_windows": 11,
+      "unreachable_1206_windows": 16,
+      "net_submitted_z_mm_matched_feedback_only": -36.23678125345987
+    },
+    {
+      "trial": "20261106_110547_arm_only_servo_episode",
+      "controller": "ServoL",
+      "status": "ARM_ONLY_SERVO_EPISODE_OPERATOR_RESULT_PENDING",
+      "predictions_logged": 150,
+      "submitted_prediction_windows": 149,
+      "matched_feedback_windows": 149,
+      "raw_directions": {
+        "DOWN": 135,
+        "UP": 14
+      },
+      "limited_directions": {
+        "DOWN": 127,
+        "UP": 22
+      },
+      "submitted_directions": {
+        "DOWN": 122,
+        "UP": 27
+      },
+      "observed_directions": {
+        "DOWN": 130,
+        "UP": 19
+      },
+      "raw_vs_limited_mismatches": 8,
+      "raw_vs_observed_mismatches": 13,
+      "submitted_vs_observed_mismatches": 22,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 659.6383331857463,
+      "net_observed_z_mm": -64.86542883123445,
+      "min_fk_z_mm": 659.6383331857463,
+      "max_fk_z_mm": 724.5037620169808,
+      "net_submitted_z_mm": -64.31674081950268,
+      "max_feedback_boundary_age_ms": 11.98930200189352,
+      "all_prediction_raw_directions": {
+        "DOWN": 136,
+        "UP": 14
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 1379,
+      "driver_alarm_counts": {
+        "1216": 13,
+        "1215": 2,
+        "3205": 1
+      },
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -64.31674081950268,
+      "stream_publish_returns": 1379,
+      "stream_increment_directions": {
+        "DOWN": 1031,
+        "UP": 348
+      }
+    },
+    {
+      "trial": "20261106_111406_arm_only_servo_episode",
+      "controller": "ServoL",
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "predictions_logged": 124,
+      "submitted_prediction_windows": 123,
+      "matched_feedback_windows": 123,
+      "raw_directions": {
+        "DOWN": 99,
+        "UP": 24
+      },
+      "limited_directions": {
+        "DOWN": 90,
+        "UP": 33
+      },
+      "submitted_directions": {
+        "DOWN": 82,
+        "UP": 41
+      },
+      "observed_directions": {
+        "DOWN": 87,
+        "UP": 36
+      },
+      "raw_vs_limited_mismatches": 11,
+      "raw_vs_observed_mismatches": 16,
+      "submitted_vs_observed_mismatches": 23,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 698.1261140433908,
+      "net_observed_z_mm": -26.37764797359,
+      "min_fk_z_mm": 677.1824298011533,
+      "max_fk_z_mm": 724.5037620169808,
+      "net_submitted_z_mm": -22.748424546636443,
+      "max_feedback_boundary_age_ms": 14.35329401283525,
+      "all_prediction_raw_directions": {
+        "DOWN": 99,
+        "UP": 25
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 1131,
+      "driver_alarm_counts": {
+        "1216": 12,
+        "1215": 1,
+        "3205": 1,
+        "9008": 1,
+        "7057": 1
+      },
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": -22.748424546636443,
+      "stream_publish_returns": 1131,
+      "stream_increment_directions": {
+        "DOWN": 686,
+        "UP": 445
+      }
+    },
+    {
+      "trial": "20261106_125319_arm_only_servo_episode",
+      "controller": "ServoL",
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "predictions_logged": 135,
+      "submitted_prediction_windows": 134,
+      "matched_feedback_windows": 134,
+      "raw_directions": {
+        "DOWN": 91,
+        "UP": 43
+      },
+      "limited_directions": {
+        "DOWN": 82,
+        "UP": 52
+      },
+      "submitted_directions": {
+        "DOWN": 73,
+        "UP": 61
+      },
+      "observed_directions": {
+        "DOWN": 85,
+        "UP": 49
+      },
+      "raw_vs_limited_mismatches": 9,
+      "raw_vs_observed_mismatches": 14,
+      "submitted_vs_observed_mismatches": 26,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 721.3233374889027,
+      "net_observed_z_mm": -3.180424528078106,
+      "min_fk_z_mm": 694.0145838221057,
+      "max_fk_z_mm": 724.5042495346814,
+      "net_submitted_z_mm": 1.141685869915932,
+      "max_feedback_boundary_age_ms": 10.89259100263007,
+      "all_prediction_raw_directions": {
+        "DOWN": 92,
+        "UP": 43
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 1039,
+      "driver_alarm_counts": {
+        "1216": 10,
+        "3205": 1,
+        "9008": 1,
+        "7057": 1
+      },
+      "stationary_identical_joint_windows": 0,
+      "unreachable_1206_windows": 0,
+      "net_submitted_z_mm_matched_feedback_only": 1.141685869915932,
+      "stream_publish_returns": 1039,
+      "stream_increment_directions": {
+        "DOWN": 558,
+        "UP": 481
+      }
+    },
+    {
+      "trial": "20261106_132009_arm_only_moveline_episode",
+      "controller": "MoveLine",
+      "status": "OPERATOR_ABORT",
+      "predictions_logged": 102,
+      "submitted_prediction_windows": 101,
+      "matched_feedback_windows": 101,
+      "raw_directions": {
+        "DOWN": 34,
+        "UP": 67
+      },
+      "limited_directions": {
+        "DOWN": 32,
+        "UP": 69
+      },
+      "submitted_directions": {
+        "DOWN": 32,
+        "UP": 69
+      },
+      "observed_directions": {
+        "DOWN": 35,
+        "UP": 15,
+        "ZERO": 51
+      },
+      "raw_vs_limited_mismatches": 4,
+      "raw_vs_observed_mismatches": 58,
+      "submitted_vs_observed_mismatches": 54,
+      "start_fk_z_mm": 724.5037620169808,
+      "end_fk_z_mm": 701.3597525287265,
+      "net_observed_z_mm": -23.144009488254255,
+      "min_fk_z_mm": 685.0561707083364,
+      "max_fk_z_mm": 724.504054577661,
+      "net_submitted_z_mm": 208.07239105649944,
+      "max_feedback_boundary_age_ms": 18.801413010805845,
+      "all_prediction_raw_directions": {
+        "DOWN": 34,
+        "UP": 68
+      },
+      "predictions_without_paired_dispatch_window": 1,
+      "summary_reported_arm_submissions": 102,
+      "driver_alarm_counts": {
+        "3205": 22,
+        "1206": 59
+      },
+      "stationary_identical_joint_windows": 50,
+      "unreachable_1206_windows": 58,
+      "net_submitted_z_mm_matched_feedback_only": 208.07239105649944
+    }
+  ],
+  "input_sha256": {
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/predictions.jsonl": "b542468bcc3bc0d9e13f2b3025cbe8557905ec0c9cc1862b2d32862e5d7d4010",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/episode_records.json": "9a7b786b2dc24bf4e11d4966117a493e3e95ba4d2e7c470bbd4636f54be96e7e",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/jointstate.json": "2b8dccea623d53208f197f37fe26711a482fd388afc4a2941500c645feb3f24e",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/arm_commands.json": "a334fbb51ca34bb7b065f62ddf60b0fe6b6793960e6097f4001920e71f82d0e1",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/preflight.json": "d8d22eb361dd66557553ba4b9ac859f6dd8e90a874cdab177503cd640eca750e",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/predictions.jsonl": "d6061293687b46c2d560af22e4f85a75899ad699b0260f6d7bbc3d3be14f5bf4",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/episode_records.json": "e7940fe0717ef949af467beb59ab22e8cac71570f92ddd4bc28092581c2429e5",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/jointstate.json": "b0126978e45dca14c6b1a2b219f2f8aba36a4e07ee28d7b130124a91b9df180d",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/arm_commands.json": "7d1d67913a073536b5e1548ad3c83ebce83bf173d671abdd69277d43de9c3d82",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/preflight.json": "8065fb59353d10b2d54f904c1995c1a5a664640913d3dc25cdde8cbe52c31ed0",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/predictions.jsonl": "553e7611eb9e57633fc3182a1e9930d42c5f3c73a548807f71f3f3e341102bf8",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/episode_records.json": "6385208fed3e36e9e7d6cce8282bbb40e63c685e44a044ee30dd7609e907c196",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/jointstate.json": "412e096d6bd209c5e1eff46c87c5715fa3cc51077509bb45af0c9b13e5b7a00c",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/arm_commands.json": "717a19899705b3c99fad62724eb3ea50f3a5dc919231c7e51908d178fde11d24",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/preflight.json": "3989fa811cdce69c9017f02cf4bbec99e8b8dfdefc78318d56100b6036ec40d6",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/predictions.jsonl": "27719e94b7caef6f77c74c238a6ce9182ae3dc9a3f156dbaa97738bd1fc80d05",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/episode_records.json": "0f77f852029bd6ad4fb202fc443b36de2fd1a13c1e5cafe2cabf00fd316f6e4f",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/jointstate.json": "f15d2fa9b211682cde07064550535ff69f0eaf51ff72d3a214f24e39df1354cc",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/arm_commands.json": "c78a97d63a200b1a5a4296dd76aa4f1886cc222293848549256beac72a61538a",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/preflight.json": "31734137fdad593dbc0c05e307fb4e750f6d1ffd670f8d87fdbd96356e14d0e7",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/predictions.jsonl": "1803565378d82bb0ae5a31afae5b9264cccc90bd34b238d72d1d3bca7e2f79b6",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/episode_records.json": "09594d09e36f16069031e3b8904fa86e038575b1f8611db7555b351b7f79dd77",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/jointstate.json": "99acdfadbd82dfa167599b7985af73bfef99ea0e0eb0f1e56d3ca3a2daa2ff2c",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/arm_commands.json": "1409ebb23f81a2bb41b2b524646b93c701522678afebc5fc98fef10e0a210d00",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/preflight.json": "0ada316bb97167c1226cc08e2f02037b7a123ff2f17396019fbb8547e91cb13d",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/predictions.jsonl": "453e2de979d2a0c0d83b4c2dcaccd83e403e8462f21b6b5bf6e8b902afca0639",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/episode_records.json": "a5b0f9ae07d8f25e93092f894c19f513122bb5fb0e002f3701c5b1ec1d5d1ef3",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/jointstate.json": "aa67de9e8172a82274cfd857f55b401fb2890e0b9ad718d4c8d592cf64e14955",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/arm_commands.json": "333701a7bc1c5b07284cd825e341fa65b3138f399bf9f0874439eb928d7657e0",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/preflight.json": "cd5ac60c23c5a023fe84828d18e0a4ccfe19e5d35899b9971cb2c51f7c8186f7",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/predictions.jsonl": "5c8c8e310c1fa954faff4f0d0be295903622c9f8fe0a8c5b82509ca020a5bd11",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/servo_commands.jsonl": "8f11dd8224a533040438045e5c2f7a4565981b9d58b42758329e000a8fc1286a",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/jointstate.json": "8d2697b0aed1e0a219c1442b97d5e70ba78e629bd8c1adfd844f30881e01e556",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/preflight.json": "f901ea298ca9627590592eeaf0f079046de95aae9f809f124063a3107633ba0c",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/predictions.jsonl": "9279db1ae60ac32225307e012c75bd942be44a668313a4309ba513e7ee41b4b7",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/servo_commands.jsonl": "03652eae40ff27f891a7a9c1a59e68b48a2295574b00ab2731c9428a7d94b24f",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/jointstate.json": "7a12945abb0c29cad0b397de0cbb364b5a54e87a781e7bfc9ae6591cb3980a52",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/preflight.json": "f9d8f5a7a9dc527bc86b13c4b02eb62c8f12fca30638209c5e3e9e2e26bd6689",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/predictions.jsonl": "0c2361cd4b785954520e21b8df2b99444119e095a0a70b9be80b77b63ee17e48",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/servo_commands.jsonl": "d7cab4a567ad905c14ad1b063da678f863d867f63e16d624f781b117ddf6757f",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/jointstate.json": "2dcf23582dea98c55b3c90435006bb3f5f6e098f3cd2a069c789ec5c6cda84a1",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/preflight.json": "fed6df86e2d04793e8a9675f446cb5019ca8e82c0d372676b54213a3ac6d04f4",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/predictions.jsonl": "d46db4bece16f8dcc338aeb7c004a6cfafbbe7d8c473156d158a1fab0760dcd4",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/episode_records.json": "0fb02f0598382ccb1613b7c7936042bd94e29f1d999b8bbd533abd1f39363230",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/jointstate.json": "a21bcfb0d3806423130acd980e56d8221250dbbccd8832fc019cb83f247de9a9",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/arm_commands.json": "353d3dee1ed17512c88d539b9b4d4e78ff13ad477e9f0a183750a562984710bb",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/preflight.json": "c476dc1e206aaed9d8e6d56bb003c9a8cb4bbaadb6c3176494dfc602d321197b"
+  },
+  "urdf_sha256": "fc1541ff6acb04e503174c6817c0b0fb721a342a0a7fa85e55be5cf5297a0742"
+}

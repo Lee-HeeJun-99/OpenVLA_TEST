@@ -1,0 +1,7 @@
+image_a,image_b,translation_difference_mm,rotation_delta_difference_deg,gripper_abs_difference
+right,center_lower,1.1099211133172797,0.16016324615572164,0.0
+right,left,0.47577700479371426,0.20189793429992794,0.0
+right,center_lower_moveline,1.5272639026772015,0.5264132097172775,0.0
+center_lower,left,1.0521223667990285,0.18216006380637204,0.0
+center_lower,center_lower_moveline,0.680259188396739,0.3863434405167559,0.0
+left,center_lower_moveline,1.3114726251180246,0.4500809637104244,0.0

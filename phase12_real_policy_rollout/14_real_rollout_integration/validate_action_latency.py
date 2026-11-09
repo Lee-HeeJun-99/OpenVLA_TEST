@@ -9,13 +9,14 @@ from urllib.request import urlopen
 from run_arm_only_once import FsyncJsonlLogger,JointStateStartup,validate_identity
 from rollout_latency import select_fresh_frame,predict_frame,warm_up,archive_request_jpeg,deferred_artifacts
 from settle_window import wait_for_settle,SETTLE_CLEAN_SECONDS
+from camera_inference_timing import CAMERA_STREAM_TIMEOUT_S, camera_stream_lost
 import yaml
 
 def run(output,count=5):
     if not 1<=count<=20:raise ValueError('bounded_sample_count_required')
     output.mkdir(parents=True,exist_ok=False)
     def save(name,obj):(output/name).write_text(json.dumps(obj,indent=2,allow_nan=False))
-    result=dict(status='BLOCKED',physical_commands=0,transport_created=False,samples=[])
+    result=dict(status='BLOCKED',physical_commands=0,transport_created=False,samples=[],camera_stream_timeout_s=CAMERA_STREAM_TIMEOUT_S,camera_inference_start_age_limit_s=.5)
     limits=yaml.safe_load((Path(__file__).parent.parent/'01_configs/safety_limits.yaml').read_text())
     age_limit=limits['max_action_age_sec']
     try:
@@ -55,7 +56,7 @@ def run(output,count=5):
         with lock:s=gate.status(time.monotonic());latest=cam[0]
         if errors:raise RuntimeError('executor_error:'+errors[0])
         if s['fault']:raise RuntimeError('jointstate:'+s['fault'])
-        if s['phase']=='RUNTIME_READY' and latest and time.monotonic()-latest[1]>=.5:raise RuntimeError('camera_stream_loss')
+        if s['phase']=='RUNTIME_READY' and latest and camera_stream_lost(latest[1],time.monotonic()):raise RuntimeError('camera_stream_loss')
         return s
     def snapshot():
         with lock:return cam[0]

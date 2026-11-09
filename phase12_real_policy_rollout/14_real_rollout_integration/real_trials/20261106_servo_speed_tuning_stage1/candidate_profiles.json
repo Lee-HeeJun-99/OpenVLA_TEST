@@ -1,0 +1,278 @@
+[
+  {
+    "name": "baseline",
+    "changed_fields": [],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1092371757180068,
+      "median": 0.582836571552001,
+      "p95": 0.8316765959687508,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "linear_velocity_mm_s_x1.5",
+    "changed_fields": [
+      "linear_velocity_mm_s"
+    ],
+    "linear_velocity_mm_s": 30.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1092371757180068,
+      "median": 0.582836571552001,
+      "p95": 0.8316765959687508,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "linear_velocity_mm_s_x2",
+    "changed_fields": [
+      "linear_velocity_mm_s"
+    ],
+    "linear_velocity_mm_s": 40.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1092371757180068,
+      "median": 0.582836571552001,
+      "p95": 0.8316765959687508,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "linear_velocity_mm_s_x4",
+    "changed_fields": [
+      "linear_velocity_mm_s"
+    ],
+    "linear_velocity_mm_s": 80.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1092371757180068,
+      "median": 0.582836571552001,
+      "p95": 0.8316765959687508,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "linear_acceleration_mm_s2_x1.5",
+    "changed_fields": [
+      "linear_acceleration_mm_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 30.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1092371757180068,
+      "median": 0.4977155449546642,
+      "p95": 0.6921555055793271,
+      "p99": 0.7650058509372022,
+      "max": 0.8375014593064884
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 0.9,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "linear_acceleration_mm_s2_x2",
+    "changed_fields": [
+      "linear_acceleration_mm_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 40.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1044691275837723,
+      "median": 0.45831111376760103,
+      "p95": 0.6533663468522193,
+      "p99": 0.7650058509372022,
+      "max": 0.8375014593064884
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 0.9,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "linear_acceleration_mm_s2_x4",
+    "changed_fields": [
+      "linear_acceleration_mm_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 80.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.0927870603331997,
+      "median": 0.3924998178523167,
+      "p95": 0.6533663468522193,
+      "p99": 0.7650058509372022,
+      "max": 0.8375014593064884
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 0.9,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "angular_acceleration_deg_s2_x1.5",
+    "changed_fields": [
+      "angular_acceleration_deg_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 30.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.10618249162639569,
+      "median": 0.5706728350612642,
+      "p95": 0.830051700470659,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "angular_acceleration_deg_s2_x2",
+    "changed_fields": [
+      "angular_acceleration_deg_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 40.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.10618249162639569,
+      "median": 0.567396696882068,
+      "p95": 0.830051700470659,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "angular_acceleration_deg_s2_x4",
+    "changed_fields": [
+      "angular_acceleration_deg_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 80.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.10618249162639569,
+      "median": 0.567396696882068,
+      "p95": 0.830051700470659,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "both_accelerations_x2",
+    "changed_fields": [
+      "linear_acceleration_mm_s2",
+      "angular_acceleration_deg_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 40.0,
+    "angular_acceleration_deg_s2": 40.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.07724234770786909,
+      "median": 0.4121276920679383,
+      "p95": 0.5880841607636481,
+      "p99": 0.6053777160206488,
+      "max": 0.6360029136687554
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 0.7000000000000001,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  {
+    "name": "both_accelerations_x4",
+    "changed_fields": [
+      "linear_acceleration_mm_s2",
+      "angular_acceleration_deg_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 80.0,
+    "angular_acceleration_deg_s2": 80.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.0546185878590034,
+      "median": 0.2914182857760005,
+      "p95": 0.4158382979843754,
+      "p99": 0.4280666881774248,
+      "max": 0.4497219731095793
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 0.55,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  }
+]

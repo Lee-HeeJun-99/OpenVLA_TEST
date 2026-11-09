@@ -1,0 +1,33 @@
+{
+  "status": "SERVO_MINIMUM_OPERATOR_OBSERVATION_REQUIRED",
+  "servo_publish_attempts": 10,
+  "gripper_commands": 0,
+  "move_line_commands": 0,
+  "stop_commands": 1,
+  "vendor_ack": null,
+  "unexpected_motion": null,
+  "estop_used": null,
+  "auto_retry": false,
+  "stop_requested_monotonic": 140157.376277396,
+  "stop_response": {
+    "success": true
+  },
+  "stop_ack": true,
+  "controller_pose_after": [
+    305.6175231933594,
+    -11.835258483886719,
+    723.6705322265625,
+    179.9103546142578,
+    -155.562744140625,
+    3.351444959640503
+  ],
+  "observed_translation_mm": [
+    0.52734375,
+    -0.006966590881347656,
+    -0.00726318359375
+  ],
+  "final_robot_state": {
+    "robot_state": 1,
+    "success": true
+  }
+}

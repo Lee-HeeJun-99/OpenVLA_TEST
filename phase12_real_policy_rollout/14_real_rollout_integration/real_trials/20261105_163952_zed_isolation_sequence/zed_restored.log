@@ -196,3 +196,12 @@
 [component_container_isolated-2] [0m[INFO] [1793864661.413452105] [zed.zed_node]: === Subscribers ===[0m
 [component_container_isolated-2] [0m[INFO] [1793864661.413462795] [zed.zed_node]:  * No subscribers[0m
 [component_container_isolated-2] [0m[INFO] [1793864661.427461884] [zed.zed_node]: === zed started ===[0m
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [component_container_isolated-2]: sending signal 'SIGINT' to process[component_container_isolated-2]
+[INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+[component_container_isolated-2] [0m[INFO] [1793864992.778079799] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[robot_state_publisher-1] [0m[INFO] [1793864992.778482158] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 55476]
+[component_container_isolated-2] [0m[INFO] [1793864992.987276339] [zed.zed_node]: === CLOSING CAMERA ===[0m
+[component_container_isolated-2] [0m[INFO] [1793864993.339876643] [zed.zed_node]: === CAMERA CLOSED ===[0m
+[INFO] [component_container_isolated-2]: process has finished cleanly [pid 55478]

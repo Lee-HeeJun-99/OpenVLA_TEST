@@ -1,0 +1,14 @@
+[2026-11-05 16:49:53 UTC][ZED][INFO] Logging level INFO
+[2026-11-05 16:49:55 UTC][ZED][ERROR] [ZED] The camera could not be initialized. Please verify your camera connection and configuration.
+[2026-11-05 16:49:55 UTC][ZED][INFO] [Init]  Failed to open camera. Trying to re-open for 5 seconds.
+[2026-11-05 16:49:55 UTC][ZED][INFO] [Init]  Random wait interval before consecutive openings: [250], [1500] msec.
+[2026-11-05 16:49:55 UTC][ZED][INFO] [Init]  Waiting 320 msec before next opening attempt.
+[2026-11-05 16:49:55 UTC][ZED][INFO] [Init]  Timeout in 4149msec
+[2026-11-05 16:49:55 UTC][ZED][INFO] [Init]  Opening Camera. Attempt #2
+[2026-11-05 16:49:56 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-11-05 16:49:56 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-11-05 16:49:56 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-11-05 16:49:56 UTC][ZED][INFO] [Init]  Serial Number: S/N 32950075
+[2026-11-05 16:49:56 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+[2026-11-05 16:49:56 UTC][ZED][INFO] [Init]  Health check functionality is limited when DEPTH_MODE::NONE is enabled, as it relies on the depth pipeline for image processing.
+{"case": "G_read_no_retrieve", "meta": {"sdk": "5.3.0", "read_api": true, "retrieve": false, "validity_check": 1}, "count": 735, "errors": 0, "hz": 12.233399767015179, "max_receive_gap_s": 0.4667445850063814, "receive_gap_ge_100ms": 204, "receive_gap_ge_500ms": 0, "physical_commands": 0}

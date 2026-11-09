@@ -1,6 +1,14 @@
 """Selected-frame freshness at request start, not response completion."""
 import math
 
+# Operator-requested receive-silence watchdog. Separate from the unchanged
+# 0.5s selected-frame age gate at inference start.
+CAMERA_STREAM_TIMEOUT_S = 1.0
+
+
+def camera_stream_lost(received, now):
+    return received is None or now - received >= CAMERA_STREAM_TIMEOUT_S
+
 
 def inference_timing(received, started, finished, *, source_stamp=None,
                      ros_start=None, ros_end=None):

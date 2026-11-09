@@ -2,6 +2,7 @@
 import base64,io,json,math,threading,time,hashlib
 from urllib.request import urlopen,Request
 from PIL import Image
+from camera_inference_timing import camera_stream_lost
 
 def camera_rgb_image(image):
     """Fast PIL raw decoding with identical RGB pixels and ROS row stride."""
@@ -144,7 +145,7 @@ class LiveObservation:
             camera_receive_monotonic=ci,
             camera={'selected_age':now-ci,'encoding':image.encoding,'resolution':[image.width,image.height],
                     'resolution_valid':image.width>0 and image.height>0 and (not self.evidence.get('camera_resolution') or list(self.evidence['camera_resolution'])==[image.width,image.height]),
-                    'stream_alive':now-ci<.5},
+                    'stream_alive':not camera_stream_lost(ci,now)},
             jointstate={'names':list(joints.name),'position':list(joints.position),'velocity':list(joints.velocity),
                         'source':joint_sample.get('source'),'sample_id':ji,'latest_age':now-ji,
                         'source_gap':joint_status.get('source_gap'),'receive_gap':joint_status.get('receive_gap')},

@@ -1,0 +1,16 @@
+{
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/mock_runtime.yaml": "4e03709bf65651e722c2b1fd048ad769354d27acd2fdcb805137a8fc1d8a6b6c",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/command_disabled_runtime.yaml": "6f140eec093a2d12cb236a5e5494a8b3f079c759249d6bfa94581b8b522f1588",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/action_contract.yaml": "dca98d6c25755bcae3e381fb47aa0b989252a4b0bc76a4a0d1ddf1ce612215f7",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/pre_rollout_verified_config.yaml": "db2dfa8651077f7e4b1377c0e23aaca6958e32af3614af1cd8597b3872297e90",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/future_real_runtime.yaml": "b95859027727a3db1c3032f976de314f9df50b05c8331784793b9643f901949d",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/model_contract.yaml": "54116147f0a819e34510891c1444f2f3dd4ede13dbc1d9764c5afe36d38c4df5",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/safety_limits.yaml": "2c29d3a45bd23211fe51a320e5d3521f4f8cb2b2cb36b151fb4d5fb98c64f6a8",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/offline_preparation.yaml": "f0652ad9ed8596e2262c9da31adaf84b79fbb91d33eefe683656e06c0c4ad418",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/01_configs/shadow_runtime.yaml": "610b6beb689045395cdb860f2243a7548f690babd9991bd44b0dea9ffc26b014",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/configs/full_task.yaml": "2a3c540b4b857c79a2d2b47c219d32a4c683ec7c8ad21ee3dbc236d7efe32fed",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/settle_window.py": "b81aaa32e4d948f97ba3e44f627c632fe4c4ee03490c09bb596b573125d09bec",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/rollout_latency.py": "39859c7a8fec653de1f6e7b8d05c9a9098c8d6d83cb6fc9813c0367f01d1a6a7",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/camera_inference_timing.py": "c35d8277f1125df95b1a3948a71ce51d5e37de1423bb32cd301cac66d2af4238",
+  "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/configs/gripper_hardware.yaml": "4c2bf4e1f0530aabccbdbd7e7d0a694f3e4a89e0f93c335a836cb25cbe001e7e"
+}

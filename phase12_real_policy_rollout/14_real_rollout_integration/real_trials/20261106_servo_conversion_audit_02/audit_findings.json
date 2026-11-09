@@ -1,0 +1,37 @@
+{
+  "confirmed": [
+    "Live servo RuntimeState leaves joint_limits_ok at default True; measured joint limits/target IK not evaluated.",
+    "State-code check happens per prediction and catches SAFE_OFF2 only after the controller enters it.",
+    "Servo interpolation state persists separately from measured CurrentPosX; no following-error guard.",
+    "Measured pose for target construction is read after inference while robot continues moving.",
+    "Discrete servo interpolator overshoots/oscillates in a command-free fixed-goal characterization.",
+    "Per-prediction CurrentPosX slices first six values and discards controller solution-space value.",
+    "Driver servol callback ignores DRFL boolean return; publish return is not robot acceptance."
+  ],
+  "not_observed": [
+    "No extra 1000x scaling in logged target construction.",
+    "No repeated raw-delta addition at each 20Hz tick.",
+    "Logged command SO(3) increments match the interpolator; no 180-degree jump in command rotations, not an IK-branch guarantee."
+  ],
+  "not_proven": [
+    "Unique root cause of joint5 drift: model output, timing mismatch, tracking, IK/singularity contribution.",
+    "The synthetic fixed-goal overshoot caused either physical limit fault.",
+    "HOLD false is a stop-system defect rather than a consequence of already being SAFE_OFF2."
+  ],
+  "fixed_goal_probe": {
+    "kind": "SYNTHETIC_FIXED_TARGET_CHARACTERIZATION_NOT_ROBOT_RESPONSE",
+    "requested_delta_mm": 0.8,
+    "max_command_delta_mm": 1.0,
+    "virtual_overshoot_mm": 0.19999999999999996,
+    "final_delta_mm": 0.8499929455307438,
+    "last_second_delta_min_mm": 0.7500073500800681,
+    "last_second_delta_max_mm": 0.8499929455307438,
+    "crossings_of_target": 47,
+    "nominal_duration_s": 7.5,
+    "source_timestamp_refreshed_synthetically": true,
+    "physical_commands": 0
+  },
+  "physical_commands": 0,
+  "runtime_code_changed": false,
+  "recommendation": "Do not continue full-episode tuning before pre-limit protection and interpolator/feedback behavior are addressed."
+}

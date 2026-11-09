@@ -22,13 +22,17 @@ class FullPolicyLiveMode:
         if not 0<=time.time()-approval.get('confirmed_wall_time',0)<=60:
             raise PermissionError('fresh_operator_approval_expired')
 
-    def make_sink(self,factory,approval):
+    def approved_gripper_config(self,approval):
         self.validate(approval)
         cfg=yaml.safe_load((Path(__file__).parent/'configs/gripper_hardware.yaml').read_text())
         if cfg.get('command_mode')!='operator_timed_pulse':raise PermissionError('current_gripper_contract_required')
         if cfg.get('abort_behavior')!='BOTH_OUTPUTS_OFF' or cfg.get('abort_policy_operator_approved') is not True:
             raise PermissionError('operator_approved_abort_contract_required')
         cfg['polarity_confirmed']=approval['gripper_mapping_confirmed']
+        return cfg
+
+    def make_sink(self,factory,approval):
+        cfg=self.approved_gripper_config(approval)
         return RealDoosanCommandSink(factory,Authorization(True,True,True,'MOTION_ENABLED'),gripper_config=cfg)
 
     def initialize(self,controller,check,save):

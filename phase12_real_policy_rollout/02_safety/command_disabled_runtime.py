@@ -12,17 +12,24 @@ from action_step_limits import RAW_TRANSLATION_STEP_LIMIT_M,raw_translation_exce
 
 ALLOWED_CLOSE_PHASES=frozenset(('grasp_close','lift','post_lift'))
 
-def _supervisor():
+def _supervisor(*,full_endpoint_delta=False,enforce_raw_translation_limit=True):
  return RuntimeSafetySupervisor(max_action_age_sec=1.2,min_command_period_sec=.19,
   max_translation_m=RAW_TRANSLATION_STEP_LIMIT_M,max_rotation_rad=math.radians(4),
   max_translation_velocity_m_s=.02,max_rotation_velocity_rad_s=math.radians(20),
-  max_translation_acceleration_m_s2=.02,max_rotation_acceleration_rad_s2=math.radians(20))
+  max_translation_acceleration_m_s2=.02,max_rotation_acceleration_rad_s2=math.radians(20),
+  dynamics_managed_by_controller=full_endpoint_delta,translation_step_limit_enabled=enforce_raw_translation_limit)
 
 class CommandDisabledPolicyRuntime:
  """Calculates auditable candidates. There is deliberately no command method."""
- def __init__(self,model,*,operator_confirmed_initial_open=False):
+ def __init__(self,model,*,operator_confirmed_initial_open=False,full_endpoint_delta=False,enforce_raw_translation_limit=True):
   if model not in ('openvla','oft'):raise ValueError('unsupported_model')
-  self.model=model;self.limiter=CanonicalActionRateLimiter();self.safety=_supervisor();self.gripper=OpenLoopGripperSupervisor()
+  if type(full_endpoint_delta) is not bool:raise ValueError('invalid_endpoint_delta_mode')
+  if full_endpoint_delta and model!='openvla':raise ValueError('full_endpoint_requires_openvla')
+  if type(enforce_raw_translation_limit) is not bool:raise ValueError('invalid_translation_gate_mode')
+  if not enforce_raw_translation_limit and not full_endpoint_delta:raise PermissionError('disabled_translation_gate_requires_full_endpoint')
+  self.full_endpoint_delta=full_endpoint_delta
+  self.enforce_raw_translation_limit=enforce_raw_translation_limit
+  self.model=model;self.limiter=CanonicalActionRateLimiter();self.safety=_supervisor(full_endpoint_delta=full_endpoint_delta,enforce_raw_translation_limit=enforce_raw_translation_limit);self.gripper=OpenLoopGripperSupervisor()
   if operator_confirmed_initial_open:self.gripper.confirm_initial_open(True)
   self.queue=OFTChunkQueue('sequential_k5',1.2) if model=='oft' else None
  def enqueue_oft(self,actions,chunk_id,inference_monotonic):
@@ -36,7 +43,8 @@ class CommandDisabledPolicyRuntime:
               camera_ok=True,state_ok=True,tcp_ok=True,inference_ok=True,communication_ok=True,logger_ok=True,
               chunk_id=None,chunk_index=0,action_age_sec=None,arm_only=False):
   raw=tuple(float(v) for v in raw_action)
-  limited=self.limiter.limit(raw);a=limited.limited_action
+  if len(raw)!=7 or not all(math.isfinite(v) for v in raw):raise ValueError('invalid_canonical_action')
+  a=raw if self.full_endpoint_delta else self.limiter.limit(raw).limited_action
   safety=self.safety.inspect(action_id=action_id,action=a,source_monotonic=source_monotonic,now_monotonic=now_monotonic,
     camera_ok=camera_ok,state_ok=state_ok,tcp_ok=tcp_ok,inference_ok=inference_ok,communication_ok=communication_ok,logger_ok=logger_ok)
   workspace=PHASE12_DATA_DERIVED_WORKSPACE.inspect_delta(current_position_m,a[:3])
@@ -48,7 +56,7 @@ class CommandDisabledPolicyRuntime:
     initial_state_known=self.gripper.state.value!='UNKNOWN',candidate_executed=False))
   premature=grip.reason=='close_forbidden_outside_grasp_close'
   blockers=[]
-  if raw_translation_exceeds_limit(raw[:3]):blockers.append('raw_translation_step_limit')
+  if self.enforce_raw_translation_limit and raw_translation_exceeds_limit(raw[:3]):blockers.append('raw_translation_step_limit')
   if math.sqrt(sum(v*v for v in raw[3:6])) > math.radians(4)+1e-12:blockers.append('raw_rotation_step_limit')
   if not safety.accepted:blockers.append(safety.hold_reason)
   if not workspace.accepted:blockers.append(workspace.reason)
@@ -60,6 +68,10 @@ class CommandDisabledPolicyRuntime:
    'action_id':action_id,'chunk_id':chunk_id,'chunk_index':chunk_index,'action_age_sec':action_age_sec,
    'raw_canonical_action':list(raw),'limited_canonical_action':list(a),
    'limiter_modified':list(raw)!=list(a),'target_pose_candidate_mm_zyz_deg':target,
+   'delta_limiter_applied':not self.full_endpoint_delta,
+   'raw_translation_gate_enabled':self.enforce_raw_translation_limit,
+   'effective_raw_translation_limit_m':RAW_TRANSLATION_STEP_LIMIT_M if self.enforce_raw_translation_limit else None,
+   'dynamic_profile_owner':'HARDWARE_ENDPOINT_PROFILE' if self.full_endpoint_delta else 'CANONICAL_RATE_LIMITER',
    'gripper':{'raw_closedness':grip.raw_closedness,'command_knowledge_before':grip.command_knowledge_before,
     'command_knowledge_after':grip.command_knowledge_after,'candidate_command':grip.candidate_command,
     'candidate_closed':grip.command_knowledge_after=='COMMAND_CLOSED','suppressed':grip.command_suppressed,

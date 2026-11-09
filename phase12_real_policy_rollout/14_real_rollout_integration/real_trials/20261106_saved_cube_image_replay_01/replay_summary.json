@@ -1,0 +1,197 @@
+{
+  "status": "SAVED_IMAGE_PREDICTION_REPLAY_COMPLETE",
+  "samples": 4,
+  "predictions": 20,
+  "per_image": [
+    {
+      "label": "right",
+      "repeat_count": 5,
+      "mean_raw_action": [
+        0.002274235221040916,
+        -0.0003101546559243261,
+        -0.0005256555129681713,
+        -0.00737239382409223,
+        0.002015085581751017,
+        0.008792772258056004,
+        0.0019607843137254832
+      ],
+      "mean_translation_mm": [
+        2.274235221040916,
+        -0.3101546559243261,
+        -0.5256555129681713
+      ],
+      "mean_rotation_rotvec_rad": [
+        -0.00737239382409223,
+        0.002015085581751017,
+        0.008792772258056004
+      ],
+      "gripper": 0.0019607843137254832,
+      "unique_raw_actions": 1,
+      "same_image_repeat_difference_max": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      },
+      "difference_from_original": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      }
+    },
+    {
+      "label": "center_lower",
+      "repeat_count": 5,
+      "mean_raw_action": [
+        0.002446995139971323,
+        0.0004094162104161421,
+        -0.0013528777663636277,
+        -0.007713156047756975,
+        0.003675775365288017,
+        0.011015417543248139,
+        0.0019607843137254832
+      ],
+      "mean_translation_mm": [
+        2.4469951399713232,
+        0.40941621041614207,
+        -1.3528777663636276
+      ],
+      "mean_rotation_rotvec_rad": [
+        -0.007713156047756975,
+        0.003675775365288017,
+        0.011015417543248139
+      ],
+      "gripper": 0.0019607843137254832,
+      "unique_raw_actions": 1,
+      "same_image_repeat_difference_max": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      },
+      "difference_from_original": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 4.969777826631543e-17,
+        "gripper_abs_difference": 0.0
+      }
+    },
+    {
+      "label": "left",
+      "repeat_count": 5,
+      "mean_raw_action": [
+        0.0019287153831801067,
+        1.6923010594068442e-05,
+        -0.0005256555129681713,
+        -0.004646296034774282,
+        0.0037631800907373322,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "mean_translation_mm": [
+        1.9287153831801067,
+        0.016923010594068442,
+        -0.5256555129681713
+      ],
+      "mean_rotation_rotvec_rad": [
+        -0.004646296034774282,
+        0.0037631800907373322,
+        0.010181925561301089
+      ],
+      "gripper": 0.0019607843137254832,
+      "unique_raw_actions": 1,
+      "same_image_repeat_difference_max": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      },
+      "difference_from_original": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      }
+    },
+    {
+      "label": "center_lower_moveline",
+      "repeat_count": 5,
+      "mean_raw_action": [
+        0.0023606151805061204,
+        0.001063571543452932,
+        -0.0011874333156845357,
+        -0.00691804419253924,
+        0.0042876084434332285,
+        0.01768335339882455,
+        0.0019607843137254832
+      ],
+      "mean_translation_mm": [
+        2.3606151805061204,
+        1.063571543452932,
+        -1.1874333156845358
+      ],
+      "mean_rotation_rotvec_rad": [
+        -0.00691804419253924,
+        0.0042876084434332285,
+        0.01768335339882455
+      ],
+      "gripper": 0.0019607843137254832,
+      "unique_raw_actions": 1,
+      "same_image_repeat_difference_max": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      },
+      "difference_from_original": {
+        "translation_difference_mm": 0.0,
+        "rotation_delta_difference_deg": 0.0,
+        "gripper_abs_difference": 0.0
+      }
+    }
+  ],
+  "pairwise_comparisons": [
+    {
+      "image_a": "right",
+      "image_b": "center_lower",
+      "translation_difference_mm": 1.1099211133172797,
+      "rotation_delta_difference_deg": 0.16016324615572164,
+      "gripper_abs_difference": 0.0
+    },
+    {
+      "image_a": "right",
+      "image_b": "left",
+      "translation_difference_mm": 0.47577700479371426,
+      "rotation_delta_difference_deg": 0.20189793429992794,
+      "gripper_abs_difference": 0.0
+    },
+    {
+      "image_a": "right",
+      "image_b": "center_lower_moveline",
+      "translation_difference_mm": 1.5272639026772015,
+      "rotation_delta_difference_deg": 0.5264132097172775,
+      "gripper_abs_difference": 0.0
+    },
+    {
+      "image_a": "center_lower",
+      "image_b": "left",
+      "translation_difference_mm": 1.0521223667990285,
+      "rotation_delta_difference_deg": 0.18216006380637204,
+      "gripper_abs_difference": 0.0
+    },
+    {
+      "image_a": "center_lower",
+      "image_b": "center_lower_moveline",
+      "translation_difference_mm": 0.680259188396739,
+      "rotation_delta_difference_deg": 0.3863434405167559,
+      "gripper_abs_difference": 0.0
+    },
+    {
+      "image_a": "left",
+      "image_b": "center_lower_moveline",
+      "translation_difference_mm": 1.3114726251180246,
+      "rotation_delta_difference_deg": 0.4500809637104244,
+      "gripper_abs_difference": 0.0
+    }
+  ],
+  "physical_commands": 0,
+  "transport_created": false,
+  "robot_connection_required": false,
+  "interpretation": "Whole-image action sensitivity only. Not proof of cube detection, correct direction or cube-only causal effect.",
+  "cube_world_positions_and_camera_to_base_calibration_verified": false,
+  "image_preprocessing": "Exact saved model-input JPEG bytes, unchanged; server training processor retained."
+}

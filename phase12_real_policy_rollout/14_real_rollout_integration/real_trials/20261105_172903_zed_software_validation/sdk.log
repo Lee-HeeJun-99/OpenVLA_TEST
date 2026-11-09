@@ -1,0 +1,12 @@
+[2026-11-05 17:30:10 UTC][ZED][INFO] Logging level INFO
+[2026-11-05 17:30:17 UTC][ZED][ERROR] [ZED] A ZED camera was detected, but the sensor device failed to open. Try unplugging and reconnecting the camera.
+[2026-11-05 17:30:17 UTC][ZED][INFO] [Init]  Failed to open camera. Trying to re-open for 5 seconds.
+[2026-11-05 17:30:17 UTC][ZED][INFO] [Init]  Random wait interval before consecutive openings: [250], [1500] msec.
+[2026-11-05 17:30:17 UTC][ZED][INFO] [Init]  Waiting 1179 msec before next opening attempt.
+[2026-11-05 17:30:18 UTC][ZED][INFO] [Init]  Trying to force a device reboot to recover the video module.
+[2026-11-05 17:30:21 UTC][ZED][INFO] [Init]  Camera opening timeout reached.
+[2026-11-05 17:30:21 UTC][ZED][ERROR] CAMERA MOTION SENSORS NOT DETECTED in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+Traceback (most recent call last):
+  File "/tmp/zed_software_capture_case.py", line 22, in <module>
+    if ret!=sl.ERROR_CODE.SUCCESS:raise RuntimeError(str(ret))
+RuntimeError: CAMERA MOTION SENSORS NOT DETECTED

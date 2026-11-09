@@ -1,0 +1,56 @@
+{"elapsed_s": 30.0, "image_count": 376, "diagnostic_count": 30, "receive_gaps_ge_500ms": 3}
+{"elapsed_s": 60.0, "image_count": 675, "diagnostic_count": 60, "receive_gaps_ge_500ms": 10}
+{"elapsed_s": 90.0, "image_count": 1024, "diagnostic_count": 90, "receive_gaps_ge_500ms": 11}
+{"elapsed_s": 120.0, "image_count": 1366, "diagnostic_count": 120, "receive_gaps_ge_500ms": 14}
+{
+  "duration_requested_s": 120.0,
+  "observation_duration_s": 120.00091757599148,
+  "error": null,
+  "physical_commands": 0,
+  "settings_changed": false,
+  "diagnostic_messages": 120,
+  "streams": {
+    "image": {
+      "count": 1366,
+      "receive_hz": 11.37755009647855,
+      "max_receive_gap_s": 1.1031421210209373,
+      "max_source_gap_s": 1.1002399921417236,
+      "max_source_age_s": 0.052453041076660156,
+      "receive_gap_ge_100ms": 337,
+      "receive_gap_ge_500ms": 14,
+      "source_gap_ge_500ms": 15,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 159553.966536639,
+        "receive_wall": 1793948475.4392672,
+        "source_timestamp": 1793948475.4017758,
+        "source_age_s": 0.037499189376831055,
+        "receive_gap_s": 0.03386102698277682,
+        "source_gap_s": 0.03333783149719238,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "camera_info": {
+      "count": 1390,
+      "receive_hz": 11.571163809554264,
+      "max_receive_gap_s": 1.102753045008285,
+      "max_source_gap_s": 1.1002399921417236,
+      "max_source_age_s": 0.0423433780670166,
+      "receive_gap_ge_100ms": 342,
+      "receive_gap_ge_500ms": 16,
+      "source_gap_ge_500ms": 15,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 159553.994302145,
+        "receive_wall": 1793948475.467033,
+        "source_timestamp": 1793948475.434933,
+        "source_age_s": 0.03210854530334473,
+        "receive_gap_s": 0.0318824739952106,
+        "source_gap_s": 0.0331571102142334
+      }
+    }
+  },
+  "limitation": "SDK Data Capture frequency/processing time are aggregate diagnostics, not per-grab timestamps. Image header gaps alone do not separate grabbing from wrapper publishing."
+}

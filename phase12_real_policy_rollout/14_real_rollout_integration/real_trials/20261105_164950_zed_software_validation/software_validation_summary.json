@@ -1,0 +1,260 @@
+{
+  "cases": {
+    "G_read_no_retrieve": {
+      "case": "G_read_no_retrieve",
+      "meta": {
+        "sdk": "5.3.0",
+        "read_api": true,
+        "retrieve": false,
+        "validity_check": 1
+      },
+      "count": 735,
+      "errors": 0,
+      "hz": 12.233399767015179,
+      "max_receive_gap_s": 0.4667445850063814,
+      "receive_gap_ge_100ms": 204,
+      "receive_gap_ge_500ms": 0,
+      "physical_commands": 0
+    },
+    "H_grab_retrieve": {
+      "case": "H_grab_retrieve",
+      "meta": {
+        "sdk": "5.3.0",
+        "read_api": false,
+        "retrieve": true,
+        "validity_check": 1
+      },
+      "count": 601,
+      "errors": 0,
+      "hz": 9.992821491465792,
+      "max_receive_gap_s": 0.6340641830029199,
+      "receive_gap_ge_100ms": 240,
+      "receive_gap_ge_500ms": 5,
+      "physical_commands": 0
+    },
+    "I_read_validity_off": {
+      "case": "I_read_validity_off",
+      "meta": {
+        "sdk": "5.3.0",
+        "read_api": true,
+        "retrieve": true,
+        "validity_check": 0
+      },
+      "count": 763,
+      "errors": 0,
+      "hz": 12.689365290602948,
+      "max_receive_gap_s": 0.5679522749996977,
+      "receive_gap_ge_100ms": 199,
+      "receive_gap_ge_500ms": 2,
+      "physical_commands": 0
+    },
+    "J_v4l2_bypass_sdk": {
+      "case": "J_v4l2_bypass_sdk",
+      "meta": {
+        "backend": "V4L2",
+        "width": 2560.0,
+        "height": 720.0,
+        "fps": 30.0,
+        "fourcc": 1448695129.0,
+        "convert_rgb": 0.0
+      },
+      "count": 1034,
+      "errors": 0,
+      "hz": 17.264938214433716,
+      "max_receive_gap_s": 0.7328841249982361,
+      "receive_gap_ge_100ms": 140,
+      "receive_gap_ge_500ms": 1,
+      "physical_commands": 0
+    },
+    "K_native_v4l2": {
+      "count": 668,
+      "hz": 11.14076103937871,
+      "max_receive_gap_s": 0.5333337260090047,
+      "receive_gap_ge_100ms": 205,
+      "receive_gap_ge_500ms": 1,
+      "max_source_gap_s": 0.5333390000014333,
+      "sequence_skipped": 2256,
+      "error_flag_frames": 0,
+      "bytesused_min": 3686400,
+      "bytesused_max": 3686400,
+      "physical_commands": 0,
+      "format": "format 2560 720 fourcc 1448695129 fps 30/1\n"
+    }
+  },
+  "native_receive_minus_driver_timestamp_s": {
+    "min": 0.028439828005502932,
+    "median": 0.028614026006835047,
+    "max": 0.03162231598980725
+  },
+  "software_audit": {
+    "sdk": "5.3.0",
+    "wrapper": "5.3.1",
+    "nvidia_loaded": "580.178.04",
+    "cuda_toolkit": "13.0.3",
+    "pytorch_runtime": "12.1 in separate process",
+    "kernel": "6.8.0-138-generic",
+    "wrapper_compile_flags": "-O3 -DNDEBUG",
+    "missing_linked_libraries_found": false,
+    "ros_localhost_only": 1,
+    "ros_domain_id": "71 unchanged",
+    "normal_regression_tests_pass": 309,
+    "nvidia_550_package": "Transitional metapackage depends on 580, not simultaneous loaded kernel drivers"
+  },
+  "interpretation": "Native C V4L2 capture with no Python/OpenCV/SDK/ROS/inference remains irregular. No evidence that those upper software layers alone cause the problem. Linux UVC/xHCI/kernel or firmware/physical transport remain unresolved. Delivered native frames had no V4L2 ERROR flag; sequence discontinuities occurred. Sequence skipped count is not independently verified sensor frame-loss count.",
+  "not_executed": [
+    "Alternate kernel/UVC driver versions",
+    "Alternate SDK versions",
+    "Firmware update",
+    "Privileged USB packet trace",
+    "Hardware substitution"
+  ],
+  "restoration": {
+    "zed_launch_pid": 57201,
+    "model_pid": 57346,
+    "model_health": {
+      "status": "ready",
+      "bundle": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130",
+      "dataset_key": "a0509_sim_cube_pick",
+      "variant": "openvla_token",
+      "chunk_size": 1,
+      "action_dim": 7,
+      "adapter_mode": "merged",
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "torch": "2.2.0+cu121",
+      "cuda_runtime": "12.1",
+      "model_load_seconds": 11.896664595988113,
+      "peak_vram_gb": 14.589366912841797,
+      "request_count": 0,
+      "crop_bottom_fraction": 0.0,
+      "server_version": "phase12-health-v1",
+      "model": "openvla",
+      "checkpoint": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130",
+      "requires_proprio": false,
+      "center_crop": false,
+      "preprocessing": {
+        "color_order": "RGB",
+        "source_dtype": "uint8",
+        "tensor_dtype": "bfloat16",
+        "crop_bottom_fraction": 0.0,
+        "processor": {
+          "use_fused_vision_backbone": true,
+          "image_resize_strategy": "resize-naive",
+          "input_sizes": [
+            [
+              3,
+              224,
+              224
+            ],
+            [
+              3,
+              224,
+              224
+            ]
+          ],
+          "interpolations": [
+            "bicubic",
+            "bicubic"
+          ],
+          "means": [
+            [
+              0.485,
+              0.456,
+              0.406
+            ],
+            [
+              0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "stds": [
+            [
+              0.229,
+              0.224,
+              0.225
+            ],
+            [
+              0.5,
+              0.5,
+              0.5
+            ]
+          ],
+          "tvf_resize_params": [
+            {
+              "antialias": true,
+              "interpolation": 3,
+              "max_size": null,
+              "size": [
+                224,
+                224
+              ]
+            },
+            {
+              "antialias": true,
+              "interpolation": 3,
+              "max_size": null,
+              "size": [
+                224,
+                224
+              ]
+            }
+          ],
+          "tvf_crop_params": [
+            {
+              "output_size": [
+                224,
+                224
+              ]
+            },
+            {
+              "output_size": [
+                224,
+                224
+              ]
+            }
+          ],
+          "tvf_normalize_params": [
+            {
+              "inplace": false,
+              "mean": [
+                0.484375,
+                0.455078125,
+                0.40625
+              ],
+              "std": [
+                0.228515625,
+                0.2236328125,
+                0.224609375
+              ]
+            },
+            {
+              "inplace": false,
+              "mean": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "std": [
+                0.5,
+                0.5,
+                0.5
+              ]
+            }
+          ],
+          "tvf_do_letterbox": false,
+          "tvf_letterbox_fill": null,
+          "_processor_class": "PrismaticProcessor",
+          "auto_map": {
+            "AutoImageProcessor": "processing_prismatic.PrismaticImageProcessor",
+            "AutoProcessor": "processing_prismatic.PrismaticProcessor"
+          },
+          "image_processor_type": "PrismaticImageProcessor"
+        },
+        "instruction_handling": "clean_instruction_then_build_inference_prompt"
+      }
+    }
+  },
+  "physical_commands": 0,
+  "hardware_connection_changed": false,
+  "robot_driver_pid_unchanged": 47213
+}

@@ -1,0 +1,5177 @@
+[
+  {
+    "timing": {
+      "frame_receive_monotonic": 159433.758218191,
+      "inference_start_monotonic": 159433.810367557,
+      "inference_end_monotonic": 159434.242797085,
+      "camera_age_at_inference_start": 0.05214936597622,
+      "camera_age_at_inference_end": 0.4845788939855993,
+      "inference_latency": 0.4324295280093793,
+      "source_age_at_inference_start": 0.08892583847045898,
+      "source_age_at_inference_end": 0.5214247703552246
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159434.260918313,
+      "inference_start_monotonic": 159434.269022273,
+      "inference_end_monotonic": 159434.676269973,
+      "camera_age_at_inference_start": 0.008103959989966825,
+      "camera_age_at_inference_end": 0.4153516599908471,
+      "inference_latency": 0.4072477000008803,
+      "source_age_at_inference_start": 0.047434329986572266,
+      "source_age_at_inference_end": 0.4547231197357178
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159434.728814182,
+      "inference_start_monotonic": 159434.734845778,
+      "inference_end_monotonic": 159435.161696265,
+      "camera_age_at_inference_start": 0.0060315960145089775,
+      "camera_age_at_inference_end": 0.43288208299782127,
+      "inference_latency": 0.4268504869833123,
+      "source_age_at_inference_start": 0.04672384262084961,
+      "source_age_at_inference_end": 0.4736166000366211
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159435.161072055,
+      "inference_start_monotonic": 159435.171064245,
+      "inference_end_monotonic": 159435.561662099,
+      "camera_age_at_inference_start": 0.009992189996410161,
+      "camera_age_at_inference_end": 0.4005900440097321,
+      "inference_latency": 0.3905978540133219,
+      "source_age_at_inference_start": 0.04966592788696289,
+      "source_age_at_inference_end": 0.44031572341918945
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159435.5609494,
+      "inference_start_monotonic": 159435.569436662,
+      "inference_end_monotonic": 159435.962580235,
+      "camera_age_at_inference_start": 0.008487261977279559,
+      "camera_age_at_inference_end": 0.40163083499646746,
+      "inference_latency": 0.3931435730191879,
+      "source_age_at_inference_start": 0.04790186882019043,
+      "source_age_at_inference_end": 0.4410886764526367
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159435.960040515,
+      "inference_start_monotonic": 159435.969884308,
+      "inference_end_monotonic": 159436.377394439,
+      "camera_age_at_inference_start": 0.00984379299916327,
+      "camera_age_at_inference_end": 0.4173539240146056,
+      "inference_latency": 0.4075101310154423,
+      "source_age_at_inference_start": 0.04824018478393555,
+      "source_age_at_inference_end": 0.4558217525482178
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159436.462452876,
+      "inference_start_monotonic": 159436.47544579,
+      "inference_end_monotonic": 159436.902720697,
+      "camera_age_at_inference_start": 0.012992914009373635,
+      "camera_age_at_inference_end": 0.44026782098808326,
+      "inference_latency": 0.4272749069787096,
+      "source_age_at_inference_start": 0.053761959075927734,
+      "source_age_at_inference_end": 0.48108768463134766
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159437.029583074,
+      "inference_start_monotonic": 159437.037565616,
+      "inference_end_monotonic": 159437.42560625,
+      "camera_age_at_inference_start": 0.007982541981618851,
+      "camera_age_at_inference_end": 0.3960231759992894,
+      "inference_latency": 0.3880406340176705,
+      "source_age_at_inference_start": 0.049161672592163086,
+      "source_age_at_inference_end": 0.43726062774658203
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159437.501460903,
+      "inference_start_monotonic": 159437.510390449,
+      "inference_end_monotonic": 159437.947098499,
+      "camera_age_at_inference_start": 0.008929545991122723,
+      "camera_age_at_inference_end": 0.4456375959853176,
+      "inference_latency": 0.4367080499941949,
+      "source_age_at_inference_start": 0.05536317825317383,
+      "source_age_at_inference_end": 0.4921529293060303
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159438.565144237,
+      "inference_start_monotonic": 159438.572237501,
+      "inference_end_monotonic": 159438.958260056,
+      "camera_age_at_inference_start": 0.007093263993738219,
+      "camera_age_at_inference_end": 0.3931158189952839,
+      "inference_latency": 0.3860225550015457,
+      "source_age_at_inference_start": 0.05056023597717285,
+      "source_age_at_inference_end": 0.436643123626709
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159439.098424691,
+      "inference_start_monotonic": 159439.105012516,
+      "inference_end_monotonic": 159439.477779281,
+      "camera_age_at_inference_start": 0.006587824987946078,
+      "camera_age_at_inference_end": 0.37935458999709226,
+      "inference_latency": 0.3727667650091462,
+      "source_age_at_inference_start": 0.04997658729553223,
+      "source_age_at_inference_end": 0.42279839515686035
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159439.630919573,
+      "inference_start_monotonic": 159439.638868831,
+      "inference_end_monotonic": 159440.049156925,
+      "camera_age_at_inference_start": 0.007949257997097448,
+      "camera_age_at_inference_end": 0.41823735198704526,
+      "inference_latency": 0.4102880939899478,
+      "source_age_at_inference_start": 0.05047941207885742,
+      "source_age_at_inference_end": 0.46082043647766113
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159440.058656436,
+      "inference_start_monotonic": 159440.067534097,
+      "inference_end_monotonic": 159440.482913477,
+      "camera_age_at_inference_start": 0.008877660991856828,
+      "camera_age_at_inference_end": 0.4242570409842301,
+      "inference_latency": 0.4153793799923733,
+      "source_age_at_inference_start": 0.045621395111083984,
+      "source_age_at_inference_end": 0.4610567092895508
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159440.825354607,
+      "inference_start_monotonic": 159440.832679409,
+      "inference_end_monotonic": 159441.243152625,
+      "camera_age_at_inference_start": 0.007324802019866183,
+      "camera_age_at_inference_end": 0.41779801799566485,
+      "inference_latency": 0.41047321597579867,
+      "source_age_at_inference_start": 0.044148921966552734,
+      "source_age_at_inference_end": 0.45467257499694824
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159441.426038693,
+      "inference_start_monotonic": 159441.431755757,
+      "inference_end_monotonic": 159441.850442688,
+      "camera_age_at_inference_start": 0.005717063992051408,
+      "camera_age_at_inference_end": 0.42440399501356296,
+      "inference_latency": 0.41868693102151155,
+      "source_age_at_inference_start": 0.04309415817260742,
+      "source_age_at_inference_end": 0.46185970306396484
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159441.997395383,
+      "inference_start_monotonic": 159442.004615037,
+      "inference_end_monotonic": 159442.423876457,
+      "camera_age_at_inference_start": 0.007219654013169929,
+      "camera_age_at_inference_end": 0.4264810740132816,
+      "inference_latency": 0.4192614200001117,
+      "source_age_at_inference_start": 0.04945039749145508,
+      "source_age_at_inference_end": 0.46878647804260254
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159442.429064273,
+      "inference_start_monotonic": 159442.43778468,
+      "inference_end_monotonic": 159442.847559167,
+      "camera_age_at_inference_start": 0.008720407000510022,
+      "camera_age_at_inference_end": 0.41849489402375184,
+      "inference_latency": 0.4097744870232418,
+      "source_age_at_inference_start": 0.04908299446105957,
+      "source_age_at_inference_end": 0.4589996337890625
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159442.998109958,
+      "inference_start_monotonic": 159443.005373433,
+      "inference_end_monotonic": 159443.422694481,
+      "camera_age_at_inference_start": 0.007263475010404363,
+      "camera_age_at_inference_end": 0.4245845230179839,
+      "inference_latency": 0.4173210480075795,
+      "source_age_at_inference_start": 0.04994964599609375,
+      "source_age_at_inference_end": 0.4673316478729248
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159443.428933989,
+      "inference_start_monotonic": 159443.437257939,
+      "inference_end_monotonic": 159443.822970012,
+      "camera_age_at_inference_start": 0.008323949994519353,
+      "camera_age_at_inference_end": 0.3940360230044462,
+      "inference_latency": 0.3857120730099268,
+      "source_age_at_inference_start": 0.04849386215209961,
+      "source_age_at_inference_end": 0.4342668056488037
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159443.864182409,
+      "inference_start_monotonic": 159443.871301407,
+      "inference_end_monotonic": 159444.281302541,
+      "camera_age_at_inference_start": 0.0071189980080816895,
+      "camera_age_at_inference_end": 0.41712013201322407,
+      "inference_latency": 0.4100011340051424,
+      "source_age_at_inference_start": 0.04911017417907715,
+      "source_age_at_inference_end": 0.4591693878173828
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159444.39888713,
+      "inference_start_monotonic": 159444.406071019,
+      "inference_end_monotonic": 159444.840406783,
+      "camera_age_at_inference_start": 0.00718388901441358,
+      "camera_age_at_inference_end": 0.441519653017167,
+      "inference_latency": 0.4343357640027534,
+      "source_age_at_inference_start": 0.05044388771057129,
+      "source_age_at_inference_end": 0.48485445976257324
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159444.839866293,
+      "inference_start_monotonic": 159444.84984326,
+      "inference_end_monotonic": 159445.268589001,
+      "camera_age_at_inference_start": 0.009976966975955293,
+      "camera_age_at_inference_end": 0.42872270799125545,
+      "inference_latency": 0.41874574101530015,
+      "source_age_at_inference_start": 0.05913186073303223,
+      "source_age_at_inference_end": 0.4779360294342041
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159445.398517563,
+      "inference_start_monotonic": 159445.406413861,
+      "inference_end_monotonic": 159445.814116741,
+      "camera_age_at_inference_start": 0.007896297989645973,
+      "camera_age_at_inference_end": 0.4155991779989563,
+      "inference_latency": 0.4077028800093103,
+      "source_age_at_inference_start": 0.0510256290435791,
+      "source_age_at_inference_end": 0.4587724208831787
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159445.831811531,
+      "inference_start_monotonic": 159445.838954551,
+      "inference_end_monotonic": 159446.257612954,
+      "camera_age_at_inference_start": 0.0071430199895985425,
+      "camera_age_at_inference_end": 0.42580142299993895,
+      "inference_latency": 0.4186584030103404,
+      "source_age_at_inference_start": 0.0500340461730957,
+      "source_age_at_inference_end": 0.4688570499420166
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159446.431575986,
+      "inference_start_monotonic": 159446.444710227,
+      "inference_end_monotonic": 159446.845790467,
+      "camera_age_at_inference_start": 0.013134240987710655,
+      "camera_age_at_inference_end": 0.4142144809884485,
+      "inference_latency": 0.40108024000073783,
+      "source_age_at_inference_start": 0.05571627616882324,
+      "source_age_at_inference_end": 0.4568917751312256
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159446.931821662,
+      "inference_start_monotonic": 159446.93898415,
+      "inference_end_monotonic": 159447.379473685,
+      "camera_age_at_inference_start": 0.007162488007452339,
+      "camera_age_at_inference_end": 0.44765202299458906,
+      "inference_latency": 0.4404895349871367,
+      "source_age_at_inference_start": 0.05006575584411621,
+      "source_age_at_inference_end": 0.4905984401702881
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159447.431599615,
+      "inference_start_monotonic": 159447.439520486,
+      "inference_end_monotonic": 159447.914019911,
+      "camera_age_at_inference_start": 0.007920870993984863,
+      "camera_age_at_inference_end": 0.4824202960007824,
+      "inference_latency": 0.47449942500679754,
+      "source_age_at_inference_start": 0.05059552192687988,
+      "source_age_at_inference_end": 0.5251905918121338
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159447.998508824,
+      "inference_start_monotonic": 159448.01177617,
+      "inference_end_monotonic": 159448.414762832,
+      "camera_age_at_inference_start": 0.013267345988424495,
+      "camera_age_at_inference_end": 0.4162540079851169,
+      "inference_latency": 0.4029866619966924,
+      "source_age_at_inference_start": 0.056079864501953125,
+      "source_age_at_inference_end": 0.4591209888458252
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159448.598381806,
+      "inference_start_monotonic": 159448.605451596,
+      "inference_end_monotonic": 159448.996473922,
+      "camera_age_at_inference_start": 0.007069790008245036,
+      "camera_age_at_inference_end": 0.3980921159964055,
+      "inference_latency": 0.39102232598816045,
+      "source_age_at_inference_start": 0.04964876174926758,
+      "source_age_at_inference_end": 0.4407320022583008
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159448.99569418,
+      "inference_start_monotonic": 159449.006308512,
+      "inference_end_monotonic": 159449.392668623,
+      "camera_age_at_inference_start": 0.010614332015393302,
+      "camera_age_at_inference_end": 0.39697444302146323,
+      "inference_latency": 0.38636011100606993,
+      "source_age_at_inference_start": 0.05016064643859863,
+      "source_age_at_inference_end": 0.4369347095489502
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159449.532528754,
+      "inference_start_monotonic": 159449.539324115,
+      "inference_end_monotonic": 159449.950756388,
+      "camera_age_at_inference_start": 0.006795360997784883,
+      "camera_age_at_inference_end": 0.4182276339852251,
+      "inference_latency": 0.41143227298744023,
+      "source_age_at_inference_start": 0.050254106521606445,
+      "source_age_at_inference_end": 0.46175074577331543
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159449.967831206,
+      "inference_start_monotonic": 159449.974731523,
+      "inference_end_monotonic": 159450.375738044,
+      "camera_age_at_inference_start": 0.006900316977407783,
+      "camera_age_at_inference_end": 0.4079068379942328,
+      "inference_latency": 0.401006521016825,
+      "source_age_at_inference_start": 0.05215644836425781,
+      "source_age_at_inference_end": 0.4531974792480469
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159450.398131314,
+      "inference_start_monotonic": 159450.406480599,
+      "inference_end_monotonic": 159450.790845017,
+      "camera_age_at_inference_start": 0.008349284995347261,
+      "camera_age_at_inference_end": 0.3927137030113954,
+      "inference_latency": 0.38436441801604815,
+      "source_age_at_inference_start": 0.05082392692565918,
+      "source_age_at_inference_end": 0.43523669242858887
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159450.833082654,
+      "inference_start_monotonic": 159450.840787907,
+      "inference_end_monotonic": 159451.281924381,
+      "camera_age_at_inference_start": 0.007705252995947376,
+      "camera_age_at_inference_end": 0.44884172701858915,
+      "inference_latency": 0.4411364740226418,
+      "source_age_at_inference_start": 0.0517430305480957,
+      "source_age_at_inference_end": 0.49294400215148926
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159451.331649541,
+      "inference_start_monotonic": 159451.338494227,
+      "inference_end_monotonic": 159451.732591863,
+      "camera_age_at_inference_start": 0.006844685995019972,
+      "camera_age_at_inference_end": 0.40094232198316604,
+      "inference_latency": 0.39409763598814607,
+      "source_age_at_inference_start": 0.04931473731994629,
+      "source_age_at_inference_end": 0.4434690475463867
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159452.66501502,
+      "inference_start_monotonic": 159452.673065876,
+      "inference_end_monotonic": 159453.071905366,
+      "camera_age_at_inference_start": 0.00805085600586608,
+      "camera_age_at_inference_end": 0.40689034599927254,
+      "inference_latency": 0.39883948999340646,
+      "source_age_at_inference_start": 0.050393104553222656,
+      "source_age_at_inference_end": 0.44928669929504395
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159453.666387388,
+      "inference_start_monotonic": 159453.674338352,
+      "inference_end_monotonic": 159454.078663369,
+      "camera_age_at_inference_start": 0.00795096400543116,
+      "camera_age_at_inference_end": 0.41227598101249896,
+      "inference_latency": 0.4043250170070678,
+      "source_age_at_inference_start": 0.051633596420288086,
+      "source_age_at_inference_end": 0.4561161994934082
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159454.233427024,
+      "inference_start_monotonic": 159454.240398579,
+      "inference_end_monotonic": 159454.644282623,
+      "camera_age_at_inference_start": 0.006971554976189509,
+      "camera_age_at_inference_end": 0.4108555989805609,
+      "inference_latency": 0.4038840440043714,
+      "source_age_at_inference_start": 0.05097508430480957,
+      "source_age_at_inference_end": 0.45490097999572754
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159454.798310135,
+      "inference_start_monotonic": 159454.805204313,
+      "inference_end_monotonic": 159455.201485311,
+      "camera_age_at_inference_start": 0.006894177990034223,
+      "camera_age_at_inference_end": 0.4031751760048792,
+      "inference_latency": 0.39628099801484495,
+      "source_age_at_inference_start": 0.04902148246765137,
+      "source_age_at_inference_end": 0.4453611373901367
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159455.598719111,
+      "inference_start_monotonic": 159455.606014851,
+      "inference_end_monotonic": 159455.990504389,
+      "camera_age_at_inference_start": 0.0072957399825099856,
+      "camera_age_at_inference_end": 0.3917852779850364,
+      "inference_latency": 0.3844895380025264,
+      "source_age_at_inference_start": 0.049790143966674805,
+      "source_age_at_inference_end": 0.43433666229248047
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159456.197682229,
+      "inference_start_monotonic": 159456.204774334,
+      "inference_end_monotonic": 159456.592375894,
+      "camera_age_at_inference_start": 0.007092105021001771,
+      "camera_age_at_inference_end": 0.39469366500270553,
+      "inference_latency": 0.38760155998170376,
+      "source_age_at_inference_start": 0.04869818687438965,
+      "source_age_at_inference_end": 0.43636369705200195
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159456.63226957,
+      "inference_start_monotonic": 159456.639301229,
+      "inference_end_monotonic": 159457.038138674,
+      "camera_age_at_inference_start": 0.007031659013591707,
+      "camera_age_at_inference_end": 0.4058691039972473,
+      "inference_latency": 0.3988374449836556,
+      "source_age_at_inference_start": 0.04975724220275879,
+      "source_age_at_inference_end": 0.4486401081085205
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159457.03603417,
+      "inference_start_monotonic": 159457.04614376,
+      "inference_end_monotonic": 159457.458687155,
+      "camera_age_at_inference_start": 0.010109589988132939,
+      "camera_age_at_inference_end": 0.42265298499842174,
+      "inference_latency": 0.4125433950102888,
+      "source_age_at_inference_start": 0.05669522285461426,
+      "source_age_at_inference_end": 0.4693000316619873
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159457.498481089,
+      "inference_start_monotonic": 159457.505560003,
+      "inference_end_monotonic": 159457.917402079,
+      "camera_age_at_inference_start": 0.007078914000885561,
+      "camera_age_at_inference_end": 0.4189209900214337,
+      "inference_latency": 0.4118420760205481,
+      "source_age_at_inference_start": 0.049387216567993164,
+      "source_age_at_inference_end": 0.4612891674041748
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159457.964583191,
+      "inference_start_monotonic": 159457.971346757,
+      "inference_end_monotonic": 159458.367317975,
+      "camera_age_at_inference_start": 0.006763565994333476,
+      "camera_age_at_inference_end": 0.4027347840019502,
+      "inference_latency": 0.3959712180076167,
+      "source_age_at_inference_start": 0.04842114448547363,
+      "source_age_at_inference_end": 0.44444942474365234
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159458.465262266,
+      "inference_start_monotonic": 159458.472498993,
+      "inference_end_monotonic": 159458.854689972,
+      "camera_age_at_inference_start": 0.00723672701860778,
+      "camera_age_at_inference_end": 0.3894277060171589,
+      "inference_latency": 0.38219097899855115,
+      "source_age_at_inference_start": 0.04941582679748535,
+      "source_age_at_inference_end": 0.4316720962524414
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.012682401507142239,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159458.933648311,
+      "inference_start_monotonic": 159458.94184523,
+      "inference_end_monotonic": 159459.319807239,
+      "camera_age_at_inference_start": 0.008196918992325664,
+      "camera_age_at_inference_end": 0.38615892798407003,
+      "inference_latency": 0.37796200899174437,
+      "source_age_at_inference_start": 0.05209803581237793,
+      "source_age_at_inference_end": 0.43016600608825684
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159459.465198534,
+      "inference_start_monotonic": 159459.472114871,
+      "inference_end_monotonic": 159459.882318604,
+      "camera_age_at_inference_start": 0.00691633700625971,
+      "camera_age_at_inference_end": 0.4171200700220652,
+      "inference_latency": 0.4102037330158055,
+      "source_age_at_inference_start": 0.049028873443603516,
+      "source_age_at_inference_end": 0.45931458473205566
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159459.930725894,
+      "inference_start_monotonic": 159459.943957163,
+      "inference_end_monotonic": 159460.347231217,
+      "camera_age_at_inference_start": 0.01323126899660565,
+      "camera_age_at_inference_end": 0.4165053229953628,
+      "inference_latency": 0.40327405399875715,
+      "source_age_at_inference_start": 0.05425071716308594,
+      "source_age_at_inference_end": 0.45762014389038086
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159460.364693804,
+      "inference_start_monotonic": 159460.371547545,
+      "inference_end_monotonic": 159460.769010537,
+      "camera_age_at_inference_start": 0.0068537409824784845,
+      "camera_age_at_inference_end": 0.4043167330091819,
+      "inference_latency": 0.39746299202670343,
+      "source_age_at_inference_start": 0.04834437370300293,
+      "source_age_at_inference_end": 0.44586753845214844
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159460.833293549,
+      "inference_start_monotonic": 159460.841465931,
+      "inference_end_monotonic": 159461.241150213,
+      "camera_age_at_inference_start": 0.008172382018528879,
+      "camera_age_at_inference_end": 0.40785666400915943,
+      "inference_latency": 0.39968428199063055,
+      "source_age_at_inference_start": 0.05156350135803223,
+      "source_age_at_inference_end": 0.45150160789489746
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159461.46659255,
+      "inference_start_monotonic": 159461.473907924,
+      "inference_end_monotonic": 159461.865267053,
+      "camera_age_at_inference_start": 0.007315374008612707,
+      "camera_age_at_inference_end": 0.3986745030269958,
+      "inference_latency": 0.3913591290183831,
+      "source_age_at_inference_start": 0.0506281852722168,
+      "source_age_at_inference_end": 0.4421224594116211
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159461.86456538,
+      "inference_start_monotonic": 159461.87315389,
+      "inference_end_monotonic": 159462.262305212,
+      "camera_age_at_inference_start": 0.008588509983383119,
+      "camera_age_at_inference_end": 0.3977398319984786,
+      "inference_latency": 0.3891513220150955,
+      "source_age_at_inference_start": 0.05008077621459961,
+      "source_age_at_inference_end": 0.4393341541290283
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159462.298442071,
+      "inference_start_monotonic": 159462.30566829,
+      "inference_end_monotonic": 159462.71961018,
+      "camera_age_at_inference_start": 0.007226218993309885,
+      "camera_age_at_inference_end": 0.4211681089946069,
+      "inference_latency": 0.413941890001297,
+      "source_age_at_inference_start": 0.049204111099243164,
+      "source_age_at_inference_end": 0.4631955623626709
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159462.799573184,
+      "inference_start_monotonic": 159462.806320346,
+      "inference_end_monotonic": 159463.191259589,
+      "camera_age_at_inference_start": 0.006747161998646334,
+      "camera_age_at_inference_end": 0.39168640499701723,
+      "inference_latency": 0.3849392429983709,
+      "source_age_at_inference_start": 0.049612998962402344,
+      "source_age_at_inference_end": 0.4346137046813965
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159463.43310966,
+      "inference_start_monotonic": 159463.440410176,
+      "inference_end_monotonic": 159463.8574698,
+      "camera_age_at_inference_start": 0.007300516008399427,
+      "camera_age_at_inference_end": 0.4243601399939507,
+      "inference_latency": 0.4170596239855513,
+      "source_age_at_inference_start": 0.05032157897949219,
+      "source_age_at_inference_end": 0.4674415588378906
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159463.899075754,
+      "inference_start_monotonic": 159463.906110148,
+      "inference_end_monotonic": 159464.309571155,
+      "camera_age_at_inference_start": 0.007034394016955048,
+      "camera_age_at_inference_end": 0.4104954010108486,
+      "inference_latency": 0.40346100699389353,
+      "source_age_at_inference_start": 0.04954218864440918,
+      "source_age_at_inference_end": 0.4530477523803711
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159464.367349569,
+      "inference_start_monotonic": 159464.377416472,
+      "inference_end_monotonic": 159464.764626372,
+      "camera_age_at_inference_start": 0.010066903021652251,
+      "camera_age_at_inference_end": 0.39727680300711654,
+      "inference_latency": 0.3872098999854643,
+      "source_age_at_inference_start": 0.05408740043640137,
+      "source_age_at_inference_end": 0.44133949279785156
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159464.762145255,
+      "inference_start_monotonic": 159464.772690402,
+      "inference_end_monotonic": 159465.176537273,
+      "camera_age_at_inference_start": 0.010545147000811994,
+      "camera_age_at_inference_end": 0.41439201799221337,
+      "inference_latency": 0.4038468709914014,
+      "source_age_at_inference_start": 0.04922294616699219,
+      "source_age_at_inference_end": 0.4531245231628418
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159465.366251153,
+      "inference_start_monotonic": 159465.372954808,
+      "inference_end_monotonic": 159465.764753142,
+      "camera_age_at_inference_start": 0.006703655002638698,
+      "camera_age_at_inference_end": 0.3985019889951218,
+      "inference_latency": 0.3917983339924831,
+      "source_age_at_inference_start": 0.049478769302368164,
+      "source_age_at_inference_end": 0.4413273334503174
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.012682401507142239,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159465.932621357,
+      "inference_start_monotonic": 159465.940130828,
+      "inference_end_monotonic": 159466.353996921,
+      "camera_age_at_inference_start": 0.00750947100459598,
+      "camera_age_at_inference_end": 0.4213755640084855,
+      "inference_latency": 0.41386609300388955,
+      "source_age_at_inference_start": 0.049906015396118164,
+      "source_age_at_inference_end": 0.46384143829345703
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159466.366842108,
+      "inference_start_monotonic": 159466.373781839,
+      "inference_end_monotonic": 159466.780782915,
+      "camera_age_at_inference_start": 0.006939731014426798,
+      "camera_age_at_inference_end": 0.41394080701866187,
+      "inference_latency": 0.4070010760042351,
+      "source_age_at_inference_start": 0.05021071434020996,
+      "source_age_at_inference_end": 0.45726943016052246
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159467.36605355,
+      "inference_start_monotonic": 159467.37477938,
+      "inference_end_monotonic": 159467.786037996,
+      "camera_age_at_inference_start": 0.008725830004550517,
+      "camera_age_at_inference_end": 0.41998444599448703,
+      "inference_latency": 0.4112586159899365,
+      "source_age_at_inference_start": 0.05130791664123535,
+      "source_age_at_inference_end": 0.4626317024230957
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159467.865636147,
+      "inference_start_monotonic": 159467.873015981,
+      "inference_end_monotonic": 159468.252449972,
+      "camera_age_at_inference_start": 0.007379833987215534,
+      "camera_age_at_inference_end": 0.3868138249963522,
+      "inference_latency": 0.37943399100913666,
+      "source_age_at_inference_start": 0.049416542053222656,
+      "source_age_at_inference_end": 0.4289064407348633
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159469.066598582,
+      "inference_start_monotonic": 159469.073471476,
+      "inference_end_monotonic": 159469.454812383,
+      "camera_age_at_inference_start": 0.006872894009575248,
+      "camera_age_at_inference_end": 0.38821380099398084,
+      "inference_latency": 0.3813409069844056,
+      "source_age_at_inference_start": 0.04976296424865723,
+      "source_age_at_inference_end": 0.4311521053314209
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159469.83267825,
+      "inference_start_monotonic": 159469.840057366,
+      "inference_end_monotonic": 159470.232387932,
+      "camera_age_at_inference_start": 0.007379115995718166,
+      "camera_age_at_inference_end": 0.39970968198031187,
+      "inference_latency": 0.3923305659845937,
+      "source_age_at_inference_start": 0.049553871154785156,
+      "source_age_at_inference_end": 0.44199538230895996
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159470.331449265,
+      "inference_start_monotonic": 159470.343319009,
+      "inference_end_monotonic": 159470.735248399,
+      "camera_age_at_inference_start": 0.011869743990246207,
+      "camera_age_at_inference_end": 0.4037991339864675,
+      "inference_latency": 0.3919293899962213,
+      "source_age_at_inference_start": 0.05292820930480957,
+      "source_age_at_inference_end": 0.4449462890625
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159470.867181909,
+      "inference_start_monotonic": 159470.87707456,
+      "inference_end_monotonic": 159471.285303179,
+      "camera_age_at_inference_start": 0.00989265099633485,
+      "camera_age_at_inference_end": 0.41812126999138854,
+      "inference_latency": 0.4082286189950537,
+      "source_age_at_inference_start": 0.05336189270019531,
+      "source_age_at_inference_end": 0.461658239364624
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159471.333339195,
+      "inference_start_monotonic": 159471.342575271,
+      "inference_end_monotonic": 159471.735225542,
+      "camera_age_at_inference_start": 0.009236076002707705,
+      "camera_age_at_inference_end": 0.40188634701189585,
+      "inference_latency": 0.39265027100918815,
+      "source_age_at_inference_start": 0.052062273025512695,
+      "source_age_at_inference_end": 0.4448387622833252
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159471.832487148,
+      "inference_start_monotonic": 159471.839525184,
+      "inference_end_monotonic": 159472.218285216,
+      "camera_age_at_inference_start": 0.007038036012090743,
+      "camera_age_at_inference_end": 0.3857980679895263,
+      "inference_latency": 0.3787600319774356,
+      "source_age_at_inference_start": 0.04892230033874512,
+      "source_age_at_inference_end": 0.42774534225463867
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159472.333405973,
+      "inference_start_monotonic": 159472.341648433,
+      "inference_end_monotonic": 159472.739016633,
+      "camera_age_at_inference_start": 0.00824245999683626,
+      "camera_age_at_inference_end": 0.4056106599746272,
+      "inference_latency": 0.39736819997779094,
+      "source_age_at_inference_start": 0.05111193656921387,
+      "source_age_at_inference_end": 0.4485955238342285
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159472.866081917,
+      "inference_start_monotonic": 159472.873650615,
+      "inference_end_monotonic": 159473.277014097,
+      "camera_age_at_inference_start": 0.007568697998067364,
+      "camera_age_at_inference_end": 0.410932180006057,
+      "inference_latency": 0.40336348200798966,
+      "source_age_at_inference_start": 0.04967546463012695,
+      "source_age_at_inference_end": 0.45310354232788086
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159473.301825235,
+      "inference_start_monotonic": 159473.308971997,
+      "inference_end_monotonic": 159473.732427409,
+      "camera_age_at_inference_start": 0.007146762014599517,
+      "camera_age_at_inference_end": 0.430602174019441,
+      "inference_latency": 0.4234554120048415,
+      "source_age_at_inference_start": 0.05164647102355957,
+      "source_age_at_inference_end": 0.47515177726745605
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159473.731689861,
+      "inference_start_monotonic": 159473.741185792,
+      "inference_end_monotonic": 159474.153923706,
+      "camera_age_at_inference_start": 0.009495931008132175,
+      "camera_age_at_inference_end": 0.4222338450199459,
+      "inference_latency": 0.4127379140118137,
+      "source_age_at_inference_start": 0.05045032501220703,
+      "source_age_at_inference_end": 0.4632456302642822
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159474.267099623,
+      "inference_start_monotonic": 159474.27517228,
+      "inference_end_monotonic": 159474.660673964,
+      "camera_age_at_inference_start": 0.00807265701587312,
+      "camera_age_at_inference_end": 0.3935743410256691,
+      "inference_latency": 0.385501684009796,
+      "source_age_at_inference_start": 0.051077842712402344,
+      "source_age_at_inference_end": 0.43663549423217773
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159474.966649179,
+      "inference_start_monotonic": 159474.974009608,
+      "inference_end_monotonic": 159475.361282304,
+      "camera_age_at_inference_start": 0.007360429008258507,
+      "camera_age_at_inference_end": 0.3946331249899231,
+      "inference_latency": 0.3872726959816646,
+      "source_age_at_inference_start": 0.05002188682556152,
+      "source_age_at_inference_end": 0.437363862991333
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159475.499442454,
+      "inference_start_monotonic": 159475.50695265,
+      "inference_end_monotonic": 159475.931360201,
+      "camera_age_at_inference_start": 0.007510196010116488,
+      "camera_age_at_inference_end": 0.43191774701699615,
+      "inference_latency": 0.42440755100687966,
+      "source_age_at_inference_start": 0.04948306083679199,
+      "source_age_at_inference_end": 0.47393321990966797
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159475.93053261,
+      "inference_start_monotonic": 159475.940029815,
+      "inference_end_monotonic": 159476.324776069,
+      "camera_age_at_inference_start": 0.009497205028310418,
+      "camera_age_at_inference_end": 0.39424345901352353,
+      "inference_latency": 0.3847462539852131,
+      "source_age_at_inference_start": 0.04928731918334961,
+      "source_age_at_inference_end": 0.4340996742248535
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159476.3674343,
+      "inference_start_monotonic": 159476.374929004,
+      "inference_end_monotonic": 159476.758899763,
+      "camera_age_at_inference_start": 0.007494704012060538,
+      "camera_age_at_inference_end": 0.39146546300617047,
+      "inference_latency": 0.38397075899410993,
+      "source_age_at_inference_start": 0.0508275032043457,
+      "source_age_at_inference_end": 0.4348475933074951
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159477.266006194,
+      "inference_start_monotonic": 159477.273277888,
+      "inference_end_monotonic": 159477.658717016,
+      "camera_age_at_inference_start": 0.007271693990333006,
+      "camera_age_at_inference_end": 0.39271082199411467,
+      "inference_latency": 0.38543912800378166,
+      "source_age_at_inference_start": 0.04917550086975098,
+      "source_age_at_inference_end": 0.43466830253601074
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159477.866696841,
+      "inference_start_monotonic": 159477.873467858,
+      "inference_end_monotonic": 159478.25763509,
+      "camera_age_at_inference_start": 0.0067710170114878565,
+      "camera_age_at_inference_end": 0.3909382490091957,
+      "inference_latency": 0.38416723199770786,
+      "source_age_at_inference_start": 0.04938006401062012,
+      "source_age_at_inference_end": 0.4336104393005371
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159478.26635678,
+      "inference_start_monotonic": 159478.273551517,
+      "inference_end_monotonic": 159478.665322467,
+      "camera_age_at_inference_start": 0.0071947370015550405,
+      "camera_age_at_inference_end": 0.3989656869962346,
+      "inference_latency": 0.39177094999467954,
+      "source_age_at_inference_start": 0.04932737350463867,
+      "source_age_at_inference_end": 0.44115400314331055
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159478.662455613,
+      "inference_start_monotonic": 159478.674558119,
+      "inference_end_monotonic": 159479.057915187,
+      "camera_age_at_inference_start": 0.01210250600706786,
+      "camera_age_at_inference_end": 0.3954595740069635,
+      "inference_latency": 0.38335706799989566,
+      "source_age_at_inference_start": 0.04971122741699219,
+      "source_age_at_inference_end": 0.4331495761871338
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159479.066118159,
+      "inference_start_monotonic": 159479.073186826,
+      "inference_end_monotonic": 159479.469092222,
+      "camera_age_at_inference_start": 0.007068666978739202,
+      "camera_age_at_inference_end": 0.40297406297759153,
+      "inference_latency": 0.3959053959988523,
+      "source_age_at_inference_start": 0.04883074760437012,
+      "source_age_at_inference_end": 0.4447968006134033
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159479.566138989,
+      "inference_start_monotonic": 159479.573192313,
+      "inference_end_monotonic": 159479.954285289,
+      "camera_age_at_inference_start": 0.007053323992295191,
+      "camera_age_at_inference_end": 0.3881462999852374,
+      "inference_latency": 0.38109297599294223,
+      "source_age_at_inference_start": 0.04896092414855957,
+      "source_age_at_inference_end": 0.4301004409790039
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159479.99995525,
+      "inference_start_monotonic": 159480.00745659,
+      "inference_end_monotonic": 159480.391400872,
+      "camera_age_at_inference_start": 0.007501340005546808,
+      "camera_age_at_inference_end": 0.39144562199362554,
+      "inference_latency": 0.38394428198807873,
+      "source_age_at_inference_start": 0.049633026123046875,
+      "source_age_at_inference_end": 0.433699369430542
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159480.499828479,
+      "inference_start_monotonic": 159480.507285498,
+      "inference_end_monotonic": 159480.933532752,
+      "camera_age_at_inference_start": 0.007457019004505128,
+      "camera_age_at_inference_end": 0.4337042730185203,
+      "inference_latency": 0.4262472540140152,
+      "source_age_at_inference_start": 0.04952716827392578,
+      "source_age_at_inference_end": 0.475816011428833
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159480.932196082,
+      "inference_start_monotonic": 159480.940156071,
+      "inference_end_monotonic": 159481.349264877,
+      "camera_age_at_inference_start": 0.007959989015944302,
+      "camera_age_at_inference_end": 0.41706879500998184,
+      "inference_latency": 0.40910880599403754,
+      "source_age_at_inference_start": 0.04915475845336914,
+      "source_age_at_inference_end": 0.45832180976867676
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159481.666151279,
+      "inference_start_monotonic": 159481.672906578,
+      "inference_end_monotonic": 159482.079689686,
+      "camera_age_at_inference_start": 0.00675529899308458,
+      "camera_age_at_inference_end": 0.41353840701049194,
+      "inference_latency": 0.40678310801740736,
+      "source_age_at_inference_start": 0.04855632781982422,
+      "source_age_at_inference_end": 0.45537710189819336
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159482.401182522,
+      "inference_start_monotonic": 159482.409170198,
+      "inference_end_monotonic": 159482.793141247,
+      "camera_age_at_inference_start": 0.00798767598462291,
+      "camera_age_at_inference_end": 0.39195872499840334,
+      "inference_latency": 0.38397104901378043,
+      "source_age_at_inference_start": 0.05130290985107422,
+      "source_age_at_inference_end": 0.4353218078613281
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159482.865999119,
+      "inference_start_monotonic": 159482.873080369,
+      "inference_end_monotonic": 159483.261103348,
+      "camera_age_at_inference_start": 0.00708124999073334,
+      "camera_age_at_inference_end": 0.39510422898456454,
+      "inference_latency": 0.3880229789938312,
+      "source_age_at_inference_start": 0.04843306541442871,
+      "source_age_at_inference_end": 0.436509370803833
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159483.69959747,
+      "inference_start_monotonic": 159483.707520649,
+      "inference_end_monotonic": 159484.105855981,
+      "camera_age_at_inference_start": 0.007923179015051574,
+      "camera_age_at_inference_end": 0.40625851100776345,
+      "inference_latency": 0.39833533199271187,
+      "source_age_at_inference_start": 0.04954123497009277,
+      "source_age_at_inference_end": 0.4479410648345947
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159484.09767909,
+      "inference_start_monotonic": 159484.115831097,
+      "inference_end_monotonic": 159484.512548701,
+      "camera_age_at_inference_start": 0.018152007018215954,
+      "camera_age_at_inference_end": 0.4148696110059973,
+      "inference_latency": 0.39671760398778133,
+      "source_age_at_inference_start": 0.057837724685668945,
+      "source_age_at_inference_end": 0.4546043872833252
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159484.700247946,
+      "inference_start_monotonic": 159484.708566497,
+      "inference_end_monotonic": 159485.090322055,
+      "camera_age_at_inference_start": 0.008318551001138985,
+      "camera_age_at_inference_end": 0.39007410901831463,
+      "inference_latency": 0.38175555801717564,
+      "source_age_at_inference_start": 0.05052304267883301,
+      "source_age_at_inference_end": 0.43238210678100586
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159485.334323524,
+      "inference_start_monotonic": 159485.345928121,
+      "inference_end_monotonic": 159485.743084486,
+      "camera_age_at_inference_start": 0.011604597006225958,
+      "camera_age_at_inference_end": 0.40876096198917367,
+      "inference_latency": 0.3971563649829477,
+      "source_age_at_inference_start": 0.054572343826293945,
+      "source_age_at_inference_end": 0.45184779167175293
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159486.034657936,
+      "inference_start_monotonic": 159486.0445062,
+      "inference_end_monotonic": 159486.42102802,
+      "camera_age_at_inference_start": 0.009848264016909525,
+      "camera_age_at_inference_end": 0.38637008401565254,
+      "inference_latency": 0.376521819998743,
+      "source_age_at_inference_start": 0.05302309989929199,
+      "source_age_at_inference_end": 0.429598331451416
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159486.500213369,
+      "inference_start_monotonic": 159486.511724166,
+      "inference_end_monotonic": 159486.902702899,
+      "camera_age_at_inference_start": 0.011510796990478411,
+      "camera_age_at_inference_end": 0.40248953000991605,
+      "inference_latency": 0.39097873301943764,
+      "source_age_at_inference_start": 0.05360698699951172,
+      "source_age_at_inference_end": 0.4446451663970947
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159486.933817993,
+      "inference_start_monotonic": 159486.942213249,
+      "inference_end_monotonic": 159487.338254973,
+      "camera_age_at_inference_start": 0.008395256008952856,
+      "camera_age_at_inference_end": 0.40443697999580763,
+      "inference_latency": 0.3960417239868548,
+      "source_age_at_inference_start": 0.0502629280090332,
+      "source_age_at_inference_end": 0.4467949867248535
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.01129324820389716,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159487.435661902,
+      "inference_start_monotonic": 159487.443553199,
+      "inference_end_monotonic": 159487.854062243,
+      "camera_age_at_inference_start": 0.007891296991147101,
+      "camera_age_at_inference_end": 0.41840034097549506,
+      "inference_latency": 0.41050904398434795,
+      "source_age_at_inference_start": 0.052030086517333984,
+      "source_age_at_inference_end": 0.4626307487487793
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159487.966768492,
+      "inference_start_monotonic": 159487.973970083,
+      "inference_end_monotonic": 159488.387144487,
+      "camera_age_at_inference_start": 0.007201590982731432,
+      "camera_age_at_inference_end": 0.42037599498871714,
+      "inference_latency": 0.4131744040059857,
+      "source_age_at_inference_start": 0.049035072326660156,
+      "source_age_at_inference_end": 0.46231961250305176
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159488.701378379,
+      "inference_start_monotonic": 159488.70910384,
+      "inference_end_monotonic": 159489.093747286,
+      "camera_age_at_inference_start": 0.007725461007794365,
+      "camera_age_at_inference_end": 0.39236890702159144,
+      "inference_latency": 0.3846434460137971,
+      "source_age_at_inference_start": 0.05089449882507324,
+      "source_age_at_inference_end": 0.4356520175933838
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159489.30045478,
+      "inference_start_monotonic": 159489.30967191,
+      "inference_end_monotonic": 159489.732907059,
+      "camera_age_at_inference_start": 0.00921713002026081,
+      "camera_age_at_inference_end": 0.43245227899751626,
+      "inference_latency": 0.42323514897725545,
+      "source_age_at_inference_start": 0.05126190185546875,
+      "source_age_at_inference_end": 0.47458934783935547
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159489.799721697,
+      "inference_start_monotonic": 159489.808130536,
+      "inference_end_monotonic": 159490.209489474,
+      "camera_age_at_inference_start": 0.008408838999457657,
+      "camera_age_at_inference_end": 0.40976777698961087,
+      "inference_latency": 0.4013589379901532,
+      "source_age_at_inference_start": 0.04984736442565918,
+      "source_age_at_inference_end": 0.4512808322906494
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159490.566411302,
+      "inference_start_monotonic": 159490.573992414,
+      "inference_end_monotonic": 159490.969401405,
+      "camera_age_at_inference_start": 0.00758111200411804,
+      "camera_age_at_inference_end": 0.402990103000775,
+      "inference_latency": 0.39540899099665694,
+      "source_age_at_inference_start": 0.04880261421203613,
+      "source_age_at_inference_end": 0.4443323612213135
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159491.000679145,
+      "inference_start_monotonic": 159491.007993688,
+      "inference_end_monotonic": 159491.411523643,
+      "camera_age_at_inference_start": 0.007314542977837846,
+      "camera_age_at_inference_end": 0.4108444979938213,
+      "inference_latency": 0.40352995501598343,
+      "source_age_at_inference_start": 0.049727678298950195,
+      "source_age_at_inference_end": 0.45329880714416504
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159491.534496508,
+      "inference_start_monotonic": 159491.542370812,
+      "inference_end_monotonic": 159491.933046323,
+      "camera_age_at_inference_start": 0.007874304021243006,
+      "camera_age_at_inference_end": 0.39854981502867304,
+      "inference_latency": 0.39067551100743003,
+      "source_age_at_inference_start": 0.050544023513793945,
+      "source_age_at_inference_end": 0.4413316249847412
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159491.967509968,
+      "inference_start_monotonic": 159491.975041115,
+      "inference_end_monotonic": 159492.353696185,
+      "camera_age_at_inference_start": 0.007531146984547377,
+      "camera_age_at_inference_end": 0.386186216986971,
+      "inference_latency": 0.3786550700024236,
+      "source_age_at_inference_start": 0.04996967315673828,
+      "source_age_at_inference_end": 0.4287385940551758
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159492.634870109,
+      "inference_start_monotonic": 159492.642153899,
+      "inference_end_monotonic": 159493.027251862,
+      "camera_age_at_inference_start": 0.007283790007932112,
+      "camera_age_at_inference_end": 0.39238175298669375,
+      "inference_latency": 0.38509796297876164,
+      "source_age_at_inference_start": 0.05034685134887695,
+      "source_age_at_inference_end": 0.43555402755737305
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159493.068530552,
+      "inference_start_monotonic": 159493.07646631,
+      "inference_end_monotonic": 159493.462595716,
+      "camera_age_at_inference_start": 0.007935758010717109,
+      "camera_age_at_inference_end": 0.3940651640004944,
+      "inference_latency": 0.3861294059897773,
+      "source_age_at_inference_start": 0.05122947692871094,
+      "source_age_at_inference_end": 0.4374096393585205
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159493.566945427,
+      "inference_start_monotonic": 159493.574151425,
+      "inference_end_monotonic": 159494.005734326,
+      "camera_age_at_inference_start": 0.007205998001154512,
+      "camera_age_at_inference_end": 0.4387888989876956,
+      "inference_latency": 0.43158290098654106,
+      "source_age_at_inference_start": 0.04888010025024414,
+      "source_age_at_inference_end": 0.4805328845977783
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159493.999660099,
+      "inference_start_monotonic": 159494.01394426,
+      "inference_end_monotonic": 159494.39315702,
+      "camera_age_at_inference_start": 0.014284160977695137,
+      "camera_age_at_inference_end": 0.3934969209949486,
+      "inference_latency": 0.37921276001725346,
+      "source_age_at_inference_start": 0.05531144142150879,
+      "source_age_at_inference_end": 0.43459606170654297
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159494.599460396,
+      "inference_start_monotonic": 159494.606501687,
+      "inference_end_monotonic": 159495.003623995,
+      "camera_age_at_inference_start": 0.007041290984489024,
+      "camera_age_at_inference_end": 0.4041635989851784,
+      "inference_latency": 0.3971223080006894,
+      "source_age_at_inference_start": 0.04800009727478027,
+      "source_age_at_inference_end": 0.4451904296875
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159495.100177099,
+      "inference_start_monotonic": 159495.108165669,
+      "inference_end_monotonic": 159495.488274017,
+      "camera_age_at_inference_start": 0.00798856999608688,
+      "camera_age_at_inference_end": 0.3880969180027023,
+      "inference_latency": 0.3801083480066154,
+      "source_age_at_inference_start": 0.04948282241821289,
+      "source_age_at_inference_end": 0.42969560623168945
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159495.600605358,
+      "inference_start_monotonic": 159495.608700153,
+      "inference_end_monotonic": 159495.995548809,
+      "camera_age_at_inference_start": 0.008094795019133016,
+      "camera_age_at_inference_end": 0.39494345101411454,
+      "inference_latency": 0.3868486559949815,
+      "source_age_at_inference_start": 0.049880266189575195,
+      "source_age_at_inference_end": 0.43683958053588867
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159496.099489971,
+      "inference_start_monotonic": 159496.107012551,
+      "inference_end_monotonic": 159496.500412672,
+      "camera_age_at_inference_start": 0.0075225799810141325,
+      "camera_age_at_inference_end": 0.40092270099557936,
+      "inference_latency": 0.39340012101456523,
+      "source_age_at_inference_start": 0.04821181297302246,
+      "source_age_at_inference_end": 0.44167327880859375
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159496.533376286,
+      "inference_start_monotonic": 159496.541204254,
+      "inference_end_monotonic": 159496.9275953,
+      "camera_age_at_inference_start": 0.007827967987395823,
+      "camera_age_at_inference_end": 0.39421901397872716,
+      "inference_latency": 0.38639104599133134,
+      "source_age_at_inference_start": 0.048995018005371094,
+      "source_age_at_inference_end": 0.4355130195617676
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159496.935538768,
+      "inference_start_monotonic": 159496.942935924,
+      "inference_end_monotonic": 159497.335927419,
+      "camera_age_at_inference_start": 0.007397155975922942,
+      "camera_age_at_inference_end": 0.4003886509744916,
+      "inference_latency": 0.39299149499856867,
+      "source_age_at_inference_start": 0.050771236419677734,
+      "source_age_at_inference_end": 0.44382715225219727
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159497.400456618,
+      "inference_start_monotonic": 159497.407658461,
+      "inference_end_monotonic": 159497.838258619,
+      "camera_age_at_inference_start": 0.007201842992799357,
+      "camera_age_at_inference_end": 0.43780200101900846,
+      "inference_latency": 0.4306001580262091,
+      "source_age_at_inference_start": 0.048792123794555664,
+      "source_age_at_inference_end": 0.47945141792297363
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159497.868210447,
+      "inference_start_monotonic": 159497.877198855,
+      "inference_end_monotonic": 159498.258640207,
+      "camera_age_at_inference_start": 0.00898840802256018,
+      "camera_age_at_inference_end": 0.3904297600092832,
+      "inference_latency": 0.381441351986723,
+      "source_age_at_inference_start": 0.0518040657043457,
+      "source_age_at_inference_end": 0.4333052635192871
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159498.300953597,
+      "inference_start_monotonic": 159498.308506452,
+      "inference_end_monotonic": 159498.697441212,
+      "camera_age_at_inference_start": 0.007552855007816106,
+      "camera_age_at_inference_end": 0.3964876149839256,
+      "inference_latency": 0.3889347599761095,
+      "source_age_at_inference_start": 0.04956865310668945,
+      "source_age_at_inference_end": 0.43862414360046387
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159498.770302467,
+      "inference_start_monotonic": 159498.780836823,
+      "inference_end_monotonic": 159499.161217527,
+      "camera_age_at_inference_start": 0.010534355998970568,
+      "camera_age_at_inference_end": 0.39091506000841036,
+      "inference_latency": 0.3803807040094398,
+      "source_age_at_inference_start": 0.0553128719329834,
+      "source_age_at_inference_end": 0.4357798099517822
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159499.400365473,
+      "inference_start_monotonic": 159499.407669223,
+      "inference_end_monotonic": 159499.83680032,
+      "camera_age_at_inference_start": 0.007303749996935949,
+      "camera_age_at_inference_end": 0.4364348469825927,
+      "inference_latency": 0.42913109698565677,
+      "source_age_at_inference_start": 0.048796892166137695,
+      "source_age_at_inference_end": 0.47797393798828125
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159499.834637548,
+      "inference_start_monotonic": 159499.844444682,
+      "inference_end_monotonic": 159500.229105025,
+      "camera_age_at_inference_start": 0.009807134018046781,
+      "camera_age_at_inference_end": 0.3944674770173151,
+      "inference_latency": 0.3846603429992683,
+      "source_age_at_inference_start": 0.05219674110412598,
+      "source_age_at_inference_end": 0.43691325187683105
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159500.266985627,
+      "inference_start_monotonic": 159500.274282723,
+      "inference_end_monotonic": 159500.668242061,
+      "camera_age_at_inference_start": 0.007297095988178626,
+      "camera_age_at_inference_end": 0.40125643397914246,
+      "inference_latency": 0.39395933799096383,
+      "source_age_at_inference_start": 0.04863691329956055,
+      "source_age_at_inference_end": 0.44265127182006836
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159500.700258513,
+      "inference_start_monotonic": 159500.709722878,
+      "inference_end_monotonic": 159501.111152303,
+      "camera_age_at_inference_start": 0.009464364993618801,
+      "camera_age_at_inference_end": 0.41089378998731263,
+      "inference_latency": 0.40142942499369383,
+      "source_age_at_inference_start": 0.050662994384765625,
+      "source_age_at_inference_end": 0.4521639347076416
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159501.400137155,
+      "inference_start_monotonic": 159501.407759444,
+      "inference_end_monotonic": 159501.83698875,
+      "camera_age_at_inference_start": 0.007622289005666971,
+      "camera_age_at_inference_end": 0.43685159500455484,
+      "inference_latency": 0.42922930599888787,
+      "source_age_at_inference_start": 0.04858684539794922,
+      "source_age_at_inference_end": 0.47789502143859863
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159501.965604887,
+      "inference_start_monotonic": 159501.973377324,
+      "inference_end_monotonic": 159502.356275933,
+      "camera_age_at_inference_start": 0.007772437005769461,
+      "camera_age_at_inference_end": 0.3906710460141767,
+      "inference_latency": 0.3828986090084072,
+      "source_age_at_inference_start": 0.047750234603881836,
+      "source_age_at_inference_end": 0.43071722984313965
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159502.367288582,
+      "inference_start_monotonic": 159502.37455062,
+      "inference_end_monotonic": 159502.749261176,
+      "camera_age_at_inference_start": 0.007262038008775562,
+      "camera_age_at_inference_end": 0.38197259401204064,
+      "inference_latency": 0.3747105560032651,
+      "source_age_at_inference_start": 0.04890251159667969,
+      "source_age_at_inference_end": 0.42368078231811523
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159502.967135733,
+      "inference_start_monotonic": 159502.974831885,
+      "inference_end_monotonic": 159503.373182641,
+      "camera_age_at_inference_start": 0.007696151995332912,
+      "camera_age_at_inference_end": 0.4060469079995528,
+      "inference_latency": 0.3983507560042199,
+      "source_age_at_inference_start": 0.04900336265563965,
+      "source_age_at_inference_end": 0.4474599361419678
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159503.399977599,
+      "inference_start_monotonic": 159503.408919611,
+      "inference_end_monotonic": 159503.789530435,
+      "camera_age_at_inference_start": 0.008942012005718425,
+      "camera_age_at_inference_end": 0.389552835986251,
+      "inference_latency": 0.3806108239805326,
+      "source_age_at_inference_start": 0.0497288703918457,
+      "source_age_at_inference_end": 0.43044209480285645
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159503.804097699,
+      "inference_start_monotonic": 159503.811726339,
+      "inference_end_monotonic": 159504.21918565,
+      "camera_age_at_inference_start": 0.007628639985341579,
+      "camera_age_at_inference_end": 0.4150879509979859,
+      "inference_latency": 0.4074593110126443,
+      "source_age_at_inference_start": 0.05246996879577637,
+      "source_age_at_inference_end": 0.459979772567749
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159504.300950915,
+      "inference_start_monotonic": 159504.309750471,
+      "inference_end_monotonic": 159504.686073668,
+      "camera_age_at_inference_start": 0.008799556002486497,
+      "camera_age_at_inference_end": 0.38512275301036425,
+      "inference_latency": 0.37632319700787775,
+      "source_age_at_inference_start": 0.050441741943359375,
+      "source_age_at_inference_end": 0.4268465042114258
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159504.734361369,
+      "inference_start_monotonic": 159504.74231101,
+      "inference_end_monotonic": 159505.11146829,
+      "camera_age_at_inference_start": 0.007949641003506258,
+      "camera_age_at_inference_end": 0.3771069210197311,
+      "inference_latency": 0.36915728001622483,
+      "source_age_at_inference_start": 0.04963207244873047,
+      "source_age_at_inference_end": 0.4188871383666992
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159505.166549273,
+      "inference_start_monotonic": 159505.173993492,
+      "inference_end_monotonic": 159505.575850819,
+      "camera_age_at_inference_start": 0.007444218994351104,
+      "camera_age_at_inference_end": 0.40930154599482194,
+      "inference_latency": 0.40185732700047083,
+      "source_age_at_inference_start": 0.04789614677429199,
+      "source_age_at_inference_end": 0.4498586654663086
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159505.76896576,
+      "inference_start_monotonic": 159505.777291125,
+      "inference_end_monotonic": 159506.151463955,
+      "camera_age_at_inference_start": 0.008325364993652329,
+      "camera_age_at_inference_end": 0.38249819498742,
+      "inference_latency": 0.37417282999376766,
+      "source_age_at_inference_start": 0.051276445388793945,
+      "source_age_at_inference_end": 0.42549896240234375
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159506.234270328,
+      "inference_start_monotonic": 159506.242232742,
+      "inference_end_monotonic": 159506.643496942,
+      "camera_age_at_inference_start": 0.007962414005305618,
+      "camera_age_at_inference_end": 0.4092266140214633,
+      "inference_latency": 0.4012642000161577,
+      "source_age_at_inference_start": 0.0495305061340332,
+      "source_age_at_inference_end": 0.450894832611084
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159506.633691818,
+      "inference_start_monotonic": 159506.653207994,
+      "inference_end_monotonic": 159507.062162605,
+      "camera_age_at_inference_start": 0.0195161760202609,
+      "camera_age_at_inference_end": 0.4284707870101556,
+      "inference_latency": 0.4089546109898947,
+      "source_age_at_inference_start": 0.06040358543395996,
+      "source_age_at_inference_end": 0.46943068504333496
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159507.13374187,
+      "inference_start_monotonic": 159507.14027926,
+      "inference_end_monotonic": 159507.516746382,
+      "camera_age_at_inference_start": 0.006537389999721199,
+      "camera_age_at_inference_end": 0.38300451199756935,
+      "inference_latency": 0.37646712199784815,
+      "source_age_at_inference_start": 0.04764151573181152,
+      "source_age_at_inference_end": 0.4241807460784912
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159507.536377088,
+      "inference_start_monotonic": 159507.544059537,
+      "inference_end_monotonic": 159507.938528508,
+      "camera_age_at_inference_start": 0.007682449009735137,
+      "camera_age_at_inference_end": 0.4021514200139791,
+      "inference_latency": 0.39446897100424394,
+      "source_age_at_inference_start": 0.05131101608276367,
+      "source_age_at_inference_end": 0.4459414482116699
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159508.100658069,
+      "inference_start_monotonic": 159508.109030491,
+      "inference_end_monotonic": 159508.502342877,
+      "camera_age_at_inference_start": 0.008372422016691417,
+      "camera_age_at_inference_end": 0.40168480802094564,
+      "inference_latency": 0.3933123860042542,
+      "source_age_at_inference_start": 0.04957437515258789,
+      "source_age_at_inference_end": 0.4430062770843506
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.012682401507142239,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159509.035317344,
+      "inference_start_monotonic": 159509.043505162,
+      "inference_end_monotonic": 159509.424768226,
+      "camera_age_at_inference_start": 0.0081878179917112,
+      "camera_age_at_inference_end": 0.38945088197942823,
+      "inference_latency": 0.38126306398771703,
+      "source_age_at_inference_start": 0.05058002471923828,
+      "source_age_at_inference_end": 0.43189358711242676
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159509.800415658,
+      "inference_start_monotonic": 159509.810417947,
+      "inference_end_monotonic": 159510.189235603,
+      "camera_age_at_inference_start": 0.010002288996474817,
+      "camera_age_at_inference_end": 0.3888199449866079,
+      "inference_latency": 0.37881765599013306,
+      "source_age_at_inference_start": 0.050759077072143555,
+      "source_age_at_inference_end": 0.42963290214538574
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159510.300110808,
+      "inference_start_monotonic": 159510.308627796,
+      "inference_end_monotonic": 159510.685938722,
+      "camera_age_at_inference_start": 0.008516988018527627,
+      "camera_age_at_inference_end": 0.3858279139967635,
+      "inference_latency": 0.3773109259782359,
+      "source_age_at_inference_start": 0.04892420768737793,
+      "source_age_at_inference_end": 0.4263474941253662
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159510.733773622,
+      "inference_start_monotonic": 159510.742301366,
+      "inference_end_monotonic": 159511.139912121,
+      "camera_age_at_inference_start": 0.008527744008461013,
+      "camera_age_at_inference_end": 0.40613849900546484,
+      "inference_latency": 0.3976107549970038,
+      "source_age_at_inference_start": 0.04934573173522949,
+      "source_age_at_inference_end": 0.44706153869628906
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159511.20337365,
+      "inference_start_monotonic": 159511.213980436,
+      "inference_end_monotonic": 159511.605366583,
+      "camera_age_at_inference_start": 0.01060678600333631,
+      "camera_age_at_inference_end": 0.40199293300975114,
+      "inference_latency": 0.39138614700641483,
+      "source_age_at_inference_start": 0.05430126190185547,
+      "source_age_at_inference_end": 0.44573450088500977
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159511.633787931,
+      "inference_start_monotonic": 159511.642190949,
+      "inference_end_monotonic": 159512.040173905,
+      "camera_age_at_inference_start": 0.008403018000535667,
+      "camera_age_at_inference_end": 0.4063859739981126,
+      "inference_latency": 0.39798295599757694,
+      "source_age_at_inference_start": 0.0492243766784668,
+      "source_age_at_inference_end": 0.4473264217376709
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159512.238104629,
+      "inference_start_monotonic": 159512.248731758,
+      "inference_end_monotonic": 159512.675755305,
+      "camera_age_at_inference_start": 0.010627128998748958,
+      "camera_age_at_inference_end": 0.43765067600179464,
+      "inference_latency": 0.4270235470030457,
+      "source_age_at_inference_start": 0.05558586120605469,
+      "source_age_at_inference_end": 0.4827237129211426
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159512.700390558,
+      "inference_start_monotonic": 159512.708647744,
+      "inference_end_monotonic": 159513.116780645,
+      "camera_age_at_inference_start": 0.008257186011178419,
+      "camera_age_at_inference_end": 0.41639008701895364,
+      "inference_latency": 0.4081329010077752,
+      "source_age_at_inference_start": 0.048858642578125,
+      "source_age_at_inference_end": 0.45703554153442383
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159513.13504767,
+      "inference_start_monotonic": 159513.145111893,
+      "inference_end_monotonic": 159513.565897018,
+      "camera_age_at_inference_start": 0.010064223024528474,
+      "camera_age_at_inference_end": 0.4308493480202742,
+      "inference_latency": 0.4207851249957457,
+      "source_age_at_inference_start": 0.05190014839172363,
+      "source_age_at_inference_end": 0.47279882431030273
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159513.734375673,
+      "inference_start_monotonic": 159513.742594164,
+      "inference_end_monotonic": 159514.129293629,
+      "camera_age_at_inference_start": 0.008218491013394669,
+      "camera_age_at_inference_end": 0.3949179560004268,
+      "inference_latency": 0.3866994649870321,
+      "source_age_at_inference_start": 0.04948616027832031,
+      "source_age_at_inference_end": 0.4363136291503906
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159514.334011056,
+      "inference_start_monotonic": 159514.341582675,
+      "inference_end_monotonic": 159514.774879457,
+      "camera_age_at_inference_start": 0.007571619004011154,
+      "camera_age_at_inference_end": 0.44086840099771507,
+      "inference_latency": 0.4332967819937039,
+      "source_age_at_inference_start": 0.048273324966430664,
+      "source_age_at_inference_end": 0.48165392875671387
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159514.768712618,
+      "inference_start_monotonic": 159514.78277805,
+      "inference_end_monotonic": 159515.17984571,
+      "camera_age_at_inference_start": 0.014065431983908638,
+      "camera_age_at_inference_end": 0.4111330919840839,
+      "inference_latency": 0.39706766000017524,
+      "source_age_at_inference_start": 0.05622053146362305,
+      "source_age_at_inference_end": 0.45336341857910156
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159515.268350474,
+      "inference_start_monotonic": 159515.276541909,
+      "inference_end_monotonic": 159515.667264848,
+      "camera_age_at_inference_start": 0.008191434986656532,
+      "camera_age_at_inference_end": 0.39891437397454865,
+      "inference_latency": 0.3907229389878921,
+      "source_age_at_inference_start": 0.0498049259185791,
+      "source_age_at_inference_end": 0.4406547546386719
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159515.867759368,
+      "inference_start_monotonic": 159515.878759815,
+      "inference_end_monotonic": 159516.256933507,
+      "camera_age_at_inference_start": 0.011000447004335001,
+      "camera_age_at_inference_end": 0.3891741389816161,
+      "inference_latency": 0.3781736919772811,
+      "source_age_at_inference_start": 0.05210995674133301,
+      "source_age_at_inference_end": 0.4303402900695801
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159516.334020494,
+      "inference_start_monotonic": 159516.341471123,
+      "inference_end_monotonic": 159516.74442906,
+      "camera_age_at_inference_start": 0.007450629025697708,
+      "camera_age_at_inference_end": 0.4104085660073906,
+      "inference_latency": 0.4029579369816929,
+      "source_age_at_inference_start": 0.04815220832824707,
+      "source_age_at_inference_end": 0.4512033462524414
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159516.968061275,
+      "inference_start_monotonic": 159516.976740789,
+      "inference_end_monotonic": 159517.375693889,
+      "camera_age_at_inference_start": 0.008679513994138688,
+      "camera_age_at_inference_end": 0.40763261399115436,
+      "inference_latency": 0.39895309999701567,
+      "source_age_at_inference_start": 0.0500185489654541,
+      "source_age_at_inference_end": 0.44908785820007324
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159517.36680702,
+      "inference_start_monotonic": 159517.385136813,
+      "inference_end_monotonic": 159517.768391504,
+      "camera_age_at_inference_start": 0.018329793005250394,
+      "camera_age_at_inference_end": 0.4015844840032514,
+      "inference_latency": 0.383254690998001,
+      "source_age_at_inference_start": 0.05847454071044922,
+      "source_age_at_inference_end": 0.44182538986206055
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159517.800380571,
+      "inference_start_monotonic": 159517.810055139,
+      "inference_end_monotonic": 159518.231769455,
+      "camera_age_at_inference_start": 0.009674568020273,
+      "camera_age_at_inference_end": 0.4313888839969877,
+      "inference_latency": 0.4217143159767147,
+      "source_age_at_inference_start": 0.049820899963378906,
+      "source_age_at_inference_end": 0.47164177894592285
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159518.501355252,
+      "inference_start_monotonic": 159518.509273124,
+      "inference_end_monotonic": 159518.934781215,
+      "camera_age_at_inference_start": 0.007917871989775449,
+      "camera_age_at_inference_end": 0.43342596301226877,
+      "inference_latency": 0.4255080910224933,
+      "source_age_at_inference_start": 0.04916071891784668,
+      "source_age_at_inference_end": 0.47478580474853516
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159518.93324624,
+      "inference_start_monotonic": 159518.942069312,
+      "inference_end_monotonic": 159519.34875382,
+      "camera_age_at_inference_start": 0.00882307201391086,
+      "camera_age_at_inference_end": 0.41550758000812493,
+      "inference_latency": 0.4066845079942141,
+      "source_age_at_inference_start": 0.04853200912475586,
+      "source_age_at_inference_end": 0.4552774429321289
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159519.362437933,
+      "inference_start_monotonic": 159519.367933374,
+      "inference_end_monotonic": 159519.777604205,
+      "camera_age_at_inference_start": 0.005495440971571952,
+      "camera_age_at_inference_end": 0.4151662719959859,
+      "inference_latency": 0.40967083102441393,
+      "source_age_at_inference_start": 0.041004180908203125,
+      "source_age_at_inference_end": 0.4507153034210205
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159519.901317686,
+      "inference_start_monotonic": 159519.910997208,
+      "inference_end_monotonic": 159520.310102499,
+      "camera_age_at_inference_start": 0.009679522016085684,
+      "camera_age_at_inference_end": 0.4087848130147904,
+      "inference_latency": 0.39910529099870473,
+      "source_age_at_inference_start": 0.050702810287475586,
+      "source_age_at_inference_end": 0.44985365867614746
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159520.468600734,
+      "inference_start_monotonic": 159520.476783143,
+      "inference_end_monotonic": 159520.860958233,
+      "camera_age_at_inference_start": 0.008182409015716985,
+      "camera_age_at_inference_end": 0.39235749901854433,
+      "inference_latency": 0.38417509000282735,
+      "source_age_at_inference_start": 0.04990887641906738,
+      "source_age_at_inference_end": 0.43421387672424316
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159520.867785464,
+      "inference_start_monotonic": 159520.876406536,
+      "inference_end_monotonic": 159521.307338211,
+      "camera_age_at_inference_start": 0.008621071989182383,
+      "camera_age_at_inference_end": 0.43955274697509594,
+      "inference_latency": 0.43093167498591356,
+      "source_age_at_inference_start": 0.049501895904541016,
+      "source_age_at_inference_end": 0.4804837703704834
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159521.501924146,
+      "inference_start_monotonic": 159521.511127418,
+      "inference_end_monotonic": 159521.91849918,
+      "camera_age_at_inference_start": 0.009203271998558193,
+      "camera_age_at_inference_end": 0.41657503400347196,
+      "inference_latency": 0.40737176200491376,
+      "source_age_at_inference_start": 0.050896406173706055,
+      "source_age_at_inference_end": 0.4583442211151123
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159522.100882364,
+      "inference_start_monotonic": 159522.109382819,
+      "inference_end_monotonic": 159522.49912392,
+      "camera_age_at_inference_start": 0.00850045500556007,
+      "camera_age_at_inference_end": 0.39824155598762445,
+      "inference_latency": 0.3897411009820644,
+      "source_age_at_inference_start": 0.04891848564147949,
+      "source_age_at_inference_end": 0.4387814998626709
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159522.534599128,
+      "inference_start_monotonic": 159522.543196927,
+      "inference_end_monotonic": 159522.940198173,
+      "camera_age_at_inference_start": 0.008597798994742334,
+      "camera_age_at_inference_end": 0.4055990449851379,
+      "inference_latency": 0.39700124599039555,
+      "source_age_at_inference_start": 0.049474477767944336,
+      "source_age_at_inference_end": 0.446575403213501
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159523.16759119,
+      "inference_start_monotonic": 159523.174882255,
+      "inference_end_monotonic": 159523.554079169,
+      "camera_age_at_inference_start": 0.00729106500511989,
+      "camera_age_at_inference_end": 0.3864879790053237,
+      "inference_latency": 0.37919691400020383,
+      "source_age_at_inference_start": 0.04776763916015625,
+      "source_age_at_inference_end": 0.42702388763427734
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159524.069777539,
+      "inference_start_monotonic": 159524.078574422,
+      "inference_end_monotonic": 159524.503742405,
+      "camera_age_at_inference_start": 0.008796882990282029,
+      "camera_age_at_inference_end": 0.4339648660097737,
+      "inference_latency": 0.42516798301949166,
+      "source_age_at_inference_start": 0.05149507522583008,
+      "source_age_at_inference_end": 0.4767189025878906
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159524.702453787,
+      "inference_start_monotonic": 159524.709713039,
+      "inference_end_monotonic": 159525.100365501,
+      "camera_age_at_inference_start": 0.00725925198639743,
+      "camera_age_at_inference_end": 0.39791171401157044,
+      "inference_latency": 0.390652462025173,
+      "source_age_at_inference_start": 0.04911375045776367,
+      "source_age_at_inference_end": 0.4398798942565918
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.01546070811363241,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159525.303886695,
+      "inference_start_monotonic": 159525.312126979,
+      "inference_end_monotonic": 159525.713608994,
+      "camera_age_at_inference_start": 0.008240283990744501,
+      "camera_age_at_inference_end": 0.4097222989948932,
+      "inference_latency": 0.4014820150041487,
+      "source_age_at_inference_start": 0.051732778549194336,
+      "source_age_at_inference_end": 0.4532790184020996
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159525.735596056,
+      "inference_start_monotonic": 159525.741423947,
+      "inference_end_monotonic": 159526.154570009,
+      "camera_age_at_inference_start": 0.005827891000080854,
+      "camera_age_at_inference_end": 0.41897395299747586,
+      "inference_latency": 0.413146061997395,
+      "source_age_at_inference_start": 0.04759526252746582,
+      "source_age_at_inference_end": 0.4607856273651123
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159526.235575931,
+      "inference_start_monotonic": 159526.244132748,
+      "inference_end_monotonic": 159526.64030252,
+      "camera_age_at_inference_start": 0.008556816988857463,
+      "camera_age_at_inference_end": 0.40472658901126124,
+      "inference_latency": 0.3961697720224038,
+      "source_age_at_inference_start": 0.05012655258178711,
+      "source_age_at_inference_end": 0.4464118480682373
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159526.668606505,
+      "inference_start_monotonic": 159526.676922305,
+      "inference_end_monotonic": 159527.075401791,
+      "camera_age_at_inference_start": 0.008315799990668893,
+      "camera_age_at_inference_end": 0.40679528599139303,
+      "inference_latency": 0.39847948600072414,
+      "source_age_at_inference_start": 0.04971623420715332,
+      "source_age_at_inference_end": 0.4482896327972412
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159527.138394541,
+      "inference_start_monotonic": 159527.148403459,
+      "inference_end_monotonic": 159527.545275498,
+      "camera_age_at_inference_start": 0.010008918005041778,
+      "camera_age_at_inference_end": 0.4068809570162557,
+      "inference_latency": 0.39687203901121393,
+      "source_age_at_inference_start": 0.0544741153717041,
+      "source_age_at_inference_end": 0.45139551162719727
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159527.668038409,
+      "inference_start_monotonic": 159527.676282361,
+      "inference_end_monotonic": 159528.084397407,
+      "camera_age_at_inference_start": 0.008243952004704624,
+      "camera_age_at_inference_end": 0.4163589979871176,
+      "inference_latency": 0.408115045982413,
+      "source_age_at_inference_start": 0.048804521560668945,
+      "source_age_at_inference_end": 0.45702552795410156
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.013515893489089296,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159528.168778384,
+      "inference_start_monotonic": 159528.17740251,
+      "inference_end_monotonic": 159528.561568445,
+      "camera_age_at_inference_start": 0.00862412599963136,
+      "camera_age_at_inference_end": 0.39279006101423874,
+      "inference_latency": 0.3841659350146074,
+      "source_age_at_inference_start": 0.049924612045288086,
+      "source_age_at_inference_end": 0.4342186450958252
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159528.568631381,
+      "inference_start_monotonic": 159528.575752627,
+      "inference_end_monotonic": 159528.966390298,
+      "camera_age_at_inference_start": 0.007121245987946168,
+      "camera_age_at_inference_end": 0.3977589170099236,
+      "inference_latency": 0.39063767102197744,
+      "source_age_at_inference_start": 0.04831957817077637,
+      "source_age_at_inference_end": 0.43901634216308594
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159529.335327109,
+      "inference_start_monotonic": 159529.342920889,
+      "inference_end_monotonic": 159529.741778094,
+      "camera_age_at_inference_start": 0.007593779999297112,
+      "camera_age_at_inference_end": 0.40645098499953747,
+      "inference_latency": 0.39885720500024036,
+      "source_age_at_inference_start": 0.04867839813232422,
+      "source_age_at_inference_end": 0.44764018058776855
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159529.801453067,
+      "inference_start_monotonic": 159529.809702917,
+      "inference_end_monotonic": 159530.206315073,
+      "camera_age_at_inference_start": 0.008249850012362003,
+      "camera_age_at_inference_end": 0.40486200602026656,
+      "inference_latency": 0.39661215600790456,
+      "source_age_at_inference_start": 0.04884195327758789,
+      "source_age_at_inference_end": 0.44555044174194336
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159530.234981395,
+      "inference_start_monotonic": 159530.24343848,
+      "inference_end_monotonic": 159530.620049373,
+      "camera_age_at_inference_start": 0.008457085001282394,
+      "camera_age_at_inference_end": 0.385067978000734,
+      "inference_latency": 0.3766108929994516,
+      "source_age_at_inference_start": 0.04932999610900879,
+      "source_age_at_inference_end": 0.4260532855987549
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159530.801820972,
+      "inference_start_monotonic": 159530.810030746,
+      "inference_end_monotonic": 159531.219840829,
+      "camera_age_at_inference_start": 0.00820977400871925,
+      "camera_age_at_inference_end": 0.4180198569956701,
+      "inference_latency": 0.4098100829869509,
+      "source_age_at_inference_start": 0.0489962100982666,
+      "source_age_at_inference_end": 0.4589202404022217
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0001795863473153833,
+      0.013515893489089296,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159531.23942071,
+      "inference_start_monotonic": 159531.248216046,
+      "inference_end_monotonic": 159531.653974197,
+      "camera_age_at_inference_start": 0.008795336005277932,
+      "camera_age_at_inference_end": 0.41455348700401373,
+      "inference_latency": 0.4057581509987358,
+      "source_age_at_inference_start": 0.05386614799499512,
+      "source_age_at_inference_end": 0.4596984386444092
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159531.969668831,
+      "inference_start_monotonic": 159531.977941461,
+      "inference_end_monotonic": 159532.385664322,
+      "camera_age_at_inference_start": 0.008272629987914115,
+      "camera_age_at_inference_end": 0.41599549099919386,
+      "inference_latency": 0.40772286101127975,
+      "source_age_at_inference_start": 0.050267934799194336,
+      "source_age_at_inference_end": 0.45804500579833984
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159532.635595294,
+      "inference_start_monotonic": 159532.645267475,
+      "inference_end_monotonic": 159533.038228835,
+      "camera_age_at_inference_start": 0.0096721809823066,
+      "camera_age_at_inference_end": 0.40263354100170545,
+      "inference_latency": 0.39296136001939885,
+      "source_age_at_inference_start": 0.05083751678466797,
+      "source_age_at_inference_end": 0.4438626766204834
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159533.301630704,
+      "inference_start_monotonic": 159533.310966439,
+      "inference_end_monotonic": 159533.754536496,
+      "camera_age_at_inference_start": 0.009335734997875988,
+      "camera_age_at_inference_end": 0.45290579201537184,
+      "inference_latency": 0.44357005701749586,
+      "source_age_at_inference_start": 0.04984760284423828,
+      "source_age_at_inference_end": 0.493527889251709
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159533.835352846,
+      "inference_start_monotonic": 159533.845310065,
+      "inference_end_monotonic": 159534.257424803,
+      "camera_age_at_inference_start": 0.009957218979252502,
+      "camera_age_at_inference_end": 0.4220719570002984,
+      "inference_latency": 0.4121147380210459,
+      "source_age_at_inference_start": 0.05088186264038086,
+      "source_age_at_inference_end": 0.463059663772583
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159534.402177289,
+      "inference_start_monotonic": 159534.409960414,
+      "inference_end_monotonic": 159534.807200912,
+      "camera_age_at_inference_start": 0.0077831249800510705,
+      "camera_age_at_inference_end": 0.40502362299594097,
+      "inference_latency": 0.3972404980158899,
+      "source_age_at_inference_start": 0.048748016357421875,
+      "source_age_at_inference_end": 0.4460434913635254
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159534.835901925,
+      "inference_start_monotonic": 159534.844696344,
+      "inference_end_monotonic": 159535.241485562,
+      "camera_age_at_inference_start": 0.008794419001787901,
+      "camera_age_at_inference_end": 0.40558363700984046,
+      "inference_latency": 0.39678921800805256,
+      "source_age_at_inference_start": 0.050222158432006836,
+      "source_age_at_inference_end": 0.4470789432525635
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159535.502359137,
+      "inference_start_monotonic": 159535.511795531,
+      "inference_end_monotonic": 159535.894038514,
+      "camera_age_at_inference_start": 0.009436394000658765,
+      "camera_age_at_inference_end": 0.39167937700403854,
+      "inference_latency": 0.3822429830033798,
+      "source_age_at_inference_start": 0.05055499076843262,
+      "source_age_at_inference_end": 0.4328901767730713
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159536.067939898,
+      "inference_start_monotonic": 159536.077668918,
+      "inference_end_monotonic": 159536.468821103,
+      "camera_age_at_inference_start": 0.009729020006489009,
+      "camera_age_at_inference_end": 0.4008812049869448,
+      "inference_latency": 0.3911521849804558,
+      "source_age_at_inference_start": 0.049685001373291016,
+      "source_age_at_inference_end": 0.4409515857696533
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159536.468081286,
+      "inference_start_monotonic": 159536.477390527,
+      "inference_end_monotonic": 159536.872465755,
+      "camera_age_at_inference_start": 0.009309240995207801,
+      "camera_age_at_inference_end": 0.40438446900225244,
+      "inference_latency": 0.39507522800704464,
+      "source_age_at_inference_start": 0.049448251724243164,
+      "source_age_at_inference_end": 0.44457197189331055
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159536.935424502,
+      "inference_start_monotonic": 159536.94351181,
+      "inference_end_monotonic": 159537.329629114,
+      "camera_age_at_inference_start": 0.00808730800054036,
+      "camera_age_at_inference_end": 0.3942046120064333,
+      "inference_latency": 0.38611730400589295,
+      "source_age_at_inference_start": 0.048787832260131836,
+      "source_age_at_inference_end": 0.4349997043609619
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159537.335195295,
+      "inference_start_monotonic": 159537.343263418,
+      "inference_end_monotonic": 159537.734305275,
+      "camera_age_at_inference_start": 0.008068123017437756,
+      "camera_age_at_inference_end": 0.3991099800041411,
+      "inference_latency": 0.39104185698670335,
+      "source_age_at_inference_start": 0.048578500747680664,
+      "source_age_at_inference_end": 0.43968772888183594
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159537.767713058,
+      "inference_start_monotonic": 159537.777143385,
+      "inference_end_monotonic": 159538.191241004,
+      "camera_age_at_inference_start": 0.009430326987057924,
+      "camera_age_at_inference_end": 0.42352794599719346,
+      "inference_latency": 0.41409761901013553,
+      "source_age_at_inference_start": 0.04912543296813965,
+      "source_age_at_inference_end": 0.46333765983581543
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159538.468269037,
+      "inference_start_monotonic": 159538.476498116,
+      "inference_end_monotonic": 159538.887579343,
+      "camera_age_at_inference_start": 0.008229079016018659,
+      "camera_age_at_inference_end": 0.41931030599516816,
+      "inference_latency": 0.4110812269791495,
+      "source_age_at_inference_start": 0.04833841323852539,
+      "source_age_at_inference_end": 0.45952916145324707
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159539.068759917,
+      "inference_start_monotonic": 159539.077246673,
+      "inference_end_monotonic": 159539.471716525,
+      "camera_age_at_inference_start": 0.008486756007187068,
+      "camera_age_at_inference_end": 0.40295660801348276,
+      "inference_latency": 0.3944698520062957,
+      "source_age_at_inference_start": 0.0492703914642334,
+      "source_age_at_inference_end": 0.4437856674194336
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159539.53550518,
+      "inference_start_monotonic": 159539.544788266,
+      "inference_end_monotonic": 159539.967853418,
+      "camera_age_at_inference_start": 0.009283085993956774,
+      "camera_age_at_inference_end": 0.43234823798411526,
+      "inference_latency": 0.4230651519901585,
+      "source_age_at_inference_start": 0.05009198188781738,
+      "source_age_at_inference_end": 0.47321271896362305
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159540.002244618,
+      "inference_start_monotonic": 159540.010048505,
+      "inference_end_monotonic": 159540.391813917,
+      "camera_age_at_inference_start": 0.007803887012414634,
+      "camera_age_at_inference_end": 0.3895692990045063,
+      "inference_latency": 0.3817654119920917,
+      "source_age_at_inference_start": 0.04858255386352539,
+      "source_age_at_inference_end": 0.43041372299194336
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159540.470521053,
+      "inference_start_monotonic": 159540.478195139,
+      "inference_end_monotonic": 159540.852423534,
+      "camera_age_at_inference_start": 0.007674085994949564,
+      "camera_age_at_inference_end": 0.3819024809927214,
+      "inference_latency": 0.37422839499777183,
+      "source_age_at_inference_start": 0.04997706413269043,
+      "source_age_at_inference_end": 0.4242594242095947
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0016654666799537524,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159541.103173584,
+      "inference_start_monotonic": 159541.111512362,
+      "inference_end_monotonic": 159541.481622581,
+      "camera_age_at_inference_start": 0.008338777988683432,
+      "camera_age_at_inference_end": 0.3784489969839342,
+      "inference_latency": 0.37011021899525076,
+      "source_age_at_inference_start": 0.04994487762451172,
+      "source_age_at_inference_end": 0.420168399810791
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159541.635536333,
+      "inference_start_monotonic": 159541.644223855,
+      "inference_end_monotonic": 159542.044704726,
+      "camera_age_at_inference_start": 0.00868752200040035,
+      "camera_age_at_inference_end": 0.4091683930018917,
+      "inference_latency": 0.4004808710014913,
+      "source_age_at_inference_start": 0.049390316009521484,
+      "source_age_at_inference_end": 0.4499192237854004
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159542.268584666,
+      "inference_start_monotonic": 159542.276912324,
+      "inference_end_monotonic": 159542.68774262,
+      "camera_age_at_inference_start": 0.008327658026246354,
+      "camera_age_at_inference_end": 0.41915795402019285,
+      "inference_latency": 0.4108302959939465,
+      "source_age_at_inference_start": 0.047949790954589844,
+      "source_age_at_inference_end": 0.4588916301727295
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159542.769455429,
+      "inference_start_monotonic": 159542.777949426,
+      "inference_end_monotonic": 159543.185566825,
+      "camera_age_at_inference_start": 0.008493997011100873,
+      "camera_age_at_inference_end": 0.41611139601445757,
+      "inference_latency": 0.4076173990033567,
+      "source_age_at_inference_start": 0.04962491989135742,
+      "source_age_at_inference_end": 0.4573018550872803
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159543.271111694,
+      "inference_start_monotonic": 159543.279243043,
+      "inference_end_monotonic": 159543.677248966,
+      "camera_age_at_inference_start": 0.008131349022733048,
+      "camera_age_at_inference_end": 0.4061372720170766,
+      "inference_latency": 0.39800592299434356,
+      "source_age_at_inference_start": 0.050905466079711914,
+      "source_age_at_inference_end": 0.4489772319793701
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159543.667909632,
+      "inference_start_monotonic": 159543.685548489,
+      "inference_end_monotonic": 159544.079830077,
+      "camera_age_at_inference_start": 0.017638857010751963,
+      "camera_age_at_inference_end": 0.4119204450107645,
+      "inference_latency": 0.39428158800001256,
+      "source_age_at_inference_start": 0.05710148811340332,
+      "source_age_at_inference_end": 0.45145153999328613
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159544.301825454,
+      "inference_start_monotonic": 159544.309990475,
+      "inference_end_monotonic": 159544.697924078,
+      "camera_age_at_inference_start": 0.0081650210195221,
+      "camera_age_at_inference_end": 0.3960986240126658,
+      "inference_latency": 0.3879336029931437,
+      "source_age_at_inference_start": 0.04812049865722656,
+      "source_age_at_inference_end": 0.43616437911987305
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159545.269566271,
+      "inference_start_monotonic": 159545.278228739,
+      "inference_end_monotonic": 159545.658731819,
+      "camera_age_at_inference_start": 0.0086624679970555,
+      "camera_age_at_inference_end": 0.3891655480256304,
+      "inference_latency": 0.3805030800285749,
+      "source_age_at_inference_start": 0.04984569549560547,
+      "source_age_at_inference_end": 0.4304690361022949
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159545.836028834,
+      "inference_start_monotonic": 159545.845227643,
+      "inference_end_monotonic": 159546.250225424,
+      "camera_age_at_inference_start": 0.009198809013469145,
+      "camera_age_at_inference_end": 0.41419659001985565,
+      "inference_latency": 0.4049977810063865,
+      "source_age_at_inference_start": 0.05016303062438965,
+      "source_age_at_inference_end": 0.4552271366119385
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159546.302716218,
+      "inference_start_monotonic": 159546.310938635,
+      "inference_end_monotonic": 159546.717492407,
+      "camera_age_at_inference_start": 0.00822241700370796,
+      "camera_age_at_inference_end": 0.41477618901990354,
+      "inference_latency": 0.4065537720161956,
+      "source_age_at_inference_start": 0.04911375045776367,
+      "source_age_at_inference_end": 0.4558587074279785
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159546.869246162,
+      "inference_start_monotonic": 159546.877588648,
+      "inference_end_monotonic": 159547.290262776,
+      "camera_age_at_inference_start": 0.008342485991306603,
+      "camera_age_at_inference_end": 0.42101661398191936,
+      "inference_latency": 0.41267412799061276,
+      "source_age_at_inference_start": 0.04908943176269531,
+      "source_age_at_inference_end": 0.4618833065032959
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159547.402555161,
+      "inference_start_monotonic": 159547.411726463,
+      "inference_end_monotonic": 159547.807380646,
+      "camera_age_at_inference_start": 0.00917130199377425,
+      "camera_age_at_inference_end": 0.40482548499130644,
+      "inference_latency": 0.3956541829975322,
+      "source_age_at_inference_start": 0.04990983009338379,
+      "source_age_at_inference_end": 0.44563889503479004
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159547.840444048,
+      "inference_start_monotonic": 159547.847700283,
+      "inference_end_monotonic": 159548.240535186,
+      "camera_age_at_inference_start": 0.007256234996020794,
+      "camera_age_at_inference_end": 0.4000911379989702,
+      "inference_latency": 0.39283490300294943,
+      "source_age_at_inference_start": 0.05236649513244629,
+      "source_age_at_inference_end": 0.44525790214538574
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159548.601701857,
+      "inference_start_monotonic": 159548.611127115,
+      "inference_end_monotonic": 159548.988657467,
+      "camera_age_at_inference_start": 0.009425258002011105,
+      "camera_age_at_inference_end": 0.38695561001077294,
+      "inference_latency": 0.37753035200876184,
+      "source_age_at_inference_start": 0.04905200004577637,
+      "source_age_at_inference_end": 0.42664408683776855
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0016654666799537524,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159549.102243364,
+      "inference_start_monotonic": 159549.110601006,
+      "inference_end_monotonic": 159549.49516645,
+      "camera_age_at_inference_start": 0.00835764198563993,
+      "camera_age_at_inference_end": 0.39292308600852266,
+      "inference_latency": 0.38456544402288273,
+      "source_age_at_inference_start": 0.048616647720336914,
+      "source_age_at_inference_end": 0.433258056640625
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159549.535782681,
+      "inference_start_monotonic": 159549.544668397,
+      "inference_end_monotonic": 159549.924574209,
+      "camera_age_at_inference_start": 0.008885716000804678,
+      "camera_age_at_inference_end": 0.3887915280065499,
+      "inference_latency": 0.37990581200574525,
+      "source_age_at_inference_start": 0.04919123649597168,
+      "source_age_at_inference_end": 0.4291529655456543
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159550.002488172,
+      "inference_start_monotonic": 159550.010881309,
+      "inference_end_monotonic": 159550.389079143,
+      "camera_age_at_inference_start": 0.008393136988161132,
+      "camera_age_at_inference_end": 0.38659097100025974,
+      "inference_latency": 0.3781978340120986,
+      "source_age_at_inference_start": 0.048899173736572266,
+      "source_age_at_inference_end": 0.42715883255004883
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159550.403810408,
+      "inference_start_monotonic": 159550.410752429,
+      "inference_end_monotonic": 159550.814405025,
+      "camera_age_at_inference_start": 0.006942020991118625,
+      "camera_age_at_inference_end": 0.4105946170166135,
+      "inference_latency": 0.40365259602549486,
+      "source_age_at_inference_start": 0.04865241050720215,
+      "source_age_at_inference_end": 0.45237183570861816
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159551.002546474,
+      "inference_start_monotonic": 159551.011822944,
+      "inference_end_monotonic": 159551.410875886,
+      "camera_age_at_inference_start": 0.009276470023905858,
+      "camera_age_at_inference_end": 0.4083294120209757,
+      "inference_latency": 0.39905294199706987,
+      "source_age_at_inference_start": 0.04956388473510742,
+      "source_age_at_inference_end": 0.4487161636352539
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159551.402737156,
+      "inference_start_monotonic": 159551.417703458,
+      "inference_end_monotonic": 159551.803820258,
+      "camera_age_at_inference_start": 0.014966301998356357,
+      "camera_age_at_inference_end": 0.4010831020132173,
+      "inference_latency": 0.38611680001486093,
+      "source_age_at_inference_start": 0.055509090423583984,
+      "source_age_at_inference_end": 0.4416687488555908
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159551.802992242,
+      "inference_start_monotonic": 159551.812777642,
+      "inference_end_monotonic": 159552.222683983,
+      "camera_age_at_inference_start": 0.009785399975953624,
+      "camera_age_at_inference_end": 0.41969174100086093,
+      "inference_latency": 0.4099063410249073,
+      "source_age_at_inference_start": 0.05068778991699219,
+      "source_age_at_inference_end": 0.4606492519378662
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159552.270431102,
+      "inference_start_monotonic": 159552.278420041,
+      "inference_end_monotonic": 159552.674261818,
+      "camera_age_at_inference_start": 0.007988939003553241,
+      "camera_age_at_inference_end": 0.4038307160080876,
+      "inference_latency": 0.3958417770045344,
+      "source_age_at_inference_start": 0.04958033561706543,
+      "source_age_at_inference_end": 0.4454631805419922
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159552.706097508,
+      "inference_start_monotonic": 159552.713292655,
+      "inference_end_monotonic": 159553.117193708,
+      "camera_age_at_inference_start": 0.007195147016318515,
+      "camera_age_at_inference_end": 0.41109619999770075,
+      "inference_latency": 0.40390105298138224,
+      "source_age_at_inference_start": 0.05080676078796387,
+      "source_age_at_inference_end": 0.45485997200012207
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.0016837666677218081,
+      -0.007713156047756974,
+      0.0024521092089975945,
+      0.009626264240003056,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159553.402801859,
+      "inference_start_monotonic": 159553.411540368,
+      "inference_end_monotonic": 159553.804067702,
+      "camera_age_at_inference_start": 0.008738509000977501,
+      "camera_age_at_inference_end": 0.4012658430146985,
+      "inference_latency": 0.392527334013721,
+      "source_age_at_inference_start": 0.04915881156921387,
+      "source_age_at_inference_end": 0.44173383712768555
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  },
+  {
+    "timing": {
+      "frame_receive_monotonic": 159553.836975911,
+      "inference_start_monotonic": 159553.845200761,
+      "inference_end_monotonic": 159554.237555999,
+      "camera_age_at_inference_start": 0.008224849996622652,
+      "camera_age_at_inference_end": 0.40058008799678646,
+      "inference_latency": 0.3923552380001638,
+      "source_age_at_inference_start": 0.04947400093078613,
+      "source_age_at_inference_end": 0.44188499450683594
+    },
+    "raw_action": [
+      0.002274235221040916,
+      1.6923010594068442e-05,
+      -0.003007322273154537,
+      -0.007713156047756974,
+      0.0019276808563017,
+      0.011848909525195192,
+      0.0019607843137254832
+    ],
+    "command_requested": false,
+    "command_issued": false
+  }
+]

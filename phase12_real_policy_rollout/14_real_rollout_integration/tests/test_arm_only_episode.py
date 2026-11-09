@@ -38,7 +38,7 @@ class ArmEpisodeTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):self.step(c)
         self.assertEqual(len(t.calls),2)
     def test_camera_and_raw_limit_still_reject(self):
-        for kwargs in (dict(camera_ok=False),dict(translation=.0201)):
+        for kwargs in (dict(camera_ok=False),dict(translation=.0501)):
             c,t=self.setup_controller();self.step(c,**kwargs)
             self.assertTrue(c.aborted)
             self.assertFalse(any(n.endswith('move_line') for n,_,_ in t.calls))

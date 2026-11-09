@@ -1,0 +1,40 @@
+{
+  "rate_hz": 20,
+  "production_limits": {
+    "control_rate_hz": 5.0,
+    "max_action_age_sec": 1.2,
+    "translation_step_m": 0.05,
+    "rotation_step_deg": 4.0,
+    "translation_velocity_mm_s": 20.0,
+    "rotation_velocity_deg_s": 20.0,
+    "translation_acceleration_mm_s2": 20.0,
+    "rotation_acceleration_deg_s2": 20.0,
+    "workspace_m": {
+      "x": [
+        0.275,
+        0.554
+      ],
+      "y": [
+        -0.355,
+        0.386
+      ],
+      "z": [
+        0.267,
+        0.754
+      ]
+    },
+    "failure_policy": "fail_closed"
+  },
+  "policy_limiter_dt_s": 0.2,
+  "stream_reference_source": "/home/ubuntu/robot_ws/src/openvla_doosan_runtime/openvla_doosan_runtime/servol_stream_test_node.py",
+  "simulated_pose_not_physical_feedback": true,
+  "physical_publish_enabled": false,
+  "gripper_disabled": true,
+  "topic_candidate": "/dsr01/servol_stream",
+  "vendor_ack_available": false,
+  "physical_blockers": [
+    "SERVO_MINIMUM_MOTION_NOT_VERIFIED",
+    "SERVO_STOP_PATH_NOT_VERIFIED",
+    "SERVO_BASE_REFERENCE_AND_TARGET_TIME_NOT_PHYSICALLY_VERIFIED"
+  ]
+}

@@ -1,0 +1,9 @@
+# Explicit user-requested direct launch. These are execution policy decisions,
+# NOT evidence that an operator/workspace/jaw state was checked this session.
+mode: DIRECT_MOVELINE_NO_MANUAL_CONFIRMATION
+enabled: true
+gripper_initialization_basis: COMMAND_ACK_ONLY
+mapping_basis: PRIOR_USER_CONFIRMED_DO1_OPEN_DO2_CLOSE_SEQUENCE
+gripper_config_sha256: 4c2bf4e1f0530aabccbdbd7e7d0a694f3e4a89e0f93c335a836cb25cbe001e7e
+tcp_basis: PREVIOUS_ZERO_OFFSET_CONSISTENCY_ENGINEERING_ACCEPTANCE
+formal_tcp_verified: false

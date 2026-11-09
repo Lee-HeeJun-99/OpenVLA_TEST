@@ -1,0 +1,53 @@
+{
+  "trials": [
+    {
+      "trial": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode",
+      "pair_count": 149,
+      "status": "ARM_ONLY_SERVO_EPISODE_OPERATOR_RESULT_PENDING",
+      "reason": null,
+      "hashes": {
+        "predictions.jsonl": "5c8c8e310c1fa954faff4f0d0be295903622c9f8fe0a8c5b82509ca020a5bd11",
+        "servo_commands.jsonl": "8f11dd8224a533040438045e5c2f7a4565981b9d58b42758329e000a8fc1286a",
+        "trial_summary.json": "eb1e65108e2f69eca1f241e3d16b1677b735e5b39f64fcef470cc839a56097c1"
+      }
+    },
+    {
+      "trial": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode",
+      "pair_count": 123,
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "reason": "robot_abnormal_state:10",
+      "hashes": {
+        "predictions.jsonl": "9279db1ae60ac32225307e012c75bd942be44a668313a4309ba513e7ee41b4b7",
+        "servo_commands.jsonl": "03652eae40ff27f891a7a9c1a59e68b48a2295574b00ab2731c9428a7d94b24f",
+        "trial_summary.json": "03ac1265075feb4f34c91d9161d6bf376d47e02e2fb8ced2825c64a82555e0be"
+      }
+    }
+  ],
+  "production_limits": {
+    "control_rate_hz": 5.0,
+    "max_action_age_sec": 1.2,
+    "translation_step_m": 0.05,
+    "rotation_step_deg": 4.0,
+    "translation_velocity_mm_s": 20.0,
+    "rotation_velocity_deg_s": 20.0,
+    "translation_acceleration_mm_s2": 20.0,
+    "rotation_acceleration_deg_s2": 20.0,
+    "workspace_m": {
+      "x": [
+        0.275,
+        0.554
+      ],
+      "y": [
+        -0.355,
+        0.386
+      ],
+      "z": [
+        0.267,
+        0.754
+      ]
+    },
+    "failure_policy": "fail_closed"
+  },
+  "production_limits_sha256": "7913dd8595bc7f8abef09e6b6829e348cb8ed651190544747d4e10a339315997",
+  "code_sha256": "272e9690a8b7fda22ad4230083e70808390316d17ee39260e891e1871aff10de"
+}

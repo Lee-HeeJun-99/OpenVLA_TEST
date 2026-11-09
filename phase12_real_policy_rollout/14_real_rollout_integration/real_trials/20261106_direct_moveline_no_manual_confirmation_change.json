@@ -1,0 +1,22 @@
+{
+  "scope": "SOFTWARE_CHANGE_ONLY_NO_PHYSICAL_EPISODE_EXECUTED",
+  "request": "Existing MoveLine launch command must start without yes prompts, external approval files or manual OPEN confirmation",
+  "command": "/usr/bin/python3 -u start_full_policy_confirmed.py --controller moveline",
+  "flow": "Direct launch request -> current machine preflight -> existing OFF/OFF and OPEN sequence -> IO ACK -> command-knowledge OPEN -> post-init machine preflight -> single episode",
+  "manual_confirmation_performed": false,
+  "site_confirmation_fields": "UNKNOWN/null, never auto-filled true",
+  "physical_jaw_OPEN_observed": null,
+  "gripper_initialization_basis": "COMMAND_ACK_ONLY",
+  "mapping_basis": "Prior user-confirmed DO1 OPEN/DO2 CLOSE timed sequence, config pinned by SHA256",
+  "policy": "configs/direct_moveline_launch.yaml",
+  "retained": ["Current REAL/AUTO/STANDBY", "JointState readiness/watchdog", "Start-pose/stationary checks", "Camera freshness", "Model identity", "Workspace/finite values/rotation gate", "Logger and ACK failure inhibition", "Existing stop and BOTH_OUTPUTS_OFF abort", "Single episode/no automatic retry/Home/recovery"],
+  "existing_motion_settings_unchanged": {"velocity_mm_s_deg_s": [120,20], "acceleration_mm_s2_deg_s2": [120,20], "delta_limiter_enabled": false, "raw_translation_gate_enabled": false},
+  "servo_manual_workflow_unchanged": true,
+  "optional_previous_workflows": ["--interactive", "--approval <file> --open-confirmation <file>"],
+  "tests": {"passed": 396, "warnings": 6, "fake_complete_runner_tests": 2, "git_diff_check": "PASS", "py_compile": "PASS"},
+  "physical_commands": 0,
+  "inference_requests": 0,
+  "processes_restarted": 0,
+  "physical_validation": "NOT_EXECUTED",
+  "unresolved": ["Controller NOT_REACHABLE", "Actual target-arrival validation gap", "Formal active TCP verification", "No automatic physical jaw state feedback"]
+}

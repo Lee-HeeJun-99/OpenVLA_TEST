@@ -1,0 +1,23 @@
+{
+  "status": "OPERATOR_ABORT",
+  "reason": "operator_abort",
+  "evaluation_scope": "FULL_POLICY_ROLLOUT",
+  "termination": null,
+  "task_success": null,
+  "task_performance_denominator_included": false,
+  "steps_attempted": 117,
+  "steps_completed": 116,
+  "duration_s": 279.9134514340258,
+  "arm_commands": 117,
+  "physical_gripper_commands": 8,
+  "stop_commands": 1,
+  "gripper_abort_behavior": "BOTH_OUTPUTS_OFF_MAX_3_ATTEMPTS",
+  "unexpected_motion": null,
+  "estop_used": null,
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "auto_next_episode": false,
+  "runtime_valid": false,
+  "episode_ended_wall_time": 1793944642.9209015
+}

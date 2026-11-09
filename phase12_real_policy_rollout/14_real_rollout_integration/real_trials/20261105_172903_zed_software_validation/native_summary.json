@@ -1,0 +1,11 @@
+{
+  "count": 1040,
+  "hz": 17.373578149361528,
+  "max_receive_gap_s": 0.33335489200544544,
+  "max_source_gap_s": 0.3337770000071032,
+  "ge100": 152,
+  "ge500": 0,
+  "bytesused_min": 3686400,
+  "flags_error": 0,
+  "physical_commands": 0
+}

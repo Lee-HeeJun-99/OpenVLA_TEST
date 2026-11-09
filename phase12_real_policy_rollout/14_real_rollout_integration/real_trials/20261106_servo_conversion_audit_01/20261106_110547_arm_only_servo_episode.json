@@ -1,0 +1,83 @@
+{
+  "trial": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode",
+  "status": "ARM_ONLY_SERVO_EPISODE_OPERATOR_RESULT_PENDING",
+  "reason": null,
+  "prediction_count": 150,
+  "publish_return_count": 1379,
+  "duration_s": 70.82201026802068,
+  "stop_ack": true,
+  "joint5_min_deg": -132.76667874719024,
+  "joint5_last_deg": -132.1267446634734,
+  "joint_crossing": {
+    "observed_alarm_boundary_deg": -135.0,
+    "boundary_current_configuration_verified": false,
+    "first_crossing_monotonic": null,
+    "first_crossing_episode_s": null,
+    "publish_returns_after_first_crossing": 0,
+    "crossing_to_stop_request_s": null
+  },
+  "conversion_reconstruction": {
+    "max_position_error_mm": 6.086154632665525e-14,
+    "max_rotation_error_deg": 4.816502142985449e-14
+  },
+  "interpolation_reconstruction": {
+    "max_position_error_mm": 0.0,
+    "max_rotation_error_deg": 1.0457909797498359e-13
+  },
+  "rotation_step_deg": {
+    "count": 1379,
+    "min": 0.00046409269227974496,
+    "median": 0.0988473931902258,
+    "p95": 0.2882492859891041,
+    "p99": 0.35428664424531736,
+    "max": 0.43216846730307673
+  },
+  "commanded_rotation_arc_deg": 164.61900253660903,
+  "commanded_angular_speed_deg_s": {
+    "count": 1379,
+    "min": 0.03144059552452926,
+    "median": 1.9672791376651875,
+    "p95": 5.750917678355075,
+    "p99": 6.8873608278227145,
+    "max": 8.237854895252472
+  },
+  "joint5_motion_during_inference_deg": {
+    "count": 150,
+    "min": 0.0,
+    "median": 0.15290036945367547,
+    "p95": 0.42862607785712253,
+    "p99": 0.5836755951802396,
+    "max": 0.700313805454897
+  },
+  "policy_decision_interval_s": {
+    "count": 149,
+    "min": 0.4218316879996564,
+    "median": 0.46295663999626413,
+    "p95": 0.5331417822104413,
+    "p99": 0.6203294912830467,
+    "max": 0.6690346910036169
+  },
+  "translation_tracking_difference_mm": {
+    "count": 149,
+    "min": 0.05637360763994795,
+    "median": 1.4738020477723397,
+    "p95": 3.5549792383224443,
+    "p99": 3.748491247003939,
+    "max": 4.044997061951463
+  },
+  "rotation_tracking_difference_deg": {
+    "count": 149,
+    "min": 0.0043857610994455344,
+    "median": 0.8923308925395708,
+    "p95": 2.1396723237207005,
+    "p99": 2.9792041018717703,
+    "max": 3.42743520177987
+  },
+  "ik_solution_space_logged_per_prediction": false,
+  "interpretation_limits": [
+    "No IK/joint path simulation. SO(3) continuity does not verify solution-space continuity.",
+    "Controller pose source time is unverified; feedback/command matching is approximate.",
+    "Physical paths use different camera observations/policy histories; not a controlled MoveLine-versus-ServoL A/B.",
+    "Missing pre-limit guard explains continued dispatch, not why the policy trajectory first approaches that limit."
+  ]
+}

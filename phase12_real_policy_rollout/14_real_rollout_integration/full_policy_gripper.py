@@ -15,6 +15,7 @@ class FullPolicyGripper:
         self.state = None
         self.initialized = False
         self.initialization_ack = False
+        self.initialization_basis = None
         self.aborted = False
         self.lock = threading.RLock()
         # Accept the explicit operator policy separately from hardware evidence.
@@ -63,6 +64,19 @@ class FullPolicyGripper:
                                 'observed_open': True, 'evidence_source': evidence_source})
             self.state = 'OPEN'
             self.initialized = True
+            self.initialization_basis = 'OBSERVED_OPEN'
+
+    def accept_commanded_open(self, *, policy_source):
+        """Explicit ACK-only policy: initialize command knowledge, not jaw truth."""
+        with self.lock:
+            if self.aborted or self.sink.aborted:raise PermissionError('gripper_aborted')
+            if (not self.initialization_ack or not policy_source
+                    or self.contract.get('allow_command_ack_initialization') is not True):
+                raise PermissionError('explicit_ACK_only_initialization_policy_required')
+            self.logger.append(dict(event='GRIPPER_INITIALIZATION_COMMAND_KNOWLEDGE',
+                commanded_state='OPEN',observed_open=None,measured_gripper_state=None,
+                initialization_basis='COMMAND_ACK_ONLY',policy_source=policy_source))
+            self.state='OPEN';self.initialized=True;self.initialization_basis='COMMAND_ACK_ONLY'
 
     def desired(self, closedness):
         with self.lock:

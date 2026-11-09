@@ -1,0 +1,12 @@
+{
+  "scope": "ARM_ONLY_SERVO_SHADOW",
+  "physical_commands": 0,
+  "gripper_commands": 0,
+  "transport_created": false,
+  "physical_servo_ready": false,
+  "predictions": 70,
+  "servo_candidates": 589,
+  "status": "SERVO_SHADOW_PASS",
+  "would_request_stop_on_fault": false,
+  "physical_stop_executed": false
+}

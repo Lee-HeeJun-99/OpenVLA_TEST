@@ -1,0 +1,48 @@
+{
+  "scope": "RAW_TRANSLATION_HARD_REJECTION_THRESHOLD_ONLY",
+  "branch": "lhj-research",
+  "head_before_change": "bc4b4ace88247fd0991f14b3f7dcebda042d4d99",
+  "worktree_had_existing_changes": true,
+  "previous_raw_translation_limit_m": 0.050,
+  "new_raw_translation_limit_m": 0.020,
+  "semantics": "XYZ L2 norm <=20 mm accepted by raw translation gate; >20 mm rejected, preserving existing 1e-12 m numerical comparison margin",
+  "raw_action_clipping_added": false,
+  "raw_action_scaling_added": false,
+  "production_source": "../01_configs/safety_limits.yaml:translation_step_m",
+  "matching_command_disabled_config": "../01_configs/command_disabled_runtime.yaml:raw_translation_step_limit_m",
+  "shared_reader": "../02_safety/action_step_limits.py",
+  "justification": {
+    "existing_predictions": 595,
+    "translation_p95_mm": 14.03945573,
+    "translation_p99_mm": 14.04202136,
+    "translation_max_mm": 20.06509588,
+    "over_20mm_count": 1,
+    "not_a_physical_safety_validation": true
+  },
+  "unchanged": {
+    "translation_velocity_mm_s": 20,
+    "translation_acceleration_mm_s2": 20,
+    "rotation_velocity_deg_s": 20,
+    "rotation_acceleration_deg_s2": 20,
+    "rotation_hard_gate_deg": 4,
+    "policy_limiter_dt_s": 0.2,
+    "servo_transport_acceleration_mm_s2_deg_s2": [40, 40],
+    "servo_target_time_s": 0.7,
+    "servo_target_time_1s_candidate_applied": false,
+    "sensor_watchdogs_logger_workspace_and_abort_policy": true
+  },
+  "verification": {
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /usr/bin/python3 -m pytest tests ../tests ../15_valid_invalid_rollout_policy/tests -q",
+    "passed": 367,
+    "warnings": 6,
+    "boundary_cases_mm": [19.9, 19.999, 20.0, 20.1],
+    "vector_norm_and_negative_z_tested": true,
+    "nonfinite_rejection_and_post_invalid_inhibition_tested": true,
+    "git_diff_check": "PASS"
+  },
+  "physical_commands": 0,
+  "inference_requests": 0,
+  "processes_restarted": 0,
+  "existing_result_logs_modified": false,
+  "unresolved": ["NOT_REACHABLE and command-versus-feedback validation gap", "ServoL joint-limit and stop-ACK failures", "Formal active TCP verification"]
+}

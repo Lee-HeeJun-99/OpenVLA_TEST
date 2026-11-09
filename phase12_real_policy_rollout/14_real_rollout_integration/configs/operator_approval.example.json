@@ -1,0 +1,19 @@
+{
+  "_instructions": [
+    "예시 파일이며 실행 승인이 아닙니다. 기본 false/null 값을 자동 true로 바꾸지 마세요.",
+    "실제 현재 현장을 확인한 operator만 확인값을 기록합니다.",
+    "confirmed_wall_time은 실제 확인 시점의 Unix seconds이며 실행 시 60초 이내여야 합니다.",
+    "별도 파일로 복사하여 --approval로 지정하세요. ServoL은 별도 위험/동시실행/authority 확인 항목도 필요합니다."
+  ],
+  "execution_mode": "FULL_POLICY_ROLLOUT",
+  "physical_controller": "moveline",
+  "operator": "",
+  "confirmed_wall_time": null,
+  "operator_present": false,
+  "workspace_clear": false,
+  "estop_accessible": false,
+  "robot_stationary": false,
+  "tcp_engineering_acceptance": false,
+  "gripper_mapping_confirmed": false,
+  "explicit_one_episode": false
+}

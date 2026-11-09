@@ -1,9 +1,17 @@
 import unittest
 from unittest.mock import patch,MagicMock
-from camera_inference_timing import inference_timing
+from camera_inference_timing import inference_timing, CAMERA_STREAM_TIMEOUT_S, camera_stream_lost
 
 
 class CameraTimingTests(unittest.TestCase):
+    def test_stream_timeout_1000ms_boundary(self):
+        self.assertEqual(CAMERA_STREAM_TIMEOUT_S,1.0)
+        for age in (.499,.5,.999):
+            self.assertFalse(camera_stream_lost(0.,age))
+        for age in (1.,1.001):
+            self.assertTrue(camera_stream_lost(0.,age))
+        self.assertTrue(camera_stream_lost(None,0.))
+
     def test_fresh_start_slow_inference(self):
         value=inference_timing(10.,10.03,10.83)
         self.assertLess(value['camera_age_at_inference_start'],.5)

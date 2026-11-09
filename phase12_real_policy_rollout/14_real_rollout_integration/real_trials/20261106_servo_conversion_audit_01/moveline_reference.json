@@ -1,0 +1,16 @@
+{
+  "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_70s_episode_001",
+  "status": "ARM_ONLY_FULL_EPISODE_PASS",
+  "duration_s": 70.38476442778483,
+  "arm_commands": 25,
+  "joint5_min_deg": -114.41993003270056,
+  "command_start_interval_s": {
+    "count": 24,
+    "min": 1.9666223209351301,
+    "median": 2.9198572989553213,
+    "p95": 3.1865608174586666,
+    "p99": 3.307441492136568,
+    "max": 3.337344976142049
+  },
+  "caveat": "Same model/checkpoint and arm-only scope, but different date/scene, action limits and control history. Not causal A/B."
+}

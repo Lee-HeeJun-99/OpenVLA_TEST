@@ -1,0 +1,70 @@
+[
+  {
+    "label": "right",
+    "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/camera_000.jpg",
+    "image_sha256": "1f91927bc572ec408a6df6add0455392f2a660e19d73f16e54ca188d0a0a41ab",
+    "original_raw_action": [
+      0.002274235221040916,
+      -0.0003101546559243261,
+      -0.0005256555129681713,
+      -0.00737239382409223,
+      0.002015085581751017,
+      0.008792772258056004,
+      0.0019607843137254832
+    ],
+    "original_start_pose_error_deg": 4.7751735998247113e-05,
+    "cube_location_label_source": "MANUAL_VISUAL_INSPECTION_NOT_METRIC_POSITION",
+    "confounders": "Gripper state/covers, pendant, people and other objects differ; not cube-only controlled A/B."
+  },
+  {
+    "label": "center_lower",
+    "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/camera_000.jpg",
+    "image_sha256": "213bbc8b49114eded7b195862d42b1fe1d0003601a92362ae0ebf00c8cab2cf4",
+    "original_raw_action": [
+      0.002446995139971323,
+      0.0004094162104161421,
+      -0.0013528777663636277,
+      -0.007713156047756974,
+      0.003675775365288017,
+      0.011015417543248139,
+      0.0019607843137254832
+    ],
+    "original_start_pose_error_deg": 4.7751735998247113e-05,
+    "cube_location_label_source": "MANUAL_VISUAL_INSPECTION_NOT_METRIC_POSITION",
+    "confounders": "Gripper state/covers, pendant, people and other objects differ; not cube-only controlled A/B."
+  },
+  {
+    "label": "left",
+    "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/camera_000.jpg",
+    "image_sha256": "23dd06bd0e9caf810f3849c6e7a6a41b60fae8ac0b4eb6d2833b7d6c89f1edbb",
+    "original_raw_action": [
+      0.0019287153831801067,
+      1.6923010594068442e-05,
+      -0.0005256555129681713,
+      -0.004646296034774282,
+      0.0037631800907373322,
+      0.010181925561301089,
+      0.0019607843137254832
+    ],
+    "original_start_pose_error_deg": 4.7751735998247113e-05,
+    "cube_location_label_source": "MANUAL_VISUAL_INSPECTION_NOT_METRIC_POSITION",
+    "confounders": "Gripper state/covers, pendant, people and other objects differ; not cube-only controlled A/B."
+  },
+  {
+    "label": "center_lower_moveline",
+    "source_image": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/camera_000_model_input.jpg",
+    "image_sha256": "a956c03fab4ced37ff2e9954a72862a49a860566d99053eef402e0f2d6ec72bf",
+    "original_raw_action": [
+      0.0023606151805061204,
+      0.001063571543452932,
+      -0.0011874333156845357,
+      -0.00691804419253924,
+      0.0042876084434332285,
+      0.01768335339882455,
+      0.0019607843137254832
+    ],
+    "original_start_pose_error_deg": 4.7751735998247113e-05,
+    "cube_location_label_source": "MANUAL_VISUAL_INSPECTION_NOT_METRIC_POSITION",
+    "confounders": "Gripper state/covers, pendant, people and other objects differ; not cube-only controlled A/B."
+  }
+]

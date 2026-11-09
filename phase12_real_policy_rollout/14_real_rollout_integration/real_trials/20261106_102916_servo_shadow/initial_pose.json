@@ -1,0 +1,13 @@
+{
+  "controller_pose": [
+    305.0901794433594,
+    -11.828291893005371,
+    723.6777954101562,
+    179.91046142578125,
+    -155.5612335205078,
+    3.35062313079834
+  ],
+  "contract": "BASE/mm/ZYZ_degree",
+  "formal_tcp_verified": false,
+  "physical_execution_authorized": false
+}

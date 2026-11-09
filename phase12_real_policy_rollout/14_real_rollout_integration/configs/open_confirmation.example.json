@@ -1,0 +1,11 @@
+{
+  "_instructions": [
+    "예시 파일이며 실제 OPEN 확인이 아닙니다.",
+    "이번 실행의 OPEN 초기화 ACK 이후 실제 jaw OPEN을 본 operator만 확인합니다.",
+    "observed_open과 operator, 실제 확인 시각 confirmed_wall_time을 --open-confirmation 경로에 기록합니다.",
+    "ACK 이전 또는 오래된 확인 파일은 이번 실행을 승인하지 못합니다."
+  ],
+  "observed_open": false,
+  "operator": "",
+  "confirmed_wall_time": null
+}

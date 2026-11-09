@@ -1,0 +1,23 @@
+{
+  "status": "INVALID",
+  "reason": "camera_stream_loss",
+  "evaluation_scope": "FULL_POLICY_ROLLOUT",
+  "termination": null,
+  "task_success": null,
+  "task_performance_denominator_included": false,
+  "steps_attempted": 51,
+  "steps_completed": 50,
+  "duration_s": 173.2962451409985,
+  "arm_commands": 51,
+  "physical_gripper_commands": 11,
+  "stop_commands": 1,
+  "gripper_abort_behavior": "BOTH_OUTPUTS_OFF_MAX_3_ATTEMPTS",
+  "unexpected_motion": null,
+  "estop_used": null,
+  "auto_retry": false,
+  "auto_home": false,
+  "auto_recovery": false,
+  "auto_next_episode": false,
+  "runtime_valid": false,
+  "episode_ended_wall_time": 1793868972.2253082
+}

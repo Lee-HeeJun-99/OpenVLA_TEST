@@ -1,0 +1,13 @@
+# ServoL arm-only prediction budget; does not change MoveLine/full-policy limits.
+maximum_predictions: 2000
+
+# Applied on explicit user request; offline candidate, NOT physically validated.
+# Only ServoL transport bounds change. Policy/interpolation limiter stays intact.
+servo_transport:
+  velocity_mm_s_deg_s: [20.0, 20.0]
+  acceleration_mm_s2_deg_s2: [40.0, 40.0]
+  target_time_s: 0.7
+  physical_validation: NOT_EXECUTED
+  derivation: real_trials/20261106_servo_speed_tuning_stage1/staged_tuning_plan.json
+  previous_acceleration_mm_s2_deg_s2: [20.0, 20.0]
+  previous_target_time_s: 0.1

@@ -1,0 +1,7 @@
+[2026-11-05 16:51:59 UTC][ZED][INFO] Logging level INFO
+[2026-11-05 16:52:00 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[2026-11-05 16:52:00 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[2026-11-05 16:52:00 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[2026-11-05 16:52:00 UTC][ZED][INFO] [Init]  Serial Number: S/N 32950075
+[2026-11-05 16:52:00 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+{"case": "I_read_validity_off", "meta": {"sdk": "5.3.0", "read_api": true, "retrieve": true, "validity_check": 0}, "count": 763, "errors": 0, "hz": 12.689365290602948, "max_receive_gap_s": 0.5679522749996977, "receive_gap_ge_100ms": 199, "receive_gap_ge_500ms": 2, "physical_commands": 0}

@@ -1,0 +1,58 @@
+{
+  "stage_0_time_only": {
+    "profile_name": "baseline",
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "target_time_s": 1.0,
+    "approved_for_live": false,
+    "production_connected": false,
+    "required_before_physical_test": [
+      "JOINT_LIMIT_PREFLIGHT_AND_RUNTIME_GUARD",
+      "SAFE_OFF2_NORMAL_OPERATOR_RECOVERY",
+      "CURRENT_STOP_PATH_VERIFICATION",
+      "FRESH_OPERATOR_AND_HARDWARE_APPROVAL"
+    ],
+    "planning_limiter_changes": false,
+    "note": "Transport-bound candidate only; increasing the planning limiter simultaneously is not authorized by this sweep."
+  },
+  "stage_1_acceleration_only_at_stage_0_time": {
+    "profile_name": "both_accelerations_x2",
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 40.0,
+    "angular_acceleration_deg_s2": 40.0,
+    "target_time_s": 1.0,
+    "approved_for_live": false,
+    "production_connected": false,
+    "required_before_physical_test": [
+      "JOINT_LIMIT_PREFLIGHT_AND_RUNTIME_GUARD",
+      "SAFE_OFF2_NORMAL_OPERATOR_RECOVERY",
+      "CURRENT_STOP_PATH_VERIFICATION",
+      "FRESH_OPERATOR_AND_HARDWARE_APPROVAL"
+    ],
+    "planning_limiter_changes": false,
+    "note": "Transport-bound candidate only; increasing the planning limiter simultaneously is not authorized by this sweep."
+  },
+  "later_time_reduction_candidate": {
+    "profile_name": "both_accelerations_x2",
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 40.0,
+    "angular_acceleration_deg_s2": 40.0,
+    "target_time_s": 0.7000000000000001,
+    "approved_for_live": false,
+    "production_connected": false,
+    "required_before_physical_test": [
+      "JOINT_LIMIT_PREFLIGHT_AND_RUNTIME_GUARD",
+      "SAFE_OFF2_NORMAL_OPERATOR_RECOVERY",
+      "CURRENT_STOP_PATH_VERIFICATION",
+      "FRESH_OPERATOR_AND_HARDWARE_APPROVAL"
+    ],
+    "planning_limiter_changes": false,
+    "note": "Transport-bound candidate only; increasing the planning limiter simultaneously is not authorized by this sweep."
+  },
+  "one_trial_at_a_time": true,
+  "automatic_physical_sweep": false
+}

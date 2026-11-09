@@ -1,0 +1,42 @@
+{
+  "duration_s": 180.00155480898684,
+  "predictions": 420,
+  "errors": [],
+  "camera": {
+    "count": 3931,
+    "receive_hz": 21.83564717194895,
+    "max_receive_gap_s": 0.300389574986184,
+    "max_source_gap_s": 0.2999279499053955,
+    "max_source_age_s": 0.048488616943359375,
+    "receive_gap_ge_100ms": 236,
+    "receive_gap_ge_500ms": 0,
+    "source_gap_ge_500ms": 0,
+    "nonincreasing_source_stamps": 0,
+    "latest": {
+      "receive_monotonic": 137236.729712239,
+      "receive_wall": 1793926158.2024431,
+      "source_timestamp": 1793926158.1649213,
+      "source_age_s": 0.037532806396484375,
+      "receive_gap_s": 0.02947004500310868,
+      "source_gap_s": 0.033531904220581055,
+      "width": 1280,
+      "height": 720,
+      "encoding": "bgra8"
+    }
+  },
+  "inference_subscriber": {
+    "max_gap_s": 0.29954481800086796,
+    "ge500ms": 0,
+    "ge1000ms": 0
+  },
+  "inference_latency_median_s": 0.39464149849663954,
+  "inference_latency_max_s": 0.5250528640171979,
+  "camera_start_age_max_s": 0.08167829399462789,
+  "cpu_mean_busy_pct": 19.93545346171521,
+  "gpu_mean_busy_pct": 69.46022727272727,
+  "physical_commands": 0,
+  "configuration_changed": false,
+  "connection": "Cable with internal repeater chips; user confirmed",
+  "scope": "CAMERA_PLUS_MODEL_ONLY_NOT_PHYSICAL_ROLLOUT",
+  "status": "PASS"
+}

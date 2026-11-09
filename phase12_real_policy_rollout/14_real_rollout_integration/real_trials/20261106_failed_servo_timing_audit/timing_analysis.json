@@ -1,0 +1,106 @@
+{
+  "source_trial": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode",
+  "published_return_count": 1131,
+  "prediction_count": 124,
+  "matched_feedback_pair_count": 123,
+  "distributions": {
+    "translation_tracking_difference_mm": {
+      "count": 123,
+      "min": 0.07755785206691126,
+      "median": 1.7506941881982516,
+      "p95": 3.18665589316082,
+      "p99": 3.5088081310988435,
+      "max": 3.6334087543246945
+    },
+    "rotation_tracking_difference_deg": {
+      "count": 123,
+      "min": 0.05904915576177802,
+      "median": 0.7027886096006634,
+      "p95": 2.0980530166837643,
+      "p99": 2.560252548935838,
+      "max": 3.5070434717024885
+    },
+    "decision_to_publish_skew_s": {
+      "count": 123,
+      "min": 0.0007153610058594495,
+      "median": 0.026977260975399986,
+      "p95": 0.050204095200751905,
+      "p99": 0.05616497477923986,
+      "max": 0.05836108198855072
+    },
+    "speed_only_reference_time_s": {
+      "count": 123,
+      "min": 0.006930238233254315,
+      "median": 0.08888094728068387,
+      "p95": 0.1606538142082825,
+      "p99": 0.17580021663250414,
+      "max": 0.18167043771623473
+    },
+    "rest_to_rest_reference_time_s": {
+      "count": 123,
+      "min": 0.16649610485839378,
+      "median": 0.5962581564412646,
+      "p95": 0.8016322230241888,
+      "p99": 0.838570536190276,
+      "max": 0.8524563043728042
+    },
+    "triangular_linear_peak_mm_s": {
+      "count": 123,
+      "min": 1.5511570413382252,
+      "median": 35.01388376396503,
+      "p95": 63.73311786321639,
+      "p99": 70.17616262197686,
+      "max": 72.66817508649389
+    },
+    "triangular_angular_peak_deg_s": {
+      "count": 123,
+      "min": 1.1809831152355603,
+      "median": 14.055772192013267,
+      "p95": 41.961060333675285,
+      "p99": 51.205050978716756,
+      "max": 70.14086943404976
+    },
+    "triangular_linear_acceleration_mm_s2": {
+      "count": 123,
+      "min": 31.0231408267645,
+      "median": 700.2776752793005,
+      "p95": 1274.6623572643277,
+      "p99": 1403.5232524395374,
+      "max": 1453.3635017298775
+    },
+    "triangular_angular_acceleration_deg_s2": {
+      "count": 123,
+      "min": 23.619662304711206,
+      "median": 281.1154438402653,
+      "p95": 839.2212066735057,
+      "p99": 1024.101019574335,
+      "max": 1402.8173886809952
+    }
+  },
+  "full_target_time_speed_budget_exceeded_count": 53,
+  "actual_trial_status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+  "actual_trial_reason": "robot_abnormal_state:10",
+  "driver_alarm_counts": {
+    "1215": 1,
+    "1216": 12,
+    "3205": 1,
+    "7057": 1,
+    "9008": 1
+  },
+  "production_configuration_changed": false,
+  "selected_velocity": null,
+  "selected_acceleration": null,
+  "selected_target_time": null,
+  "tuning_status": "NO_VALIDATED_SETTING_FROM_OFFLINE_LOGS",
+  "limitations": [
+    "Matching time is an upper bound; exact controller pose source/receive timestamp was not logged per prediction.",
+    "Nearest previous published command, not a vendor-acknowledged/executed command.",
+    "Feedback/controller timing skew is reported; no tolerance invented to hide it.",
+    "Speed-budget calculation generously allows the full target time, not its already elapsed remainder.",
+    "Rest-to-rest assumes zero initial/final Cartesian velocity; actual streaming robot is moving.",
+    "No Jacobian, joint constraints, controller profile, singularity dynamics or actual initial velocity is simulated.",
+    "Replaying recorded poses does not predict the changed closed-loop response under different limits.",
+    "SAFE_OFF2/joint-limit fault and failed HOLD ACK must not be treated as a speed-tuning success."
+  ],
+  "physical_commands": 0
+}

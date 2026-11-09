@@ -1,0 +1,54 @@
+{
+  "physical_commands": 0,
+  "inference_requests": 0,
+  "production_code_or_configuration_changed": false,
+  "source_logs": "November 5-6, 2026: 10 physical episode directories; complete inventory in z_direction_summary.json",
+  "findings": [
+    {
+      "finding": "Raw predictions contain both positive and negative BASE Z. Early trajectories descend; later predictions also request ascent.",
+      "confidence": "DIRECT_LOG_EVIDENCE"
+    },
+    {
+      "finding": "MoveLine request target Z minus current controller Z equals logged limited Z, max absolute discrepancy 5.674e-14 mm over analyzed requests. No systematic Z sign inversion at this conversion was found.",
+      "confidence": "DIRECT_NUMERICAL_CHECK"
+    },
+    {
+      "finding": "Raw/limited Z signs can differ because the stateful acceleration limiter retains previous velocity. Latest MoveLine step 36: raw -0.360211 mm, limited/submitted +0.602644 mm, observed FK +0.573479 mm.",
+      "source": "../02_safety/action_rate_limiter.py:_accel_limit and CanonicalActionRateLimiter.limit",
+      "confidence": "CODE_AND_MATCHED_LOG_EVIDENCE"
+    },
+    {
+      "finding": "Latest MoveLine steps 43-100 repeatedly request ascent, report successful service ACK, yet joints essentially do not move. FK net Z change over this suffix is only +0.000792 mm. 58 analyzed requests coincide with driver alarm 1206 NOT REACHABLE.",
+      "first_dispatch_monotonic": 150027.086179565,
+      "first_alarm_estimated_monotonic": 150027.12302613258,
+      "first_alarm_wall_time": 1793938948.5957808,
+      "first_requested_target_z_mm": 703.7717082528994,
+      "driver_log": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log:419",
+      "interpretation": "Unreachable target is directly supported. The exact IK/singularity/joint-limit feasibility failure mechanism and vendor true-return semantics are not uniquely established.",
+      "confidence": "DIRECT_TIME_MATCHED_CONTROLLER_ALARM_AND_FEEDBACK"
+    },
+    {
+      "finding": "Successful service return and STANDBY were insufficient to validate actual target arrival; the runner can continue after no-motion/unreachable responses.",
+      "confidence": "OBSERVED_VALIDATION_GAP",
+      "recommended_followup_not_implemented": "Add independent command-versus-feedback/target-reach checks and controller alarm ingestion; investigate pose feasibility and joint configuration, not arbitrary sign reversal or higher action/speed limits."
+    },
+    {
+      "finding": "ServoL raw delta, limited target delta and actual submitted absolute stream poses are distinct. Continuous response windows show differing signs; inertia, virtual target interpolation and following delay can contribute. A single unique cause for every mismatch is not established.",
+      "evidence": "servo_stream_lag_comparison.csv plus prior 1216 target-time warnings",
+      "confidence": "DIRECT_MISMATCH_OBSERVATION_WITH_PARTIAL_CAUSAL_EVIDENCE"
+    },
+    {
+      "finding": "11:14 and 12:53 ServoL runs terminate with alarm 9008: joint 5 about -137.5 degrees versus controller minimum -135 degrees; this is separate from a simple Z sign inversion.",
+      "confidence": "EXISTING_DRIVER_ALARMS"
+    }
+  ],
+  "limitations": [
+    "Actual trajectory here means nominal URDF flange FK reconstructed from measured joints, not independent optical TCP feedback.",
+    "No formal active TCP verification is asserted.",
+    "Servo windows are timestamp-associated, not isolated command-response experiments. Previous commands and stop transients may contribute.",
+    "ZERO uses numerical epsilon 1e-9 mm, not an engineering accuracy tolerance; tiny nonzero changes are not meaningful task movement.",
+    "Predictions rejected before dispatch and commands missing a complete before/after record are not treated as completed motion comparisons."
+  ],
+  "reproduce": "/usr/bin/python3 analyze_z_direction.py --output real_trials/<new_unique_directory>",
+  "new_offline_tests": "3 PASS; no ROS import or command transport in the analysis script"
+}

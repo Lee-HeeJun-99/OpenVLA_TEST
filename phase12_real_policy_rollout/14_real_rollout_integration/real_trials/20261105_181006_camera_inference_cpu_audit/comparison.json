@@ -1,0 +1,89 @@
+{
+  "cases": {
+    "A_current_ctoc_idle": {
+      "independent_subscriber": {
+        "count": 1362,
+        "receive_hz": 22.682166736947288,
+        "max_receive_gap_s": 0.268725360991084,
+        "max_source_gap_s": 0.26660990715026855,
+        "max_source_age_s": 0.05017828941345215,
+        "receive_gap_ge_100ms": 114,
+        "receive_gap_ge_500ms": 0,
+        "source_gap_ge_500ms": 0,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 80945.701796876,
+          "receive_wall": 1793869867.1745274,
+          "source_timestamp": 1793869867.1356099,
+          "source_age_s": 0.038925886154174805,
+          "receive_gap_s": 0.03142871100862976,
+          "source_gap_s": 0.03350710868835449,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "inference_subscriber": {
+        "count": 1404,
+        "max_receive_gap_s": 0.23651015901123174,
+        "max_source_gap_s": 0.2345888614654541,
+        "ge500ms": 0,
+        "ge1000ms": 0
+      },
+      "cpu_mean_busy": 12.091571551044787,
+      "cpu_max_busy": 20.463709677419352,
+      "gpu_mean_busy": 15.6,
+      "gpu_max_busy": 22.0,
+      "predictions": 0,
+      "errors": [],
+      "inference_median_s": null,
+      "inference_max_s": null
+    },
+    "B_current_ctoc_inference": {
+      "independent_subscriber": {
+        "count": 3450,
+        "receive_hz": 19.163483295468517,
+        "max_receive_gap_s": 0.33014728300622664,
+        "max_source_gap_s": 0.33350706100463867,
+        "max_source_age_s": 0.05231165885925293,
+        "receive_gap_ge_100ms": 341,
+        "receive_gap_ge_500ms": 0,
+        "source_gap_ge_500ms": 0,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 81128.013531811,
+          "receive_wall": 1793870049.486263,
+          "source_timestamp": 1793870049.446925,
+          "source_age_s": 0.03934764862060547,
+          "receive_gap_s": 0.02885450900066644,
+          "source_gap_s": 0.03336596488952637,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "inference_subscriber": {
+        "count": 3509,
+        "max_receive_gap_s": 0.3014373309997609,
+        "max_source_gap_s": 0.2999880313873291,
+        "ge500ms": 0,
+        "ge1000ms": 0
+      },
+      "cpu_mean_busy": 19.41158028144118,
+      "cpu_max_busy": 35.331384015594544,
+      "gpu_mean_busy": 67.84180790960453,
+      "gpu_max_busy": 100.0,
+      "predictions": 416,
+      "errors": [],
+      "inference_median_s": 0.3898748499996145,
+      "inference_max_s": 0.46607424700050615
+    }
+  },
+  "physical_commands": 0,
+  "current_path": "2-1 direct 5000Mbps",
+  "limitations": [
+    "No robot or gripper command path exercised",
+    "No actual rollout logger and hardware getters",
+    "Sequential conditions, not a causal guarantee"
+  ]
+}

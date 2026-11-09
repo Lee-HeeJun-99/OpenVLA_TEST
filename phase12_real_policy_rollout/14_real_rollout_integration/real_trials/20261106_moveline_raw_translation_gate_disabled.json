@@ -1,0 +1,22 @@
+{
+  "scope": "CURRENT_SYNCHRONOUS_MOVELINE_EPISODE_PATH_ONLY",
+  "request": "Remove 50mm raw translation rejection criterion",
+  "config": "configs/hardware_interface.yaml:moveline_raw_translation_gate_enabled=false",
+  "effective_raw_translation_limit_m": null,
+  "delta_limiter_enabled": false,
+  "velocity_mm_s_deg_s": [120, 20],
+  "acceleration_mm_s2_deg_s2": [120, 20],
+  "rotation_hard_gate_deg": 4,
+  "raw_action_scaling_or_clipping_added": false,
+  "implementation": "Both raw_translation_step_limit and supervisor translation_step_limit checks are disabled for this explicit full-endpoint episode mode. Shared/default gates remain enabled for ServoL and legacy callers.",
+  "logging": {"raw_translation_gate_enabled": false, "effective_raw_translation_limit_m": null},
+  "retained_rejections": ["Full unscaled endpoint workspace bounds", "NaN/Inf and invalid action", "Rotation limit", "Sensor/model/logger/communication faults", "Stale/duplicate/rate gates", "Abnormal robot state"],
+  "verified_with_fake_transport_only": ["50.1mm accepted unscaled inside workspace", "80mm accepted unscaled inside workspace", "56.6mm vector norm accepted inside workspace", "Large divergent or nonfinite values never dispatch", "Workspace rejection and future command inhibition", "Legacy/Servo raw gate retained"],
+  "tests": {"passed": 384, "warnings": 6, "git_diff_check": "PASS", "py_compile": "PASS"},
+  "physical_commands": 0,
+  "inference_requests": 0,
+  "processes_restarted": 0,
+  "physical_validation": "NOT_EXECUTED",
+  "unresolved": ["Controller NOT_REACHABLE", "Actual movement/target arrival validation gap: successful ACK does not guarantee physical target arrival", "Formal active TCP verification", "ServoL joint-limit and stop-ACK issues"],
+  "caution": "Larger raw endpoints may be submitted if all remaining checks pass. Removing the 50mm rejection does not fix controller feasibility or establish physical safety."
+}

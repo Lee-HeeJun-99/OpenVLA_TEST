@@ -1,0 +1,58 @@
+{"elapsed_s": 30.0, "image_count": 659, "diagnostic_count": 30, "receive_gaps_ge_500ms": 0}
+{"elapsed_s": 60.0, "image_count": 1261, "diagnostic_count": 60, "receive_gaps_ge_500ms": 0}
+{"elapsed_s": 90.0, "image_count": 1811, "diagnostic_count": 90, "receive_gaps_ge_500ms": 0}
+{"elapsed_s": 120.0, "image_count": 2358, "diagnostic_count": 120, "receive_gaps_ge_500ms": 0}
+{"elapsed_s": 150.0, "image_count": 2920, "diagnostic_count": 150, "receive_gaps_ge_500ms": 0}
+{"elapsed_s": 180.0, "image_count": 3450, "diagnostic_count": 180, "receive_gaps_ge_500ms": 0}
+{
+  "duration_requested_s": 180.0,
+  "observation_duration_s": 180.00442260000273,
+  "error": null,
+  "physical_commands": 0,
+  "settings_changed": false,
+  "diagnostic_messages": 180,
+  "streams": {
+    "image": {
+      "count": 3450,
+      "receive_hz": 19.163483295468517,
+      "max_receive_gap_s": 0.33014728300622664,
+      "max_source_gap_s": 0.33350706100463867,
+      "max_source_age_s": 0.05231165885925293,
+      "receive_gap_ge_100ms": 341,
+      "receive_gap_ge_500ms": 0,
+      "source_gap_ge_500ms": 0,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 81128.013531811,
+        "receive_wall": 1793870049.486263,
+        "source_timestamp": 1793870049.446925,
+        "source_age_s": 0.03934764862060547,
+        "receive_gap_s": 0.02885450900066644,
+        "source_gap_s": 0.03336596488952637,
+        "width": 1280,
+        "height": 720,
+        "encoding": "bgra8"
+      }
+    },
+    "camera_info": {
+      "count": 3491,
+      "receive_hz": 19.38808982524659,
+      "max_receive_gap_s": 0.3011374199995771,
+      "max_source_gap_s": 0.2999880313873291,
+      "max_source_age_s": 0.037866830825805664,
+      "receive_gap_ge_100ms": 342,
+      "receive_gap_ge_500ms": 0,
+      "source_gap_ge_500ms": 0,
+      "nonincreasing_source_stamps": 0,
+      "latest": {
+        "receive_monotonic": 81128.005677714,
+        "receive_wall": 1793870049.4784093,
+        "source_timestamp": 1793870049.446925,
+        "source_age_s": 0.0314943790435791,
+        "receive_gap_s": 0.03144471999257803,
+        "source_gap_s": 0.03336596488952637
+      }
+    }
+  },
+  "limitation": "SDK Data Capture frequency/processing time are aggregate diagnostics, not per-grab timestamps. Image header gaps alone do not separate grabbing from wrapper publishing."
+}

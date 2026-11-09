@@ -1,0 +1,2550 @@
+[
+  {
+    "wall_time": 1793927612.4991796,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 158,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138691.02643728256
+  },
+  {
+    "wall_time": 1793927615.2016597,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 170,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138693.7289173603
+  },
+  {
+    "wall_time": 1793927618.5522246,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 182,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138697.07948231697
+  },
+  {
+    "wall_time": 1793927622.5277038,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 194,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138701.05496144295
+  },
+  {
+    "wall_time": 1793927626.0244899,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 206,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138704.5517475605
+  },
+  {
+    "wall_time": 1793927629.3008285,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 218,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138707.82808613777
+  },
+  {
+    "wall_time": 1793927632.7016506,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 230,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138711.2289083004
+  },
+  {
+    "wall_time": 1793927636.1124704,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 242,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138714.6397280693
+  },
+  {
+    "wall_time": 1793927639.3174355,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 254,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138717.8446931839
+  },
+  {
+    "wall_time": 1793927643.1510057,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 266,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138721.67826342583
+  },
+  {
+    "wall_time": 1793927646.4018683,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 278,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138724.92912602425
+  },
+  {
+    "wall_time": 1793927649.6543448,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 290,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138728.18160247803
+  },
+  {
+    "wall_time": 1793927653.5012577,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 302,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138732.0285153389
+  },
+  {
+    "wall_time": 1793927656.772883,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 314,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138735.30014061928
+  },
+  {
+    "wall_time": 1793927660.0761778,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 326,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138738.60343551636
+  },
+  {
+    "wall_time": 1793927663.3751743,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 338,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138741.90243196487
+  },
+  {
+    "wall_time": 1793927666.951247,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 350,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138745.47850465775
+  },
+  {
+    "wall_time": 1793927670.5012212,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 362,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138749.02847886086
+  },
+  {
+    "wall_time": 1793927673.7748876,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 374,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138752.3021452427
+  },
+  {
+    "wall_time": 1793927677.2035172,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 386,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138755.73077487946
+  },
+  {
+    "wall_time": 1793927680.4011881,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 398,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138758.92844581604
+  },
+  {
+    "wall_time": 1793927684.10273,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 410,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138762.62998771667
+  },
+  {
+    "wall_time": 1793927687.904218,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 422,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138766.43147563934
+  },
+  {
+    "wall_time": 1793927691.4997592,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 434,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138770.02701687813
+  },
+  {
+    "wall_time": 1793927695.1732934,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 446,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138773.70055103302
+  },
+  {
+    "wall_time": 1793927698.5032663,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 458,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138777.03052401543
+  },
+  {
+    "wall_time": 1793927701.9524014,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 470,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138780.4796590805
+  },
+  {
+    "wall_time": 1793927705.152767,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 482,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138783.68002462387
+  },
+  {
+    "wall_time": 1793927708.3137906,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 494,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138786.84104824066
+  },
+  {
+    "wall_time": 1793927710.8726997,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 506,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138789.39995741844
+  },
+  {
+    "wall_time": 1793927713.2552688,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 518,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138791.78252649307
+  },
+  {
+    "wall_time": 1793927716.214747,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 530,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138794.74200463295
+  },
+  {
+    "wall_time": 1793927718.552532,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 542,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138797.07978963852
+  },
+  {
+    "wall_time": 1793927721.802604,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 554,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138800.32986164093
+  },
+  {
+    "wall_time": 1793927724.1981847,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 566,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138802.72544240952
+  },
+  {
+    "wall_time": 1793927726.975178,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 578,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138805.5024356842
+  },
+  {
+    "wall_time": 1793927729.60345,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 590,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138808.13070774078
+  },
+  {
+    "wall_time": 1793927732.048595,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 602,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138810.57585263252
+  },
+  {
+    "wall_time": 1793927734.7023427,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 614,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138813.22960042953
+  },
+  {
+    "wall_time": 1793927737.9488683,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 626,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138816.47612595558
+  },
+  {
+    "wall_time": 1793927740.5043,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 638,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138819.0315577984
+  },
+  {
+    "wall_time": 1793927743.5499384,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 650,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138822.07719612122
+  },
+  {
+    "wall_time": 1793927745.9718587,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 662,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138824.49911642075
+  },
+  {
+    "wall_time": 1793927748.6025996,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 674,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138827.1298573017
+  },
+  {
+    "wall_time": 1793927751.7998035,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 686,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138830.3270611763
+  },
+  {
+    "wall_time": 1793927754.8998234,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 698,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138833.4270811081
+  },
+  {
+    "wall_time": 1793927759.514626,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 710,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138838.04188370705
+  },
+  {
+    "wall_time": 1793927762.7155578,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 722,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138841.24281549454
+  },
+  {
+    "wall_time": 1793927766.100873,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 734,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138844.62813067436
+  },
+  {
+    "wall_time": 1793927769.1491077,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 746,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138847.67636537552
+  },
+  {
+    "wall_time": 1793927772.499444,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 758,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138851.02670168877
+  },
+  {
+    "wall_time": 1793927777.152829,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 770,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138855.6800866127
+  },
+  {
+    "wall_time": 1793927780.0720322,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 782,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138858.5992898941
+  },
+  {
+    "wall_time": 1793927783.418544,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 794,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138861.94580173492
+  },
+  {
+    "wall_time": 1793927786.850767,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(442.71mm[17.4293in], -20.56mm[-0.8096in], 668.53mm[26.3201in], -75.32deg, 170.43deg, 6.57deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 806,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138865.3780245781
+  },
+  {
+    "wall_time": 1793927790.5990145,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.19mm[17.4484in], -20.49mm[-0.8069in], 669.16mm[26.3450in], -75.24deg, 170.43deg, 6.65deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 818,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138869.12627220154
+  },
+  {
+    "wall_time": 1793927792.813261,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(442.90mm[17.4369in], -20.51mm[-0.8077in], 668.42mm[26.3157in], -75.27deg, 170.43deg, 6.62deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 830,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138871.340518713
+  },
+  {
+    "wall_time": 1793927796.5484881,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.24mm[17.4504in], -20.48mm[-0.8063in], 669.14mm[26.3441in], -75.25deg, 170.43deg, 6.65deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 842,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138875.075745821
+  },
+  {
+    "wall_time": 1793927798.275265,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.74mm[17.4702in], -20.52mm[-0.8079in], 669.31mm[26.3507in], -70.88deg, 170.21deg, 11.07deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 854,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138876.8025226593
+  },
+  {
+    "wall_time": 1793927799.951411,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.74mm[17.4702in], -20.52mm[-0.8079in], 669.31mm[26.3507in], -70.88deg, 170.21deg, 11.07deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 866,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138878.47866868973
+  },
+  {
+    "wall_time": 1793927801.6491675,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(444.26mm[17.4906in], -20.46mm[-0.8054in], 669.91mm[26.3745in], -75.25deg, 170.43deg, 6.65deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 878,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138880.17642521858
+  },
+  {
+    "wall_time": 1793927803.8985703,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.75mm[17.4705in], -20.50mm[-0.8072in], 669.30mm[26.3504in], -75.45deg, 170.44deg, 6.44deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 890,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138882.42582798004
+  },
+  {
+    "wall_time": 1793927807.6169736,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.81mm[17.4729in], -20.46mm[-0.8054in], 670.10mm[26.3817in], -75.33deg, 170.40deg, 7.25deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 902,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138886.14423131943
+  },
+  {
+    "wall_time": 1793927809.8481236,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.44mm[17.4584in], -20.50mm[-0.8073in], 669.39mm[26.3539in], -75.45deg, 170.44deg, 6.44deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 914,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138888.3753812313
+  },
+  {
+    "wall_time": 1793927813.5980308,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.71mm[17.4688in], -20.46mm[-0.8054in], 670.14mm[26.3835in], -75.33deg, 170.40deg, 7.25deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 926,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138892.12528848648
+  },
+  {
+    "wall_time": 1793927815.2978585,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(444.45mm[17.4981in], -20.41mm[-0.8036in], 670.43mm[26.3950in], -75.26deg, 170.42deg, 6.63deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 938,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138893.82511615753
+  },
+  {
+    "wall_time": 1793927817.5075471,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.98mm[17.4796in], -20.46mm[-0.8055in], 669.79mm[26.3695in], -75.45deg, 170.44deg, 6.44deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 950,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138896.034804821
+  },
+  {
+    "wall_time": 1793927821.247806,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(444.57mm[17.5026in], -20.41mm[-0.8035in], 670.33mm[26.3910in], -75.26deg, 170.42deg, 6.63deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 962,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138899.77506375313
+  },
+  {
+    "wall_time": 1793927823.4981763,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(444.06mm[17.4828in], -20.46mm[-0.8055in], 669.71mm[26.3666in], -75.45deg, 170.44deg, 6.44deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 974,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138902.02543401718
+  },
+  {
+    "wall_time": 1793927827.1977868,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(443.67mm[17.4672in], -20.47mm[-0.8058in], 670.41mm[26.3940in], -70.95deg, 170.21deg, 11.01deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 986,
+    "trial": "20261106_101231_full_policy_episode",
+    "estimated_monotonic": 138905.7250444889
+  },
+  {
+    "wall_time": 1793930773.3036432,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1056,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141851.83090734482
+  },
+  {
+    "wall_time": 1793930774.1049557,
+    "index": 1215,
+    "parameters": [
+      "[ServoL] Limit orientation acceleration is very low",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1069,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141852.6322197914
+  },
+  {
+    "wall_time": 1793930778.3071768,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1106,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141856.83444094658
+  },
+  {
+    "wall_time": 1793930782.2061937,
+    "index": 1215,
+    "parameters": [
+      "[ServoL] Limit translation acceleration is very low",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1137,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141860.73345780373
+  },
+  {
+    "wall_time": 1793930783.322697,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1150,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141861.8499610424
+  },
+  {
+    "wall_time": 1793930787.953844,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1187,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141866.48110818863
+  },
+  {
+    "wall_time": 1793930788.4274857,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1197,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141866.95474982262
+  },
+  {
+    "wall_time": 1793930793.514931,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1234,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141872.0421950817
+  },
+  {
+    "wall_time": 1793930798.6140678,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1274,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141877.1413319111
+  },
+  {
+    "wall_time": 1793930803.7228444,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1314,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141882.25010848045
+  },
+  {
+    "wall_time": 1793930808.8248298,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1351,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141887.352093935
+  },
+  {
+    "wall_time": 1793930813.9568925,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1391,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141892.48415660858
+  },
+  {
+    "wall_time": 1793930819.0153432,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1431,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141897.54260730743
+  },
+  {
+    "wall_time": 1793930824.1180484,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1471,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141902.64531254768
+  },
+  {
+    "wall_time": 1793930829.2079432,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1511,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141907.73520731926
+  },
+  {
+    "wall_time": 1793930834.3249109,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1551,
+    "trial": "20261106_110547_arm_only_servo_episode",
+    "estimated_monotonic": 141912.85217499733
+  },
+  {
+    "wall_time": 1793931272.2280688,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1600,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142350.7553331852
+  },
+  {
+    "wall_time": 1793931277.3243752,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1640,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142355.8516395092
+  },
+  {
+    "wall_time": 1793931278.670727,
+    "index": 1215,
+    "parameters": [
+      "[ServoL] Limit translation acceleration is very low",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1656,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142357.19799137115
+  },
+  {
+    "wall_time": 1793931282.3747516,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1687,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142360.90201592445
+  },
+  {
+    "wall_time": 1793931287.476388,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1727,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142366.0036523342
+  },
+  {
+    "wall_time": 1793931292.577624,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1767,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142371.10488843918
+  },
+  {
+    "wall_time": 1793931297.6766877,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1807,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142376.20395207405
+  },
+  {
+    "wall_time": 1793931301.1229932,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1835,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142379.65025758743
+  },
+  {
+    "wall_time": 1793931302.770692,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1852,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142381.29795646667
+  },
+  {
+    "wall_time": 1793931307.869658,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1891,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142386.39692234993
+  },
+  {
+    "wall_time": 1793931312.9689045,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1931,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142391.49616885185
+  },
+  {
+    "wall_time": 1793931318.0750103,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 1971,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142396.6022746563
+  },
+  {
+    "wall_time": 1793931323.1716611,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 2011,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142401.69892549515
+  },
+  {
+    "wall_time": 1793931328.27072,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 2051,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142406.79798436165
+  },
+  {
+    "wall_time": 1793931329.3710065,
+    "index": 9008,
+    "parameters": [
+      "Joint Axis 5 angle beyond min limit, ZoneName[global-normal]",
+      "current pos=-137.500[deg], min range=-135.000[deg], ZoneName[global-normal]",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 2064,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142407.8982708454
+  },
+  {
+    "wall_time": 1793931329.3742695,
+    "index": 7057,
+    "parameters": [
+      "",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+    "line": 2071,
+    "trial": "20261106_111406_arm_only_servo_episode",
+    "estimated_monotonic": 142407.9015338421
+  },
+  {
+    "wall_time": 1793937228.1347413,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 127,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148306.66200757027
+  },
+  {
+    "wall_time": 1793937233.186652,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 170,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148311.71391820908
+  },
+  {
+    "wall_time": 1793937238.2395911,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 216,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148316.76685738564
+  },
+  {
+    "wall_time": 1793937243.3358486,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 259,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148321.86311483383
+  },
+  {
+    "wall_time": 1793937245.7852688,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 287,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148324.31253504753
+  },
+  {
+    "wall_time": 1793937248.435383,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 312,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148326.9626493454
+  },
+  {
+    "wall_time": 1793937253.4987373,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 358,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148332.02600359917
+  },
+  {
+    "wall_time": 1793937258.5354934,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 401,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148337.06275963783
+  },
+  {
+    "wall_time": 1793937263.5415063,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 447,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148342.0687725544
+  },
+  {
+    "wall_time": 1793937268.55661,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 493,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148347.08387637138
+  },
+  {
+    "wall_time": 1793937273.3857605,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 539,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148351.9130268097
+  },
+  {
+    "wall_time": 1793937276.7366033,
+    "index": 9008,
+    "parameters": [
+      "Joint Axis 5 angle beyond min limit, ZoneName[global-normal]",
+      "current pos=-137.501[deg], min range=-135.000[deg], ZoneName[global-normal]",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 573,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148355.263869524
+  },
+  {
+    "wall_time": 1793937276.7433553,
+    "index": 7057,
+    "parameters": [
+      "",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+    "line": 580,
+    "trial": "20261106_125319_arm_only_servo_episode",
+    "estimated_monotonic": 148355.27062153816
+  },
+  {
+    "wall_time": 1793938885.8595371,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 177,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149964.38678240776
+  },
+  {
+    "wall_time": 1793938888.5032365,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 188,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149967.03048181534
+  },
+  {
+    "wall_time": 1793938891.745637,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 199,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149970.27288222313
+  },
+  {
+    "wall_time": 1793938895.0946958,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 210,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149973.62194108963
+  },
+  {
+    "wall_time": 1793938898.0052266,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 221,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149976.53247189522
+  },
+  {
+    "wall_time": 1793938900.6181197,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 232,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149979.14536499977
+  },
+  {
+    "wall_time": 1793938903.444997,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 243,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149981.97224235535
+  },
+  {
+    "wall_time": 1793938906.246082,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 254,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149984.77332735062
+  },
+  {
+    "wall_time": 1793938909.046298,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 265,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149987.57354331017
+  },
+  {
+    "wall_time": 1793938912.3135962,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 276,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149990.84084153175
+  },
+  {
+    "wall_time": 1793938915.2959967,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 287,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149993.82324194908
+  },
+  {
+    "wall_time": 1793938918.1952033,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 298,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149996.72244858742
+  },
+  {
+    "wall_time": 1793938920.6076488,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 309,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 149999.1348941326
+  },
+  {
+    "wall_time": 1793938922.6578386,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 320,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150001.18508386612
+  },
+  {
+    "wall_time": 1793938925.3948994,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 331,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150003.9221446514
+  },
+  {
+    "wall_time": 1793938928.214374,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 342,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150006.74161934853
+  },
+  {
+    "wall_time": 1793938931.195588,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 353,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150009.722833395
+  },
+  {
+    "wall_time": 1793938934.1454897,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 364,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150012.67273497581
+  },
+  {
+    "wall_time": 1793938936.9212198,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 375,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150015.44846510887
+  },
+  {
+    "wall_time": 1793938940.1141832,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 386,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150018.6414284706
+  },
+  {
+    "wall_time": 1793938942.8602996,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 397,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150021.38754487038
+  },
+  {
+    "wall_time": 1793938945.9962456,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 408,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150024.52349090576
+  },
+  {
+    "wall_time": 1793938948.5957808,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.64mm[15.4187in], 11.18mm[0.4400in], 703.77mm[27.7075in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 419,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150027.12302613258
+  },
+  {
+    "wall_time": 1793938950.4217913,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.10mm[0.4369in], 704.57mm[27.7391in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 430,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150028.9490365982
+  },
+  {
+    "wall_time": 1793938952.2958243,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.62mm[15.4183in], 11.12mm[0.4378in], 704.78mm[27.7473in], -64.56deg, 165.67deg, 63.94deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 441,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150030.82306957245
+  },
+  {
+    "wall_time": 1793938953.9156344,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4183in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 452,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150032.44287967682
+  },
+  {
+    "wall_time": 1793938955.5007644,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 463,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150034.0280096531
+  },
+  {
+    "wall_time": 1793938957.3961487,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 474,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150035.92339396477
+  },
+  {
+    "wall_time": 1793938959.0464814,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 485,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150037.57372665405
+  },
+  {
+    "wall_time": 1793938960.6952066,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 496,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150039.22245192528
+  },
+  {
+    "wall_time": 1793938962.304362,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 507,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150040.83160734177
+  },
+  {
+    "wall_time": 1793938963.904839,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 518,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150042.43208432198
+  },
+  {
+    "wall_time": 1793938965.5957425,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.01mm[0.4334in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 529,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150044.1229877472
+  },
+  {
+    "wall_time": 1793938967.2148035,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 540,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150045.7420487404
+  },
+  {
+    "wall_time": 1793938968.9465413,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 551,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150047.47378659248
+  },
+  {
+    "wall_time": 1793938970.5974433,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.01mm[0.4334in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 562,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150049.12468862534
+  },
+  {
+    "wall_time": 1793938972.2175741,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.01mm[0.4334in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 573,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150050.7448194027
+  },
+  {
+    "wall_time": 1793938973.8125532,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 584,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150052.33979845047
+  },
+  {
+    "wall_time": 1793938975.4479127,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 595,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150053.97515797615
+  },
+  {
+    "wall_time": 1793938977.0967243,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 606,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150055.6239695549
+  },
+  {
+    "wall_time": 1793938978.7475922,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 617,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150057.2748374939
+  },
+  {
+    "wall_time": 1793938980.3967035,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 628,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150058.9239487648
+  },
+  {
+    "wall_time": 1793938981.9961836,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 639,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150060.52342891693
+  },
+  {
+    "wall_time": 1793938983.6016102,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 650,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150062.12885546684
+  },
+  {
+    "wall_time": 1793938985.1969438,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 661,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150063.72418904305
+  },
+  {
+    "wall_time": 1793938986.7979894,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 672,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150065.32523465157
+  },
+  {
+    "wall_time": 1793938988.4478257,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 683,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150066.97507095337
+  },
+  {
+    "wall_time": 1793938990.0528438,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 694,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150068.58008909225
+  },
+  {
+    "wall_time": 1793938991.6562614,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.57deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 705,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150070.18350672722
+  },
+  {
+    "wall_time": 1793938993.2977564,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.15deg, 165.62deg, 64.35deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 716,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150071.8250017166
+  },
+  {
+    "wall_time": 1793938994.9489489,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 727,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150073.4761941433
+  },
+  {
+    "wall_time": 1793938996.553924,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 738,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150075.08116936684
+  },
+  {
+    "wall_time": 1793938998.1526518,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 749,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150076.67989706993
+  },
+  {
+    "wall_time": 1793939000.0146194,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 760,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150078.54186463356
+  },
+  {
+    "wall_time": 1793939001.6487494,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 771,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150080.17599463463
+  },
+  {
+    "wall_time": 1793939003.214431,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 782,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150081.74167633057
+  },
+  {
+    "wall_time": 1793939004.847099,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 793,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150083.3743443489
+  },
+  {
+    "wall_time": 1793939006.447149,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 804,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150084.97439432144
+  },
+  {
+    "wall_time": 1793939008.0528405,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 815,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150086.5800857544
+  },
+  {
+    "wall_time": 1793939009.6979597,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 826,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150088.2252049446
+  },
+  {
+    "wall_time": 1793939011.2976134,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.01mm[0.4334in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 837,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150089.82485866547
+  },
+  {
+    "wall_time": 1793939012.896913,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 848,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150091.42415833473
+  },
+  {
+    "wall_time": 1793939014.4986806,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.22deg, 165.62deg, 64.35deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 859,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150093.0259258747
+  },
+  {
+    "wall_time": 1793939016.3491683,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.22deg, 165.62deg, 64.35deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 870,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150094.87641358376
+  },
+  {
+    "wall_time": 1793939017.967843,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 881,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150096.49508833885
+  },
+  {
+    "wall_time": 1793939019.6126518,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 892,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150098.13989710808
+  },
+  {
+    "wall_time": 1793939021.2145255,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 903,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150099.74177074432
+  },
+  {
+    "wall_time": 1793939022.8130226,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 914,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150101.34026789665
+  },
+  {
+    "wall_time": 1793939024.4241674,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 925,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150102.95141267776
+  },
+  {
+    "wall_time": 1793939026.0485806,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 936,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150104.57582592964
+  },
+  {
+    "wall_time": 1793939027.6984577,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 947,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150106.22570300102
+  },
+  {
+    "wall_time": 1793939029.2980545,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.01mm[0.4334in], 704.78mm[27.7472in], -64.42deg, 165.47deg, 64.08deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 958,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150107.82529973984
+  },
+  {
+    "wall_time": 1793939030.9486349,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 969,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150109.47588014603
+  },
+  {
+    "wall_time": 1793939032.6612606,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 980,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150111.18850588799
+  },
+  {
+    "wall_time": 1793939034.3149285,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 991,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150112.84217381477
+  },
+  {
+    "wall_time": 1793939036.0007915,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 1002,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150114.5280368328
+  },
+  {
+    "wall_time": 1793939037.7056704,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 1013,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150116.23291563988
+  },
+  {
+    "wall_time": 1793939039.34748,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 1024,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150117.8747253418
+  },
+  {
+    "wall_time": 1793939040.9700775,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4184in], 11.12mm[0.4378in], 704.78mm[27.7472in], -64.83deg, 165.52deg, 63.66deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 1035,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150119.49732279778
+  },
+  {
+    "wall_time": 1793939042.6147704,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.40deg, 165.65deg, 64.10deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 1046,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150121.14201569557
+  },
+  {
+    "wall_time": 1793939044.472085,
+    "index": 1206,
+    "parameters": [
+      "[ERR] Pose(391.63mm[15.4185in], 11.08mm[0.4362in], 704.78mm[27.7472in], -64.56deg, 165.67deg, 63.93deg) is NOT REACHABLE",
+      "",
+      ""
+    ],
+    "log_path": "/home/ubuntu/.ros/log/ros2_control_node_149153_1793938762203.log",
+    "line": 1057,
+    "trial": "20261106_132009_arm_only_moveline_episode",
+    "estimated_monotonic": 150122.9993302822
+  }
+]

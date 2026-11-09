@@ -1,0 +1,31 @@
+{
+  "physical_commands": 0,
+  "hardware_connection_changed_by_agent": false,
+  "connection": "User-installed C-to-C, video path direct root port 2-1 at 5000Mbps",
+  "native_c_60s": {
+    "frames": 1040,
+    "hz": 17.373578149361528,
+    "max_receive_gap_s": 0.33335489200544544,
+    "max_driver_timestamp_gap_s": 0.3337770000071032,
+    "receive_ge100ms": 152,
+    "receive_ge500ms": 0,
+    "sequence_skipped_values": 1510,
+    "sequence_caveat": "Sequence discontinuities, not independently verified sensor frame loss count"
+  },
+  "sdk_standalone": {
+    "status": "NOT_MEASURED_OPEN_FAILED",
+    "reason": "CAMERA MOTION SENSORS NOT DETECTED",
+    "sdk_open_log": "Camera detected but sensor device failed to open; SDK attempted internal recovery/reboot; timeout",
+    "not_inferred": "This initialization failure does not prove it caused the earlier image timing gaps"
+  },
+  "restoration": {
+    "zed_launch_pid": 63094,
+    "startup_log_success": true,
+    "camera_firmware": 1523,
+    "sensor_firmware": 777,
+    "robot_or_model_process_modified": false
+  },
+  "narrowed_boundary": "Irregular delivery present already at native V4L2 driver buffers, before ROS/SDK/OpenCV/Python/inference. Remaining kernel/UVC/xHCI versus camera/firmware/physical transport cannot be separated by this test.",
+  "additional_evidence": "Intermittent sensor/HID initialization failure, followed by successful restored ROS startup",
+  "limitations": ["Sequential tests, not randomized", "SDK 60s result unavailable rather than substituted", "Only 60s, no >=500ms event does not prove long-duration stability", "USB debugfs statistics unavailable to current user permissions"]
+}

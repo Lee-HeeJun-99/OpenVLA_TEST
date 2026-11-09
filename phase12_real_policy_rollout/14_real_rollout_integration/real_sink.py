@@ -105,9 +105,10 @@ class RealDoosanCommandSink:
         return self.transport.wait(future,timeout)
 
     def send_pose(self, pose_mm_zyz_deg, *, velocity=(20.,20.), acceleration=(20.,20.)):
+        from moveline_motion_profile import validate_profile
         pose=[float(x) for x in pose_mm_zyz_deg]
         if len(pose)!=6 or not all(math.isfinite(x) for x in pose):raise ValueError('invalid_pose')
-        if not all(0<float(x)<=20 for x in (*velocity,*acceleration)):raise ValueError('velocity_acceleration_contract')
+        velocity,acceleration=validate_profile(velocity,acceleration)
         return self._send('pose',dict(pos=pose,vel=list(velocity),acc=list(acceleration),time=0.,radius=0.,ref=0,mode=0,blend_type=0,sync_type=0))
 
     def send_gripper(self, closed):

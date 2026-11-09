@@ -1,0 +1,123 @@
+{
+  "receipt": {
+    "state": "completed",
+    "events": [
+      {
+        "command_id": "19e626b06f9c4c55b63cb2d0e164f425",
+        "command_type": "gripper",
+        "requested_at": 79871.915894201,
+        "sent_at": 79871.916031939,
+        "ack_at": 79871.921095076,
+        "completed_at": 79871.92109741,
+        "ack_latency": 0.0050631369958864525,
+        "state": "completed",
+        "request": {
+          "index": 1,
+          "value": 1
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      {
+        "command_id": "5aae9e68eb994d76b3798745fa47de82",
+        "command_type": "gripper",
+        "requested_at": 79873.221227231,
+        "sent_at": 79873.22150802,
+        "ack_at": 79873.226583456,
+        "completed_at": 79873.226586997,
+        "ack_latency": 0.005075435998151079,
+        "state": "completed",
+        "request": {
+          "index": 1,
+          "value": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      {
+        "command_id": "17ebccafccdc4212bc8252c3489be469",
+        "command_type": "gripper",
+        "requested_at": 79873.426716847,
+        "sent_at": 79873.426973924,
+        "ack_at": 79873.432045362,
+        "completed_at": 79873.432054951,
+        "ack_latency": 0.005071438004961237,
+        "state": "completed",
+        "request": {
+          "index": 1,
+          "value": 1
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      },
+      {
+        "command_id": "c58f9d8affa44d438290239ef5b8f63b",
+        "command_type": "gripper",
+        "requested_at": 79873.932217859,
+        "sent_at": 79873.932463407,
+        "ack_at": 79873.937574588,
+        "completed_at": 79873.937586858,
+        "ack_latency": 0.005111180988023989,
+        "state": "completed",
+        "request": {
+          "index": 1,
+          "value": 0
+        },
+        "result": {
+          "success": true
+        },
+        "failure_reason": null,
+        "clock_domain": "HOST_MONOTONIC",
+        "completion_evidence": "SYNCHRONOUS_SERVICE_RETURN_NOT_INDEPENDENT_PHYSICAL_FEEDBACK"
+      }
+    ],
+    "command_mode": "operator_timed_pulse",
+    "requested_io_sequence": [
+      {
+        "index": 1,
+        "value": 1
+      },
+      {
+        "index": 1,
+        "value": 0
+      },
+      {
+        "index": 1,
+        "value": 1
+      },
+      {
+        "index": 1,
+        "value": 0
+      }
+    ],
+    "high_hold_times_s": [
+      1.3,
+      0.5
+    ],
+    "between_pulses_low_hold_s": 0.2,
+    "commanded_final_output_state": [
+      0,
+      0
+    ],
+    "measured_gripper_state": null
+  },
+  "observed_open": true,
+  "ack_wall_time": 1793868795.4161375,
+  "operator_evidence": {
+    "observed_open": true,
+    "operator": "ubuntu",
+    "confirmed_wall_time": 1793868798.7025383
+  }
+}

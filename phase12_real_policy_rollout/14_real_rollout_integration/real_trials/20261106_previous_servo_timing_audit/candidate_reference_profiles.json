@@ -1,0 +1,78 @@
+[
+  {
+    "label": "recorded",
+    "linear_velocity_mm_s": 20,
+    "angular_velocity_deg_s": 20,
+    "linear_acceleration_mm_s2": 20,
+    "angular_acceleration_deg_s2": 20,
+    "rest_to_rest_reference_required_time_s": {
+      "count": 149,
+      "min": 0.1092371757180068,
+      "median": 0.566663132643989,
+      "p95": 0.8431923315451503,
+      "p99": 0.8658174012104073,
+      "max": 0.8994439462191586
+    },
+    "rest_reference_fits_recorded_target_time_count": 0,
+    "sample_count": 149,
+    "production_approved": false,
+    "actual_controller_response": "NOT_SIMULATED_NOT_IDENTIFIABLE_FROM_RECORDED_REPLAY"
+  },
+  {
+    "label": "linear_margin",
+    "linear_velocity_mm_s": 40,
+    "angular_velocity_deg_s": 20,
+    "linear_acceleration_mm_s2": 40,
+    "angular_acceleration_deg_s2": 40,
+    "rest_to_rest_reference_required_time_s": {
+      "count": 149,
+      "min": 0.07724234770786909,
+      "median": 0.40069134374097676,
+      "p95": 0.5962270154800714,
+      "p99": 0.6122253556651926,
+      "max": 0.6360029136687554
+    },
+    "rest_reference_fits_recorded_target_time_count": 2,
+    "sample_count": 149,
+    "production_approved": false,
+    "actual_controller_response": "NOT_SIMULATED_NOT_IDENTIFIABLE_FROM_RECORDED_REPLAY"
+  },
+  {
+    "label": "acceleration_margin",
+    "linear_velocity_mm_s": 40,
+    "angular_velocity_deg_s": 20,
+    "linear_acceleration_mm_s2": 80,
+    "angular_acceleration_deg_s2": 80,
+    "rest_to_rest_reference_required_time_s": {
+      "count": 149,
+      "min": 0.0546185878590034,
+      "median": 0.2833315663219945,
+      "p95": 0.42159616577257514,
+      "p99": 0.43290870060520364,
+      "max": 0.4497219731095793
+    },
+    "rest_reference_fits_recorded_target_time_count": 5,
+    "sample_count": 149,
+    "production_approved": false,
+    "actual_controller_response": "NOT_SIMULATED_NOT_IDENTIFIABLE_FROM_RECORDED_REPLAY"
+  },
+  {
+    "label": "larger_linear_margin",
+    "linear_velocity_mm_s": 60,
+    "angular_velocity_deg_s": 20,
+    "linear_acceleration_mm_s2": 120,
+    "angular_acceleration_deg_s2": 120,
+    "rest_to_rest_reference_required_time_s": {
+      "count": 149,
+      "min": 0.04459589024197689,
+      "median": 0.23133925517080578,
+      "p95": 0.3442318278855464,
+      "p99": 0.3534684738980134,
+      "max": 0.3671964534120422
+    },
+    "rest_reference_fits_recorded_target_time_count": 12,
+    "sample_count": 149,
+    "production_approved": false,
+    "actual_controller_response": "NOT_SIMULATED_NOT_IDENTIFIABLE_FROM_RECORDED_REPLAY"
+  }
+]

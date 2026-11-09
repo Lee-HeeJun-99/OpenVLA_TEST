@@ -1,0 +1,16 @@
+{
+  "case": "H_grab_retrieve",
+  "meta": {
+    "sdk": "5.3.0",
+    "read_api": false,
+    "retrieve": true,
+    "validity_check": 1
+  },
+  "count": 601,
+  "errors": 0,
+  "hz": 9.992821491465792,
+  "max_receive_gap_s": 0.6340641830029199,
+  "receive_gap_ge_100ms": 240,
+  "receive_gap_ge_500ms": 5,
+  "physical_commands": 0
+}

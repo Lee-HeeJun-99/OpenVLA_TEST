@@ -1,0 +1,46 @@
+{
+  "physical_commands": 0,
+  "updates_or_reboots": false,
+  "camera_firmware": {
+    "reported_version": 1523,
+    "provenance": "Camera open logs from preceding SDK-only tests",
+    "bundled_image": "/usr/local/zed/firmware/ZED2i/zed_2i_fw_v1523_spi.bin",
+    "version_consistency": true,
+    "installed_flash_integrity_verified": false,
+    "sensor_imu_firmware_version": "UNKNOWN",
+    "latest_available_version_as_of_today": "Not established from a current vendor version matrix; 2024 staff statement is not treated as current latest-version proof"
+  },
+  "linux_drivers": {
+    "kernel": "6.8.0-138-generic",
+    "uvcvideo_version": "1.1.1",
+    "uvcvideo_package_checksum_match": true,
+    "xhci_pci_package_checksum_match": true,
+    "uvcvideo_vermagic_matches_kernel": true,
+    "xhci_pci_vermagic_matches_kernel": true,
+    "uvcvideo_parameters": {"clock": "CLOCK_MONOTONIC", "hwtimestamps": 0, "trace": 0, "timeout": 5000, "nodrop": 0, "quirks": 4294967295},
+    "interpretation": "No installed-module corruption/version mismatch detected; this does not exclude a kernel/driver bug. quirks unsigned -1 is the upstream automatic/default value, not a user-enabled all-quirks mask."
+  },
+  "gpu": {
+    "loaded_driver": "580.178.04",
+    "cuda_toolkit": "13.0.3",
+    "nvidia_550_package": "Transitional metapackage depending on 580, not two simultaneously loaded drivers",
+    "native_v4l2_test_used_sdk_or_cuda": false
+  },
+  "runtime_evidence": {
+    "native_v4l2_source": "20261105_165744_zed_software_validation/native_summary.json",
+    "native_hz": 11.14076103937871,
+    "native_max_receive_gap_s": 0.5333337260090047,
+    "native_max_driver_timestamp_gap_s": 0.5333390000014333,
+    "error_flag_on_delivered_buffers": 0,
+    "sequence_discontinuities_present": true,
+    "camera_hid_resets_in_log": "Observed near SDK open/close phases; not sufficient evidence of spontaneous video-path reset during frame gaps",
+    "specific_new_firmware_or_driver_fault_confirmed": false
+  },
+  "remaining_unverified": ["Camera firmware flash integrity", "Current sensor/IMU firmware version", "Alternate kernel/UVC/xHCI version capture comparison", "Firmware version A/B", "USB packet-level root cause"],
+  "sources": [
+    "https://community.stereolabs.com/t/updating-camera-firmware/4792",
+    "https://docs.stereolabs.com/docs/development/zed-sdk/release-notes/5-x/5-3",
+    "https://raw.githubusercontent.com/torvalds/linux/v6.8/drivers/media/usb/uvc/uvc_driver.c"
+  ],
+  "classification": "NO_VERSION_OR_PACKAGE_MISMATCH_FOUND; FIRMWARE_DRIVER_RUNTIME_ROOT_CAUSE_NOT_EXCLUDED"
+}

@@ -1,0 +1,30 @@
+{
+  "scope": "MOVELINE_EPISODE_TRANSPORT_TRANSLATION_PROFILE_ONLY",
+  "user_requested": {"translation_velocity_mm_s": 120, "translation_acceleration_mm_s2": 120},
+  "previous": {"velocity_mm_s_deg_s": [20, 20], "acceleration_mm_s2_deg_s2": [20, 20]},
+  "current": {"velocity_mm_s_deg_s": [120, 20], "acceleration_mm_s2_deg_s2": [120, 20]},
+  "source_of_truth": "configs/hardware_interface.yaml",
+  "live_path": "start_full_policy_confirmed.py --controller moveline -> run_live_full_policy.py -> run_arm_only_episode.py -> Controller -> RealDoosanCommandSink.send_pose",
+  "also_applies_to": "Arm-only MoveLine episode using run_arm_only_episode.py",
+  "legacy_controller_and_minimum_motion_defaults": "remain [20,20] unless explicitly configured via episode profile",
+  "unchanged": {
+    "translation_raw_gate_mm": 50,
+    "rotation_raw_gate_deg": 4,
+    "planning_translation_velocity_mm_s": 20,
+    "planning_translation_acceleration_mm_s2": 20,
+    "planning_dt_s": 0.2,
+    "first_step_max_mm": 0.8,
+    "steady_step_max_mm": 4,
+    "servo_transport_velocity_mm_s_deg_s": [20, 20],
+    "servo_transport_acceleration_mm_s2_deg_s2": [40, 40],
+    "servo_transport_target_time_s": 0.7,
+    "sensor_watchdogs_workspace_logger_gripper_and_abort_policy": true
+  },
+  "raw_full_delta_mode_enabled": false,
+  "physical_validation": "NOT_EXECUTED_AT_120_120",
+  "physical_commands": 0,
+  "processes_restarted": 0,
+  "tests": {"passed": 372, "warnings": 6, "new_profile_fake_transport_tests": 5},
+  "unresolved": ["Controller NOT_REACHABLE and actual target arrival validation gap", "ServoL joint-limit/stop-ACK failures", "Formal active TCP verification"],
+  "caution": "Transport values are upper bounds, not guaranteed measured speeds. Short limited steps may never reach 120 mm/s. No claim that a physical rollout is validated by these software tests."
+}

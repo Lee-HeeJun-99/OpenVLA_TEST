@@ -22,7 +22,9 @@ class RuntimeSafetySupervisor:
                  max_translation_velocity_m_s: float,
                  max_rotation_velocity_rad_s: float,
                  max_translation_acceleration_m_s2: float,
-                 max_rotation_acceleration_rad_s2: float):
+                 max_rotation_acceleration_rad_s2: float,
+                 dynamics_managed_by_controller: bool=False,
+                 translation_step_limit_enabled: bool=True):
         limits = (max_action_age_sec, min_command_period_sec, max_translation_m,
                   max_rotation_rad, max_translation_velocity_m_s,
                   max_rotation_velocity_rad_s, max_translation_acceleration_m_s2,
@@ -37,6 +39,13 @@ class RuntimeSafetySupervisor:
         self.max_rotation_velocity_rad_s=float(max_rotation_velocity_rad_s)
         self.max_translation_acceleration_m_s2=float(max_translation_acceleration_m_s2)
         self.max_rotation_acceleration_rad_s2=float(max_rotation_acceleration_rad_s2)
+        # Endpoint displacement is not instantaneous velocity. In synchronous
+        # endpoint mode the bounded hardware profile controls speed/acceleration.
+        # Finite values, raw step bounds, timing, duplicate and rate gates remain.
+        if type(dynamics_managed_by_controller) is not bool:raise ValueError('invalid_dynamics_owner')
+        self.dynamics_managed_by_controller=dynamics_managed_by_controller
+        if type(translation_step_limit_enabled) is not bool:raise ValueError('invalid_translation_gate_mode')
+        self.translation_step_limit_enabled=translation_step_limit_enabled
         self._last_id=None; self._last_time=None; self._last_velocity=None
 
     @staticmethod
@@ -73,20 +82,21 @@ class RuntimeSafetySupervisor:
         if not math.isfinite(age) or age < 0:return self._reject("clock_domain_or_time_regression")
         if age > self.max_action_age_sec:return self._reject("stale_action")
         if action_id == self._last_id:return self._reject("duplicate_action")
-        if self._exceeds(self._norm(values[:3]),self.max_translation_m):return self._reject("translation_step_limit")
+        if self.translation_step_limit_enabled and self._exceeds(self._norm(values[:3]),self.max_translation_m):return self._reject("translation_step_limit")
         if self._exceeds(self._norm(values[3:6]),self.max_rotation_rad):return self._reject("rotation_step_limit")
         if self._last_time is not None:
             dt=now-self._last_time
             if dt < self.min_command_period_sec:return self._reject("command_rate_limit")
             if dt <= 0:return self._reject("clock_domain_or_time_regression")
-            velocity=tuple(x/dt for x in values[:6])
-            if self._exceeds(self._norm(velocity[:3]),self.max_translation_velocity_m_s):return self._reject("translation_velocity_limit")
-            if self._exceeds(self._norm(velocity[3:]),self.max_rotation_velocity_rad_s):return self._reject("rotation_velocity_limit")
-            if self._last_velocity is not None:
-                acceleration=tuple((v-p)/dt for v,p in zip(velocity,self._last_velocity))
-                if self._exceeds(self._norm(acceleration[:3]),self.max_translation_acceleration_m_s2):return self._reject("translation_acceleration_limit")
-                if self._exceeds(self._norm(acceleration[3:]),self.max_rotation_acceleration_rad_s2):return self._reject("rotation_acceleration_limit")
-            self._last_velocity=velocity
+            if not self.dynamics_managed_by_controller:
+                velocity=tuple(x/dt for x in values[:6])
+                if self._exceeds(self._norm(velocity[:3]),self.max_translation_velocity_m_s):return self._reject("translation_velocity_limit")
+                if self._exceeds(self._norm(velocity[3:]),self.max_rotation_velocity_rad_s):return self._reject("rotation_velocity_limit")
+                if self._last_velocity is not None:
+                    acceleration=tuple((v-p)/dt for v,p in zip(velocity,self._last_velocity))
+                    if self._exceeds(self._norm(acceleration[:3]),self.max_translation_acceleration_m_s2):return self._reject("translation_acceleration_limit")
+                    if self._exceeds(self._norm(acceleration[3:]),self.max_rotation_acceleration_rad_s2):return self._reject("rotation_acceleration_limit")
+                self._last_velocity=velocity
         self._last_id=str(action_id);self._last_time=now
         return RuntimeSafetyResult(True,False,None,False)
 

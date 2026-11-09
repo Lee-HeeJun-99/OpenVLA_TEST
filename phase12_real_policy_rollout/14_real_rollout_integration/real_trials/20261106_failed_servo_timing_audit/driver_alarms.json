@@ -1,0 +1,146 @@
+[
+  {
+    "wall_time": 1793931272.228898,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931277.3254192,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931278.6715195,
+    "index": 1215,
+    "parameters": [
+      "[ServoL] Limit translation acceleration is very low",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931282.3758812,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931287.4768384,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931292.5782557,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931297.6772895,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931301.1237555,
+    "index": 3205,
+    "parameters": [
+      "Change singularity region status(Outside -> Inside), Singularity handling mode(1)",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931302.7712867,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931307.8703609,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931312.96968,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931318.0760722,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931323.1722314,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931328.271043,
+    "index": 1216,
+    "parameters": [
+      "[ServoL]Can't keep target time due to limit velocity or acceleration",
+      "",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931329.3717883,
+    "index": 9008,
+    "parameters": [
+      "Joint Axis 5 angle beyond min limit, ZoneName[global-normal]",
+      "current pos=-137.500[deg], min range=-135.000[deg], ZoneName[global-normal]",
+      ""
+    ]
+  },
+  {
+    "wall_time": 1793931329.3745742,
+    "index": 7057,
+    "parameters": [
+      "",
+      "",
+      ""
+    ]
+  }
+]

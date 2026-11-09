@@ -1,0 +1,10 @@
+{
+  "performed": false,
+  "status": "NOT_CHECKED",
+  "operator_present": null,
+  "workspace_clear": null,
+  "estop_accessible": null,
+  "robot_stationary": null,
+  "tcp_engineering_acceptance": null,
+  "gripper_mapping_confirmed": null
+}

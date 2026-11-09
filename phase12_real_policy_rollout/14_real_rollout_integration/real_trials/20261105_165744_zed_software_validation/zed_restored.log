@@ -1,0 +1,736 @@
+[INFO] [launch]: All log files can be found below /home/ubuntu/.ros/log/2026-11-05-16-58-47-236576-scps1-57201
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Using common configuration file: /home/ubuntu/robot_ws/install/zed_wrapper/share/zed_wrapper/config/common_stereo.yaml
+[INFO] [launch.user]: Using camera configuration file: /home/ubuntu/robot_ws/install/zed_wrapper/share/zed_wrapper/config/zed2i.yaml
+[INFO] [launch.user]: Using Object Detection configuration file: /home/ubuntu/robot_ws/install/zed_wrapper/share/zed_wrapper/config/object_detection.yaml
+[INFO] [launch.user]: Using Custom Object Detection configuration file: /home/ubuntu/robot_ws/install/zed_wrapper/share/zed_wrapper/config/custom_object_detection.yaml
+[INFO] [launch.user]: NITROS not installed, skipping IPC/NITROS conflict check.
+[INFO] [launch.user]: Loading ZED node `zed_node` in container `/zed/zed_container`
+[INFO] [robot_state_publisher-1]: process started with pid [57220]
+[INFO] [component_container_isolated-2]: process started with pid [57222]
+[robot_state_publisher-1] [0m[INFO] [1793865527.954608732] [zed.zed_state_publisher]: got segment zed_camera_center[0m
+[robot_state_publisher-1] [0m[INFO] [1793865527.954784363] [zed.zed_state_publisher]: got segment zed_camera_link[0m
+[robot_state_publisher-1] [0m[INFO] [1793865527.954800694] [zed.zed_state_publisher]: got segment zed_left_camera_frame[0m
+[robot_state_publisher-1] [0m[INFO] [1793865527.954808113] [zed.zed_state_publisher]: got segment zed_left_camera_frame_optical[0m
+[robot_state_publisher-1] [0m[INFO] [1793865527.954815722] [zed.zed_state_publisher]: got segment zed_right_camera_frame[0m
+[robot_state_publisher-1] [0m[INFO] [1793865527.954822484] [zed.zed_state_publisher]: got segment zed_right_camera_frame_optical[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.202933930] [zed.zed_container]: Load Library: /home/ubuntu/robot_ws/install/zed_components/lib/libzed_camera_component.so[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.217610168] [zed.zed_container]: Found class: rclcpp_components::NodeFactoryTemplate<stereolabs::ZedCamera>[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.217670686] [zed.zed_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<stereolabs::ZedCamera>[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.370995684] [zed.zed_node]: ================================[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.371026819] [zed.zed_node]:       ZED Camera Component [0m
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/zed/zed_node' in container '/zed/zed_container'
+[component_container_isolated-2] [0m[INFO] [1793865528.371033183] [zed.zed_node]: ================================[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.371037636] [zed.zed_node]:  * IPC: enabled[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421266851] [zed.zed_node]:  * namespace: /zed[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421350938] [zed.zed_node]:  * node name: zed_node[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421358387] [zed.zed_node]: ================================[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421363639] [zed.zed_node]: Starting node initialization...[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421401230] [zed.zed_node]: === DEBUG parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421656150] [zed.zed_node]:  * SDK Verbose: 1[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421774394] [zed.zed_node]:  * Use Pub Timestamps: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421838481] [zed.zed_node]:  * SDK Verbose File: [0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421894122] [zed.zed_node]:  * Debug Common: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421944223] [zed.zed_node]:  * Debug Dynamic Parameters: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.421993737] [zed.zed_node]:  * Debug Grab (low level): FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422049322] [zed.zed_node]:  * Debug Simulation: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422099306] [zed.zed_node]:  * Debug Video/Depth: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422148231] [zed.zed_node]:  * Debug Control settings: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422201996] [zed.zed_node]:  * Debug Point Cloud: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422253412] [zed.zed_node]:  * Debug TF: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422300580] [zed.zed_node]:  * Debug Positional Tracking: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422349034] [zed.zed_node]:  * Debug GNSS: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422396928] [zed.zed_node]:  * Debug sensors: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422452181] [zed.zed_node]:  * Debug Mapping: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422495192] [zed.zed_node]:  * Debug Object Detection: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422530527] [zed.zed_node]:  * Debug Body Tracking: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422564353] [zed.zed_node]:  * Debug Streaming: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422602438] [zed.zed_node]:  * Debug ROI: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422636673] [zed.zed_node]:  * Debug Nitros: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422678625] [zed.zed_node]:  * Debug Advanced: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422706756] [zed.zed_node]: === TOPIC selection parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422748942] [zed.zed_node]:  * Publish Status: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422791639] [zed.zed_node]:  * Image format: BGRA 32-bit[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422827232] [zed.zed_node]:  * Publish Left/Right images: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422865028] [zed.zed_node]:  * Publish Raw images: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422898017] [zed.zed_node]:  * Publish Gray images: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422930756] [zed.zed_node]:  * Publish RGB image: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.422968714] [zed.zed_node]:  * Publish Stereo image: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423011682] [zed.zed_node]:  * Publish ROI Mask image: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423046829] [zed.zed_node]:  * Publish Depth Map: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423087926] [zed.zed_node]:  * Publish Depth Info: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423121985] [zed.zed_node]:  * Publish Point Cloud: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423164010] [zed.zed_node]:  * Publish Depth Confidence: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423215672] [zed.zed_node]:  * Publish Disparity: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423263608] [zed.zed_node]:  * Publish IMU: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423316972] [zed.zed_node]:  * Publish IMU Raw: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423364825] [zed.zed_node]:  * Publish LeftCam/IMU Transf.: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423416098] [zed.zed_node]:  * Publish Magnetometer: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423463666] [zed.zed_node]:  * Publish Barometer: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423514971] [zed.zed_node]:  * Publish Temperature: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423566134] [zed.zed_node]:  * Publish Odometry/Pose: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423635493] [zed.zed_node]:  * Publish Pose with Covariance: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423686220] [zed.zed_node]:  * Publish Camera Path: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423760672] [zed.zed_node]:  * Publish Detection Plane: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423819408] [zed.zed_node]: === SVO RECORDING parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423874163] [zed.zed_node]:  * SVO Encoding preset: DEFAULT[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423888264] [zed.zed_node]: === SVO INPUT parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423930854] [zed.zed_node]:  * SVO input: DISABLED[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423947527] [zed.zed_node]: === LOCAL STREAMING parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.423994425] [zed.zed_node]:  * Local stream input: DISABLED[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424006353] [zed.zed_node]: === GENERAL parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424067162] [zed.zed_node]:  * Camera model: zed2i - ZED 2i[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424116160] [zed.zed_node]:  * Camera name: zed[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424176185] [zed.zed_node]:  * Camera SN: 0[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424231881] [zed.zed_node]:  * Camera ID: -1[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424283184] [zed.zed_node]:  * Camera timeout [sec]: 5[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424333476] [zed.zed_node]:  * Camera reconnection temptatives: 5[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424383324] [zed.zed_node]:  * Camera framerate: 30[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424437024] [zed.zed_node]:  * GPU ID: -1[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424492010] [zed.zed_node]:  * Asynchronous image retrieval: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424545462] [zed.zed_node]:  * Image Validity Check: 1[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424624539] [zed.zed_node]:  * Camera resolution: HD720[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424684169] [zed.zed_node]:  * Publishing resolution: NATIVE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424743327] [zed.zed_node]:  * OpenCV custom calibration: [0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424799437] [zed.zed_node]:  * Camera self calibration: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424851254] [zed.zed_node]:  * Camera flip: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.424958406] [zed.zed_node]:  * Publish framerate [Hz]:  0 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425012955] [zed.zed_node]:  * Grab Compute Capping FPS: 0[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425061250] [zed.zed_node]:  * SDK Monotonic Clock: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425087218] [zed.zed_node]: === VIDEO parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425144122] [zed.zed_node]:  * Brightness: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425198127] [zed.zed_node]:  * Contrast: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425246782] [zed.zed_node]:  * Hue: 0 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425297150] [zed.zed_node]:  * Saturation: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425346748] [zed.zed_node]:  * Sharpness: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425401995] [zed.zed_node]:  * Gamma: 8 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425461876] [zed.zed_node]:  * Auto Exposure/Gain: TRUE [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425511839] [zed.zed_node]:  * Exposure: 80 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425562436] [zed.zed_node]:  * Gain: 80 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425612374] [zed.zed_node]:  * Auto White Balance: TRUE [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425668339] [zed.zed_node]:  * White Balance Temperature: 42 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425687894] [zed.zed_node]: === DEPTH parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425773684] [zed.zed_node]:  * Depth mode: NONE - DEPTH DISABLED[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425802613] [zed.zed_node]: === SENSORS STACK parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425852100] [zed.zed_node]:  * Broadcast IMU TF [not for ZED]: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425906232] [zed.zed_node]:  * Sensors Camera Sync: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425963035] [zed.zed_node]:  * Sensors publishing rate [Hz]: 100 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793865528.425981322] [zed.zed_node]: === STREAMING SERVER parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426032737] [zed.zed_node]:  * Streaming Server enabled: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426082479] [zed.zed_node]:  * Stream codec: H265[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426136857] [zed.zed_node]:  * Stream port: 30000[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426189434] [zed.zed_node]:  * Stream bitrate: 12500[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426250400] [zed.zed_node]:  * Stream GOP size: -1[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426303142] [zed.zed_node]:  * Stream Chunk size: 16084[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426357250] [zed.zed_node]:  * Adaptive bitrate: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426425869] [zed.zed_node]:  * Target frame rate:0[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426442128] [zed.zed_node]: === ADVANCED parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426485819] [zed.zed_node]:  * Change thread priority: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.426538900] [zed.zed_node]: === SERVICES ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.427396596] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/enable_streaming'[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.428179007] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/start_svo_rec'[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.428577668] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/stop_svo_rec'[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.428906909] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/set_roi'[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.429200162] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/reset_roi'[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.429227842] [zed.zed_node]: === STARTING CAMERA ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.429241547] [zed.zed_node]: ZED SDK Version: 5.3.0 - Build 114247_4d466e77_3096846[0m
+[component_container_isolated-2] [0m[INFO] [1793865528.432245795] [zed.zed_node]: === CAMERA OPENING ===[0m
+[component_container_isolated-2] [2026-11-05 16:58:48 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 16:58:49 UTC][ZED][ERROR] [ZED] The camera could not be initialized. Please verify your camera connection and configuration.
+[component_container_isolated-2] [2026-11-05 16:58:49 UTC][ZED][INFO] [Init]  Failed to open camera. Trying to re-open for 5 seconds.
+[component_container_isolated-2] [2026-11-05 16:58:49 UTC][ZED][INFO] [Init]  Random wait interval before consecutive openings: [250], [1500] msec.
+[component_container_isolated-2] [2026-11-05 16:58:49 UTC][ZED][INFO] [Init]  Waiting 606 msec before next opening attempt.
+[component_container_isolated-2] [2026-11-05 16:58:50 UTC][ZED][INFO] [Init]  Timeout in 3843msec
+[component_container_isolated-2] [2026-11-05 16:58:50 UTC][ZED][INFO] [Init]  Opening Camera. Attempt #2
+[component_container_isolated-2] [2026-11-05 16:58:51 UTC][ZED][INFO] [Init]  Camera successfully opened.
+[component_container_isolated-2] [2026-11-05 16:58:51 UTC][ZED][INFO] [Init]  Camera FW version: 1523
+[component_container_isolated-2] [2026-11-05 16:58:51 UTC][ZED][INFO] [Init]  Video mode: HD720@30
+[component_container_isolated-2] [2026-11-05 16:58:51 UTC][ZED][INFO] [Init]  Serial Number: S/N 32950075
+[component_container_isolated-2] [2026-11-05 16:58:51 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+[component_container_isolated-2] [2026-11-05 16:58:51 UTC][ZED][INFO] [Init]  Health check functionality is limited when DEPTH_MODE::NONE is enabled, as it relies on the depth pipeline for image processing.
+[component_container_isolated-2] [0m[INFO] [1793865531.602408265] [zed.zed_node]:  * ZED SDK running on GPU #0[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602458072] [zed.zed_node]:  * Camera Model  -> ZED 2i[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602467327] [zed.zed_node]:  * Serial Number -> 32950075[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602540090] [zed.zed_node]:  * Focal Length	-> 2.13252 mm[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602559768] [zed.zed_node]:  * Input	-> USB[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602571961] [zed.zed_node]:  * Camera FW Version  -> 1523[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602591658] [zed.zed_node]:  * Sensors FW Version -> 777[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602600254] [zed.zed_node]:  * Camera grab size -> 1280x720[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602607547] [zed.zed_node]:  * Color/Depth publishing size -> 1280x720[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602613461] [zed.zed_node]:  * Point Cloud publishing size -> 448x256[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602628787] [zed.zed_node]: === TF FRAMES ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602636003] [zed.zed_node]:  * Map			-> map[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602641252] [zed.zed_node]:  * Odometry		-> odom[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602646481] [zed.zed_node]:  * Base			-> [0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602651709] [zed.zed_node]:  * Camera		-> zed_camera_center[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602656996] [zed.zed_node]:  * Left			-> zed_left_camera_frame[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602662468] [zed.zed_node]:  * Left Optical		-> zed_left_camera_frame_optical[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602667761] [zed.zed_node]:  * Right			-> zed_right_camera_frame[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602681794] [zed.zed_node]:  * Right Optical		-> zed_right_camera_frame_optical[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602691129] [zed.zed_node]:  * IMU			-> zed_imu_link[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602697107] [zed.zed_node]:  * Barometer		-> zed_camera_center[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602702524] [zed.zed_node]:  * Magnetometer		-> zed_imu_link[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602707545] [zed.zed_node]:  * Left Temperature	-> zed_left_camera_frame[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602712730] [zed.zed_node]:  * Right Temperature	-> zed_right_camera_frame[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.602749796] [zed.zed_node]: === PUBLISHED TOPICS ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.606230350] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/status/health[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.606861119] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/status/heartbeat[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.607873090] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/rgb/color/rect/image [IPC type-adapted zero-copy][0m
+[component_container_isolated-2] [0m[INFO] [1793865531.712236637] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/rgb/color/rect/image[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.712333394] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/rgb/color/rect/image/compressed [image_transport][0m
+[component_container_isolated-2] [0m[INFO] [1793865531.712347297] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/rgb/color/rect/image/theora [image_transport][0m
+[component_container_isolated-2] [0m[INFO] [1793865531.715292247] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/rgb/color/rect/camera_info[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.716971106] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/rgb/color/rect/image/camera_info[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.718459693] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/depth/camera_info[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.721366144] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/depth/depth_registered/camera_info[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.724258857] [zed.zed_node]:  * Advertised on topic: /zed/zed_node/imu/data[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.724338576] [zed.zed_node]: Camera-IMU Translation: 
+[component_container_isolated-2]  -0.002 -0.023061 0.000217[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.724412938] [zed.zed_node]: Camera-IMU Rotation:
+[component_container_isolated-2] 7EEEE1FF8600
+[component_container_isolated-2] 0.999991 -0.002370 -0.003592
+[component_container_isolated-2] 0.002417 0.999909 0.013275
+[component_container_isolated-2] 0.003561 -0.013283 0.999906
+[component_container_isolated-2] [0m
+[component_container_isolated-2] [0m[INFO] [1793865531.724431322] [zed.zed_node]: === Subscribers ===[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.724441421] [zed.zed_node]:  * No subscribers[0m
+[component_container_isolated-2] [0m[INFO] [1793865531.738005084] [zed.zed_node]: === zed started ===[0m
+[component_container_isolated-2] [31m[ERROR] [1793866153.231663305] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:13 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] [2026-11-05 17:09:13 UTC][ZED][INFO] [Grab]  Camera module reset
+[component_container_isolated-2] ...[31m[ERROR] [1793866154.231845656] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [31m[ERROR] [1793866155.232041712] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [31m[ERROR] [1793866156.232351500] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ..[31m[ERROR] [1793866157.232662191] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ....[31m[ERROR] [1793866158.232987237] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ....[31m[ERROR] [1793866159.235799059] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ....[31m[ERROR] [1793866160.236112562] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ....[31m[ERROR] [1793866161.236804406] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ....[31m[ERROR] [1793866162.237121336] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:22 UTC][ZED][ERROR] [Grab]  Recovery from image capture failure timed out. Please contact support if this persists.
+[component_container_isolated-2] [31m[ERROR] [1793866163.237884114] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:23 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866164.238244802] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866165.238584145] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:25 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866166.239155052] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:26 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866167.239648699] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866168.240068478] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:28 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866169.240446259] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:29 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866170.240673894] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866171.240991018] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:31 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866172.241499414] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:32 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866173.241706681] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866174.242025313] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:34 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866175.242493816] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:35 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866176.242752618] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866177.243007845] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:37 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866178.244062641] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:38 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866179.244271902] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866180.244583095] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:40 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866181.245140947] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:41 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866182.245430910] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866183.245698701] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:43 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866184.246157958] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:44 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866185.246402789] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866186.246693373] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:46 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866187.247183780] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:47 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866188.247427786] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866189.247721383] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:49 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866190.248350379] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:50 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866191.248607659] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866192.248851038] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:52 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866193.249454247] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:53 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866194.249829212] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866195.250182864] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:55 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866196.250877365] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:56 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866197.251254890] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866198.251539079] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:58 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866199.252103276] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:09:59 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866200.252380849] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866201.252542354] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:01 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866202.253118209] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:02 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866203.253465211] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866204.253847494] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:04 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866205.254446753] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:05 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866206.254796908] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866207.255207103] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:07 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866208.255706106] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:08 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866209.255934907] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866210.256234997] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:10 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866211.256688286] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:11 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866212.257103718] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866213.257626222] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:13 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866214.258124029] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:14 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866215.259967620] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866216.260453292] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:16 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] [2026-11-05 17:10:17 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] ..[31m[ERROR] [1793866217.262506428] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866218.262726468] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866219.262935682] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:19 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866220.263375273] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:20 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866221.263619065] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866222.263853538] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:22 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866223.264320459] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:23 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866224.267750294] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866225.267942508] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:25 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866226.268297658] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:26 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866227.268506766] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866228.268701308] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:28 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866229.269072530] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:29 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866230.269243710] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866231.269448475] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:31 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866232.269907498] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:32 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866233.270129065] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866234.270294683] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:34 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866235.270679162] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:35 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866236.270887253] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866237.271175758] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:37 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866238.271607813] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:38 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866239.271772746] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866240.272018330] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:40 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866241.272466999] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:41 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866242.272672532] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866243.272919306] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:43 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866244.273349013] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:44 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866245.273542912] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866246.273762531] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:46 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866247.274130068] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:47 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866248.274300318] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866249.274480151] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:49 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866250.274930038] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:50 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866251.275165030] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866252.275403919] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:52 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866253.275806275] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:53 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866254.276008912] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866255.278892360] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:55 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866256.279562292] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:56 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866257.279810624] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866258.280077732] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:58 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866259.280514607] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:10:59 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866260.280714250] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866261.280915308] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:01 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866262.281276796] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:02 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866263.281446005] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866264.281692333] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:04 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866265.282054870] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:05 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866266.282235945] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866267.282491896] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:07 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866268.282925068] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:08 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866269.283142235] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866270.283389785] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:10 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866271.283870633] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:11 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866272.284060814] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866273.284235855] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:13 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866274.284659269] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:14 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866275.284936297] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866276.285157380] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:16 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866277.285555092] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:17 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866278.285708507] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866279.285935177] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:19 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866280.286418896] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:20 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866281.286663527] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866282.286951879] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:22 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866283.287395184] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:23 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866284.287608257] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866285.287948835] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:25 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866286.288579309] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:26 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866287.288763630] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866288.289719916] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:28 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866289.290164893] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:29 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866290.290331445] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866291.290464523] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:31 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866292.291047033] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:32 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866293.291329030] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866294.291520254] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:34 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866295.291963369] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:35 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866296.292270518] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866297.292526354] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:37 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] [2026-11-05 17:11:38 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] ..[31m[ERROR] [1793866298.294150099] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866299.294344779] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866300.294586209] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:40 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] [2026-11-05 17:11:41 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] ..[31m[ERROR] [1793866301.297403523] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866302.297622946] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866303.297875261] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:43 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866304.298399939] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:44 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866305.298665400] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866306.298834312] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:46 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866307.299279830] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:47 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866308.299543871] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866309.299742026] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:49 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866310.300177670] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:50 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866311.300399907] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866312.300555225] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:52 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866313.300920294] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:53 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866314.301090809] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866315.301260235] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:55 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866316.301643507] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:56 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866317.301867983] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866318.302020001] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:58 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866319.302383393] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:11:59 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866320.304885845] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866321.305173582] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:01 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866322.305595939] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:02 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866323.305907727] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866324.306259274] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:04 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866325.306639751] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:05 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866326.306809196] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866327.307053153] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:07 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866328.307433426] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:08 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866329.307630661] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866330.307881511] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:10 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866331.308336324] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:11 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866332.308583393] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866333.308775169] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:13 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866334.309151210] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:14 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866335.309375422] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866336.309598392] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:16 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866337.310050626] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:17 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866338.310293787] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866339.310531825] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:19 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866340.311032689] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:20 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866341.311272860] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866342.311498584] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:22 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866343.311929810] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:23 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866344.312100229] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866345.312320841] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:25 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866346.312808047] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:26 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866347.313043211] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866348.313359081] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:28 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866349.313800581] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:29 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866350.314063039] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866351.314274175] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:31 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866352.314670740] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:32 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866353.314852054] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866354.315056443] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:34 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866355.315493243] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:35 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866356.315748860] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866357.315996566] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:37 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866358.316365412] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:38 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866359.316559468] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866360.316833656] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:40 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866361.317370618] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:41 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866362.317592390] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866363.317865005] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:43 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866364.318424761] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:44 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866365.318701905] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866366.318979649] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:46 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] [2026-11-05 17:12:47 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] ..[31m[ERROR] [1793866367.319423081] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866368.319618460] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866369.319805474] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:49 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] [2026-11-05 17:12:50 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] ..[31m[ERROR] [1793866370.320409852] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866371.320727774] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866372.321053379] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:52 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866373.321537512] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:53 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866374.321856265] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866375.322090110] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:55 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866376.322487009] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:56 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866377.322679265] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866378.322994788] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:58 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] ..[31m[ERROR] [1793866379.323816639] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:12:59 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] .....[31m[ERROR] [1793866380.324109107] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .....[31m[ERROR] [1793866381.324363730] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:13:01 UTC][ZED][ERROR] [Grab]  Recovery failed: unable to communicate with the camera. Please contact support if this persists.
+[component_container_isolated-2] [2026-11-05 17:13:02 UTC][ZED][INFO] Detected Connection Failure. Trying to recover the camera with sn32950075...
+[component_container_isolated-2] ..[31m[ERROR] [1793866382.325338304] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ..[31m[ERROR] [1793866383.325726039] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ..[31m[ERROR] [1793866384.325994096] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:13:04 UTC][ZED][INFO] [Grab]  Camera module reset
+[component_container_isolated-2] ..[31m[ERROR] [1793866385.326185362] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [31m[ERROR] [1793866386.326424587] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [31m[ERROR] [1793866387.326607450] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] .[31m[ERROR] [1793866388.326796614] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] ..[31m[ERROR] [1793866389.327038714] [zed.zed_node]: Connection issue detected: CAMERA REBOOTING[0m
+[component_container_isolated-2] [2026-11-05 17:13:09 UTC][ZED][INFO] [Grab]  Automatic recovery from image capture failure succeeded.
+[component_container_isolated-2] [0m[INFO] [1793866793.896110222] [zed.zed_container]: Found class: rclcpp_components::NodeFactoryTemplate<stereolabs::ZedCamera>[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.896152778] [zed.zed_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<stereolabs::ZedCamera>[0m
+[component_container_isolated-2] [33m[WARN] [1793866793.897440117] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.901978797] [zed.zed_node]: ================================[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.902009128] [zed.zed_node]:       ZED Camera Component [0m
+[component_container_isolated-2] [0m[INFO] [1793866793.902015517] [zed.zed_node]: ================================[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.902020366] [zed.zed_node]:  * IPC: enabled[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952202663] [zed.zed_node]:  * namespace: /zed[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952312971] [zed.zed_node]:  * node name: zed_node[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952321683] [zed.zed_node]: ================================[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952330142] [zed.zed_node]: Starting node initialization...[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952343673] [zed.zed_node]: === DEBUG parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952623251] [zed.zed_node]:  * SDK Verbose: 1[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952704660] [zed.zed_node]:  * Use Pub Timestamps: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952779417] [zed.zed_node]:  * SDK Verbose File: [0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952829049] [zed.zed_node]:  * Debug Common: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952871422] [zed.zed_node]:  * Debug Dynamic Parameters: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952921101] [zed.zed_node]:  * Debug Grab (low level): FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.952989386] [zed.zed_node]:  * Debug Simulation: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953056527] [zed.zed_node]:  * Debug Video/Depth: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953113971] [zed.zed_node]:  * Debug Control settings: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953173083] [zed.zed_node]:  * Debug Point Cloud: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953237078] [zed.zed_node]:  * Debug TF: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953298387] [zed.zed_node]:  * Debug Positional Tracking: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953350505] [zed.zed_node]:  * Debug GNSS: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953396956] [zed.zed_node]:  * Debug sensors: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953444500] [zed.zed_node]:  * Debug Mapping: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953485444] [zed.zed_node]:  * Debug Object Detection: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953539333] [zed.zed_node]:  * Debug Body Tracking: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953601982] [zed.zed_node]:  * Debug Streaming: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953672111] [zed.zed_node]:  * Debug ROI: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953718925] [zed.zed_node]:  * Debug Nitros: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953769813] [zed.zed_node]:  * Debug Advanced: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953783692] [zed.zed_node]: === TOPIC selection parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953831652] [zed.zed_node]:  * Publish Status: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953883107] [zed.zed_node]:  * Image format: BGRA 32-bit[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953932395] [zed.zed_node]:  * Publish Left/Right images: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.953973185] [zed.zed_node]:  * Publish Raw images: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954028451] [zed.zed_node]:  * Publish Gray images: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954071693] [zed.zed_node]:  * Publish RGB image: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954113186] [zed.zed_node]:  * Publish Stereo image: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954170846] [zed.zed_node]:  * Publish ROI Mask image: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954214664] [zed.zed_node]:  * Publish Depth Map: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954264917] [zed.zed_node]:  * Publish Depth Info: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954307557] [zed.zed_node]:  * Publish Point Cloud: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954365260] [zed.zed_node]:  * Publish Depth Confidence: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954407700] [zed.zed_node]:  * Publish Disparity: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954456211] [zed.zed_node]:  * Publish IMU: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954497932] [zed.zed_node]:  * Publish IMU Raw: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954564429] [zed.zed_node]:  * Publish LeftCam/IMU Transf.: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954668533] [zed.zed_node]:  * Publish Magnetometer: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954750661] [zed.zed_node]:  * Publish Barometer: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954806532] [zed.zed_node]:  * Publish Temperature: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954857754] [zed.zed_node]:  * Publish Odometry/Pose: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954917552] [zed.zed_node]:  * Publish Pose with Covariance: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.954965900] [zed.zed_node]:  * Publish Camera Path: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955006509] [zed.zed_node]:  * Publish Detection Plane: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955071638] [zed.zed_node]: === SVO RECORDING parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955138265] [zed.zed_node]:  * SVO Encoding preset: DEFAULT[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955154983] [zed.zed_node]: === SVO INPUT parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955217504] [zed.zed_node]:  * SVO input: DISABLED[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955234903] [zed.zed_node]: === LOCAL STREAMING parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955288824] [zed.zed_node]:  * Local stream input: DISABLED[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955303487] [zed.zed_node]: === GENERAL parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955365388] [zed.zed_node]:  * Camera model: zed2i - ZED 2i[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955433500] [zed.zed_node]:  * Camera name: zed[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955500759] [zed.zed_node]:  * Camera SN: 0[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955570786] [zed.zed_node]:  * Camera ID: -1[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955634534] [zed.zed_node]:  * Camera timeout [sec]: 5[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955703381] [zed.zed_node]:  * Camera reconnection temptatives: 5[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955784658] [zed.zed_node]:  * Camera framerate: 30[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955854040] [zed.zed_node]:  * GPU ID: -1[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955919931] [zed.zed_node]:  * Asynchronous image retrieval: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.955988361] [zed.zed_node]:  * Image Validity Check: 1[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956093283] [zed.zed_node]:  * Camera resolution: HD720[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956161946] [zed.zed_node]:  * Publishing resolution: NATIVE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956233296] [zed.zed_node]:  * OpenCV custom calibration: [0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956299969] [zed.zed_node]:  * Camera self calibration: TRUE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956362024] [zed.zed_node]:  * Camera flip: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956443788] [zed.zed_node]:  * Publish framerate [Hz]:  0 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956512688] [zed.zed_node]:  * Grab Compute Capping FPS: 0[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956581333] [zed.zed_node]:  * SDK Monotonic Clock: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956599132] [zed.zed_node]: === VIDEO parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956661863] [zed.zed_node]:  * Brightness: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956726712] [zed.zed_node]:  * Contrast: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956801761] [zed.zed_node]:  * Hue: 0 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956879629] [zed.zed_node]:  * Saturation: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.956945109] [zed.zed_node]:  * Sharpness: 4 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957008612] [zed.zed_node]:  * Gamma: 8 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957073844] [zed.zed_node]:  * Auto Exposure/Gain: TRUE [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957148696] [zed.zed_node]:  * Exposure: 80 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957213444] [zed.zed_node]:  * Gain: 80 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957260352] [zed.zed_node]:  * Auto White Balance: TRUE [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957323547] [zed.zed_node]:  * White Balance Temperature: 42 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957341931] [zed.zed_node]: === DEPTH parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957425725] [zed.zed_node]:  * Depth mode: NONE - DEPTH DISABLED[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957445203] [zed.zed_node]: === SENSORS STACK parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957495074] [zed.zed_node]:  * Broadcast IMU TF [not for ZED]: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957543580] [zed.zed_node]:  * Sensors Camera Sync: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957612686] [zed.zed_node]:  * Sensors publishing rate [Hz]: 100 [DYNAMIC][0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957629562] [zed.zed_node]: === STREAMING SERVER parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957689137] [zed.zed_node]:  * Streaming Server enabled: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957757697] [zed.zed_node]:  * Stream codec: H265[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957871833] [zed.zed_node]:  * Stream port: 30000[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.957950166] [zed.zed_node]:  * Stream bitrate: 12500[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958011028] [zed.zed_node]:  * Stream GOP size: -1[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958063240] [zed.zed_node]:  * Stream Chunk size: 16084[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958112847] [zed.zed_node]:  * Adaptive bitrate: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958170662] [zed.zed_node]:  * Target frame rate:0[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958186165] [zed.zed_node]: === ADVANCED parameters ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958237909] [zed.zed_node]:  * Change thread priority: FALSE[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.958286220] [zed.zed_node]: === SERVICES ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.959480408] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/enable_streaming'[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.960135439] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/start_svo_rec'[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.960581979] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/stop_svo_rec'[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.960955937] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/set_roi'[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.961286897] [zed.zed_node]:  * Advertised on service: '/zed/zed_node/reset_roi'[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.961307980] [zed.zed_node]: === STARTING CAMERA ===[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.961318649] [zed.zed_node]: ZED SDK Version: 5.3.0 - Build 114247_4d466e77_3096846[0m
+[component_container_isolated-2] [0m[INFO] [1793866793.963200411] [zed.zed_node]: === CAMERA OPENING ===[0m
+[component_container_isolated-2] [2026-11-05 17:19:54 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 17:19:54 UTC][ZED][ERROR] CAMERA STREAM FAILED TO START in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+[component_container_isolated-2] [33m[WARN] [1793866794.575411020] [zed.zed_node]: Error opening camera: CAMERA STREAM FAILED TO START[0m
+[component_container_isolated-2] [0m[INFO] [1793866794.575500110] [zed.zed_node]: Please verify the camera connection[0m
+[component_container_isolated-2] [2026-11-05 17:20:00 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 17:20:00 UTC][ZED][ERROR] CAMERA STREAM FAILED TO START in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+[component_container_isolated-2] [33m[WARN] [1793866800.182694048] [zed.zed_node]: Error opening camera: CAMERA STREAM FAILED TO START[0m
+[component_container_isolated-2] [0m[INFO] [1793866800.182740408] [zed.zed_node]: Please verify the camera connection[0m
+[component_container_isolated-2] [2026-11-05 17:20:05 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 17:20:05 UTC][ZED][ERROR] CAMERA STREAM FAILED TO START in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+[component_container_isolated-2] [33m[WARN] [1793866805.792816399] [zed.zed_node]: Error opening camera: CAMERA STREAM FAILED TO START[0m
+[component_container_isolated-2] [0m[INFO] [1793866805.792882686] [zed.zed_node]: Please verify the camera connection[0m
+[component_container_isolated-2] [2026-11-05 17:20:11 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 17:20:11 UTC][ZED][ERROR] CAMERA STREAM FAILED TO START in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+[component_container_isolated-2] [33m[WARN] [1793866811.406152849] [zed.zed_node]: Error opening camera: CAMERA STREAM FAILED TO START[0m
+[component_container_isolated-2] [0m[INFO] [1793866811.406273083] [zed.zed_node]: Please verify the camera connection[0m
+[component_container_isolated-2] [2026-11-05 17:20:16 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 17:20:17 UTC][ZED][ERROR] CAMERA STREAM FAILED TO START in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+[component_container_isolated-2] [33m[WARN] [1793866817.014354613] [zed.zed_node]: Error opening camera: CAMERA STREAM FAILED TO START[0m
+[component_container_isolated-2] [0m[INFO] [1793866817.014401075] [zed.zed_node]: Please verify the camera connection[0m
+[component_container_isolated-2] [2026-11-05 17:20:22 UTC][ZED][INFO] Logging level INFO
+[component_container_isolated-2] [2026-11-05 17:20:22 UTC][ZED][ERROR] CAMERA STREAM FAILED TO START in sl::ERROR_CODE sl::Camera::open(sl::InitParameters)
+[component_container_isolated-2] [33m[WARN] [1793866822.625407539] [zed.zed_node]: Error opening camera: CAMERA STREAM FAILED TO START[0m
+[component_container_isolated-2] [0m[INFO] [1793866822.625479795] [zed.zed_node]: Please verify the camera connection[0m
+[component_container_isolated-2] [31m[ERROR] [1793866822.625496562] [zed.zed_node]: Camera detection timeout[0m
+[ERROR] [component_container_isolated-2]: process has died [pid 57222, exit code -11, cmd '/opt/ros/humble/lib/rclcpp_components/component_container_isolated --use_multi_threaded_executor --ros-args --log-level info --ros-args -r __node:=zed_container -r __ns:=/zed'].
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+[robot_state_publisher-1] [0m[INFO] [1793949298.558814743] [rclcpp]: signal_handler(SIGINT/SIGTERM)[0m
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 57220]

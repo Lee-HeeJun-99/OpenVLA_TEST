@@ -1,0 +1,16 @@
+{
+  "case": "I_read_validity_off",
+  "meta": {
+    "sdk": "5.3.0",
+    "read_api": true,
+    "retrieve": true,
+    "validity_check": 0
+  },
+  "count": 763,
+  "errors": 0,
+  "hz": 12.689365290602948,
+  "max_receive_gap_s": 0.5679522749996977,
+  "receive_gap_ge_100ms": 199,
+  "receive_gap_ge_500ms": 2,
+  "physical_commands": 0
+}

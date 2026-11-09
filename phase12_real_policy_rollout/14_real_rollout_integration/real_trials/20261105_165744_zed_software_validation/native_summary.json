@@ -1,0 +1,14 @@
+{
+  "count": 668,
+  "hz": 11.14076103937871,
+  "max_receive_gap_s": 0.5333337260090047,
+  "receive_gap_ge_100ms": 205,
+  "receive_gap_ge_500ms": 1,
+  "max_source_gap_s": 0.5333390000014333,
+  "sequence_skipped": 2256,
+  "error_flag_frames": 0,
+  "bytesused_min": 3686400,
+  "bytesused_max": 3686400,
+  "physical_commands": 0,
+  "format": "format 2560 720 fourcc 1448695129 fps 30/1\n"
+}

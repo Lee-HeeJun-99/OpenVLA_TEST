@@ -8,8 +8,16 @@ gripper_type: dsr_msgs2/srv/SetToolDigitalOutput
 motion_sync_type: 0
 reference: 0
 mode: 0
-velocity: [20.0, 20.0]
-acceleration: [20.0, 20.0]
+# MoveLine episode transport only; [translation, rotation].
+# User-requested candidate; NOT physically validated at 120/120.
+velocity: [120.0, 20.0]
+acceleration: [120.0, 20.0]
+# Synchronous episode endpoint is the complete accepted canonical arm delta.
+# ServoL and legacy/minimum-motion paths keep their existing delta limiter.
+moveline_delta_limiter_enabled: false
+# User-requested removal of raw step-size rejection for this endpoint path only.
+# Full target workspace, finite-value and runtime gates remain mandatory.
+moveline_raw_translation_gate_enabled: false
 hold_stop_mode: 3
 stop_mode: 0
 motion_enabled: false

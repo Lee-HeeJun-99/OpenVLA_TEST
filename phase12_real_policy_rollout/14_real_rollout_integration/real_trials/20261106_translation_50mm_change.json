@@ -1,0 +1,17 @@
+{
+  "previous_raw_translation_limit_m": 0.020,
+  "new_raw_translation_limit_m": 0.050,
+  "authorization": "Explicit user request for 50 mm hard rejection threshold",
+  "raw_action_clipping_or_scaling_added": false,
+  "existing_dynamic_limiter_changed": false,
+  "other_safety_thresholds_changed": false,
+  "physical_commands": 0,
+  "boundary": "50.0mm accepted; 50.1mm rejected; existing 1e-12m numerical comparison tolerance retained",
+  "tests_pass": 310,
+  "smoothness_evidence_trial": "20261106_101231_full_policy_episode",
+  "dispatch_interval_median_s": 3.2590717554849107,
+  "ack_median_s": 0.7558947759971488,
+  "idle_after_completed_command_median_s": 2.379957868004567,
+  "smoothness_interpretation": "Sequential synchronous unblended MoveLine endpoints and repeated stationary settle gates yield stop-and-go motion. Limiter dt=0.2s is not actual physical dispatch cadence. Raising raw rejection gate does not change this command scheduling architecture.",
+  "safety_claim": "No claim that 50mm is a physically validated safe envelope"
+}

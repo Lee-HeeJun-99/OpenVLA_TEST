@@ -1,0 +1,143 @@
+{
+  "physical_commands": 0,
+  "existing_processes_restarted": false,
+  "configuration_changed": false,
+  "cases": [
+    {
+      "case": "A_camera_server_idle",
+      "summary": {
+        "count": 1230,
+        "receive_hz": 10.249464300495998,
+        "max_receive_gap_s": 0.9669859760033432,
+        "max_source_gap_s": 0.9668798446655273,
+        "max_source_age_s": 0.06359148025512695,
+        "receive_gap_ge_100ms": 378,
+        "receive_gap_ge_500ms": 25,
+        "source_gap_ge_500ms": 21,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 159433.267744974,
+          "receive_wall": 1793948354.7404773,
+          "source_timestamp": 1793948354.693995,
+          "source_age_s": 0.046504974365234375,
+          "receive_gap_s": 0.04068792800535448,
+          "source_gap_s": 0.033236026763916016,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "receive_gap_ge_1s": 0,
+      "source_gap_ge_1s": 0,
+      "diagnostic_capture_hz_min": 4.1,
+      "diagnostic_capture_hz_median": 9.3,
+      "frame_drop_counter_first": [
+        18439,
+        30055
+      ],
+      "frame_drop_counter_last": [
+        20787,
+        33630
+      ],
+      "prediction_count": 0,
+      "probe_errors": [],
+      "inference_median_s": null,
+      "inference_max_s": null
+    },
+    {
+      "case": "B_camera_repeated_inference",
+      "summary": {
+        "count": 1366,
+        "receive_hz": 11.37755009647855,
+        "max_receive_gap_s": 1.1031421210209373,
+        "max_source_gap_s": 1.1002399921417236,
+        "max_source_age_s": 0.052453041076660156,
+        "receive_gap_ge_100ms": 337,
+        "receive_gap_ge_500ms": 14,
+        "source_gap_ge_500ms": 15,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 159553.966536639,
+          "receive_wall": 1793948475.4392672,
+          "source_timestamp": 1793948475.4017758,
+          "source_age_s": 0.037499189376831055,
+          "receive_gap_s": 0.03386102698277682,
+          "source_gap_s": 0.03333783149719238,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "receive_gap_ge_1s": 1,
+      "source_gap_ge_1s": 1,
+      "diagnostic_capture_hz_min": 6.9,
+      "diagnostic_capture_hz_median": 11.25,
+      "frame_drop_counter_first": [
+        20817,
+        33694
+      ],
+      "frame_drop_counter_last": [
+        23017,
+        37263
+      ],
+      "prediction_count": 225,
+      "probe_errors": [],
+      "inference_median_s": 0.39687203901121393,
+      "inference_max_s": 0.47449942500679754
+    },
+    {
+      "case": "C_inference_action_preparation_no_dispatch",
+      "summary": {
+        "count": 1078,
+        "receive_hz": 8.977166243552425,
+        "max_receive_gap_s": 1.0999507480009925,
+        "max_source_gap_s": 1.1001129150390625,
+        "max_source_age_s": 0.059299468994140625,
+        "receive_gap_ge_100ms": 416,
+        "receive_gap_ge_500ms": 13,
+        "source_gap_ge_500ms": 12,
+        "nonincreasing_source_stamps": 0,
+        "latest": {
+          "receive_monotonic": 159674.952402046,
+          "receive_wall": 1793948596.4251344,
+          "source_timestamp": 1793948596.375769,
+          "source_age_s": 0.04939579963684082,
+          "receive_gap_s": 0.16902262301300652,
+          "source_gap_s": 0.16646289825439453,
+          "width": 1280,
+          "height": 720,
+          "encoding": "bgra8"
+        }
+      },
+      "receive_gap_ge_1s": 1,
+      "source_gap_ge_1s": 1,
+      "diagnostic_capture_hz_min": 6.0,
+      "diagnostic_capture_hz_median": 10.5,
+      "frame_drop_counter_first": [
+        23029,
+        37287
+      ],
+      "frame_drop_counter_last": [
+        25403,
+        40891
+      ],
+      "prediction_count": 63,
+      "probe_errors": [
+        {
+          "probe": "C_inference_action_preparation_no_dispatch_probe_02",
+          "reason": "camera_stream_loss",
+          "status": "FAIL"
+        }
+      ],
+      "inference_median_s": 0.4048700599814765,
+      "inference_max_s": 0.4677955480001401
+    }
+  ],
+  "limitations": [
+    "Each stage is one sequential 120s window, not randomized causal evidence.",
+    "A retains an idle loaded model server, Doosan driver and normal desktop processes; it is camera-topic-only workload, not SDK-only.",
+    "C exercises inference/JPEG/PNG/fsync/read-only robot-state/settle; not complete physical Controller dispatch, motors or gripper.",
+    "Data Capture diagnostics are moving aggregates, not per-grab timestamps.",
+    "A subscriber sees received image/header gaps, not direct USB packet or SDK-grab traces."
+  ]
+}

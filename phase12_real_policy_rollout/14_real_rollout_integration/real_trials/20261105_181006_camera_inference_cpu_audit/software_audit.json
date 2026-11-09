@@ -1,0 +1,38 @@
+{
+  "git_head": "bc4b4ace88247fd0991f14b3f7dcebda042d4d99",
+  "files": {
+    "run_arm_only_episode.py": "2b2dcb959dc8eb22d2611204a90dcc035a586c6de89921bb212d934adbe8158e",
+    "camera_inference_timing.py": "c35d8277f1125df95b1a3948a71ce51d5e37de1423bb32cd301cac66d2af4238",
+    "rollout_latency.py": "39859c7a8fec653de1f6e7b8d05c9a9098c8d6d83cb6fc9813c0367f01d1a6a7",
+    "run_real_rollout.py": "33df72dfc9c4c2f4d120e34b8dd3e6b86bed2e79210c97c0ca0ba0fa690bf9df",
+    "full_policy_gripper.py": "e130fa10c592ec3b2be5040e773fa9e508425345349585f685e25bfaf1f18fa3",
+    "configs/full_task.yaml": "2a3c540b4b857c79a2d2b47c219d32a4c683ec7c8ad21ee3dbc236d7efe32fed",
+    "../01_configs/safety_limits.yaml": "2c29d3a45bd23211fe51a320e5d3521f4f8cb2b2cb36b151fb4d5fb98c64f6a8"
+  },
+  "tests_current_integration_pass": 177,
+  "physical_commands": 0,
+  "findings": [
+    {
+      "id": "FIRST_ABORT_REASON_MASKING",
+      "evidence": "full_policy_gripper.initialize_open raises gripper_initialization_ack_failure for aborted receipt; run_arm_only_episode catches that exception as summary reason instead of always preserving Controller.abort_reason",
+      "status": "SOURCE_CONFIRMED_DIAGNOSTIC_DEFECT_NOT_CHANGED"
+    },
+    {
+      "id": "MISSING_CAMERA_FAULT_CONTEXT",
+      "evidence": "camera_stream_loss abort event lacks actual last image receive/source timestamp, measured age and independent observer evidence",
+      "status": "SOURCE_CONFIRMED_DIAGNOSTIC_GAP_NOT_CHANGED"
+    }
+  ],
+  "historical_trial_path": {
+    "trial": "20261105_175259_full_policy_episode",
+    "kernel_path": "2-7.1.1 on 17:50 connection, not current direct 2-1 connected 18:07",
+    "scope": "Do not classify this 173s fault as a measurement of the current direct session"
+  },
+  "unverified": [
+    "Alternate kernel/driver runtime comparison: 136 NVIDIA module absent; sudo authorization required",
+    "Different SDK version A/B or firmware flash integrity",
+    "Actual robot/gripper/rollout logger load in current session"
+  ],
+  "live_camera_start_max_s": 0.04065770999295637,
+  "settings_or_production_code_changed_in_this_audit": false
+}

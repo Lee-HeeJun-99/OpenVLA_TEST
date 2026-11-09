@@ -1,0 +1,116 @@
+{
+  "status": "OFFLINE_REFERENCE_SWEEP_COMPLETE_LIVE_TUNING_BLOCKED",
+  "trial_count": 2,
+  "matched_pair_count": 272,
+  "approximation": "Ideal stationary-start/stationary-end reference, no controller/IK/joint/singularity simulation",
+  "matching_time_is_exact_measurement_timestamp": false,
+  "caution": "Alignment skew is not a bound on controller pose source age. Longer reach time may increase closed-loop lag.",
+  "baseline": {
+    "name": "baseline",
+    "changed_fields": [],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 20.0,
+    "angular_acceleration_deg_s2": 20.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.1092371757180068,
+      "median": 0.582836571552001,
+      "p95": 0.8316765959687508,
+      "p99": 0.8561333763548497,
+      "max": 0.8994439462191586
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 1.0,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  "acceleration_candidate": {
+    "name": "both_accelerations_x2",
+    "changed_fields": [
+      "linear_acceleration_mm_s2",
+      "angular_acceleration_deg_s2"
+    ],
+    "linear_velocity_mm_s": 20.0,
+    "angular_velocity_deg_s": 20.0,
+    "linear_acceleration_mm_s2": 40.0,
+    "angular_acceleration_deg_s2": 40.0,
+    "rest_to_rest_required_time_s": {
+      "count": 272,
+      "min": 0.07724234770786909,
+      "median": 0.4121276920679383,
+      "p95": 0.5880841607636481,
+      "p99": 0.6053777160206488,
+      "max": 0.6360029136687554
+    },
+    "observed_pair_count": 272,
+    "observed_alignment_skew_max_s": 0.061545656993985176,
+    "finite_sample_reference_horizon_s": 0.7000000000000001,
+    "physical_validation": "NOT_EXECUTED",
+    "approved_for_live": false
+  },
+  "staged_plan": {
+    "stage_0_time_only": {
+      "profile_name": "baseline",
+      "linear_velocity_mm_s": 20.0,
+      "angular_velocity_deg_s": 20.0,
+      "linear_acceleration_mm_s2": 20.0,
+      "angular_acceleration_deg_s2": 20.0,
+      "target_time_s": 1.0,
+      "approved_for_live": false,
+      "production_connected": false,
+      "required_before_physical_test": [
+        "JOINT_LIMIT_PREFLIGHT_AND_RUNTIME_GUARD",
+        "SAFE_OFF2_NORMAL_OPERATOR_RECOVERY",
+        "CURRENT_STOP_PATH_VERIFICATION",
+        "FRESH_OPERATOR_AND_HARDWARE_APPROVAL"
+      ],
+      "planning_limiter_changes": false,
+      "note": "Transport-bound candidate only; increasing the planning limiter simultaneously is not authorized by this sweep."
+    },
+    "stage_1_acceleration_only_at_stage_0_time": {
+      "profile_name": "both_accelerations_x2",
+      "linear_velocity_mm_s": 20.0,
+      "angular_velocity_deg_s": 20.0,
+      "linear_acceleration_mm_s2": 40.0,
+      "angular_acceleration_deg_s2": 40.0,
+      "target_time_s": 1.0,
+      "approved_for_live": false,
+      "production_connected": false,
+      "required_before_physical_test": [
+        "JOINT_LIMIT_PREFLIGHT_AND_RUNTIME_GUARD",
+        "SAFE_OFF2_NORMAL_OPERATOR_RECOVERY",
+        "CURRENT_STOP_PATH_VERIFICATION",
+        "FRESH_OPERATOR_AND_HARDWARE_APPROVAL"
+      ],
+      "planning_limiter_changes": false,
+      "note": "Transport-bound candidate only; increasing the planning limiter simultaneously is not authorized by this sweep."
+    },
+    "later_time_reduction_candidate": {
+      "profile_name": "both_accelerations_x2",
+      "linear_velocity_mm_s": 20.0,
+      "angular_velocity_deg_s": 20.0,
+      "linear_acceleration_mm_s2": 40.0,
+      "angular_acceleration_deg_s2": 40.0,
+      "target_time_s": 0.7000000000000001,
+      "approved_for_live": false,
+      "production_connected": false,
+      "required_before_physical_test": [
+        "JOINT_LIMIT_PREFLIGHT_AND_RUNTIME_GUARD",
+        "SAFE_OFF2_NORMAL_OPERATOR_RECOVERY",
+        "CURRENT_STOP_PATH_VERIFICATION",
+        "FRESH_OPERATOR_AND_HARDWARE_APPROVAL"
+      ],
+      "planning_limiter_changes": false,
+      "note": "Transport-bound candidate only; increasing the planning limiter simultaneously is not authorized by this sweep."
+    },
+    "one_trial_at_a_time": true,
+    "automatic_physical_sweep": false
+  },
+  "production_parameters_changed": false,
+  "physical_commands": 0,
+  "joint_limit_fault_resolved": false,
+  "stop_ack_failure_resolved": false,
+  "claim": "No claim that any candidate removes 1216 or safely completes a physical episode."
+}

@@ -22,8 +22,23 @@ from stage_gate import require_stage,save_stage
 
 
 class Controller:
-    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False,trial=None,arm_only_integration=False,execution_mode='LEGACY',gripper_contract=None):
+    def __init__(self,model,protocol,sink,logger,*,dry_run=True,initial_open=False,trial=None,arm_only_integration=False,execution_mode='LEGACY',gripper_contract=None,pose_motion_profile=None,moveline_full_delta=False,moveline_raw_translation_gate_enabled=True):
         if execution_mode not in ('LEGACY','FULL_POLICY_ROLLOUT','ARM_ONLY_FULL_EPISODE'):raise ValueError('unknown_execution_mode')
+        from moveline_motion_profile import validate_profile
+        profile=pose_motion_profile or dict(velocity=[20.,20.],acceleration=[20.,20.])
+        self.pose_velocity,self.pose_acceleration=validate_profile(profile['velocity'],profile['acceleration'])
+        if pose_motion_profile is not None and (model!='openvla' or protocol!='full_task' or execution_mode=='LEGACY'):
+            raise PermissionError('episode_motion_profile_requires_explicit_episode_mode')
+        if type(moveline_full_delta) is not bool:raise ValueError('invalid_full_delta_mode')
+        if moveline_full_delta and (model!='openvla' or protocol!='full_task' or
+                execution_mode not in ('FULL_POLICY_ROLLOUT','ARM_ONLY_FULL_EPISODE') or
+                not isinstance(sink,RealDoosanCommandSink)):
+            raise PermissionError('full_delta_requires_bounded_synchronous_episode')
+        self.moveline_full_delta=moveline_full_delta
+        if type(moveline_raw_translation_gate_enabled) is not bool:raise ValueError('invalid_translation_gate_mode')
+        if not moveline_raw_translation_gate_enabled and not moveline_full_delta:
+            raise PermissionError('disabled_translation_gate_requires_full_delta_episode')
+        self.moveline_raw_translation_gate_enabled=moveline_raw_translation_gate_enabled
         self.arm_only_episode=execution_mode=='ARM_ONLY_FULL_EPISODE'
         if self.arm_only_episode and (model!='openvla' or protocol!='full_task' or trial is not None or arm_only_integration):
             raise ValueError('arm_only_episode_is_not_task_evaluation')
@@ -39,9 +54,10 @@ class Controller:
         if arm_only_integration and (model!='openvla' or protocol!='short_horizon' or trial is not None):
             raise ValueError('arm_only_one_step_is_not_task_evaluation')
         self.arm_only_integration=arm_only_integration
-        # Full-policy owns gripper hysteresis explicitly; arm safety still uses
-        # the unchanged hard gates, dynamic limiter and workspace checks.
-        self.pipeline=SafetyPipeline(model,operator_confirmed_initial_open=initial_open,arm_only=arm_only_integration or self.full_policy or self.arm_only_episode)
+        # Full-policy owns gripper hysteresis. Endpoint mode keeps raw hard gates
+        # and workspace checks; the bounded synchronous request profiles motion.
+        self.pipeline=SafetyPipeline(model,operator_confirmed_initial_open=initial_open,arm_only=arm_only_integration or self.full_policy or self.arm_only_episode,
+            full_endpoint_delta=self.moveline_full_delta,enforce_raw_translation_limit=self.moveline_raw_translation_gate_enabled)
         self.model=model;self.protocol=protocol;self.sink=sink;self.log=logger;self.dry_run=dry_run
         self.abort_boundary=AbortBoundary(sink) if not dry_run else None
         self.aborted=False;self.count=0;self.rows=[]
@@ -115,6 +131,12 @@ class Controller:
             'physical_gripper_disabled':self.arm_only_integration or self.arm_only_episode,'command_requested':not reason,'command_issued':False,'command_acknowledged':False,
             'executed_action':None,'robot_delivered_command':None,'observation':obs,'raw_model_output':obs.get('raw_model_output'),
             'canonical_action':list(vector),'filtered_action':candidate.get('limited_canonical_action'),
+            'moveline_velocity_mm_s_deg_s':list(self.pose_velocity),
+            'moveline_acceleration_mm_s2_deg_s2':list(self.pose_acceleration),
+            'delta_limiter_applied':not self.moveline_full_delta,
+            'raw_translation_gate_enabled':self.moveline_raw_translation_gate_enabled,
+            'effective_raw_translation_limit_m':self.pipeline.runtime.safety.max_translation_m if self.moveline_raw_translation_gate_enabled else None,
+            'dynamic_profile_owner':'MOVELINE_HARDWARE_PROFILE' if self.moveline_full_delta else 'CANONICAL_RATE_LIMITER',
             'safety_blockers':reason,'chunk_id':chunk_id,'chunk_index':chunk_index,
             'target_step':obs.get('inference_frame',0)+chunk_index,
             'target_time':(obs.get('inference_frame',0)+chunk_index)*.2,
@@ -122,14 +144,18 @@ class Controller:
             **{key:obs.get(key) for key in ('episode_id','condition','matched_pair_id','sim_observation_id','real_observation_id','observation_gap_score','action_gap_translation','action_gap_rotation','action_gap_gripper')}}
         from rollout_runner import finite_json
         if self.arm_only_episode or self.full_policy:
-            from action_rate_limiter import _scale_to
-            limiter=self.pipeline.runtime.limiter
-            vt,_=_scale_to(tuple(v/limiter.dt for v in vector[:3]),limiter.tv)
-            vr,_=_scale_to(tuple(v/limiter.dt for v in vector[3:6]),limiter.rv)
+            post_velocity=list(vector)
+            if not self.moveline_full_delta:
+                from action_rate_limiter import _scale_to
+                limiter=self.pipeline.runtime.limiter
+                vt,_=_scale_to(tuple(v/limiter.dt for v in vector[:3]),limiter.tv)
+                vr,_=_scale_to(tuple(v/limiter.dt for v in vector[3:6]),limiter.rv)
+                post_velocity=[v*limiter.dt for v in vt+vr]+[vector[6]]
             record.update(RAW_MODEL_ACTION=list(vector),
                 POST_HARD_GATE=list(vector) if not reason else None,
-                POST_VELOCITY_LIMIT=[v*limiter.dt for v in vt+vr]+[vector[6]],
+                POST_VELOCITY_LIMIT=post_velocity,
                 POST_ACCELERATION_LIMIT=candidate.get('limited_canonical_action'),
+                delta_limiter_stage_status='NOT_APPLIED_FULL_ENDPOINT' if self.moveline_full_delta else 'APPLIED',
                 FINAL_DELIVERED_ARM_ACTION=None if reason else candidate.get('limited_canonical_action',[])[:6],
                 planned_target_pose=candidate.get('target_pose_candidate_mm_zyz_deg'),
                 physical_gripper_command='STATE_TRANSITION_ONLY' if self.full_policy else 'NONE')
@@ -155,7 +181,8 @@ class Controller:
                 return self.abort('stale_action')
             self.sink.pose_action_deadline_monotonic=inference_time+self.pipeline.runtime.safety.max_action_age_sec
         if self.aborted:raise RuntimeError('session_aborted')
-        receipt=self.sink.send_pose(candidate['target_pose_candidate_mm_zyz_deg'])
+        receipt=self.sink.send_pose(candidate['target_pose_candidate_mm_zyz_deg'],
+            velocity=self.pose_velocity,acceleration=self.pose_acceleration)
         # Send/ACK/completion each persisted by their actual timestamp, not fabricated.
         record['command_receipt']=receipt
         record['command_issued']=receipt.get('sent_at') is not None

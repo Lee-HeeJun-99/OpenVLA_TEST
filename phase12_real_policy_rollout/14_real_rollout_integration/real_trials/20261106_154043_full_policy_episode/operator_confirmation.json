@@ -1,0 +1,19 @@
+{
+  "operator_present": null,
+  "workspace_clear": null,
+  "estop_accessible": null,
+  "robot_stationary": null,
+  "tcp_engineering_acceptance": null,
+  "gripper_mapping_confirmed": null,
+  "execution_mode": "FULL_POLICY_ROLLOUT",
+  "physical_controller": "moveline",
+  "launch_policy": "DIRECT_MOVELINE_NO_MANUAL_CONFIRMATION",
+  "request_id": "9fd67890842643109d75a30f584b440a",
+  "launcher_user": "ubuntu",
+  "launcher_started_wall_time": 1793947243.0643492,
+  "manual_confirmation_performed": false,
+  "operator": null,
+  "confirmed_wall_time": null,
+  "explicit_one_episode": true,
+  "evidence_source": "DIRECT_PROGRAM_INVOCATION_NOT_SITE_CONFIRMATION"
+}

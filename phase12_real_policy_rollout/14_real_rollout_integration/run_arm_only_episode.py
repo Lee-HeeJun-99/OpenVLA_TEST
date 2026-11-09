@@ -16,6 +16,7 @@ from run_arm_only_once import (TARGET, Controller, Authorization, RosServiceTran
 from arm_only_episode_contract import ArmOnlyEpisodeSink, approved_episode_limits, gripper_intent
 from settle_window import wait_for_settle, SETTLE_CLEAN_SECONDS, SETTLE_TIMEOUT_SECONDS
 from rollout_latency import select_fresh_frame, predict_frame, warm_up, archive_request_jpeg, deferred_artifacts
+from camera_inference_timing import CAMERA_STREAM_TIMEOUT_S, camera_stream_lost
 
 
 def require_approval(approval):
@@ -39,6 +40,15 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
     validate_approval=_full_policy_mode.validate if full else require_approval
     validate_approval(approval)
     max_steps,max_duration=approved_episode_limits(approval,requested_duration_s)
+    hardware_config=Path(__file__).parent/'configs/hardware_interface.yaml'
+    profile=yaml.safe_load(hardware_config.read_text())
+    from moveline_motion_profile import validate_profile
+    validate_profile(profile['velocity'],profile['acceleration'])
+    delta_enabled=profile.get('moveline_delta_limiter_enabled',True)
+    if type(delta_enabled) is not bool:raise ValueError('invalid_moveline_delta_limiter_config')
+    raw_gate_enabled=profile.get('moveline_raw_translation_gate_enabled',True)
+    if type(raw_gate_enabled) is not bool:raise ValueError('invalid_moveline_raw_translation_gate_config')
+    if not raw_gate_enabled and delta_enabled:raise PermissionError('disabled_translation_gate_requires_full_delta_episode')
     import rclpy
     from sensor_msgs.msg import JointState, Image
     from rclpy.qos import qos_profile_sensor_data
@@ -57,12 +67,16 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
         formal_verified=False,engineering_acceptance=True,source='EXPLICIT_OPERATOR_FULL_POLICY_APPROVAL' if full else 'EXPLICIT_OPERATOR_ARM_ONLY_APPROVAL'))
     config_paths=list((Path(__file__).parent.parent/'01_configs').glob('*.yaml'))+[
         Path(__file__).parent/'configs/full_task.yaml',Path(__file__).parent/'settle_window.py',
-        Path(__file__).parent/'rollout_latency.py']
+        Path(__file__).parent/'rollout_latency.py',Path(__file__).parent/'camera_inference_timing.py',hardware_config]
     if full:config_paths.append(Path(__file__).parent/'configs/gripper_hardware.yaml')
+    if full:config_paths.extend(getattr(_full_policy_mode,'config_paths',[]))
     frozen={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in config_paths}
     save('config_snapshot.json',frozen)
     os.environ['ROS_LOCALHOST_ONLY']='1'
-    rclpy.init();node=rclpy.create_node('arm_only_full_episode_once')
+    from rclpy.signals import SignalHandlerOptions
+    # Python owns SIGINT; ROS must stay alive to deliver the existing abort.
+    rclpy.init(signal_handler_options=SignalHandlerOptions.NO)
+    node=rclpy.create_node('arm_only_full_episode_once')
     lock=threading.RLock();halt=threading.Event();abort_workers=[]
     gate=JointStateStartup(time.monotonic());samples=[];camera=[None];control=[None]
     def joint(msg):
@@ -89,7 +103,7 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
                 if s['fault']:fault('jointstate_runtime_fault:'+s['fault'])
                 if (output/'operator_abort.request').exists():fault('operator_abort')
                 with lock:latest=camera[0]
-                if control[0] and (latest is None or time.monotonic()-latest[1]>=.5):fault('camera_stream_loss')
+                if control[0] and camera_stream_lost(None if latest is None else latest[1],time.monotonic()):fault('camera_stream_loss')
         except Exception as exc:
             with lock:gate.fail('executor_error:'+str(exc))
             fault('executor_error')
@@ -152,7 +166,15 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
         warm_up(predict_fresh,check,save,max_action_age_s=age_limit,settle_s=SETTLE_CLEAN_SECONDS)
         save('preflight.json',dict(hardware=hardware,jointstate=check(),start_pose_error_deg=pose_error,
              camera_ready=True,model_ready=True,max_steps=max_steps,max_duration_s=max_duration,
+             camera_stream_timeout_s=CAMERA_STREAM_TIMEOUT_S,camera_inference_start_age_limit_s=.5,
              physical_gripper_disabled=not full,task_success_not_applicable=not full,
+             moveline_velocity_mm_s_deg_s=profile['velocity'],
+             moveline_acceleration_mm_s2_deg_s2=profile['acceleration'],
+             transport_profile_physical_validation='NOT_EXECUTED_AT_120_120',
+             delta_limiter_applied=delta_enabled,
+             raw_translation_gate_enabled=raw_gate_enabled,
+             effective_raw_translation_limit_m=None if not raw_gate_enabled else yaml.safe_load((Path(__file__).parent.parent/'01_configs/safety_limits.yaml').read_text())['translation_step_m'],
+             arm_action_mode='LIMITED_STEP' if delta_enabled else 'FULL_RAW_ENDPOINT',
              settle_policy=dict(clean_seconds=SETTLE_CLEAN_SECONDS,timeout_seconds=SETTLE_TIMEOUT_SECONDS,
                                 velocity_criterion='SIX_FINITE_EXACT_ZERO_VELOCITIES')))
         validate_approval(approval)
@@ -165,7 +187,10 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
             log=logs['runtime_events']
             log.append(dict(event='LOGGER_PREFLIGHT',scope='FULL_POLICY_ROLLOUT' if full else 'ARM_ONLY_FULL_EPISODE_SYSTEM_INTEGRATION_TEST',max_steps=max_steps,max_duration_s=max_duration))
             c=Controller('openvla','full_task',sink,log,dry_run=False,execution_mode='FULL_POLICY_ROLLOUT' if full else 'ARM_ONLY_FULL_EPISODE',
-                gripper_contract=dict(abort_behavior='BOTH_OUTPUTS_OFF',operator_approved=True) if full else None)
+                gripper_contract=dict(abort_behavior='BOTH_OUTPUTS_OFF',operator_approved=True,
+                    allow_command_ack_initialization=getattr(_full_policy_mode,'allows_command_ack_initialization',False)) if full else None,
+                pose_motion_profile=profile,moveline_full_delta=not delta_enabled,
+                moveline_raw_translation_gate_enabled=raw_gate_enabled)
             control[0]=c
             if full:
                 def before_gripper():
@@ -180,7 +205,7 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
                     states=[getter('/dsr01/io/get_tool_digital_output',GetToolDigitalOutput,index=i)['value'] for i in (1,2)]
                     if states!=[0,0]:raise RuntimeError('current_outputs_not_OFF_OFF_for_confirmed_OPEN_resume')
                 _full_policy_mode.initialize(c,check,save)
-                # Fresh motion approval after operator confirms actual OPEN.
+                # Revalidate the selected observation/ACK-only policy after init.
                 validate_approval(approval)
                 _,_=settle()
                 with lock:initial_sample=dict(samples[-1])
@@ -247,12 +272,12 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
                                     **artifact,record=record,jointstate_before=before))
                 check()
                 if not record.get('command_receipt') or record['command_receipt']['state']!='completed':raise RuntimeError('arm_ack_failure')
-                limiter=c.pipeline.runtime.limiter
-                v_t,_=_scale_to(tuple(v/limiter.dt for v in raw[:3]),limiter.tv)
-                v_r,_=_scale_to(tuple(v/limiter.dt for v in raw[3:6]),limiter.rv)
                 logs['action_pipeline'].append(dict(step_id=step,RAW_MODEL_ACTION=raw,POST_HARD_GATE=raw,
-                    POST_VELOCITY_LIMIT=[v*limiter.dt for v in v_t+v_r]+[raw[6]],
+                    POST_VELOCITY_LIMIT=record['POST_VELOCITY_LIMIT'],
                     POST_ACCELERATION_LIMIT=record['filtered_action'],FINAL_DELIVERED_ARM_ACTION=record['filtered_action'][:6],
+                    delta_limiter_applied=delta_enabled,
+                    raw_translation_gate_enabled=raw_gate_enabled,
+                    delta_limiter_stage_status=record['delta_limiter_stage_status'],
                     physical_gripper_command='STATE_TRANSITION_ONLY' if full else 'NONE'))
                 logs['arm_commands'].append(dict(step_id=step,receipt=record['command_receipt']))
                 if full:logs['gripper_commands'].append(dict(step_id=step,receipt=record.get('gripper_receipt')))
@@ -292,6 +317,10 @@ def run(output, approval, requested_duration_s=None, *, _full_policy_mode=None):
         if full:
             result.update(runtime_valid=started is not None and error is None,
                           episode_ended_wall_time=time.time())
+            if getattr(_full_policy_mode,'allows_command_ack_initialization',False):
+                result.update(launch_policy='DIRECT_MOVELINE_NO_MANUAL_CONFIRMATION',
+                    manual_confirmation_performed=False,initial_gripper_observed_open=None,
+                    initial_gripper_basis='COMMAND_ACK_ONLY' if _full_policy_mode.initialization else 'NOT_INITIALIZED')
         try:
             save('trial_summary.json',result)
             save('episode_records.json',records)

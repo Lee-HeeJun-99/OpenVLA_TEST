@@ -1,0 +1,52 @@
+{
+  "scope": "SYNCHRONOUS_MOVELINE_EPISODE_ENDPOINT_ONLY",
+  "request": "Remove delta limiter while preserving existing hard rejection and hardware motion profiles",
+  "config": "configs/hardware_interface.yaml:moveline_delta_limiter_enabled=false",
+  "live_path": "start_full_policy_confirmed.py --controller moveline -> run_live_full_policy.py -> run_arm_only_episode.py -> Controller -> RealDoosanCommandSink.send_pose",
+  "also_applies_to": "Arm-only MoveLine episodes using run_arm_only_episode.py",
+  "change": {
+    "previous_delta": "Fixed 0.2s software velocity/acceleration limiter: first up to 0.8mm, then up to 4mm per step",
+    "new_delta": "Accepted original canonical translation and world rotation-vector delta, unscaled, used as endpoint",
+    "example_raw_translation_mm": 13,
+    "example_submitted_endpoint_translation_mm": 13,
+    "translation_hard_rejection_mm": 50,
+    "rotation_hard_rejection_deg": 4,
+    "velocity_mm_s_deg_s": [120, 20],
+    "acceleration_mm_s2_deg_s2": [120, 20]
+  },
+  "dynamics": "Do not interpret a synchronous endpoint displacement divided by prediction interval as instantaneous robot velocity. Bounded MoveLine hardware vel/acc remains in force.",
+  "logging": {
+    "raw_and_accepted_endpoint_preserved": true,
+    "delta_limiter_applied": false,
+    "delta_limiter_stage_status": "NOT_APPLIED_FULL_ENDPOINT",
+    "POST_VELOCITY_LIMIT_and_POST_ACCELERATION_LIMIT": "Pass-through raw values in this mode; metadata explicitly says those delta stages are NOT applied",
+    "actual_movement_is_not_implied_by_request_or_ACK": true
+  },
+  "unchanged": [
+    "ServoL interpolation, delta limiter and transport profile",
+    "Legacy/minimum-motion/default SafetyPipeline delta limiting",
+    "Raw translation/rotation hard rejection; no above-limit clipping",
+    "Workspace applied to full unscaled endpoint, not a shortened candidate",
+    "NaN/Inf, source-age, sensor, logger, duplicate and command-rate rejection",
+    "No overlap and synchronous service return/settle before next inference",
+    "Gripper initialization, transition-only commands and OFF abort policy",
+    "Automatic retry/Home/recovery disabled"
+  ],
+  "verification": {
+    "passed": 380, "warnings": 6,
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /usr/bin/python3 -m pytest tests ../tests ../15_valid_invalid_rollout_policy/tests -q",
+    "new_full_delta_tests": 8,
+    "covered": ["13mm preserved", "reverse raw delta without previous software limiter inertia", "50mm and 4deg exact boundaries", "full-endpoint workspace rejection", "sensor/model/nonfinite inhibition", "gripper lifecycle unchanged", "SO3 world-rotvec composition", "legacy/Servo default limiter retained", "stale/duplicate/rate gates retained"],
+    "py_compile": "PASS", "git_diff_check": "PASS"
+  },
+  "physical_commands": 0,
+  "inference_requests": 0,
+  "processes_restarted": 0,
+  "physical_validation": "NOT_EXECUTED",
+  "unresolved": [
+    "Controller NOT_REACHABLE and actual target arrival validation gap",
+    "ServoL joint-limit and stop-ACK failures",
+    "Formal active TCP verification"
+  ],
+  "caution": "Endpoint size can be much larger than prior limited steps. This change is not a claim of safe or successful physical task completion."
+}
