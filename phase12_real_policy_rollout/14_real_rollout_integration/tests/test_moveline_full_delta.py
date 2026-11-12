@@ -75,13 +75,13 @@ class FullDeltaTests(unittest.TestCase):
         np.testing.assert_allclose(t.calls[0][2]['pos'][:3],[430,40,500],atol=1e-10)
 
     def test_faults_no_motion_then_future_dispatch_inhibited(self):
-        faults=[([.20,0,0,0,0,0,0],{}),([.4,.4,0,0,0,0,0],{}),
+        faults=[([.401,0,0,0,0,0,0],{}),([.401,.4,0,0,0,0,0],{}),
                 ([0,0,0,math.radians(4.1),0,0,0],{}),([float('nan'),0,0,0,0,0,0],{}),
                 ([float('inf'),0,0,0,0,0,0],{}),([.013,0,0,0,0,0,0],dict(camera_ok=False)),
                 ([.013,0,0,0,0,0,0],dict(joint_state_ok=False)),
                 ([.013,0,0,0,0,0,0],dict(model_ok=False)),
                 ([.013,0,0,0,0,0,0],dict(communication_ok=False)),
-                ([.020,0,0,0,0,0,0],dict(tcp_m_abc=[.55,0,.5,10,20,30]))]
+                ([.020,0,0,0,0,0,0],dict(tcp_m_abc=[.79,0,.5,10,20,30]))]
         for raw,override in faults:
             with self.subTest(raw=raw,override=override):
                 c,t=self.setup_path();self.step(c,raw,**override)

@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_182408_arm_only_servo_episode/predictions.jsonl",
+    "sha256": "c7ac25a630f01fc710f2d62323ceb48426d8cde6009b35b915f4177e64eb69bb"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_182408_arm_only_servo_episode/servo_commands.jsonl",
+    "sha256": "85436191ca7a1be4aada1c37688ff421f996ac0ec5e63eb88e394d69ce49a0da"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_182408_arm_only_servo_episode/trial_summary.json",
+    "sha256": "80c61350f60f4bfefa48dac8df5561c70ab06328763c02c881b4ab3860b44827"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_182408_arm_only_servo_episode/jointstate.json",
+    "sha256": "73a958fe27e15977aced79e42c661d0131374ea520a82754850fed93a9a6e1b0"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_182408_arm_only_servo_episode/config_snapshot.json",
+    "sha256": "ac6dbd6688e25f6a65286896a34dd0c9f45d9ede1a2aacf467869ae4c564bec6"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183554_arm_only_servo_episode/predictions.jsonl",
+    "sha256": "b8b0e1f3f0e6f8bd82fcf6181ed588823004b85699fc5ec232804864095150e8"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183554_arm_only_servo_episode/servo_commands.jsonl",
+    "sha256": "4417868569fad183f3dd640956dc0fa05302ea9cb87e55291489888788a0c832"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183554_arm_only_servo_episode/trial_summary.json",
+    "sha256": "7e75d9b56faa85cb8c6f3c5f01a22e7ccefa117c9b4dfd2b2d53cdcc3a74afaa"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183554_arm_only_servo_episode/jointstate.json",
+    "sha256": "99a4d75c0de685f32f61a36ef2cd6a0c72e94442c7bc22ef1c5881fd184a9189"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183554_arm_only_servo_episode/config_snapshot.json",
+    "sha256": "97cc42918ddddec6a155468377eb2fc106dee012ce7b062a3e680051fb504c4c"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183848_arm_only_servo_episode/predictions.jsonl",
+    "sha256": "d1aeb6700aa965fb0e3b1f981cb49786bcb2c5b4c81e24451b36ab65050bc3e5"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183848_arm_only_servo_episode/servo_commands.jsonl",
+    "sha256": "e4b3114ce5b94d02af6b1defe99c0f795cecd29d4378c16d27dbb8e53afab0ed"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183848_arm_only_servo_episode/trial_summary.json",
+    "sha256": "d18ae36832f25e9f4e820d4407f34f0f2bba0ff4e1b8637facc4cc9461ba41bb"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183848_arm_only_servo_episode/jointstate.json",
+    "sha256": "1ae4ef98d7e1092f78ecee4e8cec6fcd2f59dc383eced05498393cbb22a2da73"
+  },
+  {
+    "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_183848_arm_only_servo_episode/config_snapshot.json",
+    "sha256": "711070e828bf473f1da82c0a4c3619ae50268238f5e4e1f2fd24729b86d6155f"
+  }
+]

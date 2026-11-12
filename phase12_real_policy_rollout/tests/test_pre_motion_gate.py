@@ -18,7 +18,7 @@ class Tests(unittest.TestCase):
   self.assertIn('hold_ack_verified',d.blockers);self.assertIn('workspace_site_approved',d.blockers)
  def test_timeout_workspace_and_data_fail_closed(self):
   g=PreMotionGate(PHASE12_DATA_DERIVED_WORKSPACE,30)
-  d=g.inspect(signals=signals(),elapsed_s=31,current_position_m=(.8,0,.5),camera_ok=False,joint_state_ok=True,tcp_ok=True,logger_ok=True,model_ok=True)
+  d=g.inspect(signals=signals(),elapsed_s=31,current_position_m=(.801,0,.5),camera_ok=False,joint_state_ok=True,tcp_ok=True,logger_ok=True,model_ok=True)
   self.assertEqual(('rollout_timeout','camera_unavailable','workspace_violation'),d.blockers)
  def test_no_command_capability(self):
   s=(R/'02_safety/pre_motion_gate.py').read_text().lower()

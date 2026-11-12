@@ -1,0 +1,7 @@
+{
+  "predictions.jsonl": "3e3a6abcbef9348fb9079dfb5c48a7e61e2108ebbf526379c917dd886041da1b",
+  "servo_commands.jsonl": "1d3dbe8bd8de0dec3160d64323d6e28e5811c068ed77c7407bd33d31c410011b",
+  "jointstate.json": "be7e3de77b3dd0403cdebe6c1ff04056bafe528bf868dfed6e618c1aee8b50dc",
+  "trial_summary.json": "909f541c30c95de2cd89e7336051602bd7c2cfeb695e1048c3fb6033321f079e",
+  "config_snapshot.json": "1c02c49d35c9251e26054e36bfbe82236564b01cb0d1853ffb870e67cd85c04c"
+}

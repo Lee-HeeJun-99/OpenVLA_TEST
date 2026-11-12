@@ -6,5 +6,6 @@ translation_velocity_mm_s: 20.0
 rotation_velocity_deg_s: 20.0
 translation_acceleration_mm_s2: 20.0
 rotation_acceleration_deg_s2: 20.0
-workspace_m: {x: [0.275, 0.554], y: [-0.355, 0.386], z: [0.267, 0.754]}
+workspace_m: {x: [0.0, 0.8], y: [-0.8, 0.8], z: [-0.05, 1.0]}
+workspace_provenance: USER_SPECIFIED_BASE_X0_800_YNEG800_800_ZNEG50_1000_MM_2026_11_12
 failure_policy: fail_closed

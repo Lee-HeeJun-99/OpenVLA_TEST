@@ -1,0 +1,84 @@
+{
+  "conservative_offline_contract": {
+    "controller_limits_verified": false,
+    "source": "MANUAL_DEFAULTS_INTERSECT_URDF_NOT_CURRENT_CONTROLLER_READBACK",
+    "lower_deg": [
+      -360,
+      -95,
+      -135,
+      -360,
+      -135,
+      -360
+    ],
+    "upper_deg": [
+      360,
+      95,
+      135,
+      360,
+      135,
+      360
+    ],
+    "max_joint_speed_deg_s": [
+      180,
+      180,
+      180,
+      360,
+      360,
+      360
+    ],
+    "lookahead_s": 0.2,
+    "integration_step_s": 0.02,
+    "jointstate_max_age_s": 0.5,
+    "scaled_jacobian_min_singular_value": 0.0001,
+    "jacobian_characteristic_length_m": 0.5,
+    "physical_speedl_contract_verified": false,
+    "stop_latency_bound_verified": false
+  },
+  "urdf": [
+    {
+      "joint": "joint_1",
+      "lower_deg": -360.00084183659885,
+      "upper_deg": 360.00084183659885,
+      "max_speed_deg_s": 180.00042091829943
+    },
+    {
+      "joint": "joint_2",
+      "lower_deg": -360.00084183659885,
+      "upper_deg": 360.00084183659885,
+      "max_speed_deg_s": 180.00042091829943
+    },
+    {
+      "joint": "joint_3",
+      "lower_deg": -159.99846429028239,
+      "upper_deg": 159.99846429028239,
+      "max_speed_deg_s": 180.00042091829943
+    },
+    {
+      "joint": "joint_4",
+      "lower_deg": -360.00084183659885,
+      "upper_deg": 360.00084183659885,
+      "max_speed_deg_s": 360.00084183659885
+    },
+    {
+      "joint": "joint_5",
+      "lower_deg": -360.00084183659885,
+      "upper_deg": 360.00084183659885,
+      "max_speed_deg_s": 360.00084183659885
+    },
+    {
+      "joint": "joint_6",
+      "lower_deg": -360.00084183659885,
+      "upper_deg": 360.00084183659885,
+      "max_speed_deg_s": 360.00084183659885
+    }
+  ],
+  "controller_current_lower_deg": null,
+  "controller_current_upper_deg": null,
+  "historical_controller_evidence": {
+    "joint": "joint_5",
+    "minimum_deg": -135,
+    "source": "20261106_z_direction_audit_02/driver_alarm_evidence.json",
+    "current_session_verified": false
+  },
+  "distinction": "URDF physical/model limits, manual defaults, and active controller safety settings are different sources. No controller writes/readback attempted."
+}

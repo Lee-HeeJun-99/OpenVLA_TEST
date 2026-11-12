@@ -1,0 +1,19 @@
+{
+  "input": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/preflight/input.jpg",
+  "rgb_shape": [
+    720,
+    1280,
+    3
+  ],
+  "jpeg_identical": true,
+  "jpeg_sha256": "163cb8e0a94b9274fb442f27ddb2a9ce9745ba4521b7d2feb3e77fff79c8cc15",
+  "tensor_identical": true,
+  "tensor_shape": [
+    6,
+    224,
+    224
+  ],
+  "tensor_dtype": "torch.float32",
+  "tensor_max_abs_difference": 0.0,
+  "contract": "RGB uint8 -> JPEG q92 optimize=False -> RGB decode -> resize-naive 224 dual fused tensor"
+}

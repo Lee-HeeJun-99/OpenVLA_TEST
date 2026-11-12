@@ -1,0 +1,121 @@
+{
+  "physical_calls": 0,
+  "classification": "OFFLINE_INCIDENT_ANALYSIS",
+  "reason": "robot_abnormal_state:10",
+  "robot_state_code": 10,
+  "robot_state_name": "SAFE_OFF2",
+  "controller_specific_alarm_code": "NOT_RECORDED",
+  "stop_ack": false,
+  "runtime_start_monotonic": 78692.315933718,
+  "stop_requested_monotonic": 78802.429999832,
+  "final_joint_deg": [
+    -170.4543238702433,
+    -39.81037229444462,
+    -22.522079212611608,
+    -33.91913264472811,
+    -137.90852711664587,
+    -127.85743930010855
+  ],
+  "minimum_joint_deg": [
+    -182.55273356973524,
+    -39.81037229444462,
+    -42.252011243467855,
+    -33.977322441362034,
+    -137.91687360781162,
+    -127.85817696053891
+  ],
+  "maximum_joint_deg": [
+    -170.27739464998325,
+    -1.0718461118027627,
+    -22.51351927803429,
+    1.258808773231816,
+    -107.5630962947356,
+    1.4997091183713425
+  ],
+  "peak_absolute_joint_velocity_deg_s": [
+    2.8575821015513774,
+    9.86623301551916,
+    13.63307636636567,
+    9.811987653130918,
+    21.29035021844819,
+    16.06593510721085
+  ],
+  "peak_J5_velocity": {
+    "receive": 78802.244505343,
+    "deg_s": -21.29035021844819,
+    "joint_deg": [
+      -170.43918817104253,
+      -39.73238519450141,
+      -22.633354947022163,
+      -33.977322441362034,
+      -137.8029733732125,
+      -127.77792223779126
+    ]
+  },
+  "historical_J5_reference_lower_deg": -135.0,
+  "current_controller_J5_limit_verified": false,
+  "first_below_historical_J5_reference": {
+    "receive": 78802.104071199,
+    "angle_deg": -135.00715837987283
+  },
+  "first_published_C_below_minus180": {
+    "receive": 78799.595141412,
+    "ABC": [
+      111.42484764427081,
+      -160.60962161908532,
+      -180.0597684631432
+    ]
+  },
+  "maximum_raw_model_rotation_deg": 3.9854165137194437,
+  "maximum_raw_model_rotation_step": 80,
+  "maximum_stream_pair_geodesic_deg": 0.9160809623987309,
+  "maximum_stream_pair_Euler_L2_deg": 2.642273310306971,
+  "maximum_commanded_rotation_speed_deg_s": 17.168495451898327,
+  "minimum_distance_stream_B_to_0_or_180_deg": 13.767280254285765,
+  "last_feedback_comparison": {
+    "step": 223,
+    "feedback_receive_monotonic": 78802.403930161,
+    "seconds_before_stop": -0.02606967100291513,
+    "robot_state_polled_before_inference": 1,
+    "raw_rotation_deg": 2.710520221671572,
+    "filtered_rotation_deg": 0.8043126534489586,
+    "raw_translation_mm": 2.759989674354138,
+    "current_ABC_deg": [
+      52.76504898071289,
+      -146.74618530273438,
+      117.00869750976562
+    ],
+    "command_ABC_deg": [
+      70.31193189895731,
+      -153.53561339875057,
+      -223.98305531116617
+    ],
+    "command_requested_monotonic": 78802.355294188,
+    "command_age_at_feedback_s": 0.048635972998454235,
+    "orientation_difference_deg": 11.617750371925817,
+    "position_difference_mm": 3.100324686236872,
+    "joint_deg": [
+      -170.45478832310684,
+      -39.81037229444462,
+      -22.522079212611608,
+      -33.91913264472811,
+      -137.90852711664587,
+      -127.85743930010855
+    ],
+    "joint_velocity_deg_s": [
+      0.0,
+      0.0,
+      -0.0,
+      0.0,
+      -0.0,
+      0.0
+    ]
+  },
+  "caveats": [
+    "Command comparison uses most recent requested command <= feedback receive time; vendor consumption time unknown.",
+    "No vendor receipt ACK per ServoL message; publisher success is not controller execution proof.",
+    "JointState joint names reordered; raw array order is joint_1, joint_2, joint_4, joint_5, joint_3, joint_6.",
+    "Crossing C=-180 is correlated with later divergence, not proof of vendor Euler interpolation behavior.",
+    "J5 crosses historical -135 lower reference; actual configured limit and alarm are not recorded."
+  ]
+}

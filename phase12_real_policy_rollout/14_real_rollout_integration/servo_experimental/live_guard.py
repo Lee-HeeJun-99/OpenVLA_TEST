@@ -1,5 +1,6 @@
 """ROS-free, serialized inhibit/publish/stop boundary for the experimental stream."""
 import threading
+from servo_experimental.stop_evidence import evaluate_stop
 
 
 class StreamGuard:
@@ -11,6 +12,7 @@ class StreamGuard:
         self.attempts = 0
         self.submitted = 0
         self.stop_requested = False
+        self.stop_confirmation = None
 
     def check(self):
         if self.reason:
@@ -34,6 +36,16 @@ class StreamGuard:
             if self.attempts and not self.stop_requested:
                 self.stop_requested = True
                 self.stop()
+
+    def confirm_stop(self, **evidence):
+        with self.lock:
+            if not self.closed or not self.stop_requested:
+                raise RuntimeError('stop_confirmation_without_stop')
+            self.stop_confirmation = evaluate_stop(**evidence)
+            if not self.stop_confirmation['confirmed'] and self.reason is None:
+                self.reason = 'stop_confirmation_failed:'+self.stop_confirmation['reason']
+            # Closed stays latched even after a verified stop.
+            return self.stop_confirmation
 
 
 def require_stream_liveness(now, last_publish, *, active):

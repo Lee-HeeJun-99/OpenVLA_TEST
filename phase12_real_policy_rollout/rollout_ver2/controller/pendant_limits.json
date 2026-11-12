@@ -1,0 +1,14 @@
+{
+  "status": "USER_REPORTED_DEFAULT_PHOTO_NOT_YET_RECORDED",
+  "source_date": "2026-11-13",
+  "source": "user report of current pendant Robot Limits; general and reduced modes identical",
+  "evidence_path": "reports/live/PENDING/pendant_robot_limits_photo.jpg",
+  "profile": "default",
+  "extension_reason": null,
+  "extended_range_clearance_record": null,
+  "pendant_lower_deg": [-360, -95, -135, -360, -135, -360],
+  "pendant_upper_deg": [360, 95, 135, 360, 135, 360],
+  "doosan_configurable_max_abs_deg": [360, 360, 160, 360, 360, 360],
+  "controller_tolerance_deg": [3, 3, 3, 3, 3, 3],
+  "host_margin_deg_candidate": [5, 5, 5, 5, 5, 5]
+}

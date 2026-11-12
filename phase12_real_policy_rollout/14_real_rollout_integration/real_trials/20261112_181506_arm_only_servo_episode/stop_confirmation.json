@@ -1,0 +1,1 @@
+{"confirmed":false,"additional_dispatch_allowed":false,"ack":true,"criterion":"ACK_AND_FRESH_STANDBY_AND_POST_STOP_EXACT_ZERO_WINDOW","reason":"invalid_stop_timestamps"}

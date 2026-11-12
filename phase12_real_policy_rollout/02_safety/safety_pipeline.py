@@ -40,12 +40,13 @@ class SafetyDecision:
 
 
 class SafetyPipeline:
-    def __init__(self, model: str, *, operator_confirmed_initial_open: bool, arm_only=False,full_endpoint_delta=False,enforce_raw_translation_limit=True):
+    def __init__(self, model: str, *, operator_confirmed_initial_open: bool, arm_only=False,full_endpoint_delta=False,enforce_raw_translation_limit=True,translation_endpoint_delta=False,raw_rotation_step_limit_deg=4.):
         if arm_only and model!='openvla':raise ValueError('arm_only_openvla_integration_only')
         self.arm_only=arm_only
         self.runtime = CommandDisabledPolicyRuntime(
             model, operator_confirmed_initial_open=operator_confirmed_initial_open,full_endpoint_delta=full_endpoint_delta,
-            enforce_raw_translation_limit=enforce_raw_translation_limit)
+            enforce_raw_translation_limit=enforce_raw_translation_limit,translation_endpoint_delta=translation_endpoint_delta,
+            raw_rotation_step_limit_deg=raw_rotation_step_limit_deg)
 
     def inspect(self, action: CanonicalAction, state: RuntimeState) -> SafetyDecision:
         candidate = self.runtime.evaluate(

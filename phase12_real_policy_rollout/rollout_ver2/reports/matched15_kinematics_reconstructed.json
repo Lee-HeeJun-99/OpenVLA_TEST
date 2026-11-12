@@ -1,0 +1,200 @@
+{
+  "status": "REFERENCE_ONLY_IK_BRANCH_DEPENDENT_NOT_DIRECTLY_LOGGED",
+  "warning": "matched15 evidence omits joint targets; values are bounded IK reconstructions and must not be used as home, wrist branch, or joint-range evidence",
+  "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/evidence/vanilla/success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep.json",
+  "home_seed": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose_openvla_legacy_repro.json",
+  "samples": 1053,
+  "jacobian_min_singular_value": {
+    "p0": 0.10136640830884298,
+    "p1": 0.10416378736732525,
+    "p5": 0.11025695841828445,
+    "p50": 0.1567813802317601
+  },
+  "candidate_threshold_proposal": 0.0810931266470744,
+  "candidate_basis": "80% of reconstructed successful-sample minimum; candidate only",
+  "joint_min_deg": [
+    -17.892493974374176,
+    -20.936042181533345,
+    37.853620127868815,
+    -3.396798521372536,
+    73.92058437628657,
+    -108.84695799335509
+  ],
+  "joint_max_deg": [
+    22.427611328647206,
+    40.987271562089866,
+    89.02683237692521,
+    5.770650503297841,
+    106.93859331976935,
+    1.540489553284436
+  ],
+  "reconstruction_residual_m_max": 1.1548458826641189e-11,
+  "reconstruction_residual_deg_max": 1.5094887900247597e-10,
+  "episodes": [
+    {
+      "episode_number": 1,
+      "samples": 74,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.00040794325873941273,
+        -5.982926246755546e-05,
+        0.8231645961828151
+      ],
+      "sigma_min": 0.10416457194938024
+    },
+    {
+      "episode_number": 2,
+      "samples": 108,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0009074890119772083,
+        -0.00010926319763826173,
+        0.823173847902325
+      ],
+      "sigma_min": 0.1041589378130943
+    },
+    {
+      "episode_number": 3,
+      "samples": 60,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0008378212454730194,
+        -0.0002031933738208848,
+        0.8231637968007195
+      ],
+      "sigma_min": 0.10416117263277806
+    },
+    {
+      "episode_number": 4,
+      "samples": 70,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.000727402614700251,
+        -9.691286514885641e-06,
+        0.8231758449226925
+      ],
+      "sigma_min": 0.10416171649453805
+    },
+    {
+      "episode_number": 5,
+      "samples": 64,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007452185824078084,
+        2.121148098301051e-05,
+        0.8231850980852651
+      ],
+      "sigma_min": 0.10136640830884298
+    },
+    {
+      "episode_number": 6,
+      "samples": 61,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0008456244275990565,
+        6.110309614253823e-05,
+        0.8231140747031189
+      ],
+      "sigma_min": 0.10418618533640113
+    },
+    {
+      "episode_number": 7,
+      "samples": 71,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007400612797650863,
+        6.003062728669392e-05,
+        0.8231747129359317
+      ],
+      "sigma_min": 0.10416347908067466
+    },
+    {
+      "episode_number": 8,
+      "samples": 65,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0010515377737140008,
+        -4.133835831241113e-05,
+        0.8231330785850328
+      ],
+      "sigma_min": 0.10417889929490676
+    },
+    {
+      "episode_number": 9,
+      "samples": 59,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007460423851393949,
+        -4.258229986937867e-05,
+        0.8231764905578747
+      ],
+      "sigma_min": 0.10415877733696255
+    },
+    {
+      "episode_number": 10,
+      "samples": 65,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007288717145736978,
+        3.82017584833038e-05,
+        0.8231726206707557
+      ],
+      "sigma_min": 0.1041640719396181
+    },
+    {
+      "episode_number": 11,
+      "samples": 65,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007220139716273555,
+        2.6558046834782023e-05,
+        0.823177398472626
+      ],
+      "sigma_min": 0.10416199098291312
+    },
+    {
+      "episode_number": 12,
+      "samples": 68,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0010172244924327722,
+        6.459399955541234e-07,
+        0.8231447450724068
+      ],
+      "sigma_min": 0.10417325376321145
+    },
+    {
+      "episode_number": 13,
+      "samples": 75,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0006973098108817855,
+        1.9234572814561327e-05,
+        0.8231833824850365
+      ],
+      "sigma_min": 0.10415885512662157
+    },
+    {
+      "episode_number": 14,
+      "samples": 77,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007557280571553471,
+        -8.53097397338666e-05,
+        0.8231801075995042
+      ],
+      "sigma_min": 0.10415817984931064
+    },
+    {
+      "episode_number": 15,
+      "samples": 71,
+      "ik_residual_over_1e-4_count": 0,
+      "world_base_translation_estimate_m": [
+        0.0007866345339486991,
+        -0.0001231344963851591,
+        0.8231731735102117
+      ],
+      "sigma_min": 0.10415930283450822
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "physical_calls": 0,
+  "C_first_outside": {
+    "time": 78799.595141412,
+    "C_deg": -180.0597684631432,
+    "source": 78798.993221068
+  },
+  "first_feedback_after_crossing": {
+    "step": 218,
+    "feedback_receive_monotonic": 78799.900505753,
+    "command_time": 78799.852334207,
+    "translation_error_mm": 2.843662743158247,
+    "rotation_error_deg": 0.9021057663432624,
+    "translation_error_growth_mm_s": 1.149845122180893,
+    "rotation_error_growth_deg_s": 0.9218963224574181,
+    "actual_minus_command_xyz_mm": [
+      -1.202303627734409,
+      -0.27363710517690265,
+      2.562422002370681
+    ],
+    "actual_minus_command_world_rotvec_deg": [
+      -0.22375046834262385,
+      0.18174498789505197,
+      -0.8548095115060711
+    ],
+    "translation_axis_signed_lead_mm": [
+      1.202303627734409,
+      0.27363710517690265,
+      2.562422002370681
+    ],
+    "signed_translation_direction_lead_mm": 2.8099814428452596,
+    "signed_rotation_direction_lead_deg": 0.24043498837889385,
+    "commanded_translation_velocity_mm_s": [
+      -0.155479311289004,
+      -0.04333628706277727,
+      0.5304355937854586
+    ],
+    "commanded_rotation_velocity_rad_s": [
+      0.009311989774413434,
+      -0.01695571504906311,
+      -0.012524421971729597
+    ]
+  },
+  "sustained_three_positive_growth_candidate": {
+    "step": 205,
+    "feedback_receive_monotonic": 78793.498068406,
+    "command_time": 78793.472586208,
+    "translation_error_mm": 1.9007791204529856,
+    "rotation_error_deg": 0.3656602758173065,
+    "translation_error_growth_mm_s": 0.48468241858886096,
+    "rotation_error_growth_deg_s": 0.15289115082277321,
+    "actual_minus_command_xyz_mm": [
+      -1.0019937223696616,
+      0.00015605689057451855,
+      1.6152305781924952
+    ],
+    "actual_minus_command_world_rotvec_deg": [
+      0.009302697369597067,
+      -0.18277724965737277,
+      -0.31656496037957993
+    ],
+    "translation_axis_signed_lead_mm": [
+      -1.0019937223696616,
+      0.00015605689057451855,
+      -1.6152305781924952
+    ],
+    "signed_translation_direction_lead_mm": -1.9007749934187819,
+    "signed_rotation_direction_lead_deg": 0.2844750478426341,
+    "commanded_translation_velocity_mm_s": [
+      2.98501217014499,
+      0.01126222773779053,
+      -4.809476931052596
+    ],
+    "commanded_rotation_velocity_rad_s": [
+      -0.0005606211903477679,
+      0.004101793490597017,
+      -0.02638695585232908
+    ]
+  },
+  "first_late_above_normal_rotation_p99": {
+    "step": 220,
+    "feedback_receive_monotonic": 78800.901082415,
+    "command_time": 78800.876049291,
+    "translation_error_mm": 3.9564031600160874,
+    "rotation_error_deg": 3.6210006594745296,
+    "translation_error_growth_mm_s": 1.8396312602200298,
+    "rotation_error_growth_deg_s": 4.288028377723229,
+    "actual_minus_command_xyz_mm": [
+      -2.789615761006189,
+      -0.6428597471543682,
+      2.730915820017117
+    ],
+    "actual_minus_command_world_rotvec_deg": [
+      -1.7755634868165673,
+      3.0188944202053998,
+      -0.9194001086858083
+    ],
+    "translation_axis_signed_lead_mm": [
+      -2.789615761006189,
+      -0.6428597471543682,
+      -2.730915820017117
+    ],
+    "signed_translation_direction_lead_mm": -3.342555665042106,
+    "signed_rotation_direction_lead_deg": 3.4384193358180815,
+    "commanded_translation_velocity_mm_s": [
+      3.3819945131245914,
+      1.749645446309298,
+      -0.93145619818876
+    ],
+    "commanded_rotation_velocity_rad_s": [
+      -0.030347818492249594,
+      0.05257868658697793,
+      0.0037742720099340522
+    ]
+  },
+  "normal_steps_0_216_distribution": {
+    "translation_error_mm": {
+      "p50": 2.0169044455815417,
+      "p95": 5.000694861166811,
+      "p99": 7.0350424957656434,
+      "max": 9.522415425383846
+    },
+    "rotation_error_deg": {
+      "p50": 0.7860996838335486,
+      "p95": 2.1320159879984164,
+      "p99": 2.3236013082814826,
+      "max": 2.832618972860977
+    }
+  },
+  "threshold_candidates": [
+    {
+      "name": "p99_rounded_up",
+      "translation_mm": 7.5,
+      "rotation_deg": 2.4000000000000004,
+      "normal_rejections": 2,
+      "first_late_rejection": 220,
+      "applied_to_live": false
+    },
+    {
+      "name": "observed_max_rounded_up",
+      "translation_mm": 10.0,
+      "rotation_deg": 3.0,
+      "normal_rejections": 0,
+      "first_late_rejection": 220,
+      "applied_to_live": false
+    }
+  ],
+  "replay_comparison": [
+    {
+      "translation_budget_violating_segments": 11,
+      "rotation_budget_violating_segments": 62,
+      "translation_target_overshoot_segments": 129,
+      "rotation_target_overshoot_segments": 208,
+      "maximum_translation_target_overshoot_mm": 1.1258059352101628,
+      "maximum_rotation_target_overshoot_deg": 0.5889550083966046,
+      "mode": "original",
+      "rows": 2143,
+      "segments": 223,
+      "failure": null,
+      "workspace_rejections": 0
+    },
+    {
+      "translation_budget_violating_segments": 92,
+      "rotation_budget_violating_segments": 171,
+      "translation_target_overshoot_segments": 83,
+      "rotation_target_overshoot_segments": 167,
+      "maximum_translation_target_overshoot_mm": 1.219259621352975,
+      "maximum_rotation_target_overshoot_deg": 0.42895024983439967,
+      "mode": "command",
+      "rows": 1886,
+      "segments": 197,
+      "failure": {
+        "reason": "workspace_rejection",
+        "step": 197,
+        "time": 78789.251978272,
+        "stage": "set_target"
+      },
+      "workspace_rejections": 1
+    },
+    {
+      "translation_budget_violating_segments": 0,
+      "rotation_budget_violating_segments": 0,
+      "translation_target_overshoot_segments": 0,
+      "rotation_target_overshoot_segments": 0,
+      "maximum_translation_target_overshoot_mm": 3.552713678800501e-15,
+      "maximum_rotation_target_overshoot_deg": 2.453592884421596e-14,
+      "mode": "bounded_command_linear_slerp",
+      "rows": 1658,
+      "segments": 174,
+      "failure": {
+        "step": 174,
+        "time": 78777.511444568,
+        "reason": "workspace_rejection"
+      },
+      "workspace_rejections": 1,
+      "dynamic_diagnostic_violations": {
+        "translation_velocity": 136,
+        "rotation_velocity": 0,
+        "translation_acceleration": 357,
+        "rotation_acceleration": 343
+      },
+      "xyz_limits_unchanged": true,
+      "all_ABC_within_180": true
+    }
+  ],
+  "interpretation": "Signed lead projects actual-minus-requested pose onto requested world velocity. Positive indicates ahead along that local direction, not causality or a vendor-confirmed tracking error.",
+  "onset_definition": "First of three positive rotation-error growth samples in steps>=200; also report late normal-p99 crossing. No unique onset assumed.",
+  "periods": "Bounded interpolation uses previous target activation interval; first uses frozen 1/control_rate_hz. No future interval lookahead.",
+  "limitations": [
+    "Normal range is user-designated, not independently certified healthy.",
+    "Controller pose receive times, not acquisition/consumption times; delay is unknown.",
+    "Alternative replay is open-loop recorded input. Recorded real feedback is not a physical counterfactual.",
+    "Linear/Slerp with linear time is budget-bounded but not acceleration-continuous; dynamic violations are diagnostic and block physical readiness."
+  ]
+}

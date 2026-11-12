@@ -1,7 +1,8 @@
 """Clock-driven task-space tracking, deliberately without ROS/publish capability."""
 import math
 import numpy as np
-from scipy.spatial.transform import Rotation
+import warnings
+from scipy.spatial.transform import Rotation, Slerp
 
 
 def capped(vector, maximum):
@@ -11,10 +12,39 @@ def capped(vector, maximum):
 
 
 def continuous_zyz(rotation, previous):
-    abc = rotation.as_euler('ZYZ', degrees=True)
+    previous = np.asarray(previous, dtype=float)
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', message='Gimbal lock detected.*')
+        abc = rotation.as_euler('ZYZ', degrees=True)
     alternatives = (abc, np.array([abc[0]+180, -abc[1], abc[2]+180]))
     candidates = [v + 360*np.round((previous-v)/360) for v in alternatives]
+    # Preserve the existing nearest/unwrapped range (no new +/-180 clipping).
+    # At singularities only A+C (B=0) or A-C (B=pi) is observable.
+    if abs(math.sin(math.radians(abc[1]))) < 1e-8:
+        matrix = rotation.as_matrix()
+        for base in list(candidates):
+            a = previous[0]
+            if math.cos(math.radians(base[1])) > 0:
+                c = math.degrees(math.atan2(matrix[1,0], matrix[0,0]))-a
+            else:
+                c = a-math.degrees(math.atan2(-matrix[1,0], -matrix[0,0]))
+            c += 360*round((previous[2]-c)/360)
+            value = np.array([a,base[1],c])
+            if (Rotation.from_euler('ZYZ',value,degrees=True).inv()*rotation).magnitude() <= 1e-6:
+                candidates.append(value)
+        fixed = [v for v in candidates if v[0] == previous[0]]
+        if fixed:return min(fixed, key=lambda v: np.linalg.norm(v-previous))
     return min(candidates, key=lambda v: np.linalg.norm(v-previous))
+
+
+def interpolate_segment(p_start, r_start, p_end, r_end, fraction):
+    """Linear position / shortest-arc quaternion Slerp; never interpolate ABC."""
+    if not math.isfinite(fraction) or not 0 <= fraction <= 1:
+        raise ValueError('invalid_interpolation_fraction')
+    p_start,p_end=np.asarray(p_start,dtype=float),np.asarray(p_end,dtype=float)
+    position=p_start+(p_end-p_start)*fraction
+    rotation=Slerp([0.,1.],Rotation.from_quat([r_start.as_quat(),r_end.as_quat()]))(fraction)
+    return position,rotation
 
 
 class ServoShadowController:
@@ -107,11 +137,15 @@ class ServoShadowController:
         desired_w = self._desired((r_target*self.r.inv()).as_rotvec(),self.rv,self.ra)
         v = self.v+capped(desired_v-self.v,self.ta*dt)
         w = self.w+capped(desired_w-self.w,self.ra*dt)
-        p = self.p+(self.v+v)*(.5*dt)
+        # Slerp the local acceleration-bounded segment, NOT Euler A/B/C.
+        # The endpoint is the full-step angular increment; its midpoint is
+        # exactly the previous trapezoidal SO(3) update. This retains velocity
+        # and acceleration behavior when a new inference changes the target.
+        rotation_endpoint = Rotation.from_rotvec((self.w+w)*dt)*self.r
+        p,r = interpolate_segment(self.p,self.r,self.p+(self.v+v)*dt,rotation_endpoint,.5)
         try:self._workspace(p)
         except ValueError:
             self.abort('workspace_rejection'); raise
-        r = Rotation.from_rotvec((self.w+w)*(.5*dt))*self.r
         abc = continuous_zyz(r,self.abc)
         self.p,self.r,self.abc,self.v,self.w = p,r,abc,v,w
         return dict(topic_candidate='/dsr01/servol_stream',message_type='dsr_msgs2/msg/ServolStream',

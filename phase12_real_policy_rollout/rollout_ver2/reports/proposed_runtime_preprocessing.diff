@@ -1,0 +1,8 @@
+--- ../14_real_rollout_integration/rollout_latency.py (read-only, current)
++++ ../14_real_rollout_integration/rollout_latency.py (proposal only; NOT APPLIED)
+@@
+-    rgb=camera_rgb_image(msg);buf=io.BytesIO();rgb.save(buf,format='JPEG',quality=95);jpeg=buf.getvalue()
++    rgb=camera_rgb_image(msg);buf=io.BytesIO();rgb.save(buf,format='JPEG',quality=92,optimize=False);jpeg=buf.getvalue()
+
+# No serve_adapter.py change is required: vanilla already converts to RGB,
+# applies crop_bottom_fraction=0.0, and reports center_crop=False.

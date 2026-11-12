@@ -1,0 +1,13 @@
+{
+  "pendant_limits_recorded": {"passed": false, "evidence": null},
+  "live_topics_verified": {"passed": false, "evidence": null},
+  "servoj_time_param_verified": {"passed": false, "evidence": null},
+  "tracking_thresholds_calibrated": {"passed": false, "evidence": null},
+  "feedback_rate_verified": {"passed": false, "evidence": null},
+  "gripper_wiring_recorded": {"passed": false, "evidence": null},
+  "gripper_io_verified": {"passed": false, "evidence": null},
+  "arm_stationary_verified": {"passed": false, "evidence": null},
+  "stop_movej_verified": {"passed": false, "evidence": null},
+  "stop_servoj_verified": {"passed": false, "evidence": null},
+  "extended_range_clearance_checked": {"passed": false, "evidence": null}
+}

@@ -1,0 +1,20 @@
+{
+  "note": "DRAFT ONLY. Not a live setting. Fill from reviewed hardware/site evidence, not guesses. All approvals default false.",
+  "reviewed_for_this_test": false,
+  "safe_pose_verified": false,
+  "controller_joint_limits_verified": false,
+  "stop_path_verified": false,
+  "tcp_offset_verified": false,
+  "servo_transport_profile_verified": false,
+  "safe_joint_deg": null,
+  "joint_lower_deg": null,
+  "joint_upper_deg": null,
+  "joint_margin_deg": null,
+  "tcp_offset_mm_zyz_deg": null,
+  "following_translation_mm": null,
+  "following_rotation_deg": null,
+  "minimum_abs_sin_B": null,
+  "controller_version": null,
+  "evidence_source": null,
+  "approved_transport": null
+}

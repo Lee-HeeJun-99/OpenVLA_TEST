@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "dataset": "local_portable_not_checkpoint_training",
+      "split": "train",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/metadata/train.jsonl",
+      "sha256": "9e33403acb212003295462ffb0aedc272d552ffefdbd63b0fc7e271bfd03171b",
+      "expected_checkpoint_hash": "eaa0f5b7940dfe751a893503a1071a24c375d80f36b6c8b3f504b07c1ec5fc31",
+      "checkpoint_hash_matches": false,
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "unit": "radian",
+      "invalid_rows": 0,
+      "episode_count": 9,
+      "count": 399,
+      "min_deg": [
+        -217.64722907250123,
+        -41.20184233782171,
+        -99.67844886027794,
+        -5.096273932218729,
+        -113.50012211755329,
+        -34.44064490861526
+      ],
+      "max_deg": [
+        -145.58531823428171,
+        2.1416749699228443,
+        -39.24889659372372,
+        5.928861612325413,
+        -68.63250700690197,
+        37.66491425349523
+      ]
+    },
+    {
+      "dataset": "local_portable_not_checkpoint_training",
+      "split": "val",
+      "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/data/real_world/raw_dataset_oft/metadata/val.jsonl",
+      "sha256": "c4f8b8708097a4e2e4523c5188c20ab941ec6e6d8d4ec033956f8ef4a52d3c92",
+      "expected_checkpoint_hash": "2c375c9046f7d03d486982ac89659aa1bc4265d871b97eac9564dd585c78f9b3",
+      "checkpoint_hash_matches": false,
+      "joint_order": [
+        "joint_1",
+        "joint_2",
+        "joint_3",
+        "joint_4",
+        "joint_5",
+        "joint_6"
+      ],
+      "unit": "radian",
+      "invalid_rows": 0,
+      "episode_count": 1,
+      "count": 43,
+      "min_deg": [
+        -182.55225545649333,
+        -16.692159293716177,
+        -93.243891567749,
+        -1.7338173739898204,
+        -113.49982158922981,
+        1.499855327108263
+      ],
+      "max_deg": [
+        -165.0991277118731,
+        1.1882058548333345,
+        -41.0065091728431,
+        1.2563191692793463,
+        -70.08177069594113,
+        18.08684123355047
+      ]
+    }
+  ],
+  "checkpoint_training_root": "/mnt/SSD1/a0509_openvla/current_env_20260806/data/openvla_a0509_legacy_midheight_corrective_speed1p712696_native5hz_300_v1/dataset",
+  "checkpoint_training_root_available": false,
+  "complete_checkpoint_training_verified": false,
+  "warning": "Local portable metadata is NOT the 12998-sample checkpoint training corpus unless its exact hashes match."
+}

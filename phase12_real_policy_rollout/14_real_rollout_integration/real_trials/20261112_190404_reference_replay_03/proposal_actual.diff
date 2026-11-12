@@ -1,0 +1,12 @@
+--- original_reference_adapter.py
++++ proposal_actual_reference_adapter.py
+@@ -2,8 +2,7 @@
+ from servo_experimental.reference_replay import delta_target, install_reference
+ 
+ def update(tracker, limited_action, actual_pose, source, now, boundary=None):
+-    anchor = actual_pose
+-    target = delta_target(anchor, limited_action)
++    anchor, target = install_reference(tracker, limited_action, actual_pose, "actual")
+     tracker.set_target(target, source, now)
+     if boundary is not None:
+         boundary.begin_segment(source, limited_action)

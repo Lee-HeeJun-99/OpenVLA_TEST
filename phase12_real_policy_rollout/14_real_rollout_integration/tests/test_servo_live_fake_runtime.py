@@ -14,7 +14,7 @@ import start_servo_episode_confirmed as live
 
 
 class FakeRuntimeTests(unittest.TestCase):
-    def execute(self, *, bad_state=False, full=False, stop_fail=False):
+    def execute(self, *, bad_state=False, full=False, stop_fail=False, moving_after_stop=False):
         published=[]; service_calls=[]; state_reads=[0]; callbacks=[]
         def now_stamp():
             now=time.time_ns()
@@ -55,12 +55,15 @@ class FakeRuntimeTests(unittest.TestCase):
                 if 'joint_states' in name:
                     msg=types.SimpleNamespace(header=types.SimpleNamespace(stamp=stamp),
                         name=[f'joint_{i}' for i in range(1,7)],
-                        position=[math.radians(v) for v in live.TARGET],velocity=[0.]*6)
+                        position=[math.radians(v) for v in live.TARGET],
+                        velocity=[.01 if moving_after_stop and any(n.endswith('move_stop') for n,_ in service_calls) else 0.]*6)
                 else:msg=types.SimpleNamespace(header=types.SimpleNamespace(stamp=stamp),width=1280,height=720,encoding='bgra8')
                 callback(msg)
         def predict(selected,ros_now,check):
             check(); start=time.monotonic();time.sleep(.03);check()
-            return dict(raw=[.01,0,0,0,0,0,1],t0=start,jpeg=b'fake-input',timing=dict(inference_latency=.03))
+            # Tiny fixture isolates launcher/IO/stop wiring. Large preemptions
+            # now correctly fail the independent dynamic-guard unit test.
+            return dict(raw=[.00001,0,0,0,0,0,1],t0=start,jpeg=b'fake-input',timing=dict(inference_latency=.03))
         class QuickStartup(live.JointStateStartup):CLEAN_SECONDS=0
         def module(**fields):return types.SimpleNamespace(**fields)
         fake_modules={
@@ -72,6 +75,13 @@ class FakeRuntimeTests(unittest.TestCase):
             'dsr_msgs2.srv':module(**services),
             'rosidl_runtime_py':module(), 'rosidl_runtime_py.convert':module(message_to_ordereddict=lambda x:x),
         }
+        # Explicit FAKE-only release evidence. Repository release remains closed.
+        fake_protection = dict(normalized_euler_controller_verified=True,
+            physical_stop_verified=True, controller_joint_protection_verified=True,
+            following_translation_mm=10., following_rotation_deg=3., feedback_max_age_s=.5)
+        real_tracker = live.LiveCommandSegment
+        def fake_tracker(pose, limits, *, transport, protection):
+            return real_tracker(pose, limits, transport=transport, protection=fake_protection)
         with tempfile.TemporaryDirectory() as temp:
             out=Path(temp)/'episode'
             from real_sink import FakeRosTransport
@@ -98,6 +108,8 @@ class FakeRuntimeTests(unittest.TestCase):
             with patch.dict('sys.modules',fake_modules),patch.dict('os.environ',{}), \
                  patch('builtins.input',return_value='yes'), \
                  patch.object(live,'JointStateStartup',QuickStartup), \
+                 patch.object(live,'require_release'), \
+                 patch.object(live,'LiveCommandSegment',side_effect=fake_tracker), \
                  patch.object(live,'predict_frame',side_effect=predict), \
                  patch.object(live,'validate_identity'), \
                  patch('real_sink.RosServiceTransport',return_value=io_transport), \
@@ -131,12 +143,21 @@ class FakeRuntimeTests(unittest.TestCase):
         self.assertEqual(summary['status'],'ARM_ONLY_SERVO_EPISODE_OPERATOR_RESULT_PENDING')
         self.assertTrue(summary['runtime_valid']);self.assertTrue(summary['stop_ack'])
         self.assertGreater(len(messages),0)
-        self.assertTrue(all(m['vel']==[20.,20.] and m['acc']==[40.,40.] and m['time']==.7 for m in messages))
+
+        self.assertTrue(all(m['vel']==[40.,40.] and m['acc']==[80.,80.] and m['time']==.7 for m in messages))
         self.assertEqual(summary['servo_publish_returned'],len(messages))
         stops=[r for name,r in calls if name.endswith('move_stop')]
         self.assertEqual(stops,[{'stop_mode':3}])
         self.assertEqual(summary['gripper_commands'],0)
         self.assertTrue(all('digital_output' not in name and 'move_line' not in name for name,r in calls))
+
+    def test_stop_ack_true_without_stationary_feedback_still_invalid(self):
+        summary,messages,calls=self.execute(moving_after_stop=True)
+        self.assertTrue(summary['stop_ack'])
+        self.assertFalse(summary['stop_confirmation']['confirmed'])
+        self.assertFalse(summary['runtime_valid'])
+        self.assertEqual(summary['status'],'ARM_ONLY_SERVO_EPISODE_INVALID')
+        self.assertEqual(sum(name.endswith('move_stop') for name,_ in calls),1)
 
     def test_robot_fault_stops_fake_episode(self):
         summary,messages,calls=self.execute(bad_state=True)

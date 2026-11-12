@@ -1,0 +1,226 @@
+{
+  "urdf": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+  "base": "base_link",
+  "tip": "link_6",
+  "real": {
+    "status": "POSX_FALLBACK_NO_F_CURRENT_POS_WORLD_FLANGE_IN_PAIRED_LOG",
+    "controller_pose": "current posx; zero-offset engineering assumption in source logs",
+    "position_error_mm": {
+      "count": 487,
+      "p50": 0.8747251498564425,
+      "p99": 1.2380787067563022,
+      "max": 1.253776057581146
+    },
+    "rotation_error_deg": {
+      "count": 487,
+      "p50": 0.18605542462372643,
+      "p99": 0.23080108258611454,
+      "max": 0.2351469750770382
+    },
+    "pair_receive_time_gap_ms": {
+      "count": 487,
+      "p50": 9.425002994248644,
+      "p99": 44.65028081089257,
+      "max": 58.45827981829643
+    },
+    "sources": [
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_145225_full_policy_episode/episode_records.json",
+        "pairs": 117
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/episode_records.json",
+        "pairs": 83
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_153541_full_policy_episode/episode_records.json",
+        "pairs": 42
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/episode_records.json",
+        "pairs": 5
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_012/episode_records.json",
+        "pairs": 1
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/episode_records.json",
+        "pairs": 3
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_003/episode_records.json",
+        "pairs": 2
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_70s_episode_001/episode_records.json",
+        "pairs": 25
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_154158_full_policy_episode/episode_records.json",
+        "pairs": 26
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_008/episode_records.json",
+        "pairs": 4
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/episode_records.json",
+        "pairs": 1
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/episode_records.json",
+        "pairs": 50
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/episode_records.json",
+        "pairs": 101
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/episode_records.json",
+        "pairs": 10
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_full_episode_001/execution_02/episode_records.json",
+        "pairs": 7
+      },
+      {
+        "path": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_full_episode_001/execution_04/episode_records.json",
+        "pairs": 10
+      }
+    ]
+  },
+  "sim": {
+    "status": "CONSTANT_OFFSET_TESTED",
+    "declared_quaternion_order_used": "wxyz",
+    "estimated_link6_to_recorded_tool0_xyz_m": [
+      -0.0011015977697641714,
+      0.0014578665938870014,
+      0.0006805716389579349
+    ],
+    "estimated_link6_to_recorded_tool0_rpy_deg": [
+      36.169598138740845,
+      -19.544263119347786,
+      -44.23637409354545
+    ],
+    "after_constant_offset_position_residual_mm": {
+      "count": 1734,
+      "p50": 6.8180767980454124,
+      "p99": 68.62247606595629,
+      "max": 72.30480102108245
+    },
+    "after_constant_offset_rotation_residual_deg": {
+      "count": 1734,
+      "p50": 24.7707744757505,
+      "p99": 164.41143247437748,
+      "max": 164.4148575876679
+    },
+    "constant_offset_supported": false,
+    "sources": [
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000001/steps.jsonl",
+        "samples": 120
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000001.backup_20260914_153653/steps.jsonl",
+        "samples": 113
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000002/steps.jsonl",
+        "samples": 105
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000003/steps.jsonl",
+        "samples": 101
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000004/steps.jsonl",
+        "samples": 101
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000005/steps.jsonl",
+        "samples": 99
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000006/steps.jsonl",
+        "samples": 81
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000007/steps.jsonl",
+        "samples": 61
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000008/steps.jsonl",
+        "samples": 50
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000009/steps.jsonl",
+        "samples": 49
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000010/steps.jsonl",
+        "samples": 47
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000011/steps.jsonl",
+        "samples": 66
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000012/steps.jsonl",
+        "samples": 53
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000013/steps.jsonl",
+        "samples": 47
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000014/steps.jsonl",
+        "samples": 48
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000015/steps.jsonl",
+        "samples": 50
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000016/steps.jsonl",
+        "samples": 67
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000017/steps.jsonl",
+        "samples": 59
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000018/steps.jsonl",
+        "samples": 51
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000019/steps.jsonl",
+        "samples": 40
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000020/steps.jsonl",
+        "samples": 45
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000021/steps.jsonl",
+        "samples": 77
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000022/steps.jsonl",
+        "samples": 58
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000023/steps.jsonl",
+        "samples": 52
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000024/steps.jsonl",
+        "samples": 49
+      },
+      {
+        "path": "/home/ubuntu/robot_ws/src/doosan-robot2/raw_dataset_oft/episodes/episode_000025/steps.jsonl",
+        "samples": 45
+      }
+    ]
+  }
+}

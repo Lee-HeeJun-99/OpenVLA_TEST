@@ -12,6 +12,13 @@ from scipy.spatial.transform import Rotation
 M_TO_MM = 1000.0
 
 
+def rotation_step_geodesic_rad(previous_abc_deg, new_abc_deg):
+    """Physical orientation distance, never Euler component subtraction."""
+    previous = Rotation.from_matrix(doosan_zyz_deg_to_matrix(previous_abc_deg))
+    new = Rotation.from_matrix(doosan_zyz_deg_to_matrix(new_abc_deg))
+    return float((previous.inv() * new).magnitude())
+
+
 @dataclass(frozen=True)
 class TranslationConversion:
     delta_m: tuple[float, float, float]
@@ -70,4 +77,3 @@ def compose_world_rotvec_with_doosan_zyz(
     current = doosan_zyz_deg_to_matrix(current_abc_deg)
     composed = Rotation.from_rotvec(delta).as_matrix() @ current
     return matrix_to_doosan_zyz_deg(composed), composed
-

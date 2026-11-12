@@ -1,0 +1,13 @@
+source,joint,observed_min_deg,observed_max_deg,reference_lower_deg,reference_upper_deg,lower_extension_deg,upper_extension_deg,needed_envelope_lower_deg,needed_envelope_upper_deg,setting_changed,reference_is_current_controller,interpretation
+local_available_train,joint_1,-217.64722907250123,-145.58531823428171,-360,360,0,0,-360,360,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+local_available_train,joint_2,-41.20184233782171,2.1416749699228443,-95,95,0,0,-95,95,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+local_available_train,joint_3,-99.67844886027794,-39.24889659372372,-135,135,0,0,-135,135,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+local_available_train,joint_4,-5.096273932218729,5.928861612325413,-360,360,0,0,-360,360,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+local_available_train,joint_5,-113.50012211755329,-68.63250700690197,-135,135,0,0,-135,135,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+local_available_train,joint_6,-34.44064490861526,37.66491425349523,-360,360,0,0,-360,360,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+real_execution,joint_1,-205.38172562515408,-172.92346457595957,-360,360,0,0,-360,360,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+real_execution,joint_2,-36.759654641280086,-0.7100305542605301,-95,95,0,0,-95,95,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+real_execution,joint_3,-52.141957822011655,-11.832744369082443,-135,135,0,0,-135,135,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+real_execution,joint_4,-27.772408061559975,1.2984218427054801,-360,360,0,0,-360,360,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+real_execution,joint_5,-137.52309954178205,-85.72923548063093,-135,135,2.523099541782045,0,-137.52309954178205,135,False,False,"Observed coverage only, not safety approval or proof expansion is required."
+real_execution,joint_6,-116.5754421121082,1.5016097252296043,-360,360,0,0,-360,360,False,False,"Observed coverage only, not safety approval or proof expansion is required."

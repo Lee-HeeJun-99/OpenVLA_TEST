@@ -1,0 +1,19 @@
+........................................................................ [ 16%]
+........................................................................ [ 33%]
+........................................................................ [ 50%]
+........................................................................ [ 67%]
+........................................................................ [ 84%]
+....................................................................     [100%]
+=============================== warnings summary ===============================
+14_real_rollout_integration/tests/test_integration.py::IntegrationTests::test_abort_conditions
+14_real_rollout_integration/tests/test_integration.py::IntegrationTests::test_dry_run_controller
+14_real_rollout_integration/tests/test_rollout_latency.py::LatencyTests::test_logger_stall_rechecked_before_transport
+14_real_rollout_integration/tests/test_rollout_latency.py::LatencyTests::test_original_timestamp_not_rebased_and_limit_unchanged
+14_real_rollout_integration/tests/test_rollout_latency.py::LatencyTests::test_service_discovery_stall_cannot_dispatch_expired_action
+tests/test_pre_motion_runtime_facade.py::Tests::test_oft_sequential_k5_and_premature_close_block
+  /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/02_safety/command_disabled_runtime.py:65: UserWarning: Gimbal lock detected. Setting third angle to zero since it is not possible to uniquely determine all angles.
+    dmm=translation_m_to_mm(a[:3]).delta_mm;abc,_=compose_world_rotvec_with_doosan_zyz(current_abc_deg,a[3:6])
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261112_joint_range_speedl_stop_audit_final/tests.xml -
+428 passed, 6 warnings in 9.65s

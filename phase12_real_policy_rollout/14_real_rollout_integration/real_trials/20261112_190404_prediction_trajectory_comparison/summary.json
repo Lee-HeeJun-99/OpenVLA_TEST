@@ -1,0 +1,156 @@
+{
+  "physical_calls": 0,
+  "predictions": 224,
+  "pose_feedback_samples": 224,
+  "joint_trajectory_samples": 12073,
+  "stream_pose_messages": 2143,
+  "prediction_sources_in_stream": 223,
+  "last_prediction_not_published": true,
+  "translation_modified_count": 0,
+  "rotation_modified_count": 76,
+  "max_target_translation_conversion_error_mm": 9.653151382456246e-14,
+  "max_target_rotation_conversion_error_deg": 5.553624024787126e-14,
+  "groups": {
+    "all": {
+      "translation_direction_cosine": {
+        "count": 223,
+        "median": 0.9823263230869764,
+        "p95": 0.9998652772079472,
+        "max": 0.9999938367257256
+      },
+      "rotation_direction_cosine": {
+        "count": 223,
+        "median": 0.9973233403643383,
+        "p95": 0.9999227227020703,
+        "max": 0.9999960934674829
+      },
+      "translation_magnitude_ratio": {
+        "count": 223,
+        "median": 0.4000578034713459,
+        "p95": 0.7066626173541515,
+        "max": 1.5161969021121025
+      },
+      "rotation_magnitude_ratio": {
+        "count": 223,
+        "median": 0.4243533083043161,
+        "p95": 0.5882708911423746,
+        "max": 62.41954499733795
+      },
+      "translation_target_error_at_next_feedback_mm": {
+        "count": 223,
+        "median": 2.0086436763811832,
+        "p95": 9.115492538205743,
+        "max": 11.3357906375343
+      },
+      "rotation_target_error_at_next_feedback_deg": {
+        "count": 223,
+        "median": 0.7467503101245316,
+        "p95": 2.2598030247742367,
+        "max": 9.135941201382616
+      },
+      "translation_opposite_direction_count": 5,
+      "rotation_opposite_direction_count": 0
+    },
+    "steps_0_to_216": {
+      "translation_direction_cosine": {
+        "count": 217,
+        "median": 0.983293595967213,
+        "p95": 0.9998660377094337,
+        "max": 0.9999938367257256
+      },
+      "rotation_direction_cosine": {
+        "count": 217,
+        "median": 0.9976517972486095,
+        "p95": 0.9999240568391814,
+        "max": 0.9999960934674829
+      },
+      "translation_magnitude_ratio": {
+        "count": 217,
+        "median": 0.40107833959424405,
+        "p95": 0.6846180652635531,
+        "max": 1.2748483148242713
+      },
+      "rotation_magnitude_ratio": {
+        "count": 217,
+        "median": 0.41621159635702326,
+        "p95": 0.5743936415146579,
+        "max": 0.9607950989102988
+      },
+      "translation_target_error_at_next_feedback_mm": {
+        "count": 217,
+        "median": 1.9768309885990583,
+        "p95": 9.157445195344545,
+        "max": 11.3357906375343
+      },
+      "rotation_target_error_at_next_feedback_deg": {
+        "count": 217,
+        "median": 0.7227964200769927,
+        "p95": 2.065418242990584,
+        "max": 2.815375395676621
+      },
+      "translation_opposite_direction_count": 4,
+      "rotation_opposite_direction_count": 0
+    },
+    "steps_217_to_222": {
+      "translation_direction_cosine": {
+        "count": 6,
+        "median": 0.25364288683500164,
+        "p95": 0.7848307476701994,
+        "max": 0.8617656173773643
+      },
+      "rotation_direction_cosine": {
+        "count": 6,
+        "median": 0.33864082242395876,
+        "p95": 0.8554129553648715,
+        "max": 0.9833460466903458
+      },
+      "translation_magnitude_ratio": {
+        "count": 6,
+        "median": 0.2195100573488658,
+        "p95": 1.326749190446575,
+        "max": 1.5161969021121025
+      },
+      "rotation_magnitude_ratio": {
+        "count": 6,
+        "median": 5.984705078608181,
+        "p95": 49.71322962726496,
+        "max": 62.41954499733795
+      },
+      "translation_target_error_at_next_feedback_mm": {
+        "count": 6,
+        "median": 3.362631470450724,
+        "p95": 3.9870373972163193,
+        "max": 4.030827290374393
+      },
+      "rotation_target_error_at_next_feedback_deg": {
+        "count": 6,
+        "median": 5.235223682509696,
+        "p95": 8.563381541638815,
+        "max": 9.135941201382616
+      },
+      "translation_opposite_direction_count": 1,
+      "rotation_opposite_direction_count": 0
+    }
+  },
+  "max_joint_age_at_publish_s": 0.03531147999456152,
+  "command_to_FK_flange_translation_mm": {
+    "count": 2143,
+    "median": 2.83147574555207,
+    "p95": 5.814125672185559,
+    "max": 10.182484960010454
+  },
+  "command_to_FK_flange_rotation_deg": {
+    "count": 2143,
+    "median": 0.7851079008855809,
+    "p95": 2.2119422993448903,
+    "max": 13.156853206092363
+  },
+  "urdf_path": "/home/ubuntu/robot_ws/src/doosan-robot2/dsr_description2/urdf/a0509.urdf",
+  "urdf_sha256": "fc1541ff6acb04e503174c6817c0b0fb721a342a0a7fa85e55be5cf5297a0742",
+  "limitations": [
+    "No per-target completion wait; intervals include previous control state and command transport delay.",
+    "No per-message vendor ACK; source mapping is host publication bookkeeping only.",
+    "FK flange is computed from measured joints, not direct TCP measurement; formal TCP remains unverified.",
+    "No new physical pass tolerance invented; diagnostic errors and direction cosines reported as values."
+  ]
+}

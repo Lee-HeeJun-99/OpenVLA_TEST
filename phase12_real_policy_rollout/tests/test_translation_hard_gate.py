@@ -50,5 +50,5 @@ class TranslationGateTests(unittest.TestCase):
         self.assertEqual(limiter.tv,.02)
         self.assertEqual(limiter.ta,.02)
         servo=yaml.safe_load((root/'14_real_rollout_integration/configs/servo_episode.yaml').read_text())
-        self.assertEqual(servo['servo_transport']['acceleration_mm_s2_deg_s2'],[40.,40.])
+        self.assertEqual(servo['servo_transport']['acceleration_mm_s2_deg_s2'],[80.,80.])
         self.assertEqual(servo['servo_transport']['target_time_s'],.7)

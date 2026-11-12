@@ -1,0 +1,477 @@
+{
+  "trials": [
+    {
+      "trial": "20261014_arm_only_70s_episode_001",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_70s_episode_001/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "ARM_ONLY_FULL_EPISODE_PASS",
+      "count": 8045,
+      "min_deg": [
+        -186.45957445422584,
+        -5.300388159149036,
+        -46.642207540047345,
+        -15.443216515297033,
+        -114.41993003270056,
+        -14.829243980615416
+      ],
+      "max_deg": [
+        -182.2655924170279,
+        -1.0718461118027627,
+        -40.79831476165736,
+        1.2566115867531875,
+        -111.23413855850985,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261014_arm_only_short_horizon_1step_real_01",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_short_horizon_1step_real_01/jointstate_during_test.json",
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_short_horizon_1step_real_01/jointstate_after.json",
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_arm_only_short_horizon_1step_real_01/jointstate_before.json"
+      ],
+      "invalid_rows": 0,
+      "status": "ARM_ONLY_SHORT_HORIZON_PASS",
+      "count": 1367,
+      "min_deg": [
+        -182.57898881690477,
+        -1.2284479420408745,
+        -41.005802248264004,
+        1.2566115867531875,
+        -113.64703948660026,
+        0.8605277428453845
+      ],
+      "max_deg": [
+        -182.55273356973524,
+        -1.0718461118027627,
+        -40.84106491567247,
+        1.2984218427054801,
+        -113.50012211755329,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261014_full_policy_live_003",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_003/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 1950,
+      "min_deg": [
+        -182.5480480599646,
+        -1.8712344835098358,
+        -41.09558849999841,
+        0.7912937437669617,
+        -114.1825399779076,
+        0.1491240404172041
+      ],
+      "max_deg": [
+        -182.267122379402,
+        -1.1501860337052818,
+        -40.32529684087729,
+        1.2645307642089942,
+        -113.50800415585549,
+        1.495469278444057
+      ]
+    },
+    {
+      "trial": "20261014_full_policy_live_008",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_008/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "OPERATOR_ABORT",
+      "count": 2326,
+      "min_deg": [
+        -182.59225304427292,
+        -1.644597387626294,
+        -41.02246790983884,
+        0.967006123137652,
+        -114.06208276170526,
+        -1.082162578935538
+      ],
+      "max_deg": [
+        -182.47511530000722,
+        -1.086549161208273,
+        -40.512314250541415,
+        1.2550080931238212,
+        -113.50655615575144,
+        1.5016097252296043
+      ]
+    },
+    {
+      "trial": "20261014_full_policy_live_012",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261014_full_policy_live_012/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 1575,
+      "min_deg": [
+        -182.60033998825023,
+        -1.3387656356986297,
+        -41.005802248264004,
+        1.2446244980381094,
+        -113.77744145823415,
+        0.7888903175919106
+      ],
+      "max_deg": [
+        -182.55273356973524,
+        -1.0718461118027627,
+        -40.747737210853415,
+        1.2976929334549927,
+        -113.50012211755329,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261105_161322_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161322_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 2361,
+      "min_deg": [
+        -182.5528565131403,
+        -1.2652644759362417,
+        -41.00592177657448,
+        0.617596430283984,
+        -113.76604187250939,
+        0.8761709571179764
+      ],
+      "max_deg": [
+        -182.3006449478484,
+        -1.0676251616174006,
+        -40.80852589446653,
+        1.2566115867531875,
+        -113.49967815525724,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261105_161811_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_161811_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "OPERATOR_RESULT_CONFIRMATION_PENDING",
+      "count": 4674,
+      "min_deg": [
+        -182.55273356973524,
+        -3.3987174989239772,
+        -41.005802248264004,
+        -0.17154098807745038,
+        -114.08415110291357,
+        -6.184794776941314
+      ],
+      "max_deg": [
+        -182.32058910022485,
+        -1.0718461118027627,
+        -39.548834105841074,
+        1.2566115867531875,
+        -113.49290260760058,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261105_162144_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162144_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 3273,
+      "min_deg": [
+        -182.55273356973524,
+        -2.501532877855075,
+        -41.005802248264004,
+        0.6108856627027407,
+        -114.09321476394217,
+        -1.9513148229902388
+      ],
+      "max_deg": [
+        -182.41332940877527,
+        -1.0718461118027627,
+        -39.66457507642153,
+        1.2566115867531875,
+        -113.50012211755329,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261105_162501_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_162501_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 2689,
+      "min_deg": [
+        -182.58345576062194,
+        -1.9322735362447125,
+        -41.005802248264004,
+        0.9707961310750686,
+        -114.1905791105607,
+        -0.5878642966618012
+      ],
+      "max_deg": [
+        -182.45906435545768,
+        -1.0718461118027627,
+        -40.115370976736955,
+        1.2566115867531875,
+        -113.50012211755329,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261105_175259_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261105_175259_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 19042,
+      "min_deg": [
+        -182.55273356973524,
+        -13.050335725437582,
+        -46.260929305104305,
+        -27.772408061559975,
+        -115.1941592958782,
+        -91.98859842094905
+      ],
+      "max_deg": [
+        -174.43269049572226,
+        -0.9735897851673095,
+        -40.127682392715904,
+        1.2566116934748932,
+        -101.93290989019155,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_101231_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_101231_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 27592,
+      "min_deg": [
+        -182.55273356973524,
+        -27.607465823293335,
+        -41.005802248264004,
+        -14.079541926747307,
+        -134.31327946209123,
+        -106.77193499260551
+      ],
+      "max_deg": [
+        -178.911341157148,
+        -1.0718461118027627,
+        -14.183927707832613,
+        1.2566115867531875,
+        -112.98927177896053,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_110547_arm_only_servo_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_110547_arm_only_servo_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "ARM_ONLY_SERVO_EPISODE_OPERATOR_RESULT_PENDING",
+      "count": 8091,
+      "min_deg": [
+        -182.5940152330788,
+        -28.094673462074102,
+        -41.993908640016826,
+        -15.083697555502365,
+        -132.76667874719024,
+        -116.5754421121082
+      ],
+      "max_deg": [
+        -178.96633784034495,
+        -1.0718461118027627,
+        -15.260300634229507,
+        1.2566116934748932,
+        -112.11028107429324,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_111406_arm_only_servo_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_111406_arm_only_servo_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "count": 6821,
+      "min_deg": [
+        -182.55273356973524,
+        -23.76378882069971,
+        -43.449244367228125,
+        -17.331219113219248,
+        -137.50808678598636,
+        -82.22544405906277
+      ],
+      "max_deg": [
+        -173.9998067665052,
+        -1.0718461118027627,
+        -14.23727404657135,
+        1.2566115867531875,
+        -111.86486554722552,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_125319_arm_only_servo_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_125319_arm_only_servo_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "ARM_ONLY_SERVO_EPISODE_INVALID",
+      "count": 6325,
+      "min_deg": [
+        -182.55273356973524,
+        -21.651585263271823,
+        -41.005802248264004,
+        -23.483301979791257,
+        -137.52309954178205,
+        -66.29795517878078
+      ],
+      "max_deg": [
+        -172.92346457595957,
+        -1.0718461118027627,
+        -12.425007147487173,
+        1.2662666994752352,
+        -113.50012211755329,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_132009_arm_only_moveline_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_132009_arm_only_moveline_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "OPERATOR_ABORT",
+      "count": 23383,
+      "min_deg": [
+        -182.55273356973524,
+        -21.116513366334903,
+        -41.50840513343398,
+        -18.887880696767684,
+        -133.99724660919475,
+        -58.77793056297509
+      ],
+      "max_deg": [
+        -174.10227326443373,
+        -1.0718461118027627,
+        -18.209714629171703,
+        1.2691895935531776,
+        -112.87791237473263,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_145225_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_145225_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "OPERATOR_ABORT",
+      "count": 29722,
+      "min_deg": [
+        -182.55273356973524,
+        -36.759654641280086,
+        -42.184173804631286,
+        -13.699680956057048,
+        -128.54544425520393,
+        -70.26725814323117
+      ],
+      "max_deg": [
+        -174.22879568861904,
+        -1.0718461118027627,
+        -11.832744369082443,
+        1.256612333805128,
+        -112.71925391050242,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_153541_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_153541_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 14370,
+      "min_deg": [
+        -205.38172562515408,
+        -36.01640370108305,
+        -52.141957822011655,
+        -21.31775976758745,
+        -113.50012211755329,
+        -30.77091404116164
+      ],
+      "max_deg": [
+        -182.55273356973524,
+        -1.0718461118027627,
+        -39.010536652068616,
+        1.2566143615175378,
+        -85.72923548063093,
+        1.4997091183713425
+      ]
+    },
+    {
+      "trial": "20261106_154158_full_policy_episode",
+      "source_files": [
+        "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_154158_full_policy_episode/jointstate.json"
+      ],
+      "invalid_rows": 0,
+      "status": "INVALID",
+      "count": 9509,
+      "min_deg": [
+        -182.55273356973524,
+        -6.347393833435815,
+        -48.15224625232128,
+        -8.953307369734317,
+        -113.50012211755329,
+        -28.072226045366854
+      ],
+      "max_deg": [
+        -176.34429651986875,
+        -0.7100305542605301,
+        -41.005802248264004,
+        1.2566118001965991,
+        -107.36390748797051,
+        1.4997091183713425
+      ]
+    }
+  ],
+  "aggregate": {
+    "count": 173115,
+    "min_deg": [
+      -205.38172562515408,
+      -36.759654641280086,
+      -52.141957822011655,
+      -27.772408061559975,
+      -137.52309954178205,
+      -116.5754421121082
+    ],
+    "max_deg": [
+      -172.92346457595957,
+      -0.7100305542605301,
+      -11.832744369082443,
+      1.2984218427054801,
+      -85.72923548063093,
+      1.5016097252296043
+    ]
+  },
+  "exclusions": [],
+  "measurement": "Actual received JointState; reordered by name; nominal frames not training commanded Cartesian poses."
+}

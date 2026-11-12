@@ -1,0 +1,66 @@
+{
+  "physical_commands": 0,
+  "transport_created": false,
+  "recorded_actions": 224,
+  "effective_stream_limits": {
+    "translation_velocity_mm_s": 40.0,
+    "translation_acceleration_mm_s2": 40.0,
+    "rotation_velocity_deg_s": 40.0,
+    "rotation_acceleration_deg_s2": 40.0
+  },
+  "servo_transport": {
+    "velocity_mm_s_deg_s": [
+      40.0,
+      40.0
+    ],
+    "acceleration_mm_s2_deg_s2": [
+      80.0,
+      80.0
+    ],
+    "target_time_s": 0.7,
+    "physical_validation": "NOT_EXECUTED",
+    "derivation": "USER_REQUESTED_TWO_TIMES_SERVO_PROFILE_20261112_OFFLINE_ONLY",
+    "previous_acceleration_mm_s2_deg_s2": [
+      20.0,
+      20.0
+    ],
+    "previous_target_time_s": 0.1
+  },
+  "generated_candidates": 2143,
+  "first_inhibit": null,
+  "activated_segments": 223,
+  "replaced_pending": 0,
+  "braking_plans": 202,
+  "deadline_limited_segments": 220,
+  "planned_execution_fraction_min": 0.0681308287336752,
+  "planned_execution_fraction_median": 0.37027076543499987,
+  "abc_entirely_normalized": true,
+  "input_sources_without_recorded_stream": 1,
+  "max_offline_planning_wall_s": 0.008683595006004907,
+  "max_translation_speed_mm_s": 7.207006596964475,
+  "max_rotation_speed_deg_s": 5.812340677109716,
+  "max_translation_acceleration_mm_s2": 38.85514699733726,
+  "max_rotation_acceleration_deg_s2": 37.40101746325422,
+  "production_release": {
+    "normalized_euler_controller_verified": false,
+    "physical_stop_verified": false,
+    "controller_joint_protection_verified": false,
+    "following_translation_mm": null,
+    "following_rotation_deg": null,
+    "feedback_max_age_s": null
+  },
+  "replay_following_guard_used": false,
+  "caveat": "Recorded actual poses are not counterfactual feedback; tracking not replay-validated.",
+  "max_arc_translation_mm": 2.1467916909072757,
+  "max_arc_rotation_deg": 1.4915700689761076,
+  "inputs": {
+    "real_trials/20261112_190404_arm_only_servo_episode/predictions.jsonl": "3e3a6abcbef9348fb9079dfb5c48a7e61e2108ebbf526379c917dd886041da1b",
+    "real_trials/20261112_190404_arm_only_servo_episode/servo_commands.jsonl": "1d3dbe8bd8de0dec3160d64323d6e28e5811c068ed77c7407bd33d31c410011b"
+  },
+  "code_sha256": {
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/servo_experimental/live_segment.py": "e2c3817bfef9004f03de7b654a9cdd939ffdb830fed6283df5422f96520ac6ff",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/servo_experimental/bounded_segment.py": "d301c5d2c1a4c4661b2770a1478c0e31b2d314d0b10a177a177eb2ac15186ff2",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/replay_live_command_segment.py": "1ba38967b573b10cd68313d67a1d0d79193eae7638708de3b1de68bb6ecc8e69",
+    "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/configs/servo_episode.yaml": "1ab9d0328745cf0062743a059b254baeb606d32d91992a644bf5c2800a9e1629"
+  }
+}

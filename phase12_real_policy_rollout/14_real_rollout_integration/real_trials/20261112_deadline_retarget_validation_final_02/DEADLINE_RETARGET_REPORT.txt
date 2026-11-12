@@ -1,0 +1,90 @@
+ServoL 실행 준비 소프트웨어 수정 — 2026-11-12
+
+결론
+기록된 발행 시점 전체 재생은 PASS. 실제 rollout release는 BLOCKED.
+실제 로봇/그리퍼/정지 명령 0회. 실제 ROS transport 생성 없음.
+
+해결한 소프트웨어 문제
+1. 움직이는 도중 새 목표의 초기 속도를 0으로 재설정하지 않는다.
+   기존 위치 경로/회전 arc 안에서 C2 감속하고 최신 목표로 전환한다.
+2. 오래된 목표를 누적 실행하지 않는 latest-only 대기 큐를 사용한다.
+3. 활성화 시 원래 source timestamp로 남은 유효시간을 계산한다.
+   기존 최대 tick gap 0.1초 두 구간을 endpoint/다음 목표 전환 여유로
+   확보하고, 남은 시간에 맞는 quintic 실행 진행률을 산정한다.
+4. 속도/가속도 한계를 지킬 수 있는 부분까지만 진행한다. 모델 raw action,
+   limited action, 원래 목표/예산은 수정하지 않는다. 실제 실행 부분은
+   planned_execution_fraction/fresh_horizon_s 로그에 별도로 기록한다.
+5. source timestamp 갱신, 유효시간 연장, 속도/가속도 검사 제거 없음.
+
+중요한 의미 변화
+이는 원본 delta 전량 실행을 보장하지 않는다. freshness와 기존 동적 제한을
+함께 지키기 위한 실행 구간 제한이다. 재생의 223 활성 구간 중 220개에서
+deadline에 맞춘 계획 진행률이 1보다 작았다. 해당 계획 진행률 중앙값은
+0.37027, 최소값은 0.06813이다. 이후 새 목표가 도착해 안전 감속하면
+실제 완료 비율은 이 초기 계획 진행률과도 다를 수 있다.
+이를 full-delta 실행 또는 실제 task 성능 개선으로 주장하지 않는다.
+
+고정 설정
+stream: 40 mm/s, 40 mm/s², 40 deg/s, 40 deg/s².
+transport: vel=[40,40], acc=[80,80], time=0.7 s.
+20 Hz, action age=1.2초, raw gate/workspace/watchdog/관절 안전 설정 유지.
+MoveLine 및 upstream canonical limiter는 변경하지 않음.
+
+190404 재생
+입력 predictions=224. 원본에서 stream에 등장한 source=223.
+재생 후보=2143/2143. 활성화 구간=223. 안전 감속 계획=202.
+first_inhibit=null. ABC 모두 [-180,180] 범위.
+속도/가속도 및 stale_action으로 인한 중단 없음.
+원본에 발행 기록이 없는 마지막 prediction 1개를 실행한 것으로 세지 않음.
+
+최대 후보 속도/가속도:
+translation speed 7.207007 mm/s
+translation acceleration 38.855147 mm/s²
+rotation speed 5.812341 deg/s
+rotation acceleration 37.401017 deg/s²
+단일 계획 계산 최대 약 8.68 ms (오프라인 관측값, 실시간 보장 아님).
+
+실제-명령 추종오차 검사는 counterfactual feedback이 없어 이 재생에서
+검증하지 않았다. 실제 로봇의 관절 경로, stopped state, task 결과를
+재생 결과로 검증했다고 주장하지 않는다.
+
+테스트
+490 passed, 26 existing SciPy gimbal-lock warnings, 13.54 s.
+Fake ROS/IO만 사용하는 회귀 테스트. 실제 하드웨어 호출 없음.
+
+실기 차단 사유는 그대로 유지
+normalized_euler_controller_verified=false
+physical_stop_verified=false
+controller_joint_protection_verified=false
+following_translation_mm=null
+following_rotation_deg=null
+feedback_max_age_s=null
+
+이 값들은 라이브러리 설치 문제가 아니며, 오류 메시지를 지우기 위해
+임의로 true/숫자를 넣으면 실제 검증을 위조하는 결과가 된다.
+기록상 급회전/관절 한계/Stop ACK 실패가 있었으므로 full episode 이전에
+컨트롤러 Euler 경계와 정지/보호 경로의 제한된 물리 검증이 필요하다.
+현재 코드 그대로 실제 rollout이 시작되지는 않는다.
+
+시작 코드 개선
+--check-readiness는 ROS 초기화 없이 설정상 미검증 항목을 JSON으로 출력.
+기본 실행의 servo_release_blocked는 traceback 대신 NOT_EXECUTED JSON과
+종료 코드 2를 출력한다. 그 밖의 PermissionError를 로봇 명령 0회로
+잘못 보고하지 않도록 이 특정 preflight 예외만 처리한다.
+
+실기 미구동 확인 명령:
+/usr/bin/python3 -u start_servo_episode_confirmed.py --check-readiness
+
+오프라인 재현:
+/usr/bin/python3 replay_live_command_segment.py --trial real_trials/20261112_190404_arm_only_servo_episode --output real_trials/<new_directory>
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /usr/bin/python3 -m pytest tests ../tests ../15_valid_invalid_rollout_policy/tests -q
+
+변경 파일
+servo_experimental/live_segment.py
+start_servo_episode_confirmed.py
+replay_live_command_segment.py
+tests/test_live_command_segment.py
+tests/test_deadline_replay.py
+
+이번 단계에서 config의 release 증거를 변경하거나 실제 controller 제한을
+변경하지 않았다. 원본 로그와 이전 재생 결과도 덮어쓰지 않았다.

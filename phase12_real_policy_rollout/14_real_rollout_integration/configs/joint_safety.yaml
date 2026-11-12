@@ -1,0 +1,17 @@
+# Does NOT write controller settings. Conservative offline envelope only.
+# All six currently active controller bounds require a fresh readback/manual
+# contract before live use; a historical J5 alarm is not a full live readback.
+controller_limits_verified: false
+source: MANUAL_DEFAULTS_INTERSECT_URDF_NOT_CURRENT_CONTROLLER_READBACK
+lower_deg: [-360, -95, -135, -360, -135, -360]
+upper_deg: [360, 95, 135, 360, 135, 360]
+max_joint_speed_deg_s: [180, 180, 180, 360, 360, 360]
+lookahead_s: 0.2
+integration_step_s: 0.02
+jointstate_max_age_s: 0.5
+scaled_jacobian_min_singular_value: 0.0001
+jacobian_characteristic_length_m: 0.5
+physical_speedl_contract_verified: false
+stop_latency_bound_verified: false
+# Local differential kinematics is an estimate, never a certified reachability
+# proof. These numerical parameters have not been physically validated.

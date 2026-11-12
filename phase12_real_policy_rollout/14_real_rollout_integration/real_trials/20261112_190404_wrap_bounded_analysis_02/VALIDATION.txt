@@ -1,0 +1,17 @@
+Physical calls: 0
+Draft physical executor: NOT CALLED
+Existing live launchers / limits / hardware settings: UNCHANGED
+
+Command:
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /usr/bin/python3 -m pytest tests ../tests ../15_valid_invalid_rollout_policy/tests -q
+
+Final result: 476 passed, 26 existing SciPy gimbal-lock warnings in 13.11 seconds.
+New bounded-segment / synthetic-geometry tests: 16 cases.
+Draft script syntax: py_compile PASS (no execution).
+
+Synthetic test remains a DRAFT. Reviewed safe pose, controller limits, margins,
+verified TCP offset, functioning Stop path, approved transport and fresh operator
+confirmation are prerequisites. Template approvals are false by default.
+
+New linear-time interpolation is budget-bounded but has diagnosed velocity /
+acceleration violations under unchanged limits; it is NOT_PHYSICAL_READY.

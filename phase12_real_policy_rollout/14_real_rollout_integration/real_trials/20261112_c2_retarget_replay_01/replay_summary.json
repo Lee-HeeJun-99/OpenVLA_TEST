@@ -1,0 +1,53 @@
+{
+  "physical_commands": 0,
+  "transport_created": false,
+  "recorded_actions": 224,
+  "effective_stream_limits": {
+    "translation_velocity_mm_s": 40.0,
+    "translation_acceleration_mm_s2": 40.0,
+    "rotation_velocity_deg_s": 40.0,
+    "rotation_acceleration_deg_s2": 40.0
+  },
+  "servo_transport": {
+    "velocity_mm_s_deg_s": [
+      40.0,
+      40.0
+    ],
+    "acceleration_mm_s2_deg_s2": [
+      80.0,
+      80.0
+    ],
+    "target_time_s": 0.7,
+    "physical_validation": "NOT_EXECUTED",
+    "derivation": "USER_REQUESTED_TWO_TIMES_SERVO_PROFILE_20261112_OFFLINE_ONLY",
+    "previous_acceleration_mm_s2_deg_s2": [
+      20.0,
+      20.0
+    ],
+    "previous_target_time_s": 0.1
+  },
+  "generated_candidates": 25,
+  "first_inhibit": {
+    "reason": "stale_action",
+    "source": 78692.888394461,
+    "requested_monotonic": 78693.606755556,
+    "step": 2,
+    "additional_dispatch_allowed": false
+  },
+  "production_release": {
+    "normalized_euler_controller_verified": false,
+    "physical_stop_verified": false,
+    "controller_joint_protection_verified": false,
+    "following_translation_mm": null,
+    "following_rotation_deg": null,
+    "feedback_max_age_s": null
+  },
+  "replay_following_guard_used": false,
+  "caveat": "Recorded actual poses are not counterfactual feedback; tracking not replay-validated.",
+  "max_arc_translation_mm": 3.103015394809577,
+  "max_arc_rotation_deg": 0.8000000000000005,
+  "inputs": {
+    "real_trials/20261112_190404_arm_only_servo_episode/predictions.jsonl": "3e3a6abcbef9348fb9079dfb5c48a7e61e2108ebbf526379c917dd886041da1b",
+    "real_trials/20261112_190404_arm_only_servo_episode/servo_commands.jsonl": "1d3dbe8bd8de0dec3160d64323d6e28e5811c068ed77c7407bd33d31c410011b"
+  }
+}

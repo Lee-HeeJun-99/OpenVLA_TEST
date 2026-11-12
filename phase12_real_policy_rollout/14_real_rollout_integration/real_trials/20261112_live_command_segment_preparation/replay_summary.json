@@ -1,0 +1,29 @@
+{
+  "physical_commands": 0,
+  "transport_created": false,
+  "recorded_actions": 224,
+  "generated_candidates": 10,
+  "first_inhibit": {
+    "reason": "stream_dynamic_limit",
+    "source": 78692.357775128,
+    "requested_monotonic": 78692.834664467,
+    "step": 1,
+    "additional_dispatch_allowed": false
+  },
+  "production_release": {
+    "normalized_euler_controller_verified": false,
+    "physical_stop_verified": false,
+    "controller_joint_protection_verified": false,
+    "following_translation_mm": null,
+    "following_rotation_deg": null,
+    "feedback_max_age_s": null
+  },
+  "replay_following_guard_used": false,
+  "caveat": "Recorded actual poses are not counterfactual feedback; tracking not replay-validated.",
+  "max_arc_translation_mm": 1.5070429157124843,
+  "max_arc_rotation_deg": 0.3885363683940063,
+  "inputs": {
+    "real_trials/20261112_190404_arm_only_servo_episode/predictions.jsonl": "3e3a6abcbef9348fb9079dfb5c48a7e61e2108ebbf526379c917dd886041da1b",
+    "real_trials/20261112_190404_arm_only_servo_episode/servo_commands.jsonl": "1d3dbe8bd8de0dec3160d64323d6e28e5811c068ed77c7407bd33d31c410011b"
+  }
+}

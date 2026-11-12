@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 import math
 from typing import Sequence
+from pathlib import Path
+import yaml
 
 @dataclass(frozen=True)
 class WorkspaceDecision:
@@ -28,5 +30,11 @@ class CartesianWorkspace:
         if len(current_m)!=3 or len(delta_m)!=3:return WorkspaceDecision(False,'invalid_tcp_position')
         return self.inspect([float(a)+float(b) for a,b in zip(current_m,delta_m)])
 
+# Legacy public name retained; bounds and provenance come from the same
+# configuration used by the periodic Cartesian tracker.
+_config=yaml.safe_load((Path(__file__).resolve().parents[1]/'01_configs/safety_limits.yaml').read_text())
+_bounds=_config['workspace_m']
 PHASE12_DATA_DERIVED_WORKSPACE=CartesianWorkspace(
-    minimum_m=(0.275,-0.355,0.267),maximum_m=(0.554,0.386,0.754))
+    minimum_m=tuple(float(_bounds[axis][0]) for axis in ('x','y','z')),
+    maximum_m=tuple(float(_bounds[axis][1]) for axis in ('x','y','z')),
+    provenance=_config['workspace_provenance'])

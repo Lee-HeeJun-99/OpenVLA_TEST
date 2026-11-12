@@ -1,0 +1,99 @@
+ServoL 목표 전환 생성기 수정 결과 — 2026-11-12
+
+실제 로봇 호출: 0. ROS transport 생성: 없음. 기존 결과 파일 덮어쓰기: 없음.
+최종 결과: SOFTWARE CHANGE TESTED / PHYSICAL ROLLOUT BLOCKED
+
+1. 수정 내용
+
+이전 방식은 새 목표마다 정지 출발용 quintic 함수를 즉시 다시 시작했다.
+위치는 연속이어도 진행 중인 속도/가속도와 새 함수의 초기 조건이 달라졌다.
+
+새 방식은 현재 명령 경로의 진행률/속도/가속도를 그대로 초기 조건으로
+가져오는 감속 다항식을 생성한다. 원래 위치 직선/SO(3) 최단 회전 arc 안에서
+만 감속하고, 속도/가속도가 0인 경계에서 가장 최신 대기 목표를 시작한다.
+임의 방향의 곡선 혼합으로 기존 action 경로 길이 예산을 늘리지 않는다.
+수정된 각 구간의 속도/가속도 연속성(C2)은 명령 생성기 기준이며, 실제
+두산 컨트롤러의 관절 경로나 물리적 추종 성능을 검증했다는 의미가 아니다.
+
+새 목표는 latest-only 큐에 보관한다. 오래된 대기 목표는 교체하며, 누적
+재생하지 않는다. 안전 감속으로 이전 목표의 일부가 실행 취소될 수 있다.
+모델 원본 출력 자체는 수정하지 않지만, 모든 delta의 끝점 도달을 보장하는
+방식은 아니다. 활성화된 target과 취소된 부분을 발행 로그로 구분한다.
+
+감속 후보의 위치/속도/가속도 극값은 다항식 도함수의 실근을 사용해 검사한다.
+벡터화된 grid 계산은 불가능한 후보를 빨리 버리는 용도일 뿐, 허용 판정은
+항상 극값 검사 후 수행한다. 짧은 감속이 불가능하면 원래의 bounded profile을
+유지하고, action 유효시간 초과 시 기존대로 차단한다.
+
+불규칙 tick에서 평균 속도들의 차이는 두 평균 구간 중심의 시간 차이로
+나눈다. 속도 이력을 초기화해서 가속도 점프를 숨기지 않는다.
+
+2. 변경 파일
+
+servo_experimental/live_segment.py
+  - C2 감속 연결, 최신 목표 큐, 다항식 극값 검사, 구간 전환 provenance.
+start_servo_episode_confirmed.py
+  - 실행 계약/로그에 새로운 생성기 및 목표 교체 정책 명시.
+replay_live_command_segment.py
+  - active action과 최신 대기 action 분리, peak/계획시간/코드 hash 기록.
+tests/test_live_command_segment.py
+  - C2 초기/종료 미분값, 정지 경계 큐 교체, source age 유지,
+    불규칙 tick/임의 방향 변경/경로 예산/동적 한계 회귀 검사.
+
+3. 설정 유지
+
+직전 요청의 2배 ServoL stream 설정 유지:
+  translation velocity/acceleration = 40 mm/s / 40 mm/s²
+  rotation velocity/acceleration = 40 deg/s / 40 deg/s²
+  transport vel=[40,40], acc=[80,80], time=0.7 s
+
+20 Hz, action 유효시간 1.2 s, raw gate, workspace, watchdog, MoveLine 및
+공유 canonical 회전 limiter는 이 작업에서 변경하지 않았다.
+source timestamp를 갱신하여 freshness를 위장하지 않았다.
+
+4. 190404 기록 재생 결과
+
+입력 기록: 224 predictions.
+안전 검사 통과 후보: 43개. 활성화 구간: 4개. 감속 계획: 4개.
+기존 step 1의 stream_dynamic_limit은 이 재생 prefix에서 발생하지 않았다.
+
+통과한 prefix의 관측 최대값:
+  translation speed = 8.656464 mm/s
+  translation acceleration = 39.311473 mm/s²
+  rotation speed = 2.231755 deg/s
+  rotation acceleration = 12.018210 deg/s²
+  단일 action 누적 translation = 3.103015 mm
+  단일 action 누적 rotation = 0.800000 deg
+  오프라인 단일 계획 계산 최대 = 약 4.76 ms
+
+이후 monotonic 78694.525225744에서 stale_action으로 차단:
+  사용 중 action = policy step 3
+  원래 source = 78693.323061958
+  age = 1.202163786 s > 기존 1.2 s
+  대기 중 최신 action = policy step 4, source 78693.793542680
+  후속 dispatch 허용 = false
+
+이는 224개 전체 재생 PASS가 아니다. 대기/감속 지연과 기존 유효시간이
+충돌한다는 추가 증거이며, threshold 변경이나 source 갱신으로 우회하지 않았다.
+기록된 실제 pose는 새 궤적에 대한 가상 피드백이 아니므로 이 재생에서
+following-error 성능 또는 실제 정지/관절 보호 성능은 주장하지 않는다.
+
+5. 테스트
+
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /usr/bin/python3 -m pytest tests ../tests ../15_valid_invalid_rollout_policy/tests -q
+487 passed, 26 existing SciPy gimbal-lock warnings, 13.76 s.
+Fake ROS/명령 transport만 사용. 실제 하드웨어 호출 없음.
+
+오프라인 재현:
+/usr/bin/python3 replay_live_command_segment.py --trial real_trials/20261112_190404_arm_only_servo_episode --output real_trials/<new_directory>
+
+6. 실기 준비 상태
+
+BLOCKED. 실행 잠금 해제 안 함. 가속도 검사를 제거하지 않음.
+남은 사항:
+  - 감속/목표 교체 지연과 1.2초 action 유효시간을 함께 만족하는 정책 검증.
+  - 근거 있는 실제-명령 추종오차 threshold 확정.
+  - 컨트롤러 normalized Euler 경계 동작 및 관절 보호 확인.
+  - 물리 Stop ACK 실패 원인 해결/검증.
+
+이 기록 재생을 근거로 full physical rollout 명령을 권장하지 않는다.

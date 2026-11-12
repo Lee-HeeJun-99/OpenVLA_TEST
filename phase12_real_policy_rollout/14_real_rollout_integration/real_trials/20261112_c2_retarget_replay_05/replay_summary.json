@@ -1,0 +1,65 @@
+{
+  "physical_commands": 0,
+  "transport_created": false,
+  "recorded_actions": 224,
+  "effective_stream_limits": {
+    "translation_velocity_mm_s": 40.0,
+    "translation_acceleration_mm_s2": 40.0,
+    "rotation_velocity_deg_s": 40.0,
+    "rotation_acceleration_deg_s2": 40.0
+  },
+  "servo_transport": {
+    "velocity_mm_s_deg_s": [
+      40.0,
+      40.0
+    ],
+    "acceleration_mm_s2_deg_s2": [
+      80.0,
+      80.0
+    ],
+    "target_time_s": 0.7,
+    "physical_validation": "NOT_EXECUTED",
+    "derivation": "USER_REQUESTED_TWO_TIMES_SERVO_PROFILE_20261112_OFFLINE_ONLY",
+    "previous_acceleration_mm_s2_deg_s2": [
+      20.0,
+      20.0
+    ],
+    "previous_target_time_s": 0.1
+  },
+  "generated_candidates": 43,
+  "first_inhibit": {
+    "reason": "stale_action",
+    "source": 78693.79354268,
+    "requested_monotonic": 78694.525225744,
+    "step": 4,
+    "additional_dispatch_allowed": false,
+    "active_source_monotonic": 78693.323061958,
+    "active_policy_step": 3,
+    "active_action_age_s": 1.2021637860016199,
+    "pending_source_monotonic": 78693.79354268
+  },
+  "activated_segments": 4,
+  "replaced_pending": 0,
+  "braking_plans": 4,
+  "max_offline_planning_wall_s": 0.22443997599475551,
+  "max_translation_speed_mm_s": 8.65646375387417,
+  "max_rotation_speed_deg_s": 2.2317552838055823,
+  "max_translation_acceleration_mm_s2": 39.31147278035681,
+  "max_rotation_acceleration_deg_s2": 12.018209871520176,
+  "production_release": {
+    "normalized_euler_controller_verified": false,
+    "physical_stop_verified": false,
+    "controller_joint_protection_verified": false,
+    "following_translation_mm": null,
+    "following_rotation_deg": null,
+    "feedback_max_age_s": null
+  },
+  "replay_following_guard_used": false,
+  "caveat": "Recorded actual poses are not counterfactual feedback; tracking not replay-validated.",
+  "max_arc_translation_mm": 3.1030153947607118,
+  "max_arc_rotation_deg": 0.7999999999873617,
+  "inputs": {
+    "real_trials/20261112_190404_arm_only_servo_episode/predictions.jsonl": "3e3a6abcbef9348fb9079dfb5c48a7e61e2108ebbf526379c917dd886041da1b",
+    "real_trials/20261112_190404_arm_only_servo_episode/servo_commands.jsonl": "1d3dbe8bd8de0dec3160d64323d6e28e5811c068ed77c7407bd33d31c410011b"
+  }
+}

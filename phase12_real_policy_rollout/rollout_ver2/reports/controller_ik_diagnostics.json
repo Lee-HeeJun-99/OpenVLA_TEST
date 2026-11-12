@@ -1,0 +1,456 @@
+{
+  "world_left": {
+    "frame": "world_left",
+    "failure_step": 81,
+    "failure_sample": 7,
+    "target_tool0_position_m": [
+      0.6124552409246654,
+      0.05154248289885224,
+      0.5976121011079562
+    ],
+    "target_tool0_rotation_matrix": [
+      [
+        -0.8548251641278873,
+        -0.1191663301685211,
+        0.5050478438008601
+      ],
+      [
+        -0.3703052411697141,
+        0.8219045043774308,
+        -0.43283601288054824
+      ],
+      [
+        -0.3635216185262862,
+        -0.5570209793519965,
+        -0.746712569484251
+      ]
+    ],
+    "seed_joint_rad": [
+      -2.9426576283110117,
+      -0.7936271679085242,
+      -0.009673921628359207,
+      -0.568224569228105,
+      -1.796621008509994,
+      -1.9424969720387473
+    ],
+    "seed_joint_deg": [
+      -168.60186265419748,
+      -45.471487228078765,
+      -0.5542748806453074,
+      -32.556869632409686,
+      -102.93880117216023,
+      -111.2968782147621
+    ],
+    "initial_position_residual_m": 7.85036113228528e-05,
+    "initial_rotation_residual_rad": 0.0004460143833353094,
+    "original_solver_iterations_limit": 250,
+    "original_solver_iterations_run": 17,
+    "jacobian_singular_values": [
+      1.856656697346648,
+      1.553316591696414,
+      0.9081875378758483,
+      0.5108502177738297,
+      0.38875826310232897,
+      0.0014740966938967036
+    ],
+    "jacobian_min_singular_value": 0.0014740966938967036,
+    "jacobian_condition_number": 1259.5216480939696,
+    "urdf_margin_to_lower_rad": [
+      3.340542371688988,
+      5.489572832091476,
+      2.7828260783716408,
+      5.7149754307718945,
+      4.486578991490006,
+      4.340703027961252
+    ],
+    "urdf_margin_to_upper_rad": [
+      9.225857628311012,
+      7.076827167908524,
+      2.802173921628359,
+      6.851424569228105,
+      8.079821008509994,
+      8.225696972038747
+    ],
+    "candidate_margin_to_lower_rad": [
+      3.3056210938286883,
+      5.454651554231176,
+      2.7479462965226813,
+      5.680054152911595,
+      4.4516577136297055,
+      4.3057817501009525
+    ],
+    "candidate_margin_to_upper_rad": [
+      9.190936350450713,
+      7.041905890048224,
+      2.7672941397793998,
+      6.816503291367805,
+      8.044899730649695,
+      8.190775694178447
+    ],
+    "target_inside_workspace_candidate": true,
+    "bounded_least_squares": {
+      "success": true,
+      "nfev": 21,
+      "position_residual_m": 9.933996019633532e-06,
+      "rotation_residual_rad": 1.1994391780576325e-06,
+      "joint_change_rad": [
+        -6.353134604220045e-05,
+        -0.004538547881096755,
+        0.009433208399477913,
+        -0.000409404539811864,
+        -0.004048617247159436,
+        -0.0031191434007975527
+      ]
+    },
+    "multistart_reachability": {
+      "starts": 39,
+      "position_residual_m": 9.933996026728229e-06,
+      "rotation_residual_rad": 1.1994391176429044e-06,
+      "joint_change_rad": [
+        -6.353134571979169e-05,
+        -0.004538531572075621,
+        0.009433173915190966,
+        -0.00040940225038188505,
+        -0.004048601929672824,
+        -0.003119133349192005
+      ]
+    },
+    "dls_attempts": [
+      {
+        "method": "dls",
+        "damping": 0.01,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=1.00141e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.01,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=1.00061e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.01,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=1.00061e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.001,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=1.00061e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.001,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=1.00061e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.001,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=1.00061e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.0001,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=1.08214e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.0001,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=1.08214e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.0001,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=1.08214e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-05,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=1.2111e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-05,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=1.2111e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-05,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=1.2111e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-06,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=1.21114e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-06,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=1.21114e-05 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-06,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=1.21114e-05 (mixed m/rad norm)"
+      }
+    ],
+    "classification": "UNREACHABLE",
+    "classified_stop_reason_code": "IK_TARGET_UNREACHABLE",
+    "recommended_successful_dls": null
+  },
+  "tool_right": {
+    "frame": "tool_right",
+    "failure_step": 120,
+    "failure_sample": 25,
+    "target_tool0_position_m": [
+      0.7903206983702404,
+      0.09526550290432934,
+      0.4036445719109527
+    ],
+    "target_tool0_rotation_matrix": [
+      [
+        -0.7720341320510049,
+        0.3550766752872934,
+        0.5271468994646309
+      ],
+      [
+        -0.5931951506892591,
+        -0.10473648837475788,
+        -0.7982166254856331
+      ],
+      [
+        -0.2282165904289143,
+        -0.9289514641087802,
+        0.2914899057997635
+      ]
+    ],
+    "seed_joint_rad": [
+      -2.867393695699198,
+      -1.2872196982475324,
+      -0.0249587862100891,
+      -1.7948707161140842,
+      -1.2063091980655867,
+      4.780109002720433
+    ],
+    "seed_joint_deg": [
+      -164.28955696598354,
+      -73.75225601568697,
+      -1.4300331116074245,
+      -102.83851680496075,
+      -69.116425836969,
+      273.88007146836975
+    ],
+    "initial_position_residual_m": 0.00020223907845918443,
+    "initial_rotation_residual_rad": 0.002115968474007812,
+    "original_solver_iterations_limit": 250,
+    "original_solver_iterations_run": 44,
+    "jacobian_singular_values": [
+      1.86846202701061,
+      1.56275294914732,
+      1.0589708141976646,
+      0.4883511107423662,
+      0.4538192421937331,
+      0.0037759436725454286
+    ],
+    "jacobian_min_singular_value": 0.0037759436725454286,
+    "jacobian_condition_number": 494.8331302174981,
+    "urdf_margin_to_lower_rad": [
+      3.415806304300802,
+      4.995980301752468,
+      2.7675412137899107,
+      4.488329283885916,
+      5.076890801934413,
+      11.063309002720434
+    ],
+    "urdf_margin_to_upper_rad": [
+      9.150593695699198,
+      7.570419698247532,
+      2.8174587862100893,
+      8.078070716114084,
+      7.489509198065587,
+      1.5030909972795667
+    ],
+    "candidate_margin_to_lower_rad": [
+      3.380885026440502,
+      4.961059023892168,
+      2.7326614319409512,
+      4.453408006025616,
+      5.041969524074114,
+      11.028387724860133
+    ],
+    "candidate_margin_to_upper_rad": [
+      9.115672417838898,
+      7.535498420387232,
+      2.78257900436113,
+      8.043149438253785,
+      7.454587920205286,
+      1.4681697194192669
+    ],
+    "target_inside_workspace_candidate": true,
+    "bounded_least_squares": {
+      "success": true,
+      "nfev": 37,
+      "position_residual_m": 0.00010864533012760725,
+      "rotation_residual_rad": 1.257297795945818e-05,
+      "joint_change_rad": [
+        -1.642285221992168e-05,
+        -0.011474278244799851,
+        0.024687940509266114,
+        0.005100648237748029,
+        0.002702213601439407,
+        -0.011757777897007493
+      ]
+    },
+    "multistart_reachability": {
+      "starts": 39,
+      "position_residual_m": 0.0001086453300871216,
+      "rotation_residual_rad": 1.2572978308642212e-05,
+      "joint_change_rad": [
+        -1.6422852279873723e-05,
+        -0.011474272339290437,
+        0.024687928022406172,
+        0.005100645765189427,
+        0.0027022121730899684,
+        -0.011757771013598983
+      ]
+    },
+    "dls_attempts": [
+      {
+        "method": "dls",
+        "damping": 0.01,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=0.00010937 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.01,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=0.00010937 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.01,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=0.00010937 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.001,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=0.00010937 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.001,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=0.00010937 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.001,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=0.00010937 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.0001,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=0.000126529 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.0001,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=0.000126529 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 0.0001,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=0.000126529 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-05,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=0.000126627 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-05,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=0.000126627 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-05,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=0.000126627 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-06,
+        "max_iterations": 250,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 250 iterations; best combined residual=0.000126628 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-06,
+        "max_iterations": 1000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 1000 iterations; best combined residual=0.000126628 (mixed m/rad norm)"
+      },
+      {
+        "method": "dls",
+        "damping": 1e-06,
+        "max_iterations": 4000,
+        "success": false,
+        "error": "IKConvergenceError:DLS IK did not converge in 4000 iterations; best combined residual=0.000126628 (mixed m/rad norm)"
+      }
+    ],
+    "classification": "UNREACHABLE",
+    "classified_stop_reason_code": "IK_TARGET_UNREACHABLE",
+    "recommended_successful_dls": null
+  }
+}

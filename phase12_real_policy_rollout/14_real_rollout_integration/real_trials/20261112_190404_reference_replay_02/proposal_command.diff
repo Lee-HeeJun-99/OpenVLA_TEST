@@ -1,0 +1,17 @@
+--- original_reference.py
++++ proposal_command_offline.py
+@@ -1,5 +1,11 @@
+ def update(tracker, limited_action, actual_pose, source, now):
+-    # Original: target from actual; tracker continues commanded state.
+-    anchor = actual_pose
+-    target = delta_target(anchor, limited_action)
++    # OFFLINE proposal command; guard checks candidate BEFORE fake publication.
++    # Existing hard gates/workspace checks must validate the NEW target too.
++    anchor, target = install_reference(tracker, limited_action, actual_pose, "command")
+     tracker.set_target(target, source, now)
++    guard.begin_segment(source, limited_action)
++
++def candidate_tick(now, feedback, feedback_received):
++    candidate = tracker.tick(now)
++    # Fake callbacks only in this experiment. Fault latches inhibit + one stop.
++    guard.inspect_and_publish(candidate['pos'], now, feedback, feedback_received)

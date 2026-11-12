@@ -17,7 +17,7 @@ class TestIntegration(unittest.TestCase):
    self.assertTrue(all(r['safety_limits']['max_translation_step_m']==.004 for r in rows))
    self.assertTrue(all(r['safety_limits']['max_translation_velocity_m_s']==.02 for r in rows))
    self.assertTrue(all(r['workspace_result']['accepted'] for r in rows))
-  self.assertTrue(all(r['workspace_result']['status']=='DATA_DERIVED_AND_OPERATOR_APPROVED_2026_10_02' for r in rows))
+   self.assertTrue(all(r['workspace_result']['status']=='USER_SPECIFIED_BASE_X0_800_YNEG800_800_ZNEG50_1000_MM_2026_11_12' for r in rows))
  def test_no_command_or_ros_capability(self):
   text=P.read_text().lower()
   for bad in ('rclpy','create_publisher','create_client','actionclient','movej','movel','servol','speedl','call_async'):

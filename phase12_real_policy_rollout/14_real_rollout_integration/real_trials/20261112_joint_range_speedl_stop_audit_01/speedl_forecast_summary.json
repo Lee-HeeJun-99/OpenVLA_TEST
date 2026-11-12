@@ -1,0 +1,13 @@
+{
+  "samples": 409,
+  "nominal_geometry_pass": 119,
+  "physical_dispatch_allowed": 0,
+  "reasons": {
+    "'controller_feedback'": 274,
+    "NOMINAL_GEOMETRIC_CHECK_PASS_NOT_LIVE_APPROVAL": 119,
+    "joint_limit_predicted:joint_5": 16
+  },
+  "mode": "Independent first ticks from recorded target/pose; not hypothetical full closed-loop trajectory.",
+  "controller_limit_change": false,
+  "physical_commands": 0
+}

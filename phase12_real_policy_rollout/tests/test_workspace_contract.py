@@ -6,8 +6,9 @@ class Tests(unittest.TestCase):
  def test_bounds_and_delta(self):
   w=PHASE12_DATA_DERIVED_WORKSPACE
   self.assertTrue(w.inspect((.4,0,.5)).accepted)
-  self.assertEqual('workspace_violation',w.inspect((.6,0,.5)).reason)
-  self.assertEqual('workspace_violation',w.inspect_delta((.553,0,.5),(.002,0,0)).reason)
+  self.assertTrue(w.inspect((.6,0,.5)).accepted)
+  self.assertEqual('workspace_violation',w.inspect((.801,0,.5)).reason)
+  self.assertEqual('workspace_violation',w.inspect_delta((.799,0,.5),(.002,0,0)).reason)
  def test_invalid_and_command_free(self):
   self.assertEqual('invalid_tcp_position',PHASE12_DATA_DERIVED_WORKSPACE.inspect((math.nan,0,0)).reason)
   s=(R/'02_safety/workspace_contract.py').read_text().lower()

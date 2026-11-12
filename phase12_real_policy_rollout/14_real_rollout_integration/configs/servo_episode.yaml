@@ -1,13 +1,31 @@
 # ServoL arm-only prediction budget; does not change MoveLine/full-policy limits.
 maximum_predictions: 2000
 
+# User-requested 2x stream planning profile; MoveLine/shared policy unchanged.
+stream_planning:
+  translation_velocity_mm_s: 40.0
+  translation_acceleration_mm_s2: 40.0
+  rotation_velocity_deg_s: 40.0
+  rotation_acceleration_deg_s2: 40.0
+
+# New generator is wired, but no new physical approval is inferred from replay.
+# These are evidence gates, NOT controller settings or safety-limit overrides.
+segment_release:
+  normalized_euler_controller_verified: false
+  physical_stop_verified: false
+  controller_joint_protection_verified: false
+  following_translation_mm: null
+  following_rotation_deg: null
+  feedback_max_age_s: null
+
 # Applied on explicit user request; offline candidate, NOT physically validated.
-# Only ServoL transport bounds change. Policy/interpolation limiter stays intact.
+# Raw rotation rejection is ServoL-specific; interpolation limits stay intact.
+raw_rotation_step_limit_deg: 8.0
 servo_transport:
-  velocity_mm_s_deg_s: [20.0, 20.0]
-  acceleration_mm_s2_deg_s2: [40.0, 40.0]
+  velocity_mm_s_deg_s: [40.0, 40.0]
+  acceleration_mm_s2_deg_s2: [80.0, 80.0]
   target_time_s: 0.7
   physical_validation: NOT_EXECUTED
-  derivation: real_trials/20261106_servo_speed_tuning_stage1/staged_tuning_plan.json
+  derivation: USER_REQUESTED_TWO_TIMES_SERVO_PROFILE_20261112_OFFLINE_ONLY
   previous_acceleration_mm_s2_deg_s2: [20.0, 20.0]
   previous_target_time_s: 0.1

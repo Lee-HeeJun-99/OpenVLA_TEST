@@ -1,0 +1,39 @@
+{
+  "status": "OFFLINE_CALCULATION_COMPLETE",
+  "samples": 117,
+  "candidate_count": 117,
+  "rejected_count": 0,
+  "physical_commands": 0,
+  "physical_rollout_ready": false,
+  "server_requests": 0,
+  "gripper_commands": 0,
+  "joint_limits_changed": false,
+  "production_launchers_changed": false,
+  "source_trial": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/14_real_rollout_integration/real_trials/20261106_145225_full_policy_episode",
+  "existing_limits": {
+    "control_rate_hz": 5.0,
+    "max_action_age_sec": 1.2,
+    "translation_step_m": 0.05,
+    "rotation_step_deg": 4.0,
+    "translation_velocity_mm_s": 20.0,
+    "rotation_velocity_deg_s": 20.0,
+    "translation_acceleration_mm_s2": 20.0,
+    "rotation_acceleration_deg_s2": 20.0,
+    "workspace_m": {
+      "x": [
+        0.275,
+        0.554
+      ],
+      "y": [
+        -0.355,
+        0.386
+      ],
+      "z": [
+        0.267,
+        0.754
+      ]
+    },
+    "failure_policy": "fail_closed"
+  },
+  "limitation": "Independent recorded first ticks; no IK, live frame/feedback/stop validation or physical motion simulation."
+}

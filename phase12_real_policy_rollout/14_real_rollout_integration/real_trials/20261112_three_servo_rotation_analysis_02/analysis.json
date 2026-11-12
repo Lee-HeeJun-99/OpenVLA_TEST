@@ -1,0 +1,2177 @@
+{
+  "physical_commands": 0,
+  "runs": [
+    {
+      "run": "182408",
+      "rotation_limit_deg": 4.0,
+      "replay_count": 63,
+      "rejected_before": [
+        62
+      ],
+      "rejected_after": [
+        62
+      ],
+      "rejected_raw_geodesic_deg": 4.149291218427447,
+      "stop": {
+        "request_monotonic": 76322.98098831,
+        "stop_ack": true,
+        "state_value": null,
+        "state_receive_monotonic": null,
+        "original_confirmation": {
+          "confirmed": false,
+          "additional_dispatch_allowed": false,
+          "ack": true,
+          "criterion": "ACK_AND_FRESH_STANDBY_AND_POST_STOP_EXACT_ZERO_WINDOW",
+          "reason": "invalid_stop_timestamps"
+        },
+        "post_stop_joint_samples": 1,
+        "first_post_stop_joint_receive": 76322.989983528,
+        "first_zero_window_ready_monotonic": null,
+        "last_joint_receive": 76322.989983528,
+        "state_age_when_zero_ready": null,
+        "actual_state_sample_refresh": false
+      },
+      "max_slerp_reconstruction_error_rad": 1.4411627026179377e-15,
+      "replay": [
+        {
+          "step": 0,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6566086334176768,
+          "after_blockers": []
+        },
+        {
+          "step": 1,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.60806109180306,
+          "after_blockers": []
+        },
+        {
+          "step": 2,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.614869280020514,
+          "after_blockers": []
+        },
+        {
+          "step": 3,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7899065923847002,
+          "after_blockers": []
+        },
+        {
+          "step": 4,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6676530305836812,
+          "after_blockers": []
+        },
+        {
+          "step": 5,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8582836133962148,
+          "after_blockers": []
+        },
+        {
+          "step": 6,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8219364312411301,
+          "after_blockers": []
+        },
+        {
+          "step": 7,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8097504955114637,
+          "after_blockers": []
+        },
+        {
+          "step": 8,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8097504955114356,
+          "after_blockers": []
+        },
+        {
+          "step": 9,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.789906592384706,
+          "after_blockers": []
+        },
+        {
+          "step": 10,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9254796401797539,
+          "after_blockers": []
+        },
+        {
+          "step": 11,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.34837373401835825,
+          "after_blockers": []
+        },
+        {
+          "step": 12,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.5223541886823058,
+          "after_blockers": []
+        },
+        {
+          "step": 13,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8398835876302491,
+          "after_blockers": []
+        },
+        {
+          "step": 14,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6183719685572564,
+          "after_blockers": []
+        },
+        {
+          "step": 15,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.4718735269573209,
+          "after_blockers": []
+        },
+        {
+          "step": 16,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.5614006181082165,
+          "after_blockers": []
+        },
+        {
+          "step": 17,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7796643545132963,
+          "after_blockers": []
+        },
+        {
+          "step": 18,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6659788345826196,
+          "after_blockers": []
+        },
+        {
+          "step": 19,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.73577514669773,
+          "after_blockers": []
+        },
+        {
+          "step": 20,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8219364312411287,
+          "after_blockers": []
+        },
+        {
+          "step": 21,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8093067539682344,
+          "after_blockers": []
+        },
+        {
+          "step": 22,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6408553802282613,
+          "after_blockers": []
+        },
+        {
+          "step": 23,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8822393663375773,
+          "after_blockers": []
+        },
+        {
+          "step": 24,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8348019426414461,
+          "after_blockers": []
+        },
+        {
+          "step": 25,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8271668406129334,
+          "after_blockers": []
+        },
+        {
+          "step": 26,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8317086775076116,
+          "after_blockers": []
+        },
+        {
+          "step": 27,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8271668406129241,
+          "after_blockers": []
+        },
+        {
+          "step": 28,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6419608600648452,
+          "after_blockers": []
+        },
+        {
+          "step": 29,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8290047873052269,
+          "after_blockers": []
+        },
+        {
+          "step": 30,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.08245350014357,
+          "after_blockers": []
+        },
+        {
+          "step": 31,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.640855380228255,
+          "after_blockers": []
+        },
+        {
+          "step": 32,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.640593980323238,
+          "after_blockers": []
+        },
+        {
+          "step": 33,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.8418393850422767,
+          "after_blockers": []
+        },
+        {
+          "step": 34,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6183719685572562,
+          "after_blockers": []
+        },
+        {
+          "step": 35,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.825175039178028,
+          "after_blockers": []
+        },
+        {
+          "step": 36,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.09585388707993606,
+          "after_blockers": []
+        },
+        {
+          "step": 37,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.7337835719265413,
+          "after_blockers": []
+        },
+        {
+          "step": 38,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.9395345797728294,
+          "after_blockers": []
+        },
+        {
+          "step": 39,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.5857077825887549,
+          "after_blockers": []
+        },
+        {
+          "step": 40,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.5944697773865752,
+          "after_blockers": []
+        },
+        {
+          "step": 41,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.108540065207287,
+          "after_blockers": []
+        },
+        {
+          "step": 42,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.7303597333270444,
+          "after_blockers": []
+        },
+        {
+          "step": 43,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.7323703363972272,
+          "after_blockers": []
+        },
+        {
+          "step": 44,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.745624858442243,
+          "after_blockers": []
+        },
+        {
+          "step": 45,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.9713296151133843,
+          "after_blockers": []
+        },
+        {
+          "step": 46,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.9195763240080073,
+          "after_blockers": []
+        },
+        {
+          "step": 47,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.9552072002943648,
+          "after_blockers": []
+        },
+        {
+          "step": 48,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.8743737145848867,
+          "after_blockers": []
+        },
+        {
+          "step": 49,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.0338099302609702,
+          "after_blockers": []
+        },
+        {
+          "step": 50,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.108540065207296,
+          "after_blockers": []
+        },
+        {
+          "step": 51,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.146184456701288,
+          "after_blockers": []
+        },
+        {
+          "step": 52,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3534929290479294,
+          "after_blockers": []
+        },
+        {
+          "step": 53,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.1699725849998037,
+          "after_blockers": []
+        },
+        {
+          "step": 54,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.1699725849998055,
+          "after_blockers": []
+        },
+        {
+          "step": 55,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6990180222703746,
+          "after_blockers": []
+        },
+        {
+          "step": 56,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.8197975126326087,
+          "after_blockers": []
+        },
+        {
+          "step": 57,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.803987367023313,
+          "after_blockers": []
+        },
+        {
+          "step": 58,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.7886127843903767,
+          "after_blockers": []
+        },
+        {
+          "step": 59,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.182466142088772,
+          "after_blockers": []
+        },
+        {
+          "step": 60,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.7875452886846865,
+          "after_blockers": []
+        },
+        {
+          "step": 61,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.1761701084915757,
+          "after_blockers": []
+        },
+        {
+          "step": 62,
+          "old_reject": true,
+          "new_reject": true,
+          "raw_geodesic_deg": 4.149291218427447,
+          "after_blockers": [
+            "raw_rotation_step_limit"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "183554",
+      "rotation_limit_deg": 4.0,
+      "replay_count": 67,
+      "rejected_before": [
+        66
+      ],
+      "rejected_after": [
+        66
+      ],
+      "rejected_raw_geodesic_deg": 4.11309742302493,
+      "stop": {
+        "request_monotonic": 77014.466465018,
+        "stop_ack": true,
+        "state_value": {
+          "robot_state": 1,
+          "success": true
+        },
+        "state_receive_monotonic": 77014.477830281,
+        "original_confirmation": {
+          "confirmed": false,
+          "additional_dispatch_allowed": false,
+          "comparison_clock": "HOST_MONOTONIC_RECEIVE_TIME",
+          "ack": true,
+          "criterion": "ACK_AND_FRESH_STANDBY_AND_POST_STOP_EXACT_ZERO_WINDOW",
+          "reason": "stop_state_stale_or_before_request"
+        },
+        "post_stop_joint_samples": 203,
+        "first_post_stop_joint_receive": 77014.467994204,
+        "first_zero_window_ready_monotonic": 77015.717964475,
+        "last_joint_receive": 77016.487372158,
+        "state_age_when_zero_ready": 1.2401341939985286,
+        "actual_state_sample_refresh": false
+      },
+      "max_slerp_reconstruction_error_rad": 1.5208143447902738e-15,
+      "replay": [
+        {
+          "step": 0,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7881095160031779,
+          "after_blockers": []
+        },
+        {
+          "step": 1,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7881095160031693,
+          "after_blockers": []
+        },
+        {
+          "step": 2,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.308235944365515,
+          "after_blockers": []
+        },
+        {
+          "step": 3,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6844001423606799,
+          "after_blockers": []
+        },
+        {
+          "step": 4,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6720150370526535,
+          "after_blockers": []
+        },
+        {
+          "step": 5,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7881095160031446,
+          "after_blockers": []
+        },
+        {
+          "step": 6,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.0121062207157627,
+          "after_blockers": []
+        },
+        {
+          "step": 7,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.761572149591598,
+          "after_blockers": []
+        },
+        {
+          "step": 8,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.2119644163933652,
+          "after_blockers": []
+        },
+        {
+          "step": 9,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9393437400076408,
+          "after_blockers": []
+        },
+        {
+          "step": 10,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6651133060450762,
+          "after_blockers": []
+        },
+        {
+          "step": 11,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7320338474127962,
+          "after_blockers": []
+        },
+        {
+          "step": 12,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.38713347209881827,
+          "after_blockers": []
+        },
+        {
+          "step": 13,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7403882430655508,
+          "after_blockers": []
+        },
+        {
+          "step": 14,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.38713347209881316,
+          "after_blockers": []
+        },
+        {
+          "step": 15,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7403882430655092,
+          "after_blockers": []
+        },
+        {
+          "step": 16,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7790809705513485,
+          "after_blockers": []
+        },
+        {
+          "step": 17,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.26654887782451253,
+          "after_blockers": []
+        },
+        {
+          "step": 18,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.45679835094369486,
+          "after_blockers": []
+        },
+        {
+          "step": 19,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7615721495916151,
+          "after_blockers": []
+        },
+        {
+          "step": 20,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7790809705513805,
+          "after_blockers": []
+        },
+        {
+          "step": 21,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7615721495916057,
+          "after_blockers": []
+        },
+        {
+          "step": 22,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.2666894968173825,
+          "after_blockers": []
+        },
+        {
+          "step": 23,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6073163263532533,
+          "after_blockers": []
+        },
+        {
+          "step": 24,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6008997186785682,
+          "after_blockers": []
+        },
+        {
+          "step": 25,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7050328428925622,
+          "after_blockers": []
+        },
+        {
+          "step": 26,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6471947439655062,
+          "after_blockers": []
+        },
+        {
+          "step": 27,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6073163263532777,
+          "after_blockers": []
+        },
+        {
+          "step": 28,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7050328428925419,
+          "after_blockers": []
+        },
+        {
+          "step": 29,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7050328428925438,
+          "after_blockers": []
+        },
+        {
+          "step": 30,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7050328428925345,
+          "after_blockers": []
+        },
+        {
+          "step": 31,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7050328428925806,
+          "after_blockers": []
+        },
+        {
+          "step": 32,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7050328428925446,
+          "after_blockers": []
+        },
+        {
+          "step": 33,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.5886999225535311,
+          "after_blockers": []
+        },
+        {
+          "step": 34,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7034620460190993,
+          "after_blockers": []
+        },
+        {
+          "step": 35,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9025226544262207,
+          "after_blockers": []
+        },
+        {
+          "step": 36,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9025226544262209,
+          "after_blockers": []
+        },
+        {
+          "step": 37,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9025226544262149,
+          "after_blockers": []
+        },
+        {
+          "step": 38,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9025226544261984,
+          "after_blockers": []
+        },
+        {
+          "step": 39,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9135784505663616,
+          "after_blockers": []
+        },
+        {
+          "step": 40,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.913578450566357,
+          "after_blockers": []
+        },
+        {
+          "step": 41,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9135784505663789,
+          "after_blockers": []
+        },
+        {
+          "step": 42,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3501936453318673,
+          "after_blockers": []
+        },
+        {
+          "step": 43,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3418133373921162,
+          "after_blockers": []
+        },
+        {
+          "step": 44,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3173577348568748,
+          "after_blockers": []
+        },
+        {
+          "step": 45,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8965839674396279,
+          "after_blockers": []
+        },
+        {
+          "step": 46,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.0987193631227767,
+          "after_blockers": []
+        },
+        {
+          "step": 47,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.6213187752129885,
+          "after_blockers": []
+        },
+        {
+          "step": 48,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.0973819853018736,
+          "after_blockers": []
+        },
+        {
+          "step": 49,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.316242524898582,
+          "after_blockers": []
+        },
+        {
+          "step": 50,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3173577348568697,
+          "after_blockers": []
+        },
+        {
+          "step": 51,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.4110349064315844,
+          "after_blockers": []
+        },
+        {
+          "step": 52,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.411034906431586,
+          "after_blockers": []
+        },
+        {
+          "step": 53,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.41103490643156,
+          "after_blockers": []
+        },
+        {
+          "step": 54,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.4110349064315786,
+          "after_blockers": []
+        },
+        {
+          "step": 55,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 2.071629006791299,
+          "after_blockers": []
+        },
+        {
+          "step": 56,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.411034906431593,
+          "after_blockers": []
+        },
+        {
+          "step": 57,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.4203327793529477,
+          "after_blockers": []
+        },
+        {
+          "step": 58,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.794202428187944,
+          "after_blockers": []
+        },
+        {
+          "step": 59,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.806411039302976,
+          "after_blockers": []
+        },
+        {
+          "step": 60,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.8282427476586958,
+          "after_blockers": []
+        },
+        {
+          "step": 61,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.701241366673514,
+          "after_blockers": []
+        },
+        {
+          "step": 62,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.7012413666735253,
+          "after_blockers": []
+        },
+        {
+          "step": 63,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.827620667154555,
+          "after_blockers": []
+        },
+        {
+          "step": 64,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.8134835567184915,
+          "after_blockers": []
+        },
+        {
+          "step": 65,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.81348355671846,
+          "after_blockers": []
+        },
+        {
+          "step": 66,
+          "old_reject": true,
+          "new_reject": true,
+          "raw_geodesic_deg": 4.11309742302493,
+          "after_blockers": [
+            "raw_rotation_step_limit"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "183848",
+      "rotation_limit_deg": 4.0,
+      "replay_count": 62,
+      "rejected_before": [
+        61
+      ],
+      "rejected_after": [
+        61
+      ],
+      "rejected_raw_geodesic_deg": 4.119130697830617,
+      "stop": {
+        "request_monotonic": 77186.804425285,
+        "stop_ack": true,
+        "state_value": {
+          "robot_state": 1,
+          "success": true
+        },
+        "state_receive_monotonic": 77186.814919599,
+        "original_confirmation": {
+          "confirmed": false,
+          "additional_dispatch_allowed": false,
+          "comparison_clock": "HOST_MONOTONIC_RECEIVE_TIME",
+          "ack": true,
+          "criterion": "ACK_AND_FRESH_STANDBY_AND_POST_STOP_EXACT_ZERO_WINDOW",
+          "reason": "stop_state_stale_or_before_request"
+        },
+        "post_stop_joint_samples": 203,
+        "first_post_stop_joint_receive": 77186.807380451,
+        "first_zero_window_ready_monotonic": 77187.767448833,
+        "last_joint_receive": 77188.827389972,
+        "state_age_when_zero_ready": 0.9525292339967564,
+        "actual_state_sample_refresh": false
+      },
+      "max_slerp_reconstruction_error_rad": 1.4897067417070572e-15,
+      "replay": [
+        {
+          "step": 0,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.5610917738744364,
+          "after_blockers": []
+        },
+        {
+          "step": 1,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8991196410785726,
+          "after_blockers": []
+        },
+        {
+          "step": 2,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9469639013674069,
+          "after_blockers": []
+        },
+        {
+          "step": 3,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9014406968139673,
+          "after_blockers": []
+        },
+        {
+          "step": 4,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6415425533971749,
+          "after_blockers": []
+        },
+        {
+          "step": 5,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.897612538608422,
+          "after_blockers": []
+        },
+        {
+          "step": 6,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6942993636187863,
+          "after_blockers": []
+        },
+        {
+          "step": 7,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8732511269939998,
+          "after_blockers": []
+        },
+        {
+          "step": 8,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6408168015168029,
+          "after_blockers": []
+        },
+        {
+          "step": 9,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8705320392077148,
+          "after_blockers": []
+        },
+        {
+          "step": 10,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.7987441117160876,
+          "after_blockers": []
+        },
+        {
+          "step": 11,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6822710708786333,
+          "after_blockers": []
+        },
+        {
+          "step": 12,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6445341368016544,
+          "after_blockers": []
+        },
+        {
+          "step": 13,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.5671573623413761,
+          "after_blockers": []
+        },
+        {
+          "step": 14,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6415007859565527,
+          "after_blockers": []
+        },
+        {
+          "step": 15,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.688167138257017,
+          "after_blockers": []
+        },
+        {
+          "step": 16,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6881671382570309,
+          "after_blockers": []
+        },
+        {
+          "step": 17,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.5751566852528263,
+          "after_blockers": []
+        },
+        {
+          "step": 18,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.599960002915384,
+          "after_blockers": []
+        },
+        {
+          "step": 19,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.5999600029153758,
+          "after_blockers": []
+        },
+        {
+          "step": 20,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8835969208703872,
+          "after_blockers": []
+        },
+        {
+          "step": 21,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.5999600029153497,
+          "after_blockers": []
+        },
+        {
+          "step": 22,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.9025226544262109,
+          "after_blockers": []
+        },
+        {
+          "step": 23,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6323433541842772,
+          "after_blockers": []
+        },
+        {
+          "step": 24,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.8789031873724406,
+          "after_blockers": []
+        },
+        {
+          "step": 25,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6274995046047044,
+          "after_blockers": []
+        },
+        {
+          "step": 26,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.632343354184268,
+          "after_blockers": []
+        },
+        {
+          "step": 27,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6323433541842913,
+          "after_blockers": []
+        },
+        {
+          "step": 28,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6392941340779477,
+          "after_blockers": []
+        },
+        {
+          "step": 29,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6136926728259129,
+          "after_blockers": []
+        },
+        {
+          "step": 30,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.574359638323739,
+          "after_blockers": []
+        },
+        {
+          "step": 31,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.0973746506635318,
+          "after_blockers": []
+        },
+        {
+          "step": 32,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.2061501207232348,
+          "after_blockers": []
+        },
+        {
+          "step": 33,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.035849273600903,
+          "after_blockers": []
+        },
+        {
+          "step": 34,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.1105316885012944,
+          "after_blockers": []
+        },
+        {
+          "step": 35,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.116920327381031,
+          "after_blockers": []
+        },
+        {
+          "step": 36,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.0495895937094812,
+          "after_blockers": []
+        },
+        {
+          "step": 37,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 0.6508353929586589,
+          "after_blockers": []
+        },
+        {
+          "step": 38,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.1168400174687836,
+          "after_blockers": []
+        },
+        {
+          "step": 39,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.0783567034906558,
+          "after_blockers": []
+        },
+        {
+          "step": 40,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.2630543622405788,
+          "after_blockers": []
+        },
+        {
+          "step": 41,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.2294796584143486,
+          "after_blockers": []
+        },
+        {
+          "step": 42,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.2294796584143515,
+          "after_blockers": []
+        },
+        {
+          "step": 43,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.5025522282902244,
+          "after_blockers": []
+        },
+        {
+          "step": 44,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.643682429405032,
+          "after_blockers": []
+        },
+        {
+          "step": 45,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3494794570721635,
+          "after_blockers": []
+        },
+        {
+          "step": 46,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.688607844239649,
+          "after_blockers": []
+        },
+        {
+          "step": 47,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.114395597894287,
+          "after_blockers": []
+        },
+        {
+          "step": 48,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.269324922291164,
+          "after_blockers": []
+        },
+        {
+          "step": 49,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.3575706026434173,
+          "after_blockers": []
+        },
+        {
+          "step": 50,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.2601247860475007,
+          "after_blockers": []
+        },
+        {
+          "step": 51,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.254013717910808,
+          "after_blockers": []
+        },
+        {
+          "step": 52,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 1.641267975607447,
+          "after_blockers": []
+        },
+        {
+          "step": 53,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.4086520412023,
+          "after_blockers": []
+        },
+        {
+          "step": 54,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.3354836817725415,
+          "after_blockers": []
+        },
+        {
+          "step": 55,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.4110349064315444,
+          "after_blockers": []
+        },
+        {
+          "step": 56,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.429621817178194,
+          "after_blockers": []
+        },
+        {
+          "step": 57,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.411034906431593,
+          "after_blockers": []
+        },
+        {
+          "step": 58,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.8132759643096032,
+          "after_blockers": []
+        },
+        {
+          "step": 59,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.8132759643096215,
+          "after_blockers": []
+        },
+        {
+          "step": 60,
+          "old_reject": false,
+          "new_reject": false,
+          "raw_geodesic_deg": 3.5312281634614533,
+          "after_blockers": []
+        },
+        {
+          "step": 61,
+          "old_reject": true,
+          "new_reject": true,
+          "raw_geodesic_deg": 4.119130697830617,
+          "after_blockers": [
+            "raw_rotation_step_limit"
+          ]
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "run": "182408",
+      "step": 59,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        394.5259437512398,
+        -15.728661628239395,
+        673.4417352292913
+      ],
+      "raw_target_ABC_deg": [
+        -47.579061276503204,
+        152.57860460185188,
+        115.43086600462296
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -2.1061962045115763,
+        0.20184623963839954,
+        -2.8948355131200145
+      ],
+      "raw_target_pair_geodesic_deg": 1.4291529850858755,
+      "raw_from_current_geodesic_deg": 2.182466142088772,
+      "B_distance_to_0_or_180_deg": 27.42139539814812,
+      "recorded_filtered_target_xyz_mm": [
+        394.5259437512398,
+        -15.728661628239394,
+        673.4417352292913
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        -47.29643392840905,
+        152.437317894839,
+        115.76865076397975
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -1.823568856417424,
+        0.060559532625518386,
+        -2.557050753763221
+      ],
+      "recorded_target_pair_geodesic_deg": 1.2658075063674297,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "182408",
+      "step": 60,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        396.18901429369794,
+        -15.74858960675502,
+        672.4171380613226
+      ],
+      "raw_target_ABC_deg": [
+        -46.74312013115443,
+        151.68382216565075,
+        116.23653072895274
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        0.8359411453487766,
+        -0.8947824362011261,
+        0.8056647243297874
+      ],
+      "raw_target_pair_geodesic_deg": 0.9786378509247572,
+      "raw_from_current_geodesic_deg": 1.7875452886846865,
+      "B_distance_to_0_or_180_deg": 28.316177834349247,
+      "recorded_filtered_target_xyz_mm": [
+        396.18901429369794,
+        -15.748589606755019,
+        672.4171380613226
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        -46.75585036923154,
+        151.69058469995932,
+        116.22117143706966
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        0.540583559177513,
+        -0.7467331948796812,
+        0.4525206730899072
+      ],
+      "recorded_target_pair_geodesic_deg": 0.7889023724508671,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "182408",
+      "step": 61,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        398.4208864889508,
+        -15.741051764958145,
+        670.6101922605413
+      ],
+      "raw_target_ABC_deg": [
+        -49.09718405057822,
+        152.0179939491892,
+        113.04673875957333
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -2.354063919423794,
+        0.33417178353843724,
+        -3.1897919693794137
+      ],
+      "raw_target_pair_geodesic_deg": 1.6081071500811626,
+      "raw_from_current_geodesic_deg": 2.1761701084915757,
+      "B_distance_to_0_or_180_deg": 27.98200605081081,
+      "recorded_filtered_target_xyz_mm": [
+        398.4208864889508,
+        -15.741051764958145,
+        670.6101922605413
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        -48.812617818988016,
+        151.88161323866058,
+        113.38439356738475
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -2.056767449756478,
+        0.1910285387012607,
+        -2.8367778696849086
+      ],
+      "recorded_target_pair_geodesic_deg": 1.4251768335596933,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "182408",
+      "step": 62,
+      "rejected": true,
+      "raw_target_xyz_mm": [
+        399.30131898119794,
+        -14.03400594974319,
+        669.6106805417913
+      ],
+      "raw_target_ABC_deg": [
+        -46.48696925085406,
+        151.86020054529433,
+        112.46694702552011
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        2.6102147997241616,
+        -0.15779340389485697,
+        -0.5797917340532166
+      ],
+      "raw_target_pair_geodesic_deg": 3.137709704420278,
+      "raw_from_current_geodesic_deg": 4.149291218427447,
+      "B_distance_to_0_or_180_deg": 28.139799454705667,
+      "recorded_filtered_target_xyz_mm": [
+        399.30131898119794,
+        -14.03400594974319,
+        669.6106805417913
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        -48.49605738609964,
+        151.62079278726947,
+        112.55075388017255
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        0.3165604328883731,
+        -0.2608204513911119,
+        -0.833639687212198
+      ],
+      "recorded_target_pair_geodesic_deg": 1.1524436067750081,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "실제 점프"
+    },
+    {
+      "run": "183554",
+      "step": 63,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        412.93708669033896,
+        8.460192354898197,
+        686.2530582419957
+      ],
+      "raw_target_ABC_deg": [
+        1.17717603008065,
+        165.0559852250641,
+        152.1665763596339
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -0.4778597476703832,
+        0.3872278593338194,
+        -1.9517248135112766
+      ],
+      "raw_target_pair_geodesic_deg": 1.5449682235515378,
+      "raw_from_current_geodesic_deg": 3.827620667154555,
+      "B_distance_to_0_or_180_deg": 14.944014774935908,
+      "recorded_filtered_target_xyz_mm": [
+        412.93708669033896,
+        8.460192354898197,
+        686.2530582419957
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        1.17717603008065,
+        165.0559852250641,
+        152.1665763596339
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -0.4778597476703832,
+        0.3872278593338194,
+        -1.9517248135112766
+      ],
+      "recorded_target_pair_geodesic_deg": 1.5449682235515378,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "183554",
+      "step": 64,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        418.0118242391671,
+        9.912141927221342,
+        684.7283390037145
+      ],
+      "raw_target_ABC_deg": [
+        0.4025258362829848,
+        165.46752360331612,
+        150.0568248731166
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -0.7746501937976652,
+        0.41153837825203254,
+        -2.109751486517297
+      ],
+      "raw_target_pair_geodesic_deg": 1.4350507516821518,
+      "raw_from_current_geodesic_deg": 3.8134835567184915,
+      "B_distance_to_0_or_180_deg": 14.532476396683876,
+      "recorded_filtered_target_xyz_mm": [
+        418.0118242391671,
+        9.912141927221342,
+        684.7283390037145
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        0.4025258362829848,
+        165.46752360331612,
+        150.0568248731166
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -0.7746501937976652,
+        0.41153837825203254,
+        -2.109751486517297
+      ],
+      "recorded_target_pair_geodesic_deg": 1.4350507516821518,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "183554",
+      "step": 65,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        421.73174984718906,
+        9.619712672702335,
+        683.174017714652
+      ],
+      "raw_target_ABC_deg": [
+        -0.5243624082480494,
+        165.90299474183848,
+        147.56667944519205
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -0.9268882445310341,
+        0.4354711385223595,
+        -2.4901454279245456
+      ],
+      "raw_target_pair_geodesic_deg": 1.6663365070136897,
+      "raw_from_current_geodesic_deg": 3.81348355671846,
+      "B_distance_to_0_or_180_deg": 14.097005258161516,
+      "recorded_filtered_target_xyz_mm": [
+        421.73174984718906,
+        9.619712672702335,
+        683.174017714652
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        -0.5243624082480494,
+        165.90299474183848,
+        147.56667944519205
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -0.9268882445310341,
+        0.4354711385223595,
+        -2.4901454279245456
+      ],
+      "recorded_target_pair_geodesic_deg": 1.6663365070136897,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "183554",
+      "step": 66,
+      "rejected": true,
+      "raw_target_xyz_mm": [
+        426.45785440184676,
+        12.173057683446928,
+        681.8729312888707
+      ],
+      "raw_target_ABC_deg": [
+        -1.0715878318766978,
+        166.2887869061022,
+        145.35966238539885
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -0.5472254236286485,
+        0.3857921642637052,
+        -2.207017059793202
+      ],
+      "raw_target_pair_geodesic_deg": 1.7246718236743037,
+      "raw_from_current_geodesic_deg": 4.11309742302493,
+      "B_distance_to_0_or_180_deg": 13.711213093897811,
+      "recorded_filtered_target_xyz_mm": [
+        426.45785440184676,
+        12.173057683446928,
+        681.8729312888707
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        -1.0113906788078355,
+        166.26126707797442,
+        145.5269050724256
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -0.48702827055978615,
+        0.3582723361359399,
+        -2.039774372766459
+      ],
+      "recorded_target_pair_geodesic_deg": 1.6117356099358917,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "실제 점프"
+    },
+    {
+      "run": "183848",
+      "step": 58,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        417.04278318673465,
+        14.564187745524492,
+        687.9086933518455
+      ],
+      "raw_target_ABC_deg": [
+        10.292219087805158,
+        165.70732471392148,
+        163.6775422710378
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -3.341030005563411,
+        0.7348664185363418,
+        -5.049766823438375
+      ],
+      "raw_target_pair_geodesic_deg": 2.134747493555622,
+      "raw_from_current_geodesic_deg": 3.8132759643096032,
+      "B_distance_to_0_or_180_deg": 14.29267528607852,
+      "recorded_filtered_target_xyz_mm": [
+        417.04278318673465,
+        14.564187745524492,
+        687.9086933518455
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        11.991247631293884,
+        165.6322548062266,
+        165.4831920198467
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -1.6420014620746848,
+        0.6597965108414598,
+        -3.2441170746294574
+      ],
+      "recorded_target_pair_geodesic_deg": 1.8304274149433104,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "183848",
+      "step": 59,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        422.2568334797034,
+        17.00406078906056,
+        686.2210758201207
+      ],
+      "raw_target_ABC_deg": [
+        11.419724364773279,
+        166.06916353800602,
+        163.7090017358437
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        1.1275052769681206,
+        0.3618388240845434,
+        0.03145946480591988
+      ],
+      "raw_target_pair_geodesic_deg": 1.155153791444578,
+      "raw_from_current_geodesic_deg": 3.8132759643096215,
+      "B_distance_to_0_or_180_deg": 13.930836461993977,
+      "recorded_filtered_target_xyz_mm": [
+        422.2568334797034,
+        17.00406078906056,
+        686.2210758201207
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        11.419724364773279,
+        166.06916353800602,
+        163.7090017358437
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -0.5715232665206056,
+        0.43690873177942535,
+        -1.774190284002998
+      ],
+      "recorded_target_pair_geodesic_deg": 1.3033797595523422,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "183848",
+      "step": 60,
+      "rejected": false,
+      "raw_target_xyz_mm": [
+        427.23431150704715,
+        19.25664810748097,
+        684.9708316794957
+      ],
+      "raw_target_ABC_deg": [
+        16.095005510428045,
+        166.22334462072527,
+        167.4260981534437
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        4.6752811456547665,
+        0.1541810827192478,
+        3.7170964175999757
+      ],
+      "raw_target_pair_geodesic_deg": 1.3973169405575299,
+      "raw_from_current_geodesic_deg": 3.5312281634614533,
+      "B_distance_to_0_or_180_deg": 13.776655379274729,
+      "recorded_filtered_target_xyz_mm": [
+        427.23431150704715,
+        19.25664810748097,
+        684.9708316794957
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        14.23148285820977,
+        166.3326813552993,
+        165.50341211484763
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        2.811758493436491,
+        0.2635178172932626,
+        1.7944103790039208
+      ],
+      "recorded_target_pair_geodesic_deg": 1.1813619607617722,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "표현 문제"
+    },
+    {
+      "run": "183848",
+      "step": 61,
+      "rejected": true,
+      "raw_target_xyz_mm": [
+        432.5506567218909,
+        21.676266714048353,
+        683.2842472068395
+      ],
+      "raw_target_ABC_deg": [
+        11.083380956714745,
+        166.96509924923973,
+        160.60937167843696
+      ],
+      "raw_target_previous_ABC_diff_deg": [
+        -5.0116245537133,
+        0.7417546285144567,
+        -6.816726475006732
+      ],
+      "raw_target_pair_geodesic_deg": 2.380597354076523,
+      "raw_from_current_geodesic_deg": 4.119130697830617,
+      "B_distance_to_0_or_180_deg": 13.034900750760272,
+      "recorded_filtered_target_xyz_mm": [
+        432.5506567218909,
+        21.676266714048353,
+        683.2842472068395
+      ],
+      "recorded_filtered_target_ABC_deg": [
+        11.125959548921509,
+        166.92755768204276,
+        160.76350108869468
+      ],
+      "recorded_target_previous_ABC_diff_deg": [
+        -3.1055233092882606,
+        0.5948763267434742,
+        -4.739911026152953
+      ],
+      "recorded_target_pair_geodesic_deg": 1.955065310573778,
+      "pair_classification": "표현 문제",
+      "actual_gate_classification": "실제 점프"
+    }
+  ],
+  "policies": [
+    {
+      "run": "182408",
+      "step": 59,
+      "raw_action": [
+        0.003138034815692945,
+        -4.849252270960978e-05,
+        -0.0031727667238336255,
+        -0.027931714651865086,
+        0.020981911004252556,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "182408",
+      "step": 60,
+      "raw_action": [
+        0.0033971746940885533,
+        -4.849252270960978e-05,
+        -0.0031727667238336255,
+        -0.027931714651865086,
+        0.0032387517380414385,
+        0.013515893489089296,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "182408",
+      "step": 61,
+      "raw_action": [
+        0.004088214369810175,
+        -4.849252270960978e-05,
+        -0.0031727667238336255,
+        -0.027931714651865086,
+        0.020981911004252556,
+        0.014905046792334375,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "182408",
+      "step": 62,
+      "raw_action": [
+        0.0033971746940885533,
+        0.0017177268764897212,
+        -0.0031727667238336255,
+        -0.024296917599441158,
+        0.020981911004252556,
+        0.06491456570915745,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183554",
+      "step": 63,
+      "raw_action": [
+        0.012898970235260857,
+        0.0031568686091706577,
+        -0.0035036556251918094,
+        -0.024864854638882397,
+        0.017922745613526504,
+        0.0593579524961771,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183554",
+      "step": 64,
+      "raw_action": [
+        0.012898970235260857,
+        0.003353115209081694,
+        -0.0035036556251918094,
+        -0.024864854638882397,
+        0.017922745613526504,
+        0.059080121835528084,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183554",
+      "step": 65,
+      "raw_action": [
+        0.011603270843282816,
+        0.0017831424097933994,
+        -0.0035036556251918094,
+        -0.024864854638882397,
+        0.017922745613526504,
+        0.059080121835528084,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183554",
+      "step": 66,
+      "raw_action": [
+        0.011948790681143627,
+        0.003353115209081694,
+        -0.0035036556251918094,
+        -0.024864854638882397,
+        0.017922745613526504,
+        0.06491456570915745,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183848",
+      "step": 58,
+      "raw_action": [
+        0.015058469221890929,
+        0.0064930608076582816,
+        -0.003007322273154537,
+        -0.025319204270435387,
+        0.01818495978987445,
+        0.05880229117487907,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183848",
+      "step": 59,
+      "raw_action": [
+        0.015058469221890929,
+        0.00662389187426564,
+        -0.0035036556251918094,
+        -0.025319204270435387,
+        0.01818495978987445,
+        0.05880229117487907,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183848",
+      "step": 60,
+      "raw_action": [
+        0.015058469221890929,
+        0.00662389187426564,
+        -0.0035036556251918094,
+        -0.003169659732227062,
+        0.01818495978987445,
+        0.05880229117487907,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    },
+    {
+      "run": "183848",
+      "step": 61,
+      "raw_action": [
+        0.015058469221890929,
+        0.00662389187426564,
+        -0.0035036556251918094,
+        -0.024978442046770643,
+        0.01818495978987445,
+        0.06491456570915745,
+        0.0019607843137254832
+      ],
+      "chunk_id": null,
+      "chunk_index": 0,
+      "health_chunk_size": 1,
+      "new_prediction": true,
+      "multi_action_chunk_boundary": false
+    }
+  ]
+}

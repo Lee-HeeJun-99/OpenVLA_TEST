@@ -1,0 +1,180 @@
+{
+  "trials": [
+    {
+      "trial": "20261014_full_policy_live_003",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "camera_stream_loss",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261014_full_policy_live_008",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "operator_abort",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261014_full_policy_live_012",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "camera_stream_loss",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261105_161322_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "raw_translation_step_limit",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261105_162144_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "camera_stream_loss",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261105_162501_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "camera_stream_loss",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261105_175259_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "camera_stream_loss",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_101231_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "raw_translation_step_limit",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_110547_arm_only_servo_episode",
+      "request_time": 141917.464120677,
+      "stop_ack": true,
+      "stop_response": {
+        "success": true
+      },
+      "original_reason": null,
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_111406_arm_only_servo_episode",
+      "request_time": 142407.953494333,
+      "stop_ack": false,
+      "stop_response": {
+        "success": false
+      },
+      "original_reason": "robot_abnormal_state:10",
+      "stop_error": "stop_ack_failure",
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_125319_arm_only_servo_episode",
+      "request_time": 148355.408181875,
+      "stop_ack": false,
+      "stop_response": {
+        "success": false
+      },
+      "original_reason": "robot_abnormal_state:10",
+      "stop_error": "stop_ack_failure",
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_145225_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "operator_abort",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_153541_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "workspace_violation",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    },
+    {
+      "trial": "20261106_154158_full_policy_episode",
+      "request_time": null,
+      "stop_ack": null,
+      "stop_response": null,
+      "original_reason": "camera_stream_loss",
+      "stop_error": null,
+      "physical_stop_confirmed": null,
+      "interpretation": "ACK false after robot abnormal state does not uniquely identify root cause; inspect paired alarms. Missing stop proof stays UNKNOWN."
+    }
+  ],
+  "joint_limit_alarms": [
+    {
+      "wall_time": 1793931329.3710065,
+      "index": 9008,
+      "parameters": [
+        "Joint Axis 5 angle beyond min limit, ZoneName[global-normal]",
+        "current pos=-137.500[deg], min range=-135.000[deg], ZoneName[global-normal]",
+        ""
+      ],
+      "log_path": "/home/ubuntu/.ros/log/ros2_control_node_131180_1793927493486.log",
+      "line": 2064,
+      "trial": "20261106_111406_arm_only_servo_episode",
+      "estimated_monotonic": 142407.8982708454
+    },
+    {
+      "wall_time": 1793937276.7366033,
+      "index": 9008,
+      "parameters": [
+        "Joint Axis 5 angle beyond min limit, ZoneName[global-normal]",
+        "current pos=-137.501[deg], min range=-135.000[deg], ZoneName[global-normal]",
+        ""
+      ],
+      "log_path": "/home/ubuntu/.ros/log/ros2_control_node_146093_1793937167618.log",
+      "line": 573,
+      "trial": "20261106_125319_arm_only_servo_episode",
+      "estimated_monotonic": 148355.263869524
+    }
+  ],
+  "conclusion": "Two failed ServoL runs have J5 limit alarm before stop request, then state10/SAFE_OFF2 and success=false. No evidence uniquely distinguishes already-stopped rejection, SDK false, state/authority or stop defect. No automatic recovery/retry is introduced.",
+  "new_rule": "ACK plus fresh STANDBY plus post-request continuous exact-zero joint window; failure/unknown permanently inhibits this trial."
+}

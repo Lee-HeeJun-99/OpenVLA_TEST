@@ -1,0 +1,64 @@
+{
+  "status": "UNVERIFIED_CANDIDATES_REPLACE_WITH_PENDANT_VALUES_BEFORE_REAL_USE",
+  "rotation_frame": "world_left",
+  "endpoint_policy": "log_only",
+  "rate_hz": 100.0,
+  "initial_duration_s": 0.5,
+  "duration_scale": 1.25,
+  "max_duration_s": 5.0,
+  "joint_limits_source": "pendant_limits.json",
+  "historical_j5_lower_deg_candidate": -135.0,
+  "historical_j5_upper_deg_candidate": 135.0,
+  "max_joint_velocity_rad_s_candidate": [3.1416, 3.1416, 3.1416, 6.2832, 6.2832, 6.2832],
+  "max_joint_acceleration_rad_s2_candidate": [3.0, 3.0, 3.0, 6.0, 6.0, 6.0],
+  "max_sample_joint_change_deg_candidate": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
+  "translation_step_m_candidate": 0.020,
+  "rotation_step_deg_candidate": 4.0,
+  "workspace_m_candidate": {"min": [0.0, -0.8, -0.05], "max": [0.8, 0.8, 1.0]},
+  "endpoint_streak_limit_candidate": 3,
+  "ik_position_tolerance_m_candidate": 0.00005,
+  "ik_rotation_tolerance_deg_candidate": 0.005,
+  "jacobian_min_singular_value_candidate": 0.0803,
+  "sim_home_joint_deg": [-182.535617, -1.058471, -40.983990, 1.253979, -113.505675, -178.500246],
+  "gripper_mount_offset_J6_deg": 180.0,
+  "real_home_joint_deg": [-182.535617, -1.058471, -40.983990, 1.253979, -113.505675, 1.499754],
+  "start_home_tolerance_deg_candidate": [2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
+  "real_reference_joint_range_deg_from_isaac225": {
+    "min": [-217.630113, -34.953220, -99.656640, 0.141226, -113.505675, -34.440606],
+    "max": [-182.535617, 2.155050, -40.983990, 5.926229, -68.638060, 1.499754]
+  },
+  "sim_joint_envelope_real_basis_deg": {
+    "sources": {
+      "isaac225_actual": {
+        "min": [-217.630113, -34.953220, -99.656640, 0.141226, -113.505675, -34.440606],
+        "max": [-182.535617, 2.155050, -40.983990, 5.926229, -68.638060, 1.499754]
+      },
+      "matched15_continuous_branch_reconstructed_real_basis": {
+        "min": [-197.812042, -41.210228, -88.882776, -3.441005, -107.060841, -108.773429],
+        "max": [-157.561933, 20.894776, -37.518146, 5.642476, -73.925381, 1.707712]
+      }
+    },
+    "min": [-217.630113, -41.210228, -99.656640, -3.441005, -113.505675, -108.773429],
+    "max": [-157.561933, 20.894776, -37.518146, 5.926229, -68.638060, 1.707712],
+    "combination": "per_joint_union",
+    "policy": "log_only"
+  },
+  "gripper_full_travel_duration_s": 0.6,
+  "provenance": {
+    "joint_limits": "loaded from pendant_limits.json; current Default is user-reported and photo gate remains false",
+    "joint_5_incident_gate": "separate diagnostic candidate from prior SAFE_STOP2 near -138 deg; not a URDF or certified safe limit",
+    "joint_margin": "5 deg per-joint candidate inside reported pendant values",
+    "joint_velocity": "URDF velocity limits",
+    "joint_acceleration": "Isaac Lula descriptor candidates; not pendant values",
+    "workspace": "historical 190404 contract user-specified candidate",
+    "step_limits": "task request candidates",
+    "ik_tolerance": "offline candidate requested for evaluation; not a certified safety limit",
+    "jacobian_singularity": "0.0803 candidate = approximately 80% of branch-continuous matched15 p0 0.100446; corroborated against actual Isaac225 p0 0.109456; old wrong-branch reconstruction rationale discarded",
+    "sim_joint_envelope": "per-joint union of Isaac225 actual and matched15 sim-home-seeded continuous-branch reconstruction, both transformed to real J6 basis; log_only and never a stop condition",
+    "sim_home": "actual Isaac home config a0509_home_pose.json, corroborated by first actual_joint_position_rad in the 225-sample Isaac replay; never auto-commanded",
+    "real_home_and_mount": "CONFIRMED visual field inspection 2026-11-13: physical gripper mount is link_6 Rz(180 deg) relative to sim; real J6=sim J6+180 deg makes the same physical gripper frame",
+    "real_reference_joint_range": "Isaac 225-sample observed range with J6+180 deg; comparison reference for margin review, not a pendant or certified joint limit",
+    "start_home_tolerance": "2 deg per-joint offline candidate; must be reviewed, never wraps or accepts alternate wrist configurations",
+    "gripper_timing": "matched15 sim evaluator continuous slew full travel duration"
+  }
+}
