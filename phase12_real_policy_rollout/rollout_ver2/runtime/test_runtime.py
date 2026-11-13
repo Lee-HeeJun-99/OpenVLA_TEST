@@ -43,7 +43,7 @@ class RuntimeTests(unittest.TestCase):
         class Pub:
             def __init__(self): self.messages=[]
             def publish(self,msg): self.messages.append(msg)
-        rc=dict(self.rc,servoj_time_unverified=.01,
+        rc=dict(self.rc,servoj_time_unverified=.05,
                 servoj_velocity_unverified=1.,servoj_acceleration_unverified=2.)
         pub=Pub(); gate=PassGate()
         sender=ServojPublisher(pub,SimpleNamespace,rc,gate,enabled=True)
@@ -134,7 +134,7 @@ class RuntimeTests(unittest.TestCase):
         class Pub:
             def __init__(self):self.messages=[]
             def publish(self,msg):self.messages.append(msg)
-        rc=dict(self.rc,servoj_time_unverified=.01,
+        rc=dict(self.rc,servoj_time_unverified=.05,
             servoj_velocity_unverified=1.,servoj_acceleration_unverified=2.)
         sender=ServojPublisher(Pub(),SimpleNamespace,rc,PassGate(),enabled=True)
         sender.publish(feedback.snapshot().joint_rad,clock())
@@ -322,10 +322,12 @@ class RuntimeTests(unittest.TestCase):
             self.assertNotIn("servoj_time_param_verified:not_passed",
                              gate.audit("stop_test_movej"))
             servoj=movej+("stop_movej_verified","servoj_time_param_verified",
-                          "tracking_thresholds_calibrated")
+                          "tracking_thresholds_calibrated","arm_stationary_verified")
             passed(servoj).require("stop_test_servoj")
             self.assertIn("stop_servoj_verified:not_passed",passed(servoj).audit("synthetic"))
             self.assertIn("stop_servoj_verified:not_passed",passed(servoj).audit("policy"))
+            without_arm=tuple(x for x in servoj if x != "arm_stationary_verified")+("stop_servoj_verified",)
+            self.assertIn("arm_stationary_verified:not_passed",passed(without_arm).audit("policy"))
             synthetic=servoj+("stop_servoj_verified",)
             passed(synthetic).require("synthetic")
             passed(synthetic).require("policy")

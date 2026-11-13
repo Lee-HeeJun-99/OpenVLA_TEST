@@ -64,8 +64,18 @@ class FixedSegmentPlanner:
                 try:q=self.fallback_ik.solve(pose,q,joint_lower_rad=self.config.effective_lower_rad,
                   joint_upper_rad=self.config.effective_upper_rad,
                   max_joint_change_rad=self.config.max_sample_joint_change_rad)
-                except Exception:
-                    raise ServoJPrecheckError([f"IK_FAILED:{index}"],{"sample":index,"error":str(error)}) from error
+                except Exception as fallback_error:
+                    diagnostics={"sample":index,"error":str(error),
+                      "fallback_error":str(fallback_error),"fallback_error_type":type(fallback_error).__name__}
+                    best=getattr(fallback_error,"best_joint_rad",None)
+                    if best is not None:
+                        diagnostics["best_joint_rad"]=np.asarray(best).tolist()
+                        diagnostics["best_joint_deg"]=np.rad2deg(best).tolist()
+                    if getattr(fallback_error,"best_residual",None) is not None:
+                        diagnostics["best_residual"]=fallback_error.best_residual
+                    if getattr(fallback_error,"iterations",None) is not None:
+                        diagnostics["iterations"]=fallback_error.iterations
+                    raise ServoJPrecheckError([f"IK_FAILED:{index}"],diagnostics) from fallback_error
             ik_times.append(time.perf_counter()-tick);joints.append(q.copy())
             reasons.extend(f"SAMPLE_{index}:{x}" for x in joint_margin_reasons(q,self.config))
             sigma=float(np.linalg.svd(self.kin.jacobian(q),compute_uv=False)[-1]);sigmas.append(sigma)

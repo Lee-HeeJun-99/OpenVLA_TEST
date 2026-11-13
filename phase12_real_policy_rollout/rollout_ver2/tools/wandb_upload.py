@@ -100,7 +100,8 @@ def build_upload(folder,scene=None):
     first_prediction=predictions[0] if predictions else {}
     config={"instruction":summary.get("instruction"),"scene":scene or summary.get("operator_note") or
       summary.get("scene_cube_color"),"model":summary.get("model") or first_prediction.get("server_model"),
-      "checkpoint":first_prediction.get("server_checkpoint"),"settings":settings}
+      "checkpoint":first_prediction.get("server_checkpoint"),"control_mode":summary.get("control_mode"),
+      "segment_T_s":summary.get("segment_T_s"),"servoj_time_s":summary.get("servoj_time_s"),"settings":settings}
     try:config["git_commit"]=subprocess.check_output(["git","rev-parse","HEAD"],cwd=folder,
       text=True,stderr=subprocess.DEVNULL).strip()
     except Exception:config["git_commit"]=None

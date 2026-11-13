@@ -56,8 +56,10 @@ class RosReceiveMetrics:
         camera_qos=QoSProfile(history=HistoryPolicy.KEEP_LAST,depth=1,
           reliability=ReliabilityPolicy.RELIABLE,durability=DurabilityPolicy.VOLATILE)
         from sensor_msgs.msg import Image,JointState
-        self.sub_joint=node.create_subscription(JointState,joint_topic,self.on_joint,joint_qos)
-        self.sub_camera=node.create_subscription(Image,camera_topic,self.on_camera,camera_qos)
+        self.sub_joint=(None if joint_topic is None else
+          node.create_subscription(JointState,joint_topic,self.on_joint,joint_qos))
+        self.sub_camera=(None if camera_topic is None else
+          node.create_subscription(Image,camera_topic,self.on_camera,camera_qos))
     def on_joint(self,message):
         now=self.clock();stamp=getattr(getattr(message,"header",None),"stamp",None)
         header_ns=None if stamp is None else int(stamp.sec)*1_000_000_000+int(stamp.nanosec)
@@ -138,7 +140,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument("--run-dir",type=Path,required=True)
     p.add_argument("--ctrl-pid",type=int,required=True);p.add_argument("--obs-pid",type=int)
     p.add_argument("--server-pid",type=int);p.add_argument("--server",default="http://127.0.0.1:8766")
-    p.add_argument("--joint-topic",default="/dsr01/joint_states");p.add_argument("--camera-topic",required=True)
+    p.add_argument("--joint-topic",default="/dsr01/joint_states");p.add_argument("--camera-topic")
     p.add_argument("--start-monotonic",type=float,required=True);p.add_argument("--hz",type=float,default=2.0)
     a=p.parse_args();a.run_dir.mkdir(parents=True,exist_ok=True)
     stop=False

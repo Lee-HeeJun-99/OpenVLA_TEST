@@ -9,8 +9,10 @@ class SystemMonitorProcess:
                  server_pid=None,popen=subprocess.Popen):
         self.run_dir=Path(run_dir);self.warning=None
         command=["/usr/bin/python3",str(Path(root)/"tools/system_monitor.py"),"--run-dir",str(run_dir),
-          "--ctrl-pid",str(ctrl_pid),"--obs-pid",str(obs_pid),"--server",str(server),
-          "--camera-topic",str(camera_topic),"--start-monotonic",str(start_monotonic)]
+          "--ctrl-pid",str(ctrl_pid),"--server",str(server),
+          "--start-monotonic",str(start_monotonic)]
+        if obs_pid is not None:command += ["--obs-pid",str(obs_pid)]
+        if camera_topic is not None:command += ["--camera-topic",str(camera_topic)]
         if server_pid is not None:command += ["--server-pid",str(server_pid)]
         self.log=(self.run_dir/"system_monitor.log").open("a")
         try:self.process=popen(command,stdout=self.log,stderr=self.log)

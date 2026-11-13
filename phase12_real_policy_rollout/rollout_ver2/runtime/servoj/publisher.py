@@ -1,5 +1,6 @@
 from __future__ import annotations
 import numpy as np
+from .tracking import validate_servoj_time
 
 
 class ServojPublisher:
@@ -27,7 +28,8 @@ class ServojPublisher:
         msg=self.message_factory();msg.pos=np.rad2deg(q).tolist()
         msg.vel=self._six(self.config["servoj_velocity_unverified"],"vel")
         msg.acc=self._six(self.config["servoj_acceleration_unverified"],"acc")
-        msg.time=float(self.config["servoj_time_unverified"]);msg.mode=0
+        msg.time=validate_servoj_time(self.config["servoj_time_unverified"],
+          self.config.get("servoj_time_min_verified_s",.02),self.config.get("servoj_time_max_verified_s",.10));msg.mode=0
         self.publisher.publish(msg);self.events.append({"time":float(now),"pos_deg":msg.pos,"mode":0})
     @staticmethod
     def _six(value,label):

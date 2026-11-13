@@ -1,0 +1,262 @@
+{
+  "pass": false,
+  "reason": "TRIAL_3_FAILED:TimeExploreFault:J6_VELOCITY_EXCEEDED",
+  "trials": [
+    {
+      "trial": 0,
+      "time_s": 0.1,
+      "pass": true,
+      "reason": "COMPLETED",
+      "forward": {
+        "lag_50_percent_ms": 80.0944030052051,
+        "max_tracking_error_deg": 0.28517965491377684,
+        "overshoot_deg": 0.004240037877963676,
+        "post_send_final_error_deg": -0.00014579734283071133,
+        "post_send_additional_motion_deg": -0.0001459952935092268,
+        "settling_time_s": 0.00015489698853343725
+      },
+      "return": {
+        "lag_50_percent_ms": 80.30437098932452,
+        "max_tracking_error_deg": 0.2909782192686885,
+        "overshoot_deg": 0.004385941942500082,
+        "post_send_final_error_deg": 0.00014620873692061664,
+        "post_send_additional_motion_deg": 0.0002923107521353163,
+        "settling_time_s": 0.00017297398881055415
+      },
+      "j1_to_j5_max_change_deg": [
+        0.0,
+        1.0672170569492323e-07,
+        0.0,
+        3.201651173068143e-07,
+        0.0
+      ],
+      "final_start_error_deg": [
+        0.0,
+        -1.0672170578144923e-07,
+        0.0,
+        0.0,
+        0.0,
+        0.00014620873692058545
+      ],
+      "send_jitter_ms": {
+        "p50": 0.05997800326440483,
+        "p99": 1.202451463905163,
+        "max": 1.8940839800052345
+      },
+      "missed_deadline_count": 0,
+      "deadline_by_stage": {
+        "forward_send": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.8793859926518053
+        },
+        "forward_observe": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 0.7443719950970262
+        },
+        "return_send": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.4177219709381461
+        },
+        "return_observe": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 2.288640011101961
+        }
+      }
+    },
+    {
+      "trial": 1,
+      "time_s": 0.05,
+      "pass": true,
+      "reason": "COMPLETED",
+      "forward": {
+        "lag_50_percent_ms": 50.096431019483134,
+        "max_tracking_error_deg": 0.16607833943350192,
+        "overshoot_deg": 0.0036552029302816536,
+        "post_send_final_error_deg": -0.00014579734283071133,
+        "post_send_additional_motion_deg": -0.00029220403042984344,
+        "settling_time_s": 0.0001273870002478361
+      },
+      "return": {
+        "lag_50_percent_ms": 50.103081011911854,
+        "max_tracking_error_deg": 0.1730454356091813,
+        "overshoot_deg": 0.0038011069948178378,
+        "post_send_final_error_deg": 0.00014620873692061664,
+        "post_send_additional_motion_deg": 0.0002923107521353163,
+        "settling_time_s": 0.00015129498206079006
+      },
+      "j1_to_j5_max_change_deg": [
+        0.0,
+        1.0672170569492323e-07,
+        0.0,
+        3.201651173068143e-07,
+        0.0
+      ],
+      "final_start_error_deg": [
+        0.0,
+        -1.0672170578144923e-07,
+        0.0,
+        0.0,
+        0.0,
+        0.00014620873692058545
+      ],
+      "send_jitter_ms": {
+        "p50": 0.059020487242378294,
+        "p99": 0.7141200004843996,
+        "max": 1.675535982940346
+      },
+      "missed_deadline_count": 0,
+      "deadline_by_stage": {
+        "forward_send": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.6621939721517265
+        },
+        "forward_observe": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 2.1476020046975464
+        },
+        "return_send": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.1397909838706255
+        },
+        "return_observe": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.3666540035046637
+        }
+      }
+    },
+    {
+      "trial": 2,
+      "time_s": 0.02,
+      "pass": true,
+      "reason": "COMPLETED",
+      "forward": {
+        "lag_50_percent_ms": 40.10218198527582,
+        "max_tracking_error_deg": 0.12753923693203228,
+        "overshoot_deg": 0.003508994193361037,
+        "post_send_final_error_deg": -0.00014579734283071133,
+        "post_send_additional_motion_deg": -0.00029220403042984344,
+        "settling_time_s": 0.0002590090152807534
+      },
+      "return": {
+        "lag_50_percent_ms": 30.13810099218972,
+        "max_tracking_error_deg": 0.09795333596637334,
+        "overshoot_deg": 0.0038011069948178378,
+        "post_send_final_error_deg": 0.00014620873692061664,
+        "post_send_additional_motion_deg": 0.0002923107521353163,
+        "settling_time_s": 0.00024685400421731174
+      },
+      "j1_to_j5_max_change_deg": [
+        0.0,
+        1.0672170569492323e-07,
+        0.0,
+        3.201651173068143e-07,
+        0.0
+      ],
+      "final_start_error_deg": [
+        0.0,
+        -1.0672170578144923e-07,
+        0.0,
+        0.0,
+        0.0,
+        0.00014620873692058545
+      ],
+      "send_jitter_ms": {
+        "p50": 0.060733495047315955,
+        "p99": 1.553523003240118,
+        "max": 2.2528830158989877
+      },
+      "missed_deadline_count": 0,
+      "deadline_by_stage": {
+        "forward_send": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 2.2335730027407408
+        },
+        "forward_observe": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.7966729938052595
+        },
+        "return_send": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 2.141033997759223
+        },
+        "return_observe": {
+          "missed_deadline_count": 0,
+          "max_lateness_ms": 1.5806130249984562
+        }
+      }
+    },
+    {
+      "trial": 3,
+      "time_s": 0.01,
+      "pass": false,
+      "reason": "TimeExploreFault:J6_VELOCITY_EXCEEDED"
+    }
+  ],
+  "sent_count": 1244,
+  "move_stop": {
+    "reason": "TRIAL_3_FAILED:TimeExploreFault:J6_VELOCITY_EXCEEDED",
+    "requested_monotonic": 155780.964527181,
+    "completed_monotonic": 155780.966732576,
+    "ack": {
+      "success": true
+    }
+  },
+  "gate_updates_applied": false,
+  "candidate_gate_updates": [],
+  "preflight": {
+    "real_home_error_deg": [
+      -0.017116569735222718,
+      -0.013375111802762669,
+      -0.021812248264010518,
+      0.0026325867531875324,
+      0.005552882446709727,
+      -4.488162865754392e-05
+    ],
+    "servoj_publishers_before_create": 0,
+    "servoj_subscribers": 1,
+    "alarm": {
+      "time": 155743.551440209,
+      "success": true,
+      "level": 0,
+      "group": 0,
+      "index": 0,
+      "param": [
+        "",
+        "",
+        ""
+      ],
+      "active": false
+    }
+  },
+  "confirmed_preflight": {
+    "real_home_error_deg": [
+      -0.017116569735222718,
+      -0.013375111802762669,
+      -0.021812248264010518,
+      0.0026325867531875324,
+      0.005552882446709727,
+      -4.488162865754392e-05
+    ],
+    "servoj_publishers_before_create": 0,
+    "servoj_subscribers": 1,
+    "alarm": {
+      "time": 155756.553780183,
+      "success": true,
+      "level": 0,
+      "group": 0,
+      "index": 0,
+      "param": [
+        "",
+        "",
+        ""
+      ],
+      "active": false
+    }
+  },
+  "system_monitor": {
+    "running": false,
+    "returncode": 0,
+    "warning": null,
+    "traceback_tail": []
+  }
+}

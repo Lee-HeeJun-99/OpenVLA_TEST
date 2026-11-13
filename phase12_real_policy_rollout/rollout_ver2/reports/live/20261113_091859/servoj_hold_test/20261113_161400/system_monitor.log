@@ -1,0 +1,6 @@
+usage: system_monitor.py [-h] --run-dir RUN_DIR --ctrl-pid CTRL_PID
+                         [--obs-pid OBS_PID] [--server-pid SERVER_PID]
+                         [--server SERVER] [--joint-topic JOINT_TOPIC]
+                         --camera-topic CAMERA_TOPIC --start-monotonic
+                         START_MONOTONIC [--hz HZ]
+system_monitor.py: error: argument --obs-pid: invalid int value: 'None'

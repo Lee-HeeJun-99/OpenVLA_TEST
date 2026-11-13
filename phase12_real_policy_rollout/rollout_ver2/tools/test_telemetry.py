@@ -23,7 +23,8 @@ class TelemetryTests(unittest.TestCase):
     def test_wandb_payload_skips_missing_optional_files_and_maps_metrics(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);(root/"summary.json").write_text(json.dumps({"end_reason":"DONE",
-              "instruction":"Pick up the blue cube."}))
+              "instruction":"Pick up the blue cube.","control_mode":"servoj_A",
+              "segment_T_s":1.0,"servoj_time_s":.05}))
             step={"step":0,"action_raw":[.001,.002,.003,.01,.02,.03,1.],
               "gripper_binary":1,"ik_precheck_s":.1,"move_s":.2,"settle_s":.3,
               "step_total_s":.8,"path_sigma_min":.09,"arrival_joint_error_deg":[.01]*6,
@@ -35,6 +36,9 @@ class TelemetryTests(unittest.TestCase):
             self.assertFalse(payload["files_found"]["predictions"])
             self.assertEqual(payload["summary"]["first_close_step"],0)
             self.assertAlmostEqual(payload["step_logs"][0]["ctrl/cmd_actual_pos_mm"],.1)
+            self.assertEqual(payload["config"]["control_mode"],"servoj_A")
+            self.assertEqual(payload["config"]["segment_T_s"],1.0)
+            self.assertEqual(payload["config"]["servoj_time_s"],.05)
 
     def test_process_metrics_missing_pid_is_nonfatal(self):
         self.assertIsNone(process_metrics(None));self.assertIsNone(process_metrics(999999999))
@@ -117,5 +121,17 @@ class TelemetryTests(unittest.TestCase):
             self.assertEqual(status["traceback_tail"],[f"trace line {i}" for i in range(3,8)])
             self.assertEqual(monitor.stop()["returncode"],7)
             self.assertEqual(made[0].terminated,0)
+
+    def test_monitor_omits_none_pid_and_optional_camera(self):
+        commands=[]
+        class FakeProcess:
+            def poll(self):return 0
+            def wait(self,timeout=None):return 0
+        def popen(command,**kwargs):commands.append(command);return FakeProcess()
+        with tempfile.TemporaryDirectory() as d:
+            monitor=SystemMonitorProcess(ROOT,Path(d),123,None,"http://127.0.0.1:8766",
+              None,10.0,popen=popen);monitor.stop()
+        self.assertNotIn("--obs-pid",commands[0]);self.assertNotIn("None",commands[0])
+        self.assertNotIn("--camera-topic",commands[0])
 
 if __name__=="__main__":unittest.main()

@@ -1,13 +1,13 @@
 {
   "pendant_limits_recorded": {"passed": true, "evidence": "reports/live/20261113_091859/operator_attestation.json", "evidence_type": "operator_attestation"},
   "live_topics_verified": {"passed": true, "evidence": "reports/live/20261113_091859/live_feedback_evidence.json", "evidence_type": "measurement"},
-  "servoj_time_param_verified": {"passed": false, "evidence": null},
-  "tracking_thresholds_calibrated": {"passed": false, "evidence": null},
+  "servoj_time_param_verified": {"passed": true, "evidence": "reports/live/20261113_091859/servoj_time_explore/20261113_162851/summary.json", "evidence_type": "measurement", "selected_time_s": 0.05, "allowed_range_s": [0.02, 0.1], "forbidden_below_s": 0.02},
+  "tracking_thresholds_calibrated": {"passed": true, "evidence": "reports/live/20261113_091859/servoj_time_explore/20261113_162851/summary.json", "evidence_type": "measurement", "formula": "2*(0.020+0.6*time_s)*segment_max_joint_velocity_deg_s+0.1deg"},
   "feedback_rate_verified": {"passed": true, "evidence": "reports/live/20261113_091859/feedback_thread_check.json", "evidence_type": "measurement"},
   "gripper_wiring_recorded": {"passed": true, "evidence": "reports/live/20261113_091859/operator_attestation.json", "evidence_type": "operator_attestation"},
   "gripper_io_verified": {"passed": false, "evidence": null},
-  "arm_stationary_verified": {"passed": false, "evidence": null},
+  "arm_stationary_verified": {"passed": true, "evidence": "reports/live/20261113_091859/servoj_hold_test/20261113_162035/summary.json", "evidence_type": "measurement", "required_by": ["servoj_time_explore", "policy_servoj"], "supersedes_incomplete_evidence": "reports/live/20261113_091859/servoj_hold_test/20261113_161400/summary.json"},
   "stop_movej_verified": {"passed": true, "evidence": "reports/live/20261113_091859/stop_test_movej/summary.json", "evidence_type": "measurement"},
-  "stop_servoj_verified": {"passed": false, "evidence": null},
+  "stop_servoj_verified": {"passed": true, "evidence": "reports/live/20261113_091859/stop_test_servoj/20261113_164249/summary.json", "evidence_type": "measurement"},
   "extended_range_clearance_checked": {"passed": false, "evidence": null}
 }

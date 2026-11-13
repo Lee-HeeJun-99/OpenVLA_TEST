@@ -1,6 +1,22 @@
 from __future__ import annotations
 from dataclasses import dataclass
 import numpy as np
+
+def validate_servoj_time(time_s,minimum_s=.02,maximum_s=.10):
+    value=float(time_s)
+    if not np.isfinite(value) or value<float(minimum_s):raise ValueError(f"SERVOJ_TIME_BELOW_VERIFIED_MIN:{value}<{minimum_s}")
+    if value>float(maximum_s):raise ValueError(f"SERVOJ_TIME_ABOVE_VERIFIED_MAX:{value}>{maximum_s}")
+    return value
+
+def tracking_delay_s(time_s,base_s=.020,time_scale=.6):
+    return float(base_s)+float(time_scale)*float(time_s)
+
+def tracking_threshold_deg(time_s,segment_max_joint_velocity_deg_s,*,base_s=.020,time_scale=.6,
+                           multiplier=2.,floor_deg=.1):
+    validate_servoj_time(time_s)
+    velocity=np.asarray(segment_max_joint_velocity_deg_s,float)
+    if np.any(~np.isfinite(velocity)) or np.any(velocity<0):raise ValueError("invalid segment velocity")
+    return float(multiplier)*tracking_delay_s(time_s,base_s,time_scale)*velocity+float(floor_deg)
 from runtime import robot_state as rs
 
 
