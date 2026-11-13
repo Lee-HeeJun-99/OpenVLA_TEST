@@ -46,7 +46,7 @@
   "gripper_full_travel_duration_s": 0.6,
   "provenance": {
     "joint_limits": "loaded from pendant_limits.json; current Default is user-reported and photo gate remains false",
-    "joint_5_incident_gate": "separate diagnostic candidate from prior SAFE_STOP2 near -138 deg; not a URDF or certified safe limit",
+    "joint_5_incident_gate": "separate diagnostic candidate from prior robot_abnormal_state=10 SAFE_OFF2 near -138 deg; not a URDF or certified safe limit",
     "joint_margin": "5 deg per-joint candidate inside reported pendant values",
     "joint_velocity": "URDF velocity limits",
     "joint_acceleration": "Isaac Lula descriptor candidates; not pendant values",

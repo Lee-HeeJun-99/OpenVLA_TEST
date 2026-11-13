@@ -5,7 +5,7 @@ MODES=("dryrun_offline","dryrun_live","gripper_test","stop_test_movej",
 
 MODE_REQUIRED_SETTINGS={
   "dryrun_offline":(),
-  "dryrun_live":("robot_state_topic_unverified","joint_states_topic_unverified",
+  "dryrun_live":("get_robot_state_service","joint_states_topic",
                  "camera_topic_unverified","feedback_stale_s_candidate"),
   "gripper_test":("tool_digital_output_service","gripper.open_output_index",
                   "gripper.close_output_index","zero_velocity_rad_s_candidate"),

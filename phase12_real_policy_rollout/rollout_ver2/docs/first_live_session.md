@@ -4,10 +4,10 @@
 
 ## 1. 펜던트·배선 기록
 
-Robot Limits 일반/감소 모드, tool TCP/무게, firmware와 함께 JEGH-3520의 Tool DO1/DO2 실제 배선과 완료 입력 포트의 존재/번호를 사진과 수기 JSON으로 기록한다.
+Robot Limits 일반/감소 모드, tool TCP/무게, firmware와 함께 JEGH-3520의 Tool DO1/DO2 실제 배선과 완료 입력 포트의 존재/번호를 photo 또는 operator attestation으로 기록한다.
 
-- `pendant_limits_recorded`: Robot Limits 화면 사진과 날짜/작업자/단위가 있어야 한다.
-- `gripper_wiring_recorded`: Tool DO1/DO2 단자와 배선, 입력 포트 유무를 식별하는 사진/기록이 있어야 한다. 이는 동작 성공을 뜻하지 않는다.
+- `pendant_limits_recorded`: 사진 또는 `operator_attestation`의 날짜·작업자·값·확인 방법·사진 미등록 사유가 있어야 한다. 2026-11-13 사용자 결정으로 attestation을 등록했다.
+- `gripper_wiring_recorded`: Tool DO1/DO2와 X1 24V PNP 배선을 operator attestation으로 등록했다. 이는 동작 성공이나 극성 확정을 뜻하지 않는다.
 - `gripper_io_verified`: 이 단계에서는 false를 유지하며 gripper_test 결과 review 뒤에만 true로 바꾼다.
 - 중단: 포트·극성·TCP가 불명확하거나 기존 후보와 다름.
 - evidence: `reports/live/<session>/pendant_limits.*`, `gripper_wiring.*`, 사진 manifest.
@@ -23,7 +23,7 @@ Robot Limits 일반/감소 모드, tool TCP/무게, firmware와 함께 JEGH-3520
 - 통과: REAL/AUTO/STANDBY, `/dsr01` topic/service와 QoS/주기 정상, servoj publisher 0, state 1, unexpected motion 없음.
 - 중단: SAFE/RECOVERY/NOT_READY, stale/저주기, namespace/type 불일치, 기존 publisher 존재.
 - evidence: launch stdout, pendant 상태 사진, `readonly.txt`.
-- review 결과로 `live_topics_verified`, `feedback_rate_verified`를 등록한다.
+- 2026-11-13 read-only/self-test 결과로 `live_topics_verified`, `feedback_rate_verified`는 등록됐다. 이후 세션에서는 같은 검사를 재확인한다.
 
 ## 3. 설정과 모드별 필수값
 
@@ -39,20 +39,76 @@ Robot Limits 일반/감소 모드, tool TCP/무게, firmware와 함께 JEGH-3520
 
 ## 4. dryrun_live
 
-feedback/camera/model만 읽고 명령은 파일에만 기록한다.
+### 추론 서버와 v2 health
 
-- 통과: 60초 이상 fresh feedback, 유효 `tool0_real`, JPEG q92/raw action/endpoint 기록, command count 0.
-- 중단: stale/state fault/topic gap/image 오류/기존 publisher.
+터미널 1:
+
+```bash
+cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903
+./scripts/serve.sh vanilla 8766
+```
+
+터미널 2:
+
+```bash
+cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2
+/usr/bin/python3 tools/check_v2_health.py --url http://127.0.0.1:8766
+```
+
+기존 `scripts/healthcheck.sh vanilla http://127.0.0.1:8766`은 vanilla의 ready/variant/chunk/action_dim만 검사한다. 그 파일의 `center_crop=True` 검사는 OFT 분기 전용이다. v2/matched15 vanilla 경로는 center crop 없음이 기준이므로 `check_v2_health.py`가 `center_crop=false`, RGB, vision-only를 명시적으로 요구한다.
+
+### 카메라 확인
+
+```bash
+ros2 topic list -t | grep 'sensor_msgs/msg/Image'
+export V2_CAMERA_TOPIC=/확인한/image/topic
+ros2 topic info "$V2_CAMERA_TOPIC" --verbose
+ros2 topic echo "$V2_CAMERA_TOPIC" sensor_msgs/msg/Image --once --field width
+ros2 topic echo "$V2_CAMERA_TOPIC" sensor_msgs/msg/Image --once --field height
+ros2 topic echo "$V2_CAMERA_TOPIC" sensor_msgs/msg/Image --once --field encoding
+```
+
+실제 topic 이름, 해상도, encoding을 session evidence에 기록하고 `rgb8/bgr8/rgba8/bgra8` 중 하나인지 확인한다.
+
+### 실행
+
+feedback/camera/model만 읽으며 publisher와 상태 변경 service client를 만들지 않는다.
+
+환경 setup과 `ROS_DOMAIN_ID=71 ROS_LOCALHOST_ONLY=1` 설정을 마친 뒤 아래 **실행 명령 한 줄만 붙여넣는다**. 확인 문구를 명령에 pipe하거나 함께 붙여넣지 말고 prompt가 나타나면 작업자가 `I_CONFIRM_V2_MODE:dryrun_live`를 직접 입력한다.
+
+```bash
+/usr/bin/python3 tools/dryrun_live.py --duration 60 --server http://127.0.0.1:8766 --camera-topic /zed/zed_node/rgb/color/rect/image --instruction "Pick up the blue cube." --scene-cube-color blue --output reports/live/20261113_091859/dryrun_live
+```
+
+preflight는 명령 전에 robot_mode=1, robot_system=0, robot_state=1과 real_home 관절별 ±2°를 검사하며 wrap을 허용하지 않는다. 허용 지시문은 matched15의 red/yellow/blue 정확 문자열뿐이다. 그 밖의 지시문은 `--allow-ood-instruction`을 명시해야 하며 summary에 OOD 여부가 기록된다.
+
+실행기는 두 OS process를 `spawn`한다. 프로세스 A는 feedback/get_robot_state/안전 감시만 담당하고 image를 다루지 않는다. 프로세스 B는 ZED/frame barrier/JPEG q92/HTTP inference만 담당한다. 감시 시작 전 실행 시작 이후의 새 joint_states와 robot_state 응답을 각각 기다리며 2초 후보 안에 확보하지 못하면 `FEEDBACK_NO_FIRST_SAMPLE`로 중단한다. B가 죽거나 pipe가 끊기면 A는 `OBSERVATION_PROCESS_DIED_STOP_REQUIRED`로 처리한다. dryrun에는 물리 command가 없으며 향후 command mode에서는 기존 stop 경로로 연결한다.
+
+- 흐름: 가상 `t_settle` 기록 → host/ROS 시각 모두 그 뒤인 새 frame 대기 → 추론/기록 → 새 가상 `t_settle`. 기다리는 동안 action이나 명령을 반복하지 않고 feedback/state/error/disconnection 감시를 계속한다.
+- 통과: 60초 이상, camera 10초 대기 상한 초과 0, 관측별 settle/frame 두 시각과 대기 시간 기록, state=1, feedback host age ≤0.1s, virtual 100Hz period p99 <15ms, 유효 `tool0_real`, JPEG q92/raw action/endpoint 기록, command publish 및 상태 변경 service call 0회.
+- 정상 종료: 새 frame 대기 10초 후보 초과는 `CAMERA_NO_FRAME_TIMEOUT`으로 기록하고 정지 상태에서 episode를 끝낸다(fault 아님).
+- 중단: robot feedback stale/state/error/disconnection fault, image decode 오류, 기존 publisher.
 - evidence: feedback/action JSONL, timing, command-count-zero audit.
+
+### 선택 검토: ZED publish 15 Hz
+
+현재 적용하지 않는다. 읽기 전용 source 조사상 ZED2i capture 설정은 `/home/ubuntu/robot_ws/src/zed-ros2-wrapper/zed_wrapper/config/zed2i.yaml`의 `general.grab_frame_rate: 30`이고, image publish 상한은 `config/common_stereo.yaml`의 `general.pub_frame_rate: 0.0`이다. 주석상 `0.0`은 grab rate와 같고 `pub_frame_rate`는 camera rate 이하여야 한다. 다음 세션에서 부하 저감 실험을 별도로 승인하면 복사본/launch용 설정에서 `general.pub_frame_rate: 15.0` 후보를 사용한다. 원본 read-only 파일은 수정하지 않으며 이번 세션 설정에도 적용하지 않는다. capture 자체를 15 Hz로 낮추는 `grab_frame_rate: 15`는 별도 변수이므로 publish-only 시험과 섞지 않는다.
 
 ## 5. gripper_test
 
-`pendant_limits_recorded`, `live_topics_verified`, `gripper_wiring_recorded`, `arm_stationary_verified` evidence와 fresh confirmation이 모두 필요하다. 팔 정지를 JointState 속도와 작업자 확인으로 먼저 기록한 뒤 OPEN/CLOSE를 각 1회만 수행한다.
+`pendant_limits_recorded`, `live_topics_verified`, `gripper_wiring_recorded`, `arm_stationary_verified` evidence와 fresh confirmation이 모두 필요하다.
 
-- 통과: 기존 Tool DO pulse 순서와 ACK, jaw 상태·개폐 시간, 입력 포트가 있으면 완료 timestamp 기록.
+1. JointState와 작업자가 팔 정지를 확인한다.
+2. OPEN: DO2 Off를 먼저 확인/설정하고 DO1 On, 두 출력 readback, 펜던트 표시, 육안 jaw 상태와 소요 시간을 기록한다.
+3. CLOSE: DO1 Off를 먼저 확인/설정하고 DO2 On, 같은 항목을 기록한다.
+4. 마지막에 DO1/DO2를 모두 Off로 두고 jaw가 유지되는지 또는 풀리는지 관찰한다.
+
+첫 명령에서 서비스 극성이 예상(`0=Off, 1=On`)과 다르면 즉시 두 출력 Off를 요청하고 중단한다. 두 출력 동시 On은 금지한다.
+
+- 통과: level 순서와 ACK/readback, jaw 상태·개폐 시간, 입력 포트가 있으면 완료 timestamp 기록.
 - 중단: 팔 속도 비영, mapping/readback 불일치, ACK 실패, jaw 미완료, unexpected motion.
-- evidence: arm-stationary sample, pulse/ACK JSONL, 사진/영상, operator observation, 선택적 input log.
-- 독립 review 완료 뒤에만 `gripper_io_verified=true`로 등록한다.
+- evidence: arm-stationary sample, level write/readback JSONL, 펜던트 표시, 사진/영상 또는 operator observation, 선택적 input log.
+- 독립 review 완료 뒤에만 `gripper_io_verified=true`로 등록한다. policy는 그 전후 모두 gripper hardware를 기록만 하며, 향후 활성화에는 별도 `gripper_io_verified` 조건이 필요하다.
 
 ## 6. stop_test_movej — 세션 1 종료점
 
@@ -60,10 +116,10 @@ real home에서 `/dsr01/motion/move_joint`(`dsr_msgs2/srv/MoveJoint`)로 J6만 `
 
 MoveStop 후보는 `DR_QSTOP=1`이며 **[미확인: 현장 검토]**다. `stop_test_servoj`도 반드시 같은 설정값을 사용한다.
 
-- 모든 RobotState callback을 수신 주기 그대로 `robot_state_full_rate.jsonl`에 기록한다. `current_posj/current_velj/current_posx/current_tool_posx/rotation_matrix/f_current_pos_world/sync_time`과 host monotonic 수신 시각을 보존하여 FK 변화량과 posx 변화량 일치도를 사후 분석한다.
+- RobotState topic은 현장 graph에 없다. 모든 `/joint_states` callback의 이름 정규화 관절각/속도, host 수신 시각, header stamp를 기록하고, `get_robot_state`를 계속 polling한다. flange 교차 검증은 저주기 `get_current_tool_flange_posx/get_current_rotm` 로그로 수행한다.
 - 통과: MoveStop ACK(또는 선행 SAFE 상태), 계속 갱신된 JointState에서 zero velocity 0.3초 후보, 추가 command 0, full-rate log 완전성 확인.
 - 중단: 시작이 real home 아님, 설정 null, 한계/상태/stale fault, ACK와 SAFE 상태 모두 없음, zero velocity 미확인.
-- evidence: MoveJoint request/ACK, full-rate RobotState와 JointState, stop receipt, monotonic timeline, pendant 영상.
+- evidence: MoveJoint request/ACK, full-rate JointState, state polling과 flange get 로그, stop receipt, monotonic timeline, pendant 영상.
 - review 뒤 `stop_movej_verified=true`로 등록한다.
 
 **`stop_movej_verified`는 정지 서비스와 판정 로직의 검증이며, servoj 스트림 중 정지 동작의 검증을 대신하지 않는다.**

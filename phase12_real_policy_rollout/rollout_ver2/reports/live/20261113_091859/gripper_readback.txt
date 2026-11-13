@@ -1,0 +1,28 @@
+=== srv 정의 ===
+#____________________________________________________________________________________________
+# get_tool_digital_output  
+# This service gets the current tool io output status.
+#____________________________________________________________________________________________
+
+int8       index   # flange digital output port(1 ~ 6)
+---
+int8       value   # Current output status (0 : ON, 1 : OFF)
+bool       success#____________________________________________________________________________________________
+# set_tool_digital_output  
+# This service sends ouptput to tool io.
+#____________________________________________________________________________________________
+
+int8       index   # flange digital output port(1 ~ 6)
+int8       value   # 0 : ON, 1 : OFF
+---
+bool       success=== 현재 값 (펜던트 표시: DO1 Off, DO2 Off) ===
+requester: making request: dsr_msgs2.srv.GetToolDigitalOutput_Request(index=1)
+
+response:
+dsr_msgs2.srv.GetToolDigitalOutput_Response(value=0, success=True)
+
+requester: making request: dsr_msgs2.srv.GetToolDigitalOutput_Request(index=2)
+
+response:
+dsr_msgs2.srv.GetToolDigitalOutput_Response(value=0, success=True)
+

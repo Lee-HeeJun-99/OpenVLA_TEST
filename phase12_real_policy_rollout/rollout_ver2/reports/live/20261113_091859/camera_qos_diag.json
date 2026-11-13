@@ -1,0 +1,47 @@
+{
+  "topic": "/zed/zed_node/rgb/color/rect/image",
+  "measurement_order": [
+    "sensor_data_best_effort",
+    "reliable_depth1_volatile"
+  ],
+  "cases": [
+    {
+      "qos": "sensor_data_best_effort",
+      "duration_s": 20.01243967699702,
+      "received_frames": 299,
+      "receive_rate_hz": 14.940707121465095,
+      "reception_percent_of_30hz": 49.80235707155032,
+      "interval_ms": {
+        "p50": 38.443686498794705,
+        "p99": 207.18737421353507,
+        "max": 433.7384550017305
+      },
+      "callback_including_bgra_to_rgb_ms": {
+        "p50": 6.3531179912388325,
+        "p99": 10.840889922110343,
+        "max": 12.756540992995724
+      },
+      "interval_over_100ms_count": 52,
+      "converted_rgb_bytes": 2764800
+    },
+    {
+      "qos": "reliable_depth1_volatile",
+      "duration_s": 20.023328288982157,
+      "received_frames": 400,
+      "receive_rate_hz": 19.976698889769498,
+      "reception_percent_of_30hz": 66.58899629923165,
+      "interval_ms": {
+        "p50": 33.91955400002189,
+        "p99": 166.00787929899525,
+        "max": 168.4700300102122
+      },
+      "callback_including_bgra_to_rgb_ms": {
+        "p50": 6.318512998404913,
+        "p99": 11.479332675226031,
+        "max": 14.94135000393726
+      },
+      "interval_over_100ms_count": 31,
+      "converted_rgb_bytes": 2764800
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "evidence_type": "operator_attestation",
+  "verification_method": "펜던트 화면 직접 확인",
+  "date": "2026-11-13",
+  "operator": "사용자(현장 작업자, 성명 미기록)",
+  "photo_omission_reason": "2026-11-13 사용자 결정으로 사진 파일을 등록하지 않고 작업자 직접 확인 기록을 증거로 사용",
+  "items": [
+    {
+      "item": "Robot Limits",
+      "value": {
+        "joint_angle_deg": {"J1": [-360, 360], "J2": [-95, 95], "J3": [-135, 135], "J4": [-360, 360], "J5": [-135, 135], "J6": [-360, 360]},
+        "joint_angle_tolerance_deg": 3,
+        "joint_velocity_deg_s": {"J1": 180, "J2": 180, "J3": 180, "J4": 360, "J5": 360, "J6": 360},
+        "joint_velocity_tolerance_deg_s": 10,
+        "general_equals_reduced": true,
+        "tcp_force_n": 380,
+        "mechanical_power_w": 1000,
+        "tcp_speed_mm_s": 4000,
+        "momentum_kg_m_s": 40,
+        "collision_sensitivity_percent": 50
+      }
+    },
+    {"item": "TCP", "value": {"name": "Tool_v1", "offset_mm_deg": [0, 0, 0, 0, 0, 0], "posx_equals_flange": true}},
+    {"item": "tool_payload", "value": {"get_current_tool": "", "decision": "v1과 동일 조건 유지를 위해 변경하지 않음"}},
+    {"item": "controller_software", "value": {"integrated": "GV02120200", "main": "GF02120200", "safety": "GD12120200", "inverter": "GA33030300"}},
+    {"item": "gripper_wiring", "value": {"connector": "flange X1", "power": "24V", "output_type": "PNP", "outputs": ["DO1", "DO2"], "operator_experience_mapping": {"OPEN": {"DO1": "On", "DO2": "Off"}, "CLOSE": {"DO1": "Off", "DO2": "On"}}, "readback_when_pendant_both_off": {"DO1": 0, "DO2": 0}, "readback_evidence": "reports/live/20261113_091859/gripper_readback.txt"}},
+    {"item": "legacy_end_effector_entry", "value": "펜던트 Tool_v1의 Controller Digital 출력1/입력1 설정은 실제 배선과 무관한 예전 항목"}
+  ]
+}

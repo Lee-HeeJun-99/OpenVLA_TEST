@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-13",
+  "verification_method": "펜던트 화면 직접 확인",
+  "operator": "사용자(현장 작업자, 성명 미기록)",
+  "photo_omission_reason": "피드백 gate는 read-only 기계 로그를 주 증거로 사용하며 사진은 사용자 결정으로 미등록",
+  "items": ["live_topics_verified", "feedback_rate_verified"],
+  "scope": "read-only ROS graph and RobotFeedback self-test",
+  "live_topics_verified": true,
+  "feedback_rate_verified": true,
+  "evidence": [
+    "reports/live/20261113_091859/readonly.txt",
+    "reports/live/20261113_091859/readonly_services.txt",
+    "reports/live/20261113_091859/feedback_selftest.json",
+    "reports/live/20261113_091859/feedback_selftest.md"
+  ],
+  "facts": {
+    "joint_states": "/dsr01/joint_states, RELIABLE, TRANSIENT_LOCAL, 100 Hz",
+    "state_source": "/dsr01/system/get_robot_state polling, candidate 10 Hz",
+    "event_topics": ["/dsr01/error", "/dsr01/robot_disconnection"],
+    "command_publishers_created": 0,
+    "state_changing_service_clients_created": 0
+  }
+}

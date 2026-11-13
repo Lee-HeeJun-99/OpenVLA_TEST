@@ -23,4 +23,4 @@ MoveStop 상수는 `DR_QSTOP_STO=0`, `DR_QSTOP=1`, `DR_SSTOP=2`, `DR_HOLD=3`이�
 
 `gripper_io_verified`는 gripper_test의 입력 gate가 아니라 결과 review gate다. `stop_movej_verified` 역시 정지 서비스와 판정 로직만 검증하며 Servoj stream 정지 검증을 대신하지 않는다.
 
-`stop_test_movej`의 모든 RobotState callback은 host monotonic 시각과 posj/velj/posx/tool posx/world pose/rotation/sync time을 full-rate JSONL로 보존하도록 logger를 추가했다. 이 자료로 FK 변화량과 controller posx 변화량을 사후 비교할 수 있다.
+현장 확인 결과 RobotState topic이 없으므로 이 계획은 정정됐다. `stop_test_movej`는 모든 JointState를 이름 기반 정규화하여 host/header 시각과 함께 기록하고, `get_robot_state`를 재폴링한다. FK↔controller flange 비교는 저주기 `get_current_tool_flange_posx/get_current_rotm` 로그를 사용한다. **출처:** `reports/live/20261113_091859/feedback_selftest.md`.

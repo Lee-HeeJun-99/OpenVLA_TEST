@@ -1,6 +1,6 @@
 # Default 펜던트 한계·특이점·관절 envelope 오프라인 분석
 
-실기/ROS를 실행하지 않았다. 현재 값은 사용자 보고이며 사진 evidence가 없어 `pendant_limits_recorded=false`다.
+이 분석 자체는 실기/ROS를 실행하지 않았다. 후속 2026-11-13 사용자 결정으로 사진 대신 `operator_attestation.json`을 허용하여 현재 `pendant_limits_recorded=true`다. 수치 분석 결과는 변경되지 않는다.
 
 ## 2층 한계
 

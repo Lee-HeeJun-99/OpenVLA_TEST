@@ -30,6 +30,6 @@
 - 최신 2026-11-06 full-policy run은 DO1 initialization pulse와 ACK를 기록하지만 `observed_open=null`, `measured_gripper_state=null`이다. 따라서 “전기 명령이 실제 사용됨”은 확인되지만 jaw 완료는 확인되지 않았다.
 - tool digital input의 jaw-open/jaw-close 매핑은 찾지 못했다. 완료 시각은 마지막 output service ACK 시각으로만 기록해야 하며 물리 완료로 해석하면 안 된다.
 
-v2 `BinaryIOGripper`는 기본 후보를 그대로 구현하고 기본 비활성이다. 모델값 `>=0.5`는 CLOSE, `<0.5`는 OPEN이며 logical state가 바뀔 때만 pulse한다.
+후속 2026-11-13 attestation/readback에 따라 v2 기본은 `LevelIOGripper`로 변경했다. OPEN은 DO2 Off→DO1 On, CLOSE는 DO1 Off→DO2 On을 level 유지하고 양 채널을 readback한다. `BinaryIOGripper`는 비기본 대안이다. 모델값 `>=0.5`는 CLOSE, `<0.5`는 OPEN이며 logical state가 바뀔 때만 명령한다.
 
-주의: 읽기 전용 `dsr_msgs2/srv/io/SetToolDigitalOutput.srv` 주석은 `value 0=ON, 1=OFF`라고 쓰지만, 기존 현장 코드는 `1`을 pulse active/HIGH, `0`을 inactive/LOW로 명명하고 사용했다. 이 문서와 v2는 **기존 현장 write sequence를 그대로 재현**했을 뿐 전기적 active level을 확정하지 않는다. 포트와 극성은 `gripper_io_verified` evidence가 생길 때까지 `[미확인]`이다.
+주의: srv 주석은 `0=ON, 1=OFF`지만 펜던트 양쪽 Off 상태의 getter는 둘 다 0이었다. 따라서 v2는 **[추정] `0=Off, 1=On`**을 사용하며 첫 gripper_test에서 펜던트 표시와 getter로 확정한다. 불일치 시 두 출력 Off 후 중단하며 `gripper_io_verified`는 그 전까지 false다.

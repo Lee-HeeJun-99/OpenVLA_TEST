@@ -1,0 +1,14 @@
+topic: /zed/zed_node/rgb/color/rect/image
+1280
+---
+720
+---
+bgra8
+---
+Publisher count: 1
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+	min: 0.029s max: 0.040s std dev: 0.00129s window: 50
+average rate: 29.995
+	min: 0.029s max: 0.040s std dev: 0.00135s window: 50

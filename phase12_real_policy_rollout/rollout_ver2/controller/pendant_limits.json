@@ -1,8 +1,8 @@
 {
-  "status": "USER_REPORTED_DEFAULT_PHOTO_NOT_YET_RECORDED",
+  "status": "VERIFIED_BY_OPERATOR_ATTESTATION_PHOTO_OMITTED_BY_USER_DECISION",
   "source_date": "2026-11-13",
-  "source": "user report of current pendant Robot Limits; general and reduced modes identical",
-  "evidence_path": "reports/live/PENDING/pendant_robot_limits_photo.jpg",
+  "source": "on-site visual confirmation and user report, 2026-11-13; general and reduced modes identical",
+  "evidence_path": "reports/live/20261113_091859/operator_attestation.json",
   "profile": "default",
   "extension_reason": null,
   "extended_range_clearance_record": null,
@@ -10,5 +10,13 @@
   "pendant_upper_deg": [360, 95, 135, 360, 135, 360],
   "doosan_configurable_max_abs_deg": [360, 360, 160, 360, 360, 360],
   "controller_tolerance_deg": [3, 3, 3, 3, 3, 3],
+  "pendant_velocity_upper_deg_s": [180, 180, 180, 360, 360, 360],
+  "pendant_velocity_lower_deg_s": [-180, -180, -180, -360, -360, -360],
+  "controller_velocity_tolerance_deg_s": [10, 10, 10, 10, 10, 10],
+  "tcp_force_n": 380,
+  "mechanical_power_w": 1000,
+  "tcp_speed_mm_s": 4000,
+  "momentum_kg_m_s": 40,
+  "collision_sensitivity_percent": 50,
   "host_margin_deg_candidate": [5, 5, 5, 5, 5, 5]
 }

@@ -1,0 +1,712 @@
+{
+  "safety": "READ_ONLY_SUBSCRIPTIONS_AND_GET_SERVICES_ONLY",
+  "duration_s": 30.188971059018513,
+  "main_block_s": 0.45,
+  "main_block_iterations": 67,
+  "joint_state_receive_count": 3027,
+  "joint_state_age_s": {
+    "count": 67,
+    "p50": 0.005241213017143309,
+    "p99": 0.010100510838092307,
+    "max": 0.010616020997986197
+  },
+  "robot_state_poll_attempts": 303,
+  "robot_state_poll_successes": 303,
+  "robot_state_poll_success_rate": 1.0,
+  "robot_state_latency_s": {
+    "count": 303,
+    "p50": 0.0009949329833034426,
+    "p99": 0.001949786689365283,
+    "max": 0.7943653399997856
+  },
+  "camera_receive_count": 510,
+  "camera_interval_s": {
+    "count": 509,
+    "p50": 0.03405936199123971,
+    "p99": 0.23364742571138777,
+    "max": 0.6339168459817301
+  },
+  "camera_gap_over_0_1s_count": 98,
+  "camera_gap_over_1s_count": 0,
+  "final_feedback_diagnostics": {
+    "joint_state_age_s": 0.007512259006034583,
+    "joint_state_last_received_monotonic": 135879.660696863,
+    "joint_state_previous_receive_interval_s": 0.010039080982096493,
+    "joint_state_receive_count": 3027,
+    "robot_state_age_s": 0.0834912070131395,
+    "robot_state_poll_attempts": 303,
+    "robot_state_poll_successes": 303
+  },
+  "samples": [
+    {
+      "time": 135849.928415329,
+      "joint_state_age_s": 0.008261266979388893,
+      "joint_state_last_received_monotonic": 135849.920154062,
+      "joint_state_previous_receive_interval_s": 0.010002226015785709,
+      "joint_state_receive_count": 53,
+      "robot_state_age_s": 0.04448952598613687,
+      "robot_state_poll_attempts": 6,
+      "robot_state_poll_successes": 6
+    },
+    {
+      "time": 135850.378899352,
+      "joint_state_age_s": 0.008694004005519673,
+      "joint_state_last_received_monotonic": 135850.370205348,
+      "joint_state_previous_receive_interval_s": 0.009931381995556876,
+      "joint_state_receive_count": 98,
+      "robot_state_age_s": 0.09461864500190131,
+      "robot_state_poll_attempts": 10,
+      "robot_state_poll_successes": 10
+    },
+    {
+      "time": 135850.829045987,
+      "joint_state_age_s": 0.00893070999882184,
+      "joint_state_last_received_monotonic": 135850.820115277,
+      "joint_state_previous_receive_interval_s": 0.00998979399446398,
+      "joint_state_receive_count": 143,
+      "robot_state_age_s": 0.04500964400358498,
+      "robot_state_poll_attempts": 15,
+      "robot_state_poll_successes": 15
+    },
+    {
+      "time": 135851.27919952,
+      "joint_state_age_s": 0.009030201006680727,
+      "joint_state_last_received_monotonic": 135851.270169319,
+      "joint_state_previous_receive_interval_s": 0.009847970999544486,
+      "joint_state_receive_count": 188,
+      "robot_state_age_s": 0.09426800801884383,
+      "robot_state_poll_attempts": 19,
+      "robot_state_poll_successes": 19
+    },
+    {
+      "time": 135851.729722287,
+      "joint_state_age_s": 0.009253002004697919,
+      "joint_state_last_received_monotonic": 135851.720469285,
+      "joint_state_previous_receive_interval_s": 0.010229856998194009,
+      "joint_state_receive_count": 233,
+      "robot_state_age_s": 0.0458061630197335,
+      "robot_state_poll_attempts": 24,
+      "robot_state_poll_successes": 24
+    },
+    {
+      "time": 135852.180018448,
+      "joint_state_age_s": 0.00964170100633055,
+      "joint_state_last_received_monotonic": 135852.170376747,
+      "joint_state_previous_receive_interval_s": 0.009666653000749648,
+      "joint_state_receive_count": 278,
+      "robot_state_age_s": 0.09571166100795381,
+      "robot_state_poll_attempts": 28,
+      "robot_state_poll_successes": 28
+    },
+    {
+      "time": 135852.630832373,
+      "joint_state_age_s": 0.0003813319781329483,
+      "joint_state_last_received_monotonic": 135852.630451041,
+      "joint_state_previous_receive_interval_s": 0.01009343602345325,
+      "joint_state_receive_count": 324,
+      "robot_state_age_s": 0.04574249099823646,
+      "robot_state_poll_attempts": 33,
+      "robot_state_poll_successes": 33
+    },
+    {
+      "time": 135853.081035001,
+      "joint_state_age_s": 0.00038590398617088795,
+      "joint_state_last_received_monotonic": 135853.080649097,
+      "joint_state_previous_receive_interval_s": 0.010461298021255061,
+      "joint_state_receive_count": 369,
+      "robot_state_age_s": 0.0967721120105125,
+      "robot_state_poll_attempts": 37,
+      "robot_state_poll_successes": 37
+    },
+    {
+      "time": 135853.531548332,
+      "joint_state_age_s": 0.0012849069898948073,
+      "joint_state_last_received_monotonic": 135853.530263425,
+      "joint_state_previous_receive_interval_s": 0.009480617998633534,
+      "joint_state_receive_count": 414,
+      "robot_state_age_s": 0.047269625996705145,
+      "robot_state_poll_attempts": 42,
+      "robot_state_poll_successes": 42
+    },
+    {
+      "time": 135853.982016167,
+      "joint_state_age_s": 0.0018124599882867187,
+      "joint_state_last_received_monotonic": 135853.980203707,
+      "joint_state_previous_receive_interval_s": 0.009930122003424913,
+      "joint_state_receive_count": 459,
+      "robot_state_age_s": 0.09804898398579098,
+      "robot_state_poll_attempts": 46,
+      "robot_state_poll_successes": 46
+    },
+    {
+      "time": 135854.432552179,
+      "joint_state_age_s": 0.0010596280044410378,
+      "joint_state_last_received_monotonic": 135854.431492551,
+      "joint_state_previous_receive_interval_s": 0.010854802996618673,
+      "joint_state_receive_count": 504,
+      "robot_state_age_s": 0.048333749000448734,
+      "robot_state_poll_attempts": 51,
+      "robot_state_poll_successes": 51
+    },
+    {
+      "time": 135854.883056746,
+      "joint_state_age_s": 0.002769873011857271,
+      "joint_state_last_received_monotonic": 135854.880286873,
+      "joint_state_previous_receive_interval_s": 0.010015576001023874,
+      "joint_state_receive_count": 549,
+      "robot_state_age_s": 0.0990753470105119,
+      "robot_state_poll_attempts": 55,
+      "robot_state_poll_successes": 55
+    },
+    {
+      "time": 135855.333590484,
+      "joint_state_age_s": 0.0033322259841952473,
+      "joint_state_last_received_monotonic": 135855.330258258,
+      "joint_state_previous_receive_interval_s": 0.009703015995910391,
+      "joint_state_receive_count": 594,
+      "robot_state_age_s": 0.04938163800397888,
+      "robot_state_poll_attempts": 60,
+      "robot_state_poll_successes": 60
+    },
+    {
+      "time": 135855.7843164,
+      "joint_state_age_s": 0.003816806012764573,
+      "joint_state_last_received_monotonic": 135855.780499594,
+      "joint_state_previous_receive_interval_s": 0.010231004998786375,
+      "joint_state_receive_count": 639,
+      "robot_state_age_s": 0.000294368015602231,
+      "robot_state_poll_attempts": 65,
+      "robot_state_poll_successes": 65
+    },
+    {
+      "time": 135856.234833149,
+      "joint_state_age_s": 0.0045054030197206885,
+      "joint_state_last_received_monotonic": 135856.230327746,
+      "joint_state_previous_receive_interval_s": 0.009819132974371314,
+      "joint_state_receive_count": 684,
+      "robot_state_age_s": 0.050551774009363726,
+      "robot_state_poll_attempts": 69,
+      "robot_state_poll_successes": 69
+    },
+    {
+      "time": 135856.685013464,
+      "joint_state_age_s": 0.0043768280011136085,
+      "joint_state_last_received_monotonic": 135856.680636636,
+      "joint_state_previous_receive_interval_s": 0.010410201008198783,
+      "joint_state_receive_count": 729,
+      "robot_state_age_s": 0.000744168006349355,
+      "robot_state_poll_attempts": 74,
+      "robot_state_poll_successes": 74
+    },
+    {
+      "time": 135857.135123388,
+      "joint_state_age_s": 0.004822869988856837,
+      "joint_state_last_received_monotonic": 135857.130300518,
+      "joint_state_previous_receive_interval_s": 0.009807201015064493,
+      "joint_state_receive_count": 774,
+      "robot_state_age_s": 0.05092484099441208,
+      "robot_state_poll_attempts": 78,
+      "robot_state_poll_successes": 78
+    },
+    {
+      "time": 135857.5858949,
+      "joint_state_age_s": 0.005229840986430645,
+      "joint_state_last_received_monotonic": 135857.580665059,
+      "joint_state_previous_receive_interval_s": 0.009843795996857807,
+      "joint_state_receive_count": 819,
+      "robot_state_age_s": 0.0007104359974619001,
+      "robot_state_poll_attempts": 83,
+      "robot_state_poll_successes": 83
+    },
+    {
+      "time": 135858.036974545,
+      "joint_state_age_s": 0.006739002972608432,
+      "joint_state_last_received_monotonic": 135858.030235542,
+      "joint_state_previous_receive_interval_s": 0.009708549012430012,
+      "joint_state_receive_count": 864,
+      "robot_state_age_s": 0.05258459897595458,
+      "robot_state_poll_attempts": 87,
+      "robot_state_poll_successes": 87
+    },
+    {
+      "time": 135858.487557948,
+      "joint_state_age_s": 0.006577135005500168,
+      "joint_state_last_received_monotonic": 135858.480980813,
+      "joint_state_previous_receive_interval_s": 0.010773677000543103,
+      "joint_state_receive_count": 909,
+      "robot_state_age_s": 0.0034243050031363964,
+      "robot_state_poll_attempts": 92,
+      "robot_state_poll_successes": 92
+    },
+    {
+      "time": 135858.938015502,
+      "joint_state_age_s": 0.007695779990172014,
+      "joint_state_last_received_monotonic": 135858.930319722,
+      "joint_state_previous_receive_interval_s": 0.00992133401450701,
+      "joint_state_receive_count": 954,
+      "robot_state_age_s": 0.05375096801435575,
+      "robot_state_poll_attempts": 96,
+      "robot_state_poll_successes": 96
+    },
+    {
+      "time": 135859.388558391,
+      "joint_state_age_s": 0.008032792975427583,
+      "joint_state_last_received_monotonic": 135859.380525598,
+      "joint_state_previous_receive_interval_s": 0.00968827900942415,
+      "joint_state_receive_count": 999,
+      "robot_state_age_s": 0.004524182993918657,
+      "robot_state_poll_attempts": 101,
+      "robot_state_poll_successes": 101
+    },
+    {
+      "time": 135859.839014133,
+      "joint_state_age_s": 0.008755071001360193,
+      "joint_state_last_received_monotonic": 135859.830259062,
+      "joint_state_previous_receive_interval_s": 0.009837846009759232,
+      "joint_state_receive_count": 1044,
+      "robot_state_age_s": 0.055018136015860364,
+      "robot_state_poll_attempts": 105,
+      "robot_state_poll_successes": 105
+    },
+    {
+      "time": 135860.289567959,
+      "joint_state_age_s": 0.009031788998981938,
+      "joint_state_last_received_monotonic": 135860.28053617,
+      "joint_state_previous_receive_interval_s": 0.01001769199501723,
+      "joint_state_receive_count": 1089,
+      "robot_state_age_s": 0.00532381099765189,
+      "robot_state_poll_attempts": 110,
+      "robot_state_poll_successes": 110
+    },
+    {
+      "time": 135860.740019525,
+      "joint_state_age_s": 0.009795471007237211,
+      "joint_state_last_received_monotonic": 135860.730224054,
+      "joint_state_previous_receive_interval_s": 0.009293896990129724,
+      "joint_state_receive_count": 1134,
+      "robot_state_age_s": 0.05566309500136413,
+      "robot_state_poll_attempts": 114,
+      "robot_state_poll_successes": 114
+    },
+    {
+      "time": 135861.190618068,
+      "joint_state_age_s": 0.00030764401890337467,
+      "joint_state_last_received_monotonic": 135861.190310424,
+      "joint_state_previous_receive_interval_s": 0.010060381988296285,
+      "joint_state_receive_count": 1180,
+      "robot_state_age_s": 0.0062217079976107925,
+      "robot_state_poll_attempts": 119,
+      "robot_state_poll_successes": 119
+    },
+    {
+      "time": 135861.6410132,
+      "joint_state_age_s": 0.0008556759858038276,
+      "joint_state_last_received_monotonic": 135861.640157524,
+      "joint_state_previous_receive_interval_s": 0.009501668013399467,
+      "joint_state_receive_count": 1225,
+      "robot_state_age_s": 0.056661960989004,
+      "robot_state_poll_attempts": 123,
+      "robot_state_poll_successes": 123
+    },
+    {
+      "time": 135862.091540621,
+      "joint_state_age_s": 0.001393685000948608,
+      "joint_state_last_received_monotonic": 135862.090146936,
+      "joint_state_previous_receive_interval_s": 0.009961957024643198,
+      "joint_state_receive_count": 1270,
+      "robot_state_age_s": 0.007580374018289149,
+      "robot_state_poll_attempts": 128,
+      "robot_state_poll_successes": 128
+    },
+    {
+      "time": 135862.542014579,
+      "joint_state_age_s": 0.0017537589883431792,
+      "joint_state_last_received_monotonic": 135862.54026082,
+      "joint_state_previous_receive_interval_s": 0.009932098007993773,
+      "joint_state_receive_count": 1315,
+      "robot_state_age_s": 0.05782535800244659,
+      "robot_state_poll_attempts": 132,
+      "robot_state_poll_successes": 132
+    },
+    {
+      "time": 135862.994123215,
+      "joint_state_age_s": 0.0037196770135778934,
+      "joint_state_last_received_monotonic": 135862.990403538,
+      "joint_state_previous_receive_interval_s": 0.009843667998211458,
+      "joint_state_receive_count": 1360,
+      "robot_state_age_s": 0.009833093994529918,
+      "robot_state_poll_attempts": 137,
+      "robot_state_poll_successes": 137
+    },
+    {
+      "time": 135863.44467525,
+      "joint_state_age_s": 0.0045044670114293694,
+      "joint_state_last_received_monotonic": 135863.440170783,
+      "joint_state_previous_receive_interval_s": 0.010089978983160108,
+      "joint_state_receive_count": 1405,
+      "robot_state_age_s": 0.059838233020855114,
+      "robot_state_poll_attempts": 141,
+      "robot_state_poll_successes": 141
+    },
+    {
+      "time": 135863.895015886,
+      "joint_state_age_s": 0.0047017959877848625,
+      "joint_state_last_received_monotonic": 135863.89031409,
+      "joint_state_previous_receive_interval_s": 0.009812047006562352,
+      "joint_state_receive_count": 1450,
+      "robot_state_age_s": 0.01072114598355256,
+      "robot_state_poll_attempts": 146,
+      "robot_state_poll_successes": 146
+    },
+    {
+      "time": 135864.345564276,
+      "joint_state_age_s": 0.005241213017143309,
+      "joint_state_last_received_monotonic": 135864.340323063,
+      "joint_state_previous_receive_interval_s": 0.010018509987276047,
+      "joint_state_receive_count": 1495,
+      "robot_state_age_s": 0.06174007401568815,
+      "robot_state_poll_attempts": 150,
+      "robot_state_poll_successes": 150
+    },
+    {
+      "time": 135864.796013264,
+      "joint_state_age_s": 0.005612387991277501,
+      "joint_state_last_received_monotonic": 135864.790400876,
+      "joint_state_previous_receive_interval_s": 0.009924279002007097,
+      "joint_state_receive_count": 1540,
+      "robot_state_age_s": 0.011246680980548263,
+      "robot_state_poll_attempts": 155,
+      "robot_state_poll_successes": 155
+    },
+    {
+      "time": 135865.246559499,
+      "joint_state_age_s": 0.006077582016587257,
+      "joint_state_last_received_monotonic": 135865.240481917,
+      "joint_state_previous_receive_interval_s": 0.010073707991978154,
+      "joint_state_receive_count": 1585,
+      "robot_state_age_s": 0.062180145003367215,
+      "robot_state_poll_attempts": 159,
+      "robot_state_poll_successes": 159
+    },
+    {
+      "time": 135865.697012203,
+      "joint_state_age_s": 0.006622799002798274,
+      "joint_state_last_received_monotonic": 135865.690389404,
+      "joint_state_previous_receive_interval_s": 0.009565297979861498,
+      "joint_state_receive_count": 1630,
+      "robot_state_age_s": 0.012670717987930402,
+      "robot_state_poll_attempts": 164,
+      "robot_state_poll_successes": 164
+    },
+    {
+      "time": 135866.147547846,
+      "joint_state_age_s": 0.007205856993095949,
+      "joint_state_last_received_monotonic": 135866.140341989,
+      "joint_state_previous_receive_interval_s": 0.00992696700268425,
+      "joint_state_receive_count": 1675,
+      "robot_state_age_s": 0.06336531398119405,
+      "robot_state_poll_attempts": 168,
+      "robot_state_poll_successes": 168
+    },
+    {
+      "time": 135866.59802305,
+      "joint_state_age_s": 0.007801072992151603,
+      "joint_state_last_received_monotonic": 135866.590221977,
+      "joint_state_previous_receive_interval_s": 0.009838465019129217,
+      "joint_state_receive_count": 1720,
+      "robot_state_age_s": 0.013509568001609296,
+      "robot_state_poll_attempts": 173,
+      "robot_state_poll_successes": 173
+    },
+    {
+      "time": 135867.048623708,
+      "joint_state_age_s": 0.008474472997477278,
+      "joint_state_last_received_monotonic": 135867.040149235,
+      "joint_state_previous_receive_interval_s": 0.010002280992921442,
+      "joint_state_receive_count": 1765,
+      "robot_state_age_s": 0.0642729889950715,
+      "robot_state_poll_attempts": 177,
+      "robot_state_poll_successes": 177
+    },
+    {
+      "time": 135867.499039476,
+      "joint_state_age_s": 0.00881540501723066,
+      "joint_state_last_received_monotonic": 135867.490224071,
+      "joint_state_previous_receive_interval_s": 0.009975241991924122,
+      "joint_state_receive_count": 1810,
+      "robot_state_age_s": 0.014879005000693724,
+      "robot_state_poll_attempts": 182,
+      "robot_state_poll_successes": 182
+    },
+    {
+      "time": 135867.949697831,
+      "joint_state_age_s": 0.009457191015826538,
+      "joint_state_last_received_monotonic": 135867.94024064,
+      "joint_state_previous_receive_interval_s": 0.010059535998152569,
+      "joint_state_receive_count": 1855,
+      "robot_state_age_s": 0.06554646699805744,
+      "robot_state_poll_attempts": 186,
+      "robot_state_poll_successes": 186
+    },
+    {
+      "time": 135868.400020695,
+      "joint_state_age_s": 0.009685063996585086,
+      "joint_state_last_received_monotonic": 135868.390335631,
+      "joint_state_previous_receive_interval_s": 0.009819040016736835,
+      "joint_state_receive_count": 1900,
+      "robot_state_age_s": 0.01593265900737606,
+      "robot_state_poll_attempts": 191,
+      "robot_state_poll_successes": 191
+    },
+    {
+      "time": 135868.850975004,
+      "joint_state_age_s": 0.00039830998866818845,
+      "joint_state_last_received_monotonic": 135868.850576694,
+      "joint_state_previous_receive_interval_s": 0.010258010996039957,
+      "joint_state_receive_count": 1946,
+      "robot_state_age_s": 0.0656661530083511,
+      "robot_state_poll_attempts": 195,
+      "robot_state_poll_successes": 195
+    },
+    {
+      "time": 135869.30155277,
+      "joint_state_age_s": 0.0010029539989773184,
+      "joint_state_last_received_monotonic": 135869.300549816,
+      "joint_state_previous_receive_interval_s": 0.009478559979470447,
+      "joint_state_receive_count": 1991,
+      "robot_state_age_s": 0.01725368498591706,
+      "robot_state_poll_attempts": 200,
+      "robot_state_poll_successes": 200
+    },
+    {
+      "time": 135869.752014293,
+      "joint_state_age_s": 0.0016373209946323186,
+      "joint_state_last_received_monotonic": 135869.750376972,
+      "joint_state_previous_receive_interval_s": 0.010122798004886135,
+      "joint_state_receive_count": 2036,
+      "robot_state_age_s": 0.06792922597378492,
+      "robot_state_poll_attempts": 204,
+      "robot_state_poll_successes": 204
+    },
+    {
+      "time": 135870.202575343,
+      "joint_state_age_s": 0.002204319986049086,
+      "joint_state_last_received_monotonic": 135870.200371023,
+      "joint_state_previous_receive_interval_s": 0.010085145011544228,
+      "joint_state_receive_count": 2081,
+      "robot_state_age_s": 0.01812851900467649,
+      "robot_state_poll_attempts": 209,
+      "robot_state_poll_successes": 209
+    },
+    {
+      "time": 135870.653026237,
+      "joint_state_age_s": 0.0025971239956561476,
+      "joint_state_last_received_monotonic": 135870.650429113,
+      "joint_state_previous_receive_interval_s": 0.010142498009372503,
+      "joint_state_receive_count": 2126,
+      "robot_state_age_s": 0.06846343900542706,
+      "robot_state_poll_attempts": 213,
+      "robot_state_poll_successes": 213
+    },
+    {
+      "time": 135871.103601204,
+      "joint_state_age_s": 0.0031960300111677498,
+      "joint_state_last_received_monotonic": 135871.100405174,
+      "joint_state_previous_receive_interval_s": 0.009827621979638934,
+      "joint_state_receive_count": 2171,
+      "robot_state_age_s": 0.018478440993931144,
+      "robot_state_poll_attempts": 218,
+      "robot_state_poll_successes": 218
+    },
+    {
+      "time": 135871.554016347,
+      "joint_state_age_s": 0.0033854800276458263,
+      "joint_state_last_received_monotonic": 135871.550630867,
+      "joint_state_previous_receive_interval_s": 0.01042682197294198,
+      "joint_state_receive_count": 2216,
+      "robot_state_age_s": 0.07021282002096996,
+      "robot_state_poll_attempts": 222,
+      "robot_state_poll_successes": 222
+    },
+    {
+      "time": 135872.004574141,
+      "joint_state_age_s": 0.004196477995719761,
+      "joint_state_last_received_monotonic": 135872.000377663,
+      "joint_state_previous_receive_interval_s": 0.009968917991500348,
+      "joint_state_receive_count": 2261,
+      "robot_state_age_s": 0.01979812400531955,
+      "robot_state_poll_attempts": 227,
+      "robot_state_poll_successes": 227
+    },
+    {
+      "time": 135872.455011794,
+      "joint_state_age_s": 0.004461303993593901,
+      "joint_state_last_received_monotonic": 135872.45055049,
+      "joint_state_previous_receive_interval_s": 0.010355509992223233,
+      "joint_state_receive_count": 2306,
+      "robot_state_age_s": 0.0708032539987471,
+      "robot_state_poll_attempts": 231,
+      "robot_state_poll_successes": 231
+    },
+    {
+      "time": 135872.905565676,
+      "joint_state_age_s": 0.00535824298276566,
+      "joint_state_last_received_monotonic": 135872.900207433,
+      "joint_state_previous_receive_interval_s": 0.009564128005877137,
+      "joint_state_receive_count": 2351,
+      "robot_state_age_s": 0.021494879998499528,
+      "robot_state_poll_attempts": 236,
+      "robot_state_poll_successes": 236
+    },
+    {
+      "time": 135873.356054544,
+      "joint_state_age_s": 0.005651353014400229,
+      "joint_state_last_received_monotonic": 135873.350403191,
+      "joint_state_previous_receive_interval_s": 0.010086171008879319,
+      "joint_state_receive_count": 2396,
+      "robot_state_age_s": 0.07160989902331494,
+      "robot_state_poll_attempts": 240,
+      "robot_state_poll_successes": 240
+    },
+    {
+      "time": 135873.806621322,
+      "joint_state_age_s": 0.006454662012401968,
+      "joint_state_last_received_monotonic": 135873.80016666,
+      "joint_state_previous_receive_interval_s": 0.00857547699706629,
+      "joint_state_receive_count": 2441,
+      "robot_state_age_s": 0.0224166999978479,
+      "robot_state_poll_attempts": 245,
+      "robot_state_poll_successes": 245
+    },
+    {
+      "time": 135874.257024767,
+      "joint_state_age_s": 0.006434038979932666,
+      "joint_state_last_received_monotonic": 135874.250590728,
+      "joint_state_previous_receive_interval_s": 0.010343029018258676,
+      "joint_state_receive_count": 2486,
+      "robot_state_age_s": 0.07260911498451605,
+      "robot_state_poll_attempts": 249,
+      "robot_state_poll_successes": 249
+    },
+    {
+      "time": 135874.707821327,
+      "joint_state_age_s": 0.006552701990585774,
+      "joint_state_last_received_monotonic": 135874.701268625,
+      "joint_state_previous_receive_interval_s": 0.01057329901959747,
+      "joint_state_receive_count": 2531,
+      "robot_state_age_s": 0.023426716012181714,
+      "robot_state_poll_attempts": 254,
+      "robot_state_poll_successes": 254
+    },
+    {
+      "time": 135875.158693032,
+      "joint_state_age_s": 0.008118951984215528,
+      "joint_state_last_received_monotonic": 135875.15057408,
+      "joint_state_previous_receive_interval_s": 0.010201967001194134,
+      "joint_state_receive_count": 2576,
+      "robot_state_age_s": 0.07421089499257505,
+      "robot_state_poll_attempts": 258,
+      "robot_state_poll_successes": 258
+    },
+    {
+      "time": 135875.609638317,
+      "joint_state_age_s": 0.006826858996646479,
+      "joint_state_last_received_monotonic": 135875.602811458,
+      "joint_state_previous_receive_interval_s": 0.012440346996299922,
+      "joint_state_receive_count": 2621,
+      "robot_state_age_s": 0.02485920998151414,
+      "robot_state_poll_attempts": 263,
+      "robot_state_poll_successes": 263
+    },
+    {
+      "time": 135876.060024876,
+      "joint_state_age_s": 0.009834944998146966,
+      "joint_state_last_received_monotonic": 135876.050189931,
+      "joint_state_previous_receive_interval_s": 0.009913168993080035,
+      "joint_state_receive_count": 2666,
+      "robot_state_age_s": 0.07555093200062402,
+      "robot_state_poll_attempts": 267,
+      "robot_state_poll_successes": 267
+    },
+    {
+      "time": 135876.510707934,
+      "joint_state_age_s": 0.0004897420003544539,
+      "joint_state_last_received_monotonic": 135876.510218192,
+      "joint_state_previous_receive_interval_s": 0.009992205013986677,
+      "joint_state_receive_count": 2712,
+      "robot_state_age_s": 0.02631697099423036,
+      "robot_state_poll_attempts": 272,
+      "robot_state_poll_successes": 272
+    },
+    {
+      "time": 135876.961048124,
+      "joint_state_age_s": 0.010616020997986197,
+      "joint_state_last_received_monotonic": 135876.950432103,
+      "joint_state_previous_receive_interval_s": 0.010012430022470653,
+      "joint_state_receive_count": 2756,
+      "robot_state_age_s": 0.07697904200176708,
+      "robot_state_poll_attempts": 276,
+      "robot_state_poll_successes": 276
+    },
+    {
+      "time": 135877.411703594,
+      "joint_state_age_s": 0.0015283499960787594,
+      "joint_state_last_received_monotonic": 135877.410175244,
+      "joint_state_previous_receive_interval_s": 0.009923156001605093,
+      "joint_state_receive_count": 2802,
+      "robot_state_age_s": 0.02735295900492929,
+      "robot_state_poll_attempts": 281,
+      "robot_state_poll_successes": 281
+    },
+    {
+      "time": 135877.86201519,
+      "joint_state_age_s": 0.0015567730006296188,
+      "joint_state_last_received_monotonic": 135877.860458417,
+      "joint_state_previous_receive_interval_s": 0.009890415996778756,
+      "joint_state_receive_count": 2847,
+      "robot_state_age_s": 0.07757370901526883,
+      "robot_state_poll_attempts": 285,
+      "robot_state_poll_successes": 285
+    },
+    {
+      "time": 135878.312576024,
+      "joint_state_age_s": 0.0023773490102030337,
+      "joint_state_last_received_monotonic": 135878.310198675,
+      "joint_state_previous_receive_interval_s": 0.009943067998392507,
+      "joint_state_receive_count": 2892,
+      "robot_state_age_s": 0.028342367004370317,
+      "robot_state_poll_attempts": 290,
+      "robot_state_poll_successes": 290
+    },
+    {
+      "time": 135878.763029226,
+      "joint_state_age_s": 0.002401596982963383,
+      "joint_state_last_received_monotonic": 135878.760627629,
+      "joint_state_previous_receive_interval_s": 0.010094744997331873,
+      "joint_state_receive_count": 2937,
+      "robot_state_age_s": 0.0786642879829742,
+      "robot_state_poll_attempts": 294,
+      "robot_state_poll_successes": 294
+    },
+    {
+      "time": 135879.215861468,
+      "joint_state_age_s": 0.005448329000500962,
+      "joint_state_last_received_monotonic": 135879.210413139,
+      "joint_state_previous_receive_interval_s": 0.009463706985116005,
+      "joint_state_receive_count": 2982,
+      "robot_state_age_s": 0.0318181159964297,
+      "robot_state_poll_attempts": 299,
+      "robot_state_poll_successes": 299
+    },
+    {
+      "time": 135879.666785592,
+      "joint_state_age_s": 0.00608872901648283,
+      "joint_state_last_received_monotonic": 135879.660696863,
+      "joint_state_previous_receive_interval_s": 0.010039080982096493,
+      "joint_state_receive_count": 3027,
+      "robot_state_age_s": 0.08206767702358775,
+      "robot_state_poll_attempts": 303,
+      "robot_state_poll_successes": 303
+    }
+  ]
+}

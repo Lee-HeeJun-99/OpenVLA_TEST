@@ -13,8 +13,10 @@ class RosServiceCaller:
         future=self.client.call_async(request);deadline=time.monotonic()+self.timeout_s
         while not future.done() and time.monotonic()<deadline:time.sleep(.002)
         if not future.done():raise TimeoutError("service_ack_timeout")
-        response=future.result()
-        return {"success":bool(response.success)}
+        response=future.result();fields=getattr(response,"get_fields_and_field_types",lambda:{})()
+        result={name:getattr(response,name) for name in fields}
+        result["success"]=bool(response.success)
+        return result
 
 
 class MoveStopTransport:
@@ -42,7 +44,11 @@ class MoveJointTransport:
 
 class ToolDigitalOutputTransport:
     def __init__(self,node,name="/dsr01/io/set_tool_digital_output"):
-        from dsr_msgs2.srv import SetToolDigitalOutput
+        from dsr_msgs2.srv import SetToolDigitalOutput,GetToolDigitalOutput
         self.caller=RosServiceCaller(node,SetToolDigitalOutput,name)
+        self.reader=RosServiceCaller(node,GetToolDigitalOutput,
+                                     "/dsr01/io/get_tool_digital_output")
     def set_tool_digital_output(self,index,value):
         return self.caller.call(index=int(index),value=int(value))
+    def get_tool_digital_output(self,index):
+        return self.reader.call(index=int(index))

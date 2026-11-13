@@ -1,0 +1,33 @@
+=== [1] camera.py 신선도 판정 로직 ===
+7:    """Read-only Image subscriber. It never creates a publisher."""
+8:    def __init__(self, stale_s=0.1, clock=time.monotonic):
+9:        self.stale_s=float(stale_s); self.clock=clock
+10:        self.rgb=None; self.received_monotonic=None; self.header_stamp=None
+18:        image=rows[:,:w*channels].reshape(h,w,channels)
+21:            image=image[...,order]
+22:        self.rgb=np.ascontiguousarray(image[...,:3])
+23:        self.received_monotonic=self.clock()
+24:        self.header_stamp=getattr(getattr(msg,"header",None),"stamp",None)
+28:        if self.rgb is None or now-self.received_monotonic > self.stale_s:
+29:            raise RuntimeError("CAMERA_STALE")
+30:        return self.rgb.copy(),self.received_monotonic
+33:    def from_ros_node(cls,node,topic,stale_s=0.1,clock=time.monotonic):
+34:        from sensor_msgs.msg import Image
+36:        obj=cls(stale_s,clock)
+37:        obj.subscription=node.create_subscription(Image,topic,obj.callback,qos_profile_sensor_data)
+runtime/runtime_config.json:20:  "camera_topic_unverified": "/zed/zed_node/rgb/color/rect/image",
+
+=== [2] ZED header.stamp vs PC 시각 (now - stamp) ===
+	min: 0.036s max: 0.042s std dev: 0.00130s window: 30
+average delay: 0.037
+	min: 0.036s max: 0.042s std dev: 0.00109s window: 30
+failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+
+=== [3] 같은 순간 비교 ===
+1794533419.175838982
+stamp:
+  sec: 1794533420
+  nanosec: 174769251
+frame_id: zed_left_camera_frame_optical
+---
+1794533420.355688507

@@ -1,6 +1,9 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
+import json
+
+EVIDENCE_TYPES={"photo","operator_attestation"}
 
 GATE_ITEMS = (
     "pendant_limits_recorded", "live_topics_verified",
@@ -32,6 +35,7 @@ MODE_REQUIREMENTS = {
 class GateEntry:
     passed: bool = False
     evidence: str | None = None
+    evidence_type: str | None = None
 
 
 class ExecutionGate:
@@ -39,19 +43,32 @@ class ExecutionGate:
         self.entries = {name: GateEntry() for name in GATE_ITEMS}
         self.entries.update(entries or {})
 
-    def audit(self, mode):
-        if mode not in MODE_REQUIREMENTS:
-            raise ValueError("unknown execution mode")
-        failures = []
-        for name in MODE_REQUIREMENTS[mode]:
-            entry = self.entries[name]
-            if not entry.passed:
-                failures.append(f"{name}:not_passed")
-            elif not entry.evidence or not Path(entry.evidence).is_file():
-                failures.append(f"{name}:evidence_missing")
+    def _entry_failures(self,name):
+        entry=self.entries[name];failures=[]
+        if not entry.passed:return [f"{name}:not_passed"]
+        if not entry.evidence or not Path(entry.evidence).is_file():return [f"{name}:evidence_missing"]
+        if entry.evidence_type not in EVIDENCE_TYPES:return [f"{name}:evidence_type_invalid"]
+        if entry.evidence_type=="operator_attestation":
+            try:
+                payload=json.loads(Path(entry.evidence).read_text())
+                required=("items","verification_method","date","operator","photo_omission_reason")
+                if not all(payload.get(key) for key in required):failures.append(f"{name}:attestation_incomplete")
+                elif payload["verification_method"]!="펜던트 화면 직접 확인":
+                    failures.append(f"{name}:attestation_method_invalid")
+            except (OSError,ValueError,TypeError):failures.append(f"{name}:attestation_invalid_json")
         return failures
+
+    def audit(self, mode):
+        if mode not in MODE_REQUIREMENTS:raise ValueError("unknown execution mode")
+        return [failure for name in MODE_REQUIREMENTS[mode]
+                for failure in self._entry_failures(name)]
 
     def require(self, mode):
         failures = self.audit(mode)
         if failures:
             raise PermissionError("V2_GATE_BLOCKED:" + ",".join(failures))
+
+    def require_item(self,name):
+        if name not in self.entries:raise ValueError("unknown gate item")
+        failures=self._entry_failures(name)
+        if failures:raise PermissionError("V2_GATE_BLOCKED:"+",".join(failures))

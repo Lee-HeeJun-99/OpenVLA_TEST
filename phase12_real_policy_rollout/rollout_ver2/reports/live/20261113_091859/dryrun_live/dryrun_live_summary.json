@@ -1,0 +1,4935 @@
+{
+  "duration_s": 60.00006303298869,
+  "architecture": "PROCESS_A_SAFETY__PROCESS_B_OBSERVATION",
+  "preflight": {
+    "robot_mode": 1,
+    "robot_system": 0,
+    "robot_state": 1,
+    "real_home_joint_error_deg": [
+      -0.017116569735222718,
+      -0.013375111802762669,
+      -0.021812248264010518,
+      0.0026325867531875324,
+      0.005552882446709727,
+      -4.488162865754392e-05
+    ]
+  },
+  "virtual_100hz_period_ms_p99": 10.903657741728233,
+  "feedback_age_s_max": 0.007426520984154195,
+  "robot_states": [
+    1
+  ],
+  "runtime_faults": [],
+  "end_reason": "DURATION_COMPLETE",
+  "feedback_stale_events": [],
+  "feedback_final_diagnostics": {
+    "joint_state_age_s": 0.006735697999829426,
+    "joint_state_last_received_monotonic": 136705.580226859,
+    "joint_state_previous_receive_interval_s": 0.010127588000614196,
+    "joint_state_receive_count": 6017,
+    "robot_state_age_s": 0.006489681982202455,
+    "robot_state_poll_attempts": 620,
+    "robot_state_poll_successes": 602
+  },
+  "camera_no_frame_timeout_count": 0,
+  "observation_records": [
+    {
+      "t_settle_host_monotonic": 136645.585356516,
+      "t_settle_ros_ns": 1794535835086095885,
+      "frame_host_received_monotonic": 136645.664789598,
+      "frame_header_stamp_ns": 1794535835114506251,
+      "frame_wait_s": 0.07943308199173771,
+      "camera_receive_count": 1
+    },
+    {
+      "t_settle_host_monotonic": 136646.145892464,
+      "t_settle_ros_ns": 1794535835646636138,
+      "frame_host_received_monotonic": 136646.187359456,
+      "frame_header_stamp_ns": 1794535835648009251,
+      "frame_wait_s": 0.041466991999186575,
+      "camera_receive_count": 15
+    },
+    {
+      "t_settle_host_monotonic": 136646.605774268,
+      "t_settle_ros_ns": 1794535836106514551,
+      "frame_host_received_monotonic": 136646.653158962,
+      "frame_header_stamp_ns": 1794535836114505251,
+      "frame_wait_s": 0.047384693985804915,
+      "camera_receive_count": 23
+    },
+    {
+      "t_settle_host_monotonic": 136647.065915101,
+      "t_settle_ros_ns": 1794535836566659505,
+      "frame_host_received_monotonic": 136647.154673185,
+      "frame_header_stamp_ns": 1794535836614755251,
+      "frame_wait_s": 0.08875808399170637,
+      "camera_receive_count": 34
+    },
+    {
+      "t_settle_host_monotonic": 136647.575814378,
+      "t_settle_ros_ns": 1794535837076559266,
+      "frame_host_received_monotonic": 136647.684976195,
+      "frame_header_stamp_ns": 1794535837148052251,
+      "frame_wait_s": 0.1091618170030415,
+      "camera_receive_count": 44
+    },
+    {
+      "t_settle_host_monotonic": 136648.095915226,
+      "t_settle_ros_ns": 1794535837596659327,
+      "frame_host_received_monotonic": 136648.187766616,
+      "frame_header_stamp_ns": 1794535837648056251,
+      "frame_wait_s": 0.09185138999600895,
+      "camera_receive_count": 55
+    },
+    {
+      "t_settle_host_monotonic": 136648.595866402,
+      "t_settle_ros_ns": 1794535838096607506,
+      "frame_host_received_monotonic": 136648.714879105,
+      "frame_header_stamp_ns": 1794535838181402251,
+      "frame_wait_s": 0.11901270301314071,
+      "camera_receive_count": 63
+    },
+    {
+      "t_settle_host_monotonic": 136649.125777007,
+      "t_settle_ros_ns": 1794535838626517320,
+      "frame_host_received_monotonic": 136649.186760003,
+      "frame_header_stamp_ns": 1794535838648027251,
+      "frame_wait_s": 0.060982996015809476,
+      "camera_receive_count": 75
+    },
+    {
+      "t_settle_host_monotonic": 136649.616325186,
+      "t_settle_ros_ns": 1794535839117083211,
+      "frame_host_received_monotonic": 136649.687925958,
+      "frame_header_stamp_ns": 1794535839148023251,
+      "frame_wait_s": 0.07160077197477221,
+      "camera_receive_count": 86
+    },
+    {
+      "t_settle_host_monotonic": 136650.135720361,
+      "t_settle_ros_ns": 1794535839636458860,
+      "frame_host_received_monotonic": 136650.187432017,
+      "frame_header_stamp_ns": 1794535839648219251,
+      "frame_wait_s": 0.051711656007682905,
+      "camera_receive_count": 95
+    },
+    {
+      "t_settle_host_monotonic": 136650.62580095,
+      "t_settle_ros_ns": 1794535840126542045,
+      "frame_host_received_monotonic": 136650.686095844,
+      "frame_header_stamp_ns": 1794535840148127251,
+      "frame_wait_s": 0.06029489400680177,
+      "camera_receive_count": 106
+    },
+    {
+      "t_settle_host_monotonic": 136651.125753793,
+      "t_settle_ros_ns": 1794535840626493414,
+      "frame_host_received_monotonic": 136651.254055089,
+      "frame_header_stamp_ns": 1794535840714902251,
+      "frame_wait_s": 0.12830129600479268,
+      "camera_receive_count": 115
+    },
+    {
+      "t_settle_host_monotonic": 136651.656050711,
+      "t_settle_ros_ns": 1794535841156798323,
+      "frame_host_received_monotonic": 136651.787315859,
+      "frame_header_stamp_ns": 1794535841248357251,
+      "frame_wait_s": 0.13126514799660072,
+      "camera_receive_count": 127
+    },
+    {
+      "t_settle_host_monotonic": 136652.205781944,
+      "t_settle_ros_ns": 1794535841706521561,
+      "frame_host_received_monotonic": 136652.253385486,
+      "frame_header_stamp_ns": 1794535841714972251,
+      "frame_wait_s": 0.04760354198515415,
+      "camera_receive_count": 137
+    },
+    {
+      "t_settle_host_monotonic": 136652.666071527,
+      "t_settle_ros_ns": 1794535842166824324,
+      "frame_host_received_monotonic": 136652.715497775,
+      "frame_header_stamp_ns": 1794535842181740251,
+      "frame_wait_s": 0.049426248006056994,
+      "camera_receive_count": 147
+    },
+    {
+      "t_settle_host_monotonic": 136653.146016196,
+      "t_settle_ros_ns": 1794535842646761628,
+      "frame_host_received_monotonic": 136653.188456276,
+      "frame_header_stamp_ns": 1794535842648283251,
+      "frame_wait_s": 0.04244007999659516,
+      "camera_receive_count": 157
+    },
+    {
+      "t_settle_host_monotonic": 136653.606469697,
+      "t_settle_ros_ns": 1794535843107222114,
+      "frame_host_received_monotonic": 136653.753425588,
+      "frame_header_stamp_ns": 1794535843215127251,
+      "frame_wait_s": 0.1469558909884654,
+      "camera_receive_count": 168
+    },
+    {
+      "t_settle_host_monotonic": 136654.165727527,
+      "t_settle_ros_ns": 1794535843666465766,
+      "frame_host_received_monotonic": 136654.222212912,
+      "frame_header_stamp_ns": 1794535843681646251,
+      "frame_wait_s": 0.0564853849937208,
+      "camera_receive_count": 178
+    },
+    {
+      "t_settle_host_monotonic": 136654.665947224,
+      "t_settle_ros_ns": 1794535844166691718,
+      "frame_host_received_monotonic": 136654.754498664,
+      "frame_header_stamp_ns": 1794535844215145251,
+      "frame_wait_s": 0.08855143998516724,
+      "camera_receive_count": 192
+    },
+    {
+      "t_settle_host_monotonic": 136655.195809572,
+      "t_settle_ros_ns": 1794535844696549749,
+      "frame_host_received_monotonic": 136655.248835157,
+      "frame_header_stamp_ns": 1794535844715216251,
+      "frame_wait_s": 0.0530255849880632,
+      "camera_receive_count": 203
+    },
+    {
+      "t_settle_host_monotonic": 136655.666221032,
+      "t_settle_ros_ns": 1794535845166974848,
+      "frame_host_received_monotonic": 136655.749042502,
+      "frame_header_stamp_ns": 1794535845215105251,
+      "frame_wait_s": 0.08282146998681128,
+      "camera_receive_count": 214
+    },
+    {
+      "t_settle_host_monotonic": 136656.17591492,
+      "t_settle_ros_ns": 1794535845676660414,
+      "frame_host_received_monotonic": 136656.221893848,
+      "frame_header_stamp_ns": 1794535845681760251,
+      "frame_wait_s": 0.04597892801393755,
+      "camera_receive_count": 224
+    },
+    {
+      "t_settle_host_monotonic": 136656.626078771,
+      "t_settle_ros_ns": 1794535846126829665,
+      "frame_host_received_monotonic": 136656.683721739,
+      "frame_header_stamp_ns": 1794535846148594251,
+      "frame_wait_s": 0.05764296802226454,
+      "camera_receive_count": 232
+    },
+    {
+      "t_settle_host_monotonic": 136657.115826651,
+      "t_settle_ros_ns": 1794535846616567906,
+      "frame_host_received_monotonic": 136657.186725147,
+      "frame_header_stamp_ns": 1794535846648461251,
+      "frame_wait_s": 0.07089849602198228,
+      "camera_receive_count": 243
+    },
+    {
+      "t_settle_host_monotonic": 136657.615873451,
+      "t_settle_ros_ns": 1794535847116616008,
+      "frame_host_received_monotonic": 136657.686722129,
+      "frame_header_stamp_ns": 1794535847148490251,
+      "frame_wait_s": 0.07084867800585926,
+      "camera_receive_count": 256
+    },
+    {
+      "t_settle_host_monotonic": 136658.135868995,
+      "t_settle_ros_ns": 1794535847636610406,
+      "frame_host_received_monotonic": 136658.182240516,
+      "frame_header_stamp_ns": 1794535847648581251,
+      "frame_wait_s": 0.04637152099166997,
+      "camera_receive_count": 267
+    },
+    {
+      "t_settle_host_monotonic": 136658.635792484,
+      "t_settle_ros_ns": 1794535848136532768,
+      "frame_host_received_monotonic": 136658.687103703,
+      "frame_header_stamp_ns": 1794535848148704251,
+      "frame_wait_s": 0.051311218994669616,
+      "camera_receive_count": 276
+    },
+    {
+      "t_settle_host_monotonic": 136659.125796425,
+      "t_settle_ros_ns": 1794535848626535524,
+      "frame_host_received_monotonic": 136659.188792509,
+      "frame_header_stamp_ns": 1794535848648652251,
+      "frame_wait_s": 0.06299608398694545,
+      "camera_receive_count": 287
+    },
+    {
+      "t_settle_host_monotonic": 136659.606325221,
+      "t_settle_ros_ns": 1794535849107072188,
+      "frame_host_received_monotonic": 136659.651746347,
+      "frame_header_stamp_ns": 1794535849117152251,
+      "frame_wait_s": 0.04542112600756809,
+      "camera_receive_count": 295
+    },
+    {
+      "t_settle_host_monotonic": 136660.095845031,
+      "t_settle_ros_ns": 1794535849596584755,
+      "frame_host_received_monotonic": 136660.156024565,
+      "frame_header_stamp_ns": 1794535849615469251,
+      "frame_wait_s": 0.060179533989867195,
+      "camera_receive_count": 308
+    },
+    {
+      "t_settle_host_monotonic": 136660.596173953,
+      "t_settle_ros_ns": 1794535850096926164,
+      "frame_host_received_monotonic": 136660.655511275,
+      "frame_header_stamp_ns": 1794535850115362251,
+      "frame_wait_s": 0.05933732198900543,
+      "camera_receive_count": 319
+    },
+    {
+      "t_settle_host_monotonic": 136661.066203952,
+      "t_settle_ros_ns": 1794535850566959168,
+      "frame_host_received_monotonic": 136661.120141014,
+      "frame_header_stamp_ns": 1794535850582206251,
+      "frame_wait_s": 0.05393706198083237,
+      "camera_receive_count": 329
+    },
+    {
+      "t_settle_host_monotonic": 136661.546123633,
+      "t_settle_ros_ns": 1794535851046870378,
+      "frame_host_received_monotonic": 136661.585253107,
+      "frame_header_stamp_ns": 1794535851048697251,
+      "frame_wait_s": 0.03912947402568534,
+      "camera_receive_count": 339
+    },
+    {
+      "t_settle_host_monotonic": 136661.996152491,
+      "t_settle_ros_ns": 1794535851496899530,
+      "frame_host_received_monotonic": 136662.116424022,
+      "frame_header_stamp_ns": 1794535851582295251,
+      "frame_wait_s": 0.12027153102098964,
+      "camera_receive_count": 351
+    },
+    {
+      "t_settle_host_monotonic": 136662.525808918,
+      "t_settle_ros_ns": 1794535852026548612,
+      "frame_host_received_monotonic": 136662.588133612,
+      "frame_header_stamp_ns": 1794535852048934251,
+      "frame_wait_s": 0.06232469400856644,
+      "camera_receive_count": 361
+    },
+    {
+      "t_settle_host_monotonic": 136663.015997837,
+      "t_settle_ros_ns": 1794535852516750055,
+      "frame_host_received_monotonic": 136663.084205841,
+      "frame_header_stamp_ns": 1794535852548989251,
+      "frame_wait_s": 0.06820800399873406,
+      "camera_receive_count": 372
+    },
+    {
+      "t_settle_host_monotonic": 136663.495804562,
+      "t_settle_ros_ns": 1794535852996544934,
+      "frame_host_received_monotonic": 136663.616517741,
+      "frame_header_stamp_ns": 1794535853082360251,
+      "frame_wait_s": 0.120713178999722,
+      "camera_receive_count": 384
+    },
+    {
+      "t_settle_host_monotonic": 136664.045936087,
+      "t_settle_ros_ns": 1794535853546683985,
+      "frame_host_received_monotonic": 136664.151715345,
+      "frame_header_stamp_ns": 1794535853615692251,
+      "frame_wait_s": 0.1057792580104433,
+      "camera_receive_count": 396
+    },
+    {
+      "t_settle_host_monotonic": 136664.555957045,
+      "t_settle_ros_ns": 1794535854056702500,
+      "frame_host_received_monotonic": 136664.715910368,
+      "frame_header_stamp_ns": 1794535854182442251,
+      "frame_wait_s": 0.15995332298916765,
+      "camera_receive_count": 403
+    },
+    {
+      "t_settle_host_monotonic": 136665.146250812,
+      "t_settle_ros_ns": 1794535854646997870,
+      "frame_host_received_monotonic": 136665.253305972,
+      "frame_header_stamp_ns": 1794535854715842251,
+      "frame_wait_s": 0.10705516001326032,
+      "camera_receive_count": 415
+    },
+    {
+      "t_settle_host_monotonic": 136665.685781391,
+      "t_settle_ros_ns": 1794535855186520191,
+      "frame_host_received_monotonic": 136665.754070754,
+      "frame_header_stamp_ns": 1794535855215844251,
+      "frame_wait_s": 0.06828936300007626,
+      "camera_receive_count": 422
+    },
+    {
+      "t_settle_host_monotonic": 136666.165947109,
+      "t_settle_ros_ns": 1794535855666689234,
+      "frame_host_received_monotonic": 136666.315948021,
+      "frame_header_stamp_ns": 1794535855782340251,
+      "frame_wait_s": 0.15000091199181043,
+      "camera_receive_count": 431
+    },
+    {
+      "t_settle_host_monotonic": 136666.735703044,
+      "t_settle_ros_ns": 1794535856236440768,
+      "frame_host_received_monotonic": 136666.787443178,
+      "frame_header_stamp_ns": 1794535856249197251,
+      "frame_wait_s": 0.05174013401847333,
+      "camera_receive_count": 441
+    },
+    {
+      "t_settle_host_monotonic": 136667.2159655,
+      "t_settle_ros_ns": 1794535856716704445,
+      "frame_host_received_monotonic": 136667.288772716,
+      "frame_header_stamp_ns": 1794535856749069251,
+      "frame_wait_s": 0.07280721599818207,
+      "camera_receive_count": 450
+    },
+    {
+      "t_settle_host_monotonic": 136667.705935921,
+      "t_settle_ros_ns": 1794535857206677243,
+      "frame_host_received_monotonic": 136667.749705976,
+      "frame_header_stamp_ns": 1794535857215911251,
+      "frame_wait_s": 0.04377005499554798,
+      "camera_receive_count": 460
+    },
+    {
+      "t_settle_host_monotonic": 136668.166075816,
+      "t_settle_ros_ns": 1794535857666829081,
+      "frame_host_received_monotonic": 136668.254446741,
+      "frame_header_stamp_ns": 1794535857715796251,
+      "frame_wait_s": 0.08837092499015853,
+      "camera_receive_count": 471
+    },
+    {
+      "t_settle_host_monotonic": 136668.666295606,
+      "t_settle_ros_ns": 1794535858167049651,
+      "frame_host_received_monotonic": 136668.716141023,
+      "frame_header_stamp_ns": 1794535858182666251,
+      "frame_wait_s": 0.04984541700105183,
+      "camera_receive_count": 481
+    },
+    {
+      "t_settle_host_monotonic": 136669.206116616,
+      "t_settle_ros_ns": 1794535858706862128,
+      "frame_host_received_monotonic": 136669.351642161,
+      "frame_header_stamp_ns": 1794535858816028251,
+      "frame_wait_s": 0.145525544998236,
+      "camera_receive_count": 492
+    },
+    {
+      "t_settle_host_monotonic": 136669.785914809,
+      "t_settle_ros_ns": 1794535859286659279,
+      "frame_host_received_monotonic": 136669.850859929,
+      "frame_header_stamp_ns": 1794535859315917251,
+      "frame_wait_s": 0.06494511998607777,
+      "camera_receive_count": 501
+    },
+    {
+      "t_settle_host_monotonic": 136670.266115943,
+      "t_settle_ros_ns": 1794535859766862244,
+      "frame_host_received_monotonic": 136670.316195326,
+      "frame_header_stamp_ns": 1794535859782531251,
+      "frame_wait_s": 0.050079383014235646,
+      "camera_receive_count": 511
+    },
+    {
+      "t_settle_host_monotonic": 136670.765962574,
+      "t_settle_ros_ns": 1794535860266707688,
+      "frame_host_received_monotonic": 136670.85355929,
+      "frame_header_stamp_ns": 1794535860316057251,
+      "frame_wait_s": 0.08759671601001173,
+      "camera_receive_count": 519
+    },
+    {
+      "t_settle_host_monotonic": 136671.295774279,
+      "t_settle_ros_ns": 1794535860796514039,
+      "frame_host_received_monotonic": 136671.416319751,
+      "frame_header_stamp_ns": 1794535860882669251,
+      "frame_wait_s": 0.1205454720184207,
+      "camera_receive_count": 530
+    },
+    {
+      "t_settle_host_monotonic": 136671.856007177,
+      "t_settle_ros_ns": 1794535861356756913,
+      "frame_host_received_monotonic": 136671.919655794,
+      "frame_header_stamp_ns": 1794535861382804251,
+      "frame_wait_s": 0.0636486169823911,
+      "camera_receive_count": 543
+    },
+    {
+      "t_settle_host_monotonic": 136672.365991767,
+      "t_settle_ros_ns": 1794535861866745171,
+      "frame_host_received_monotonic": 136672.416191582,
+      "frame_header_stamp_ns": 1794535861882653251,
+      "frame_wait_s": 0.050199814984807745,
+      "camera_receive_count": 554
+    },
+    {
+      "t_settle_host_monotonic": 136672.84581099,
+      "t_settle_ros_ns": 1794535862346552684,
+      "frame_host_received_monotonic": 136673.016515833,
+      "frame_header_stamp_ns": 1794535862482928251,
+      "frame_wait_s": 0.1707048430107534,
+      "camera_receive_count": 564
+    },
+    {
+      "t_settle_host_monotonic": 136673.455940052,
+      "t_settle_ros_ns": 1794535862956685506,
+      "frame_host_received_monotonic": 136673.518936471,
+      "frame_header_stamp_ns": 1794535862982922251,
+      "frame_wait_s": 0.06299641900113784,
+      "camera_receive_count": 575
+    },
+    {
+      "t_settle_host_monotonic": 136673.945850837,
+      "t_settle_ros_ns": 1794535863446591243,
+      "frame_host_received_monotonic": 136673.987230802,
+      "frame_header_stamp_ns": 1794535863449515251,
+      "frame_wait_s": 0.04137996502686292,
+      "camera_receive_count": 585
+    },
+    {
+      "t_settle_host_monotonic": 136674.425807317,
+      "t_settle_ros_ns": 1794535863926547013,
+      "frame_host_received_monotonic": 136674.488509841,
+      "frame_header_stamp_ns": 1794535863949663251,
+      "frame_wait_s": 0.06270252401009202,
+      "camera_receive_count": 596
+    },
+    {
+      "t_settle_host_monotonic": 136674.925794539,
+      "t_settle_ros_ns": 1794535864426533276,
+      "frame_host_received_monotonic": 136674.989934349,
+      "frame_header_stamp_ns": 1794535864449652251,
+      "frame_wait_s": 0.06413980998331681,
+      "camera_receive_count": 607
+    },
+    {
+      "t_settle_host_monotonic": 136675.435766565,
+      "t_settle_ros_ns": 1794535864936505272,
+      "frame_host_received_monotonic": 136675.486631794,
+      "frame_header_stamp_ns": 1794535864949549251,
+      "frame_wait_s": 0.05086522898636758,
+      "camera_receive_count": 618
+    },
+    {
+      "t_settle_host_monotonic": 136675.925805339,
+      "t_settle_ros_ns": 1794535865426544934,
+      "frame_host_received_monotonic": 136675.983704079,
+      "frame_header_stamp_ns": 1794535865449653251,
+      "frame_wait_s": 0.057898739993106574,
+      "camera_receive_count": 627
+    },
+    {
+      "t_settle_host_monotonic": 136676.425783435,
+      "t_settle_ros_ns": 1794535865926523315,
+      "frame_host_received_monotonic": 136676.487896359,
+      "frame_header_stamp_ns": 1794535865949814251,
+      "frame_wait_s": 0.06211292400257662,
+      "camera_receive_count": 636
+    },
+    {
+      "t_settle_host_monotonic": 136676.935732283,
+      "t_settle_ros_ns": 1794535866436471727,
+      "frame_host_received_monotonic": 136676.989074834,
+      "frame_header_stamp_ns": 1794535866449802251,
+      "frame_wait_s": 0.05334255102206953,
+      "camera_receive_count": 649
+    },
+    {
+      "t_settle_host_monotonic": 136677.425864881,
+      "t_settle_ros_ns": 1794535866926605540,
+      "frame_host_received_monotonic": 136677.556465975,
+      "frame_header_stamp_ns": 1794535867016383251,
+      "frame_wait_s": 0.13060109401703812,
+      "camera_receive_count": 660
+    },
+    {
+      "t_settle_host_monotonic": 136677.966157337,
+      "t_settle_ros_ns": 1794535867466911190,
+      "frame_host_received_monotonic": 136678.016755834,
+      "frame_header_stamp_ns": 1794535867483149251,
+      "frame_wait_s": 0.05059849697863683,
+      "camera_receive_count": 668
+    },
+    {
+      "t_settle_host_monotonic": 136678.475934047,
+      "t_settle_ros_ns": 1794535867976677982,
+      "frame_host_received_monotonic": 136678.555882681,
+      "frame_header_stamp_ns": 1794535868016390251,
+      "frame_wait_s": 0.07994863399653696,
+      "camera_receive_count": 680
+    },
+    {
+      "t_settle_host_monotonic": 136678.975854705,
+      "t_settle_ros_ns": 1794535868476594654,
+      "frame_host_received_monotonic": 136679.022638119,
+      "frame_header_stamp_ns": 1794535868483118251,
+      "frame_wait_s": 0.04678341399994679,
+      "camera_receive_count": 690
+    },
+    {
+      "t_settle_host_monotonic": 136679.44592174,
+      "t_settle_ros_ns": 1794535868946662381,
+      "frame_host_received_monotonic": 136679.552063273,
+      "frame_header_stamp_ns": 1794535869016457251,
+      "frame_wait_s": 0.10614153300411999,
+      "camera_receive_count": 704
+    },
+    {
+      "t_settle_host_monotonic": 136679.95597213,
+      "t_settle_ros_ns": 1794535869456717206,
+      "frame_host_received_monotonic": 136680.017725966,
+      "frame_header_stamp_ns": 1794535869483236251,
+      "frame_wait_s": 0.06175383599475026,
+      "camera_receive_count": 714
+    },
+    {
+      "t_settle_host_monotonic": 136680.445967472,
+      "t_settle_ros_ns": 1794535869946707145,
+      "frame_host_received_monotonic": 136680.555579922,
+      "frame_header_stamp_ns": 1794535870016607251,
+      "frame_wait_s": 0.10961244997452013,
+      "camera_receive_count": 728
+    },
+    {
+      "t_settle_host_monotonic": 136680.995813987,
+      "t_settle_ros_ns": 1794535870496553356,
+      "frame_host_received_monotonic": 136681.117647668,
+      "frame_header_stamp_ns": 1794535870583249251,
+      "frame_wait_s": 0.12183368098339997,
+      "camera_receive_count": 737
+    },
+    {
+      "t_settle_host_monotonic": 136681.52578324,
+      "t_settle_ros_ns": 1794535871026523107,
+      "frame_host_received_monotonic": 136681.58817828,
+      "frame_header_stamp_ns": 1794535871049831251,
+      "frame_wait_s": 0.062395040004048496,
+      "camera_receive_count": 747
+    },
+    {
+      "t_settle_host_monotonic": 136682.015845961,
+      "t_settle_ros_ns": 1794535871516586857,
+      "frame_host_received_monotonic": 136682.050054814,
+      "frame_header_stamp_ns": 1794535871516750251,
+      "frame_wait_s": 0.03420885300147347,
+      "camera_receive_count": 757
+    },
+    {
+      "t_settle_host_monotonic": 136682.475938749,
+      "t_settle_ros_ns": 1794535871976681334,
+      "frame_host_received_monotonic": 136682.518594321,
+      "frame_header_stamp_ns": 1794535871983228251,
+      "frame_wait_s": 0.0426555720041506,
+      "camera_receive_count": 767
+    },
+    {
+      "t_settle_host_monotonic": 136682.935812225,
+      "t_settle_ros_ns": 1794535872436551115,
+      "frame_host_received_monotonic": 136682.988010334,
+      "frame_header_stamp_ns": 1794535872450097251,
+      "frame_wait_s": 0.05219810898415744,
+      "camera_receive_count": 779
+    },
+    {
+      "t_settle_host_monotonic": 136683.405772702,
+      "t_settle_ros_ns": 1794535872906512896,
+      "frame_host_received_monotonic": 136683.449995087,
+      "frame_header_stamp_ns": 1794535872916718251,
+      "frame_wait_s": 0.04422238498227671,
+      "camera_receive_count": 787
+    },
+    {
+      "t_settle_host_monotonic": 136683.875892052,
+      "t_settle_ros_ns": 1794535873376633650,
+      "frame_host_received_monotonic": 136683.92220054,
+      "frame_header_stamp_ns": 1794535873385019251,
+      "frame_wait_s": 0.046308488002978265,
+      "camera_receive_count": 801
+    },
+    {
+      "t_settle_host_monotonic": 136684.346106288,
+      "t_settle_ros_ns": 1794535873846854045,
+      "frame_host_received_monotonic": 136684.386202914,
+      "frame_header_stamp_ns": 1794535873850209251,
+      "frame_wait_s": 0.04009662600583397,
+      "camera_receive_count": 813
+    },
+    {
+      "t_settle_host_monotonic": 136684.816458221,
+      "t_settle_ros_ns": 1794535874317229455,
+      "frame_host_received_monotonic": 136684.889218555,
+      "frame_header_stamp_ns": 1794535874350243251,
+      "frame_wait_s": 0.07276033400557935,
+      "camera_receive_count": 824
+    },
+    {
+      "t_settle_host_monotonic": 136685.315826388,
+      "t_settle_ros_ns": 1794535874816568713,
+      "frame_host_received_monotonic": 136685.355125673,
+      "frame_header_stamp_ns": 1794535874816708251,
+      "frame_wait_s": 0.039299285010201856,
+      "camera_receive_count": 834
+    },
+    {
+      "t_settle_host_monotonic": 136685.795945582,
+      "t_settle_ros_ns": 1794535875296686544,
+      "frame_host_received_monotonic": 136685.950288062,
+      "frame_header_stamp_ns": 1794535875416968251,
+      "frame_wait_s": 0.15434248000383377,
+      "camera_receive_count": 846
+    },
+    {
+      "t_settle_host_monotonic": 136686.386129447,
+      "t_settle_ros_ns": 1794535875886873233,
+      "frame_host_received_monotonic": 136686.455064356,
+      "frame_header_stamp_ns": 1794535875916967251,
+      "frame_wait_s": 0.06893490900984034,
+      "camera_receive_count": 857
+    },
+    {
+      "t_settle_host_monotonic": 136686.876123989,
+      "t_settle_ros_ns": 1794535876376872526,
+      "frame_host_received_monotonic": 136687.056561969,
+      "frame_header_stamp_ns": 1794535876516960251,
+      "frame_wait_s": 0.18043797998689115,
+      "camera_receive_count": 869
+    },
+    {
+      "t_settle_host_monotonic": 136687.476134206,
+      "t_settle_ros_ns": 1794535876976884561,
+      "frame_host_received_monotonic": 136687.584536091,
+      "frame_header_stamp_ns": 1794535877050324251,
+      "frame_wait_s": 0.10840188499423675,
+      "camera_receive_count": 875
+    },
+    {
+      "t_settle_host_monotonic": 136688.00576168,
+      "t_settle_ros_ns": 1794535877506501766,
+      "frame_host_received_monotonic": 136688.051888941,
+      "frame_header_stamp_ns": 1794535877517074251,
+      "frame_wait_s": 0.046127261011861265,
+      "camera_receive_count": 883
+    },
+    {
+      "t_settle_host_monotonic": 136688.475845264,
+      "t_settle_ros_ns": 1794535877976584060,
+      "frame_host_received_monotonic": 136688.617242695,
+      "frame_header_stamp_ns": 1794535878083568251,
+      "frame_wait_s": 0.14139743099804036,
+      "camera_receive_count": 892
+    },
+    {
+      "t_settle_host_monotonic": 136689.025853521,
+      "t_settle_ros_ns": 1794535878526593703,
+      "frame_host_received_monotonic": 136689.1553107,
+      "frame_header_stamp_ns": 1794535878617080251,
+      "frame_wait_s": 0.12945717902039178,
+      "camera_receive_count": 900
+    },
+    {
+      "t_settle_host_monotonic": 136689.575894222,
+      "t_settle_ros_ns": 1794535879076635982,
+      "frame_host_received_monotonic": 136689.651056541,
+      "frame_header_stamp_ns": 1794535879117075251,
+      "frame_wait_s": 0.07516231900081038,
+      "camera_receive_count": 911
+    },
+    {
+      "t_settle_host_monotonic": 136690.066177822,
+      "t_settle_ros_ns": 1794535879566927530,
+      "frame_host_received_monotonic": 136690.119462866,
+      "frame_header_stamp_ns": 1794535879583817251,
+      "frame_wait_s": 0.053285043977666646,
+      "camera_receive_count": 923
+    },
+    {
+      "t_settle_host_monotonic": 136690.535754243,
+      "t_settle_ros_ns": 1794535880036494637,
+      "frame_host_received_monotonic": 136690.654111627,
+      "frame_header_stamp_ns": 1794535880117189251,
+      "frame_wait_s": 0.11835738399531692,
+      "camera_receive_count": 933
+    },
+    {
+      "t_settle_host_monotonic": 136691.065943051,
+      "t_settle_ros_ns": 1794535880566702031,
+      "frame_host_received_monotonic": 136691.121545261,
+      "frame_header_stamp_ns": 1794535880584082251,
+      "frame_wait_s": 0.05560220999177545,
+      "camera_receive_count": 943
+    },
+    {
+      "t_settle_host_monotonic": 136691.546134116,
+      "t_settle_ros_ns": 1794535881046884616,
+      "frame_host_received_monotonic": 136691.590242251,
+      "frame_header_stamp_ns": 1794535881050485251,
+      "frame_wait_s": 0.044108134985435754,
+      "camera_receive_count": 951
+    },
+    {
+      "t_settle_host_monotonic": 136692.006084095,
+      "t_settle_ros_ns": 1794535881506837254,
+      "frame_host_received_monotonic": 136692.055728522,
+      "frame_header_stamp_ns": 1794535881517340251,
+      "frame_wait_s": 0.04964442702475935,
+      "camera_receive_count": 959
+    },
+    {
+      "t_settle_host_monotonic": 136692.476793741,
+      "t_settle_ros_ns": 1794535881977537811,
+      "frame_host_received_monotonic": 136692.558737434,
+      "frame_header_stamp_ns": 1794535882017331251,
+      "frame_wait_s": 0.0819436930178199,
+      "camera_receive_count": 972
+    },
+    {
+      "t_settle_host_monotonic": 136693.005785107,
+      "t_settle_ros_ns": 1794535882506524712,
+      "frame_host_received_monotonic": 136693.054628338,
+      "frame_header_stamp_ns": 1794535882517148251,
+      "frame_wait_s": 0.0488432309939526,
+      "camera_receive_count": 985
+    },
+    {
+      "t_settle_host_monotonic": 136693.475914782,
+      "t_settle_ros_ns": 1794535882976660072,
+      "frame_host_received_monotonic": 136693.523702167,
+      "frame_header_stamp_ns": 1794535882984070251,
+      "frame_wait_s": 0.047787385003175586,
+      "camera_receive_count": 991
+    },
+    {
+      "t_settle_host_monotonic": 136693.935775974,
+      "t_settle_ros_ns": 1794535883436516252,
+      "frame_host_received_monotonic": 136693.988728142,
+      "frame_header_stamp_ns": 1794535883450578251,
+      "frame_wait_s": 0.05295216798549518,
+      "camera_receive_count": 1001
+    },
+    {
+      "t_settle_host_monotonic": 136694.425758709,
+      "t_settle_ros_ns": 1794535883926498300,
+      "frame_host_received_monotonic": 136694.557753197,
+      "frame_header_stamp_ns": 1794535884017424251,
+      "frame_wait_s": 0.131994488008786,
+      "camera_receive_count": 1014
+    },
+    {
+      "t_settle_host_monotonic": 136694.995846924,
+      "t_settle_ros_ns": 1794535884496587366,
+      "frame_host_received_monotonic": 136695.057131048,
+      "frame_header_stamp_ns": 1794535884517267251,
+      "frame_wait_s": 0.06128412400721572,
+      "camera_receive_count": 1029
+    },
+    {
+      "t_settle_host_monotonic": 136695.45612556,
+      "t_settle_ros_ns": 1794535884956869920,
+      "frame_host_received_monotonic": 136695.552780098,
+      "frame_header_stamp_ns": 1794535885017540251,
+      "frame_wait_s": 0.09665453797788359,
+      "camera_receive_count": 1036
+    },
+    {
+      "t_settle_host_monotonic": 136695.966064206,
+      "t_settle_ros_ns": 1794535885466808992,
+      "frame_host_received_monotonic": 136696.054926473,
+      "frame_header_stamp_ns": 1794535885517471251,
+      "frame_wait_s": 0.08886226700269617,
+      "camera_receive_count": 1043
+    },
+    {
+      "t_settle_host_monotonic": 136696.486237155,
+      "t_settle_ros_ns": 1794535885986989902,
+      "frame_host_received_monotonic": 136696.617667526,
+      "frame_header_stamp_ns": 1794535886084211251,
+      "frame_wait_s": 0.13143037099507637,
+      "camera_receive_count": 1056
+    },
+    {
+      "t_settle_host_monotonic": 136697.04576858,
+      "t_settle_ros_ns": 1794535886546509299,
+      "frame_host_received_monotonic": 136697.151725199,
+      "frame_header_stamp_ns": 1794535886617539251,
+      "frame_wait_s": 0.10595661899424158,
+      "camera_receive_count": 1066
+    },
+    {
+      "t_settle_host_monotonic": 136697.566150837,
+      "t_settle_ros_ns": 1794535887066914466,
+      "frame_host_received_monotonic": 136697.617786039,
+      "frame_header_stamp_ns": 1794535887084284251,
+      "frame_wait_s": 0.05163520199130289,
+      "camera_receive_count": 1074
+    },
+    {
+      "t_settle_host_monotonic": 136698.065915431,
+      "t_settle_ros_ns": 1794535887566661511,
+      "frame_host_received_monotonic": 136698.124117849,
+      "frame_header_stamp_ns": 1794535887584348251,
+      "frame_wait_s": 0.05820241797482595,
+      "camera_receive_count": 1089
+    },
+    {
+      "t_settle_host_monotonic": 136698.555946343,
+      "t_settle_ros_ns": 1794535888056687848,
+      "frame_host_received_monotonic": 136698.621724964,
+      "frame_header_stamp_ns": 1794535888086038251,
+      "frame_wait_s": 0.06577862100675702,
+      "camera_receive_count": 1102
+    },
+    {
+      "t_settle_host_monotonic": 136699.035750031,
+      "t_settle_ros_ns": 1794535888536489224,
+      "frame_host_received_monotonic": 136699.1513861,
+      "frame_header_stamp_ns": 1794535888617654251,
+      "frame_wait_s": 0.11563606900745071,
+      "camera_receive_count": 1112
+    },
+    {
+      "t_settle_host_monotonic": 136699.575885793,
+      "t_settle_ros_ns": 1794535889076626402,
+      "frame_host_received_monotonic": 136699.622490114,
+      "frame_header_stamp_ns": 1794535889084884251,
+      "frame_wait_s": 0.0466043210180942,
+      "camera_receive_count": 1122
+    },
+    {
+      "t_settle_host_monotonic": 136700.055954435,
+      "t_settle_ros_ns": 1794535889556701420,
+      "frame_host_received_monotonic": 136700.120121112,
+      "frame_header_stamp_ns": 1794535889584409251,
+      "frame_wait_s": 0.06416667700977996,
+      "camera_receive_count": 1133
+    },
+    {
+      "t_settle_host_monotonic": 136700.53582107,
+      "t_settle_ros_ns": 1794535890036562168,
+      "frame_host_received_monotonic": 136700.589511776,
+      "frame_header_stamp_ns": 1794535890051142251,
+      "frame_wait_s": 0.05369070600136183,
+      "camera_receive_count": 1143
+    },
+    {
+      "t_settle_host_monotonic": 136701.025730266,
+      "t_settle_ros_ns": 1794535890526469488,
+      "frame_host_received_monotonic": 136701.090930918,
+      "frame_header_stamp_ns": 1794535890551150251,
+      "frame_wait_s": 0.06520065199583769,
+      "camera_receive_count": 1154
+    },
+    {
+      "t_settle_host_monotonic": 136701.505769421,
+      "t_settle_ros_ns": 1794535891006508696,
+      "frame_host_received_monotonic": 136701.55763033,
+      "frame_header_stamp_ns": 1794535891017592251,
+      "frame_wait_s": 0.05186090900679119,
+      "camera_receive_count": 1164
+    },
+    {
+      "t_settle_host_monotonic": 136701.966153479,
+      "t_settle_ros_ns": 1794535891466907191,
+      "frame_host_received_monotonic": 136702.055363297,
+      "frame_header_stamp_ns": 1794535891517894251,
+      "frame_wait_s": 0.089209817990195,
+      "camera_receive_count": 1175
+    },
+    {
+      "t_settle_host_monotonic": 136702.475874026,
+      "t_settle_ros_ns": 1794535891976616907,
+      "frame_host_received_monotonic": 136702.522884869,
+      "frame_header_stamp_ns": 1794535891986164251,
+      "frame_wait_s": 0.04701084300177172,
+      "camera_receive_count": 1185
+    },
+    {
+      "t_settle_host_monotonic": 136702.935820906,
+      "t_settle_ros_ns": 1794535892436559396,
+      "frame_host_received_monotonic": 136702.990312666,
+      "frame_header_stamp_ns": 1794535892451274251,
+      "frame_wait_s": 0.05449176000547595,
+      "camera_receive_count": 1197
+    },
+    {
+      "t_settle_host_monotonic": 136703.416019546,
+      "t_settle_ros_ns": 1794535892916767583,
+      "frame_host_received_monotonic": 136703.457670541,
+      "frame_header_stamp_ns": 1794535892917782251,
+      "frame_wait_s": 0.04165099500096403,
+      "camera_receive_count": 1207
+    },
+    {
+      "t_settle_host_monotonic": 136703.866136656,
+      "t_settle_ros_ns": 1794535893366889443,
+      "frame_host_received_monotonic": 136703.955545113,
+      "frame_header_stamp_ns": 1794535893417881251,
+      "frame_wait_s": 0.08940845701727085,
+      "camera_receive_count": 1216
+    },
+    {
+      "t_settle_host_monotonic": 136704.365872241,
+      "t_settle_ros_ns": 1794535893866619811,
+      "frame_host_received_monotonic": 136704.423721344,
+      "frame_header_stamp_ns": 1794535893884542251,
+      "frame_wait_s": 0.05784910300280899,
+      "camera_receive_count": 1228
+    },
+    {
+      "t_settle_host_monotonic": 136704.835763343,
+      "t_settle_ros_ns": 1794535894336502412,
+      "frame_host_received_monotonic": 136704.890381074,
+      "frame_header_stamp_ns": 1794535894351401251,
+      "frame_wait_s": 0.05461773098795675,
+      "camera_receive_count": 1240
+    }
+  ],
+  "camera_final_diagnostics": {
+    "last_received_monotonic": 136705.252304499,
+    "previous_receive_interval_s": 0.09809664700878784,
+    "last_header_stamp_ns": 1794535894717993251,
+    "age_s": 0.04190979199483991,
+    "receive_count": 1247,
+    "gap_over_0_1s_count": 86,
+    "gap_over_1s_count": 0,
+    "max_receive_interval_s": 0.22946554599911906
+  },
+  "inference_results": [
+    {
+      "time": 136646.145890315,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136645.585356516,
+        "t_settle_ros_ns": 1794535835086095885,
+        "frame_host_received_monotonic": 136645.664789598,
+        "frame_header_stamp_ns": 1794535835114506251,
+        "frame_wait_s": 0.07943308199173771,
+        "camera_receive_count": 1
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136645.678888876,
+        "preprocess_completed_monotonic": 136645.720634142,
+        "image_write_completed_monotonic": 136645.72087993,
+        "http_completed_monotonic": 136646.135709308,
+        "parse_completed_monotonic": 136646.135886002,
+        "preprocess_s": 0.04174526600399986,
+        "image_write_s": 0.00024578801821917295,
+        "http_s": 0.4148293779871892,
+        "parse_s": 0.0001766940113157034,
+        "total_s": 0.45699712602072395
+      }
+    },
+    {
+      "time": 136646.605772407,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136646.145892464,
+        "t_settle_ros_ns": 1794535835646636138,
+        "frame_host_received_monotonic": 136646.187359456,
+        "frame_header_stamp_ns": 1794535835648009251,
+        "frame_wait_s": 0.041466991999186575,
+        "camera_receive_count": 15
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.000344000677112463,
+        -0.0010219888650054472,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136646.195763313,
+        "preprocess_completed_monotonic": 136646.22918497,
+        "image_write_completed_monotonic": 136646.229485713,
+        "http_completed_monotonic": 136646.604142246,
+        "parse_completed_monotonic": 136646.604340807,
+        "preprocess_s": 0.03342165698995814,
+        "image_write_s": 0.00030074300593696535,
+        "http_s": 0.37465653300751,
+        "parse_s": 0.00019856099970638752,
+        "total_s": 0.4085774940031115
+      }
+    },
+    {
+      "time": 136647.065913068,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136646.605774268,
+        "t_settle_ros_ns": 1794535836106514551,
+        "frame_host_received_monotonic": 136646.653158962,
+        "frame_header_stamp_ns": 1794535836114505251,
+        "frame_wait_s": 0.047384693985804915,
+        "camera_receive_count": 23
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136646.662552929,
+        "preprocess_completed_monotonic": 136646.690037647,
+        "image_write_completed_monotonic": 136646.690302297,
+        "http_completed_monotonic": 136647.063873998,
+        "parse_completed_monotonic": 136647.064076794,
+        "preprocess_s": 0.027484718011692166,
+        "image_write_s": 0.00026465000701136887,
+        "http_s": 0.37357170099858195,
+        "parse_s": 0.0002027959853876382,
+        "total_s": 0.4015238650026731
+      }
+    },
+    {
+      "time": 136647.575812659,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136647.065915101,
+        "t_settle_ros_ns": 1794535836566659505,
+        "frame_host_received_monotonic": 136647.154673185,
+        "frame_header_stamp_ns": 1794535836614755251,
+        "frame_wait_s": 0.08875808399170637,
+        "camera_receive_count": 34
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136647.171032862,
+        "preprocess_completed_monotonic": 136647.203013225,
+        "image_write_completed_monotonic": 136647.203273689,
+        "http_completed_monotonic": 136647.565432924,
+        "parse_completed_monotonic": 136647.565621084,
+        "preprocess_s": 0.031980362982722,
+        "image_write_s": 0.00026046400307677686,
+        "http_s": 0.3621592349954881,
+        "parse_s": 0.0001881600182969123,
+        "total_s": 0.39458822199958377
+      }
+    },
+    {
+      "time": 136648.095913367,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136647.575814378,
+        "t_settle_ros_ns": 1794535837076559266,
+        "frame_host_received_monotonic": 136647.684976195,
+        "frame_header_stamp_ns": 1794535837148052251,
+        "frame_wait_s": 0.1091618170030415,
+        "camera_receive_count": 44
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136647.69350028,
+        "preprocess_completed_monotonic": 136647.718213362,
+        "image_write_completed_monotonic": 136647.718437376,
+        "http_completed_monotonic": 136648.08880427,
+        "parse_completed_monotonic": 136648.088967505,
+        "preprocess_s": 0.024713082006201148,
+        "image_write_s": 0.00022401398746296763,
+        "http_s": 0.3703668939997442,
+        "parse_s": 0.0001632350031286478,
+        "total_s": 0.39546722499653697
+      }
+    },
+    {
+      "time": 136648.595864456,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136648.095915226,
+        "t_settle_ros_ns": 1794535837596659327,
+        "frame_host_received_monotonic": 136648.187766616,
+        "frame_header_stamp_ns": 1794535837648056251,
+        "frame_wait_s": 0.09185138999600895,
+        "camera_receive_count": 55
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.000344000677112463,
+        -0.0010219888650054472,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136648.198470201,
+        "preprocess_completed_monotonic": 136648.226434376,
+        "image_write_completed_monotonic": 136648.226686563,
+        "http_completed_monotonic": 136648.591112967,
+        "parse_completed_monotonic": 136648.591266915,
+        "preprocess_s": 0.027964175009401515,
+        "image_write_s": 0.0002521869901102036,
+        "http_s": 0.36442640400491655,
+        "parse_s": 0.00015394799993373454,
+        "total_s": 0.392796714004362
+      }
+    },
+    {
+      "time": 136649.125775187,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136648.595866402,
+        "t_settle_ros_ns": 1794535838096607506,
+        "frame_host_received_monotonic": 136648.714879105,
+        "frame_header_stamp_ns": 1794535838181402251,
+        "frame_wait_s": 0.11901270301314071,
+        "camera_receive_count": 63
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.9980392156862745
+      ],
+      "processing_timing": {
+        "started_monotonic": 136648.723154621,
+        "preprocess_completed_monotonic": 136648.747775921,
+        "image_write_completed_monotonic": 136648.748328488,
+        "http_completed_monotonic": 136649.122731978,
+        "parse_completed_monotonic": 136649.122879752,
+        "preprocess_s": 0.02462129999184981,
+        "image_write_s": 0.0005525670130737126,
+        "http_s": 0.3744034899864346,
+        "parse_s": 0.00014777400065213442,
+        "total_s": 0.39972513099201024
+      }
+    },
+    {
+      "time": 136649.616319726,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136649.125777007,
+        "t_settle_ros_ns": 1794535838626517320,
+        "frame_host_received_monotonic": 136649.186760003,
+        "frame_header_stamp_ns": 1794535838648027251,
+        "frame_wait_s": 0.060982996015809476,
+        "camera_receive_count": 75
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136649.200118987,
+        "preprocess_completed_monotonic": 136649.231472952,
+        "image_write_completed_monotonic": 136649.231697632,
+        "http_completed_monotonic": 136649.611407861,
+        "parse_completed_monotonic": 136649.611562372,
+        "preprocess_s": 0.03135396499419585,
+        "image_write_s": 0.00022467999951913953,
+        "http_s": 0.3797102289972827,
+        "parse_s": 0.00015451101353392005,
+        "total_s": 0.4114433850045316
+      }
+    },
+    {
+      "time": 136650.135718539,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136649.616325186,
+        "t_settle_ros_ns": 1794535839117083211,
+        "frame_host_received_monotonic": 136649.687925958,
+        "frame_header_stamp_ns": 1794535839148023251,
+        "frame_wait_s": 0.07160077197477221,
+        "camera_receive_count": 86
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136649.701132704,
+        "preprocess_completed_monotonic": 136649.735577044,
+        "image_write_completed_monotonic": 136649.735851173,
+        "http_completed_monotonic": 136650.131192243,
+        "parse_completed_monotonic": 136650.131317066,
+        "preprocess_s": 0.03444433998083696,
+        "image_write_s": 0.0002741290081758052,
+        "http_s": 0.3953410699905362,
+        "parse_s": 0.0001248230109922588,
+        "total_s": 0.4301843619905412
+      }
+    },
+    {
+      "time": 136650.625799044,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136650.135720361,
+        "t_settle_ros_ns": 1794535839636458860,
+        "frame_host_received_monotonic": 136650.187432017,
+        "frame_header_stamp_ns": 1794535839648219251,
+        "frame_wait_s": 0.051711656007682905,
+        "camera_receive_count": 95
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136650.19788637,
+        "preprocess_completed_monotonic": 136650.240383066,
+        "image_write_completed_monotonic": 136650.240650141,
+        "http_completed_monotonic": 136650.621312277,
+        "parse_completed_monotonic": 136650.621462085,
+        "preprocess_s": 0.04249669599812478,
+        "image_write_s": 0.00026707499637268484,
+        "http_s": 0.3806621360126883,
+        "parse_s": 0.00014980798005126417,
+        "total_s": 0.423575714987237
+      }
+    },
+    {
+      "time": 136651.125752048,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136650.62580095,
+        "t_settle_ros_ns": 1794535840126542045,
+        "frame_host_received_monotonic": 136650.686095844,
+        "frame_header_stamp_ns": 1794535840148127251,
+        "frame_wait_s": 0.06029489400680177,
+        "camera_receive_count": 106
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136650.697610144,
+        "preprocess_completed_monotonic": 136650.727358666,
+        "image_write_completed_monotonic": 136650.72758146,
+        "http_completed_monotonic": 136651.116468232,
+        "parse_completed_monotonic": 136651.116612019,
+        "preprocess_s": 0.02974852197803557,
+        "image_write_s": 0.00022279401309788227,
+        "http_s": 0.3888867720088456,
+        "parse_s": 0.0001437869796063751,
+        "total_s": 0.4190018749795854
+      }
+    },
+    {
+      "time": 136651.65604776,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136651.125753793,
+        "t_settle_ros_ns": 1794535840626493414,
+        "frame_host_received_monotonic": 136651.254055089,
+        "frame_header_stamp_ns": 1794535840714902251,
+        "frame_wait_s": 0.12830129600479268,
+        "camera_receive_count": 115
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136651.264616051,
+        "preprocess_completed_monotonic": 136651.293457626,
+        "image_write_completed_monotonic": 136651.293717445,
+        "http_completed_monotonic": 136651.655055443,
+        "parse_completed_monotonic": 136651.655238387,
+        "preprocess_s": 0.028841574996476993,
+        "image_write_s": 0.00025981900398619473,
+        "http_s": 0.36133799800882116,
+        "parse_s": 0.00018294400069862604,
+        "total_s": 0.390622336009983
+      }
+    },
+    {
+      "time": 136652.205780101,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136651.656050711,
+        "t_settle_ros_ns": 1794535841156798323,
+        "frame_host_received_monotonic": 136651.787315859,
+        "frame_header_stamp_ns": 1794535841248357251,
+        "frame_wait_s": 0.13126514799660072,
+        "camera_receive_count": 127
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136651.796950135,
+        "preprocess_completed_monotonic": 136651.827724995,
+        "image_write_completed_monotonic": 136651.827987282,
+        "http_completed_monotonic": 136652.205211486,
+        "parse_completed_monotonic": 136652.205359424,
+        "preprocess_s": 0.03077486000256613,
+        "image_write_s": 0.00026228700880892575,
+        "http_s": 0.3772242039849516,
+        "parse_s": 0.0001479380007367581,
+        "total_s": 0.4084092889970634
+      }
+    },
+    {
+      "time": 136652.666069296,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136652.205781944,
+        "t_settle_ros_ns": 1794535841706521561,
+        "frame_host_received_monotonic": 136652.253385486,
+        "frame_header_stamp_ns": 1794535841714972251,
+        "frame_wait_s": 0.04760354198515415,
+        "camera_receive_count": 137
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136652.261218146,
+        "preprocess_completed_monotonic": 136652.290060063,
+        "image_write_completed_monotonic": 136652.290323143,
+        "http_completed_monotonic": 136652.663331604,
+        "parse_completed_monotonic": 136652.663542007,
+        "preprocess_s": 0.02884191699558869,
+        "image_write_s": 0.00026308000087738037,
+        "http_s": 0.3730084609996993,
+        "parse_s": 0.00021040299907326698,
+        "total_s": 0.40232386099523865
+      }
+    },
+    {
+      "time": 136653.146013159,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136652.666071527,
+        "t_settle_ros_ns": 1794535842166824324,
+        "frame_host_received_monotonic": 136652.715497775,
+        "frame_header_stamp_ns": 1794535842181740251,
+        "frame_wait_s": 0.049426248006056994,
+        "camera_receive_count": 147
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136652.727087378,
+        "preprocess_completed_monotonic": 136652.757681601,
+        "image_write_completed_monotonic": 136652.758056052,
+        "http_completed_monotonic": 136653.140711717,
+        "parse_completed_monotonic": 136653.14091936,
+        "preprocess_s": 0.030594223004300147,
+        "image_write_s": 0.0003744509886018932,
+        "http_s": 0.38265566498739645,
+        "parse_s": 0.000207643024623394,
+        "total_s": 0.4138319820049219
+      }
+    },
+    {
+      "time": 136653.606465727,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136653.146016196,
+        "t_settle_ros_ns": 1794535842646761628,
+        "frame_host_received_monotonic": 136653.188456276,
+        "frame_header_stamp_ns": 1794535842648283251,
+        "frame_wait_s": 0.04244007999659516,
+        "camera_receive_count": 157
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136653.198700658,
+        "preprocess_completed_monotonic": 136653.229664082,
+        "image_write_completed_monotonic": 136653.23002451,
+        "http_completed_monotonic": 136653.602617335,
+        "parse_completed_monotonic": 136653.602883791,
+        "preprocess_s": 0.03096342401113361,
+        "image_write_s": 0.000360428006388247,
+        "http_s": 0.3725928250059951,
+        "parse_s": 0.00026645598700270057,
+        "total_s": 0.40418313301051967
+      }
+    },
+    {
+      "time": 136654.165725891,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136653.606469697,
+        "t_settle_ros_ns": 1794535843107222114,
+        "frame_host_received_monotonic": 136653.753425588,
+        "frame_header_stamp_ns": 1794535843215127251,
+        "frame_wait_s": 0.1469558909884654,
+        "camera_receive_count": 168
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.000344000677112463,
+        -0.0010219888650054472,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136653.764850037,
+        "preprocess_completed_monotonic": 136653.78993176,
+        "image_write_completed_monotonic": 136653.790186405,
+        "http_completed_monotonic": 136654.158576194,
+        "parse_completed_monotonic": 136654.158713055,
+        "preprocess_s": 0.025081722997128963,
+        "image_write_s": 0.000254645012319088,
+        "http_s": 0.3683897889859509,
+        "parse_s": 0.0001368609955534339,
+        "total_s": 0.39386301799095236
+      }
+    },
+    {
+      "time": 136654.665944825,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136654.165727527,
+        "t_settle_ros_ns": 1794535843666465766,
+        "frame_host_received_monotonic": 136654.222212912,
+        "frame_header_stamp_ns": 1794535843681646251,
+        "frame_wait_s": 0.0564853849937208,
+        "camera_receive_count": 178
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136654.234796418,
+        "preprocess_completed_monotonic": 136654.265839497,
+        "image_write_completed_monotonic": 136654.266386472,
+        "http_completed_monotonic": 136654.659474853,
+        "parse_completed_monotonic": 136654.659688391,
+        "preprocess_s": 0.031043079012306407,
+        "image_write_s": 0.0005469750030897558,
+        "http_s": 0.39308838098077103,
+        "parse_s": 0.00021353800548240542,
+        "total_s": 0.4248919730016496
+      }
+    },
+    {
+      "time": 136655.195807632,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136654.665947224,
+        "t_settle_ros_ns": 1794535844166691718,
+        "frame_host_received_monotonic": 136654.754498664,
+        "frame_header_stamp_ns": 1794535844215145251,
+        "frame_wait_s": 0.08855143998516724,
+        "camera_receive_count": 192
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136654.764069387,
+        "preprocess_completed_monotonic": 136654.79317399,
+        "image_write_completed_monotonic": 136654.793647216,
+        "http_completed_monotonic": 136655.185885645,
+        "parse_completed_monotonic": 136655.186047612,
+        "preprocess_s": 0.029104603017913178,
+        "image_write_s": 0.00047322598402388394,
+        "http_s": 0.3922384290199261,
+        "parse_s": 0.00016196697833947837,
+        "total_s": 0.42197822500020266
+      }
+    },
+    {
+      "time": 136655.666217602,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136655.195809572,
+        "t_settle_ros_ns": 1794535844696549749,
+        "frame_host_received_monotonic": 136655.248835157,
+        "frame_header_stamp_ns": 1794535844715216251,
+        "frame_wait_s": 0.0530255849880632,
+        "camera_receive_count": 203
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136655.260111192,
+        "preprocess_completed_monotonic": 136655.290889287,
+        "image_write_completed_monotonic": 136655.29117767,
+        "http_completed_monotonic": 136655.656508727,
+        "parse_completed_monotonic": 136655.656705042,
+        "preprocess_s": 0.030778094980632886,
+        "image_write_s": 0.00028838301659561694,
+        "http_s": 0.3653310569934547,
+        "parse_s": 0.00019631499890238047,
+        "total_s": 0.3965938499895856
+      }
+    },
+    {
+      "time": 136656.175912853,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136655.666221032,
+        "t_settle_ros_ns": 1794535845166974848,
+        "frame_host_received_monotonic": 136655.749042502,
+        "frame_header_stamp_ns": 1794535845215105251,
+        "frame_wait_s": 0.08282146998681128,
+        "camera_receive_count": 214
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136655.759707871,
+        "preprocess_completed_monotonic": 136655.788774404,
+        "image_write_completed_monotonic": 136655.789060168,
+        "http_completed_monotonic": 136656.172160952,
+        "parse_completed_monotonic": 136656.172374053,
+        "preprocess_s": 0.029066532995784655,
+        "image_write_s": 0.00028576399199664593,
+        "http_s": 0.3831007840053644,
+        "parse_s": 0.00021310101146809757,
+        "total_s": 0.4126661820046138
+      }
+    },
+    {
+      "time": 136656.626075107,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136656.17591492,
+        "t_settle_ros_ns": 1794535845676660414,
+        "frame_host_received_monotonic": 136656.221893848,
+        "frame_header_stamp_ns": 1794535845681760251,
+        "frame_wait_s": 0.04597892801393755,
+        "camera_receive_count": 224
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136656.233128147,
+        "preprocess_completed_monotonic": 136656.261045666,
+        "image_write_completed_monotonic": 136656.261468358,
+        "http_completed_monotonic": 136656.623946289,
+        "parse_completed_monotonic": 136656.62418743,
+        "preprocess_s": 0.02791751900804229,
+        "image_write_s": 0.0004226919845677912,
+        "http_s": 0.3624779310193844,
+        "parse_s": 0.00024114098050631583,
+        "total_s": 0.3910592829925008
+      }
+    },
+    {
+      "time": 136657.115824699,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136656.626078771,
+        "t_settle_ros_ns": 1794535846126829665,
+        "frame_host_received_monotonic": 136656.683721739,
+        "frame_header_stamp_ns": 1794535846148594251,
+        "frame_wait_s": 0.05764296802226454,
+        "camera_receive_count": 232
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136656.694106844,
+        "preprocess_completed_monotonic": 136656.722041957,
+        "image_write_completed_monotonic": 136656.722281055,
+        "http_completed_monotonic": 136657.105386227,
+        "parse_completed_monotonic": 136657.10553433,
+        "preprocess_s": 0.027935113001149148,
+        "image_write_s": 0.00023909800802357495,
+        "http_s": 0.38310517198988236,
+        "parse_s": 0.0001481030194554478,
+        "total_s": 0.41142748601851054
+      }
+    },
+    {
+      "time": 136657.615871194,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136657.115826651,
+        "t_settle_ros_ns": 1794535846616567906,
+        "frame_host_received_monotonic": 136657.186725147,
+        "frame_header_stamp_ns": 1794535846648461251,
+        "frame_wait_s": 0.07089849602198228,
+        "camera_receive_count": 243
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136657.197580094,
+        "preprocess_completed_monotonic": 136657.232330996,
+        "image_write_completed_monotonic": 136657.232618892,
+        "http_completed_monotonic": 136657.614866894,
+        "parse_completed_monotonic": 136657.615090152,
+        "preprocess_s": 0.03475090197753161,
+        "image_write_s": 0.0002878960222005844,
+        "http_s": 0.38224800198804587,
+        "parse_s": 0.00022325798636302352,
+        "total_s": 0.4175100579741411
+      }
+    },
+    {
+      "time": 136658.135866975,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136657.615873451,
+        "t_settle_ros_ns": 1794535847116616008,
+        "frame_host_received_monotonic": 136657.686722129,
+        "frame_header_stamp_ns": 1794535847148490251,
+        "frame_wait_s": 0.07084867800585926,
+        "camera_receive_count": 256
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136657.698165108,
+        "preprocess_completed_monotonic": 136657.7351896,
+        "image_write_completed_monotonic": 136657.735418287,
+        "http_completed_monotonic": 136658.127568828,
+        "parse_completed_monotonic": 136658.12776273,
+        "preprocess_s": 0.03702449199045077,
+        "image_write_s": 0.00022868698579259217,
+        "http_s": 0.3921505410107784,
+        "parse_s": 0.00019390200031921268,
+        "total_s": 0.42959762198734097
+      }
+    },
+    {
+      "time": 136658.635790633,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136658.135868995,
+        "t_settle_ros_ns": 1794535847636610406,
+        "frame_host_received_monotonic": 136658.182240516,
+        "frame_header_stamp_ns": 1794535847648581251,
+        "frame_wait_s": 0.04637152099166997,
+        "camera_receive_count": 267
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136658.190476109,
+        "preprocess_completed_monotonic": 136658.218249816,
+        "image_write_completed_monotonic": 136658.218988748,
+        "http_completed_monotonic": 136658.630636236,
+        "parse_completed_monotonic": 136658.630781369,
+        "preprocess_s": 0.027773706999141723,
+        "image_write_s": 0.0007389319944195449,
+        "http_s": 0.4116474879847374,
+        "parse_s": 0.00014513300266116858,
+        "total_s": 0.4403052599809598
+      }
+    },
+    {
+      "time": 136659.125794485,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136658.635792484,
+        "t_settle_ros_ns": 1794535848136532768,
+        "frame_host_received_monotonic": 136658.687103703,
+        "frame_header_stamp_ns": 1794535848148704251,
+        "frame_wait_s": 0.051311218994669616,
+        "camera_receive_count": 276
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136658.700021117,
+        "preprocess_completed_monotonic": 136658.731340652,
+        "image_write_completed_monotonic": 136658.731572496,
+        "http_completed_monotonic": 136659.12315809,
+        "parse_completed_monotonic": 136659.123311021,
+        "preprocess_s": 0.03131953501724638,
+        "image_write_s": 0.0002318439946975559,
+        "http_s": 0.391585593984928,
+        "parse_s": 0.00015293099568225443,
+        "total_s": 0.4232899039925542
+      }
+    },
+    {
+      "time": 136659.606320191,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136659.125796425,
+        "t_settle_ros_ns": 1794535848626535524,
+        "frame_host_received_monotonic": 136659.188792509,
+        "frame_header_stamp_ns": 1794535848648652251,
+        "frame_wait_s": 0.06299608398694545,
+        "camera_receive_count": 287
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136659.199060891,
+        "preprocess_completed_monotonic": 136659.224211393,
+        "image_write_completed_monotonic": 136659.224427158,
+        "http_completed_monotonic": 136659.596147703,
+        "parse_completed_monotonic": 136659.596340984,
+        "preprocess_s": 0.0251505020132754,
+        "image_write_s": 0.00021576500148512423,
+        "http_s": 0.3717205449938774,
+        "parse_s": 0.0001932809827849269,
+        "total_s": 0.39728009299142286
+      }
+    },
+    {
+      "time": 136660.095843025,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136659.606325221,
+        "t_settle_ros_ns": 1794535849107072188,
+        "frame_host_received_monotonic": 136659.651746347,
+        "frame_header_stamp_ns": 1794535849117152251,
+        "frame_wait_s": 0.04542112600756809,
+        "camera_receive_count": 295
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136659.667757252,
+        "preprocess_completed_monotonic": 136659.693574084,
+        "image_write_completed_monotonic": 136659.693787281,
+        "http_completed_monotonic": 136660.085771769,
+        "parse_completed_monotonic": 136660.086022336,
+        "preprocess_s": 0.025816831999691203,
+        "image_write_s": 0.00021319699590094388,
+        "http_s": 0.39198448800016195,
+        "parse_s": 0.0002505670126993209,
+        "total_s": 0.4182650840084534
+      }
+    },
+    {
+      "time": 136660.596171386,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136660.095845031,
+        "t_settle_ros_ns": 1794535849596584755,
+        "frame_host_received_monotonic": 136660.156024565,
+        "frame_header_stamp_ns": 1794535849615469251,
+        "frame_wait_s": 0.060179533989867195,
+        "camera_receive_count": 308
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136660.167156571,
+        "preprocess_completed_monotonic": 136660.195082386,
+        "image_write_completed_monotonic": 136660.195480187,
+        "http_completed_monotonic": 136660.59480525,
+        "parse_completed_monotonic": 136660.595182092,
+        "preprocess_s": 0.027925814996706322,
+        "image_write_s": 0.00039780099177733064,
+        "http_s": 0.39932506301556714,
+        "parse_s": 0.0003768419846892357,
+        "total_s": 0.42802552098874
+      }
+    },
+    {
+      "time": 136661.066200101,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136660.596173953,
+        "t_settle_ros_ns": 1794535850096926164,
+        "frame_host_received_monotonic": 136660.655511275,
+        "frame_header_stamp_ns": 1794535850115362251,
+        "frame_wait_s": 0.05933732198900543,
+        "camera_receive_count": 319
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136660.666957379,
+        "preprocess_completed_monotonic": 136660.695129747,
+        "image_write_completed_monotonic": 136660.695388621,
+        "http_completed_monotonic": 136661.058324343,
+        "parse_completed_monotonic": 136661.058529719,
+        "preprocess_s": 0.02817236800910905,
+        "image_write_s": 0.0002588740026112646,
+        "http_s": 0.3629357219906524,
+        "parse_s": 0.0002053760108537972,
+        "total_s": 0.3915723400132265
+      }
+    },
+    {
+      "time": 136661.546118495,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136661.066203952,
+        "t_settle_ros_ns": 1794535850566959168,
+        "frame_host_received_monotonic": 136661.120141014,
+        "frame_header_stamp_ns": 1794535850582206251,
+        "frame_wait_s": 0.05393706198083237,
+        "camera_receive_count": 329
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136661.134666147,
+        "preprocess_completed_monotonic": 136661.158383258,
+        "image_write_completed_monotonic": 136661.158609831,
+        "http_completed_monotonic": 136661.537014313,
+        "parse_completed_monotonic": 136661.537160284,
+        "preprocess_s": 0.023717111005680636,
+        "image_write_s": 0.00022657299996353686,
+        "http_s": 0.3784044820058625,
+        "parse_s": 0.0001459709892515093,
+        "total_s": 0.4024941370007582
+      }
+    },
+    {
+      "time": 136661.996140857,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136661.546123633,
+        "t_settle_ros_ns": 1794535851046870378,
+        "frame_host_received_monotonic": 136661.585253107,
+        "frame_header_stamp_ns": 1794535851048697251,
+        "frame_wait_s": 0.03912947402568534,
+        "camera_receive_count": 339
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136661.597885757,
+        "preprocess_completed_monotonic": 136661.623690844,
+        "image_write_completed_monotonic": 136661.623908401,
+        "http_completed_monotonic": 136661.989103525,
+        "parse_completed_monotonic": 136661.989289811,
+        "preprocess_s": 0.025805087003391236,
+        "image_write_s": 0.0002175570116378367,
+        "http_s": 0.3651951240026392,
+        "parse_s": 0.00018628599354997277,
+        "total_s": 0.39140405401121825
+      }
+    },
+    {
+      "time": 136662.52580708,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136661.996152491,
+        "t_settle_ros_ns": 1794535851496899530,
+        "frame_host_received_monotonic": 136662.116424022,
+        "frame_header_stamp_ns": 1794535851582295251,
+        "frame_wait_s": 0.12027153102098964,
+        "camera_receive_count": 351
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136662.124888552,
+        "preprocess_completed_monotonic": 136662.150984769,
+        "image_write_completed_monotonic": 136662.151686787,
+        "http_completed_monotonic": 136662.521485439,
+        "parse_completed_monotonic": 136662.521636332,
+        "preprocess_s": 0.026096216985024512,
+        "image_write_s": 0.0007020180055405945,
+        "http_s": 0.36979865201283246,
+        "parse_s": 0.00015089299995452166,
+        "total_s": 0.3967477800033521
+      }
+    },
+    {
+      "time": 136663.015995154,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136662.525808918,
+        "t_settle_ros_ns": 1794535852026548612,
+        "frame_host_received_monotonic": 136662.588133612,
+        "frame_header_stamp_ns": 1794535852048934251,
+        "frame_wait_s": 0.06232469400856644,
+        "camera_receive_count": 361
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136662.600270059,
+        "preprocess_completed_monotonic": 136662.630364276,
+        "image_write_completed_monotonic": 136662.630625962,
+        "http_completed_monotonic": 136663.006330003,
+        "parse_completed_monotonic": 136663.006482673,
+        "preprocess_s": 0.030094217014266178,
+        "image_write_s": 0.00026168598560616374,
+        "http_s": 0.37570404101279564,
+        "parse_s": 0.00015266999253071845,
+        "total_s": 0.4062126140051987
+      }
+    },
+    {
+      "time": 136663.495802604,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136663.015997837,
+        "t_settle_ros_ns": 1794535852516750055,
+        "frame_host_received_monotonic": 136663.084205841,
+        "frame_header_stamp_ns": 1794535852548989251,
+        "frame_wait_s": 0.06820800399873406,
+        "camera_receive_count": 372
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136663.092616722,
+        "preprocess_completed_monotonic": 136663.119837017,
+        "image_write_completed_monotonic": 136663.120218528,
+        "http_completed_monotonic": 136663.489692535,
+        "parse_completed_monotonic": 136663.489862633,
+        "preprocess_s": 0.02722029501455836,
+        "image_write_s": 0.00038151099579408765,
+        "http_s": 0.3694740069913678,
+        "parse_s": 0.00017009800649248064,
+        "total_s": 0.3972459110082127
+      }
+    },
+    {
+      "time": 136664.045932183,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136663.495804562,
+        "t_settle_ros_ns": 1794535852996544934,
+        "frame_host_received_monotonic": 136663.616517741,
+        "frame_header_stamp_ns": 1794535853082360251,
+        "frame_wait_s": 0.120713178999722,
+        "camera_receive_count": 384
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136663.626068793,
+        "preprocess_completed_monotonic": 136663.655156071,
+        "image_write_completed_monotonic": 136663.655560571,
+        "http_completed_monotonic": 136664.043910224,
+        "parse_completed_monotonic": 136664.044143667,
+        "preprocess_s": 0.029087278002407402,
+        "image_write_s": 0.0004044999950565398,
+        "http_s": 0.38834965298883617,
+        "parse_s": 0.00023344301735050976,
+        "total_s": 0.4180748740036506
+      }
+    },
+    {
+      "time": 136664.555952412,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136664.045936087,
+        "t_settle_ros_ns": 1794535853546683985,
+        "frame_host_received_monotonic": 136664.151715345,
+        "frame_header_stamp_ns": 1794535853615692251,
+        "frame_wait_s": 0.1057792580104433,
+        "camera_receive_count": 396
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136664.16211946,
+        "preprocess_completed_monotonic": 136664.190718604,
+        "image_write_completed_monotonic": 136664.190974535,
+        "http_completed_monotonic": 136664.553862566,
+        "parse_completed_monotonic": 136664.554077765,
+        "preprocess_s": 0.028599143988685682,
+        "image_write_s": 0.0002559310232754797,
+        "http_s": 0.36288803099887446,
+        "parse_s": 0.00021519899019040167,
+        "total_s": 0.391958305001026
+      }
+    },
+    {
+      "time": 136665.146244718,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136664.555957045,
+        "t_settle_ros_ns": 1794535854056702500,
+        "frame_host_received_monotonic": 136664.715910368,
+        "frame_header_stamp_ns": 1794535854182442251,
+        "frame_wait_s": 0.15995332298916765,
+        "camera_receive_count": 403
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136664.724469635,
+        "preprocess_completed_monotonic": 136664.746731336,
+        "image_write_completed_monotonic": 136664.747039668,
+        "http_completed_monotonic": 136665.137311767,
+        "parse_completed_monotonic": 136665.137509966,
+        "preprocess_s": 0.02226170100038871,
+        "image_write_s": 0.0003083320043515414,
+        "http_s": 0.39027209900086746,
+        "parse_s": 0.00019819900626316667,
+        "total_s": 0.4130403310118709
+      }
+    },
+    {
+      "time": 136665.685779692,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136665.146250812,
+        "t_settle_ros_ns": 1794535854646997870,
+        "frame_host_received_monotonic": 136665.253305972,
+        "frame_header_stamp_ns": 1794535854715842251,
+        "frame_wait_s": 0.10705516001326032,
+        "camera_receive_count": 415
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136665.264253955,
+        "preprocess_completed_monotonic": 136665.291570879,
+        "image_write_completed_monotonic": 136665.29181653,
+        "http_completed_monotonic": 136665.676922556,
+        "parse_completed_monotonic": 136665.677076587,
+        "preprocess_s": 0.027316923980833963,
+        "image_write_s": 0.00024565099738538265,
+        "http_s": 0.3851060260203667,
+        "parse_s": 0.00015403097495436668,
+        "total_s": 0.4128226319735404
+      }
+    },
+    {
+      "time": 136666.165944486,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136665.685781391,
+        "t_settle_ros_ns": 1794535855186520191,
+        "frame_host_received_monotonic": 136665.754070754,
+        "frame_header_stamp_ns": 1794535855215844251,
+        "frame_wait_s": 0.06828936300007626,
+        "camera_receive_count": 422
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136665.762703913,
+        "preprocess_completed_monotonic": 136665.790792999,
+        "image_write_completed_monotonic": 136665.791018437,
+        "http_completed_monotonic": 136666.158785508,
+        "parse_completed_monotonic": 136666.15902916,
+        "preprocess_s": 0.028089086001273245,
+        "image_write_s": 0.00022543800878338516,
+        "http_s": 0.367767071002163,
+        "parse_s": 0.00024365197168663144,
+        "total_s": 0.39632524698390625
+      }
+    },
+    {
+      "time": 136666.735701568,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136666.165947109,
+        "t_settle_ros_ns": 1794535855666689234,
+        "frame_host_received_monotonic": 136666.315948021,
+        "frame_header_stamp_ns": 1794535855782340251,
+        "frame_wait_s": 0.15000091199181043,
+        "camera_receive_count": 431
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136666.32581343,
+        "preprocess_completed_monotonic": 136666.352068762,
+        "image_write_completed_monotonic": 136666.352804791,
+        "http_completed_monotonic": 136666.729306276,
+        "parse_completed_monotonic": 136666.729436156,
+        "preprocess_s": 0.026255331991706043,
+        "image_write_s": 0.0007360290037468076,
+        "http_s": 0.37650148500688374,
+        "parse_s": 0.000129879976157099,
+        "total_s": 0.4036227259784937
+      }
+    },
+    {
+      "time": 136667.215963634,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136666.735703044,
+        "t_settle_ros_ns": 1794535856236440768,
+        "frame_host_received_monotonic": 136666.787443178,
+        "frame_header_stamp_ns": 1794535856249197251,
+        "frame_wait_s": 0.05174013401847333,
+        "camera_receive_count": 441
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136666.795225315,
+        "preprocess_completed_monotonic": 136666.824872112,
+        "image_write_completed_monotonic": 136666.825230497,
+        "http_completed_monotonic": 136667.206465924,
+        "parse_completed_monotonic": 136667.20661029,
+        "preprocess_s": 0.029646796989254653,
+        "image_write_s": 0.0003583850048016757,
+        "http_s": 0.38123542701941915,
+        "parse_s": 0.00014436600031331182,
+        "total_s": 0.4113849750137888
+      }
+    },
+    {
+      "time": 136667.705932103,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136667.2159655,
+        "t_settle_ros_ns": 1794535856716704445,
+        "frame_host_received_monotonic": 136667.288772716,
+        "frame_header_stamp_ns": 1794535856749069251,
+        "frame_wait_s": 0.07280721599818207,
+        "camera_receive_count": 450
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136667.297791828,
+        "preprocess_completed_monotonic": 136667.335188713,
+        "image_write_completed_monotonic": 136667.335463921,
+        "http_completed_monotonic": 136667.701122172,
+        "parse_completed_monotonic": 136667.701278327,
+        "preprocess_s": 0.03739688501809724,
+        "image_write_s": 0.0002752079744823277,
+        "http_s": 0.36565825101570226,
+        "parse_s": 0.00015615500160492957,
+        "total_s": 0.40348649900988676
+      }
+    },
+    {
+      "time": 136668.166073565,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136667.705935921,
+        "t_settle_ros_ns": 1794535857206677243,
+        "frame_host_received_monotonic": 136667.749705976,
+        "frame_header_stamp_ns": 1794535857215911251,
+        "frame_wait_s": 0.04377005499554798,
+        "camera_receive_count": 460
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136667.760599119,
+        "preprocess_completed_monotonic": 136667.790412629,
+        "image_write_completed_monotonic": 136667.790660822,
+        "http_completed_monotonic": 136668.162938605,
+        "parse_completed_monotonic": 136668.163106305,
+        "preprocess_s": 0.029813509987434372,
+        "image_write_s": 0.00024819301324896514,
+        "http_s": 0.37227778299711645,
+        "parse_s": 0.00016769999638199806,
+        "total_s": 0.4025071859941818
+      }
+    },
+    {
+      "time": 136668.666289909,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136668.166075816,
+        "t_settle_ros_ns": 1794535857666829081,
+        "frame_host_received_monotonic": 136668.254446741,
+        "frame_header_stamp_ns": 1794535857715796251,
+        "frame_wait_s": 0.08837092499015853,
+        "camera_receive_count": 471
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136668.264886067,
+        "preprocess_completed_monotonic": 136668.295904253,
+        "image_write_completed_monotonic": 136668.296158025,
+        "http_completed_monotonic": 136668.656915329,
+        "parse_completed_monotonic": 136668.657106963,
+        "preprocess_s": 0.031018186011351645,
+        "image_write_s": 0.0002537720138207078,
+        "http_s": 0.36075730397715233,
+        "parse_s": 0.00019163399701938033,
+        "total_s": 0.39222089599934407
+      }
+    },
+    {
+      "time": 136669.206112515,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136668.666295606,
+        "t_settle_ros_ns": 1794535858167049651,
+        "frame_host_received_monotonic": 136668.716141023,
+        "frame_header_stamp_ns": 1794535858182666251,
+        "frame_wait_s": 0.04984541700105183,
+        "camera_receive_count": 481
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136668.7274024,
+        "preprocess_completed_monotonic": 136668.75879975,
+        "image_write_completed_monotonic": 136668.7593324,
+        "http_completed_monotonic": 136669.198042936,
+        "parse_completed_monotonic": 136669.198274182,
+        "preprocess_s": 0.03139735001605004,
+        "image_write_s": 0.0005326499813236296,
+        "http_s": 0.4387105360219721,
+        "parse_s": 0.0002312459982931614,
+        "total_s": 0.4708717820176389
+      }
+    },
+    {
+      "time": 136669.785912839,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136669.206116616,
+        "t_settle_ros_ns": 1794535858706862128,
+        "frame_host_received_monotonic": 136669.351642161,
+        "frame_header_stamp_ns": 1794535858816028251,
+        "frame_wait_s": 0.145525544998236,
+        "camera_receive_count": 492
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136669.361603951,
+        "preprocess_completed_monotonic": 136669.391983739,
+        "image_write_completed_monotonic": 136669.392249667,
+        "http_completed_monotonic": 136669.781535184,
+        "parse_completed_monotonic": 136669.781739664,
+        "preprocess_s": 0.030379788018763065,
+        "image_write_s": 0.0002659279853105545,
+        "http_s": 0.3892855170124676,
+        "parse_s": 0.00020447999122552574,
+        "total_s": 0.42013571300776675
+      }
+    },
+    {
+      "time": 136670.266113892,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136669.785914809,
+        "t_settle_ros_ns": 1794535859286659279,
+        "frame_host_received_monotonic": 136669.850859929,
+        "frame_header_stamp_ns": 1794535859315917251,
+        "frame_wait_s": 0.06494511998607777,
+        "camera_receive_count": 501
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136669.863966524,
+        "preprocess_completed_monotonic": 136669.893056755,
+        "image_write_completed_monotonic": 136669.893314733,
+        "http_completed_monotonic": 136670.259168431,
+        "parse_completed_monotonic": 136670.259410707,
+        "preprocess_s": 0.029090231022564694,
+        "image_write_s": 0.0002579779829829931,
+        "http_s": 0.36585369799286127,
+        "parse_s": 0.00024227600079029799,
+        "total_s": 0.39544418299919926
+      }
+    },
+    {
+      "time": 136670.765959781,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136670.266115943,
+        "t_settle_ros_ns": 1794535859766862244,
+        "frame_host_received_monotonic": 136670.316195326,
+        "frame_header_stamp_ns": 1794535859782531251,
+        "frame_wait_s": 0.050079383014235646,
+        "camera_receive_count": 511
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136670.327794158,
+        "preprocess_completed_monotonic": 136670.360773489,
+        "image_write_completed_monotonic": 136670.361159006,
+        "http_completed_monotonic": 136670.761124621,
+        "parse_completed_monotonic": 136670.761332398,
+        "preprocess_s": 0.032979331008391455,
+        "image_write_s": 0.00038551699253730476,
+        "http_s": 0.39996561501175165,
+        "parse_s": 0.00020777698955498636,
+        "total_s": 0.4335382400022354
+      }
+    },
+    {
+      "time": 136671.295772109,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136670.765962574,
+        "t_settle_ros_ns": 1794535860266707688,
+        "frame_host_received_monotonic": 136670.85355929,
+        "frame_header_stamp_ns": 1794535860316057251,
+        "frame_wait_s": 0.08759671601001173,
+        "camera_receive_count": 519
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.000344000677112463,
+        -0.0010219888650054472,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136670.864581208,
+        "preprocess_completed_monotonic": 136670.898189658,
+        "image_write_completed_monotonic": 136670.898455431,
+        "http_completed_monotonic": 136671.288559709,
+        "parse_completed_monotonic": 136671.288700866,
+        "preprocess_s": 0.0336084500013385,
+        "image_write_s": 0.00026577297830954194,
+        "http_s": 0.39010427801986225,
+        "parse_s": 0.0001411569828633219,
+        "total_s": 0.4241196579823736
+      }
+    },
+    {
+      "time": 136671.85599834,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136671.295774279,
+        "t_settle_ros_ns": 1794535860796514039,
+        "frame_host_received_monotonic": 136671.416319751,
+        "frame_header_stamp_ns": 1794535860882669251,
+        "frame_wait_s": 0.1205454720184207,
+        "camera_receive_count": 530
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136671.427707459,
+        "preprocess_completed_monotonic": 136671.455114517,
+        "image_write_completed_monotonic": 136671.455487409,
+        "http_completed_monotonic": 136671.853266539,
+        "parse_completed_monotonic": 136671.853466197,
+        "preprocess_s": 0.02740705801988952,
+        "image_write_s": 0.00037289198371581733,
+        "http_s": 0.3977791299985256,
+        "parse_s": 0.00019965801038779318,
+        "total_s": 0.42575873801251873
+      }
+    },
+    {
+      "time": 136672.365988671,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136671.856007177,
+        "t_settle_ros_ns": 1794535861356756913,
+        "frame_host_received_monotonic": 136671.919655794,
+        "frame_header_stamp_ns": 1794535861382804251,
+        "frame_wait_s": 0.0636486169823911,
+        "camera_receive_count": 543
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136671.932492338,
+        "preprocess_completed_monotonic": 136671.960991088,
+        "image_write_completed_monotonic": 136671.961412523,
+        "http_completed_monotonic": 136672.362596547,
+        "parse_completed_monotonic": 136672.36275389,
+        "preprocess_s": 0.028498750005383044,
+        "image_write_s": 0.0004214349901303649,
+        "http_s": 0.40118402399821207,
+        "parse_s": 0.00015734299086034298,
+        "total_s": 0.4302615519845858
+      }
+    },
+    {
+      "time": 136672.845808744,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136672.365991767,
+        "t_settle_ros_ns": 1794535861866745171,
+        "frame_host_received_monotonic": 136672.416191582,
+        "frame_header_stamp_ns": 1794535861882653251,
+        "frame_wait_s": 0.050199814984807745,
+        "camera_receive_count": 554
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136672.427171209,
+        "preprocess_completed_monotonic": 136672.456273037,
+        "image_write_completed_monotonic": 136672.456603348,
+        "http_completed_monotonic": 136672.843112062,
+        "parse_completed_monotonic": 136672.843269591,
+        "preprocess_s": 0.02910182799678296,
+        "image_write_s": 0.00033031098428182304,
+        "http_s": 0.3865087140002288,
+        "parse_s": 0.00015752899344079196,
+        "total_s": 0.41609838197473437
+      }
+    },
+    {
+      "time": 136673.455937283,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136672.84581099,
+        "t_settle_ros_ns": 1794535862346552684,
+        "frame_host_received_monotonic": 136673.016515833,
+        "frame_header_stamp_ns": 1794535862482928251,
+        "frame_wait_s": 0.1707048430107534,
+        "camera_receive_count": 564
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136673.027657685,
+        "preprocess_completed_monotonic": 136673.053488449,
+        "image_write_completed_monotonic": 136673.05643197,
+        "http_completed_monotonic": 136673.453135376,
+        "parse_completed_monotonic": 136673.453343766,
+        "preprocess_s": 0.02583076400333084,
+        "image_write_s": 0.002943521016277373,
+        "http_s": 0.39670340600423515,
+        "parse_s": 0.00020839000353589654,
+        "total_s": 0.42568608102737926
+      }
+    },
+    {
+      "time": 136673.945848805,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136673.455940052,
+        "t_settle_ros_ns": 1794535862956685506,
+        "frame_host_received_monotonic": 136673.518936471,
+        "frame_header_stamp_ns": 1794535862982922251,
+        "frame_wait_s": 0.06299641900113784,
+        "camera_receive_count": 575
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136673.530586446,
+        "preprocess_completed_monotonic": 136673.560498713,
+        "image_write_completed_monotonic": 136673.561093193,
+        "http_completed_monotonic": 136673.938387519,
+        "parse_completed_monotonic": 136673.938535739,
+        "preprocess_s": 0.02991226699668914,
+        "image_write_s": 0.0005944800213910639,
+        "http_s": 0.37729432599735446,
+        "parse_s": 0.0001482199877500534,
+        "total_s": 0.4079492930031847
+      }
+    },
+    {
+      "time": 136674.425805396,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136673.945850837,
+        "t_settle_ros_ns": 1794535863446591243,
+        "frame_host_received_monotonic": 136673.987230802,
+        "frame_header_stamp_ns": 1794535863449515251,
+        "frame_wait_s": 0.04137996502686292,
+        "camera_receive_count": 585
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136673.99801012,
+        "preprocess_completed_monotonic": 136674.035245713,
+        "image_write_completed_monotonic": 136674.035602135,
+        "http_completed_monotonic": 136674.4225631,
+        "parse_completed_monotonic": 136674.422711596,
+        "preprocess_s": 0.03723559298668988,
+        "image_write_s": 0.0003564220096450299,
+        "http_s": 0.38696096499916166,
+        "parse_s": 0.00014849600847810507,
+        "total_s": 0.4247014760039747
+      }
+    },
+    {
+      "time": 136674.925792461,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136674.425807317,
+        "t_settle_ros_ns": 1794535863926547013,
+        "frame_host_received_monotonic": 136674.488509841,
+        "frame_header_stamp_ns": 1794535863949663251,
+        "frame_wait_s": 0.06270252401009202,
+        "camera_receive_count": 596
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136674.49894899,
+        "preprocess_completed_monotonic": 136674.534889487,
+        "image_write_completed_monotonic": 136674.535173669,
+        "http_completed_monotonic": 136674.920011574,
+        "parse_completed_monotonic": 136674.920166618,
+        "preprocess_s": 0.035940497007686645,
+        "image_write_s": 0.00028418199508450925,
+        "http_s": 0.38483790500322357,
+        "parse_s": 0.00015504399198107421,
+        "total_s": 0.4212176279979758
+      }
+    },
+    {
+      "time": 136675.435764908,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136674.925794539,
+        "t_settle_ros_ns": 1794535864426533276,
+        "frame_host_received_monotonic": 136674.989934349,
+        "frame_header_stamp_ns": 1794535864449652251,
+        "frame_wait_s": 0.06413980998331681,
+        "camera_receive_count": 607
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136675.004069291,
+        "preprocess_completed_monotonic": 136675.032823579,
+        "image_write_completed_monotonic": 136675.033073765,
+        "http_completed_monotonic": 136675.431129328,
+        "parse_completed_monotonic": 136675.431271437,
+        "preprocess_s": 0.028754288010532036,
+        "image_write_s": 0.00025018598535098135,
+        "http_s": 0.3980555630114395,
+        "parse_s": 0.00014210899826139212,
+        "total_s": 0.4272021460055839
+      }
+    },
+    {
+      "time": 136675.925802869,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136675.435766565,
+        "t_settle_ros_ns": 1794535864936505272,
+        "frame_host_received_monotonic": 136675.486631794,
+        "frame_header_stamp_ns": 1794535864949549251,
+        "frame_wait_s": 0.05086522898636758,
+        "camera_receive_count": 618
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136675.497759761,
+        "preprocess_completed_monotonic": 136675.526641341,
+        "image_write_completed_monotonic": 136675.526898874,
+        "http_completed_monotonic": 136675.921718491,
+        "parse_completed_monotonic": 136675.921866867,
+        "preprocess_s": 0.028881580015877262,
+        "image_write_s": 0.00025753298541530967,
+        "http_s": 0.39481961700948887,
+        "parse_s": 0.0001483759842813015,
+        "total_s": 0.42410710599506274
+      }
+    },
+    {
+      "time": 136676.42578071,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136675.925805339,
+        "t_settle_ros_ns": 1794535865426544934,
+        "frame_host_received_monotonic": 136675.983704079,
+        "frame_header_stamp_ns": 1794535865449653251,
+        "frame_wait_s": 0.057898739993106574,
+        "camera_receive_count": 627
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136675.997625745,
+        "preprocess_completed_monotonic": 136676.025919771,
+        "image_write_completed_monotonic": 136676.026184605,
+        "http_completed_monotonic": 136676.421456993,
+        "parse_completed_monotonic": 136676.421603957,
+        "preprocess_s": 0.02829402600764297,
+        "image_write_s": 0.00026483400142751634,
+        "http_s": 0.3952723880065605,
+        "parse_s": 0.0001469639828428626,
+        "total_s": 0.42397821199847385
+      }
+    },
+    {
+      "time": 136676.935730404,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136676.425783435,
+        "t_settle_ros_ns": 1794535865926523315,
+        "frame_host_received_monotonic": 136676.487896359,
+        "frame_header_stamp_ns": 1794535865949814251,
+        "frame_wait_s": 0.06211292400257662,
+        "camera_receive_count": 636
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136676.499468502,
+        "preprocess_completed_monotonic": 136676.532124032,
+        "image_write_completed_monotonic": 136676.532396035,
+        "http_completed_monotonic": 136676.926592862,
+        "parse_completed_monotonic": 136676.926738268,
+        "preprocess_s": 0.032655529998010024,
+        "image_write_s": 0.00027200300246477127,
+        "http_s": 0.3941968269937206,
+        "parse_s": 0.00014540599659085274,
+        "total_s": 0.42726976599078625
+      }
+    },
+    {
+      "time": 136677.425861964,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136676.935732283,
+        "t_settle_ros_ns": 1794535866436471727,
+        "frame_host_received_monotonic": 136676.989074834,
+        "frame_header_stamp_ns": 1794535866449802251,
+        "frame_wait_s": 0.05334255102206953,
+        "camera_receive_count": 649
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136676.999922191,
+        "preprocess_completed_monotonic": 136677.029230673,
+        "image_write_completed_monotonic": 136677.029523012,
+        "http_completed_monotonic": 136677.419317162,
+        "parse_completed_monotonic": 136677.419461912,
+        "preprocess_s": 0.029308482015039772,
+        "image_write_s": 0.0002923389838542789,
+        "http_s": 0.3897941500181332,
+        "parse_s": 0.00014474999625235796,
+        "total_s": 0.41953972101327963
+      }
+    },
+    {
+      "time": 136677.966154629,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136677.425864881,
+        "t_settle_ros_ns": 1794535866926605540,
+        "frame_host_received_monotonic": 136677.556465975,
+        "frame_header_stamp_ns": 1794535867016383251,
+        "frame_wait_s": 0.13060109401703812,
+        "camera_receive_count": 660
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136677.567919905,
+        "preprocess_completed_monotonic": 136677.596253032,
+        "image_write_completed_monotonic": 136677.596641213,
+        "http_completed_monotonic": 136677.959041569,
+        "parse_completed_monotonic": 136677.959310197,
+        "preprocess_s": 0.02833312700386159,
+        "image_write_s": 0.0003881809825543314,
+        "http_s": 0.3624003560107667,
+        "parse_s": 0.0002686280058696866,
+        "total_s": 0.3913902920030523
+      }
+    },
+    {
+      "time": 136678.475931073,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136677.966157337,
+        "t_settle_ros_ns": 1794535867466911190,
+        "frame_host_received_monotonic": 136678.016755834,
+        "frame_header_stamp_ns": 1794535867483149251,
+        "frame_wait_s": 0.05059849697863683,
+        "camera_receive_count": 668
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136678.026792452,
+        "preprocess_completed_monotonic": 136678.059262406,
+        "image_write_completed_monotonic": 136678.059652922,
+        "http_completed_monotonic": 136678.465615383,
+        "parse_completed_monotonic": 136678.465782882,
+        "preprocess_s": 0.032469953992404044,
+        "image_write_s": 0.0003905160119757056,
+        "http_s": 0.40596246099448763,
+        "parse_s": 0.00016749900532886386,
+        "total_s": 0.43899043000419624
+      }
+    },
+    {
+      "time": 136678.975852345,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136678.475934047,
+        "t_settle_ros_ns": 1794535867976677982,
+        "frame_host_received_monotonic": 136678.555882681,
+        "frame_header_stamp_ns": 1794535868016390251,
+        "frame_wait_s": 0.07994863399653696,
+        "camera_receive_count": 680
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136678.567218115,
+        "preprocess_completed_monotonic": 136678.595593113,
+        "image_write_completed_monotonic": 136678.595853469,
+        "http_completed_monotonic": 136678.967610922,
+        "parse_completed_monotonic": 136678.967817445,
+        "preprocess_s": 0.028374997986247763,
+        "image_write_s": 0.0002603560278657824,
+        "http_s": 0.3717574529873673,
+        "parse_s": 0.00020652299281209707,
+        "total_s": 0.40059932999429293
+      }
+    },
+    {
+      "time": 136679.445919722,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136678.975854705,
+        "t_settle_ros_ns": 1794535868476594654,
+        "frame_host_received_monotonic": 136679.022638119,
+        "frame_header_stamp_ns": 1794535868483118251,
+        "frame_wait_s": 0.04678341399994679,
+        "camera_receive_count": 690
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136679.033337617,
+        "preprocess_completed_monotonic": 136679.061916582,
+        "image_write_completed_monotonic": 136679.062306037,
+        "http_completed_monotonic": 136679.438918202,
+        "parse_completed_monotonic": 136679.439102383,
+        "preprocess_s": 0.02857896499335766,
+        "image_write_s": 0.00038945500273257494,
+        "http_s": 0.37661216501146555,
+        "parse_s": 0.0001841810008045286,
+        "total_s": 0.4057647660083603
+      }
+    },
+    {
+      "time": 136679.955969092,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136679.44592174,
+        "t_settle_ros_ns": 1794535868946662381,
+        "frame_host_received_monotonic": 136679.552063273,
+        "frame_header_stamp_ns": 1794535869016457251,
+        "frame_wait_s": 0.10614153300411999,
+        "camera_receive_count": 704
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136679.567935526,
+        "preprocess_completed_monotonic": 136679.596986977,
+        "image_write_completed_monotonic": 136679.59727508,
+        "http_completed_monotonic": 136679.955106379,
+        "parse_completed_monotonic": 136679.95535226,
+        "preprocess_s": 0.02905145101249218,
+        "image_write_s": 0.0002881030086427927,
+        "http_s": 0.35783129898482,
+        "parse_s": 0.0002458810049574822,
+        "total_s": 0.3874167340109125
+      }
+    },
+    {
+      "time": 136680.445965525,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136679.95597213,
+        "t_settle_ros_ns": 1794535869456717206,
+        "frame_host_received_monotonic": 136680.017725966,
+        "frame_header_stamp_ns": 1794535869483236251,
+        "frame_wait_s": 0.06175383599475026,
+        "camera_receive_count": 714
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136680.029072076,
+        "preprocess_completed_monotonic": 136680.0614774,
+        "image_write_completed_monotonic": 136680.061737574,
+        "http_completed_monotonic": 136680.435833551,
+        "parse_completed_monotonic": 136680.435994277,
+        "preprocess_s": 0.03240532401832752,
+        "image_write_s": 0.0002601739834062755,
+        "http_s": 0.3740959769929759,
+        "parse_s": 0.0001607260201126337,
+        "total_s": 0.40692220101482235
+      }
+    },
+    {
+      "time": 136680.995811701,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136680.445967472,
+        "t_settle_ros_ns": 1794535869946707145,
+        "frame_host_received_monotonic": 136680.555579922,
+        "frame_header_stamp_ns": 1794535870016607251,
+        "frame_wait_s": 0.10961244997452013,
+        "camera_receive_count": 728
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136680.570477552,
+        "preprocess_completed_monotonic": 136680.601254579,
+        "image_write_completed_monotonic": 136680.60166809,
+        "http_completed_monotonic": 136680.987398327,
+        "parse_completed_monotonic": 136680.987553494,
+        "preprocess_s": 0.030777026986470446,
+        "image_write_s": 0.00041351100662723184,
+        "http_s": 0.3857302370015532,
+        "parse_s": 0.00015516698476858437,
+        "total_s": 0.41707594197941944
+      }
+    },
+    {
+      "time": 136681.525780906,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136680.995813987,
+        "t_settle_ros_ns": 1794535870496553356,
+        "frame_host_received_monotonic": 136681.117647668,
+        "frame_header_stamp_ns": 1794535870583249251,
+        "frame_wait_s": 0.12183368098339997,
+        "camera_receive_count": 737
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136681.127251208,
+        "preprocess_completed_monotonic": 136681.151999255,
+        "image_write_completed_monotonic": 136681.152501047,
+        "http_completed_monotonic": 136681.522006663,
+        "parse_completed_monotonic": 136681.522161305,
+        "preprocess_s": 0.024748046998865902,
+        "image_write_s": 0.0005017920047976077,
+        "http_s": 0.36950561599223875,
+        "parse_s": 0.0001546420098748058,
+        "total_s": 0.39491009700577706
+      }
+    },
+    {
+      "time": 136682.015843716,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136681.52578324,
+        "t_settle_ros_ns": 1794535871026523107,
+        "frame_host_received_monotonic": 136681.58817828,
+        "frame_header_stamp_ns": 1794535871049831251,
+        "frame_wait_s": 0.062395040004048496,
+        "camera_receive_count": 747
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136681.60559355,
+        "preprocess_completed_monotonic": 136681.636598962,
+        "image_write_completed_monotonic": 136681.636828648,
+        "http_completed_monotonic": 136682.007532709,
+        "parse_completed_monotonic": 136682.007688548,
+        "preprocess_s": 0.03100541202002205,
+        "image_write_s": 0.00022968600387685,
+        "http_s": 0.3707040609733667,
+        "parse_s": 0.0001558390213176608,
+        "total_s": 0.4020949980185833
+      }
+    },
+    {
+      "time": 136682.475936447,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136682.015845961,
+        "t_settle_ros_ns": 1794535871516586857,
+        "frame_host_received_monotonic": 136682.050054814,
+        "frame_header_stamp_ns": 1794535871516750251,
+        "frame_wait_s": 0.03420885300147347,
+        "camera_receive_count": 757
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136682.061124933,
+        "preprocess_completed_monotonic": 136682.08783584,
+        "image_write_completed_monotonic": 136682.088284601,
+        "http_completed_monotonic": 136682.471189421,
+        "parse_completed_monotonic": 136682.471350421,
+        "preprocess_s": 0.026710906997323036,
+        "image_write_s": 0.00044876098399981856,
+        "http_s": 0.38290481999865733,
+        "parse_s": 0.0001610000035725534,
+        "total_s": 0.41022548798355274
+      }
+    },
+    {
+      "time": 136682.935809871,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136682.475938749,
+        "t_settle_ros_ns": 1794535871976681334,
+        "frame_host_received_monotonic": 136682.518594321,
+        "frame_header_stamp_ns": 1794535871983228251,
+        "frame_wait_s": 0.0426555720041506,
+        "camera_receive_count": 767
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136682.52893204,
+        "preprocess_completed_monotonic": 136682.55693957,
+        "image_write_completed_monotonic": 136682.557331251,
+        "http_completed_monotonic": 136682.930364654,
+        "parse_completed_monotonic": 136682.930512772,
+        "preprocess_s": 0.028007529996102676,
+        "image_write_s": 0.0003916810092050582,
+        "http_s": 0.37303340298240073,
+        "parse_s": 0.000148118007928133,
+        "total_s": 0.4015807319956366
+      }
+    },
+    {
+      "time": 136683.405770486,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136682.935812225,
+        "t_settle_ros_ns": 1794535872436551115,
+        "frame_host_received_monotonic": 136682.988010334,
+        "frame_header_stamp_ns": 1794535872450097251,
+        "frame_wait_s": 0.05219810898415744,
+        "camera_receive_count": 779
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136683.001618539,
+        "preprocess_completed_monotonic": 136683.029471137,
+        "image_write_completed_monotonic": 136683.029769845,
+        "http_completed_monotonic": 136683.40360264,
+        "parse_completed_monotonic": 136683.403747315,
+        "preprocess_s": 0.0278525979956612,
+        "image_write_s": 0.00029870797879993916,
+        "http_s": 0.3738327950122766,
+        "parse_s": 0.00014467499568127096,
+        "total_s": 0.40212877598241903
+      }
+    },
+    {
+      "time": 136683.875890088,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136683.405772702,
+        "t_settle_ros_ns": 1794535872906512896,
+        "frame_host_received_monotonic": 136683.449995087,
+        "frame_header_stamp_ns": 1794535872916718251,
+        "frame_wait_s": 0.04422238498227671,
+        "camera_receive_count": 787
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136683.463437473,
+        "preprocess_completed_monotonic": 136683.490826552,
+        "image_write_completed_monotonic": 136683.491104178,
+        "http_completed_monotonic": 136683.867441099,
+        "parse_completed_monotonic": 136683.867629547,
+        "preprocess_s": 0.02738907901220955,
+        "image_write_s": 0.0002776260080281645,
+        "http_s": 0.3763369209773373,
+        "parse_s": 0.0001884480006992817,
+        "total_s": 0.4041920739982743
+      }
+    },
+    {
+      "time": 136684.346096748,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136683.875892052,
+        "t_settle_ros_ns": 1794535873376633650,
+        "frame_host_received_monotonic": 136683.92220054,
+        "frame_header_stamp_ns": 1794535873385019251,
+        "frame_wait_s": 0.046308488002978265,
+        "camera_receive_count": 801
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136683.935004284,
+        "preprocess_completed_monotonic": 136683.964771871,
+        "image_write_completed_monotonic": 136683.965166655,
+        "http_completed_monotonic": 136684.336798259,
+        "parse_completed_monotonic": 136684.336943532,
+        "preprocess_s": 0.02976758699514903,
+        "image_write_s": 0.00039478400140069425,
+        "http_s": 0.37163160400814377,
+        "parse_s": 0.00014527299208566546,
+        "total_s": 0.40193924799677916
+      }
+    },
+    {
+      "time": 136684.81645149,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136684.346106288,
+        "t_settle_ros_ns": 1794535873846854045,
+        "frame_host_received_monotonic": 136684.386202914,
+        "frame_header_stamp_ns": 1794535873850209251,
+        "frame_wait_s": 0.04009662600583397,
+        "camera_receive_count": 813
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136684.398817016,
+        "preprocess_completed_monotonic": 136684.429721186,
+        "image_write_completed_monotonic": 136684.429979003,
+        "http_completed_monotonic": 136684.814816647,
+        "parse_completed_monotonic": 136684.815110376,
+        "preprocess_s": 0.030904170009307563,
+        "image_write_s": 0.00025781700969673693,
+        "http_s": 0.38483764400007203,
+        "parse_s": 0.0002937289827968925,
+        "total_s": 0.4162933600018732
+      }
+    },
+    {
+      "time": 136685.315824477,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136684.816458221,
+        "t_settle_ros_ns": 1794535874317229455,
+        "frame_host_received_monotonic": 136684.889218555,
+        "frame_header_stamp_ns": 1794535874350243251,
+        "frame_wait_s": 0.07276033400557935,
+        "camera_receive_count": 824
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136684.900740251,
+        "preprocess_completed_monotonic": 136684.937904208,
+        "image_write_completed_monotonic": 136684.93819148,
+        "http_completed_monotonic": 136685.31276718,
+        "parse_completed_monotonic": 136685.313018929,
+        "preprocess_s": 0.03716395699302666,
+        "image_write_s": 0.0002872720069717616,
+        "http_s": 0.37457569999969564,
+        "parse_s": 0.00025174900656566024,
+        "total_s": 0.4122786780062597
+      }
+    },
+    {
+      "time": 136685.795942859,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136685.315826388,
+        "t_settle_ros_ns": 1794535874816568713,
+        "frame_host_received_monotonic": 136685.355125673,
+        "frame_header_stamp_ns": 1794535874816708251,
+        "frame_wait_s": 0.039299285010201856,
+        "camera_receive_count": 834
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136685.368636776,
+        "preprocess_completed_monotonic": 136685.402326115,
+        "image_write_completed_monotonic": 136685.402632067,
+        "http_completed_monotonic": 136685.785794976,
+        "parse_completed_monotonic": 136685.786069418,
+        "preprocess_s": 0.03368933900492266,
+        "image_write_s": 0.00030595200951211154,
+        "http_s": 0.3831629089836497,
+        "parse_s": 0.0002744420198723674,
+        "total_s": 0.4174326420179568
+      }
+    },
+    {
+      "time": 136686.38612652,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136685.795945582,
+        "t_settle_ros_ns": 1794535875296686544,
+        "frame_host_received_monotonic": 136685.950288062,
+        "frame_header_stamp_ns": 1794535875416968251,
+        "frame_wait_s": 0.15434248000383377,
+        "camera_receive_count": 846
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136685.967128682,
+        "preprocess_completed_monotonic": 136686.009613617,
+        "image_write_completed_monotonic": 136686.009931726,
+        "http_completed_monotonic": 136686.38165549,
+        "parse_completed_monotonic": 136686.382035091,
+        "preprocess_s": 0.04248493499471806,
+        "image_write_s": 0.00031810899963602424,
+        "http_s": 0.37172376399394125,
+        "parse_s": 0.0003796009987127036,
+        "total_s": 0.41490640898700804
+      }
+    },
+    {
+      "time": 136686.876120987,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136686.386129447,
+        "t_settle_ros_ns": 1794535875886873233,
+        "frame_host_received_monotonic": 136686.455064356,
+        "frame_header_stamp_ns": 1794535875916967251,
+        "frame_wait_s": 0.06893490900984034,
+        "camera_receive_count": 857
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136686.467944387,
+        "preprocess_completed_monotonic": 136686.501983128,
+        "image_write_completed_monotonic": 136686.502202843,
+        "http_completed_monotonic": 136686.873945592,
+        "parse_completed_monotonic": 136686.874180665,
+        "preprocess_s": 0.03403874099603854,
+        "image_write_s": 0.00021971500245854259,
+        "http_s": 0.3717427490046248,
+        "parse_s": 0.0002350730064790696,
+        "total_s": 0.40623627800960094
+      }
+    },
+    {
+      "time": 136687.476131722,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136686.876123989,
+        "t_settle_ros_ns": 1794535876376872526,
+        "frame_host_received_monotonic": 136687.056561969,
+        "frame_header_stamp_ns": 1794535876516960251,
+        "frame_wait_s": 0.18043797998689115,
+        "camera_receive_count": 869
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136687.071969648,
+        "preprocess_completed_monotonic": 136687.109830454,
+        "image_write_completed_monotonic": 136687.110126647,
+        "http_completed_monotonic": 136687.470818015,
+        "parse_completed_monotonic": 136687.471066628,
+        "preprocess_s": 0.037860805983655155,
+        "image_write_s": 0.00029619300039485097,
+        "http_s": 0.3606913679977879,
+        "parse_s": 0.00024861301062628627,
+        "total_s": 0.3990969799924642
+      }
+    },
+    {
+      "time": 136688.005759757,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136687.476134206,
+        "t_settle_ros_ns": 1794535876976884561,
+        "frame_host_received_monotonic": 136687.584536091,
+        "frame_header_stamp_ns": 1794535877050324251,
+        "frame_wait_s": 0.10840188499423675,
+        "camera_receive_count": 875
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136687.593949117,
+        "preprocess_completed_monotonic": 136687.619816483,
+        "image_write_completed_monotonic": 136687.620093447,
+        "http_completed_monotonic": 136688.000187974,
+        "parse_completed_monotonic": 136688.00037647,
+        "preprocess_s": 0.025867365999147296,
+        "image_write_s": 0.00027696401230059564,
+        "http_s": 0.3800945269758813,
+        "parse_s": 0.0001884960220195353,
+        "total_s": 0.40642735300934874
+      }
+    },
+    {
+      "time": 136688.475843328,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136688.00576168,
+        "t_settle_ros_ns": 1794535877506501766,
+        "frame_host_received_monotonic": 136688.051888941,
+        "frame_header_stamp_ns": 1794535877517074251,
+        "frame_wait_s": 0.046127261011861265,
+        "camera_receive_count": 883
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136688.062945513,
+        "preprocess_completed_monotonic": 136688.09114765,
+        "image_write_completed_monotonic": 136688.091475372,
+        "http_completed_monotonic": 136688.467946249,
+        "parse_completed_monotonic": 136688.468106382,
+        "preprocess_s": 0.028202137007610872,
+        "image_write_s": 0.0003277219948358834,
+        "http_s": 0.3764708770031575,
+        "parse_s": 0.0001601330004632473,
+        "total_s": 0.4051608690060675
+      }
+    },
+    {
+      "time": 136689.02585155,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136688.475845264,
+        "t_settle_ros_ns": 1794535877976584060,
+        "frame_host_received_monotonic": 136688.617242695,
+        "frame_header_stamp_ns": 1794535878083568251,
+        "frame_wait_s": 0.14139743099804036,
+        "camera_receive_count": 892
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136688.628353384,
+        "preprocess_completed_monotonic": 136688.657607373,
+        "image_write_completed_monotonic": 136688.658036312,
+        "http_completed_monotonic": 136689.024235365,
+        "parse_completed_monotonic": 136689.024385024,
+        "preprocess_s": 0.02925398899242282,
+        "image_write_s": 0.0004289390053600073,
+        "http_s": 0.36619905300904065,
+        "parse_s": 0.00014965899754315615,
+        "total_s": 0.39603164000436664
+      }
+    },
+    {
+      "time": 136689.575891725,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136689.025853521,
+        "t_settle_ros_ns": 1794535878526593703,
+        "frame_host_received_monotonic": 136689.1553107,
+        "frame_header_stamp_ns": 1794535878617080251,
+        "frame_wait_s": 0.12945717902039178,
+        "camera_receive_count": 900
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136689.166154621,
+        "preprocess_completed_monotonic": 136689.193674295,
+        "image_write_completed_monotonic": 136689.193936251,
+        "http_completed_monotonic": 136689.566664872,
+        "parse_completed_monotonic": 136689.56686286,
+        "preprocess_s": 0.02751967401127331,
+        "image_write_s": 0.00026195598184131086,
+        "http_s": 0.37272862100508064,
+        "parse_s": 0.00019798800349235535,
+        "total_s": 0.4007082390016876
+      }
+    },
+    {
+      "time": 136690.066175049,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136689.575894222,
+        "t_settle_ros_ns": 1794535879076635982,
+        "frame_host_received_monotonic": 136689.651056541,
+        "frame_header_stamp_ns": 1794535879117075251,
+        "frame_wait_s": 0.07516231900081038,
+        "camera_receive_count": 911
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136689.663760942,
+        "preprocess_completed_monotonic": 136689.693409464,
+        "image_write_completed_monotonic": 136689.693726379,
+        "http_completed_monotonic": 136690.055750468,
+        "parse_completed_monotonic": 136690.055957731,
+        "preprocess_s": 0.029648522002389655,
+        "image_write_s": 0.0003169149858877063,
+        "http_s": 0.36202408900135197,
+        "parse_s": 0.00020726301590912044,
+        "total_s": 0.39219678900553845
+      }
+    },
+    {
+      "time": 136690.53575129,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136690.066177822,
+        "t_settle_ros_ns": 1794535879566927530,
+        "frame_host_received_monotonic": 136690.119462866,
+        "frame_header_stamp_ns": 1794535879583817251,
+        "frame_wait_s": 0.053285043977666646,
+        "camera_receive_count": 923
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003326156463490754,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136690.131342156,
+        "preprocess_completed_monotonic": 136690.161122644,
+        "image_write_completed_monotonic": 136690.161438031,
+        "http_completed_monotonic": 136690.528352377,
+        "parse_completed_monotonic": 136690.528517106,
+        "preprocess_s": 0.02978048799559474,
+        "image_write_s": 0.0003153870056848973,
+        "http_s": 0.3669143459992483,
+        "parse_s": 0.00016472899005748332,
+        "total_s": 0.39717494999058545
+      }
+    },
+    {
+      "time": 136691.065940059,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136690.535754243,
+        "t_settle_ros_ns": 1794535880036494637,
+        "frame_host_received_monotonic": 136690.654111627,
+        "frame_header_stamp_ns": 1794535880117189251,
+        "frame_wait_s": 0.11835738399531692,
+        "camera_receive_count": 933
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136690.666391124,
+        "preprocess_completed_monotonic": 136690.692507193,
+        "image_write_completed_monotonic": 136690.692771947,
+        "http_completed_monotonic": 136691.061479487,
+        "parse_completed_monotonic": 136691.061664695,
+        "preprocess_s": 0.026116068998817354,
+        "image_write_s": 0.00026475402410142124,
+        "http_s": 0.36870753997936845,
+        "parse_s": 0.0001852080167736858,
+        "total_s": 0.3952735710190609
+      }
+    },
+    {
+      "time": 136691.546130446,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136691.065943051,
+        "t_settle_ros_ns": 1794535880566702031,
+        "frame_host_received_monotonic": 136691.121545261,
+        "frame_header_stamp_ns": 1794535880584082251,
+        "frame_wait_s": 0.05560220999177545,
+        "camera_receive_count": 943
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136691.133813593,
+        "preprocess_completed_monotonic": 136691.160336031,
+        "image_write_completed_monotonic": 136691.160756935,
+        "http_completed_monotonic": 136691.53766885,
+        "parse_completed_monotonic": 136691.538037322,
+        "preprocess_s": 0.026522437983658165,
+        "image_write_s": 0.0004209039907436818,
+        "http_s": 0.37691191502381116,
+        "parse_s": 0.0003684719849843532,
+        "total_s": 0.40422372898319736
+      }
+    },
+    {
+      "time": 136692.006079669,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136691.546134116,
+        "t_settle_ros_ns": 1794535881046884616,
+        "frame_host_received_monotonic": 136691.590242251,
+        "frame_header_stamp_ns": 1794535881050485251,
+        "frame_wait_s": 0.044108134985435754,
+        "camera_receive_count": 951
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136691.600786853,
+        "preprocess_completed_monotonic": 136691.626221328,
+        "image_write_completed_monotonic": 136691.626462902,
+        "http_completed_monotonic": 136692.004418065,
+        "parse_completed_monotonic": 136692.004661151,
+        "preprocess_s": 0.0254344750137534,
+        "image_write_s": 0.0002415739872958511,
+        "http_s": 0.3779551629850175,
+        "parse_s": 0.0002430860185995698,
+        "total_s": 0.40387429800466634
+      }
+    },
+    {
+      "time": 136692.47678887,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136692.006084095,
+        "t_settle_ros_ns": 1794535881506837254,
+        "frame_host_received_monotonic": 136692.055728522,
+        "frame_header_stamp_ns": 1794535881517340251,
+        "frame_wait_s": 0.04964442702475935,
+        "camera_receive_count": 959
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136692.065657576,
+        "preprocess_completed_monotonic": 136692.092981873,
+        "image_write_completed_monotonic": 136692.093225311,
+        "http_completed_monotonic": 136692.468646067,
+        "parse_completed_monotonic": 136692.468912063,
+        "preprocess_s": 0.02732429699972272,
+        "image_write_s": 0.00024343800032511353,
+        "http_s": 0.3754207559977658,
+        "parse_s": 0.0002659960009623319,
+        "total_s": 0.403254486998776
+      }
+    },
+    {
+      "time": 136693.005783306,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136692.476793741,
+        "t_settle_ros_ns": 1794535881977537811,
+        "frame_host_received_monotonic": 136692.558737434,
+        "frame_header_stamp_ns": 1794535882017331251,
+        "frame_wait_s": 0.0819436930178199,
+        "camera_receive_count": 972
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136692.581227109,
+        "preprocess_completed_monotonic": 136692.616972291,
+        "image_write_completed_monotonic": 136692.617760593,
+        "http_completed_monotonic": 136693.003796364,
+        "parse_completed_monotonic": 136693.003942163,
+        "preprocess_s": 0.03574518198729493,
+        "image_write_s": 0.000788302015280351,
+        "http_s": 0.38603577099274844,
+        "parse_s": 0.00014579898561351,
+        "total_s": 0.4227150539809372
+      }
+    },
+    {
+      "time": 136693.475912521,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136693.005785107,
+        "t_settle_ros_ns": 1794535882506524712,
+        "frame_host_received_monotonic": 136693.054628338,
+        "frame_header_stamp_ns": 1794535882517148251,
+        "frame_wait_s": 0.0488432309939526,
+        "camera_receive_count": 985
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136693.068395082,
+        "preprocess_completed_monotonic": 136693.09396305,
+        "image_write_completed_monotonic": 136693.094219625,
+        "http_completed_monotonic": 136693.472659653,
+        "parse_completed_monotonic": 136693.472856485,
+        "preprocess_s": 0.025567967997631058,
+        "image_write_s": 0.0002565750037319958,
+        "http_s": 0.3784400279982947,
+        "parse_s": 0.00019683199934661388,
+        "total_s": 0.40446140299900435
+      }
+    },
+    {
+      "time": 136693.935774128,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136693.475914782,
+        "t_settle_ros_ns": 1794535882976660072,
+        "frame_host_received_monotonic": 136693.523702167,
+        "frame_header_stamp_ns": 1794535882984070251,
+        "frame_wait_s": 0.047787385003175586,
+        "camera_receive_count": 991
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136693.535555323,
+        "preprocess_completed_monotonic": 136693.562827713,
+        "image_write_completed_monotonic": 136693.563186201,
+        "http_completed_monotonic": 136693.933200086,
+        "parse_completed_monotonic": 136693.933346842,
+        "preprocess_s": 0.027272389997961,
+        "image_write_s": 0.00035848800325766206,
+        "http_s": 0.37001388499629684,
+        "parse_s": 0.0001467560068704188,
+        "total_s": 0.3977915190043859
+      }
+    },
+    {
+      "time": 136694.42575693,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136693.935775974,
+        "t_settle_ros_ns": 1794535883436516252,
+        "frame_host_received_monotonic": 136693.988728142,
+        "frame_header_stamp_ns": 1794535883450578251,
+        "frame_wait_s": 0.05295216798549518,
+        "camera_receive_count": 1001
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136693.999247411,
+        "preprocess_completed_monotonic": 136694.034663122,
+        "image_write_completed_monotonic": 136694.034987247,
+        "http_completed_monotonic": 136694.415353407,
+        "parse_completed_monotonic": 136694.415567755,
+        "preprocess_s": 0.035415710997767746,
+        "image_write_s": 0.00032412499422207475,
+        "http_s": 0.3803661600104533,
+        "parse_s": 0.00021434799418784678,
+        "total_s": 0.416320343996631
+      }
+    },
+    {
+      "time": 136694.995845005,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136694.425758709,
+        "t_settle_ros_ns": 1794535883926498300,
+        "frame_host_received_monotonic": 136694.557753197,
+        "frame_header_stamp_ns": 1794535884017424251,
+        "frame_wait_s": 0.131994488008786,
+        "camera_receive_count": 1014
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136694.569983946,
+        "preprocess_completed_monotonic": 136694.596024429,
+        "image_write_completed_monotonic": 136694.596248282,
+        "http_completed_monotonic": 136694.986141079,
+        "parse_completed_monotonic": 136694.986397985,
+        "preprocess_s": 0.026040482975076884,
+        "image_write_s": 0.00022385301417671144,
+        "http_s": 0.38989279698580503,
+        "parse_s": 0.00025690600159578025,
+        "total_s": 0.4164140389766544
+      }
+    },
+    {
+      "time": 136695.456123285,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136694.995846924,
+        "t_settle_ros_ns": 1794535884496587366,
+        "frame_host_received_monotonic": 136695.057131048,
+        "frame_header_stamp_ns": 1794535884517267251,
+        "frame_wait_s": 0.06128412400721572,
+        "camera_receive_count": 1029
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136695.068314102,
+        "preprocess_completed_monotonic": 136695.094089128,
+        "image_write_completed_monotonic": 136695.094300793,
+        "http_completed_monotonic": 136695.448181057,
+        "parse_completed_monotonic": 136695.448401353,
+        "preprocess_s": 0.02577502597705461,
+        "image_write_s": 0.00021166499936953187,
+        "http_s": 0.3538802640105132,
+        "parse_s": 0.00022029600222595036,
+        "total_s": 0.3800872509891633
+      }
+    },
+    {
+      "time": 136695.96606207,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136695.45612556,
+        "t_settle_ros_ns": 1794535884956869920,
+        "frame_host_received_monotonic": 136695.552780098,
+        "frame_header_stamp_ns": 1794535885017540251,
+        "frame_wait_s": 0.09665453797788359,
+        "camera_receive_count": 1036
+      },
+      "action_raw": [
+        0.002274235221040916,
+        1.6923010594068442e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.007959280276108953,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136695.564628283,
+        "preprocess_completed_monotonic": 136695.591940576,
+        "image_write_completed_monotonic": 136695.592198111,
+        "http_completed_monotonic": 136695.959075945,
+        "parse_completed_monotonic": 136695.959295962,
+        "preprocess_s": 0.027312293008435518,
+        "image_write_s": 0.0002575349935796112,
+        "http_s": 0.36687783399247564,
+        "parse_s": 0.0002200170129071921,
+        "total_s": 0.39466767900739796
+      }
+    },
+    {
+      "time": 136696.486233608,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136695.966064206,
+        "t_settle_ros_ns": 1794535885466808992,
+        "frame_host_received_monotonic": 136696.054926473,
+        "frame_header_stamp_ns": 1794535885517471251,
+        "frame_wait_s": 0.08886226700269617,
+        "camera_receive_count": 1043
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136696.065935976,
+        "preprocess_completed_monotonic": 136696.102423291,
+        "image_write_completed_monotonic": 136696.102595533,
+        "http_completed_monotonic": 136696.484576694,
+        "parse_completed_monotonic": 136696.484918066,
+        "preprocess_s": 0.03648731502471492,
+        "image_write_s": 0.00017224199837073684,
+        "http_s": 0.38198116098647006,
+        "parse_s": 0.0003413720114622265,
+        "total_s": 0.41898209002101794
+      }
+    },
+    {
+      "time": 136697.045765868,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136696.486237155,
+        "t_settle_ros_ns": 1794535885986989902,
+        "frame_host_received_monotonic": 136696.617667526,
+        "frame_header_stamp_ns": 1794535886084211251,
+        "frame_wait_s": 0.13143037099507637,
+        "camera_receive_count": 1056
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136696.625707098,
+        "preprocess_completed_monotonic": 136696.649615962,
+        "image_write_completed_monotonic": 136696.649959295,
+        "http_completed_monotonic": 136697.038943979,
+        "parse_completed_monotonic": 136697.039071691,
+        "preprocess_s": 0.023908864008262753,
+        "image_write_s": 0.00034333299845457077,
+        "http_s": 0.38898468398838304,
+        "parse_s": 0.00012771200272254646,
+        "total_s": 0.4133645929978229
+      }
+    },
+    {
+      "time": 136697.566147876,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136697.04576858,
+        "t_settle_ros_ns": 1794535886546509299,
+        "frame_host_received_monotonic": 136697.151725199,
+        "frame_header_stamp_ns": 1794535886617539251,
+        "frame_wait_s": 0.10595661899424158,
+        "camera_receive_count": 1066
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136697.165552451,
+        "preprocess_completed_monotonic": 136697.193507027,
+        "image_write_completed_monotonic": 136697.19367871,
+        "http_completed_monotonic": 136697.557504749,
+        "parse_completed_monotonic": 136697.557837476,
+        "preprocess_s": 0.027954575984040275,
+        "image_write_s": 0.00017168300109915435,
+        "http_s": 0.36382603901438415,
+        "parse_s": 0.0003327269805595279,
+        "total_s": 0.3922850249800831
+      }
+    },
+    {
+      "time": 136698.065911945,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136697.566150837,
+        "t_settle_ros_ns": 1794535887066914466,
+        "frame_host_received_monotonic": 136697.617786039,
+        "frame_header_stamp_ns": 1794535887084284251,
+        "frame_wait_s": 0.05163520199130289,
+        "camera_receive_count": 1074
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.006463694560986246,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136697.627310041,
+        "preprocess_completed_monotonic": 136697.659520985,
+        "image_write_completed_monotonic": 136697.659728761,
+        "http_completed_monotonic": 136698.064400529,
+        "parse_completed_monotonic": 136698.064574457,
+        "preprocess_s": 0.032210944016696885,
+        "image_write_s": 0.00020777600002475083,
+        "http_s": 0.40467176798847504,
+        "parse_s": 0.00017392801237292588,
+        "total_s": 0.4372644160175696
+      }
+    },
+    {
+      "time": 136698.555944548,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136698.065915431,
+        "t_settle_ros_ns": 1794535887566661511,
+        "frame_host_received_monotonic": 136698.124117849,
+        "frame_header_stamp_ns": 1794535887584348251,
+        "frame_wait_s": 0.05820241797482595,
+        "camera_receive_count": 1089
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136698.135769877,
+        "preprocess_completed_monotonic": 136698.16448065,
+        "image_write_completed_monotonic": 136698.164743637,
+        "http_completed_monotonic": 136698.550309148,
+        "parse_completed_monotonic": 136698.550539113,
+        "preprocess_s": 0.028710773010971025,
+        "image_write_s": 0.00026298698503524065,
+        "http_s": 0.38556551100919023,
+        "parse_s": 0.00022996499319560826,
+        "total_s": 0.4147692359983921
+      }
+    },
+    {
+      "time": 136699.035748175,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136698.555946343,
+        "t_settle_ros_ns": 1794535888056687848,
+        "frame_host_received_monotonic": 136698.621724964,
+        "frame_header_stamp_ns": 1794535888086038251,
+        "frame_wait_s": 0.06577862100675702,
+        "camera_receive_count": 1102
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136698.633160763,
+        "preprocess_completed_monotonic": 136698.665474304,
+        "image_write_completed_monotonic": 136698.665712038,
+        "http_completed_monotonic": 136699.033840126,
+        "parse_completed_monotonic": 136699.033979896,
+        "preprocess_s": 0.032313540985342115,
+        "image_write_s": 0.0002377339988015592,
+        "http_s": 0.368128088011872,
+        "parse_s": 0.00013976998161524534,
+        "total_s": 0.40081913297763094
+      }
+    },
+    {
+      "time": 136699.575883884,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136699.035750031,
+        "t_settle_ros_ns": 1794535888536489224,
+        "frame_host_received_monotonic": 136699.1513861,
+        "frame_header_stamp_ns": 1794535888617654251,
+        "frame_wait_s": 0.11563606900745071,
+        "camera_receive_count": 1112
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136699.161918963,
+        "preprocess_completed_monotonic": 136699.191057027,
+        "image_write_completed_monotonic": 136699.191233887,
+        "http_completed_monotonic": 136699.567780469,
+        "parse_completed_monotonic": 136699.567973658,
+        "preprocess_s": 0.02913806401193142,
+        "image_write_s": 0.00017685999046079814,
+        "http_s": 0.3765465820033569,
+        "parse_s": 0.0001931890146806836,
+        "total_s": 0.4060546950204298
+      }
+    },
+    {
+      "time": 136700.055950766,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136699.575885793,
+        "t_settle_ros_ns": 1794535889076626402,
+        "frame_host_received_monotonic": 136699.622490114,
+        "frame_header_stamp_ns": 1794535889084884251,
+        "frame_wait_s": 0.0466043210180942,
+        "camera_receive_count": 1122
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136699.633732373,
+        "preprocess_completed_monotonic": 136699.663233393,
+        "image_write_completed_monotonic": 136699.663523159,
+        "http_completed_monotonic": 136700.053195412,
+        "parse_completed_monotonic": 136700.053536645,
+        "preprocess_s": 0.02950101997703314,
+        "image_write_s": 0.00028976600151509047,
+        "http_s": 0.3896722530189436,
+        "parse_s": 0.0003412329824641347,
+        "total_s": 0.41980427197995596
+      }
+    },
+    {
+      "time": 136700.535816365,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136700.055954435,
+        "t_settle_ros_ns": 1794535889556701420,
+        "frame_host_received_monotonic": 136700.120121112,
+        "frame_header_stamp_ns": 1794535889584409251,
+        "frame_wait_s": 0.06416667700977996,
+        "camera_receive_count": 1133
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136700.130884225,
+        "preprocess_completed_monotonic": 136700.161540489,
+        "image_write_completed_monotonic": 136700.161718355,
+        "http_completed_monotonic": 136700.530007097,
+        "parse_completed_monotonic": 136700.530152049,
+        "preprocess_s": 0.030656264018034562,
+        "image_write_s": 0.0001778659934643656,
+        "http_s": 0.3682887420000043,
+        "parse_s": 0.00014495200593955815,
+        "total_s": 0.39926782401744276
+      }
+    },
+    {
+      "time": 136701.02572853,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136700.53582107,
+        "t_settle_ros_ns": 1794535890036562168,
+        "frame_host_received_monotonic": 136700.589511776,
+        "frame_header_stamp_ns": 1794535890051142251,
+        "frame_wait_s": 0.05369070600136183,
+        "camera_receive_count": 1143
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136700.60037726,
+        "preprocess_completed_monotonic": 136700.637679348,
+        "image_write_completed_monotonic": 136700.637869279,
+        "http_completed_monotonic": 136701.016765242,
+        "parse_completed_monotonic": 136701.016908204,
+        "preprocess_s": 0.03730208799242973,
+        "image_write_s": 0.00018993098638020456,
+        "http_s": 0.3788959630182944,
+        "parse_s": 0.00014296200242824852,
+        "total_s": 0.4165309439995326
+      }
+    },
+    {
+      "time": 136701.505767449,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136701.025730266,
+        "t_settle_ros_ns": 1794535890526469488,
+        "frame_host_received_monotonic": 136701.090930918,
+        "frame_header_stamp_ns": 1794535890551150251,
+        "frame_wait_s": 0.06520065199583769,
+        "camera_receive_count": 1154
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136701.106448582,
+        "preprocess_completed_monotonic": 136701.136145899,
+        "image_write_completed_monotonic": 136701.136332012,
+        "http_completed_monotonic": 136701.496841129,
+        "parse_completed_monotonic": 136701.496987411,
+        "preprocess_s": 0.029697317018872127,
+        "image_write_s": 0.00018611300038173795,
+        "http_s": 0.36050911698839627,
+        "parse_s": 0.00014628199278376997,
+        "total_s": 0.3905388290004339
+      }
+    },
+    {
+      "time": 136701.966150202,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136701.505769421,
+        "t_settle_ros_ns": 1794535891006508696,
+        "frame_host_received_monotonic": 136701.55763033,
+        "frame_header_stamp_ns": 1794535891017592251,
+        "frame_wait_s": 0.05186090900679119,
+        "camera_receive_count": 1164
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136701.56906515,
+        "preprocess_completed_monotonic": 136701.596439608,
+        "image_write_completed_monotonic": 136701.596618305,
+        "http_completed_monotonic": 136701.961146806,
+        "parse_completed_monotonic": 136701.961354277,
+        "preprocess_s": 0.02737445800448768,
+        "image_write_s": 0.00017869699513539672,
+        "http_s": 0.36452850099885836,
+        "parse_s": 0.00020747102098539472,
+        "total_s": 0.39228912701946683
+      }
+    },
+    {
+      "time": 136702.475871995,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136701.966153479,
+        "t_settle_ros_ns": 1794535891466907191,
+        "frame_host_received_monotonic": 136702.055363297,
+        "frame_header_stamp_ns": 1794535891517894251,
+        "frame_wait_s": 0.089209817990195,
+        "camera_receive_count": 1175
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136702.072171942,
+        "preprocess_completed_monotonic": 136702.104232026,
+        "image_write_completed_monotonic": 136702.104399361,
+        "http_completed_monotonic": 136702.472819056,
+        "parse_completed_monotonic": 136702.47304556,
+        "preprocess_s": 0.03206008399138227,
+        "image_write_s": 0.00016733500524424016,
+        "http_s": 0.3684196950052865,
+        "parse_s": 0.00022650399478152394,
+        "total_s": 0.4008736179966945
+      }
+    },
+    {
+      "time": 136702.935818924,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136702.475874026,
+        "t_settle_ros_ns": 1794535891976616907,
+        "frame_host_received_monotonic": 136702.522884869,
+        "frame_header_stamp_ns": 1794535891986164251,
+        "frame_wait_s": 0.04701084300177172,
+        "camera_receive_count": 1185
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136702.53308888,
+        "preprocess_completed_monotonic": 136702.561075171,
+        "image_write_completed_monotonic": 136702.561418112,
+        "http_completed_monotonic": 136702.929145359,
+        "parse_completed_monotonic": 136702.929291406,
+        "preprocess_s": 0.027986290981061757,
+        "image_write_s": 0.000342940998962149,
+        "http_s": 0.36772724700858817,
+        "parse_s": 0.0001460470084566623,
+        "total_s": 0.39620252599706873
+      }
+    },
+    {
+      "time": 136703.41601443,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136702.935820906,
+        "t_settle_ros_ns": 1794535892436559396,
+        "frame_host_received_monotonic": 136702.990312666,
+        "frame_header_stamp_ns": 1794535892451274251,
+        "frame_wait_s": 0.05449176000547595,
+        "camera_receive_count": 1197
+      },
+      "action_raw": [
+        0.0019287153831801067,
+        0.0006710783436308576,
+        -0.0010219888650054472,
+        -0.008735442718751204,
+        0.003675775365288017,
+        0.011015417543248139,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136703.000954812,
+        "preprocess_completed_monotonic": 136703.027162343,
+        "image_write_completed_monotonic": 136703.027308656,
+        "http_completed_monotonic": 136703.412440329,
+        "parse_completed_monotonic": 136703.412664341,
+        "preprocess_s": 0.02620753098744899,
+        "image_write_s": 0.0001463129883632064,
+        "http_s": 0.3851316730142571,
+        "parse_s": 0.00022401200840249658,
+        "total_s": 0.4117095289984718
+      }
+    },
+    {
+      "time": 136703.866134075,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136703.416019546,
+        "t_settle_ros_ns": 1794535892916767583,
+        "frame_host_received_monotonic": 136703.457670541,
+        "frame_header_stamp_ns": 1794535892917782251,
+        "frame_wait_s": 0.04165099500096403,
+        "camera_receive_count": 1207
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136703.466394062,
+        "preprocess_completed_monotonic": 136703.495560979,
+        "image_write_completed_monotonic": 136703.495865159,
+        "http_completed_monotonic": 136703.857146743,
+        "parse_completed_monotonic": 136703.857330484,
+        "preprocess_s": 0.029166916996473446,
+        "image_write_s": 0.00030417999369092286,
+        "http_s": 0.3612815839878749,
+        "parse_s": 0.0001837410090956837,
+        "total_s": 0.39093642198713496
+      }
+    },
+    {
+      "time": 136704.365867101,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136703.866136656,
+        "t_settle_ros_ns": 1794535893366889443,
+        "frame_host_received_monotonic": 136703.955545113,
+        "frame_header_stamp_ns": 1794535893417881251,
+        "frame_wait_s": 0.08940845701727085,
+        "camera_receive_count": 1216
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007713156047756974,
+        0.004025394267085281,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136703.96466737,
+        "preprocess_completed_monotonic": 136704.000817006,
+        "image_write_completed_monotonic": 136704.001038497,
+        "http_completed_monotonic": 136704.364180301,
+        "parse_completed_monotonic": 136704.364370176,
+        "preprocess_s": 0.036149635998299345,
+        "image_write_s": 0.00022149100550450385,
+        "http_s": 0.3631418040022254,
+        "parse_s": 0.0001898749906104058,
+        "total_s": 0.39970280599663965
+      }
+    },
+    {
+      "time": 136704.835761422,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136704.365872241,
+        "t_settle_ros_ns": 1794535893866619811,
+        "frame_host_received_monotonic": 136704.423721344,
+        "frame_header_stamp_ns": 1794535893884542251,
+        "frame_wait_s": 0.05784910300280899,
+        "camera_receive_count": 1228
+      },
+      "action_raw": [
+        0.002274235221040916,
+        -4.849252270960978e-05,
+        -0.0021801000197590806,
+        -0.004191946403221292,
+        0.003675775365288017,
+        0.010181925561301089,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136704.432164949,
+        "preprocess_completed_monotonic": 136704.464505916,
+        "image_write_completed_monotonic": 136704.464718787,
+        "http_completed_monotonic": 136704.828564871,
+        "parse_completed_monotonic": 136704.828710896,
+        "preprocess_s": 0.03234096700907685,
+        "image_write_s": 0.000212871003895998,
+        "http_s": 0.3638460839865729,
+        "parse_s": 0.000146025005960837,
+        "total_s": 0.3965459470055066
+      }
+    },
+    {
+      "time": 136705.296013142,
+      "ok": true,
+      "frame_record": {
+        "t_settle_host_monotonic": 136704.835763343,
+        "t_settle_ros_ns": 1794535894336502412,
+        "frame_host_received_monotonic": 136704.890381074,
+        "frame_header_stamp_ns": 1794535894351401251,
+        "frame_wait_s": 0.05461773098795675,
+        "camera_receive_count": 1240
+      },
+      "action_raw": [
+        0.002274235221040916,
+        0.0004748317437198212,
+        -0.0011874333156845357,
+        -0.007826743455645224,
+        0.003675775365288017,
+        0.015182877452983396,
+        0.0019607843137254832
+      ],
+      "processing_timing": {
+        "started_monotonic": 136704.903756755,
+        "preprocess_completed_monotonic": 136704.928563085,
+        "image_write_completed_monotonic": 136704.928718748,
+        "http_completed_monotonic": 136705.293876511,
+        "parse_completed_monotonic": 136705.294060963,
+        "preprocess_s": 0.024806330009596422,
+        "image_write_s": 0.00015566300135105848,
+        "http_s": 0.36515776297892444,
+        "parse_s": 0.0001844520156737417,
+        "total_s": 0.39030420800554566
+      }
+    }
+  ],
+  "instruction": "Pick up the blue cube.",
+  "scene_cube_color": "blue",
+  "instruction_in_matched15": true,
+  "allow_ood_instruction": false,
+  "command_publish_count": 0,
+  "state_changing_service_call_count": 0,
+  "pass": true
+}

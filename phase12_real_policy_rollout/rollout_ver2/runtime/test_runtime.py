@@ -1,5 +1,7 @@
 import json
+import multiprocessing as mp
 import tempfile
+import time
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -10,12 +12,14 @@ from controller.geometry import ToolTransform
 from kinematics import PyKDLKinematics
 from runtime.config import load_runtime_config
 from runtime.executor import V2Executor
-from runtime.feedback import RobotFeedback,FeedbackJsonlLogger,RobotStateFullRateLogger
+from runtime.feedback import FeedbackSpinThread,RobotFeedback,FeedbackJsonlLogger
+from runtime import robot_state as rs
 from runtime.gate import ExecutionGate,GateEntry
-from runtime.gripper_io import BinaryIOGripper
+from runtime.gripper_io import BinaryIOGripper,LevelIOGripper,create_gripper
 from runtime.servoj import ServojPublisher
 from runtime.stop import StopCoordinator
 from runtime.camera import CameraFeedback
+from runtime.observation_process import run_mock_blocking_observation
 
 
 class FakeClock:
@@ -52,42 +56,165 @@ class RuntimeTests(unittest.TestCase):
     def test_feedback_subscription_callbacks_and_stale(self):
         clock=FakeClock(); kin=PyKDLKinematics()
         feedback=RobotFeedback(kin,ToolTransform.tool0_real(),.1,clock)
-        feedback.joint_state_callback(SimpleNamespace(
-            name=[f"joint_{i}" for i in range(1,7)],position=np.zeros(6),velocity=np.zeros(6)))
-        feedback.robot_state_callback(SimpleNamespace(robot_state=1,actual_bk=[0]*6))
+        msg=SimpleNamespace(name=[f"joint_{i}" for i in range(1,7)],
+            position=np.zeros(6),velocity=np.zeros(6),
+            header=SimpleNamespace(stamp=SimpleNamespace(sec=12,nanosec=500000000)))
+        feedback.joint_state_callback(msg)
+        self.assertIn("JOINT_STATE_STALE",feedback.stale_reasons())
+        feedback.joint_state_callback(msg)
+        feedback._state=(clock(),1,.001);feedback._mode=(clock(),1);feedback._system=(clock(),0)
         self.assertEqual(feedback.stale_reasons(),[])
         snapshot=feedback.snapshot();self.assertEqual(snapshot.robot_state,1)
+        self.assertEqual(snapshot.header_stamp_s,12.5)
         self.assertEqual(snapshot.log_record()["frame"],"tool0_real")
         with tempfile.TemporaryDirectory() as directory:
             row=FeedbackJsonlLogger(Path(directory)/"feedback.jsonl").write(snapshot)
             self.assertIn("tool0_real_rotation_matrix",row)
-        clock.value=.11
+        clock.value=.26
         self.assertEqual(set(feedback.stale_reasons()),{"JOINT_STATE_STALE","ROBOT_STATE_STALE"})
 
-    def test_robot_state_full_rate_logger_keeps_posx_for_delta_analysis(self):
-        clock=FakeClock();kin=PyKDLKinematics()
-        with tempfile.TemporaryDirectory() as directory:
-            path=Path(directory)/"robot_state_full_rate.jsonl"
-            feedback=RobotFeedback(kin,ToolTransform.tool0_real(),.1,clock,
-                                   RobotStateFullRateLogger(path))
-            msg=SimpleNamespace(robot_state=2,actual_bk=[0]*6,
-                current_posj=[1]*6,current_velj=[2]*6,target_posj=[3]*6,
-                current_posx=[4]*6,current_tool_posx=[5]*6,
-                rotation_matrix=[[1,0,0],[0,1,0],[0,0,1]],
-                f_current_pos_world=[[6]*6,[7]*6],joint_err=[8]*6,
-                task_err=[9]*6,sync_time=10.0)
-            feedback.robot_state_callback(msg)
-            row=json.loads(path.read_text())
-            self.assertEqual(row["current_posx"],[4]*6)
-            self.assertEqual(row["f_current_pos_world"][1],[7]*6)
+    def test_feedback_spin_thread_updates_while_main_blocks(self):
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        msg=SimpleNamespace(name=[f"joint_{i}" for i in range(1,7)],
+            position=np.zeros(6),velocity=np.zeros(6),header=None)
+        class Executor:
+            def add_node(self,node):pass
+            def remove_node(self,node):pass
+            def spin_once(self,timeout_sec):
+                feedback.joint_state_callback(msg);time.sleep(.01)
+        spinner=FeedbackSpinThread(Executor(),object()).start()
+        try:
+            before=feedback._joint_messages
+            time.sleep(.5)  # Simulated blocking HTTP/image work on the main thread.
+            diag=feedback.diagnostics()
+            self.assertGreater(feedback._joint_messages-before,20)
+            self.assertLess(diag["joint_state_age_s"],.05)
+        finally:spinner.stop()
 
-    def test_camera_bgr_decode_and_stale(self):
+    def test_observation_process_block_does_not_age_control_feedback(self):
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        msg=SimpleNamespace(name=[f"joint_{i}" for i in range(1,7)],
+            position=np.zeros(6),velocity=np.zeros(6),header=None)
+        class Executor:
+            def add_node(self,node):pass
+            def remove_node(self,node):pass
+            def spin_once(self,timeout_sec):feedback.joint_state_callback(msg);time.sleep(.01)
+        spinner=FeedbackSpinThread(Executor(),object()).start()
+        ctx=mp.get_context("spawn");control,observation=ctx.Pipe()
+        process=ctx.Process(target=run_mock_blocking_observation,args=(observation,.5))
+        process.start();observation.close();max_age=0.0
+        try:
+            self.assertEqual(control.recv()["type"],"READY")
+            while process.is_alive():
+                time.sleep(.02);max_age=max(max_age,feedback.diagnostics()["joint_state_age_s"])
+            process.join();self.assertEqual(control.recv()["type"],"RESULT")
+            self.assertLess(max_age,.05)
+        finally:
+            if process.is_alive():process.terminate();process.join()
+            control.close();spinner.stop()
+
+    def test_feedback_warmup_requires_samples_after_start(self):
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        start=time.monotonic()
+        with self.assertRaisesRegex(RuntimeError,"FEEDBACK_NO_FIRST_SAMPLE:joint_states,robot_state"):
+            feedback.wait_for_samples_after(start,.01)
+
+    def test_mixed_joint_names_are_normalized_and_command_order_is_j1_to_j6(self):
+        clock=FakeClock();kin=PyKDLKinematics();feedback=RobotFeedback(
+            kin,ToolTransform.tool0_real(),.1,clock)
+        names=["joint_1","joint_2","joint_4","joint_5","joint_3","joint_6"]
+        values=np.deg2rad([1,2,4,5,3,6])
+        msg=SimpleNamespace(name=names,position=values,velocity=np.zeros(6),header=None)
+        feedback.joint_state_callback(msg);feedback.joint_state_callback(msg)
+        feedback._state=(clock(),1,.001);feedback._mode=(clock(),1);feedback._system=(clock(),0)
+        np.testing.assert_allclose(np.rad2deg(feedback.snapshot().joint_rad),[1,2,3,4,5,6])
+        class Pub:
+            def __init__(self):self.messages=[]
+            def publish(self,msg):self.messages.append(msg)
+        rc=dict(self.rc,servoj_time_unverified=.01,
+            servoj_velocity_unverified=1.,servoj_acceleration_unverified=2.)
+        sender=ServojPublisher(Pub(),SimpleNamespace,rc,PassGate(),enabled=True)
+        sender.publish(feedback.snapshot().joint_rad,clock())
+        np.testing.assert_allclose(sender.publisher.messages[0].pos,[1,2,3,4,5,6])
+
+    def test_joint_name_missing_and_duplicate_are_immediate_faults(self):
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        feedback.joint_state_callback(SimpleNamespace(name=["joint_1"]*6,
+            position=np.zeros(6),velocity=np.zeros(6),header=None))
+        self.assertIn("JOINT_STATE_DUPLICATE_NAME",feedback.stale_reasons())
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        feedback.joint_state_callback(SimpleNamespace(name=["joint_1","joint_2"],
+            position=np.zeros(2),velocity=np.zeros(2),header=None))
+        self.assertIn("JOINT_STATE_MISSING_NAME",feedback.stale_reasons())
+
+    def test_error_and_disconnection_topics_are_immediate_faults(self):
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        event=SimpleNamespace(level=3,group=1,code=99,msg1="x",msg2="",msg3="")
+        feedback.error_callback(event);feedback.disconnection_callback(event)
+        reasons=feedback.stale_reasons()
+        self.assertIn("ROBOT_ERROR_TOPIC",reasons)
+        self.assertIn("ROBOT_DISCONNECTION_TOPIC",reasons)
+
+    def test_preflight_requires_autonomous_real_standby(self):
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        msg=SimpleNamespace(name=[f"joint_{i}" for i in range(1,7)],
+            position=np.zeros(6),velocity=np.zeros(6),header=None)
+        feedback.joint_state_callback(msg);feedback.joint_state_callback(msg)
+        now=feedback.clock();feedback._state=(now,2,.001);feedback._mode=(now,0);feedback._system=(now,1)
+        reasons,_=feedback.preflight_reasons(now)
+        self.assertIn("ROBOT_MODE_NOT_AUTONOMOUS:0",reasons)
+        self.assertIn("ROBOT_SYSTEM_NOT_REAL:1",reasons)
+        self.assertIn("ROBOT_STATE_NOT_STANDBY:2",reasons)
+
+    def test_state_poll_failure_is_recorded_and_state_is_stale(self):
+        class Service:
+            class Request:pass
+        class Client:
+            srv_type=Service
+            def service_is_ready(self):return False
+        feedback=RobotFeedback(PyKDLKinematics(),ToolTransform.tool0_real())
+        feedback.clients["state"]=Client();feedback.poll_robot_state()
+        self.assertEqual(feedback.poll_events[-1]["error"],"SERVICE_NOT_READY")
+        self.assertIn("ROBOT_STATE_STALE",feedback.stale_reasons())
+
+    def test_canonical_robot_state_definition(self):
+        self.assertEqual((rs.RECOVERY,rs.SAFE_STOP2,rs.SAFE_OFF2),(8,9,10))
+        self.assertEqual(rs.CONTROLLER_STOP_STATES,{3,5,6,9,10})
+
+    def test_camera_new_frame_after_settle_and_no_action_repeat(self):
         clock=FakeClock(); camera=CameraFeedback(.1,clock)
+        stamp=SimpleNamespace(sec=10,nanosec=100)
         camera.callback(SimpleNamespace(height=1,width=1,step=3,encoding="bgr8",
-                                        data=bytes([1,2,3]),header=None))
+                                        data=bytes([1,2,3]),header=SimpleNamespace(stamp=stamp)))
+        self.assertEqual(camera.wait_for_first_frame(.01),0.0)
         rgb,_=camera.latest(); self.assertEqual(rgb.tolist(),[[[3,2,1]]])
-        clock.value=.11
-        with self.assertRaisesRegex(RuntimeError,"CAMERA_STALE"): camera.latest()
+        status,frame=camera.poll_frame_after(-.1,10_000_000_000,.5,now=0)
+        self.assertEqual(status,"FRAME");self.assertEqual(frame["receive_count"],1)
+        # The same frame cannot trigger another inference/action cycle.
+        status,frame=camera.poll_frame_after(0.0,10_000_000_100,.5,now=.1)
+        self.assertEqual((status,frame),("WAITING",None))
+
+    def test_camera_wait_timeout_is_normal_end_status_and_gap_is_log_only(self):
+        clock=FakeClock();camera=CameraFeedback(.1,clock)
+        with self.assertRaisesRegex(RuntimeError,"CAMERA_NO_FIRST_FRAME:timeout_s=0.001"):
+            camera.wait_for_first_frame(.001)
+        msg=SimpleNamespace(height=1,width=1,step=4,encoding="bgra8",data=bytes([1,2,3,255]),
+                            header=SimpleNamespace(stamp=SimpleNamespace(sec=1,nanosec=0)))
+        camera.callback(msg);clock.value=.04;camera.callback(msg);clock.value=.15
+        diag=camera.diagnostics()
+        self.assertAlmostEqual(diag["previous_receive_interval_s"],.04)
+        self.assertEqual(diag["receive_count"],2)
+        # Age > stale_s is no longer a continuous fault.
+        self.assertEqual(camera.latest()[0].tolist(),[[[3,2,1]]])
+        status,frame=camera.poll_frame_after(.15,2_000_000_000,10.0,now=10.15)
+        self.assertEqual((status,frame),("CAMERA_NO_FRAME_TIMEOUT",None))
+
+    def test_instruction_allowlist_requires_explicit_ood_flag(self):
+        from tools.dryrun_live import validate_instruction
+        self.assertTrue(validate_instruction("Pick up the blue cube."))
+        with self.assertRaisesRegex(ValueError,"OOD_INSTRUCTION_REQUIRES_EXPLICIT_FLAG"):
+            validate_instruction("Pick up the orange cube.")
+        self.assertFalse(validate_instruction("Pick up the orange cube.",True))
 
     def _stop_case(self,ack,states,velocities):
         clock=FakeClock()
@@ -96,6 +223,7 @@ class RuntimeTests(unittest.TestCase):
             def inhibit(self): self.inhibited=True
         class Feedback:
             def __init__(self): self.i=0
+            def poll_robot_state(self):self.polls=getattr(self,"polls",0)+1
             def snapshot(self,now):
                 i=min(self.i,len(velocities)-1);self.i+=1
                 return SimpleNamespace(joint_velocity_rad_s=np.ones(6)*velocities[i],
@@ -110,11 +238,12 @@ class RuntimeTests(unittest.TestCase):
         return coordinator.stop("test"),coordinator,servo
 
     def test_stop_normal(self):
-        result,_,servo=self._stop_case(True,[1]*8,[.1,0,0,0,0,0])
+        result,coordinator,servo=self._stop_case(True,[1]*8,[.1,0,0,0,0,0])
         self.assertEqual(result["state"],"STOP_CONFIRMED");self.assertTrue(servo.inhibited)
+        self.assertGreater(coordinator.feedback.polls,0)
 
     def test_stop_ack_failure_safe_stop_preceded(self):
-        result,_,_=self._stop_case(RuntimeError("ack"),[10]*8,[0]*8)
+        result,_,_=self._stop_case(RuntimeError("ack"),[9]*8,[0]*8)
         self.assertEqual(result["state"],"STOP_CONFIRMED")
         self.assertTrue(result["safe_state_preceded_ack_failure"])
 
@@ -130,7 +259,7 @@ class RuntimeTests(unittest.TestCase):
     def test_gate_requires_evidence_and_executor_confirmation(self):
         with tempfile.TemporaryDirectory() as directory:
             evidence=Path(directory)/"e.json";evidence.write_text("{}")
-            entries={name:GateEntry(True,str(evidence)) for name in
+            entries={name:GateEntry(True,str(evidence),"photo") for name in
                      ("pendant_limits_recorded","live_topics_verified",
                       "feedback_rate_verified")}
             gate=ExecutionGate(entries); gate.require("stop_test_movej")
@@ -145,10 +274,24 @@ class RuntimeTests(unittest.TestCase):
                 V2Executor(gate,physical_enabled=True).authorize(
                     "stop_test_movej","I_CONFIRM_V2_MODE:stop_test_movej")
 
+    def test_operator_attestation_evidence_type_and_schema(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/"attestation.json"
+            path.write_text(json.dumps({"items":[{"item":"limits","value":"default"}],
+                "verification_method":"펜던트 화면 직접 확인","date":"2026-11-13",
+                "operator":"tester","photo_omission_reason":"operator decision"}))
+            gate=ExecutionGate({name:GateEntry(True,str(path),"operator_attestation")
+                for name in ("pendant_limits_recorded","live_topics_verified",
+                              "feedback_rate_verified")})
+            gate.require("stop_test_movej")
+            bad=ExecutionGate({"pendant_limits_recorded":GateEntry(True,str(path),"scan")})
+            self.assertIn("pendant_limits_recorded:evidence_type_invalid",
+                          bad.audit("stop_test_movej"))
+
     def test_mode_specific_gate_contracts(self):
         with tempfile.TemporaryDirectory() as directory:
             evidence=Path(directory)/"e.json";evidence.write_text("{}")
-            passed=lambda names: ExecutionGate({name:GateEntry(True,str(evidence))
+            passed=lambda names: ExecutionGate({name:GateEntry(True,str(evidence),"photo")
                                                 for name in names})
             gripper=("pendant_limits_recorded","live_topics_verified",
                      "gripper_wiring_recorded","arm_stationary_verified")
@@ -188,6 +331,45 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(duplicate["state"],"suppressed")
         self.assertEqual([(x["index"],x["value"]) for x in closed["writes"]],[(2,1),(2,0)])
         self.assertAlmostEqual(clock.value,2.5)
+
+    def test_level_gripper_interlock_readback_and_state_changes(self):
+        class IO:
+            def __init__(self):self.state={1:0,2:0};self.writes=[]
+            def set_tool_digital_output(self,index,value):
+                self.state[index]=value;self.writes.append((index,value,dict(self.state)))
+                return {"success":True}
+            def get_tool_digital_output(self,index):return {"success":True,"value":self.state[index]}
+        io=IO();gripper=LevelIOGripper(io,PassGate(),self.rc,enabled=True)
+        opened=gripper.command_model_value(.1);duplicate=gripper.command_model_value(.2)
+        closed=gripper.command_model_value(.9)
+        self.assertEqual([(w["index"],w["value"]) for w in opened["writes"]],[(2,0),(1,1)])
+        self.assertEqual([(w["index"],w["value"]) for w in closed["writes"]],[(1,0),(2,1)])
+        self.assertEqual(duplicate["state"],"suppressed")
+        self.assertFalse(any(snapshot[1]==1 and snapshot[2]==1 for _,_,snapshot in io.writes))
+        self.assertEqual(io.state,{1:0,2:1})
+
+    def test_level_gripper_readback_mismatch_faults_and_turns_both_off(self):
+        class IO:
+            def __init__(self):self.state={1:0,2:0}
+            def set_tool_digital_output(self,index,value):self.state[index]=value;return {"success":True}
+            def get_tool_digital_output(self,index):return {"success":True,"value":1}
+        io=IO();event=LevelIOGripper(io,PassGate(),self.rc,enabled=True).command_model_value(.1)
+        self.assertEqual(event["state"],"fault")
+        self.assertIn("GRIPPER_POLARITY_MISMATCH",event["reason"])
+        self.assertEqual(io.state,{1:0,2:0})
+
+    def test_level_gripper_policy_is_record_only_when_disabled(self):
+        class IO:
+            def set_tool_digital_output(self,**kwargs):raise AssertionError("must not write")
+            def get_tool_digital_output(self,**kwargs):raise AssertionError("must not read")
+        event=LevelIOGripper(IO(),PassGate(),self.rc,enabled=False).command_model_value(.9)
+        self.assertEqual(event["state"],"record_only")
+        with self.assertRaisesRegex(PermissionError,"gripper_io_verified"):
+            LevelIOGripper(IO(),ExecutionGate(),self.rc,enabled=True,
+                           execution_mode="policy")
+
+    def test_gripper_factory_defaults_to_level(self):
+        self.assertIsInstance(create_gripper(object(),PassGate(),self.rc),LevelIOGripper)
 
 
 if __name__=="__main__": unittest.main()

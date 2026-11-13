@@ -1,0 +1,124 @@
+1794529370.2868707 [INFO] [launch]: All log files can be found below /home/ubuntu/.ros/log/2026-11-13-09-22-50-286220-scps1-74632
+1794529370.2869632 [INFO] [launch]: Default logging verbosity is set to INFO
+1794529370.6613564 [WARNING] [launch_ros.actions.node]: Parameter file path is not a file: /home/ubuntu/robot_ws/install/dsr_controller2/share/dsr_controller2/config/dsr_update_rate.yaml
+1794529370.6664267 [INFO] [robot_state_publisher-1]: process started with pid [74640]
+1794529370.6665671 [INFO] [rviz2-2]: process started with pid [74642]
+1794529370.6666594 [INFO] [spawner-3]: process started with pid [74644]
+1794529370.6667371 [INFO] [spawner-4]: process started with pid [74646]
+1794529370.6668119 [INFO] [ros2_control_node-5]: process started with pid [74648]
+1794529370.6928227 [robot_state_publisher-1] [INFO] [1794529370.692561355] [dsr01.robot_state_publisher]: got segment base_link
+1794529370.6931014 [robot_state_publisher-1] [INFO] [1794529370.692642420] [dsr01.robot_state_publisher]: got segment link_1
+1794529370.6931694 [robot_state_publisher-1] [INFO] [1794529370.692653405] [dsr01.robot_state_publisher]: got segment link_2
+1794529370.6932216 [robot_state_publisher-1] [INFO] [1794529370.692658538] [dsr01.robot_state_publisher]: got segment link_3
+1794529370.6932685 [robot_state_publisher-1] [INFO] [1794529370.692662755] [dsr01.robot_state_publisher]: got segment link_4
+1794529370.6933134 [robot_state_publisher-1] [INFO] [1794529370.692667056] [dsr01.robot_state_publisher]: got segment link_5
+1794529370.6933572 [robot_state_publisher-1] [INFO] [1794529370.692671105] [dsr01.robot_state_publisher]: got segment link_6
+1794529370.6934011 [robot_state_publisher-1] [INFO] [1794529370.692675169] [dsr01.robot_state_publisher]: got segment world
+1794529370.7031655 [ros2_control_node-5] [WARN] [1794529370.702925909] [dsr01.controller_manager]: [Deprecated] Passing the robot description parameter directly to the control_manager node is deprecated. Use '~/robot_description' topic from 'robot_state_publisher' instead.
+1794529370.7035446 [ros2_control_node-5] [INFO] [1794529370.703241893] [resource_manager]: Loading hardware 'a0509' 
+1794529370.7112565 [ros2_control_node-5] [INFO] [1794529370.711042817] [resource_manager]: Initialize hardware 'a0509' 
+1794529370.7116764 [ros2_control_node-5] [INFO] [1794529370.711295486] [dsr_hw_interface2]: model : a0509
+1794529370.7117639 [ros2_control_node-5] [INFO] [1794529370.711306314] [dsr_hw_interface2]: mode : real
+1794529370.7118182 [ros2_control_node-5] [INFO] [1794529370.711310239] [dsr_hw_interface2]: update_rate : 100
+1794529370.7118664 [ros2_control_node-5] [INFO] [1794529370.711319936] [dsr_hw_interface2]: port : 12345
+1794529370.7119126 [ros2_control_node-5] [INFO] [1794529370.711323544] [dsr_hw_interface2]: rt_host : 192.168.137.50
+1794529370.7119575 [ros2_control_node-5] [INFO] [1794529370.711326692] [dsr_hw_interface2]: host : 192.168.0.110
+1794529370.7120013 [ros2_control_node-5] [INFO] [1794529370.711374276] [dsr_hw_interface2]: [on_init] Hardware name : a0509, type : system, class type : dsr_hardware2/DRHWInterface
+1794529370.7120466 [ros2_control_node-5] [INFO] [1794529370.711451594] [dsr_hw_interface2]: _______________________________________________
+1794529370.7120900 [ros2_control_node-5] 
+1794529370.7121339 [ros2_control_node-5] [INFO] [1794529370.711456040] [dsr_hw_interface2]:     INITAILIZE
+1794529370.7121928 [ros2_control_node-5] [INFO] [1794529370.711459056] [dsr_hw_interface2]: _______________________________________________
+1794529370.7122526 [ros2_control_node-5] 
+1794529370.9815147 [spawner-4] [INFO] [1794529370.981306814] [dsr01.spawner_joint_state_broadcaster]: waiting for service /dsr01/controller_manager/list_controllers to become available...
+1794529370.9849877 [spawner-3] [INFO] [1794529370.984879032] [dsr01.spawner_dsr_controller2]: waiting for service /dsr01/controller_manager/list_controllers to become available...
+1794529371.5244179 [rviz2-2] [INFO] [1794529371.524186451] [rviz2]: Stereo is NOT SUPPORTED
+1794529371.5245218 [rviz2-2] [INFO] [1794529371.524240392] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+1794529371.7130303 [ros2_control_node-5] Timeout: connect timed out: 192.168.0.110:12345
+1794529371.7131567 [ros2_control_node-5] Connect Failed Please check network state : Timeout
+1794529371.7133698 [ros2_control_node-5] [INFO] [1794529371.712832779] [dsr_hw_interface2]: Connecting failure.. retry...
+1794529371.8380029 [rviz2-2] [INFO] [1794529371.837577159] [rviz2]: Stereo is NOT SUPPORTED
+1794529373.2150302 [ros2_control_node-5] Timeout: connect timed out: 192.168.0.110:12345
+1794529373.2151783 [ros2_control_node-5] Connect Failed Please check network state : Timeout
+1794529373.2154410 [ros2_control_node-5] [INFO] [1794529373.214824876] [dsr_hw_interface2]: Connecting failure.. retry...
+1794529374.7165506 [ros2_control_node-5] Timeout: connect timed out: 192.168.0.110:12345
+1794529374.7167776 [ros2_control_node-5] Connect Failed Please check network state : Timeout
+1794529374.7205584 [ros2_control_node-5] [INFO] [1794529374.716259476] [dsr_hw_interface2]: Connecting failure.. retry...
+1794529376.2170300 [ros2_control_node-5] Timeout: connect timed out: 192.168.0.110:12345
+1794529376.2171874 [ros2_control_node-5] Connect Failed Please check network state : Timeout
+1794529376.2174542 [ros2_control_node-5] [INFO] [1794529376.216811579] [dsr_hw_interface2]: Connecting failure.. retry...
+1794529377.7180054 [ros2_control_node-5] Timeout: connect timed out: 192.168.0.110:12345
+1794529377.7181594 [ros2_control_node-5] Connect Failed Please check network state : Timeout
+1794529377.7184167 [ros2_control_node-5] [INFO] [1794529377.717823358] [dsr_hw_interface2]: Connecting failure.. retry...
+1794529379.2192919 [ros2_control_node-5] Timeout: connect timed out: 192.168.0.110:12345
+1794529379.2194245 [ros2_control_node-5] Connect Failed Please check network state : Timeout
+1794529379.2196507 [ros2_control_node-5] [INFO] [1794529379.219095632] [dsr_hw_interface2]: Connecting failure.. retry...
+1794529379.8223255 [ros2_control_node-5] [INFO] [1794529379.822095664] [dsr_hw_interface2]: Connected to DRCF
+1794529379.8224518 [ros2_control_node-5] [INFO] [1794529379.822132711] [dsr_hw_interface2]: INITIAL MANAGE_ACCESS_CONTROL_FORCE_REQUEST called
+1794529379.8233292 [ros2_control_node-5] [INFO] [1794529379.823186282] [dsr_hw_interface2]: AUTHORITY : MONITORING_ACCESS_CONTROL_GRANT
+1794529379.8234057 [ros2_control_node-5] [INFO] [1794529379.823204370] [dsr_hw_interface2]: INITIAL AUTHORITY GRANTED !!!
+1794529379.8236060 [ros2_control_node-5] [INFO] [1794529379.823327550] [dsr_hw_interface2]: ROBOT_STATE : STATE_SAFE_OFF
+1794529380.9986184 [spawner-4] [WARN] [1794529380.998218427] [dsr01.spawner_joint_state_broadcaster]: Could not contact service /dsr01/controller_manager/list_controllers
+1794529380.9991395 [spawner-4] [INFO] [1794529380.998792335] [dsr01.spawner_joint_state_broadcaster]: waiting for service /dsr01/controller_manager/list_controllers to become available...
+1794529380.9995050 [spawner-3] [WARN] [1794529380.999351347] [dsr01.spawner_dsr_controller2]: Could not contact service /dsr01/controller_manager/list_controllers
+1794529380.9998696 [spawner-3] [INFO] [1794529380.999728172] [dsr01.spawner_dsr_controller2]: waiting for service /dsr01/controller_manager/list_controllers to become available...
+1794529381.2072110 [ros2_control_node-5] [INFO] [1794529381.206838631] [dsr_hw_interface2]: INITIAL CONTROL_SERVO_ON called
+1794529382.2275279 [ros2_control_node-5] [INFO] [1794529382.227130699] [dsr_hw_interface2]: INITIAL CONTROL_SERVO_ON called
+1794529383.2476168 [ros2_control_node-5] [INFO] [1794529383.247391820] [dsr_hw_interface2]: INITIAL CONTROL_SERVO_ON called
+1794529384.2681971 [ros2_control_node-5] [INFO] [1794529384.267711967] [dsr_hw_interface2]: INITIAL CONTROL_SERVO_ON called
+1794529385.2883439 [ros2_control_node-5] [INFO] [1794529385.288114990] [dsr_hw_interface2]: INITIAL CONTROL_SERVO_ON called
+1794529385.8566277 [ros2_control_node-5] [INFO] [1794529385.856402805] [dsr_hw_interface2]: ROBOT_STATE : STATE_STANDBY
+1794529385.8567591 [ros2_control_node-5] [INFO] [1794529385.856422094] [dsr_hw_interface2]: INITIAL STATE_STANDBY !!!
+1794529386.2884421 [ros2_control_node-5] [INFO] [1794529386.288210867] [dsr_hw_interface2]: _______________________________________________
+1794529386.2885695 [ros2_control_node-5] 
+1794529386.2886271 [ros2_control_node-5] [INFO] [1794529386.288234991] [dsr_hw_interface2]:     OPEN CONNECTION
+1794529386.2886760 [ros2_control_node-5] [INFO] [1794529386.288238807] [dsr_hw_interface2]: _______________________________________________
+1794529386.2887220 [ros2_control_node-5] 
+1794529386.2887783 [ros2_control_node-5] [INFO] [1794529386.288242303] [dsr_hw_interface2]:     Real Robot Mode
+1794529386.2890165 [ros2_control_node-5] [INFO] [1794529386.288645523] [dsr_hw_interface2]:     DRCF version = GF02120200
+1794529386.2890785 [ros2_control_node-5] [INFO] [1794529386.288658912] [dsr_hw_interface2]:     DRFL version = GL013303
+1794529386.2891273 [ros2_control_node-5] [INFO] [1794529386.288661972] [dsr_hw_interface2]:     m_nVersionDRCF = 2120200
+1794529386.2891722 [ros2_control_node-5] [INFO] [1794529386.288664799] [dsr_hw_interface2]: _______________________________________________
+1794529386.2892158 [ros2_control_node-5] 
+1794529386.2893648 [ros2_control_node-5] Depreciated API.. deleted soon.
+1794529386.2894216 [ros2_control_node-5]  Please use 'set_on_monitoring_ctrl_io_ex'.
+1794529386.3295410 [ros2_control_node-5] usClientPort : 47191
+1794529386.4310894 [ros2_control_node-5] [INFO] [1794529386.430711148] [dsr_hw_interface2]: Connected RT control stream
+1794529386.4313018 [ros2_control_node-5] [INFO] [1794529386.430802069] [dsr_hw_interface2]: Setting velocity and acceleration limits
+1794529386.4512384 [ros2_control_node-5] [INFO] [1794529386.451016982] [resource_manager]: Successful initialization of hardware 'a0509'
+1794529386.4515414 [ros2_control_node-5] [INFO] [1794529386.451271770] [resource_manager]: 'configure' hardware 'a0509' 
+1794529386.4516103 [ros2_control_node-5] [INFO] [1794529386.451282176] [resource_manager]: Successful 'configure' of hardware 'a0509'
+1794529386.4516647 [ros2_control_node-5] [INFO] [1794529386.451288896] [resource_manager]: 'activate' hardware 'a0509' 
+1794529386.4517133 [ros2_control_node-5] [INFO] [1794529386.451293040] [resource_manager]: Successful 'activate' of hardware 'a0509'
+1794529386.4548988 [ros2_control_node-5] [INFO] [1794529386.454762713] [dsr01.controller_manager]: update rate is 100 Hz
+1794529386.4549763 [ros2_control_node-5] [INFO] [1794529386.454787038] [dsr01.controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50
+1794529386.4551795 [ros2_control_node-5] [WARN] [1794529386.454865047] [dsr01.controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.
+1794529386.4552464 [ros2_control_node-5] [WARN] [1794529386.454967014] [dsr_hw_interface2]: [REAL] Skip dt=0.000000 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.5076210 [ros2_control_node-5] [INFO] [1794529386.507194600] [dsr01.controller_manager]: Loading controller 'joint_state_broadcaster'
+1794529386.5254679 [ros2_control_node-5] [INFO] [1794529386.525256681] [dsr01.controller_manager]: Loading controller 'dsr_controller2'
+1794529386.5261121 [spawner-4] [INFO] [1794529386.526010338] [dsr01.spawner_joint_state_broadcaster]: [94mLoaded [1mjoint_state_broadcaster[0m
+1794529386.5492110 [ros2_control_node-5] [INFO] [1794529386.548965869] [dsr_hw_interface2]: [DRFL address] 0x7ccb6c54ab00
+1794529386.5553539 [ros2_control_node-5] [INFO] [1794529386.555214704] [dsr01.controller_manager]: Configuring controller 'joint_state_broadcaster'
+1794529386.5556304 [ros2_control_node-5] [INFO] [1794529386.555293330] [dsr01.joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+1794529386.5560248 [spawner-3] [INFO] [1794529386.555933880] [dsr01.spawner_dsr_controller2]: [94mLoaded [1mdsr_controller2[0m
+1794529386.5652392 [ros2_control_node-5] [INFO] [1794529386.565081485] [dsr01.controller_manager]: Configuring controller 'dsr_controller2'
+1794529386.5655246 [ros2_control_node-5] Depreciated API.. deleted soon.
+1794529386.5655935 [ros2_control_node-5]  Please use 'set_on_monitoring_ctrl_io_ex'.
+1794529386.5966654 [spawner-4] [INFO] [1794529386.596219980] [dsr01.spawner_joint_state_broadcaster]: [92mConfigured and activated [1mjoint_state_broadcaster[0m
+1794529386.7607505 [ros2_control_node-5] [WARN] [1794529386.760230001] [dsr_hw_interface2]: [REAL] Skip dt=0.155193 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7609856 [ros2_control_node-5] [WARN] [1794529386.760289968] [dsr_hw_interface2]: [REAL] Skip dt=0.000094 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7610521 [ros2_control_node-5] [WARN] [1794529386.760309853] [dsr_hw_interface2]: [REAL] Skip dt=0.000024 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7610996 [ros2_control_node-5] [WARN] [1794529386.760327765] [dsr_hw_interface2]: [REAL] Skip dt=0.000018 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7611439 [ros2_control_node-5] [WARN] [1794529386.760346092] [dsr_hw_interface2]: [REAL] Skip dt=0.000018 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7611868 [ros2_control_node-5] [WARN] [1794529386.760363640] [dsr_hw_interface2]: [REAL] Skip dt=0.000018 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7614682 [ros2_control_node-5] [WARN] [1794529386.760381607] [dsr_hw_interface2]: [REAL] Skip dt=0.000018 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7615297 [ros2_control_node-5] [WARN] [1794529386.760400080] [dsr_hw_interface2]: [REAL] Skip dt=0.000018 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7615874 [ros2_control_node-5] [WARN] [1794529386.760420399] [dsr_hw_interface2]: [REAL] Skip dt=0.000019 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7616348 [ros2_control_node-5] [WARN] [1794529386.760442453] [dsr_hw_interface2]: [REAL] Skip dt=0.000020 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7616787 [ros2_control_node-5] [WARN] [1794529386.760462140] [dsr_hw_interface2]: [REAL] Skip dt=0.000022 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7617207 [ros2_control_node-5] [WARN] [1794529386.760484983] [dsr_hw_interface2]: [REAL] Skip dt=0.000020 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7619739 [ros2_control_node-5] [WARN] [1794529386.760569178] [dsr_hw_interface2]: [REAL] Skip dt=0.000083 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7620380 [ros2_control_node-5] [WARN] [1794529386.760594314] [dsr_hw_interface2]: [REAL] Skip dt=0.000027 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7620854 [ros2_control_node-5] [WARN] [1794529386.760618587] [dsr_hw_interface2]: [REAL] Skip dt=0.000024 (expected=0.010000, allowed=[0.003000, 0.015000])
+1794529386.7622392 [spawner-3] [INFO] [1794529386.761418487] [dsr01.spawner_dsr_controller2]: [92mConfigured and activated [1mdsr_controller2[0m
+1794529386.7790215 [INFO] [spawner-4]: process has finished cleanly [pid 74646]
+1794529386.9116247 [INFO] [spawner-3]: process has finished cleanly [pid 74644]

@@ -1,6 +1,7 @@
 from __future__ import annotations
 import time
 import numpy as np
+from runtime import robot_state as rs
 
 
 class StopCoordinator:
@@ -23,9 +24,11 @@ class StopCoordinator:
         except Exception as error:
             event["ack"]={"success":False,"error":str(error)}
         deadline=requested+float(self.config["stop_confirmation_timeout_s_candidate"])
-        zero_since=None; safe_states=set(self.config["safe_stop_states"])
+        zero_since=None; safe_states=rs.CONTROLLER_STOP_STATES
         while self.clock() <= deadline:
             try:
+                poll=getattr(self.feedback,"poll_robot_state",None)
+                if poll is not None:poll()
                 sample=self.feedback.snapshot(self.clock())
                 speed=float(np.max(np.abs(sample.joint_velocity_rad_s)))
                 row={"time":self.clock(),"max_abs_velocity_rad_s":speed,

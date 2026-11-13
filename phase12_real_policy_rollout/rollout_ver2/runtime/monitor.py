@@ -3,6 +3,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 from controller.precheck import (joint_margin_reasons, singularity_reason,
                                  starting_home_reasons,joint_envelope_status)
+from runtime import robot_state as rs
 
 
 class RuntimeMonitor:
@@ -14,7 +15,7 @@ class RuntimeMonitor:
         reasons=self.feedback.stale_reasons(now)
         try: snapshot=self.feedback.snapshot(now)
         except RuntimeError as error: return reasons+[str(error)], None
-        if snapshot.robot_state not in set(self.rc["allowed_running_states"]):
+        if snapshot.robot_state not in rs.ALLOWED_RUNNING_STATES:
             reasons.append(f"ROBOT_STATE_NOT_RUNNING:{snapshot.robot_state}")
         reasons.extend(joint_margin_reasons(snapshot.joint_rad, self.cc))
         singular, sigma=singularity_reason(snapshot.joint_rad, self.kin, self.cc)
@@ -32,8 +33,7 @@ class RuntimeMonitor:
 
     def check_start(self, now=None):
         """One-shot gate before any command; it never moves the robot."""
-        reasons=self.feedback.stale_reasons(now)
-        try: snapshot=self.feedback.snapshot(now)
-        except RuntimeError as error: return reasons+[str(error)],None
+        reasons,snapshot=self.feedback.preflight_reasons(now)
+        if snapshot is None:return reasons,None
         reasons.extend(starting_home_reasons(snapshot.joint_rad,self.cc))
         return reasons,snapshot

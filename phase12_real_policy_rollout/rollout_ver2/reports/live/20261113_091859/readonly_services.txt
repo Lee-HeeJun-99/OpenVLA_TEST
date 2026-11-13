@@ -1,0 +1,90 @@
+=== joint_states 1개 (단위, 관절 이름 순서, header.stamp) ===
+A message was lost!!!
+	total count change:1
+	total count: 1---
+header:
+  stamp:
+    sec: 1794529890
+    nanosec: 754968334
+  frame_id: base_link
+name:
+- joint_1
+- joint_2
+- joint_4
+- joint_5
+- joint_3
+- joint_6
+position:
+- 0.0022285007871687412
+- -0.00022266796440817416
+- 0.00023752317065373063
+- -0.0017089154571294785
+- -0.0008851595921441913
+- 0.0005868799635209143
+velocity:
+- 0.0
+- 0.0
+- 0.0
+- -0.0
+- -0.0
+- 0.0
+effort:
+- .nan
+- .nan
+- .nan
+- .nan
+- .nan
+- .nan
+---
+=== robot_state / mode / system ===
+requester: making request: dsr_msgs2.srv.GetRobotState_Request()
+
+response:
+dsr_msgs2.srv.GetRobotState_Response(robot_state=1, success=True)
+
+requester: making request: dsr_msgs2.srv.GetRobotMode_Request()
+
+response:
+dsr_msgs2.srv.GetRobotMode_Response(robot_mode=1, success=True)
+
+requester: making request: dsr_msgs2.srv.GetRobotSystem_Request()
+
+response:
+dsr_msgs2.srv.GetRobotSystem_Response(robot_system=0, success=True)
+
+=== 현재 관절각 (컨트롤러 기준) ===
+requester: making request: dsr_msgs2.srv.GetCurrentPosj_Request()
+
+response:
+dsr_msgs2.srv.GetCurrentPosj_Response(pos=array([ 0.12768368, -0.01275793, -0.05071591,  0.01360907, -0.09791365,
+        0.03362574]), success=True)
+
+=== 플랜지 자세 / 회전행렬 ===
+requester: making request: dsr_msgs2.srv.GetCurrentToolFlangePosx_Request(ref=0)
+
+response:
+dsr_msgs2.srv.GetCurrentToolFlangePosx_Response(pos=array([-1.39588702e+00, -7.26214349e-02,  1.05525928e+03,  1.73716080e+02,
+        1.62247047e-01, -1.73634323e+02]), success=True)
+
+requester: making request: dsr_msgs2.srv.GetCurrentRotm_Request(ref=0)
+
+response:
+dsr_msgs2.srv.GetCurrentRotm_Response(rot_matrix=[std_msgs.msg.Float64MultiArray(layout=std_msgs.msg.MultiArrayLayout(dim=[], data_offset=0), data=[0.9999949932098389, -0.001426502363756299, -0.002814727369695902]), std_msgs.msg.Float64MultiArray(layout=std_msgs.msg.MultiArrayLayout(dim=[], data_offset=0), data=[0.0014273803681135178, 0.999998927116394, 0.0003099492460023612]), std_msgs.msg.Float64MultiArray(layout=std_msgs.msg.MultiArrayLayout(dim=[], data_offset=0), data=[0.0028142821975052357, -0.00031396537087857723, 0.9999960064888])], success=True)
+
+=== 툴 / TCP 설정 ===
+requester: making request: dsr_msgs2.srv.GetCurrentTool_Request()
+
+response:
+dsr_msgs2.srv.GetCurrentTool_Response(info='', success=True)
+
+requester: making request: dsr_msgs2.srv.GetCurrentTcp_Request()
+
+response:
+dsr_msgs2.srv.GetCurrentTcp_Response(info='Tool_v1', success=True)
+
+=== 마지막 알람 ===
+requester: making request: dsr_msgs2.srv.GetLastAlarm_Request()
+
+response:
+dsr_msgs2.srv.GetLastAlarm_Response(log_alarm=dsr_msgs2.msg.LogAlarm(level=0, group=0, index=0, param=['', '', '']), success=True)
+

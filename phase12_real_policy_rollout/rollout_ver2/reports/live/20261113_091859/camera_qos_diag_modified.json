@@ -1,0 +1,29 @@
+{
+  "topic": "/zed/zed_node/rgb/color/rect/image",
+  "measurement_order": [
+    "reliable_depth1_volatile"
+  ],
+  "cases": [
+    {
+      "qos": "reliable_depth1_volatile",
+      "duration_s": 20.006389109999873,
+      "received_frames": 457,
+      "receive_rate_hz": 22.842702772964458,
+      "reception_percent_of_30hz": 76.14234257654819,
+      "interval_ms": {
+        "p50": 33.3495795057388,
+        "p99": 166.5731893095653,
+        "max": 238.50233500706963
+      },
+      "callback_including_bgra_to_rgb_ms": {
+        "p50": 0.002888991730287671,
+        "p99": 0.007138185901567339,
+        "max": 0.011205003829672933
+      },
+      "interval_over_100ms_count": 40,
+      "interval_over_1s_count": 0,
+      "minimal_callback": true,
+      "converted_rgb_bytes": null
+    }
+  ]
+}
