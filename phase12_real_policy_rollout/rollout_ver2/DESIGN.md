@@ -136,7 +136,16 @@
 - **[확인(현장)]** pendant TCP `Tool_v1` offset은 `[0,0,0 mm,0,0,0°]`라 posx=flange다. payload의 `get_current_tool` 응답은 빈 문자열이며 v1 동일 조건 유지를 위해 변경하지 않는다. controller software는 통합 `GV02120200`, 메인 `GF02120200`, 안전 `GD12120200`, 인버터 `GA33030300`이다. 펜던트 Tool_v1의 Controller Digital 출력1/입력1 항목은 실제 X1 배선과 무관한 legacy 항목이다. **출처:** `operator_attestation.json`; 사용자 결정(2026-11-13).
 - **[미확인]** Servoj time/vel/acc, tracking calibration, stop_test_servoj와 그리퍼 실제 I/O 결과가 남았다. MoveJoint acceleration 10°/s²와 MoveStop mode 1은 현장 시험으로 확인됐다. **출처:** `runtime/runtime_config.json`; `runtime/gates.json`; `docs/first_live_session.md`.
 
-## 10. 열린 항목(우선순위)
+## 10. ServoJ 방식 A 계획(오프라인 구현, 실기 미검증)
+
+- **[확인(설계·오프라인 구현 2026-11-13)]** 행동 하나는 명령 `tool0_real` 자세에 `world_left` action을 누적한 목표로 정의한다. 고정 T 후보 0.4/0.6/1.0 s에서 위치 선형·회전 slerp를 minimum-jerk 시간척도로 100 Hz 표본화한다. 전 표본 IK는 직전 해 seed로 발행 전에 계산하며 pendant-5° margin, 표본 관절 변화, 후보 속도/가속도, `σmin` 및 workspace 중 하나라도 실패하면 action을 수정하지 않고 구간 전체를 거부한다. **출처:** `runtime/servoj/planner.py`; 사용자 작업 지시.
+- **[확인(오프라인 구조)]** 전송은 제어/안전 프로세스 A의 전용 absolute-deadline thread만 담당한다. 프로세스 B는 정착 이후 frame/JPEG/inference만 담당한다. 전송 중 command-vs-JointState 관절 오차, 0.1 s freshness, robot state `{1,2}`, error/disconnection과 joint margin을 매 표본 감시하고 이상 시 publisher inhibit 후 기존 MoveStop/zero-speed 경로로 들어간다. 마지막 목표 뒤 `|qdot|≤0.001 rad/s` 0.3 s 및 도착 오차 후보를 만족한 후에만 다음 관측을 요청한다. **출처:** `runtime/servoj/stream.py`; `runtime/servoj/tracking.py`; `runtime/servoj/mode_a.py`.
+- **[확인(텔레메트리 계획)]** ServoJ step은 기존 policy_movej 필드에 `servoj_sent_count`, send jitter p50/p99/max, 최대 관절 추종오차, `segment_T_s`, IK precheck/move/settle/total 시간을 추가하고 system monitor를 자동 시작한다. 출력은 `reports/live/<session>/policy_servoj/<timestamp>/`다. **출처:** `docs/servoj_session.md`.
+- **[확인(오프라인 재생)]** 20261113_140038의 222 action을 strict-primary/fallback DLS로 재생한 결과 T=0.4/0.6/1.0 s 모두 IK·margin·sigma·속도·가속도 위반 0개였다. 최대 후보 한계 사용률은 T별 속도 8.96/5.98/3.59%, 가속도 73.47/32.69/11.78%다. 이는 실제 controller 추종 성능을 확인한 결과가 아니다. **출처:** `reports/servoj_offline/servoj_offline.md`; `analysis.json`.
+- **[미확인]** `ServojStream.time`의 controller 내 정확한 의미, 승인할 vel/acc/time 값, stream 전송 중단 시 마지막 목표 유지/감속 거동, 실제 100 Hz jitter와 추종 지연·overshoot는 현장 hold→time 탐색→stop 순으로 확인해야 한다. `servoj_time_param_verified`, `tracking_thresholds_calibrated`, `arm_stationary_verified`, `stop_servoj_verified`는 계속 false이며 추론으로 열지 않는다. **출처:** `runtime/gates.json`; `docs/servoj_session.md`.
+- **[확인(안전 상태)]** 이번 산출물의 field tool은 ROS 명령 객체를 생성하지 않는 fail-closed 초안이다. 현장 adapter review와 해당 gate evidence 전에는 `FIELD_ADAPTER_REVIEW_REQUIRED`로 끝난다. MoveJ 경로와 테스트는 변경하지 않았다. **출처:** `tools/servoj_*.py`; `tools/policy_servoj.py`; `runtime/servoj/session_contract.py`.
+
+## 11. 열린 항목(우선순위)
 
 1. **[확인·종료]** sim world ↔ robot base 변환: 현재 Isaac runtime/scene 및 `base_link` 기준 `R_world_base≈I`; translation은 약 `[-0.000389,-0.000257,0.823526] m`. 다른 scene/base-yaw 인자에는 재적용할 수 없으므로 scene별 metadata 보존이 필요하다.
 2. **[부분 종료]** matched15 sim 적용 규약과 평가 지시문은 확인했다. legacy 학습 dataset 자체의 instruction/action 생성 provenance는 학습 server `/mnt/SSD1` manifest 확인이 여전히 필요하다.
