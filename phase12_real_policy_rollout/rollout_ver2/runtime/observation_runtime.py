@@ -27,6 +27,9 @@ class ObservationRuntime:
              "raw_action":action.raw.tolist(),
              "arm_endpoint_min":action.endpoint_min[:6].tolist(),
              "arm_endpoint_max":action.endpoint_max[:6].tolist()}
+        if "server_timing" in response:row["server_timing"]=dict(response["server_timing"])
+        if response.get("model") is not None:row["server_model"]=response["model"]
+        if response.get("checkpoint") is not None:row["server_checkpoint"]=response["checkpoint"]
         row["processing_timing"]={"started_monotonic":started,
           "preprocess_completed_monotonic":preprocessed,
           "image_write_completed_monotonic":image_written,

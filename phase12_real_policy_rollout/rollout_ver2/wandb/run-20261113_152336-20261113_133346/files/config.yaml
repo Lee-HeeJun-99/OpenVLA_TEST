@@ -1,0 +1,219 @@
+_wandb:
+    value:
+        cli_version: 0.31.0
+        e:
+            01a1d393-6dd0-75fb-9ab2-98a875d93e8c:
+                args:
+                    - --all
+                    - reports/live/20261113_091859/policy_movej
+                codePath: phase12_real_policy_rollout/rollout_ver2/tools/wandb_upload.py
+                codePathLocal: tools/wandb_upload.py
+                cpu:
+                    model: Intel(R) Core(TM) i9-10900 CPU @ 2.80GHz
+                cpu_count: 10
+                cpu_count_logical: 20
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "525230006272"
+                        used: "423817535488"
+                email: jungjunho1110@gmail.com
+                executable: /home/ubuntu/.local/bin/python
+                git:
+                    commit: 41690637f63ca88edd9448e1f73f4aea458d3dd9
+                    remote: https://github.com/Lee-HeeJun-99/OpenVLA_TEST.git
+                gpu: NVIDIA GeForce RTX 3090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10496
+                      memoryTotal: "25769803776"
+                      name: NVIDIA GeForce RTX 3090
+                      pciBusId: "00000000:01:00.0"
+                      uuid: GPU-a3ab2618-389f-8cbc-8fe6-2eec1c3edd40
+                host: scps1
+                memory:
+                    total: "33484689408"
+                os: Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+                program: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2/tools/wandb_upload.py
+                python: CPython 3.10.12
+                root: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2
+                startedAt: "2026-11-13T06:23:36.909955Z"
+                writerId: 01a1d393-6dd0-75fb-9ab2-98a875d93e8c
+        m:
+            - "1": step
+              "6":
+                - 3
+              "7": []
+            - "1": t_s
+              "6":
+                - 3
+              "7": []
+            - "2": infer/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": ctrl/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": act/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": pose/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": sys/*
+              "5": 2
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.12
+        t:
+            "3":
+                - 2
+                - 7
+                - 13
+                - 14
+                - 16
+                - 62
+            "4": 3.10.12
+            "5": 0.31.0
+            "12": 0.31.0
+            "13": linux-x86_64
+checkpoint:
+    value: null
+git_commit:
+    value: 41690637f63ca88edd9448e1f73f4aea458d3dd9
+instruction:
+    value: Pick up the blue cube.
+model:
+    value: null
+scene:
+    value: blue
+settings:
+    value:
+        automatic_home_calls: 0
+        cumulative_displacement:
+            position_m:
+                - 0.027547069202945196
+                - 0.002672430513882886
+                - -0.022279544051924338
+            position_mm:
+                - 27.547069202945195
+                - 2.672430513882886
+                - -22.27954405192434
+            position_norm_mm: 35.529719808704115
+            rotation_magnitude_deg: 16.039315301978373
+            rotation_vector_deg:
+                - -11.7720346576866
+                - 4.17827815547575
+                - 10.060856177780169
+            rotation_vector_rad:
+                - -0.20546076443551475
+                - 0.07292471087720738
+                - 0.1755950658718759
+        elapsed_s: 21.5881750700064
+        end_reason: PRECHECK_REJECTED
+        endpoint_arm_summary:
+            dimensions:
+                - dx
+                - dy
+                - dz
+                - rx
+                - ry
+                - rz
+            interpreted_actions: 15
+            max_counts:
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 1
+            max_streak_min_max:
+                - - 0
+                  - 0
+                - - 0
+                  - 0
+                - - 0
+                  - 0
+                - - 2
+                  - 0
+                - - 0
+                  - 0
+                - - 0
+                  - 1
+            min_counts:
+                - 0
+                - 0
+                - 0
+                - 2
+                - 0
+                - 0
+        executed_steps: 14
+        gripper_command_calls: 0
+        gripper_execution: record_only
+        gripper_io_verified: false
+        instruction: Pick up the blue cube.
+        max_descent_mm: null
+        max_episode_time_s: 600
+        max_steps: 300
+        minimum_height_relative_home_mm: -22.483374327964324
+        move_joint_call_count: 14
+        observation_process_exit_detected: false
+        optional_descent_guard:
+            enabled: false
+            max_descent_mm: null
+        pass: false
+        rejected_candidate:
+            action_raw:
+                - 0.0027061350183669314
+                - -0.0002447391226206479
+                - -0.002014655569079992
+                - -0.027931714651865086
+                - 0.007871202186855178
+                - 0.06491456570915745
+                - 0.0019607843137254832
+            exception_message: POLICY_MOVEJ_PRECHECK:ROTATION_STEP_CANDIDATE_EXCEEDED
+            step: 14
+            target_tool_pose:
+                position_m:
+                    - 0.33897393239497786
+                    - -0.008829767541953037
+                    - 0.6911370686865863
+                rotation_matrix:
+                    - - 0.1921104059856453
+                      - -0.9138861193164646
+                      - 0.3576391377250588
+                    - - -0.960508466562603
+                      - -0.24984309420864953
+                      - -0.1224823005082981
+                    - - 0.2012885430758236
+                      - -0.3199852952823628
+                      - -0.9257928133386388
+        scene_cube_color: blue
+        sigma_min:
+            default: 0.0803
+            lowered: true
+            reason: Effectively disable singularity precheck; matched15 episode03 layout; operator watching with e-stop
+            value: 0.01
+        sim_joint_envelope_first_exit:
+            excess_deg:
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0.14531233594053106
+                - 0
+            joints:
+                - 5
+            step: 0
+        table_collision_control: 테이블 높이 자동 검사 없음, 작업자 감시
+        table_watch_confirmation: TABLE_WATCH_BY_OPERATOR

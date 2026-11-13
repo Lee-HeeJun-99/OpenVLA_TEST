@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Process-isolated read-only live dryrun; creates no robot command objects."""
-import argparse,json,multiprocessing as mp,sys,time
+import argparse,json,multiprocessing as mp,os,sys,time
 from pathlib import Path
 import numpy as np
 
@@ -13,6 +13,7 @@ from runtime.config import load_runtime_config
 from runtime.feedback import FeedbackSpinThread,RobotFeedback
 from runtime.monitor import RuntimeMonitor
 from runtime.observation_process import run_observation_process
+from runtime.system_monitor_launcher import SystemMonitorProcess
 
 STATS=ROOT.parents[2]/"models/vanilla_s1_balanced_step8130/dataset_statistics.json"
 MATCHED15_INSTRUCTIONS={"Pick up the red cube.","Pick up the yellow cube.","Pick up the blue cube."}
@@ -25,6 +26,7 @@ def validate_instruction(instruction,allow_ood=False):
 def main():
     p=argparse.ArgumentParser();p.add_argument("--duration",type=float,default=60)
     p.add_argument("--server",default="http://127.0.0.1:8766")
+    p.add_argument("--server-pid",type=int)
     p.add_argument("--camera-topic",required=True);p.add_argument("--instruction",default="Pick up the blue cube.")
     p.add_argument("--scene-cube-color",default="blue");p.add_argument("--allow-ood-instruction",action="store_true")
     p.add_argument("--output",type=Path,required=True);args=p.parse_args()
@@ -33,13 +35,15 @@ def main():
     if input("Type I_CONFIRM_V2_MODE:dryrun_live exactly: ")!="I_CONFIRM_V2_MODE:dryrun_live":
         raise PermissionError("FRESH_HUMAN_CONFIRMATION_REQUIRED")
 
-    output=args.output;output.mkdir(parents=True,exist_ok=True)
+    output=args.output;output.mkdir(parents=True,exist_ok=True);run_start_monotonic=time.monotonic()
     rc=load_runtime_config();cc=load_config();ctx=mp.get_context("spawn")
     control_pipe,observation_pipe=ctx.Pipe(duplex=True)
     observer=ctx.Process(target=run_observation_process,args=(observation_pipe,args.camera_topic,
       args.server,args.instruction,str(output),str(STATS),.1,
       rc.get("camera_frame_wait_timeout_s_candidate",10.0)),name="v2-observation")
     observer.start();observation_pipe.close()
+    system_monitor=SystemMonitorProcess(ROOT,output,os.getpid(),observer.pid,args.server,
+      args.camera_topic,run_start_monotonic,args.server_pid)
 
     import rclpy
     rclpy.init();feedback_node=rclpy.create_node("v2_control_safety_readonly")
@@ -117,10 +121,15 @@ def main():
           "pass":elapsed>=args.duration and p99<15 and max(feedback_ages)<=.1 and set(states)=={1} and
              not runtime_faults and camera_timeout_count==0 and end_reason=="DURATION_COMPLETE" and
              all(row["ok"] for row in results) and len(observation_records)>0}
+        summary["system_monitor"]=system_monitor.stop()
+        if summary["system_monitor"].get("warning"):
+            print("WARNING "+summary["system_monitor"]["warning"],file=sys.stderr)
         (output/"dryrun_live_summary.json").write_text(json.dumps(summary,indent=2)+"\n")
         print(json.dumps(summary,indent=2))
         if not summary["pass"] and end_reason!="CAMERA_NO_FRAME_TIMEOUT":raise RuntimeError("DRYRUN_LIVE_ACCEPTANCE_FAILED")
     finally:
+        monitor_status=system_monitor.stop()
+        if monitor_status.get("warning"):print("WARNING "+monitor_status["warning"],file=sys.stderr)
         if observer.is_alive():
             try:control_pipe.send({"type":"SHUTDOWN"})
             except (BrokenPipeError,EOFError):pass

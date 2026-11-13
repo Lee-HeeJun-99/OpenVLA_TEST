@@ -1,0 +1,146 @@
+_wandb:
+    value:
+        cli_version: 0.31.0
+        e:
+            01a1d390-faac-757e-832f-f209c3bf3327:
+                args:
+                    - reports/live/20261113_091859/dryrun_live_telemetry_151852
+                codePath: phase12_real_policy_rollout/rollout_ver2/tools/wandb_upload.py
+                codePathLocal: tools/wandb_upload.py
+                cpu:
+                    model: Intel(R) Core(TM) i9-10900 CPU @ 2.80GHz
+                cpu_count: 10
+                cpu_count_logical: 20
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "525230006272"
+                        used: "423774994432"
+                email: jungjunho1110@gmail.com
+                executable: /home/ubuntu/.local/bin/python
+                git:
+                    commit: 41690637f63ca88edd9448e1f73f4aea458d3dd9
+                    remote: https://github.com/Lee-HeeJun-99/OpenVLA_TEST.git
+                gpu: NVIDIA GeForce RTX 3090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10496
+                      memoryTotal: "25769803776"
+                      name: NVIDIA GeForce RTX 3090
+                      pciBusId: "00000000:01:00.0"
+                      uuid: GPU-a3ab2618-389f-8cbc-8fe6-2eec1c3edd40
+                host: scps1
+                memory:
+                    total: "33484689408"
+                os: Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+                program: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2/tools/wandb_upload.py
+                python: CPython 3.10.12
+                root: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2
+                startedAt: "2026-11-13T06:20:56.357557Z"
+                writerId: 01a1d390-faac-757e-832f-f209c3bf3327
+        m:
+            - "1": step
+              "6":
+                - 3
+              "7": []
+            - "1": t_s
+              "6":
+                - 3
+              "7": []
+            - "2": pose/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": sys/*
+              "5": 2
+              "6":
+                - 1
+              "7": []
+            - "2": infer/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": ctrl/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": act/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.12
+        t:
+            "3":
+                - 2
+                - 7
+                - 13
+                - 14
+                - 16
+                - 62
+            "4": 3.10.12
+            "5": 0.31.0
+            "12": 0.31.0
+            "13": linux-x86_64
+checkpoint:
+    value: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130
+git_commit:
+    value: 41690637f63ca88edd9448e1f73f4aea458d3dd9
+instruction:
+    value: Pick up the blue cube.
+model:
+    value: openvla
+scene:
+    value: blue
+settings:
+    value:
+        allow_ood_instruction: false
+        architecture: PROCESS_A_SAFETY__PROCESS_B_OBSERVATION
+        camera_final_diagnostics:
+            age_s: 0.011474648985313252
+            gap_over_0_1s_count: 84
+            gap_over_1s_count: 0
+            last_header_stamp_ns: 1794550803186979251
+            last_received_monotonic: 151613.723882124
+            max_receive_interval_s: 0.2275758520117961
+            previous_receive_interval_s: 0.0358139100135304
+            receive_count: 1209
+        camera_no_frame_timeout_count: 0
+        command_publish_count: 0
+        duration_s: 60.00006023500464
+        end_reason: DURATION_COMPLETE
+        feedback_age_s_max: 0.01693658300791867
+        feedback_final_diagnostics:
+            joint_state_age_s: 0.009142031980445608
+            joint_state_last_received_monotonic: 151613.948681517
+            joint_state_previous_receive_interval_s: 0.010027556010754779
+            joint_state_receive_count: 6252
+            robot_state_age_s: 0.023772869986714795
+            robot_state_poll_attempts: 625
+            robot_state_poll_successes: 625
+        instruction: Pick up the blue cube.
+        instruction_in_matched15: true
+        pass: true
+        preflight:
+            real_home_joint_error_deg:
+                - -0.017116569735222718
+                - -0.013375111802762669
+                - -0.021812248264010518
+                - 0.0026325867531875324
+                - 0.005552882446709727
+                - -4.488162865754392e-05
+            robot_mode: 1
+            robot_state: 1
+            robot_system: 0
+        scene_cube_color: blue
+        state_changing_service_call_count: 0
+        system_monitor:
+            returncode: 0
+            running: false
+            traceback_tail: []
+            warning: null
+        virtual_100hz_period_ms_p99: 10.679408104042512

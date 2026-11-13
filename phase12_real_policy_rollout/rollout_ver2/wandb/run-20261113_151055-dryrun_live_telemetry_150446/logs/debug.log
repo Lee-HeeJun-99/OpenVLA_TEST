@@ -1,0 +1,24 @@
+2026-11-13 15:10:55,519 INFO    MainThread:113852 [wandb_setup.py:_flush():81] Current SDK version is 0.31.0
+2026-11-13 15:10:55,519 INFO    MainThread:113852 [wandb_setup.py:_flush():81] Configure stats pid to 113852
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_init.py:setup_run_log_directory():740] Logging user logs to /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2/wandb/run-20261113_151055-dryrun_live_telemetry_150446/logs/debug.log
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_init.py:setup_run_log_directory():741] Logging internal logs to /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2/wandb/run-20261113_151055-dryrun_live_telemetry_150446/logs/debug-internal.log
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_init.py:init():784] calling init triggers
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_init.py:init():789] wandb.init called with sweep_config: {}
+config: {'instruction': 'Pick up the blue cube.', 'scene': 'blue', 'model': 'openvla', 'checkpoint': '/home/ubuntu/a0509_vla_linux_field_bundle_20260903/models/vanilla_s1_balanced_step8130', 'settings': {'duration_s': 60.000059804006014, 'architecture': 'PROCESS_A_SAFETY__PROCESS_B_OBSERVATION', 'preflight': {'robot_mode': 1, 'robot_system': 0, 'robot_state': 1, 'real_home_joint_error_deg': [-0.017116569735222718, -0.013375111802762669, -0.021812248264010518, 0.0026325867531875324, 0.005552882446709727, -4.488162865754392e-05]}, 'virtual_100hz_period_ms_p99': 10.981155396439123, 'feedback_age_s_max': 0.011192934005521238, 'end_reason': 'DURATION_COMPLETE', 'feedback_final_diagnostics': {'joint_state_age_s': 0.008422070008236915, 'joint_state_last_received_monotonic': 150784.4187219, 'joint_state_previous_receive_interval_s': 0.009772016986971721, 'joint_state_receive_count': 6369, 'robot_state_age_s': 0.07641437801066786, 'robot_state_poll_attempts': 636, 'robot_state_poll_successes': 636}, 'camera_no_frame_timeout_count': 0, 'camera_final_diagnostics': {'last_received_monotonic': 150784.156842295, 'previous_receive_interval_s': 0.046585033007431775, 'last_header_stamp_ns': 1794549973608096251, 'age_s': 0.06624179499340244, 'receive_count': 1352, 'gap_over_0_1s_count': 49, 'gap_over_1s_count': 0, 'max_receive_interval_s': 0.2915905879926868}, 'instruction': 'Pick up the blue cube.', 'scene_cube_color': 'blue', 'instruction_in_matched15': True, 'allow_ood_instruction': False, 'command_publish_count': 0, 'state_changing_service_call_count': 0, 'pass': True, 'system_monitor': {'running': False, 'returncode': 1, 'warning': 'SYSTEM_MONITOR_EXITED:1'}}, 'git_commit': '41690637f63ca88edd9448e1f73f4aea458d3dd9', '_wandb': {}}
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_init.py:init():832] starting backend
+2026-11-13 15:10:55,520 INFO    MainThread:113852 [wandb_init.py:init():847] sending inform_init request
+2026-11-13 15:10:55,524 INFO    MainThread:113852 [wandb_init.py:init():852] backend started and connected
+2026-11-13 15:10:55,540 INFO    MainThread:113852 [wandb_init.py:init():922] updated telemetry
+2026-11-13 15:10:55,545 INFO    MainThread:113852 [wandb_init.py:init():940] communicating run to backend with 90.0 second timeout
+2026-11-13 15:10:56,337 INFO    MainThread:113852 [wandb_init.py:init():977] starting run threads in backend
+2026-11-13 15:10:56,563 INFO    MainThread:113852 [wandb_run.py:_console_start():2528] atexit reg
+2026-11-13 15:10:56,563 INFO    MainThread:113852 [wandb_run.py:_redirect():2378] redirect: wrap_raw
+2026-11-13 15:10:56,563 INFO    MainThread:113852 [wandb_run.py:_redirect():2447] Wrapping output streams.
+2026-11-13 15:10:56,563 INFO    MainThread:113852 [wandb_run.py:_redirect():2470] Redirects installed.
+2026-11-13 15:10:56,565 INFO    MainThread:113852 [wandb_init.py:init():1015] run started, returning control to user process
+2026-11-13 15:10:57,299 INFO    MainThread:113852 [wandb_run.py:_finish():2300] finishing run jungjunho1110-korea-university-of-technology-and-education/a0509-vla-rollout/dryrun_live_telemetry_150446
+2026-11-13 15:10:57,299 INFO    MainThread:113852 [wandb_run.py:_atexit_cleanup():2495] got exitcode: 0
+2026-11-13 15:10:57,300 INFO    MainThread:113852 [wandb_run.py:_restore():2477] restore
+2026-11-13 15:10:57,300 INFO    MainThread:113852 [wandb_run.py:_restore():2483] restore done
+2026-11-13 15:11:04,309 INFO    MainThread:113852 [wandb_run.py:_footer_sync_info():3908] logging synced files

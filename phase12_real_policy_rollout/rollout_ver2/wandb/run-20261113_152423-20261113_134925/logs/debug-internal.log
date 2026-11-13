@@ -1,0 +1,18 @@
+{"time":"2026-11-13T15:24:23.87418345+09:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-11-13T15:24:23.874225288+09:00","level":"INFO","msg":"stream: starting","core version":"0.31.0"}
+{"time":"2026-11-13T15:24:23.874377621+09:00","level":"INFO","msg":"stream: created new stream","id":"20261113_134925"}
+{"time":"2026-11-13T15:24:23.874394136+09:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-11-13T15:24:23.874432688+09:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-11-13T15:24:23.874446329+09:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-11-13T15:24:23.874437824+09:00","level":"INFO","msg":"writer: started","stream_id":"20261113_134925"}
+{"time":"2026-11-13T15:24:24.736724867+09:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":0,"events_lines":1}
+{"time":"2026-11-13T15:24:25.061443848+09:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-11-13T15:24:34.609360672+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-11-13T15:24:34.610259497+09:00","level":"INFO","msg":"filestream: sending request","total_files":3,"history_offset":0,"history_lines":152,"console_offset":0,"console_lines":1,"uploaded_len":5,"complete":true,"exit_code":0}
+{"time":"2026-11-13T15:24:35.126308991+09:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-11-13T15:24:35.127212012+09:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-11-13T15:24:35.133881007+09:00","level":"INFO","msg":"stream: finishing up"}
+{"time":"2026-11-13T15:24:35.13389972+09:00","level":"INFO","msg":"handler: closed"}
+{"time":"2026-11-13T15:24:35.133976602+09:00","level":"INFO","msg":"sender: closed"}
+{"time":"2026-11-13T15:24:35.133985274+09:00","level":"INFO","msg":"stream: all finished"}
+{"time":"2026-11-13T15:24:37.134624252+09:00","level":"ERROR","msg":"stream: failed to shut down analytics","error":"shutdown errors: [context deadline exceeded]"}

@@ -45,9 +45,19 @@ Robot Limits 일반/감소 모드, tool TCP/무게, firmware와 함께 JEGH-3520
 터미널 1:
 
 ```bash
-cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903
-./scripts/serve.sh vanilla 8766
+cd /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2
+scripts/serve_timed.sh 8766 0 127.0.0.1
 ```
+
+이 timing-enabled entry point는 읽기 전용인 기존 `runtime/vanilla-support/serve_adapter.py`를
+수정하지 않고 같은 model/action 직렬화를 사용한다. `/predict`의 `server_timing`에 decode,
+preprocess, CUDA synchronize를 포함한 forward, detokenize 시간과 VRAM을 추가한다.
+`scripts/serve_timed.sh [port] [physical_gpu] [bind_host]`는 기존 bundle
+`scripts/serve.sh`의 vanilla 분기와 동일하게 venv, base model, adapter bundle,
+`CUDA_VISIBLE_DEVICES`, `HF_HOME`, offline flags, tokenizer parallelism,
+`PYTHONUNBUFFERED`, `A0509_ACTION_CHUNK_SIZE=1`, `PYTHONPATH`를 설정하고 시작 전에
+listen port 사용 여부를 검사한다. 유일한 차이는 Python 진입점이
+`rollout_ver2/runtime/serve_adapter_timed.py`라는 점이다.
 
 터미널 2:
 
@@ -90,6 +100,11 @@ preflight는 명령 전에 robot_mode=1, robot_system=0, robot_state=1과 real_h
 - 정상 종료: 새 frame 대기 10초 후보 초과는 `CAMERA_NO_FRAME_TIMEOUT`으로 기록하고 정지 상태에서 episode를 끝낸다(fault 아님).
 - 중단: robot feedback stale/state/error/disconnection fault, image decode 오류, 기존 publisher.
 - evidence: feedback/action JSONL, timing, command-count-zero audit.
+
+`dryrun_live.py`와 `policy_movej.py`는 별도 `/usr/bin/python3 tools/system_monitor.py`
+subprocess를 자동 시작해 run 폴더의 `system_metrics.jsonl`에 2 Hz로 CPU/RAM/process/GPU와
+read-only JointState/camera 수신 상태를 기록한다. monitor가 죽어도 control은 계속되고 summary에
+경고가 남는다. GPU 항목에는 `/usr/bin/python3` 환경의 `nvidia-ml-py`(`pynvml`)가 필요하다.
 
 ### 선택 검토: ZED publish 15 Hz
 
@@ -170,10 +185,33 @@ MoveStop은 현장 시험에서 확인한 `DR_QSTOP=1`이다. `stop_test_servoj`
 ```
 
 - preflight: AUTO/REAL/STANDBY, real home 각 관절 ±2°(wrap 불허), matched15 지시문, pendant/live/feedback/stop_movej gate.
-- 이동 전 통과: IK, host joint margin(J5 하한 -130° 포함), `σmin≥0.0803`, translation ≤20 mm, rotation ≤4°, 각 관절 변화 ≤10°, 현재→목표 직선 관절 경로 20점의 margin/singularity.
+- 이동 전 통과: action NaN/inf 검사, workspace, IK, host joint margin(J5 하한 -130° 포함), `σmin≥0.0803`, 각 관절 변화 ≤10°, 현재→목표 직선 관절 경로 20점의 margin/singularity. 사용자 결정(2026-11-13)으로 Cartesian translation/rotation 행동 크기 상한은 비활성이다.
 - 실행/정착 후보: MoveJoint 5°/s, 10°/s², async; `|qdot|≤0.001 rad/s` 및 목표 오차 ≤0.1°를 0.3 s 연속. 5 s 초과나 안전 이상은 DR_QSTOP 경로로 종료한다.
 - episode 예산 기본값: 최대 300 step, 600 s 후보이며 CLI에서 양의 값으로 조정할 수 있다. 이는 기존 80-step 관찰 제한을 제거한 전체 rollout 예산이다. camera 지연 중 action을 반복하지 않는다.
 - `--sigma-min` 기본값은 `0.0803`이다. 더 높은 값은 즉시 적용할 수 있지만 더 낮은 값은 반드시 `--sigma-min-reason "..."`을 함께 입력해야 하며 값·사유를 summary에 남긴다. 관절 margin과 다른 안전 조건은 변하지 않는다.
 - 선택 보조장치 `--max-descent-mm N`은 기본 비활성이다. 활성화하면 real-home tool0_real z보다 N mm 이상 낮은 목표 또는 20점 관절 경로를 `DESCENT_LIMIT`으로 이동 전에 거부한다. 이는 table 형상 검사를 대신하지 않는다.
 - 정상 종료: step/time 예산 또는 정지 상태의 camera 새-frame 대기 10 s 초과. 안전 이상·작업자 중단은 기존 MoveStop 경로다.
 - evidence: timestamp 폴더의 `steps.jsonl`, 입력 JPEG, `predictions.jsonl`, `summary.json`. 종료 사유/실행 step/경과시간, 누적 tool0_real 변위, home 대비 최저 높이, sim envelope 최초 이탈, endpoint 요약과 command/actual Δ를 검토한다.
+
+## 자원/timing 검토와 W&B 사후 업로드
+
+실행 중에는 W&B를 import하거나 호출하지 않는다. `system_metrics.jsonl`, `predictions.jsonl`,
+`steps.jsonl`, summary와 입력 이미지를 먼저 로컬에서 검토한다. dry-run으로 업로드 매핑을 확인한다.
+
+```bash
+/usr/bin/python3 tools/wandb_upload.py reports/live/20261113_091859/policy_movej/<timestamp> --dry-run
+```
+
+업로드 환경에 `wandb`를 설치하고 로그인한 뒤 실제 업로드한다. 성공한 경우에만 실행 폴더에
+`wandb_uploaded.json`이 생성된다.
+
+```bash
+/usr/bin/python3 tools/wandb_upload.py reports/live/20261113_091859/policy_movej/<timestamp> --project a0509-vla-rollout --scene blue_cube_session
+```
+
+아직 marker가 없는 실행 폴더를 일괄 처리하려면 다음을 사용한다. 이전 실행처럼 일부 JSONL이나
+필드가 없으면 해당 metric만 건너뛴다.
+
+```bash
+/usr/bin/python3 tools/wandb_upload.py --all reports/live --project a0509-vla-rollout
+```

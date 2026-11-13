@@ -5,7 +5,7 @@ This executable is the only policy_movej layer allowed to construct MoveJoint
 and MoveStop transports.  It never constructs a gripper output transport and
 never returns home automatically.
 """
-import argparse,json,multiprocessing as mp,sys,threading,time
+import argparse,json,multiprocessing as mp,os,sys,threading,time
 from datetime import datetime
 from pathlib import Path
 import numpy as np
@@ -26,6 +26,7 @@ from runtime.observation_process import run_observation_process
 from runtime.policy_movej_core import (AbortSignal,MoveJPolicyPlanner,
   PolicyMoveJPrecheckError,SettlementTracker,validate_sigma_override)
 from runtime.stop import StopCoordinator
+from runtime.system_monitor_launcher import SystemMonitorProcess
 from runtime import robot_state as rs
 from tools.dryrun_live import validate_instruction
 
@@ -69,6 +70,7 @@ def rejected_candidate_record(step,action,error):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--server",default="http://127.0.0.1:8766")
+    parser.add_argument("--server-pid",type=int)
     parser.add_argument("--camera-topic",required=True)
     parser.add_argument("--instruction",default="Pick up the blue cube.")
     parser.add_argument("--scene-cube-color",default="blue")
@@ -95,11 +97,14 @@ def main():
 
     output=args.session/"policy_movej"/datetime.now().strftime("%Y%m%d_%H%M%S")
     output.mkdir(parents=True,exist_ok=False)
+    run_start_monotonic=time.monotonic()
     ctx=mp.get_context("spawn");control_pipe,observation_pipe=ctx.Pipe(duplex=True)
     observer=ctx.Process(target=run_observation_process,args=(observation_pipe,args.camera_topic,
       args.server,args.instruction,str(output),str(STATS),.1,
       rc["camera_frame_wait_timeout_s_candidate"]),name="v2-policy-observation")
     observer.start();observation_pipe.close()
+    system_monitor=SystemMonitorProcess(ROOT,output,os.getpid(),observer.pid,args.server,
+      args.camera_topic,run_start_monotonic,args.server_pid)
     import rclpy
     from runtime.ros_transports import MoveJointTransport,MoveStopTransport
     rclpy.init();node=rclpy.create_node("v2_policy_movej_control_safety")
@@ -161,6 +166,7 @@ def main():
             return result
         end_reason="MAX_STEPS_COMPLETE"
         for step_index in range(max_steps):
+            step_started=time.monotonic()
             if time.monotonic()-episode_start>=max_episode_time:
                 stop_now("EPISODE_TIME_LIMIT");end_reason="EPISODE_TIME_LIMIT";break
             if abort_signal.is_set():
@@ -193,14 +199,17 @@ def main():
             endpoint_events.append({"step":step_index,"min":action.endpoint_min[:6].tolist(),
               "max":action.endpoint_max[:6].tolist(),"streak":streak.tolist()})
             before=feedback.snapshot();actual_start=before.tool0_real_pose
+            ik_started=time.monotonic()
             try:plan=planner.plan(action,command_tool,command_q,streak)
             except PolicyMoveJPrecheckError as error:
                 end_reason="PRECHECK_REJECTED";summary["precheck_reasons"]=list(error.reasons)
                 summary["rejected_candidate"]=rejected_candidate_record(step_index,action,error)
+                summary["rejected_candidate"]["ik_precheck_s"]=time.monotonic()-ik_started
                 break
+            ik_precheck_s=time.monotonic()-ik_started
             request={"pos":np.rad2deg(plan.target_joint_rad).tolist(),"vel":pc["velocity_deg_s_candidate"],
               "acc":pc["acceleration_deg_s2_confirmed"],"sync_type":1}
-            motion_start=time.monotonic();ack=move.move_joint(**request)
+            motion_start=time.monotonic();ack=move.move_joint(**request);target_reached_at=None
             tracker=SettlementTracker(pc["settle_velocity_rad_s_candidate"],
               pc["settle_hold_s_candidate"],pc["target_error_deg_candidate"])
             motion_fault=None
@@ -214,17 +223,24 @@ def main():
                 if abort_signal.is_set():motion_fault="OPERATOR_ABORT";break
                 if time.monotonic()-episode_start>=max_episode_time:motion_fault="EPISODE_TIME_LIMIT";break
                 if faults:motion_fault=",".join(faults);break
+                if (target_reached_at is None and np.all(np.abs(
+                    snap.joint_rad-plan.target_joint_rad)<=np.deg2rad(pc["target_error_deg_candidate"]))):
+                    target_reached_at=now
                 if tracker.update(snap.joint_rad,snap.joint_velocity_rad_s,plan.target_joint_rad,now):break
                 if now-motion_start>pc["motion_timeout_s_candidate"]:motion_fault="MOTION_TIMEOUT";break
                 time.sleep(.005)
             if motion_fault:
                 stop_now(motion_fault)
                 end_reason=motion_fault if motion_fault in ("OPERATOR_ABORT","EPISODE_TIME_LIMIT") else "SAFETY_STOP";break
+            step_ended=time.monotonic();target_reached_at=target_reached_at or step_ended
             arrived=feedback.snapshot();record={"step":step_index,"action_raw":action.raw.tolist(),
               "interpreted_delta_position_m":action.delta_position_m.tolist(),
               "interpreted_rotation_vector_rad":action.rotation_vector_rad.tolist(),
               "action_translation_norm_mm":float(np.linalg.norm(action.delta_position_m)*1000),
               "action_rotation_norm_deg":float(np.rad2deg(np.linalg.norm(action.rotation_vector_rad))),
+              "ik_precheck_s":ik_precheck_s,"move_s":target_reached_at-motion_start,
+              "settle_s":step_ended-target_reached_at,"step_total_s":step_ended-step_started,
+              "t_step_start":step_started,"t_step_end":step_ended,
               "endpoint_arm_min":action.endpoint_min[:6].tolist(),"endpoint_arm_max":action.endpoint_max[:6].tolist(),
               "endpoint_streak":streak.tolist(),"gripper_target":action.gripper_target,
               "gripper_binary":action.gripper_binary,"gripper_changed":gripper.update(action.gripper_binary),
@@ -254,6 +270,8 @@ def main():
             try:summary["exception_stop"]=StopCoordinator(move,feedback,stop_transport,rc).stop("POLICY_MOVEJ_EXCEPTION")
             except Exception as stop_error:summary["exception_stop_error"]=str(stop_error)
     finally:
+        monitor_status=system_monitor.stop()
+        if monitor_status.get("warning"):print("WARNING "+monitor_status["warning"],file=sys.stderr)
         if rollout_start_pose is not None:
             try:last_pose=feedback.snapshot().tool0_real_pose
             except Exception:pass
@@ -278,7 +296,8 @@ def main():
           "endpoint_arm_summary":{"dimensions":["dx","dy","dz","rx","ry","rz"],
             "interpreted_actions":len(endpoint_events),"min_counts":min_counts,
             "max_counts":max_counts,"max_streak_min_max":max_streak},
-          "gripper_execution":"record_only","gripper_io_verified":False})
+          "gripper_execution":"record_only","gripper_io_verified":False,
+          "system_monitor":monitor_status})
         step_stream.close();(output/"summary.json").write_text(json.dumps(summary,indent=2)+"\n")
         print(json.dumps(summary,indent=2))
         if observer.is_alive():

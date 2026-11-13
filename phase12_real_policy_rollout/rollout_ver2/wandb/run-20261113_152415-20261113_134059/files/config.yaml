@@ -1,0 +1,252 @@
+_wandb:
+    value:
+        cli_version: 0.31.0
+        e:
+            01a1d394-040c-77bb-adf1-11f65682510d:
+                args:
+                    - --all
+                    - reports/live/20261113_091859/policy_movej
+                codePath: phase12_real_policy_rollout/rollout_ver2/tools/wandb_upload.py
+                codePathLocal: tools/wandb_upload.py
+                cpu:
+                    model: Intel(R) Core(TM) i9-10900 CPU @ 2.80GHz
+                cpu_count: 10
+                cpu_count_logical: 20
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "525230006272"
+                        used: "423820177408"
+                email: jungjunho1110@gmail.com
+                executable: /home/ubuntu/.local/bin/python
+                git:
+                    commit: 41690637f63ca88edd9448e1f73f4aea458d3dd9
+                    remote: https://github.com/Lee-HeeJun-99/OpenVLA_TEST.git
+                gpu: NVIDIA GeForce RTX 3090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10496
+                      memoryTotal: "25769803776"
+                      name: NVIDIA GeForce RTX 3090
+                      pciBusId: "00000000:01:00.0"
+                      uuid: GPU-a3ab2618-389f-8cbc-8fe6-2eec1c3edd40
+                host: scps1
+                memory:
+                    total: "33484689408"
+                os: Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+                program: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2/tools/wandb_upload.py
+                python: CPython 3.10.12
+                root: /home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase12_real_policy_rollout/rollout_ver2
+                startedAt: "2026-11-13T06:24:15.370106Z"
+                writerId: 01a1d394-040c-77bb-adf1-11f65682510d
+        m:
+            - "1": step
+              "6":
+                - 3
+              "7": []
+            - "1": t_s
+              "6":
+                - 3
+              "7": []
+            - "2": infer/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": ctrl/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": act/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": pose/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": sys/*
+              "5": 2
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.12
+        t:
+            "3":
+                - 2
+                - 7
+                - 13
+                - 14
+                - 16
+                - 62
+            "4": 3.10.12
+            "5": 0.31.0
+            "12": 0.31.0
+            "13": linux-x86_64
+checkpoint:
+    value: null
+git_commit:
+    value: 41690637f63ca88edd9448e1f73f4aea458d3dd9
+instruction:
+    value: Pick up the blue cube.
+model:
+    value: null
+scene:
+    value: blue
+settings:
+    value:
+        action_magnitude_caps: disabled_by_user
+        automatic_home_calls: 0
+        cumulative_displacement:
+            position_m:
+                - 0.16930628411092258
+                - 0.02972812241695264
+                - -0.0495420559411367
+            position_mm:
+                - 169.30628411092258
+                - 29.728122416952637
+                - -49.542055941136695
+            position_norm_mm: 178.89324863940635
+            rotation_magnitude_deg: 45.87003100469873
+            rotation_vector_deg:
+                - -26.925709346533132
+                - 13.108407515137682
+                - 34.74529569560638
+            rotation_vector_rad:
+                - -0.469942281532014
+                - 0.22878487083232096
+                - 0.6064198094673449
+        elapsed_s: 42.87373532401398
+        end_reason: PRECHECK_REJECTED
+        endpoint_arm_summary:
+            dimensions:
+                - dx
+                - dy
+                - dz
+                - rx
+                - ry
+                - rz
+            interpreted_actions: 25
+            max_counts:
+                - 0
+                - 0
+                - 0
+                - 1
+                - 0
+                - 0
+            max_streak_min_max:
+                - - 0
+                  - 0
+                - - 0
+                  - 0
+                - - 0
+                  - 0
+                - - 1
+                  - 1
+                - - 0
+                  - 0
+                - - 0
+                  - 0
+            min_counts:
+                - 0
+                - 0
+                - 0
+                - 4
+                - 0
+                - 0
+        executed_steps: 24
+        gripper_command_calls: 0
+        gripper_execution: record_only
+        gripper_io_verified: false
+        instruction: Pick up the blue cube.
+        max_descent_mm: null
+        max_episode_time_s: 600
+        max_steps: 300
+        minimum_height_relative_home_mm: -49.739672291692294
+        move_joint_call_count: 24
+        observation_process_exit_detected: false
+        optional_descent_guard:
+            enabled: false
+            max_descent_mm: null
+        pass: false
+        rejected_candidate:
+            action_raw:
+                - 0.011603270843282816
+                - 0.005969736541228851
+                - -0.003007322273154537
+                - -0.016459386455152054
+                - 0.015038389673699078
+                - 0.027685257182189157
+                - 0.0019607843137254832
+            action_rotation_norm_deg: 2.036651829339695
+            action_translation_norm_mm: 13.390953509323802
+            best_joint_deg:
+                - -172.7669934899296
+                - -36.12666624842453
+                - 0.33433710584307985
+                - -20.517120623226766
+                - -128.76965448605011
+                - -46.34879202384165
+            best_joint_rad:
+                - -3.0153528751708802
+                - -0.6305292738041157
+                - 0.005835283308550515
+                - -0.358091307904138
+                - -2.247454447437061
+                - -0.808939025138123
+            best_residual: 0.006674101593869424
+            exception_message: DLS IK did not converge in 200 iterations; best combined residual=0.0066741 (mixed m/rad norm)
+            iterations: 4
+            joint_delta_deg:
+                - 0.7064153354860315
+                - -3.00649638687541
+                - 4.387696161204868
+                - -1.0052961604012576
+                - -1.8555228452188341
+                - -2.15082522480965
+            joint_delta_rad:
+                - 0.012329273490811588
+                - -0.05247326090028914
+                - 0.07657974459014083
+                - -0.017545727956658985
+                - -0.03238498299504178
+                - -0.03753898180787563
+            step: 24
+            target_tool_pose:
+                position_m:
+                    - 0.4896450045733523
+                    - 0.024439722415649186
+                    - 0.6628837349125106
+                rotation_matrix:
+                    - - 0.5759846986749015
+                      - -0.7752566472743172
+                      - 0.2592658052064869
+                    - - -0.7368215837952357
+                      - -0.6297192304191093
+                      - -0.24606430967095883
+                    - - 0.3540276550579965
+                      - -0.04930336395571584
+                      - -0.9339344718751881
+        scene_cube_color: blue
+        sigma_min:
+            default: 0.0803
+            lowered: true
+            reason: Effectively disable singularity precheck; matched15 episode03 layout; operator watching with e-stop
+            value: 0.01
+        sim_joint_envelope_first_exit:
+            excess_deg:
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0.6584302973377447
+                - 0
+            joints:
+                - 5
+            step: 0
+        table_collision_control: 테이블 높이 자동 검사 없음, 작업자 감시
+        table_watch_confirmation: TABLE_WATCH_BY_OPERATOR
