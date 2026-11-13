@@ -52,3 +52,11 @@ class ToolDigitalOutputTransport:
         return self.caller.call(index=int(index),value=int(value))
     def get_tool_digital_output(self,index):
         return self.reader.call(index=int(index))
+
+
+class ToolDigitalOutputReader:
+    """Read-only gripper preflight transport; it has no setter client."""
+    def __init__(self,node,name="/dsr01/io/get_tool_digital_output"):
+        from dsr_msgs2.srv import GetToolDigitalOutput
+        self.reader=RosServiceCaller(node,GetToolDigitalOutput,name)
+    def get_tool_digital_output(self,index):return self.reader.call(index=int(index))

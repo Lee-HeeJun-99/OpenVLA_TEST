@@ -1,0 +1,224 @@
+{
+  "pass": true,
+  "invalid_trigger_timeout": false,
+  "profile": {
+    "shape": "triangular",
+    "peak_velocity_deg_s": 4.47213595499958,
+    "acceleration_time_s": 0.447213595499958,
+    "cruise_time_s": 0.0,
+    "total_time_s": 0.894427190999916,
+    "stop_trigger_velocity_deg_s": 2.23606797749979,
+    "invalid_deadline_s": 0.6260990336999411,
+    "points": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.447213595499958,
+        4.47213595499958
+      ],
+      [
+        0.447213595499958,
+        4.47213595499958
+      ],
+      [
+        0.894427190999916,
+        0.0
+      ]
+    ]
+  },
+  "move_joint_ack": {
+    "success": true
+  },
+  "trigger_sample": {
+    "time_monotonic": 137941.800286505,
+    "elapsed_s": 0.24467235498013906,
+    "joint_rad": [
+      -3.1861462593078613,
+      -0.018707159906625748,
+      -0.715684175491333,
+      0.021932002156972885,
+      -1.9809508323669434,
+      0.02943587116897106
+    ],
+    "joint_velocity_rad_s": [
+      0.0,
+      0.0,
+      -0.0,
+      0.0,
+      -0.0,
+      0.039576105773448944
+    ],
+    "robot_state": 1
+  },
+  "stop_result": {
+    "reason": "STOP_TEST_MOVEJ_TRIGGER",
+    "requested_at": 137941.80059724,
+    "publish_inhibited_at": 137941.800601055,
+    "ack": {
+      "success": true
+    },
+    "samples": [
+      {
+        "time": 137941.906347999,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 2
+      },
+      {
+        "time": 137941.916871226,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.927294157,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.937705966,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.94813958,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.958638565,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.969109397,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.980228392,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137941.992671052,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.003533143,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.014392313,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.025986444,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.036839498,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.047852919,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.058602399,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.069305318,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.079892414,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.093410347,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.104197862,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.115106145,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.126725312,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.137486983,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.148518204,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.15926564,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.169891402,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.180652658,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.19147418,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.202275128,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      },
+      {
+        "time": 137942.213067583,
+        "max_abs_velocity_rad_s": 0.0,
+        "robot_state": 1
+      }
+    ],
+    "safe_state_preceded_ack_failure": false,
+    "stop_mode": {
+      "value": 1,
+      "name": "DR_QSTOP",
+      "status": "[\ubbf8\ud655\uc778: \ud604\uc7a5 \uac80\ud1a0] candidate; both stop_test_movej and stop_test_servoj must use this same value"
+    },
+    "confirmed_at": 137942.213067583,
+    "state": "STOP_CONFIRMED"
+  },
+  "move_joint_total_calls": 1,
+  "move_joint_calls_after_stop": 0,
+  "candidate_gate_updates": [
+    "stop_movej_verified"
+  ],
+  "gate_updates_applied": false
+}

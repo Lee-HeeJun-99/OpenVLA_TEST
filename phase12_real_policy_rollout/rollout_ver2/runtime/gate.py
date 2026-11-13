@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import json
 
-EVIDENCE_TYPES={"photo","operator_attestation"}
+EVIDENCE_TYPES={"photo","operator_attestation","measurement"}
 
 GATE_ITEMS = (
     "pendant_limits_recorded", "live_topics_verified",
@@ -28,6 +28,8 @@ MODE_REQUIREMENTS = {
     "policy": ("stop_servoj_verified", "pendant_limits_recorded",
                "live_topics_verified", "servoj_time_param_verified",
                "tracking_thresholds_calibrated", "feedback_rate_verified"),
+    "policy_movej": ("pendant_limits_recorded", "live_topics_verified",
+                     "feedback_rate_verified", "stop_movej_verified"),
 }
 
 

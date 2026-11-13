@@ -1,0 +1,9 @@
+{
+  "evidence_type": "measurement",
+  "duration_s": 2.006711135007208,
+  "max_abs_velocity_rad_s": 0.0,
+  "max_joint_position_range_deg": 0.0,
+  "velocity_candidate_rad_s": 0.01,
+  "position_candidate_deg": 0.05,
+  "pass": true
+}

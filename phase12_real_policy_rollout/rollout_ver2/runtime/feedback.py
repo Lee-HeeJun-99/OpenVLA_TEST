@@ -52,7 +52,7 @@ class RobotFeedback:
         self._joint=None;self._joint_previous_time=None;self._joint_messages=0;self._joint_fresh=False
         self._state=None;self._mode=None;self._system=None;self._faults=[]
         self.subscriptions=[];self.timers=[];self.clients={};self._inflight=set()
-        self.poll_events=[];self.flange_comparisons=[];self.posj_comparisons=[]
+        self.poll_events=[];self.state_events=[];self.flange_comparisons=[];self.posj_comparisons=[]
         self.joint_events=[]
         self._flange_cycle=0;self._flange_pending={}
 
@@ -154,6 +154,8 @@ class RobotFeedback:
     def _state_response(self,response,requested,completed):
         with self.lock:
             self._state=(completed,int(response.robot_state),completed-requested)
+            self.state_events.append({"completed_monotonic":completed,
+              "robot_state":int(response.robot_state),"latency_s":completed-requested})
             self.condition.notify_all()
 
     def wait_for_samples_after(self,start_monotonic,timeout_s=2.0):
@@ -225,7 +227,9 @@ class RobotFeedback:
         times=[pending[name+"_completed"] for name in ("posj","flange","rotm")]
         self.flange_comparisons.append({"time":completed,"joint_rad":q.tolist(),
           "fk_link6_position_m":fk.position_m.tolist(),
+          "fk_link6_rotation_matrix":fk.rotation.tolist(),
           "reported_flange_position_m":reported_p.tolist(),
+          "reported_flange_rotation_matrix":reported_r.tolist(),
           "position_error_mm":float(np.linalg.norm(fk.position_m-reported_p)*1000),
           "rotation_error_deg":float(np.rad2deg(angle)),"service_span_s":float(max(times)-min(times))})
         del self._flange_pending[cycle]

@@ -20,6 +20,9 @@ from runtime.servoj import ServojPublisher
 from runtime.stop import StopCoordinator
 from runtime.camera import CameraFeedback
 from runtime.observation_process import run_mock_blocking_observation
+from runtime.policy_movej_core import (AbortSignal,MockableMoveJStep,MoveJPlan,
+  PolicyMoveJPrecheckError,SettlementTracker,descent_limit_reason,
+  validate_sigma_override)
 
 
 class FakeClock:
@@ -270,9 +273,8 @@ class RuntimeTests(unittest.TestCase):
             self.assertTrue(executor.authorize(
                 "stop_test_movej","I_CONFIRM_V2_MODE:stop_test_movej"))
             with self.assertRaises(PermissionError): ExecutionGate().require("stop_test_movej")
-            with self.assertRaisesRegex(PermissionError,"V2_SETTINGS_UNVERIFIED"):
-                V2Executor(gate,physical_enabled=True).authorize(
-                    "stop_test_movej","I_CONFIRM_V2_MODE:stop_test_movej")
+            self.assertTrue(V2Executor(gate,physical_enabled=True).authorize(
+                "stop_test_movej","I_CONFIRM_V2_MODE:stop_test_movej"))
 
     def test_operator_attestation_evidence_type_and_schema(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -287,6 +289,23 @@ class RuntimeTests(unittest.TestCase):
             bad=ExecutionGate({"pendant_limits_recorded":GateEntry(True,str(path),"scan")})
             self.assertIn("pendant_limits_recorded:evidence_type_invalid",
                           bad.audit("stop_test_movej"))
+
+    def test_measurement_gate_and_field_test_decisions(self):
+        from tools.gripper_test import require_operator_polarity_confirmation
+        from tools.stop_test_movej import expected_profile,stop_trigger_status
+        with tempfile.TemporaryDirectory() as directory:
+            evidence=Path(directory)/"measurement.json";evidence.write_text("{}")
+            gate=ExecutionGate({"live_topics_verified":GateEntry(
+                True,str(evidence),"measurement")})
+            self.assertEqual(gate._entry_failures("live_topics_verified"),[])
+        self.assertTrue(require_operator_polarity_confirmation(True))
+        with self.assertRaisesRegex(RuntimeError,"POLARITY_MISMATCH"):
+            require_operator_polarity_confirmation(False)
+        profile=expected_profile()
+        self.assertEqual(profile["shape"],"triangular")
+        self.assertAlmostEqual(profile["peak_velocity_deg_s"],np.sqrt(20))
+        self.assertEqual(stop_trigger_status(profile["peak_velocity_deg_s"]*.5,.1,profile),"THRESHOLD")
+        self.assertEqual(stop_trigger_status(0,profile["invalid_deadline_s"],profile),"INVALID_TIMEOUT")
 
     def test_mode_specific_gate_contracts(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -310,6 +329,85 @@ class RuntimeTests(unittest.TestCase):
             synthetic=servoj+("stop_servoj_verified",)
             passed(synthetic).require("synthetic")
             passed(synthetic).require("policy")
+            movej=movej+("stop_movej_verified",)
+            passed(movej).require("policy_movej")
+            self.assertNotIn("servoj_time_param_verified:not_passed",
+                             passed(movej).audit("policy_movej"))
+
+    def test_policy_movej_precheck_failure_never_calls_move_joint(self):
+        class Reject:
+            def plan(self,*args):raise PolicyMoveJPrecheckError(["SINGULARITY_APPROACH"])
+        class Move:
+            def __init__(self):self.calls=[]
+            def move_joint(self,**kwargs):self.calls.append(kwargs)
+        move=Move();step=MockableMoveJStep(Reject(),move,lambda reason:reason,
+                                           self.rc["policy_movej"])
+        with self.assertRaisesRegex(PolicyMoveJPrecheckError,"SINGULARITY"):
+            step.start(None,None,None,None)
+        self.assertEqual(move.calls,[])
+
+    def test_policy_movej_settlement_requires_velocity_position_and_hold(self):
+        tracker=SettlementTracker(.001,.3,.1);target=np.zeros(6)
+        self.assertFalse(tracker.update(target,np.zeros(6),target,1.0))
+        self.assertFalse(tracker.update(target,np.ones(6)*.002,target,1.2))
+        self.assertFalse(tracker.update(target,np.zeros(6),target,2.0))
+        self.assertTrue(tracker.update(target,np.zeros(6),target,2.31))
+        self.assertFalse(SettlementTracker(.001,.3,.1).update(
+            np.deg2rad(np.ones(6)*.11),np.zeros(6),target,3.0))
+
+    def test_policy_movej_j1_to_j6_order_abort_and_gripper_record_only(self):
+        target=np.deg2rad([1,2,3,4,5,6])
+        plan=MoveJPlan(target,None,None,(.2,),.5,{"outside":False})
+        class Planner:
+            def plan(self,*args):return plan
+        class Move:
+            def __init__(self):self.calls=[]
+            def move_joint(self,**kwargs):self.calls.append(kwargs)
+        stopped=[];move=Move();step=MockableMoveJStep(
+            Planner(),move,lambda reason:stopped.append(reason),self.rc["policy_movej"])
+        step.start(None,None,None,None);step.operator_abort()
+        np.testing.assert_allclose(move.calls[0]["pos"],[1,2,3,4,5,6],atol=1e-12)
+        self.assertEqual(move.calls[0]["sync_type"],1);self.assertEqual(stopped,["OPERATOR_ABORT"])
+        # policy_movej has no gripper transport: the state tracker is log-only.
+        from controller.precheck import GripperStateTracker
+        tracker=GripperStateTracker();self.assertFalse(tracker.update(0));self.assertTrue(tracker.update(1))
+
+    def test_policy_movej_full_rollout_defaults_and_table_confirmation(self):
+        from tools.policy_movej import require_table_watch_confirmation
+        pc=self.rc["policy_movej"]
+        self.assertEqual(pc["max_steps_default"],300)
+        self.assertEqual(pc["max_episode_time_s_candidate"],600.0)
+        self.assertEqual(require_table_watch_confirmation("TABLE_WATCH_BY_OPERATOR"),
+                         "TABLE_WATCH_BY_OPERATOR")
+        with self.assertRaisesRegex(PermissionError,"TABLE_WATCH"):
+            require_table_watch_confirmation("yes")
+
+    def test_policy_movej_sigma_override_audit(self):
+        default=.0803
+        self.assertEqual(validate_sigma_override(default)["value"],default)
+        raised=validate_sigma_override(default,.09,None)
+        self.assertFalse(raised["lowered"]);self.assertIsNone(raised["reason"])
+        with self.assertRaisesRegex(ValueError,"REQUIRES_REASON"):
+            validate_sigma_override(default,.07,None)
+        lowered=validate_sigma_override(default,.07,"offline replay review")
+        self.assertTrue(lowered["lowered"]);self.assertEqual(lowered["reason"],"offline replay review")
+
+    def test_policy_movej_optional_descent_limit_includes_path_point(self):
+        self.assertIsNone(descent_limit_reason(.7,.681,20,7))
+        self.assertEqual(descent_limit_reason(.7,.679,20,7),"PATH_7:DESCENT_LIMIT")
+        self.assertEqual(descent_limit_reason(.7,.680,20,8),"PATH_8:DESCENT_LIMIT")
+        self.assertIsNone(descent_limit_reason(.7,.1,None,7))
+
+    def test_policy_movej_operator_abort_response_timestamp(self):
+        clock=FakeClock();signal=AbortSignal(clock)
+        clock.value=10.;signal.request();clock.value=10.004
+        self.assertTrue(signal.is_set());self.assertAlmostEqual(signal.response_s(clock()),.004)
+
+    def test_policy_movej_instruction_allowlist(self):
+        from tools.dryrun_live import validate_instruction
+        self.assertTrue(validate_instruction("Pick up the blue cube."))
+        with self.assertRaisesRegex(ValueError,"OOD_INSTRUCTION"):
+            validate_instruction("Pick up the orange cube.")
 
     def test_stop_uses_configured_common_mode(self):
         result,_,_=self._stop_case(True,[1]*8,[.1,0,0,0,0,0])
@@ -355,7 +453,7 @@ class RuntimeTests(unittest.TestCase):
             def get_tool_digital_output(self,index):return {"success":True,"value":1}
         io=IO();event=LevelIOGripper(io,PassGate(),self.rc,enabled=True).command_model_value(.1)
         self.assertEqual(event["state"],"fault")
-        self.assertIn("GRIPPER_POLARITY_MISMATCH",event["reason"])
+        self.assertIn("GRIPPER_OFF_READBACK_MISMATCH",event["reason"])
         self.assertEqual(io.state,{1:0,2:0})
 
     def test_level_gripper_policy_is_record_only_when_disabled(self):

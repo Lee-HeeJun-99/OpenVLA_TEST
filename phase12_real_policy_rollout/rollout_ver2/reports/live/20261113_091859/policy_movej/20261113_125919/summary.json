@@ -1,0 +1,262 @@
+{
+  "pass": false,
+  "steps": [
+    {
+      "step": 0,
+      "action_raw": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.001625122345860007,
+        -0.00021638712713261885,
+        0.0018402761308523848,
+        0.00018002177793647895,
+        0.9980392156862745
+      ],
+      "interpreted_delta_position_m": [
+        2.835627494564459e-05,
+        1.6923010594068442e-05,
+        0.001625122345860007
+      ],
+      "interpreted_rotation_vector_rad": [
+        -0.00021638712713261885,
+        0.0018402761308523848,
+        0.00018002177793647895
+      ],
+      "endpoint_arm_min": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "endpoint_arm_max": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "endpoint_streak": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "gripper_target": 0.9980392156862745,
+      "gripper_binary": 1,
+      "gripper_changed": false,
+      "gripper_execution": "record_only",
+      "target_joint_deg_j1_to_j6": [
+        -182.54269461947854,
+        -1.381577056452701,
+        -40.283986703283446,
+        1.2446207121731099,
+        -114.01714406612982,
+        1.4981312101040793
+      ],
+      "move_joint_ack": {
+        "success": true
+      },
+      "motion_time_s": 0.83704618900083,
+      "command_delta": {
+        "position_m": [
+          2.835627494562898e-05,
+          1.6923010594067575e-05,
+          0.0016251223458599862
+        ],
+        "rotation_vector_rad": [
+          -0.00021638712713265945,
+          0.0018402761308524034,
+          0.00018002177793650532
+        ]
+      },
+      "actual_delta": {
+        "position_m": [
+          5.41555201578614e-05,
+          4.507421289471139e-06,
+          0.0016217579057914433
+        ],
+        "rotation_vector_rad": [
+          -0.00022991810424277743,
+          0.0018456173622160368,
+          0.00012471447846658653
+        ]
+      },
+      "arrival_joint_error_deg": [
+        -0.0013509496324547023,
+        -0.006411511438389304,
+        0.009001035832465757,
+        -0.0015198799284423545,
+        -0.0028510699098269316,
+        0.0005545538305249029
+      ],
+      "path_sigma_min": 0.1076803235302062,
+      "path_minimum_tool_z_m": 0.7154009019983388,
+      "sim_joint_envelope_log_only": {
+        "outside": true,
+        "excess_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5143201360396432,
+          0.0
+        ],
+        "joints": [
+          5
+        ]
+      },
+      "frame_record": {
+        "t_settle_host_monotonic": 143182.832135139,
+        "t_settle_ros_ns": 1794542372332873586,
+        "frame_host_received_monotonic": 143182.884988628,
+        "frame_header_stamp_ns": 1794542372350950251,
+        "frame_wait_s": 0.052853489003609866,
+        "camera_receive_count": 213
+      }
+    }
+  ],
+  "automatic_home_calls": 0,
+  "gripper_command_calls": 0,
+  "instruction": "Pick up the blue cube.",
+  "scene_cube_color": "blue",
+  "max_steps": 300,
+  "max_episode_time_s": 600.0,
+  "sigma_min": {
+    "value": 0.01,
+    "default": 0.0803,
+    "lowered": true,
+    "reason": "Effectively disable singularity precheck to observe policy until joint-limit/IK stop; operator watching with e-stop"
+  },
+  "max_descent_mm": null,
+  "table_collision_control": "\ud14c\uc774\ube14 \ub192\uc774 \uc790\ub3d9 \uac80\uc0ac \uc5c6\uc74c, \uc791\uc5c5\uc790 \uac10\uc2dc",
+  "optional_descent_guard": {
+    "enabled": false,
+    "max_descent_mm": null
+  },
+  "table_watch_confirmation": "TABLE_WATCH_BY_OPERATOR",
+  "precheck_reasons": [
+    "JOINT_STEP_CANDIDATE_EXCEEDED"
+  ],
+  "end_reason": "PRECHECK_REJECTED",
+  "move_joint_call_count": 1,
+  "observation_process_exit_detected": false,
+  "executed_steps": 1,
+  "elapsed_s": 1.8045192290155683,
+  "cumulative_displacement": {
+    "position_m": [
+      3.7493190762294404e-05,
+      1.4703894723862299e-05,
+      0.0016144191368117067
+    ],
+    "rotation_vector_rad": [
+      -0.0002304520529910438,
+      0.0018368499259814345,
+      0.00016556698621448122
+    ],
+    "position_mm": [
+      0.037493190762294404,
+      0.014703894723862299,
+      1.6144191368117067
+    ],
+    "position_norm_mm": 1.6149213891633996,
+    "rotation_vector_deg": [
+      -0.01320393001651201,
+      0.10524374835765386,
+      0.009486289536790456
+    ],
+    "rotation_magnitude_deg": 0.10649215945517274
+  },
+  "minimum_height_relative_home_mm": 0.0,
+  "sim_joint_envelope_first_exit": {
+    "step": 0,
+    "joints": [
+      5
+    ],
+    "excess_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.5143201360396432,
+      0.0
+    ]
+  },
+  "endpoint_arm_summary": {
+    "dimensions": [
+      "dx",
+      "dy",
+      "dz",
+      "rx",
+      "ry",
+      "rz"
+    ],
+    "interpreted_actions": 2,
+    "min_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_streak_min_max": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "gripper_execution": "record_only",
+  "gripper_io_verified": false
+}

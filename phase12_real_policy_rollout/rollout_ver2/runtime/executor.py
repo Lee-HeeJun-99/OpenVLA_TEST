@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 MODES=("dryrun_offline","dryrun_live","gripper_test","stop_test_movej",
-       "stop_test_servoj","synthetic","policy")
+       "stop_test_servoj","synthetic","policy","policy_movej")
 
 MODE_REQUIRED_SETTINGS={
   "dryrun_offline":(),
@@ -27,6 +27,15 @@ MODE_REQUIRED_SETTINGS={
             "servoj_time_unverified","servoj_velocity_unverified",
             "servoj_acceleration_unverified","tracking_position_m_candidate",
             "tracking_rotation_deg_candidate"),
+  "policy_movej":("stop_service","move_stop_mode_candidate_unverified",
+                   "move_joint_service","policy_movej.velocity_deg_s_candidate",
+                   "policy_movej.acceleration_deg_s2_confirmed",
+                   "policy_movej.settle_velocity_rad_s_candidate",
+                   "policy_movej.settle_hold_s_candidate",
+                   "policy_movej.target_error_deg_candidate",
+                   "policy_movej.motion_timeout_s_candidate",
+                   "policy_movej.max_steps_default",
+                   "policy_movej.max_episode_time_s_candidate"),
 }
 
 
@@ -79,6 +88,7 @@ class V2Executor:
           "stop_test_servoj":"small Servoj joint motion, then the same MoveStop mode",
           "synthetic":"5 mm translation / 1 deg rotation axes",
           "policy":"mode A arm only; gripper record only",
+          "policy_movej":"mode A MoveJoint arm only; gripper record only; no automatic home",
         }[mode]
 
     @staticmethod

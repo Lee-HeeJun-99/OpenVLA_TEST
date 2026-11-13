@@ -1,0 +1,1395 @@
+[
+  {
+    "service": "state",
+    "requested": 137932.077320619,
+    "completed": 137932.920039254,
+    "latency_s": 0.8427186350163538,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137932.977215091,
+    "completed": 137932.978184142,
+    "latency_s": 0.0009690510050859302,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137932.977402353,
+    "completed": 137932.978410536,
+    "latency_s": 0.0010081829968839884,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137932.977488705,
+    "completed": 137932.978626746,
+    "latency_s": 0.0011380409996490926,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137932.977585675,
+    "completed": 137932.978853745,
+    "latency_s": 0.0012680700165219605,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137932.977668788,
+    "completed": 137932.979085716,
+    "latency_s": 0.0014169280184432864,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137932.97775159,
+    "completed": 137932.979421858,
+    "latency_s": 0.0016702680150046945,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.07722825,
+    "completed": 137933.077763459,
+    "latency_s": 0.0005352089938241988,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.177253289,
+    "completed": 137933.177831016,
+    "latency_s": 0.0005777269834652543,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.277232192,
+    "completed": 137933.277828485,
+    "latency_s": 0.0005962930154055357,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.377225654,
+    "completed": 137933.377757258,
+    "latency_s": 0.0005316039896570146,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.477233153,
+    "completed": 137933.47786574,
+    "latency_s": 0.0006325869762804359,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137933.477390557,
+    "completed": 137933.478135366,
+    "latency_s": 0.0007448089891113341,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137933.477450981,
+    "completed": 137933.478396874,
+    "latency_s": 0.0009458929998800159,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137933.477499043,
+    "completed": 137933.478754234,
+    "latency_s": 0.0012551910185720772,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.57722492,
+    "completed": 137933.577865889,
+    "latency_s": 0.000640968995867297,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.67723387,
+    "completed": 137933.677804812,
+    "latency_s": 0.000570942007470876,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.777250428,
+    "completed": 137933.778092256,
+    "latency_s": 0.0008418280049227178,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.877227798,
+    "completed": 137933.877873285,
+    "latency_s": 0.0006454870162997395,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137933.977226851,
+    "completed": 137933.978159376,
+    "latency_s": 0.0009325249993707985,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137933.977372096,
+    "completed": 137933.978179044,
+    "latency_s": 0.0008069479954428971,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137933.97743549,
+    "completed": 137933.978508482,
+    "latency_s": 0.0010729919886216521,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137933.977526362,
+    "completed": 137933.978526456,
+    "latency_s": 0.0010000939946621656,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137933.977669142,
+    "completed": 137933.978780962,
+    "latency_s": 0.0011118199909105897,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137933.977723182,
+    "completed": 137933.979140063,
+    "latency_s": 0.0014168809866532683,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.077293081,
+    "completed": 137934.078103849,
+    "latency_s": 0.0008107679896056652,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.177255862,
+    "completed": 137934.177979549,
+    "latency_s": 0.000723686971468851,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.277251946,
+    "completed": 137934.27798989,
+    "latency_s": 0.0007379439775831997,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.377259035,
+    "completed": 137934.377913199,
+    "latency_s": 0.0006541639741044492,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.47722971,
+    "completed": 137934.477895602,
+    "latency_s": 0.00066589200287126,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137934.477389673,
+    "completed": 137934.47827481,
+    "latency_s": 0.0008851370075717568,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137934.477452356,
+    "completed": 137934.478540825,
+    "latency_s": 0.0010884689982049167,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137934.477501177,
+    "completed": 137934.478900329,
+    "latency_s": 0.001399152009980753,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.577273864,
+    "completed": 137934.57788387,
+    "latency_s": 0.0006100059836171567,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.677228892,
+    "completed": 137934.677873432,
+    "latency_s": 0.0006445400067605078,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.777229962,
+    "completed": 137934.777785645,
+    "latency_s": 0.0005556830146815628,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.877257048,
+    "completed": 137934.877834226,
+    "latency_s": 0.0005771779979113489,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137934.977383828,
+    "completed": 137934.978122097,
+    "latency_s": 0.0007382690091617405,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137934.977234951,
+    "completed": 137934.978499755,
+    "latency_s": 0.0012648040137719363,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137934.977439269,
+    "completed": 137934.978520378,
+    "latency_s": 0.0010811090178322047,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137934.977527109,
+    "completed": 137934.978921882,
+    "latency_s": 0.001394772989442572,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137934.977583521,
+    "completed": 137934.978946122,
+    "latency_s": 0.001362601004075259,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137934.977646819,
+    "completed": 137934.979341621,
+    "latency_s": 0.0016948019911069423,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.077337871,
+    "completed": 137935.078113242,
+    "latency_s": 0.0007753710087854415,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.177228031,
+    "completed": 137935.177898415,
+    "latency_s": 0.0006703839753754437,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.277228914,
+    "completed": 137935.277786777,
+    "latency_s": 0.000557863007998094,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.377226811,
+    "completed": 137935.377849713,
+    "latency_s": 0.0006229020073078573,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.47725061,
+    "completed": 137935.478015039,
+    "latency_s": 0.0007644289871677756,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137935.477437278,
+    "completed": 137935.478462408,
+    "latency_s": 0.0010251300118397921,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137935.47750643,
+    "completed": 137935.478483237,
+    "latency_s": 0.000976807001279667,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137935.477556438,
+    "completed": 137935.478882948,
+    "latency_s": 0.0013265099842101336,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.577250822,
+    "completed": 137935.577848724,
+    "latency_s": 0.0005979019915685058,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.677231754,
+    "completed": 137935.67797165,
+    "latency_s": 0.0007398960005957633,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.777229024,
+    "completed": 137935.777860943,
+    "latency_s": 0.000631918985163793,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.877218481,
+    "completed": 137935.877823774,
+    "latency_s": 0.0006052929966244847,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137935.977241806,
+    "completed": 137935.978288003,
+    "latency_s": 0.001046197023242712,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137935.977413663,
+    "completed": 137935.978319335,
+    "latency_s": 0.0009056720009539276,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137935.977479406,
+    "completed": 137935.978686531,
+    "latency_s": 0.001207124994834885,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137935.97760871,
+    "completed": 137935.978704637,
+    "latency_s": 0.001095927000278607,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137935.977671362,
+    "completed": 137935.979192028,
+    "latency_s": 0.0015206660027615726,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137935.977727653,
+    "completed": 137935.979210613,
+    "latency_s": 0.001482960011344403,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.077223867,
+    "completed": 137936.077921696,
+    "latency_s": 0.0006978290039114654,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.177217643,
+    "completed": 137936.177897601,
+    "latency_s": 0.0006799580005463213,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.277213869,
+    "completed": 137936.277783683,
+    "latency_s": 0.0005698140012100339,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.377240787,
+    "completed": 137936.377933117,
+    "latency_s": 0.0006923300097696483,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.47722954,
+    "completed": 137936.477921591,
+    "latency_s": 0.0006920509913470596,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137936.477408473,
+    "completed": 137936.478229051,
+    "latency_s": 0.000820577988633886,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137936.477480298,
+    "completed": 137936.478733623,
+    "latency_s": 0.0012533249973785132,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137936.477530361,
+    "completed": 137936.478753575,
+    "latency_s": 0.0012232139997649938,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.577215324,
+    "completed": 137936.577918139,
+    "latency_s": 0.0007028149848338217,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.67721283,
+    "completed": 137936.677785148,
+    "latency_s": 0.0005723180074710399,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.777225702,
+    "completed": 137936.777904838,
+    "latency_s": 0.0006791359919589013,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.877245748,
+    "completed": 137936.877908016,
+    "latency_s": 0.0006622679939027876,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137936.977261691,
+    "completed": 137936.978090176,
+    "latency_s": 0.0008284850046038628,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137936.977414759,
+    "completed": 137936.9784489,
+    "latency_s": 0.0010341409943066537,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137936.977470776,
+    "completed": 137936.97846736,
+    "latency_s": 0.0009965839853975922,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137936.977572806,
+    "completed": 137936.978835102,
+    "latency_s": 0.0012622959911823273,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137936.977627656,
+    "completed": 137936.978855635,
+    "latency_s": 0.0012279790244065225,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137936.977688181,
+    "completed": 137936.979228238,
+    "latency_s": 0.00154005698277615,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.077227724,
+    "completed": 137937.077802999,
+    "latency_s": 0.000575275014853105,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.177257191,
+    "completed": 137937.177919859,
+    "latency_s": 0.0006626679969485849,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.277244443,
+    "completed": 137937.27792414,
+    "latency_s": 0.0006796970264986157,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.377278721,
+    "completed": 137937.37791357,
+    "latency_s": 0.0006348490132950246,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.477230917,
+    "completed": 137937.477878934,
+    "latency_s": 0.0006480170122813433,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137937.477405987,
+    "completed": 137937.478168837,
+    "latency_s": 0.000762849987950176,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137937.477469429,
+    "completed": 137937.478505329,
+    "latency_s": 0.0010359000007156283,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137937.477517268,
+    "completed": 137937.478921992,
+    "latency_s": 0.0014047239965293556,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.577230649,
+    "completed": 137937.577885111,
+    "latency_s": 0.0006544619973283261,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.677275624,
+    "completed": 137937.677902481,
+    "latency_s": 0.0006268569850362837,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.777229779,
+    "completed": 137937.777918827,
+    "latency_s": 0.0006890479999128729,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.877227283,
+    "completed": 137937.87789268,
+    "latency_s": 0.0006653970049228519,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137937.977225639,
+    "completed": 137937.977984408,
+    "latency_s": 0.0007587689906358719,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137937.97737365,
+    "completed": 137937.978451234,
+    "latency_s": 0.0010775839909911156,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137937.977430266,
+    "completed": 137937.978471039,
+    "latency_s": 0.0010407730005681515,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137937.977518625,
+    "completed": 137937.978739293,
+    "latency_s": 0.0012206679966766387,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137937.977573358,
+    "completed": 137937.97918295,
+    "latency_s": 0.0016095920000225306,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137937.977620361,
+    "completed": 137937.979201983,
+    "latency_s": 0.0015816219965927303,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.07725179,
+    "completed": 137938.077935933,
+    "latency_s": 0.0006841429858468473,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.177227192,
+    "completed": 137938.177859988,
+    "latency_s": 0.0006327959999907762,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.27722811,
+    "completed": 137938.277894929,
+    "latency_s": 0.0006668189889751375,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.377256843,
+    "completed": 137938.377802075,
+    "latency_s": 0.0005452320037875324,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.477257128,
+    "completed": 137938.478047645,
+    "latency_s": 0.0007905170205049217,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137938.477460325,
+    "completed": 137938.478320468,
+    "latency_s": 0.0008601430163253099,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137938.477541087,
+    "completed": 137938.478584127,
+    "latency_s": 0.0010430400143377483,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137938.477606462,
+    "completed": 137938.478951013,
+    "latency_s": 0.001344551012152806,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.57723041,
+    "completed": 137938.5781584,
+    "latency_s": 0.0009279899823013693,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.67723073,
+    "completed": 137938.677868403,
+    "latency_s": 0.000637672987068072,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.777308091,
+    "completed": 137938.778272335,
+    "latency_s": 0.0009642440127208829,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.877248655,
+    "completed": 137938.877845841,
+    "latency_s": 0.0005971860082354397,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137938.977227356,
+    "completed": 137938.978032426,
+    "latency_s": 0.0008050700125750154,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137938.977394038,
+    "completed": 137938.978373386,
+    "latency_s": 0.0009793479985091835,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137938.977458231,
+    "completed": 137938.978392203,
+    "latency_s": 0.0009339719836134464,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137938.977552294,
+    "completed": 137938.978667245,
+    "latency_s": 0.0011149510100949556,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137938.977606671,
+    "completed": 137938.979106391,
+    "latency_s": 0.0014997200050856918,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137938.977654747,
+    "completed": 137938.979126172,
+    "latency_s": 0.0014714249991811812,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.077217165,
+    "completed": 137939.077868138,
+    "latency_s": 0.0006509730010293424,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.177230622,
+    "completed": 137939.177870328,
+    "latency_s": 0.0006397060060407966,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.277219772,
+    "completed": 137939.277772863,
+    "latency_s": 0.0005530909984372556,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.377223328,
+    "completed": 137939.377930706,
+    "latency_s": 0.0007073779997881502,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.477227444,
+    "completed": 137939.478026742,
+    "latency_s": 0.0007992979953996837,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137939.477388023,
+    "completed": 137939.478583314,
+    "latency_s": 0.0011952909990213811,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137939.47746083,
+    "completed": 137939.478618273,
+    "latency_s": 0.0011574429809115827,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137939.477513685,
+    "completed": 137939.479124882,
+    "latency_s": 0.001611196988960728,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.577223369,
+    "completed": 137939.577804196,
+    "latency_s": 0.0005808269779663533,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.677244283,
+    "completed": 137939.677949241,
+    "latency_s": 0.0007049580162856728,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.777235204,
+    "completed": 137939.777904906,
+    "latency_s": 0.0006697019853163511,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.877223256,
+    "completed": 137939.877851653,
+    "latency_s": 0.0006283970142249018,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137939.977233766,
+    "completed": 137939.97802268,
+    "latency_s": 0.0007889140106271952,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137939.977385058,
+    "completed": 137939.978462267,
+    "latency_s": 0.0010772089881356806,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137939.977442347,
+    "completed": 137939.978481121,
+    "latency_s": 0.0010387740039732307,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137939.977531502,
+    "completed": 137939.978810645,
+    "latency_s": 0.0012791430053766817,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137939.977582937,
+    "completed": 137939.97883089,
+    "latency_s": 0.0012479530123528093,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137939.977636248,
+    "completed": 137939.979194276,
+    "latency_s": 0.001558028016006574,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.077223568,
+    "completed": 137940.077775474,
+    "latency_s": 0.0005519060068763793,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.17725827,
+    "completed": 137940.177923317,
+    "latency_s": 0.0006650470022577792,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.277226511,
+    "completed": 137940.277794621,
+    "latency_s": 0.0005681100010406226,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.377228714,
+    "completed": 137940.378106221,
+    "latency_s": 0.0008775070018600672,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.477224796,
+    "completed": 137940.477979786,
+    "latency_s": 0.0007549900037702173,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137940.477382611,
+    "completed": 137940.478254632,
+    "latency_s": 0.0008720210171304643,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137940.477445238,
+    "completed": 137940.478681983,
+    "latency_s": 0.0012367449817247689,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137940.477500941,
+    "completed": 137940.478700785,
+    "latency_s": 0.0011998440022580326,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.577219126,
+    "completed": 137940.577847355,
+    "latency_s": 0.0006282289978116751,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.677378766,
+    "completed": 137940.678176415,
+    "latency_s": 0.0007976490014698356,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.777224901,
+    "completed": 137940.777775231,
+    "latency_s": 0.0005503300053533167,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.877226297,
+    "completed": 137940.877793386,
+    "latency_s": 0.0005670890095643699,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137940.977233564,
+    "completed": 137940.977993941,
+    "latency_s": 0.0007603770063724369,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137940.977389022,
+    "completed": 137940.978254468,
+    "latency_s": 0.0008654459961690009,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137940.977444996,
+    "completed": 137940.978567594,
+    "latency_s": 0.0011225979833398014,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137940.977533488,
+    "completed": 137940.978585395,
+    "latency_s": 0.00105190699105151,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137940.9775848,
+    "completed": 137940.97883597,
+    "latency_s": 0.001251169975148514,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137940.977631047,
+    "completed": 137940.979191117,
+    "latency_s": 0.0015600699989590794,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.077409502,
+    "completed": 137941.078113929,
+    "latency_s": 0.0007044269877951592,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.178040636,
+    "completed": 137941.180542842,
+    "latency_s": 0.0025022059853654355,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.277223029,
+    "completed": 137941.277901079,
+    "latency_s": 0.0006780500116292387,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.377244007,
+    "completed": 137941.377820768,
+    "latency_s": 0.0005767609982285649,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.477384896,
+    "completed": 137941.478195688,
+    "latency_s": 0.000810792000265792,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137941.477587049,
+    "completed": 137941.478564341,
+    "latency_s": 0.000977291987510398,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137941.47763912,
+    "completed": 137941.478792505,
+    "latency_s": 0.0011533849756233394,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137941.477681734,
+    "completed": 137941.479281004,
+    "latency_s": 0.001599270006408915,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.57724553,
+    "completed": 137941.582224029,
+    "latency_s": 0.004978498996933922,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.677367372,
+    "completed": 137941.678510223,
+    "latency_s": 0.001142850989708677,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.77722728,
+    "completed": 137941.777854219,
+    "latency_s": 0.0006269389996305108,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.87721163,
+    "completed": 137941.877879006,
+    "latency_s": 0.0006673760071862489,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.905794792,
+    "completed": 137941.906542068,
+    "latency_s": 0.0007472760044038296,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.916421486,
+    "completed": 137941.917060651,
+    "latency_s": 0.0006391649949364364,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.926941211,
+    "completed": 137941.92745251,
+    "latency_s": 0.0005112990038469434,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.937363253,
+    "completed": 137941.93786069,
+    "latency_s": 0.0004974369949195534,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.947774131,
+    "completed": 137941.948304707,
+    "latency_s": 0.0005305760132614523,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.958209911,
+    "completed": 137941.958794145,
+    "latency_s": 0.0005842339887749404,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.968712698,
+    "completed": 137941.969281325,
+    "latency_s": 0.000568627001484856,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.977489463,
+    "completed": 137941.978589631,
+    "latency_s": 0.0011001680104527622,
+    "success": true
+  },
+  {
+    "service": "mode",
+    "requested": 137941.977819799,
+    "completed": 137941.978836796,
+    "latency_s": 0.0010169970046263188,
+    "success": true
+  },
+  {
+    "service": "system",
+    "requested": 137941.977913666,
+    "completed": 137941.979065874,
+    "latency_s": 0.001152208016719669,
+    "success": true
+  },
+  {
+    "service": "posj",
+    "requested": 137941.978040992,
+    "completed": 137941.979396388,
+    "latency_s": 0.001355396001599729,
+    "success": true
+  },
+  {
+    "service": "flange",
+    "requested": 137941.97810724,
+    "completed": 137941.980639358,
+    "latency_s": 0.0025321180000901222,
+    "success": true
+  },
+  {
+    "service": "rotm",
+    "requested": 137941.978163335,
+    "completed": 137941.980658404,
+    "latency_s": 0.002495068998541683,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.979540867,
+    "completed": 137941.981499203,
+    "latency_s": 0.0019583359826356173,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137941.991810622,
+    "completed": 137941.99289576,
+    "latency_s": 0.0010851379774976522,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.002753025,
+    "completed": 137942.003758449,
+    "latency_s": 0.0010054239828605205,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.013622216,
+    "completed": 137942.014761493,
+    "latency_s": 0.0011392769811209291,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.025318646,
+    "completed": 137942.026368096,
+    "latency_s": 0.001049450016580522,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.03603895,
+    "completed": 137942.037155412,
+    "latency_s": 0.0011164619936607778,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.046960574,
+    "completed": 137942.048357081,
+    "latency_s": 0.0013965069956611842,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.057946249,
+    "completed": 137942.058964515,
+    "latency_s": 0.0010182659898418933,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.068686571,
+    "completed": 137942.069582315,
+    "latency_s": 0.0008957439858932048,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.077363866,
+    "completed": 137942.078545783,
+    "latency_s": 0.0011819170031230897,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.079391023,
+    "completed": 137942.080116175,
+    "latency_s": 0.000725152000086382,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.092676838,
+    "completed": 137942.094223932,
+    "latency_s": 0.0015470940270461142,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.103498708,
+    "completed": 137942.10448936,
+    "latency_s": 0.0009906520135700703,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.114305397,
+    "completed": 137942.115680164,
+    "latency_s": 0.0013747669872827828,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.125283324,
+    "completed": 137942.127047527,
+    "latency_s": 0.0017642029852140695,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.136816015,
+    "completed": 137942.137796495,
+    "latency_s": 0.0009804799919947982,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.147608047,
+    "completed": 137942.148911301,
+    "latency_s": 0.0013032539864070714,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.158614298,
+    "completed": 137942.159598002,
+    "latency_s": 0.0009837039979174733,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.169345122,
+    "completed": 137942.170156638,
+    "latency_s": 0.0008115159871522337,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.177380223,
+    "completed": 137942.178384033,
+    "latency_s": 0.0010038100008387119,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.179976661,
+    "completed": 137942.181352413,
+    "latency_s": 0.001375752006424591,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.190810029,
+    "completed": 137942.191778321,
+    "latency_s": 0.0009682920062914491,
+    "success": true
+  },
+  {
+    "service": "state",
+    "requested": 137942.201564375,
+    "completed": 137942.202520509,
+    "latency_s": 0.0009561339975334704,
+    "success": true
+  }
+]

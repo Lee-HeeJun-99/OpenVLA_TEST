@@ -34,8 +34,9 @@ Robot Limits 일반/감소 모드, tool TCP/무게, firmware와 함께 JEGH-3520
 | stop_test_movej | pendant limits, live topics, feedback rate | 불필요 | 불필요 |
 | stop_test_servoj | 위 항목 + stop_movej 결과, Servoj parameter, tracking calibration | 필요 | 필요 |
 | synthetic/policy | 위 Servoj 항목 + `stop_servoj_verified` | 필요 | 필요 |
+| policy_movej | pendant limits, live topics, feedback rate, `stop_movej_verified` | 불필요 | 불필요 |
 
-`stop_test_movej` 전에 `runtime_config.json`의 movej acceleration과 MoveStop mode를 사람이 검토·입력한다. null/[미확인] 필수값이 있으면 executor가 거부한다. action clamp나 limit 완화는 금지한다.
+2026-11-13 현장 시험으로 MoveJoint acceleration `10°/s²`와 MoveStop `DR_QSTOP=1`을 확인했다. null/[미확인] 필수값이 있으면 executor가 거부한다. action clamp나 limit 완화는 금지한다.
 
 ## 4. dryrun_live
 
@@ -96,14 +97,20 @@ preflight는 명령 전에 robot_mode=1, robot_system=0, robot_state=1과 real_h
 
 ## 5. gripper_test
 
-`pendant_limits_recorded`, `live_topics_verified`, `gripper_wiring_recorded`, `arm_stationary_verified` evidence와 fresh confirmation이 모두 필요하다.
+도구가 먼저 `pendant_limits_recorded`, `live_topics_verified`, `gripper_wiring_recorded`를 검사하고, 2초 정지 측정으로 `arm_stationary.json` 후보 evidence를 만든다. 기존 `arm_stationary_verified`를 미리 true로 바꾸지 않는다. 모든 preflight와 아래 fresh confirmation이 끝난 뒤에만 setter client를 만든다.
+
+```bash
+/usr/bin/python3 tools/gripper_test.py
+```
+
+명령 한 줄만 붙여넣고 prompt에서 `I_CONFIRM_V2_MODE:gripper_test`를 직접 입력한다.
 
 1. JointState와 작업자가 팔 정지를 확인한다.
 2. OPEN: DO2 Off를 먼저 확인/설정하고 DO1 On, 두 출력 readback, 펜던트 표시, 육안 jaw 상태와 소요 시간을 기록한다.
 3. CLOSE: DO1 Off를 먼저 확인/설정하고 DO2 On, 같은 항목을 기록한다.
 4. 마지막에 DO1/DO2를 모두 Off로 두고 jaw가 유지되는지 또는 풀리는지 관찰한다.
 
-첫 명령에서 서비스 극성이 예상(`0=Off, 1=On`)과 다르면 즉시 두 출력 Off를 요청하고 중단한다. 두 출력 동시 On은 금지한다.
+첫 Off write/readback은 같은 service encoding의 일관성만 검사하므로 물리 극성 검사가 아니다. 첫 `DO1←1` 뒤 펜던트 DO1 On 여부를 작업자가 확인한다. `n`이면 즉시 두 출력을 0으로 만들고 `POLARITY_MISMATCH`로 중단한다. 두 출력 동시 On은 금지한다. 모든 예외와 정상 종료의 `finally`에서도 두 출력을 0으로 만든다.
 
 - 통과: level 순서와 ACK/readback, jaw 상태·개폐 시간, 입력 포트가 있으면 완료 timestamp 기록.
 - 중단: 팔 속도 비영, mapping/readback 불일치, ACK 실패, jaw 미완료, unexpected motion.
@@ -112,15 +119,33 @@ preflight는 명령 전에 robot_mode=1, robot_system=0, robot_state=1과 real_h
 
 ## 6. stop_test_movej — 세션 1 종료점
 
-real home에서 `/dsr01/motion/move_joint`(`dsr_msgs2/srv/MoveJoint`)로 J6만 `+2°`, 속도 `5°/s 이하`로 비동기 이동시키는 동안 `/dsr01/motion/move_stop`을 1회 호출한다. acceleration은 현장 검토값을 채워야 한다. Servoj parameter와 tracking threshold는 필요하지 않다.
+real home에서 `/dsr01/motion/move_joint`(`dsr_msgs2/srv/MoveJoint`)로 J6만 `+2°`, 속도 `5°/s`, 가속도 `10°/s²` 후보로 비동기 이동시키는 동안 `/dsr01/motion/move_stop`을 1회 호출한다. 가속도와 stop mode는 실행 직전 현장 검토 대상이다. Servoj parameter와 tracking threshold는 필요하지 않다.
 
-MoveStop 후보는 `DR_QSTOP=1`이며 **[미확인: 현장 검토]**다. `stop_test_servoj`도 반드시 같은 설정값을 사용한다.
+```bash
+/usr/bin/python3 tools/stop_test_movej.py
+```
+
+명령 한 줄만 붙여넣고 prompt에서 `I_CONFIRM_V2_MODE:stop_test_movej`를 직접 입력한다. 자동 재시도는 구현하지 않았다.
+
+2° 이동에서 `v=5°/s`, `a=10°/s²`는 최고 속도 도달 전 감속해야 하는 삼각 프로파일이다. 예상 최고 속도는 `sqrt(a·distance)=4.472°/s`, 가속/감속 각 0.4472초, 총 0.8944초다.
+
+| 시간 (s) | 예상 속도 (°/s) |
+|---:|---:|
+| 0.0000 | 0.000 |
+| 0.4472 | 4.472 |
+| 0.8944 | 0.000 |
+
+MoveStop trigger는 측정 J6 속도가 예상 최고 속도의 50%인 `2.236°/s` 이상이 된 첫 JointState다. 예상 총시간의 70%인 `0.6261초` 안에 도달하지 않으면 시험 무효로 표시하되 MoveStop을 호출하고 종료한다.
+
+MoveStop은 현장 시험에서 확인한 `DR_QSTOP=1`이다. `stop_test_servoj`도 반드시 같은 설정값을 사용한다.
 
 - RobotState topic은 현장 graph에 없다. 모든 `/joint_states` callback의 이름 정규화 관절각/속도, host 수신 시각, header stamp를 기록하고, `get_robot_state`를 계속 polling한다. flange 교차 검증은 저주기 `get_current_tool_flange_posx/get_current_rotm` 로그로 수행한다.
-- 통과: MoveStop ACK(또는 선행 SAFE 상태), 계속 갱신된 JointState에서 zero velocity 0.3초 후보, 추가 command 0, full-rate log 완전성 확인.
+- 통과: stop 요청 sample의 J6 속도가 0이 아니고, MoveStop ACK(또는 선행 SAFE 상태), `max|qdot|≤0.001 rad/s` 0.3초 연속, MoveStop 이후 MoveJoint 추가 호출 0, full-rate log 완전성 확인.
 - 중단: 시작이 real home 아님, 설정 null, 한계/상태/stale fault, ACK와 SAFE 상태 모두 없음, zero velocity 미확인.
 - evidence: MoveJoint request/ACK, full-rate JointState, state polling과 flange get 로그, stop receipt, monotonic timeline, pendant 영상.
 - review 뒤 `stop_movej_verified=true`로 등록한다.
+
+2026-11-13 사용자 review 완료 뒤 `reports/live/20261113_091859/stop_test_movej/summary.json`을 measurement evidence로 `stop_movej_verified=true`에 등록했다.
 
 **`stop_movej_verified`는 정지 서비스와 판정 로직의 검증이며, servoj 스트림 중 정지 동작의 검증을 대신하지 않는다.**
 
@@ -133,3 +158,22 @@ MoveStop 후보는 `DR_QSTOP=1`이며 **[미확인: 현장 검토]**다. `stop_t
 5. 그 다음에만 synthetic로 진행한다. policy는 별도 승인 이후다.
 
 `stop_servoj_verified` 없이는 synthetic와 policy gate가 열리지 않는다.
+
+## policy_movej — 별도 승인된 Mode A 경로
+
+`policy_movej`는 Servoj 경로를 대체하거나 그 gate를 완화하지 않는 별도 실행 모드다. 매 step에서 정착 뒤 새 frame만 관측하고, action 전체를 사전 검사한 뒤 비동기 MoveJoint 한 번으로 목표 관절각에 이동한다. 그리퍼는 `gripper_io_verified=false`인 현재 계속 기록만 한다. 자동 home 복귀는 없으며 종료 뒤 작업자가 펜던트로 복귀한다.
+
+환경 setup과 추론 서버 준비 후 아래 **한 줄만 붙여넣고**, prompt에서 `I_CONFIRM_V2_MODE:policy_movej`와 `TABLE_WATCH_BY_OPERATOR`를 각각 직접 입력한다. 후자는 자동 table geometry/height 검사가 없으며 작업자가 충돌 위험을 계속 감시한다는 확인이다. 실행 뒤 Enter 또는 `q`+Enter는 MoveJoint 이동 중에도 즉시 MoveStop을 요청하며 key 입력→MoveStop 요청 시간을 summary에 기록한다.
+
+```bash
+/usr/bin/python3 tools/policy_movej.py --server http://127.0.0.1:8766 --camera-topic /zed/zed_node/rgb/color/rect/image --instruction "Pick up the blue cube." --scene-cube-color blue --max-steps 300 --max-episode-time 600 --session reports/live/20261113_091859
+```
+
+- preflight: AUTO/REAL/STANDBY, real home 각 관절 ±2°(wrap 불허), matched15 지시문, pendant/live/feedback/stop_movej gate.
+- 이동 전 통과: IK, host joint margin(J5 하한 -130° 포함), `σmin≥0.0803`, translation ≤20 mm, rotation ≤4°, 각 관절 변화 ≤5°, 현재→목표 직선 관절 경로 20점의 margin/singularity.
+- 실행/정착 후보: MoveJoint 10°/s, 10°/s², async; `|qdot|≤0.001 rad/s` 및 목표 오차 ≤0.1°를 0.3 s 연속. 5 s 초과나 안전 이상은 DR_QSTOP 경로로 종료한다.
+- episode 예산 기본값: 최대 300 step, 600 s 후보이며 CLI에서 양의 값으로 조정할 수 있다. 이는 기존 80-step 관찰 제한을 제거한 전체 rollout 예산이다. camera 지연 중 action을 반복하지 않는다.
+- `--sigma-min` 기본값은 `0.0803`이다. 더 높은 값은 즉시 적용할 수 있지만 더 낮은 값은 반드시 `--sigma-min-reason "..."`을 함께 입력해야 하며 값·사유를 summary에 남긴다. 관절 margin과 다른 안전 조건은 변하지 않는다.
+- 선택 보조장치 `--max-descent-mm N`은 기본 비활성이다. 활성화하면 real-home tool0_real z보다 N mm 이상 낮은 목표 또는 20점 관절 경로를 `DESCENT_LIMIT`으로 이동 전에 거부한다. 이는 table 형상 검사를 대신하지 않는다.
+- 정상 종료: step/time 예산 또는 정지 상태의 camera 새-frame 대기 10 s 초과. 안전 이상·작업자 중단은 기존 MoveStop 경로다.
+- evidence: timestamp 폴더의 `steps.jsonl`, 입력 JPEG, `predictions.jsonl`, `summary.json`. 종료 사유/실행 step/경과시간, 누적 tool0_real 변위, home 대비 최저 높이, sim envelope 최초 이탈, endpoint 요약과 command/actual Δ를 검토한다.

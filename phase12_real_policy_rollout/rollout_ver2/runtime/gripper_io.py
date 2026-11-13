@@ -50,11 +50,12 @@ class LevelIOGripper:
                 ack=self._write(index,output);writes.append(
                     {"time":self.clock(),"index":index,"value":output,"ack":ack})
                 if not ack.get("success",False):raise RuntimeError(f"GRIPPER_WRITE_FAILED:DO{index}")
-                # The first OFF is the polarity tripwire. A mismatch means the
-                # observed 0=Off inference is wrong; de-energize and stop.
+                # This checks service write/read consistency only. It cannot
+                # establish physical On/Off polarity; gripper_test requires
+                # an operator pendant observation after the first On write.
                 if step==0:
                     observed=self._read_pair()
-                    if observed[index]!=off:raise RuntimeError("GRIPPER_POLARITY_MISMATCH")
+                    if observed[index]!=off:raise RuntimeError("GRIPPER_OFF_READBACK_MISMATCH")
             observed=self._read_pair()
             if observed!=desired:raise RuntimeError("GRIPPER_READBACK_MISMATCH")
             if observed[open_i]==on and observed[close_i]==on:

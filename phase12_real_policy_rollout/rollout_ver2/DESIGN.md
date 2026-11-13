@@ -21,6 +21,7 @@
 - **[가정]** N의 후보는 **3회**다. 이는 구현 한계나 승인된 안전값이 아니라 운영 검토용 후보이며 실기 전에 확정해야 한다. **출처:** 이번 설계 제안; 단발 양자화 노이즈와 지속 포화 구분 목적.
 - **[확인(sim parity)]** matched15 gripper는 raw action[6]의 연속 absolute `[0,1]` target이며 full travel 0.6 s의 slew로 매 physics step 갱신되고 팔 joint target과 같은 step에 병행 적용된다. v2 offline controller도 debounce/binary 변환 없이 이 규약을 구현한다. **출처:** `vla_validation.py:1124-1181`; `controller/gripper.py`.
 - **[확인(배선 기록)]** JEGH-3520은 flange X1 24V PNP의 DO1/DO2에 연결된다. 작업자 경험상 OPEN=DO1 On/DO2 Off, CLOSE=DO1 Off/DO2 On이다. 펜던트 양쪽 Off에서 get readback은 둘 다 0이므로 서비스값 `0=Off, 1=On`으로 추정한다. srv 주석과 반대이므로 첫 gripper_test에서 펜던트 표시와 재조회로 확정하며 불일치 시 둘 다 Off 후 중단한다. **출처:** `operator_attestation.json`; `gripper_readback.txt`.
+- **[정정·확인(구현)]** 첫 Off write와 같은 service readback은 write/read encoding의 자기일관성만 검사하므로 물리 극성 반전을 검출하지 못한다. 극성 확정은 첫 OPEN의 `DO1←1` 직후 작업자가 펜던트 DO1 On 표시를 직접 확인하는 것으로 한다. `n`이면 즉시 DO1/DO2를 0으로 만들고 `POLARITY_MISMATCH`로 종료한다. **출처:** 사용자 지시(2026-11-13); `tools/gripper_test.py`; `runtime/gripper_io.py`.
 - **[확인(구현 기본)]** 기본은 interlocked `LevelIOGripper`다. OPEN은 DO2 Off→DO1 On, CLOSE는 DO1 Off→DO2 On이며 동시 On을 금지하고 최종 DO1/DO2 readback 불일치를 fault 처리한다. 기존 `BinaryIOGripper` pulse는 비기본 대안으로만 남긴다. v1에서 CLOSE pulse ACK 뒤 실제 jaw가 열린 채 남은 사례가 level 유지 방식을 선택한 근거다. **출처:** `runtime/gripper_io.py`; `reports/gripper_control_audit.md`.
 - **[통제 변수]** sim은 연속 absolute target, 0.6 s slew, 팔과 동시 동작이지만 실기는 thresholded binary held-level이다. `gripper_test` 동안 팔은 정지하며 policy에서는 `gripper_io_verified` 전까지 계속 기록만 한다. 이 차이는 성능 해석의 통제 변수다. **출처:** matched15 evaluator; `runtime/gripper_io.py`.
 - **[확인]** action 회전 규약은 `rotation_frame=world_left`, 즉 world 좌표의 `Δp`와 `R'=Exp(ω)R`이다. sim matched15 evaluator가 `target_position=current_position+action[:3]` 및 `quaternion_multiply(delta,current)`를 사용한다. 기준 pose는 Lula `tool0`의 world pose다. 비교/회귀용 `tool_right` 설정은 유지한다. **출처:** `isaac_sim/a0509_control/vla_validation.py:119-151,1023-1060`; `lula_planner.py`; `reports/controller_replay.md`.
@@ -42,8 +43,7 @@
 
 - **[확인]** 커널 `6.8.0-138-generic`, PREEMPT_RT 아님, rtprio limit 0. **출처:** 작업 지시의 시스템 조사.
 - **[확인]** CPU i9-10900(10C/20T), RAM 31 GiB, GPU RTX 3090 24 GB, NVIDIA driver 580.178.04. **출처:** 작업 지시의 시스템 조사.
-- **[확인]** 100 Hz 유휴 더미 루프 jitter는 p50 10.00 ms, p99 11.92 ms, max 12.78 ms다. **출처:** 작업 지시의 측정 결과.
-- **[미확인]** 추론과 동시에 실행할 때의 jitter. **출처:** 측정 없음.
+- **[확인]** 100 Hz 유휴 더미 루프 jitter는 p50 10.00 ms, p99 11.92 ms, max 12.78 ms다. 프로세스 분리 후 추론 동시 dryrun 60.00 s의 p99는 10.904 ms이고 stale/fault 없이 통과했다. **출처:** 작업 지시의 유휴 측정; `reports/live/20261113_091859/dryrun_live/dryrun_live_summary.json`.
 - **[확인]** `/usr/bin/python3` 3.10.12에서 rclpy, numpy 1.26.4, scipy 1.15.3, PyKDL 1.5.1, torch 2.10.0+cu128을 사용할 수 있다. **출처:** 작업 지시; 이번 오프라인 import 및 테스트.
 - **[확인]** conda base(Python 3.14)는 rclpy를 사용할 수 없다. conda를 사용하지 않는다. **출처:** 작업 지시의 환경 조사.
 - **[확인]** PyKDL, kdl_parser, moveit_kinematics가 있고 pinocchio, ikpy는 없다. 다만 `/usr/bin/python3`에서 Python 모듈 `kdl_parser_py`는 import되지 않아 이번 코드는 URDF XML을 읽어 PyKDL chain을 직접 구성한다. **출처:** 작업 지시; 2026-11-12 import 검사; `kinematics/solver.py`.
@@ -56,7 +56,7 @@
 - **[확인]** package 버전: dsr_bringup2/common2/description2/msgs2/gazebo2/visualservoing 1.1.0, dsr_controller2 2.33.0, dsr_moveit_config_* 2.0.7, dsr_mujoco 0.1.0, dsr_hardware2/dsr_realtime_control/dsr_tests 0.0.0. **출처:** 작업 지시의 package 조사.
 - **[확인]** hardware interface `dsr_hardware2/DRHWInterface`, namespace `dsr01`, 설정 update_rate 100 Hz. **출처:** 작업 지시; 읽기 전용 `dsr_controller2/config/dsr_controller2.yaml` 조사.
 - **[확인]** launch에서 `dsr_update_rate.yaml` 없음 경고가 관찰되었다. **출처:** 작업 지시의 launch 기록.
-- **[미확인]** 실기에서 실제 적용되는 update rate. **출처:** 위 경고; 실기 재확인 미수행.
+- **[확인(현장)]** controller_manager 실제 update rate는 100 Hz다. **출처:** `readonly.txt`; `feedback_selftest.md`.
 - **[확인]** controller `192.168.0.110:12345`, `rt_host=192.168.137.50`; RT 제어는 사용하지 않는다. **출처:** 작업 지시의 설정 조사.
 - **[확인]** `servoj_stream` subscriber QoS depth 20, 기본 reliable이며 callback은 별도 검사 없이 `Drfl->servoj(pos,vel,acc,time,mode)`를 호출한다. **출처:** 작업 지시의 driver source 조사.
 - **[확인(source)]** 드라이버는 `motion/move_stop`(`dsr_msgs2/srv/MoveStop`)과 `motion/move_joint`(`dsr_msgs2/srv/MoveJoint`) 서비스를 만든다. namespace를 적용한 설정 이름은 `/dsr01/motion/move_stop`, `/dsr01/motion/move_joint`이며 현장 graph에서 전체 이름을 재확인한다. MoveStop mode는 0 QSTOP_STO, 1 QSTOP, 2 SLOW, 3 HOLD다. **출처:** 읽기 전용 `dsr_controller2.cpp:745-748,2407,2420`; `MoveStop.srv:6-11`; `MoveJoint.srv:6-15`.
@@ -64,12 +64,11 @@
 - **[확인·정정]** robot_state의 단일 정의는 0 INITIALIZING, 1 STANDBY, 2 MOVING, 3 SAFE_OFF, 4 TEACHING, 5 SAFE_STOP, 6 EMERGENCY_STOP, 7 HOMMING, 8 RECOVERY, 9 SAFE_STOP2, 10 SAFE_OFF2, 11–14 RESERVED, 15 NOT_READY다. `RobotState.msg` 주석은 7 중복으로 이후 번호가 밀린 오타이므로 사용하지 않는다. **출처:** `dsr_common2/include/DRFC.h:131-149`; `dsr_common2/imp/DRFC.py:76-91`; `dsr_msgs2/srv/system/GetRobotState.srv:6-21`; `runtime/robot_state.py`.
 - **[확인]** servo 중에도 robot_state가 주로 1이므로 이를 정지 증거로 쓰지 않는다. **출처:** 작업 지시의 실기 로그 분석.
 - **[확인]** Ikin/Fkin 서비스 정의가 존재한다. **출처:** 작업 지시의 source 조사.
-- **[부분 확인]** 실기 JointState/error/disconnection topic과 get 서비스 이름/QoS/주기는 확인했다. Ikin/Fkin `.srv` 경로와 controller firmware/pendant software 버전은 미확인이다. **출처:** `readonly.txt`, `readonly_services.txt`, `feedback_selftest.md`.
+- **[확인]** 실기 JointState/error/disconnection topic과 get 서비스 이름/QoS/주기를 확인했다. controller software는 통합 GV02120200, 메인 GF02120200, 안전 GD12120200, 인버터 GA33030300이다. **[미확인]** Ikin/Fkin `.srv` 경로. **출처:** `readonly.txt`, `readonly_services.txt`, `feedback_selftest.md`, `operator_attestation.json`.
 
 ## 4. 네트워크
 
-- **[확인]** 유선 `enp3s0`, `enp6s0`은 NO-CARRIER/IP 없음(로봇 OFF), Wi-Fi는 192.168.1.98. **출처:** 작업 지시의 host 조사.
-- **[확인(현장 구성)]** PC와 로봇은 직접 연결되어 있고 real-mode launch 준비가 되어 있어 별도 IP 설정 절차는 필요 없다. **[미확인]** 연결 NIC/host IP와 ping latency/jitter는 첫 read-only 검사에서 기록한다. **출처:** 사용자 현장 정보(2026-11-13); 실기 접속은 이번 작업에서 금지.
+- **[확인(현장)]** 직접 연결 NIC는 `enp6s0`, host `192.168.0.100`, controller `192.168.0.110`이며 ping 10회 손실 0%, 평균 0.229 ms다. Wi-Fi는 `192.168.1.98`이다. **출처:** `reports/live/20261113_091859/readonly.txt`.
 
 ## 5. 로봇 안전 설정
 
@@ -115,20 +114,25 @@
 ## 9. v2 실기 연동 계층(현재 기본 비활성)
 
 - **[확인(현장·구현)]** RobotState topic은 없다. `RobotFeedback`는 RELIABLE+TRANSIENT_LOCAL `/dsr01/joint_states`를 이름으로 J1–J6 정규화하고, 최초 cached sample을 freshness에서 제외하며 host monotonic과 `header.stamp`를 모두 기록한다. 이름 누락/중복, `/error`, `/robot_disconnection`은 즉시 fault다. state는 `get_robot_state` 10Hz 후보로 polling하며 실패/지연을 기록하고 stale 처리한다. **출처:** `reports/live/20261113_091859/readonly.txt`; `runtime/feedback.py`; `feedback_selftest.md`.
+- **[확인(현장)]** `/dsr01/joint_states.name`의 실제 순서는 `[joint_1,joint_2,joint_4,joint_5,joint_3,joint_6]`이며 배열 위치를 신뢰하지 않고 이름으로 J1–J6에 매핑한다. **출처:** `readonly.txt`; `feedback_selftest.md`.
 - **[확인(현장)]** 30초 read-only self-test에서 JointState 3,000개, host period mean 9.9999ms, state poll 301/301 성공, latency p50/p99/max 0.954/1.943/3.292ms였다. 이름 정규화 후 get_current_posj와 최대 차이는 `6.53e-9°`다. **출처:** `reports/live/20261113_091859/feedback_selftest.json`.
 - **[확인(구현·현장 재검증)]** joint_states/error/disconnection과 get_* timer/future는 feedback 전용 node의 전용 executor thread에서 처리한다. main thread의 image 변환·HTTP·frame wait와 독립이다. 감시 시작 전 시작 시각 이후 joint_states와 robot_state 응답을 각각 1개 이상 기다리며 2 s 후보 초과는 `FEEDBACK_NO_FIRST_SAMPLE`이다. 0.45 s main blocking을 반복한 30.19 s read-only 점검에서 joint age p50/p99/max는 5.24/10.10/10.62 ms, state poll은 303/303 성공했다. **출처:** `runtime/feedback.py`; `tools/feedback_thread_check.py`; `reports/live/20261113_091859/feedback_thread_check.md`.
 - **[확인(구현)]** `JOINT_STATE_STALE` 기준은 0.1 s로 유지한다. 발생 로그에는 직전 수신 간격, 마지막 host monotonic 수신 시각, 누적 joint message 수, state poll 수를 기록한다. thread 간 joint/state/fault/진단 공유 상태는 lock/condition으로 보호한다. **출처:** `runtime/feedback.py`; `tools/dryrun_live.py`.
 - **[확인(현장 원인 범위)]** thread 분리 dryrun에서 50.35 s 시점에 joint age 109.93 ms stale이 1회 발생했다. 마지막 정상 joint 간격은 9.91 ms이고 총 5,013개로 발행률은 정상이다. 공백 `136141.3213–136141.4312`는 step 99의 frame 수신 `136141.2582`부터 prediction 완료 `136141.6788`까지 420.60 ms 처리 창 안에 완전히 포함된다. 기존 로그는 JPEG/HTTP 단계별 시작을 남기지 않아 특정 단계의 인과는 확정하지 않고, 같은 Python process의 image/JPEG/HTTP 부하와 겹친다는 것까지만 확인한다. **출처:** `dryrun_live_summary.json`; `predictions.jsonl`; `reports/live/20261113_091859/process_stall_analysis.md`.
 - **[확인(구현)]** dryrun과 향후 runtime 경계는 OS process로 분리한다. 프로세스 A는 robot feedback/state/safety와 향후 command/stop 소유자이며 image를 import/처리하지 않는다. 프로세스 B는 camera, post-settle frame barrier, JPEG q92, HTTP inference만 소유한다. A→B 요청은 두 `t_settle` 시각을 포함하고 B→A 응답은 frame timing, 단계별 processing timing, raw action을 포함한다. B 사망은 A에서 `OBSERVATION_PROCESS_DIED_STOP_REQUIRED`로 검출해 향후 기존 stop 경로로 연결하며, B는 parent watchdog으로 A 사망을 검출하고 종료한다. `JOINT_STATE_STALE=0.1 s`는 유지한다. **출처:** `runtime/observation_process.py`; `tools/dryrun_live.py`.
 - **[확인(교차 검증·정지 아님)]** 2Hz get flange posx/rotm 60쌍에서 FK(link_6) 대비 위치 1.0164mm, 회전 0.08427°의 일정 오차를 관찰했다. 이는 log-only이며 정지 조건이 아니다. **출처:** `reports/live/20261113_091859/feedback_selftest.md`.
+- **[가정 후보]** 정지 속도 판정은 `max|qdot|≤0.001 rad/s`다. 2026-11-13 정지 self-test 3,000 sample의 18,000개 관절 속도 값은 모두 0.0 rad/s였으며 후보는 이 관측 노이즈보다 큰 비영 threshold다. 안전 한계가 아니며 현장 검토 대상이다. **출처:** `feedback_selftest.json`; `runtime/runtime_config.json`.
 - **[가정 후보]** 매 sample 감시값은 추종 위치 10 mm/회전 3°, zero-velocity 유지 0.3 s다. 승인 한계가 아니며 첫 세션 evidence로 보정 전 policy 실행에 사용할 수 없다. **출처:** 작업 지시; `runtime/monitor.py`, `runtime/stop.py`.
-- **[가정 후보·미확인]** 두 정지 시험의 MoveStop mode는 설정 하나로 고정한 `DR_QSTOP=1`이다. 이는 driver 일반 stop 기본값과 일치하는 후보일 뿐이며 현장 검토가 필요하다. `stop_test_movej`와 `stop_test_servoj`가 같은 값을 사용한다. **출처:** 읽기 전용 `dsr_robot.h:196`; `DSR_ROBOT2.py:272-279`; `runtime/runtime_config.json`, `runtime/stop.py`.
+- **[확인(현장 시험 2026-11-13)]** MoveStop mode는 `DR_QSTOP=1`, MoveJoint acceleration은 `10°/s²`다. `stop_test_movej` 통과 결과를 사용자 review하여 `stop_movej_verified=true`로 등록했다. 향후 `stop_test_servoj`도 같은 stop mode를 사용한다. **출처:** `reports/live/20261113_091859/stop_test_movej/summary.json`; 사용자 결정; `runtime/runtime_config.json`.
 - **[확인(구현)]** 정지 순서는 command publisher inhibit → 설정된 MoveStop 요청 → 계속 수신한 JointState의 zero-velocity 구간 확인이다. ACK 실패는 SAFE_STOP/OFF 계열이 먼저 관찰된 경우만 허용하며, 확인 실패 뒤 추가 명령은 영구 금지한다. **출처:** `runtime/stop.py`와 mock tests.
 - **[확인(구현)]** 정지 시험은 세션 1의 `stop_test_movej`와 세션 2의 `stop_test_servoj`로 분리한다. 전자는 real home에서 J6 +2°, 5°/s 이하 MoveJoint 중 정지 서비스·판정 로직을 검증하며 Servoj 중 정지를 대신하지 않는다. 후자는 Servoj parameter 확인 뒤 같은 stop mode로 별도 검증한다. synthetic/policy는 `stop_servoj_verified`를 필수로 한다. **출처:** `runtime/gate.py`, `runtime/executor.py`, `docs/first_live_session.md`.
-- **[확인(구현)]** gate evidence는 `photo` 또는 `operator_attestation`이며 type을 기록한다. 2026-11-13 사용자 결정으로 사진 대신 날짜·작업자·직접 확인 방법·미등록 사유가 포함된 attestation을 허용했다. 이 근거로 `pendant_limits_recorded`와 `gripper_wiring_recorded`는 true지만 `gripper_io_verified`는 실제 시험 전까지 false다. **출처:** `runtime/gate.py`, `runtime/gates.json`, `operator_attestation.json`.
+- **[확인(구현·미실행)]** `tools/gripper_test.py`와 `tools/stop_test_movej.py`는 operator UI와 ROS control/safety를 spawn process로 분리한다. setter/MoveJoint/MoveStop 객체는 gate, real-home, 2초 정지 측정과 fresh confirmation 뒤에만 만든다. 결과는 candidate gate update로만 표시하며 `gates.json`을 자동 변경하지 않는다. 이번 작업에서는 mock test만 수행했다. **출처:** 해당 도구와 `runtime/test_runtime.py`.
+- **[확인(구현)]** gate evidence는 `photo`, `operator_attestation`, `measurement`이며 type을 기록한다. live topic과 feedback rate는 measurement evidence를 사용한다. 이 근거로 `pendant_limits_recorded`와 `gripper_wiring_recorded`는 true지만 `gripper_io_verified`는 실제 시험 전까지 false다. **출처:** `runtime/gate.py`, `runtime/gates.json`, `operator_attestation.json`.
 - **[확인(구현)]** 모든 물리 mode는 fresh human confirmation, explicit physical enable, mode별 evidence gate와 non-null 필수 설정을 요구한다. dryrun_live/gripper_test/stop_test_movej에는 Servoj time/vel/acc와 tracking threshold가 필요하지 않다. `live_topics_verified`와 `feedback_rate_verified`는 2026-11-13 read-only/self-test evidence로 true이며 나머지 현장 gate는 닫혀 있다. **출처:** `runtime/gate.py`, `runtime/executor.py`, `runtime/gates.json`.
+- **[확인(결정·오프라인 구현 2026-11-13)]** `policy_movej`는 mode A의 별도 실행 계층이다. 프로세스 A가 feedback/safety와 MoveJoint/MoveStop만 소유하고 프로세스 B가 image/JPEG/inference를 소유한다. 명령 자세 기준 `world_left`, `tool0_real` 목표를 IK한 뒤 action을 clamp하지 않고 전체 거부/수락한다. 목표까지 관절 직선 20점의 margin/`σmin≥0.0803`, step 20 mm/4°/관절 5°를 사전 검사하고, MoveJoint 10°/s·10°/s² 뒤 0.001 rad/s 및 0.1°를 0.3 s 연속 확인한다. gripper는 record-only, sim envelope은 log-only, 자동 home 복귀는 없다. Servoj `policy`와 그 gate는 그대로 유지한다. **출처:** `runtime/policy_movej_core.py`; `tools/policy_movej.py`; 사용자 결정.
+- **[확인(사용자 결정·오프라인 구현 2026-11-13)]** 전체 `policy_movej` rollout 예산은 기본 300 step/600 s 후보이며 CLI 조정 가능하다. `σmin=0.0803`은 유지하고 낮추려면 값과 사유를 명시·기록해야 한다. table 높이 자동 검사는 없고 실행 전 `TABLE_WATCH_BY_OPERATOR` 확인과 지속 작업자 감시를 요구한다. 선택적 `--max-descent-mm`만 real-home 대비 tool0_real 목표 및 20점 경로 하강을 `DESCENT_LIMIT`으로 거부하며 기본 비활성이다. Enter/q는 이동 중에도 MoveStop을 요청하고 응답시간을 기록한다. summary는 종료 사유, step/시간, 누적 변위, 최저 높이, envelope 최초 이탈과 arm endpoint를 포함한다. **출처:** `tools/policy_movej.py`; `runtime/policy_movej_core.py`; `runtime/runtime_config.json`.
 - **[확인(현장)]** pendant TCP `Tool_v1` offset은 `[0,0,0 mm,0,0,0°]`라 posx=flange다. payload의 `get_current_tool` 응답은 빈 문자열이며 v1 동일 조건 유지를 위해 변경하지 않는다. controller software는 통합 `GV02120200`, 메인 `GF02120200`, 안전 `GD12120200`, 인버터 `GA33030300`이다. 펜던트 Tool_v1의 Controller Digital 출력1/입력1 항목은 실제 X1 배선과 무관한 legacy 항목이다. **출처:** `operator_attestation.json`; 사용자 결정(2026-11-13).
-- **[미확인]** Servoj time/vel/acc, MoveJoint acceleration, MoveStop mode 현장 승인, pendant evidence, live topics/QoS/rate, tracking calibration, 그리퍼 배선/I/O 결과는 연구실 evidence 없이는 관련 gate를 통과할 수 없다. **출처:** `runtime/runtime_config.json`; `docs/first_live_session.md`.
+- **[미확인]** Servoj time/vel/acc, tracking calibration, stop_test_servoj와 그리퍼 실제 I/O 결과가 남았다. MoveJoint acceleration 10°/s²와 MoveStop mode 1은 현장 시험으로 확인됐다. **출처:** `runtime/runtime_config.json`; `runtime/gates.json`; `docs/first_live_session.md`.
 
 ## 10. 열린 항목(우선순위)
 
@@ -137,13 +141,13 @@
 3. **[확인·종료]** `link_6→tool0_sim`은 xyz `[0,0,0.01] m`, yaw `-90°`; 현장 장착 보정을 포함한 `link_6→tool0_real`은 xyz `[0,0,0.01] m`, yaw `+90°`다. pendant TCP 설정값 자체는 별도로 기록한다.
 4. **[미확인]** URDF와 실기 flange 일치: paired flange 필드가 없어 posx fallback만 검증했고 1 mm/0.1° 목표를 완전 통과하지 못함.
 5. **[확인·종료(attestation)]** pendant angle/velocity와 기타 Robot Limits, Tool_v1 zero offset, payload 미등록 유지 조건, controller software version을 operator attestation으로 기록했다. 사진은 사용자 결정으로 미등록이다.
-6. **[미확인]** 실기 topic/QoS/주기, feedback rate와 ping jitter. `tools/live_readonly_check.sh`로 첫 세션에 기록한다.
+6. **[확인·종료]** 실기 topic/QoS/100 Hz feedback와 유선 ping을 read-only evidence로 기록했다.
 7. **[확인·종료(matched15)]** center crop 없음, bottom crop 0.0, JPEG quality 92, RGB. legacy 학습 원본 instruction은 항목 2에 남긴다.
-8. **[미확인]** inference 동시 100 Hz jitter.
+8. **[확인·종료]** 프로세스 분리 후 inference 동시 100 Hz loop p99 10.904 ms, 60 s 통과.
 9. **[확인·종료]** endpoint 감시는 arm 6차원만 사용하고 gripper는 상태 변화만 기록한다.
 10. **[확인·종료(offline 분류)]** 새 σmin 0.0803 후보로 190404 replay를 재실행하면 world_left는 step 72/sample 12의 σmin 0.080275에서, tool_right는 step 36/sample 25의 J5 -130.059°에서 먼저 정지한다. **출처:** `reports/controller_replay.json`, `reports/matched15_branch_and_ik_timing.md`.
 11. **[부분 종료·현장 확인 필요]** JEGH-3520의 기존 Tool DO 명령 경로와 OPEN 실물 관찰은 확인했다. CLOSE 물리 동작, 포트/극성, 완료 DI, 실제 개폐 시간은 `gripper_test` 전후 evidence로 확정해야 한다. sim과 실기의 연속/이진 및 동시/분리 차이는 통제 변수로 유지한다.
-12. **[부분 종료·실행 gate]** `pendant_limits_recorded`, `gripper_wiring_recorded`, `live_topics_verified`, `feedback_rate_verified`는 2026-11-13 evidence로 true다. arm stationary/I/O 결과, `stop_movej_verified`, Servoj parameter/tracking calibration, `stop_servoj_verified`는 아직 false다. 확장 시 `extended_range_clearance_checked`도 필수다.
+12. **[부분 종료·실행 gate]** `pendant_limits_recorded`, `gripper_wiring_recorded`, `live_topics_verified`, `feedback_rate_verified`, `stop_movej_verified`는 2026-11-13 evidence/review로 true다. arm stationary/I/O 결과, Servoj parameter/tracking calibration, `stop_servoj_verified`는 아직 false다. `gripper_io_verified=false`이므로 policy_movej는 gripper를 기록만 한다. 확장 시 `extended_range_clearance_checked`도 필수다.
 13. **[정정]** `matched15_kinematics_reconstructed.json`의 J4/J5/J6 범위, 특히 J5 양수는 IK 해 선택에 의존하는 참고값이다. sim home·시작 branch·관절 사용 범위 근거로 사용하지 않는다. 실제 Isaac 225 sample wrist 범위는 J4 `[0.141,5.926]°`, J5 `[-113.506,-68.638]°`, J6 `[-214.441,-178.500]°`다. **출처:** `reports/home_alignment.md`.
 14. **[확인]** 위 Isaac 225 sample을 실기 관절 기준으로 바꾸면 J6 범위는 `[-34.441,1.500]°`이며 J1–J5는 동일하다. 이는 관절 margin 검토의 관측 범위이고 pendant limit을 대체하지 않는다. **출처:** `reports/home_alignment.json`.
 
