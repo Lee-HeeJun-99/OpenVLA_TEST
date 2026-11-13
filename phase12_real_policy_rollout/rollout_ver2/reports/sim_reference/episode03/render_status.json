@@ -1,0 +1,10 @@
+{
+  "status": "blocked_no_gpu_device",
+  "attempted_at": "2026-11-13T13:22:06+09:00",
+  "isaac_sim_installed": true,
+  "isaac_sim_version": "5.1.0-rc.19+release.26219.9c81211b.gl",
+  "command": "/home/ubuntu/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64/python.sh render_episode.py",
+  "png_files_written": 0,
+  "errors": ["NVML_ERROR_DRIVER_NOT_LOADED", "No device could be created", "GPU Foundation is not initialized", "nvidia-smi could not communicate with the NVIDIA driver"],
+  "policy": "Stopped after the first episode render attempt; no placeholder or proxy image was substituted."
+}

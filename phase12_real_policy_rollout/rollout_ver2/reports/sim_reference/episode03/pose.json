@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "matched15_episode_number": 3,
+  "evidence_episode_index_zero_based": 2,
+  "exact_matched15_layout": true,
+  "instruction": "Pick up the blue cube.",
+  "scene_usd": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+  "evidence_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/evidence/vanilla/success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep.json",
+  "robot_prim": "/World/a0509/base",
+  "tool0_prim": "/World/a0509/link_6/tool0",
+  "policy_camera_prim": "/World/a0509/link_6/tool0/left_Camera",
+  "cube_prims": {
+    "red": "/World/Cube_7cm",
+    "yellow": "/World/Environment/Objects/YellowCube",
+    "blue": "/World/Environment/Objects/BlueCube"
+  },
+  "cube_world_pose": {
+    "red": {
+      "position_m": [
+        0.5385722715547144,
+        -0.0675260397223773,
+        0.8605289459228516
+      ],
+      "orientation_source": "source USD spawn quaternion"
+    },
+    "yellow": {
+      "position_m": [
+        0.5151262810708173,
+        0.19886571995481658,
+        0.8605289459228516
+      ],
+      "orientation_source": "source USD spawn quaternion"
+    },
+    "blue": {
+      "position_m": [
+        0.45427530108688075,
+        0.09689294396101811,
+        0.8605289459228516
+      ],
+      "orientation_source": "source USD spawn quaternion"
+    }
+  },
+  "recorded_initial_cube_positions_after_settle_m": {
+    "red": [
+      0.5380657911300659,
+      -0.0661788210272789,
+      0.8605288863182068
+    ],
+    "yellow": [
+      0.5153352618217468,
+      0.19743473827838898,
+      0.8605288863182068
+    ],
+    "blue": [
+      0.45510101318359375,
+      0.09569687396287918,
+      0.8605288863182068
+    ]
+  },
+  "initial_robot_joint_positions_rad": [
+    -3.185847520828247,
+    -0.018473811447620392,
+    -0.7153055667877197,
+    0.021886058151721954,
+    -1.9810477495193481,
+    -3.115417078133008
+  ],
+  "initial_robot_joint_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json; evidence result does not embed initial joints and evaluator falls back to validated home when manifest joints are absent",
+  "provenance_note": "sampled_layout_m is copied verbatim and is the pose passed to set_world_pose. The evidence result has no yaw or initial-joint field; yaw is resolved from the same USD spawn pose exactly as vla_validation._place_layout does.",
+  "resolved_cube_spawn_orientation": {
+    "red": {
+      "quaternion_wxyz": [
+        1.0,
+        -2.785985770970001e-07,
+        3.2327404824172845e-06,
+        1.1111521303064364e-07
+      ],
+      "yaw_deg": 1.2732762287585779e-05,
+      "source": "spawn orientation read from the same source USD, as vla_validation._place_layout does"
+    },
+    "yellow": {
+      "quaternion_wxyz": [
+        1.0,
+        -2.7900341592612676e-07,
+        3.2326636301149847e-06,
+        1.1110154929383498e-07
+      ],
+      "yaw_deg": 1.2731196391169354e-05,
+      "source": "spawn orientation read from the same source USD, as vla_validation._place_layout does"
+    },
+    "blue": {
+      "quaternion_wxyz": [
+        0.9999999403953552,
+        -4.996095412934665e-07,
+        3.3607407203817274e-06,
+        -3.6690707361231034e-08
+      ],
+      "yaw_deg": -4.20463751367553e-06,
+      "source": "spawn orientation read from the same source USD, as vla_validation._place_layout does"
+    }
+  },
+  "render_result": {
+    "isaac_sim_version": "5.1.0-rc.19+release.26219.9c81211b.gl",
+    "renderer": "RayTracedLighting",
+    "policy_resolution": [
+      1280,
+      720
+    ],
+    "resize_naive": {
+      "resolution": [
+        224,
+        224
+      ],
+      "method": "PIL bicubic, no crop"
+    },
+    "overview_eye_world_m": [
+      0.35,
+      -0.001,
+      2.45
+    ],
+    "overview_target_world_m": [
+      0.35,
+      0.0,
+      0.82
+    ],
+    "home_tool0_world_position_m": [
+      0.3081339865990065,
+      -0.011464178890400946,
+      1.5386169044910676
+    ],
+    "home_tool0_table_projection_world_m": [
+      0.3081339865990065,
+      -0.011464178890400946,
+      0.8255289459228515
+    ],
+    "physics_advanced_after_placement": false
+  }
+}

@@ -170,8 +170,8 @@ MoveStop은 현장 시험에서 확인한 `DR_QSTOP=1`이다. `stop_test_servoj`
 ```
 
 - preflight: AUTO/REAL/STANDBY, real home 각 관절 ±2°(wrap 불허), matched15 지시문, pendant/live/feedback/stop_movej gate.
-- 이동 전 통과: IK, host joint margin(J5 하한 -130° 포함), `σmin≥0.0803`, translation ≤20 mm, rotation ≤4°, 각 관절 변화 ≤5°, 현재→목표 직선 관절 경로 20점의 margin/singularity.
-- 실행/정착 후보: MoveJoint 10°/s, 10°/s², async; `|qdot|≤0.001 rad/s` 및 목표 오차 ≤0.1°를 0.3 s 연속. 5 s 초과나 안전 이상은 DR_QSTOP 경로로 종료한다.
+- 이동 전 통과: IK, host joint margin(J5 하한 -130° 포함), `σmin≥0.0803`, translation ≤20 mm, rotation ≤4°, 각 관절 변화 ≤10°, 현재→목표 직선 관절 경로 20점의 margin/singularity.
+- 실행/정착 후보: MoveJoint 5°/s, 10°/s², async; `|qdot|≤0.001 rad/s` 및 목표 오차 ≤0.1°를 0.3 s 연속. 5 s 초과나 안전 이상은 DR_QSTOP 경로로 종료한다.
 - episode 예산 기본값: 최대 300 step, 600 s 후보이며 CLI에서 양의 값으로 조정할 수 있다. 이는 기존 80-step 관찰 제한을 제거한 전체 rollout 예산이다. camera 지연 중 action을 반복하지 않는다.
 - `--sigma-min` 기본값은 `0.0803`이다. 더 높은 값은 즉시 적용할 수 있지만 더 낮은 값은 반드시 `--sigma-min-reason "..."`을 함께 입력해야 하며 값·사유를 summary에 남긴다. 관절 margin과 다른 안전 조건은 변하지 않는다.
 - 선택 보조장치 `--max-descent-mm N`은 기본 비활성이다. 활성화하면 real-home tool0_real z보다 N mm 이상 낮은 목표 또는 20점 관절 경로를 `DESCENT_LIMIT`으로 이동 전에 거부한다. 이는 table 형상 검사를 대신하지 않는다.

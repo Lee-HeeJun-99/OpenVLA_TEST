@@ -1,0 +1,29 @@
+{
+  "layout": "matched15 episode 3 (blue target)",
+  "cube_rel_home_tool0_mm": {
+    "blue": [
+      234.61,
+      86.17
+    ],
+    "red": [
+      317.58,
+      -75.7
+    ],
+    "yellow": [
+      294.85,
+      187.91
+    ]
+  },
+  "note": "real uses red/yellow/blue as sim; orange removed; distractors cleared; gripper open; at real home",
+  "encoding": "bgra8",
+  "stamp_ns": 1794544343501511251,
+  "joint_deg": {
+    "joint_1": -182.5527,
+    "joint_2": -1.0718,
+    "joint_3": -41.0058,
+    "joint_4": 1.2566,
+    "joint_5": -113.5001,
+    "joint_6": 1.4997
+  },
+  "sim_reference": "reports/sim_reference/episode03/policy_camera_1280x720.png"
+}

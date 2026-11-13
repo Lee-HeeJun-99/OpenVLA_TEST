@@ -22,7 +22,7 @@ from runtime.camera import CameraFeedback
 from runtime.observation_process import run_mock_blocking_observation
 from runtime.policy_movej_core import (AbortSignal,MockableMoveJStep,MoveJPlan,
   PolicyMoveJPrecheckError,SettlementTracker,descent_limit_reason,
-  validate_sigma_override)
+  policy_movej_action_reasons,validate_sigma_override)
 
 
 class FakeClock:
@@ -377,6 +377,8 @@ class RuntimeTests(unittest.TestCase):
         pc=self.rc["policy_movej"]
         self.assertEqual(pc["max_steps_default"],300)
         self.assertEqual(pc["max_episode_time_s_candidate"],600.0)
+        self.assertEqual(pc["max_joint_delta_deg_candidate"],10.0)
+        self.assertEqual(pc["velocity_deg_s_candidate"],5.0)
         self.assertEqual(require_table_watch_confirmation("TABLE_WATCH_BY_OPERATOR"),
                          "TABLE_WATCH_BY_OPERATOR")
         with self.assertRaisesRegex(PermissionError,"TABLE_WATCH"):
@@ -391,6 +393,35 @@ class RuntimeTests(unittest.TestCase):
             validate_sigma_override(default,.07,None)
         lowered=validate_sigma_override(default,.07,"offline replay review")
         self.assertTrue(lowered["lowered"]);self.assertEqual(lowered["reason"],"offline replay review")
+
+    def test_policy_movej_rejected_candidate_record_preserves_diagnostics(self):
+        from tools.policy_movej import rejected_candidate_record
+        action=SimpleNamespace(raw=np.arange(7,dtype=float),
+          delta_position_m=np.array([.001,.002,.003]),
+          rotation_vector_rad=np.deg2rad([1.,2.,3.]))
+        diagnostic={"target_tool_pose":{"position_m":[1,2,3],"rotation_matrix":np.eye(3).tolist()},
+          "ik_result_joint_rad":[0]*6,"joint_delta_deg":[1,2,3,4,5,6],
+          "best_joint_rad":[.1]*6,"best_residual":.002,"exception_message":"IK failed"}
+        error=PolicyMoveJPrecheckError(["IK_REJECTED:IKConvergenceError"],diagnostic)
+        row=rejected_candidate_record(12,action,error)
+        self.assertEqual(row["step"],12);self.assertEqual(row["joint_delta_deg"][-1],6)
+        self.assertEqual(row["best_residual"],.002);self.assertEqual(row["exception_message"],"IK failed")
+        self.assertAlmostEqual(row["action_translation_norm_mm"],np.sqrt(14.))
+        self.assertAlmostEqual(row["action_rotation_norm_deg"],np.sqrt(14.))
+
+    def test_policy_movej_action_caps_disabled_but_nonfinite_rejected(self):
+        cc=load_config();streak=np.zeros((6,2),dtype=int)
+        # Simultaneous rx minimum endpoint and rz maximum endpoint.  The
+        # rotation norm exceeds the former 4 degree cap and must still pass.
+        action=SimpleNamespace(raw=np.array([0.,0.,0.,np.deg2rad(-4.08),0.,
+          np.deg2rad(4.08),0.]),delta_position_m=np.zeros(3),
+          rotation_vector_rad=np.deg2rad([-4.08,0.,4.08]),gripper_target=0.)
+        reasons=policy_movej_action_reasons(action,np.array([.45,0.,.86]),cc,streak)
+        self.assertEqual(reasons,[])
+        self.assertGreater(np.rad2deg(np.linalg.norm(action.rotation_vector_rad)),4.)
+        action.raw[0]=np.nan;action.delta_position_m[0]=np.nan
+        self.assertEqual(policy_movej_action_reasons(
+          action,np.array([.45,0.,.86]),cc,streak),["NONFINITE_ACTION"])
 
     def test_policy_movej_optional_descent_limit_includes_path_point(self):
         self.assertIsNone(descent_limit_reason(.7,.681,20,7))

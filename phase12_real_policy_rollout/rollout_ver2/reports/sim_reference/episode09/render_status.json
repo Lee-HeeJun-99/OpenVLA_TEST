@@ -1,0 +1,5 @@
+{
+  "status": "not_run_dependency_blocked",
+  "blocked_by": "episode03/render_status.json: no GPU device available to Isaac Sim",
+  "png_files_written": 0
+}

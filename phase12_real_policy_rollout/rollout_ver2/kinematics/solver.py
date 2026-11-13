@@ -34,7 +34,10 @@ class IKConvergenceError(KinematicsError):
 
 
 class IKJointChangeError(KinematicsError):
-    pass
+    def __init__(self,message,*,candidate_joint_rad=None,joint_change_rad=None):
+        super().__init__(message)
+        self.candidate_joint_rad=None if candidate_joint_rad is None else np.asarray(candidate_joint_rad).copy()
+        self.joint_change_rad=None if joint_change_rad is None else np.asarray(joint_change_rad).copy()
 
 
 class JointLimitError(KinematicsError):
@@ -234,7 +237,8 @@ class DLSIKSolver:
                 change = np.abs(q - seed)
                 if np.any(change > max_change):
                     raise IKJointChangeError(
-                        f"IK change exceeds caller limit: {change.tolist()} rad"
+                        f"IK change exceeds caller limit: {change.tolist()} rad",
+                        candidate_joint_rad=q,joint_change_rad=change
                     )
                 return q
             jac = self.kin.jacobian(q)

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "matched15_episode_number": 9,
+  "evidence_episode_index_zero_based": 8,
+  "exact_matched15_layout": true,
+  "instruction": "Pick up the blue cube.",
+  "scene_usd": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/a0509_project/USD/version_1/a0509_version_1_scaled_85x60.usda",
+  "evidence_json": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/evidence/vanilla/success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep.json",
+  "robot_prim": "/World/a0509/base", "tool0_prim": "/World/a0509/link_6/tool0", "policy_camera_prim": "/World/a0509/link_6/tool0/left_Camera",
+  "cube_prims": {"red": "/World/Cube_7cm", "yellow": "/World/Environment/Objects/YellowCube", "blue": "/World/Environment/Objects/BlueCube"},
+  "cube_world_pose": {
+    "red": {"position_m": [0.5772083938714699, -0.022104909324041466, 0.8605289459228516], "orientation_source": "source USD spawn quaternion"},
+    "yellow": {"position_m": [0.46944480015441087, -0.09528068577150886, 0.8605289459228516], "orientation_source": "source USD spawn quaternion"},
+    "blue": {"position_m": [0.45427530108688075, 0.09689294396101811, 0.8605289459228516], "orientation_source": "source USD spawn quaternion"}
+  },
+  "recorded_initial_cube_positions_after_settle_m": {"red": [0.5766308903694153, -0.02341395616531372, 0.8605288863182068], "yellow": [0.4703187048435211, -0.09417352080345154, 0.8605288863182068], "blue": [0.455363929271698, 0.09592540562152863, 0.8605288863182068]},
+  "initial_robot_joint_positions_rad": [-3.185847520828247, -0.018473811447620392, -0.7153055667877197, 0.021886058151721954, -1.9810477495193481, -3.115417078133008],
+  "initial_robot_joint_source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/isaac_sim/config/a0509_home_pose.json; evidence result does not embed initial joints and evaluator falls back to validated home when manifest joints are absent",
+  "provenance_note": "sampled_layout_m copied verbatim; yaw comes from the source USD spawn pose, matching evaluator placement."
+}

@@ -11,13 +11,14 @@ import time
 import numpy as np
 
 from controller.geometry import apply_action
-from controller.precheck import action_reasons,joint_envelope_status,joint_margin_reasons
-from kinematics import DLSIKSolver,IKJointChangeError
+from controller.precheck import joint_envelope_status,joint_margin_reasons
+from kinematics import DLSIKSolver,IKConvergenceError,IKJointChangeError
 
 
 class PolicyMoveJPrecheckError(RuntimeError):
-    def __init__(self, reasons):
+    def __init__(self, reasons, rejected_candidate=None):
         self.reasons=tuple(dict.fromkeys(reasons))
+        self.rejected_candidate=dict(rejected_candidate or {})
         super().__init__("POLICY_MOVEJ_PRECHECK:"+",".join(self.reasons))
 
 
@@ -29,6 +30,29 @@ class MoveJPlan:
     path_minimum_singular_values: tuple
     path_minimum_tool_z_m: float
     envelope_log_only: dict
+
+
+def policy_movej_action_reasons(action, target_tool_position, config, streak_counts):
+    """Policy-MoveJ action checks without translation/rotation magnitude caps.
+
+    The user disabled both Cartesian action magnitude caps on 2026-11-13.  This
+    still rejects every non-finite action and retains workspace and configured
+    endpoint-policy checks.  It does not clamp or modify the action.
+    """
+    values=np.concatenate((np.asarray(action.raw,dtype=float).reshape(-1),
+      np.asarray(action.delta_position_m,dtype=float).reshape(-1),
+      np.asarray(action.rotation_vector_rad,dtype=float).reshape(-1),
+      np.asarray([action.gripper_target],dtype=float)))
+    if not np.all(np.isfinite(values)):
+        return ["NONFINITE_ACTION"]
+    reasons=[];p=np.asarray(target_tool_position,dtype=float)
+    if np.any(p<config.workspace_min_m) or np.any(p>config.workspace_max_m):
+        reasons.append("WORKSPACE_CANDIDATE_EXCEEDED")
+    if (config.endpoint_policy=="stop" and
+            np.any(np.asarray(streak_counts)>=config.endpoint_streak_limit)):
+        dims=np.argwhere(np.asarray(streak_counts)>=config.endpoint_streak_limit).tolist()
+        reasons.append(f"ENDPOINT_TOKEN_STREAK:{dims}")
+    return reasons
 
 
 def validate_sigma_override(default_value,requested_value=None,reason=None):
@@ -81,10 +105,16 @@ class MoveJPolicyPlanner:
 
     def plan(self,action,command_tool_pose,seed_joint_rad,streak_counts):
         seed=np.asarray(seed_joint_rad,dtype=float)
+        finite_reasons=policy_movej_action_reasons(action,command_tool_pose.position_m,
+                                                    self.cc,streak_counts)
+        if "NONFINITE_ACTION" in finite_reasons:
+            raise PolicyMoveJPrecheckError(finite_reasons)
         target_tool=apply_action(command_tool_pose,action.delta_position_m,
                                  action.rotation_vector_rad,"world_left")
-        reasons=action_reasons(action,target_tool.position_m,self.cc,streak_counts)
-        if reasons:raise PolicyMoveJPrecheckError(reasons)
+        diagnostic={"target_tool_pose":{"position_m":target_tool.position_m.tolist(),
+          "rotation_matrix":target_tool.rotation.tolist()}}
+        reasons=policy_movej_action_reasons(action,target_tool.position_m,self.cc,streak_counts)
+        if reasons:raise PolicyMoveJPrecheckError(reasons,diagnostic)
         target_link=self.tool.tool_to_link(target_tool)
         max_delta=np.deg2rad(float(self.rc["policy_movej"]["max_joint_delta_deg_candidate"]))
         try:
@@ -93,13 +123,32 @@ class MoveJPolicyPlanner:
                 joint_upper_rad=self.cc.effective_upper_rad,
                 max_joint_change_rad=max_delta)
         except IKJointChangeError as error:
-            raise PolicyMoveJPrecheckError(["JOINT_STEP_CANDIDATE_EXCEEDED"]) from error
+            diagnostic.update(exception_message=str(error))
+            if error.candidate_joint_rad is not None:
+                diagnostic["ik_result_joint_rad"]=error.candidate_joint_rad.tolist()
+                diagnostic["joint_delta_rad"]=(error.candidate_joint_rad-seed).tolist()
+                diagnostic["joint_delta_deg"]=np.rad2deg(error.candidate_joint_rad-seed).tolist()
+            raise PolicyMoveJPrecheckError(["JOINT_STEP_CANDIDATE_EXCEEDED"],diagnostic) from error
+        except IKConvergenceError as error:
+            diagnostic.update(exception_message=str(error),iterations=error.iterations,
+                              best_residual=error.best_residual)
+            if error.best_joint_rad is not None:
+                diagnostic["best_joint_rad"]=np.asarray(error.best_joint_rad).tolist()
+                diagnostic["best_joint_deg"]=np.rad2deg(error.best_joint_rad).tolist()
+                diagnostic["joint_delta_rad"]=(np.asarray(error.best_joint_rad)-seed).tolist()
+                diagnostic["joint_delta_deg"]=np.rad2deg(np.asarray(error.best_joint_rad)-seed).tolist()
+            raise PolicyMoveJPrecheckError(["IK_REJECTED:IKConvergenceError"],diagnostic) from error
         except Exception as error:
-            raise PolicyMoveJPrecheckError(["IK_REJECTED:"+type(error).__name__]) from error
+            diagnostic["exception_message"]=str(error)
+            raise PolicyMoveJPrecheckError(["IK_REJECTED:"+type(error).__name__],diagnostic) from error
+        diagnostic.update(ik_result_joint_rad=target_q.tolist(),
+          ik_result_joint_deg=np.rad2deg(target_q).tolist(),
+          joint_delta_rad=(target_q-seed).tolist(),
+          joint_delta_deg=np.rad2deg(target_q-seed).tolist())
         delta=np.abs(target_q-seed)
         if np.any(delta>max_delta):
             raise PolicyMoveJPrecheckError([f"JOINT_STEP_CANDIDATE_EXCEEDED:J{i+1}"
-                for i in np.flatnonzero(delta>max_delta)])
+                for i in np.flatnonzero(delta>max_delta)],diagnostic)
         sigmas=[];tool_z=[];path_reasons=[]
         samples=int(self.rc["policy_movej"]["joint_path_samples_candidate"])
         if samples<2:raise ValueError("joint_path_samples_candidate must be >= 2")
@@ -111,7 +160,10 @@ class MoveJPolicyPlanner:
             z=float(self.tool.link_to_tool(self.kin.fk(q)).position_m[2]);tool_z.append(z)
             descent_reason=descent_limit_reason(self.home_tool_z_m,z,self.max_descent_mm,index)
             if descent_reason:path_reasons.append(descent_reason)
-        if path_reasons:raise PolicyMoveJPrecheckError(path_reasons)
+        if path_reasons:
+            diagnostic.update(path_minimum_singular_value=min(sigmas),
+                              path_minimum_tool_z_m=min(tool_z))
+            raise PolicyMoveJPrecheckError(path_reasons,diagnostic)
         return MoveJPlan(target_q,target_tool,target_link,tuple(sigmas),min(tool_z),
                          joint_envelope_status(target_q,self.cc))
 

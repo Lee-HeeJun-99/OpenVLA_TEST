@@ -39,7 +39,8 @@
     "robot_state_full_rate_log_required": true
   },
   "policy_movej": {
-    "velocity_deg_s_candidate": 10.0,
+    "velocity_deg_s_candidate": 5.0,
+    "velocity_status": "[확인: 사용자 결정 2026-11-13] 10 deg joint step에 약 2 s 규모",
     "acceleration_deg_s2_confirmed": 10.0,
     "acceleration_status": "[확인: stop_test_movej 현장 시험 2026-11-13]",
     "settle_velocity_rad_s_candidate": 0.001,
@@ -48,7 +49,8 @@
     "motion_timeout_s_candidate": 5.0,
     "max_steps_default": 300,
     "max_episode_time_s_candidate": 600.0,
-    "max_joint_delta_deg_candidate": 5.0,
+    "max_joint_delta_deg_candidate": 10.0,
+    "max_joint_delta_status": "[확인: 사용자 결정 2026-11-13] 20 mm/4 deg action upper bound와 home 부근 12 mm 수직 action의 J3 5.5~6.4 deg 요구를 수용; matched15 continuous trajectory max 5.0182 deg",
     "joint_path_samples_candidate": 20,
     "gripper_policy": "record_only"
   },

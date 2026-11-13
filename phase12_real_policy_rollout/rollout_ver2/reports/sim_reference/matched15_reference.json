@@ -1,0 +1,863 @@
+{
+  "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/validation/evidence/vanilla/success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep.json",
+  "method": "sim_home seed, then previous solution seed; absolute joint deltas",
+  "includes_home_to_first_pose": false,
+  "overall": {
+    "trajectory_transitions": 1038,
+    "joint_components": 6228,
+    "p99_abs_step_deg": 3.38245173117889,
+    "max_abs_step_deg": 5.018157286467912,
+    "max_joint_delta_candidate_deg": 10.0,
+    "candidate_10deg_below_observed_max": false,
+    "candidate_10deg_above_or_equal_observed_max": true,
+    "excluded_home_seed_to_first_observation": {
+      "reason": "initial pose reconstruction alignment, not an action transition",
+      "p99_abs_deg": 33.0348373625999,
+      "max_abs_deg": 33.05193902549478
+    }
+  },
+  "per_joint": [
+    {
+      "joint": "J1",
+      "p99_abs_step_deg": 0.9915795345008518,
+      "max_abs_step_deg": 1.1746500043154717
+    },
+    {
+      "joint": "J2",
+      "p99_abs_step_deg": 2.2811619453023293,
+      "max_abs_step_deg": 2.4772560718470054
+    },
+    {
+      "joint": "J3",
+      "p99_abs_step_deg": 3.701453223138444,
+      "max_abs_step_deg": 5.018157286467912
+    },
+    {
+      "joint": "J4",
+      "p99_abs_step_deg": 0.4905654803935306,
+      "max_abs_step_deg": 1.5446919768435465
+    },
+    {
+      "joint": "J5",
+      "p99_abs_step_deg": 3.492397624889479,
+      "max_abs_step_deg": 4.002605934150144
+    },
+    {
+      "joint": "J6",
+      "p99_abs_step_deg": 3.517843057012989,
+      "max_abs_step_deg": 3.7818381491363966
+    }
+  ],
+  "episodes": [
+    {
+      "episode": 1,
+      "target_color": "red",
+      "trajectory_transitions": 73,
+      "max_abs_joint_step_deg": 3.4817648987099186,
+      "max_joint": 3
+    },
+    {
+      "episode": 2,
+      "target_color": "yellow",
+      "trajectory_transitions": 107,
+      "max_abs_joint_step_deg": 3.9345503655225293,
+      "max_joint": 3
+    },
+    {
+      "episode": 3,
+      "target_color": "blue",
+      "trajectory_transitions": 59,
+      "max_abs_joint_step_deg": 3.6736195740951176,
+      "max_joint": 3
+    },
+    {
+      "episode": 4,
+      "target_color": "red",
+      "trajectory_transitions": 69,
+      "max_abs_joint_step_deg": 3.4196081619425147,
+      "max_joint": 6
+    },
+    {
+      "episode": 5,
+      "target_color": "yellow",
+      "trajectory_transitions": 63,
+      "max_abs_joint_step_deg": 4.591752202804635,
+      "max_joint": 3
+    },
+    {
+      "episode": 6,
+      "target_color": "blue",
+      "trajectory_transitions": 60,
+      "max_abs_joint_step_deg": 4.427111284350385,
+      "max_joint": 3
+    },
+    {
+      "episode": 7,
+      "target_color": "red",
+      "trajectory_transitions": 70,
+      "max_abs_joint_step_deg": 3.4528091381949246,
+      "max_joint": 6
+    },
+    {
+      "episode": 8,
+      "target_color": "yellow",
+      "trajectory_transitions": 64,
+      "max_abs_joint_step_deg": 3.456717791076577,
+      "max_joint": 6
+    },
+    {
+      "episode": 9,
+      "target_color": "blue",
+      "trajectory_transitions": 58,
+      "max_abs_joint_step_deg": 4.1341820233586875,
+      "max_joint": 3
+    },
+    {
+      "episode": 10,
+      "target_color": "red",
+      "trajectory_transitions": 64,
+      "max_abs_joint_step_deg": 3.5807658373540487,
+      "max_joint": 3
+    },
+    {
+      "episode": 11,
+      "target_color": "yellow",
+      "trajectory_transitions": 64,
+      "max_abs_joint_step_deg": 5.018157286467912,
+      "max_joint": 3
+    },
+    {
+      "episode": 12,
+      "target_color": "blue",
+      "trajectory_transitions": 67,
+      "max_abs_joint_step_deg": 3.2142969168157447,
+      "max_joint": 6
+    },
+    {
+      "episode": 13,
+      "target_color": "red",
+      "trajectory_transitions": 74,
+      "max_abs_joint_step_deg": 3.3231643512528652,
+      "max_joint": 6
+    },
+    {
+      "episode": 14,
+      "target_color": "yellow",
+      "trajectory_transitions": 76,
+      "max_abs_joint_step_deg": 3.286981732540413,
+      "max_joint": 6
+    },
+    {
+      "episode": 15,
+      "target_color": "blue",
+      "trajectory_transitions": 70,
+      "max_abs_joint_step_deg": 3.950794020092969,
+      "max_joint": 3
+    }
+  ],
+  "cube_positions": [
+    {
+      "episode": 1,
+      "target_color": "red",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        376.6181186677989,
+        -57.27242988649362,
+        -609.0267215937189
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        111.70589369913137,
+        11.448856810546387,
+        709.5249136850509
+      ]
+    },
+    {
+      "episode": 1,
+      "target_color": "red",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        433.09465208073226,
+        -183.51808873120302,
+        -609.0267215937189
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        238.73949129323867,
+        -39.04600007143207,
+        730.5082335902484
+      ]
+    },
+    {
+      "episode": 1,
+      "target_color": "red",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        281.3796118738231,
+        -203.94567337933535,
+        -609.0267215937189
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        255.91223520998713,
+        88.01651450440585,
+        646.8723926153682
+      ]
+    },
+    {
+      "episode": 2,
+      "target_color": "yellow",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        244.02809377904782,
+        119.5573061262089,
+        -609.0360329178734
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -67.3906240947959,
+        127.18865591904418,
+        651.1912921588814
+      ]
+    },
+    {
+      "episode": 2,
+      "target_color": "yellow",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        335.6739008068646,
+        -44.759761586336495,
+        -609.0360329178734
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        98.32103010580387,
+        46.20029917162525,
+        688.3340763959673
+      ]
+    },
+    {
+      "episode": 2,
+      "target_color": "yellow",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        389.0397274136151,
+        -137.8034800733608,
+        -609.0359733132286
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        192.18516302402585,
+        -0.8963605295092898,
+        710.1623652850175
+      ]
+    },
+    {
+      "episode": 3,
+      "target_color": "blue",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        317.57923189200284,
+        -75.70369475410796,
+        -609.025981816268
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        128.7147914149205,
+        60.611460390776706,
+        676.2093002880969
+      ]
+    },
+    {
+      "episode": 3,
+      "target_color": "blue",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        294.84870258368375,
+        187.9098645515599,
+        -609.025981816268
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -134.53381141969817,
+        86.1197058143193,
+        683.8439668474678
+      ]
+    },
+    {
+      "episode": 3,
+      "target_color": "blue",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        234.61445394553064,
+        86.17200023605012,
+        -609.025981816268
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -34.35662151934587,
+        134.29019609905717,
+        643.5588302102332
+      ]
+    },
+    {
+      "episode": 4,
+      "target_color": "red",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        275.27060435921663,
+        38.93251477462532,
+        -609.0380299382409
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        13.75007291117241,
+        98.97922823271672,
+        661.9901933680076
+      ]
+    },
+    {
+      "episode": 4,
+      "target_color": "red",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        404.9170546403598,
+        -0.9244834752631017,
+        -609.0379703335961
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        56.23359861488237,
+        -10.960129071854967,
+        729.1115024973446
+      ]
+    },
+    {
+      "episode": 4,
+      "target_color": "red",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        440.99699782044405,
+        -200.09361447113275,
+        -609.0380299382409
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        255.53710191603497,
+        -46.0162947757854,
+        733.5028416504487
+      ]
+    },
+    {
+      "episode": 5,
+      "target_color": "yellow",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        381.71309145967007,
+        -98.84753838826595,
+        -609.0472831008136
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        153.29115351909732,
+        6.25643595793412,
+        709.1382039852948
+      ]
+    },
+    {
+      "episode": 5,
+      "target_color": "yellow",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        333.09256943742275,
+        193.641304814325,
+        -609.0472831008136
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -139.29908285320184,
+        54.08626633622386,
+        705.022445817979
+      ]
+    },
+    {
+      "episode": 5,
+      "target_color": "yellow",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        424.03525027314663,
+        -224.56620649148402,
+        -609.0472831008136
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        279.50620349302034,
+        -32.31252560900323,
+        722.5002771780466
+      ]
+    },
+    {
+      "episode": 6,
+      "target_color": "blue",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        460.7419642742994,
+        49.309550353744626,
+        -608.9762597186674
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        7.067153095397363,
+        -56.92310234846373,
+        763.0704358488271
+      ]
+    },
+    {
+      "episode": 6,
+      "target_color": "blue",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        271.3470134076002,
+        -88.33322065188587,
+        -608.9762001140226
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        140.3414649580502,
+        99.01995930804846,
+        650.2178809701669
+      ]
+    },
+    {
+      "episode": 6,
+      "target_color": "blue",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        234.5381650265577,
+        85.86308223889172,
+        -608.9762597186674
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -34.069881948849854,
+        134.15688303024893,
+        643.485725192195
+      ]
+    },
+    {
+      "episode": 7,
+      "target_color": "red",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        303.05054847163285,
+        -112.07638858620537,
+        -609.0368979514802
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        164.91699150290552,
+        72.05878560199284,
+        665.5348316993197
+      ]
+    },
+    {
+      "episode": 7,
+      "target_color": "red",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        385.73256198329057,
+        101.07754738267052,
+        -609.0368979514802
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -45.789448029294924,
+        7.568686374674704,
+        726.4834922151948
+      ]
+    },
+    {
+      "episode": 7,
+      "target_color": "red",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        416.5152615682515,
+        -193.57679961983575,
+        -609.0368383468355
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        248.58863585082034,
+        -25.251686397077687,
+        720.7280023655027
+      ]
+    },
+    {
+      "episode": 8,
+      "target_color": "yellow",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        304.93812574202724,
+        -148.62585606834918,
+        -608.9952636005813
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        201.22186458215901,
+        69.41489701638847,
+        663.8098146286594
+      ]
+    },
+    {
+      "episode": 8,
+      "target_color": "yellow",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        320.372390878746,
+        -3.7250633243385027,
+        -608.9952039959365
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        57.10280694034451,
+        59.89970911933549,
+        683.1389300216606
+      ]
+    },
+    {
+      "episode": 8,
+      "target_color": "yellow",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        433.8948012715072,
+        -90.89322182199986,
+        -608.9952636005813
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        146.3758330893577,
+        -37.632331579929726,
+        737.9427013927439
+      ]
+    },
+    {
+      "episode": 9,
+      "target_color": "blue",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        356.2361099916858,
+        -33.099440966094285,
+        -609.0386755734231
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        87.16624820361986,
+        29.20516876669946,
+        700.3405962029613
+      ]
+    },
+    {
+      "episode": 9,
+      "target_color": "blue",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        249.92392446579166,
+        -103.8590056042321,
+        -609.0386755734231
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        155.4695711074545,
+        116.89008360087504,
+        637.4501472469489
+      ]
+    },
+    {
+      "episode": 9,
+      "target_color": "blue",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        234.96914889396854,
+        86.23992082074807,
+        -609.0386755734231
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -34.34187660419425,
+        134.0051990738101,
+        643.7695048321606
+      ]
+    },
+    {
+      "episode": 10,
+      "target_color": "red",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        235.62164547319512,
+        25.66443445302534,
+        -609.0347460816594
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        26.14603830645827,
+        131.98366503403855,
+        639.5281399524973
+      ]
+    },
+    {
+      "episode": 10,
+      "target_color": "red",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        379.7294640767107,
+        -103.56466038011027,
+        -609.0347460816594
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        158.0371748829989,
+        7.775626061883386,
+        707.6773401040415
+      ]
+    },
+    {
+      "episode": 10,
+      "target_color": "red",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        452.146544479085,
+        192.47013019539403,
+        -609.0348056863041
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -135.51456589656647,
+        -46.1083541020151,
+        769.3597762757239
+      ]
+    },
+    {
+      "episode": 11,
+      "target_color": "yellow",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        458.44032133900527,
+        -192.3966528831949,
+        -609.0395834881746
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        248.2814540537392,
+        -60.468957061355965,
+        743.5139805883874
+      ]
+    },
+    {
+      "episode": 11,
+      "target_color": "yellow",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        351.88313092076186,
+        -33.31255819489855,
+        -609.0395834881746
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        87.42574985988469,
+        32.86775105228956,
+        697.9520956467838
+      ]
+    },
+    {
+      "episode": 11,
+      "target_color": "yellow",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        399.82529248082045,
+        61.40379142174822,
+        -609.0395834881746
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -5.965844477003851,
+        -5.202129197864649,
+        731.0931889405572
+      ]
+    },
+    {
+      "episode": 12,
+      "target_color": "blue",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        453.42704555635896,
+        160.28760551900112,
+        -609.0069300879553
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -103.61904241445335,
+        -48.00495651498576,
+        767.5521228029046
+      ]
+    },
+    {
+      "episode": 12,
+      "target_color": "blue",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        295.4548289502188,
+        205.36387145013057,
+        -609.0069300879553
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -151.86205452485638,
+        85.89082186780468,
+        685.5056525343224
+      ]
+    },
+    {
+      "episode": 12,
+      "target_color": "blue",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        271.26568457727876,
+        -89.34105754404821,
+        -609.0068704833105
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        141.40491588423205,
+        99.18313737028296,
+        650.0950849785786
+      ]
+    },
+    {
+      "episode": 13,
+      "target_color": "red",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        300.893948152949,
+        -224.426125621371,
+        -609.0455078959402
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        276.8074991708377,
+        71.24481169833918,
+        655.8524756327201
+      ]
+    },
+    {
+      "episode": 13,
+      "target_color": "red",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        244.18447978823346,
+        -29.51757374959442,
+        -609.0455078959402
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        81.30719095541822,
+        123.5208218227208,
+        639.973066068343
+      ]
+    },
+    {
+      "episode": 13,
+      "target_color": "red",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        440.8042288574473,
+        -123.02047524409744,
+        -609.0455078959402
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        178.70705259816333,
+        -43.9817226401465,
+        739.2619519638481
+      ]
+    },
+    {
+      "episode": 14,
+      "target_color": "yellow",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        254.26430497877328,
+        117.89537232639319,
+        -609.0422926150527
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -65.50079636013592,
+        118.53817518389967,
+        656.6129122217869
+      ]
+    },
+    {
+      "episode": 14,
+      "target_color": "yellow",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        356.19459543935983,
+        -130.34956145761484,
+        -609.0422330104079
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        184.11059287753136,
+        26.944876411251435,
+        692.9468253828514
+      ]
+    },
+    {
+      "episode": 14,
+      "target_color": "yellow",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        470.00430021993844,
+        35.86825739862448,
+        -609.0422926150527
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        20.820435027396776,
+        -64.78166444777528,
+        767.1329309477552
+      ]
+    },
+    {
+      "episode": 15,
+      "target_color": "blue",
+      "cube_color": "red",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        271.90000659714894,
+        163.14515298800512,
+        -609.0353585257602
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        -110.26884566389097,
+        104.79923932523532,
+        669.5729411934263
+      ]
+    },
+    {
+      "episode": 15,
+      "target_color": "blue",
+      "cube_color": "yellow",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        288.7131059814568,
+        -129.45195460123972,
+        -609.0353585257602
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        181.7545307417224,
+        83.64591969295292,
+        656.5103081625748
+      ]
+    },
+    {
+      "episode": 15,
+      "target_color": "blue",
+      "cube_color": "blue",
+      "relative_to_home_tool0_origin_base_axes_xyz_mm": [
+        332.96520358811574,
+        -221.92694419426874,
+        -609.0352989211154
+      ],
+      "expressed_in_home_tool0_axes_xyz_mm": [
+        274.8612627901686,
+        44.225026780245095,
+        673.451426544999
+      ]
+    }
+  ],
+  "cube_frame": "origin is each episode first current tool0_sim. Primary relative field uses sim world/base-aligned axes; tool-axis expression is also included. tool0_sim is equivalent to tool0_real after confirmed J6+180 mount compensation",
+  "exact_matched15_images_available": false,
+  "exact_image_paths_from_evidence": [
+    "D:\\codex_staging\\a0509_openvla_success_profile_ablation_20260824\\validation_checkpoints_15ep_video\\success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep_frames\\episode_001_red_initial.jpg",
+    "D:\\codex_staging\\a0509_openvla_success_profile_ablation_20260824\\validation_checkpoints_15ep_video\\success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep_frames\\episode_002_yellow_initial.jpg",
+    "D:\\codex_staging\\a0509_openvla_success_profile_ablation_20260824\\validation_checkpoints_15ep_video\\success_profile_s1_balanced_step8130_matched15_k1_seed9406_15ep_frames\\episode_003_blue_initial.jpg"
+  ],
+  "image_note": "Evidence paths are Windows D:\\codex_staging paths absent from this bundle. Saved images are related-sim proxies and must not be represented as exact matched15 frames.",
+  "proxy_images": [
+    {
+      "file": "reports/sim_reference/sim_proxy_initial_01_224.jpg",
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4_sim_baseline/episode4_sim_baseline_redprompt_k5_seed9406_1ep_frames/episode_001_red_initial.jpg",
+      "exact_matched15": false,
+      "processing": "resize-naive 224x224 bicubic, JPEG q92"
+    },
+    {
+      "file": "reports/sim_reference/sim_proxy_initial_02_224.jpg",
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout/phase9_fixed_layout_sim_policy_k1_seed20260922_1ep_frames/episode_001_red_initial.jpg",
+      "exact_matched15": false,
+      "processing": "resize-naive 224x224 bicubic, JPEG q92"
+    },
+    {
+      "file": "reports/sim_reference/sim_proxy_initial_03_224.jpg",
+      "source": "/home/ubuntu/a0509_vla_linux_field_bundle_20260903/lhj/phase9_sim_policy_shadow_replay/01_sim_policy_rollout_episode4/episode4_fixed_layout_oft_k5_k5_seed20260923_1ep_frames/episode_001_red_initial.jpg",
+      "exact_matched15": false,
+      "processing": "resize-naive 224x224 bicubic, JPEG q92"
+    }
+  ]
+}

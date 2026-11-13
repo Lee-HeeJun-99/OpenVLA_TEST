@@ -60,6 +60,12 @@ def require_table_watch_confirmation(value):
     if value!="TABLE_WATCH_BY_OPERATOR":raise PermissionError("TABLE_WATCH_CONFIRMATION_REQUIRED")
     return value
 
+def rejected_candidate_record(step,action,error):
+    return {"step":int(step),"action_raw":action.raw.tolist(),
+            "action_translation_norm_mm":float(np.linalg.norm(action.delta_position_m)*1000),
+            "action_rotation_norm_deg":float(np.rad2deg(np.linalg.norm(action.rotation_vector_rad))),
+            "exception_message":str(error),**error.rejected_candidate}
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--server",default="http://127.0.0.1:8766")
@@ -104,6 +110,7 @@ def main():
     abort_signal=AbortSignal();summary={"pass":False,"steps":[],"automatic_home_calls":0,
       "gripper_command_calls":0,"instruction":args.instruction,"scene_cube_color":args.scene_cube_color,
       "max_steps":max_steps,"max_episode_time_s":max_episode_time,
+      "action_magnitude_caps":"disabled_by_user",
       "sigma_min":sigma_audit,"max_descent_mm":args.max_descent_mm,
       "table_collision_control":"테이블 높이 자동 검사 없음, 작업자 감시",
       "optional_descent_guard":{"enabled":args.max_descent_mm is not None,
@@ -188,7 +195,9 @@ def main():
             before=feedback.snapshot();actual_start=before.tool0_real_pose
             try:plan=planner.plan(action,command_tool,command_q,streak)
             except PolicyMoveJPrecheckError as error:
-                end_reason="PRECHECK_REJECTED";summary["precheck_reasons"]=list(error.reasons);break
+                end_reason="PRECHECK_REJECTED";summary["precheck_reasons"]=list(error.reasons)
+                summary["rejected_candidate"]=rejected_candidate_record(step_index,action,error)
+                break
             request={"pos":np.rad2deg(plan.target_joint_rad).tolist(),"vel":pc["velocity_deg_s_candidate"],
               "acc":pc["acceleration_deg_s2_confirmed"],"sync_type":1}
             motion_start=time.monotonic();ack=move.move_joint(**request)
@@ -214,6 +223,8 @@ def main():
             arrived=feedback.snapshot();record={"step":step_index,"action_raw":action.raw.tolist(),
               "interpreted_delta_position_m":action.delta_position_m.tolist(),
               "interpreted_rotation_vector_rad":action.rotation_vector_rad.tolist(),
+              "action_translation_norm_mm":float(np.linalg.norm(action.delta_position_m)*1000),
+              "action_rotation_norm_deg":float(np.rad2deg(np.linalg.norm(action.rotation_vector_rad))),
               "endpoint_arm_min":action.endpoint_min[:6].tolist(),"endpoint_arm_max":action.endpoint_max[:6].tolist(),
               "endpoint_streak":streak.tolist(),"gripper_target":action.gripper_target,
               "gripper_binary":action.gripper_binary,"gripper_changed":gripper.update(action.gripper_binary),
